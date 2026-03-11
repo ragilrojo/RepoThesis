@@ -90,9 +90,9 @@ function numItem(text, ref = "numbers") {
 }
 
 // Letter list item (a, b, c)
-function letterItem(text) {
+function letterItem(text, ref = "letters") {
     return new Paragraph({
-        numbering: { reference: "letters", level: 0 },
+        numbering: { reference: ref, level: 0 },
         alignment: AlignmentType.JUSTIFIED,
         spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
         children: [new TextRun({ text, font: "Times New Roman", size: 24 })]
@@ -149,6 +149,27 @@ const doc = new Document({
             },
             {
                 reference: "letters",
+                levels: [{
+                    level: 0, format: LevelFormat.LOWER_LETTER, text: "%1.", alignment: AlignmentType.LEFT,
+                    style: { paragraph: { indent: { left: 720, hanging: 360 } } }
+                }]
+            },
+            {
+                reference: "letters1",
+                levels: [{
+                    level: 0, format: LevelFormat.LOWER_LETTER, text: "%1.", alignment: AlignmentType.LEFT,
+                    style: { paragraph: { indent: { left: 720, hanging: 360 } } }
+                }]
+            },
+            {
+                reference: "letters2",
+                levels: [{
+                    level: 0, format: LevelFormat.LOWER_LETTER, text: "%1.", alignment: AlignmentType.LEFT,
+                    style: { paragraph: { indent: { left: 720, hanging: 360 } } }
+                }]
+            },
+            {
+                reference: "letters3",
                 levels: [{
                     level: 0, format: LevelFormat.LOWER_LETTER, text: "%1.", alignment: AlignmentType.LEFT,
                     style: { paragraph: { indent: { left: 720, hanging: 360 } } }
@@ -391,27 +412,109 @@ const doc = new Document({
                 centeredBold("PENDAHULUAN", 26),
                 emptyLine(),
                 heading2("1.1. Latar Belakang"),
-                body("Mata uang kripto (cryptocurrency) telah berkembang menjadi salah satu aset investasi digital yang sangat diminati namun memiliki tingkat volatilitas ekstrem. Dalam manajemen portofolio tradisional, model Mean-Variance dari Markowitz kerap digunakan untuk mengalokasikan aset demi mencapai kombinasi return dan risiko yang optimal. Sayangnya, model klasik ini sangat rentan terhadap noise and estimasi matriks korelasi yang tidak stabil, terutama pada saat gejolak pasar (market crash) seperti fenomena crypto winter [1]."),
-                body("Ketika terjadi guncangan pasar, sebagian besar aset kripto cenderung jatuh secara bersamaan, merusak struktur korelasi normal dan menyebabkan portofolio standar mengalami kerugian parah (drawdown yang dalam). Untuk mengatasi tantangan tersebut, penelitian terkini mulai menggabungkan Teori Jaringan Kompleks (Complex Network Theory) ke dalam optimasi portofolio [2]. Penggunaan instrumen seperti Minimum Spanning Tree (MST) dan Eigenvector Centrality terbukti efisien dalam memetakan interaksi antar aset dan menghukum (penalize) aset-aset yang menjadi titik pusat kegagalan sistemik."),
-                body("Kendati model Network Markowitz statis menunjukkan proteksi yang lebih relevan dibandingkan Classical Markowitz, penentuan faktor penalti sentralitas \u03b3 (\u03b3) yang kaku kerap menimbulkan masalah di fase pasar yang dinamis (misalnya fase recovery atau bullish). Oleh karena itu, diperlukan pendekatan adaptif yang mengintegrasikan teknik pembersihan sinyal berbasis Random Matrix Theory (RMT) disandingkan dengan optimalisasi Grid Search dinamis (rolling window) agar portofolio dapat membentengi aset di saat crypto winter tanpa mengorbankan rasio upside gain di saat pembalikan arah (bullish)."),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
+                    indent: { firstLine: 720 },
+                    children: [
+                        new TextRun({ text: "Mata uang kripto (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "cryptocurrency", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") telah berkembang menjadi salah satu aset investasi digital yang sangat diminati namun memiliki tingkat volatilitas ekstrem. Dalam manajemen portofolio tradisional, model Mean-Variance dari Markowitz kerap digunakan untuk mengalokasikan aset demi mencapai kombinasi return dan risiko yang optimal. Sayangnya, model klasik ini sangat rentan terhadap ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "noise", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " dan estimasi matriks korelasi yang tidak stabil, terutama pada saat gejolak pasar (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "market crash", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") seperti fenomena ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "crypto winter", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " [1].", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
+                    indent: { firstLine: 720 },
+                    children: [
+                        new TextRun({ text: "Ketika terjadi guncangan pasar, sebagian besar aset kripto cenderung jatuh secara bersamaan, merusak struktur korelasi normal dan menyebabkan portofolio standar mengalami kerugian parah (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "drawdown", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " yang dalam). Untuk mengatasi tantangan tersebut, penelitian terkini mulai menggabungkan Teori Jaringan Kompleks (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Complex Network Theory", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") ke dalam optimasi portofolio [2]. Penggunaan instrumen seperti ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Minimum Spanning Tree (MST)", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " dan ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Eigenvector Centrality", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " terbukti efisien dalam memetakan interaksi antar aset dan menghukum (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "penalize", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") aset-aset yang menjadi titik pusat kegagalan sistemik.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
+                    indent: { firstLine: 720 },
+                    children: [
+                        new TextRun({ text: "Kendati model Network Markowitz statis menunjukkan proteksi yang lebih relevan dibandingkan Classical Markowitz, penentuan faktor penalti sentralitas \u03b3 (\u03b3) yang kaku kerap menimbulkan masalah di fase pasar yang dinamis (misalnya fase ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "recovery", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " atau ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "). Oleh karena itu, diperlukan pendekatan adaptif yang mengintegrasikan teknik pembersihan sinyal berbasis ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Random Matrix Theory (RMT)", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " disandingkan dengan optimalisasi ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Grid Search", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " dinamis (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "rolling window", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") agar portofolio dapat membentengi aset di saat ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "crypto winter", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " tanpa mengorbankan rasio ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "upside gain", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " di saat pembalikan arah (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ").", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
                 emptyLine(),
                 heading2("1.2. Identifikasi Masalah"),
-                body("Berdasarkan latar belakang di atas, dapat diidentifikasi masalah sebagai berikut:"),
-                letterItem("Model Classical Markowitz rentan terhadap spurious correlations pada aset kripto yang bervolatilitas sangat tinggi, terutama pada kondisi krisis ekstrem."),
-                letterItem("Implementasi Network Markowitz yang telah ada sering kali menggunakan hiperparameter penalti sentralitas (\u03b3) bernilai konstan (statis), yang berpotensi menjadi bumerang saat pasar memasuki rezim recovery atau bullish."),
-                letterItem("Kurangnya model sistematis yang secara metodis menyesuaikan struktur jaringan portofolio dengan rezim sikluk guncangan harga terkini menggunakan teknik optimasi rolling window untuk aset-aset kripto utama."),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
+                    indent: { firstLine: 720 },
+                    children: [
+                        new TextRun({ text: "Berdasarkan latar belakang di atas, dapat diidentifikasi masalah sebagai berikut:", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                letterItem("Model Classical Markowitz rentan terhadap spurious correlations pada aset kripto yang bervolatilitas sangat tinggi, terutama pada kondisi krisis ekstrem.", "letters"),
+                new Paragraph({
+                    numbering: { reference: "letters", level: 0 },
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
+                    children: [
+                        new TextRun({ text: "Implementasi Network Markowitz yang telah ada sering kali menggunakan hiperparameter penalti sentralitas (\u03b3) bernilai konstan (statis), yang berpotensi menjadi bumerang saat pasar memasuki rezim ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "recovery", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " atau ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ".", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                new Paragraph({
+                    numbering: { reference: "letters", level: 0 },
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
+                    children: [
+                        new TextRun({ text: "Kurangnya model sistematis yang secara metodis menyesuaikan struktur jaringan portofolio dengan rezim sikluk guncangan harga terkini menggunakan teknik optimasi ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "rolling window", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " untuk aset-aset kripto utama.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
                 emptyLine(),
                 heading2("1.3. Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
-                letterItem("Menganalisis keandalan metodologi Network Markowitz (dengan integrasi RMT filter dan Eigenvector Centrality) dalam menekan ekstrimitas downside risk dibandingkan pendekatan portofolio naif dan konvensional."),
-                letterItem("Merancang dan menguji model Network Markowitz adaptif (Grid Search Optimization) yang mampu melakukan re-kalibrasi dinamis dengan menggunakan paradigma rolling window pada berbagai lanskap pasar (Bearish, Recovery, Stable)."),
-                letterItem("Membandingkan performa perlindungan risiko sistemik (VaR) dan asimetri imbal hasil (Rachev Ratio) antara pemodelan baru dengan metode-metode baseline pada reksadana aset kripto."),
+                letterItem("Menganalisis keandalan metodologi Network Markowitz (dengan integrasi RMT filter dan Eigenvector Centrality) dalam menekan ekstrimitas downside risk dibandingkan pendekatan portofolio naif dan konvensional.", "letters1"),
+                letterItem("Merancang dan menguji model Network Markowitz adaptif (Grid Search Optimization) yang mampu melakukan re-kalibrasi dinamis dengan menggunakan paradigma rolling window pada berbagai lanskap pasar (Bearish, Recovery, Stable).", "letters1"),
+                letterItem("Membandingkan performa perlindungan risiko sistemik (VaR) dan asimetri imbal hasil (Rachev Ratio) antara pemodelan baru dengan metode-metode baseline pada reksadana aset kripto.", "letters1"),
                 emptyLine(),
                 heading2("1.4. Ruang Lingkup Penelitian"),
                 body("Ruang lingkup penelitian ini dibatasi pada:"),
-                letterItem("Objek penelitian terfokus pada data fluktuasi harga harian dari 10 (sepuluh) aset kripto utama dalam kerangka waktu historis termasuk masa resesi crypto winter (14 September 2017 hingga 17 Oktober 2019)."),
-                letterItem("Metode yang dibandingkan secara teknis mencakup Equally Weighted (EW), Classical Markowitz (CM), Glasso Markowitz (GM), Network Markowitz statis (\u03b3 = 0, 1.0, 2.0), serta Optimized Network Markowitz secara dinamis berbasis Grid Search."),
-                letterItem("Pengujian (backtesting) dilakukan dalam out-of-sample rolling window (120 observasi ke belakang dengan frekuensi penyesuaian rebalance 7 hari) yang disimulasikan menggunakan transaction cost atau estimasi biaya bursa (0.1%)."),
+                letterItem("Objek penelitian terfokus pada data fluktuasi harga harian dari 10 (sepuluh) aset kripto utama dalam kerangka waktu historis termasuk masa resesi crypto winter (14 September 2017 hingga 17 Oktober 2019).", "letters2"),
+                letterItem("Metode yang dibandingkan secara teknis mencakup Equally Weighted (EW), Classical Markowitz (CM), Glasso Markowitz (GM), Network Markowitz statis (\u03b3 = 0, 1.0, 2.0), serta Optimized Network Markowitz secara dinamis berbasis Grid Search.", "letters2"),
+                letterItem("Pengujian (backtesting) dilakukan dalam out-of-sample rolling window (120 observasi ke belakang dengan frekuensi penyesuaian rebalance 7 hari) yang disimulasikan menggunakan transaction cost atau estimasi biaya bursa (0.1%).", "letters2"),
                 emptyLine(),
                 heading2("1.5. Sistematika Penulisan"),
                 body("Sistematika penulisan proposal tesis ini disusun sebagai berikut:"),
