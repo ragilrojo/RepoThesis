@@ -919,21 +919,69 @@ const doc = new Document({
                     {text: "Network Markowitz", italic: true},
                     {text: ":"}
                 ]),
-                mixedBody([
-                    {text: "\u03B3  = Parameter skalar reguler untuk tingkat penghukuman ("},
-                    {text: "penalty level", italic: true},
-                    {text: ") sentralitas graf."}
-                ]),
+
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    spacing: { before: 120, after: 120 },
-                    children: [new TextRun({ text: "min\u1D64  w\u1D40 \u00B7 Sf \u00B7 w + \u03B3 \u03A3(Ce \u00B7 w)    ... (III.1)", font: "Times New Roman", size: 24, italics: true })]
+                    spacing: { before: 240, after: 240 },
+                    children: [
+                        new TextRun({ text: "min", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "w", font: "Times New Roman", size: 18, italics: true, subScript: true }),
+                        new TextRun({ text: " (", font: "Times New Roman", size: 26 }),
+                        new TextRun({ text: "w", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "T", font: "Times New Roman", size: 18, italics: true, superScript: true }),
+                        new TextRun({ text: " \u22C5 S", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "f", font: "Times New Roman", size: 18, italics: true, subScript: true }),
+                        new TextRun({ text: " \u22C5 w + \u03B3 ", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "\u2211", font: "Times New Roman", size: 28 }),
+                        new TextRun({ text: " (C", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "e", font: "Times New Roman", size: 18, italics: true, subScript: true }),
+                        new TextRun({ text: " \u22C5 w)", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ")", font: "Times New Roman", size: 26 }),
+                        new TextRun({ text: "             (III.1)", font: "Times New Roman", size: 24, bold: true }),
+                    ]
                 }),
                 body("Keterangan:"),
-                bodyNoIndent("w  = Vektor alokasi bobot untuk setiap aset kripto (sumbangan = 1)."),
-                bodyNoIndent("Sf = Matriks Kovarians terfilter RMT."),
-                bodyNoIndent("\u03B3  = Parameter skalar reguler untuk tingkat penghukuman (penalty level) sentralitas graf."),
-                bodyNoIndent("Ce = Vektor skor Eigenvector Centrality tiap-tiap entitas node."),
+                new Table({
+                    width: { size: 100, type: WidthType.PERCENTAGE },
+                    borders: {
+                        top: { style: BorderStyle.NONE, size: 0 },
+                        bottom: { style: BorderStyle.NONE, size: 0 },
+                        left: { style: BorderStyle.NONE, size: 0 },
+                        right: { style: BorderStyle.NONE, size: 0 },
+                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
+                        insideVertical: { style: BorderStyle.NONE, size: 0 },
+                    },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "w", font: "Times New Roman", size: 24, italics: true })] })] }),
+                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Vektor alokasi bobot untuk setiap aset kripto (total = 1).", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "S", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "f", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
+                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Matriks Kovarians terfilter RMT.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "\u03B3", font: "Times New Roman", size: 24, italics: true })] })] }),
+                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Parameter skalar penghukuman sentralitas graf.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "C", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "e", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
+                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Vektor skor Eigenvector Centrality tiap node aset.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                    ],
+                }),
                 emptyLine(),
                 mixedBody([
                     {text: "Pada penelitian ini, bobot \u03b3 tidak akan dilakukan "},
