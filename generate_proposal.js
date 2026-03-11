@@ -238,61 +238,36 @@ const doc = new Document({
                 emptyLine(),
                 bodyNoIndent("Proposal tesis ini diajukan oleh:", { bold: true }),
                 emptyLine(),
-                // Detail section with bold labels and content
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "Nama", font: "Times New Roman", size: 24, bold: true }),
-                        new TextRun({ text: "\t: Ragil Yulianto", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "NIM", font: "Times New Roman", size: 24, bold: true }),
-                        new TextRun({ text: "\t: 14240007", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "Program Studi", font: "Times New Roman", size: 24, bold: true }),
-                        new TextRun({ text: "\t: Ilmu Komputer", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "Fakultas", font: "Times New Roman", size: 24, bold: true }),
-                        new TextRun({ text: "\t: Teknologi Informasi", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "Jenjang", font: "Times New Roman", size: 24, bold: true }),
-                        new TextRun({ text: "\t: Strata Dua (S2)", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "Judul Tesis", font: "Times New Roman", size: 24, bold: true }),
-                        new TextRun({ text: "\t: OPTIMASI DINAMIS PEMODELAN NETWORK MAR-", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "\t  KOWITZ UNTUK MANAJEMEN PORTOFOLIO MATA", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
-                new Paragraph({
-                    children: [
-                        new TextRun({ text: "\t  UANG KRIPTO", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }]
-                }),
+                // Tabel transparan 3 kolom: Label | : | Nilai
+                (() => {
+                    const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
+                    const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
+                    const mkCell = (colW, text) => new TableCell({
+                        borders: noBorders,
+                        width: { size: colW, type: WidthType.DXA },
+                        margins: { top: 40, bottom: 40, left: 0, right: 80 },
+                        children: [new Paragraph({ children: [new TextRun({ text, font: "Times New Roman", size: 24, bold: true })] })]
+                    });
+                    const rows = [
+                        ["Nama",          "Ragil Yulianto"],
+                        ["NIM",           "14240007"],
+                        ["Program Studi", "Ilmu Komputer"],
+                        ["Fakultas",      "Teknologi Informasi"],
+                        ["Jenjang",       "Strata Dua (S2)"],
+                        ["Judul Tesis",   "OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO"],
+                    ];
+                    return new Table({
+                        width: { size: 8666, type: WidthType.DXA },
+                        columnWidths: [2100, 300, 6266],
+                        rows: rows.map(([label, value]) => new TableRow({
+                            children: [
+                                mkCell(2100, label),
+                                mkCell(300,  ":"),
+                                mkCell(6266, value),
+                            ]
+                        }))
+                    });
+                })(),
                 emptyLine(),
                 emptyLine(),
                 bodyNoIndent("Jakarta, 11 Maret 2026"),
