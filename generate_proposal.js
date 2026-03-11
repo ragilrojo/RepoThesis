@@ -3,7 +3,7 @@ const {
     Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
     AlignmentType, HeadingLevel, BorderStyle, WidthType, ShadingType,
     LevelFormat, PageNumber, PageBreak, TabStopType, TabStopPosition,
-    VerticalAlign, ImageRun
+    VerticalAlign, ImageRun, Footer, NumberFormat
 } = docx;
 
 // Fallback for TabLeader which might be named differently or missing in some versions
@@ -227,7 +227,18 @@ const doc = new Document({
                 page: {
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
-                }
+                },
+                pageNumber: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ text: "ii", font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
             },
             children: [
                 emptyLine(),
@@ -301,12 +312,6 @@ const doc = new Document({
                 }),
                 emptyLine(),
                 emptyLine(),
-                emptyLine(),
-                emptyLine(),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "ii", font: "Times New Roman", size: 24 })]
-                }),
             ]
         },
         // ==================== DAFTAR ISI ====================
@@ -315,7 +320,18 @@ const doc = new Document({
                 page: {
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
-                }
+                },
+                pageNumber: { formatType: NumberFormat.LOWER_ROMAN }
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ text: "iii", font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
             },
             children: [
                 emptyLine(),
@@ -349,12 +365,6 @@ const doc = new Document({
                 tocRow("DAFTAR REFERENSI", "9", 0, true),
                 emptyLine(),
                 emptyLine(),
-                emptyLine(),
-                emptyLine(),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "iii", font: "Times New Roman", size: 24 })]
-                }),
             ]
         },
         // ==================== BAB I ====================
@@ -363,7 +373,18 @@ const doc = new Document({
                 page: {
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
-                }
+                },
+                pageNumber: { start: 1, formatType: NumberFormat.DECIMAL }
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
             },
             children: [
                 centeredBold("BAB I", 26),
@@ -410,7 +431,17 @@ const doc = new Document({
                     children: [new TextRun({ text: "BAB III METODOLOGI PENELITIAN", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 body("Bab ini menjelaskan alur sistematis eksperimen yang digunakan untuk memproses data instrumen kripto, penyaringan RMT pada matriks korelasi historis, pembangunan MST, fungsi objektif Markowitz modifikasi, dan komputasi skema backtesting."),
-            ]
+            ],
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            }
         },
         // ==================== BAB II ====================
         {
@@ -419,6 +450,7 @@ const doc = new Document({
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
                 }
+                // Lanjutkan penomoran decimal dari section sebelumnya
             },
             children: [
                 centeredBold("BAB II", 26),
@@ -549,7 +581,17 @@ const doc = new Document({
                         }),
                     ]
                 }),
-            ]
+            ],
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            }
         },
         // ==================== BAB III ====================
         {
@@ -558,6 +600,7 @@ const doc = new Document({
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
                 }
+                // Lanjutkan penomoran decimal dari section sebelumnya
             },
             children: [
                 centeredBold("BAB III", 26),
@@ -654,7 +697,17 @@ const doc = new Document({
                         }))
                     ]
                 }),
-            ]
+            ],
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            }
         },
         // ==================== DAFTAR REFERENSI ====================
         {
@@ -663,6 +716,7 @@ const doc = new Document({
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
                 }
+                // Lanjutkan penomoran decimal dari section sebelumnya
             },
             children: [
                 centeredBold("DAFTAR REFERENSI", 26),
@@ -697,7 +751,17 @@ const doc = new Document({
                     indent: { left: 720, hanging: 720 },
                     children: [new TextRun({ text: "[5] R. N. Mantegna, \"Hierarchical structure in financial markets,\" The European Physical Journal B, vol. 11, no. 1, pp. 193–197, 1999.", font: "Times New Roman", size: 24 })]
                 }),
-            ]
+            ],
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            }
         },
     ]
 });
