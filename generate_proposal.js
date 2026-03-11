@@ -881,6 +881,35 @@ const doc = new Document({
                     {text: "Metadata", italic: true},
                     {text: " — informasi parameter utama dataset."}
                 ]),
+                mixedBody([
+                    {text: "Dalam proses pengunduhan data nyata, ditemukan beberapa tantangan kualitas data yang perlu ditangani secara eksplisit. Pertama, terdapat "},
+                    {text: "missing values", italic: true},
+                    {text: " yang signifikan pada beberapa aset, terutama Binance Coin (BNB), EOS, dan Tron (TRX) yang baru diluncurkan setelah periode dimulai (September 2017), sehingga data awal mereka bersifat kosong ("},
+                    {text: "NaN", italic: true},
+                    {text: "). Kondisi ini ditangani dengan strategi "},
+                    {text: "forward fill", italic: true},
+                    {text: " diikuti "},
+                    {text: "backward fill", italic: true},
+                    {text: " untuk memastikan tidak ada baris yang kosong sebelum kalkulasi "},
+                    {text: "log returns", italic: true},
+                    {text: " dilakukan."}
+                ]),
+                mixedBody([
+                    {text: "Kedua, terdapat potensi inkonsistensi data harga yang disebabkan oleh perbedaan jadwal bursa kripto antar platform. Karena "},
+                    {text: "Yahoo Finance", italic: true},
+                    {text: " mengacu pada harga agregat dari berbagai sumber, nilai harga penutupan ("},
+                    {text: "close price", italic: true},
+                    {text: ") kadang mengalami lonjakan ekstrem sesaat ("},
+                    {text: "outlier", italic: true},
+                    {text: ") yang tidak mencerminkan kondisi pasar sesungguhnya. Nilai-nilai ini diidentifikasi melalui inspeksi visual terhadap distribusi "},
+                    {text: "log returns", italic: true},
+                    {text: " dan dibiarkan dalam dataset karena memang merupakan bagian dari volatilitas nyata aset kripto yang hendak dimodelkan."}
+                ]),
+                mixedBody([
+                    {text: "Ketiga, Tether (USDT) sebagai "},
+                    {text: "stablecoin", italic: true},
+                    {text: " memiliki karakteristik distribusi yang berbeda dari aset lainnya — dengan volatilitas mendekati nol dan korelasi yang sangat rendah terhadap semua aset. Keberadaannya dalam pool tetap dipertahankan karena merupakan bagian dari 10 aset teratas berdasarkan kapitalisasi pasar pada periode tersebut, dan memberikan kontribusi diversifikasi yang unik dalam konstruksi jaringan portofolio."}
+                ]),
                 emptyLine(),
                 heading2("3.4. Metode/Algoritma yang Digunakan"),
                 mixedBody([
