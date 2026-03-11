@@ -59,6 +59,16 @@ function bodyNoIndent(text, opts = {}) {
     });
 }
 
+// Paragraf campuran italic dan non-italic
+function mixedBody(segments) {
+    return new Paragraph({
+        alignment: AlignmentType.JUSTIFIED,
+        spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
+        indent: { firstLine: 720 },
+        children: segments.map(s => new TextRun({ text: s.text, font: "Times New Roman", size: 24, italics: s.italic || false }))
+    });
+}
+
 function emptyLine() {
     return new Paragraph({ children: [new TextRun("")] });
 }
@@ -561,13 +571,43 @@ const doc = new Document({
                 emptyLine(),
                 heading2("2.1. Kerangka Teori"),
                 heading3("2.1.1. Modern Portfolio Theory (Markowitz)"),
-                body("Teori Portofolio Modern, yang dipelopori oleh Harry Markowitz, berupaya memaksimalkan imbal hasil yang diharapkan (expected return) pada tingkat risiko (variance) tertentu, atau sebaliknya. Masalah mendasarnya adalah bahwa kovarians dari kumpulan aset finansial sangat sensitif terhadap nilai-nilai ekstrem historis, yang dikenal sebagai Markowitz Curse [4]."),
+                mixedBody([
+                    {text: "Teori Portofolio Modern, yang dipelopori oleh Harry Markowitz, berupaya memaksimalkan imbal hasil yang diharapkan ("},
+                    {text: "expected return", italic: true},
+                    {text: ") pada tingkat risiko ("},
+                    {text: "variance", italic: true},
+                    {text: ") tertentu, atau sebaliknya. Masalah mendasarnya adalah bahwa kovarians dari kumpulan aset finansial sangat sensitif terhadap nilai-nilai ekstrem historis, yang dikenal sebagai "},
+                    {text: "Markowitz Curse", italic: true},
+                    {text: " [4]."}
+                ]),
                 emptyLine(),
                 heading3("2.1.2. Random Matrix Theory (RMT) dan Kompleksitas Jaringan"),
-                body("Teori Random Matrix memungkinkan disaringnya noise dari struktur korelasi dengan membandingkan nilai eigen (eigenvalues) struktur empiris terhadap nilai batas distribusi teoritis Marchenko-Pastur [3]. Ini merupakan vital element sebelum dilakukan visualisasi graf berupa Minimum Spanning Tree (MST)."),
+                mixedBody([
+                    {text: "Teori "},
+                    {text: "Random Matrix", italic: true},
+                    {text: " memungkinkan disaringnya "},
+                    {text: "noise", italic: true},
+                    {text: " dari struktur korelasi dengan membandingkan nilai eigen ("},
+                    {text: "eigenvalues", italic: true},
+                    {text: ") struktur empiris terhadap nilai batas distribusi teoritis Marchenko-Pastur [3]. Ini merupakan "},
+                    {text: "vital element", italic: true},
+                    {text: " sebelum dilakukan visualisasi graf berupa "},
+                    {text: "Minimum Spanning Tree (MST)", italic: true},
+                    {text: "."}
+                ]),
                 emptyLine(),
                 heading3("2.1.3. Network Markowitz"),
-                body("Diperkenalkan baru-baru ini untuk penanganan robo-advisory pada kripto, komponen sentralitas eigenvector ditambahkan sebagai instrumen penalti di dalam penyelesaian optimasi Mean-Variance [1]. Sentralitas mewakili kerentanan sebuah aset mentransmisikan shock pada seluruh jaringan koin di pasar."),
+                mixedBody([
+                    {text: "Diperkenalkan baru-baru ini untuk penanganan "},
+                    {text: "robo-advisory", italic: true},
+                    {text: " pada kripto, komponen sentralitas "},
+                    {text: "eigenvector", italic: true},
+                    {text: " ditambahkan sebagai instrumen penalti di dalam penyelesaian optimasi "},
+                    {text: "Mean-Variance", italic: true},
+                    {text: " [1]. Sentralitas mewakili kerentanan sebuah aset mentransmisikan "},
+                    {text: "shock", italic: true},
+                    {text: " pada seluruh jaringan koin di pasar."}
+                ]),
                 emptyLine(),
                 heading3("2.1.4. Penelitian Terdahulu"),
                 body("Beberapa penelitian terdahulu yang relevan dengan penelitian ini antara lain:"),
@@ -712,19 +752,73 @@ const doc = new Document({
                 heading2("3.1. Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
                 numItem("Studi Literatur"),
-                body("Melakukan kajian komprehensif terhadap jurnal yang membahas crypto portfolio optimization, graph theory, dan Network Markowitz."),
+                mixedBody([
+                    {text: "Melakukan kajian komprehensif terhadap jurnal yang membahas "},
+                    {text: "crypto portfolio optimization", italic: true},
+                    {text: ", "},
+                    {text: "graph theory", italic: true},
+                    {text: ", dan "},
+                    {text: "Network Markowitz", italic: true},
+                    {text: "."}
+                ]),
                 numItem("Pengumpulan Data & Pengkondisian"),
-                body("Mengumpulkan seri harga close cryptocurrency. Harga lalu diubah menjadi format log returns."),
+                mixedBody([
+                    {text: "Mengumpulkan seri harga "},
+                    {text: "close", italic: true},
+                    {text: " "},
+                    {text: "cryptocurrency", italic: true},
+                    {text: ". Harga lalu diubah menjadi format "},
+                    {text: "log returns", italic: true},
+                    {text: "."}
+                ]),
                 numItem("Pra-pemrosesan Data (RMT Filtering)"),
-                body("Data returns akan diubah menjadi Matriks Korelasi (Pearson). Selanjutnya struktur noise historis dipotong menggunakan mekanisme filtrasi nilai eigen (eigenvalue clipping boundary batas Marchenko-Pastur)."),
+                mixedBody([
+                    {text: "Data "},
+                    {text: "returns", italic: true},
+                    {text: " akan diubah menjadi Matriks Korelasi (Pearson). Selanjutnya struktur "},
+                    {text: "noise", italic: true},
+                    {text: " historis dipotong menggunakan mekanisme filtrasi nilai eigen ("},
+                    {text: "eigenvalue clipping boundary", italic: true},
+                    {text: " batas Marchenko-Pastur)."}
+                ]),
                 numItem("Kuantifikasi Jaringan Aset (MST & Centrality)"),
-                body("Pembangunan jarak konektivitas (distance matrix) dari hasil korelasi terfilter untuk diekstraksi ke bentuk graf pohon Minimum Spanning Tree (MST). Node importance kemudian diukur melalui Eigenvector Centrality."),
+                mixedBody([
+                    {text: "Pembangunan jarak konektivitas ("},
+                    {text: "distance matrix", italic: true},
+                    {text: ") dari hasil korelasi terfilter untuk diekstraksi ke bentuk graf pohon "},
+                    {text: "Minimum Spanning Tree (MST)", italic: true},
+                    {text: ". "},
+                    {text: "Node importance", italic: true},
+                    {text: " kemudian diukur melalui "},
+                    {text: "Eigenvector Centrality", italic: true},
+                    {text: "."}
+                ]),
                 numItem("Optimasi Jaringan Adaptif (Dynamic Grid-Search)"),
-                body("Merancang algoritma komputasi untuk menyesuaikan parameter impact korelasi (\u03b3) yang secara otomatis mengekang instrumen-instrumen bervolatilitas sistemik pada jendela uji terkalibrasi ke belakang (backtrack validity)."),
+                mixedBody([
+                    {text: "Merancang algoritma komputasi untuk menyesuaikan parameter "},
+                    {text: "impact", italic: true},
+                    {text: " korelasi (\u03b3) yang secara otomatis mengekang instrumen-instrumen bervolatilitas sistemik pada jendela uji terkalibrasi ke belakang ("},
+                    {text: "backtrack validity", italic: true},
+                    {text: ")."}
+                ]),
                 numItem("Eksekusi Backtesting Portofolio"),
-                body("Mensimulasikan pembelian pada titik waktu (t) dan meninjau portofolio secara periodik menggunakan sistem Rolling Window. Terdapat perlakuan pengenaan slippage/transaction log pada rebalancing harian."),
+                mixedBody([
+                    {text: "Mensimulasikan pembelian pada titik waktu (t) dan meninjau portofolio secara periodik menggunakan sistem "},
+                    {text: "Rolling Window", italic: true},
+                    {text: ". Terdapat perlakuan pengenaan "},
+                    {text: "slippage/transaction cost", italic: true},
+                    {text: " pada "},
+                    {text: "rebalancing", italic: true},
+                    {text: " harian."}
+                ]),
                 numItem("Pengukuran Evaluasi Resiko (Performance Metrics)"),
-                body("Mengukur nilai profit kumulatif, asimetri VaR 95%, hingga penyesuaian Sharpe Ratio dan Rachev Ratio di sepanjang berbagai transisi fasa pasar ekstrem."),
+                mixedBody([
+                    {text: "Mengukur nilai profit kumulatif, asimetri VaR 95%, hingga penyesuaian "},
+                    {text: "Sharpe Ratio", italic: true},
+                    {text: " dan "},
+                    {text: "Rachev Ratio", italic: true},
+                    {text: " di sepanjang berbagai transisi fasa pasar ekstrem."}
+                ]),
                 emptyLine(),
                 heading2("3.2. Alat dan Bahan Penelitian"),
                 heading3("3.2.1. Perangkat Lunak"),
@@ -733,10 +827,33 @@ const doc = new Document({
                 bulletItem("Framework/Library: Pandas, Numpy, Scipy (Optimization), Scikit-Learn, NetworkX (Graph Analytics)"),
                 emptyLine(),
                 heading2("3.3. Dataset"),
-                body("Dataset yang akan digunakan adalah sekumpulan (pool) 10 aset berbasis cryptocurrency berkapitalisasi tinggi yang tercatat aktif diperdagangkan secara bersinambung. Terdiri dari Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), Litecoin (LTC), dan lain sebagainya. Observasi direntangkan secara sengaja mencakup era penggelembungan (speculative bubble), era krisis berkepanjangan (crypto winter bear market), hingga skema normalisasi stable."),
+                mixedBody([
+                    {text: "Dataset yang akan digunakan adalah sekumpulan ("},
+                    {text: "pool", italic: true},
+                    {text: ") 10 aset berbasis "},
+                    {text: "cryptocurrency", italic: true},
+                    {text: " berkapitalisasi tinggi yang tercatat aktif diperdagangkan secara bersinambung. Terdiri dari Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), Litecoin (LTC), dan lain sebagainya. Observasi direntangkan secara sengaja mencakup era penggelembungan ("},
+                    {text: "speculative bubble", italic: true},
+                    {text: "), era krisis berkepanjangan ("},
+                    {text: "crypto winter bear market", italic: true},
+                    {text: "), hingga skema normalisasi "},
+                    {text: "stable", italic: true},
+                    {text: "."}
+                ]),
                 emptyLine(),
                 heading2("3.4. Metode/Algoritma yang Digunakan"),
-                body("Optimasi yang diajukan akan merubah fungsi pencarian model klasik Markowitz menjadi kerangka berbasis penalty function dinamis. Formula Network Markowitz:"),
+                mixedBody([
+                    {text: "Optimasi yang diajukan akan merubah fungsi pencarian model klasik Markowitz menjadi kerangka berbasis "},
+                    {text: "penalty function", italic: true},
+                    {text: " dinamis. Formula "},
+                    {text: "Network Markowitz", italic: true},
+                    {text: ":"}
+                ]),
+                mixedBody([
+                    {text: "\u03B3  = Parameter skalar reguler untuk tingkat penghukuman ("},
+                    {text: "penalty level", italic: true},
+                    {text: ") sentralitas graf."}
+                ]),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     spacing: { before: 120, after: 120 },
@@ -748,7 +865,17 @@ const doc = new Document({
                 bodyNoIndent("\u03B3  = Parameter skalar reguler untuk tingkat penghukuman (penalty level) sentralitas graf."),
                 bodyNoIndent("Ce = Vektor skor Eigenvector Centrality tiap-tiap entitas node."),
                 emptyLine(),
-                body("Pada penelitian ini, bobot \u03b3 tidak akan dilakukan hard-coded statis, melainkan secara luwes dan rolling akan difungsikan optimasi grid validation berbasis metrik obyektif Sharpe Ratio periode belakang."),
+                mixedBody([
+                    {text: "Pada penelitian ini, bobot \u03b3 tidak akan dilakukan "},
+                    {text: "hard-coded", italic: true},
+                    {text: " statis, melainkan secara luwes dan "},
+                    {text: "rolling", italic: true},
+                    {text: " akan difungsikan optimasi "},
+                    {text: "grid validation", italic: true},
+                    {text: " berbasis metrik obyektif "},
+                    {text: "Sharpe Ratio", italic: true},
+                    {text: " periode belakang."}
+                ]),
                 emptyLine(),
                 heading2("3.5. Rencana Jadwal Penelitian"),
                 new Paragraph({
