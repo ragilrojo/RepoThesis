@@ -3,7 +3,8 @@ const {
     Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
     AlignmentType, HeadingLevel, BorderStyle, WidthType, ShadingType,
     LevelFormat, PageNumber, PageBreak, TabStopType, TabStopPosition,
-    VerticalAlign, ImageRun, Footer, NumberFormat, SectionType
+    VerticalAlign, ImageRun, Footer, NumberFormat, SectionType,
+    TableOfContents
 } = docx;
 
 // Fallback for TabLeader which might be named differently or missing in some versions
@@ -75,6 +76,28 @@ function emptyLine() {
 
 function centeredBold(text, size = 24) {
     return new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: { before: 0, after: 120 },
+        children: [new TextRun({ text, font: "Times New Roman", size, bold: true })]
+    });
+}
+
+function chapterHeading(bab, title, size = 26) {
+    return new Paragraph({
+        heading: HeadingLevel.HEADING_1,
+        alignment: AlignmentType.CENTER,
+        spacing: { before: 0, after: 120 },
+        children: [
+            new TextRun({ text: bab, font: "Times New Roman", size, bold: true }),
+            new TextRun({ break: 1 }),
+            new TextRun({ text: title, font: "Times New Roman", size, bold: true })
+        ]
+    });
+}
+
+function sectionTitle(text, size = 26) {
+    return new Paragraph({
+        heading: HeadingLevel.HEADING_1,
         alignment: AlignmentType.CENTER,
         spacing: { before: 0, after: 120 },
         children: [new TextRun({ text, font: "Times New Roman", size, bold: true })]
@@ -288,7 +311,7 @@ const doc = new Document({
             },
             children: [
                 emptyLine(),
-                centeredBold("HALAMAN PENGESAHAN", 26),
+                sectionTitle("HALAMAN PENGESAHAN"),
                 emptyLine(),
                 centeredBold("PROPOSAL TESIS", 24),
                 emptyLine(),
@@ -391,39 +414,11 @@ const doc = new Document({
                 emptyLine(),
                 centeredBold("DAFTAR ISI", 26),
                 emptyLine(),
-                emptyLine(),
-                tocRow("HALAMAN PENGESAHAN", "ii", 0, true),
-                emptyLine(),
-                tocChapter("I", "PENDAHULUAN", "1"),
-                tocRow("1.1 Latar Belakang", "1", 1),
-                tocRow("1.2 Identifikasi Masalah", "1", 1),
-                tocRow("1.3 Tujuan Penelitian", "2", 1),
-                tocRow("1.4 Ruang Lingkup Penelitian", "2", 1),
-                tocRow("1.5 Sistematika Penulisan", "3", 1),
-                emptyLine(),
-                tocChapter("II", "LANDASAN/KERANGKA PEMIKIRAN", "4"),
-                tocRow("2.1 Kerangka Teori", "4", 1),
-                tocRow("2.1.1 Modern Portfolio Theory (Markowitz)", "4", 2),
-                tocRow("2.1.2 Random Matrix Theory dan Distribusi Marchenko-Pastur", "4", 2),
-                tocRow("2.1.3 Teori Risiko Koheren (Coherent Risk Measures)", "4", 2),
-                tocRow("2.1.4 Topologi Jaringan Keuangan dan Risiko Penularan", "5", 2),
-                tocRow("2.1.5 Network Markowitz", "5", 2),
-                tocRow("2.1.6 Teori Siklus dan Adaptive Market Hypothesis (AMH)", "6", 2),
-                tocRow("2.1.7 Analisis Kebaruan (Gap Analysis)", "6", 2),
-                tocRow("2.1.8 Penelitian Terdahulu", "7", 2),
-                emptyLine(),
-                tocChapter("III", "METODOLOGI PENELITIAN", "8"),
-                tocRow("3.1 Tahapan Penelitian", "8", 1),
-                tocRow("3.2 Alat dan Bahan Penelitian", "9", 1),
-                tocRow("3.2.1 Perangkat Lunak", "9", 2),
-                tocRow("3.3 Dataset", "9", 1),
-                tocRow("3.4 Metode/Algoritma yang Digunakan", "10", 1),
-                tocRow("3.4.1 Strategi Portofolio dan Benchmark", "10", 2),
-                tocRow("3.5 Matriks Evaluasi Performa", "11", 1),
-                tocRow("3.6 Rencana Jadwal Penelitian", "12", 1),
-                emptyLine(),
-                tocRow("DAFTAR REFERENSI", "13", 0, true),
-                emptyLine(),
+                new TableOfContents("Daftar Isi", {
+                    hyperlink: true,
+                    headingStyleRange: "1-3",
+                    caption: { text: "Daftar Isi" },
+                }),
                 emptyLine(),
             ]
         },
@@ -449,8 +444,7 @@ const doc = new Document({
                 })
             },
             children: [
-                centeredBold("BAB I", 26),
-                centeredBold("PENDAHULUAN", 26),
+                chapterHeading("BAB I", "PENDAHULUAN"),
                 emptyLine(),
                 heading2("1.1. Latar Belakang"),
                 new Paragraph({
@@ -598,8 +592,7 @@ const doc = new Document({
             },
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
-                centeredBold("BAB II", 26),
-                centeredBold("LANDASAN/KERANGKA PEMIKIRAN", 26),
+                chapterHeading("BAB II", "LANDASAN/KERANGKA PEMIKIRAN"),
                 emptyLine(),
                 heading2("2.1. Kerangka Teori"),
                 heading3("2.1.1. Modern Portfolio Theory (Markowitz)"),
@@ -877,8 +870,7 @@ const doc = new Document({
             },
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
-                centeredBold("BAB III", 26),
-                centeredBold("METODOLOGI PENELITIAN", 26),
+                chapterHeading("BAB III", "METODOLOGI PENELITIAN"),
                 emptyLine(),
                 heading2("3.1. Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
@@ -1366,7 +1358,7 @@ const doc = new Document({
             },
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
-                centeredBold("DAFTAR REFERENSI", 26),
+                sectionTitle("DAFTAR REFERENSI"),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
