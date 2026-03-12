@@ -1013,10 +1013,10 @@ const doc = new Document({
                         new TableRow({
                             tableHeader: true,
                             children: [
-                                new TableCell({ borders, width: { size: 800, type: WidthType.DXA }, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true })] })] }),
-                                new TableCell({ borders, width: { size: 2226, type: WidthType.DXA }, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true })] })] }),
-                                new TableCell({ borders, width: { size: 4000, type: WidthType.DXA }, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true })] })] }),
-                                new TableCell({ borders, width: { size: 2000, type: WidthType.DXA }, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, width: { size: 800, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, width: { size: 2226, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, width: { size: 4000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, width: { size: 2000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
                             ]
                         }),
                         ...[
@@ -1032,10 +1032,10 @@ const doc = new Document({
                             ["TRX", "Tron", "Layer 1 / Smart Contract", "Yahoo Finance"],
                         ].map(([t, n, k, s]) => new TableRow({
                             children: [
-                                new TableCell({ borders, width: { size: 800, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, width: { size: 800, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: t, font: "Times New Roman", size: 22 })] })] }),
                                 new TableCell({ borders, width: { size: 2226, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: n, font: "Times New Roman", size: 22 })] })] }),
                                 new TableCell({ borders, width: { size: 4000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: k, font: "Times New Roman", size: 22 })] })] }),
-                                new TableCell({ borders, width: { size: 2000, type: WidthType.DXA }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: s, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, width: { size: 2000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: s, font: "Times New Roman", size: 22 })] })] }),
                             ]
                         }))
                     ]
@@ -1220,50 +1220,99 @@ const doc = new Document({
                 
                 heading3("3.5.1. Risk-Adjusted Return (Sharpe Ratio)"),
                 mixedBody([
-                    {text: "Metrik ini mengukur imbal hasil berlebih per unit risiko (standar deviasi). Formula: SR = (R\u209A - R\u209B) / \u03C3\u209A. Nilai Sharpe Ratio yang lebih tinggi menunjukkan efisiensi portofolio yang lebih baik dalam mengonversi risiko menjadi keuntungan [4], [13]."}
+                    {text: "Sharpe Ratio", italic: true},
+                    {text: " merupakan metrik standar industri yang diperkenalkan oleh William F. Sharpe (1966) untuk mengukur imbal hasil berlebih ("},
+                    {text: "excess return", italic: true},
+                    {text: ") per unit risiko total. Formula yang digunakan adalah:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 120, after: 120, line: 360 },
+                    children: [new TextRun({ text: "SR = (R\u209A - R\u209B) / \u03C3\u209A", font: "Times New Roman", size: 24, italics: true })]
+                }),
+                mixedBody([
+                    {text: "di mana R\u209A adalah "},
+                    {text: "return", italic: true},
+                    {text: " portofolio, R\u209B adalah "},
+                    {text: "risk-free rate", italic: true},
+                    {text: " (dalam konteks kripto, diasumsikan mendekati nol), dan \u03C3\u209A adalah standar deviasi portofolio. Nilai SR > 1 dianggap baik, SR > 2 sangat baik, dan SR > 3 luar biasa. Metrik ini menjadi acuan utama dalam proses "},
+                    {text: "grid search", italic: true},
+                    {text: " untuk menentukan parameter \u03B3 optimal pada setiap "},
+                    {text: "rolling window", italic: true},
+                    {text: " [4], [13]."}
                 ]),
                 emptyLine(),
                 
                 heading3("3.5.2. Downside Risk (Value at Risk - VaR)"),
                 mixedBody([
-                    {text: "Value at Risk (VaR) pada tingkat kepercayaan 95% digunakan untuk mengestimasi potensi kerugian maksimal dalam satu periode perdagangan [16]. Ini sangat relevan untuk menguji ketahanan portofolio terhadap guncangan ("},
-                    {text: "black swan event", italic: true},
-                    {text: ") di pasar kripto [11]."}
+                    {text: "Value at Risk", italic: true},
+                    {text: " (VaR) mengkuantifikasi potensi kerugian maksimal yang mungkin dialami portofolio dalam satu periode perdagangan pada tingkat kepercayaan tertentu. Pada penelitian ini digunakan VaR "},
+                    {text: "historical simulation", italic: true},
+                    {text: " pada tingkat kepercayaan 95%, yang berarti terdapat probabilitas 5% bahwa kerugian aktual akan melebihi nilai VaR yang dihitung. Secara formal:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 120, after: 120, line: 360 },
+                    children: [new TextRun({ text: "VaR\u2090(\u03B1) = -inf{x \u2208 \u211D : P(L > x) \u2264 1 - \u03B1}", font: "Times New Roman", size: 24, italics: true })]
+                }),
+                mixedBody([
+                    {text: "VaR dipilih karena relevansinya yang tinggi terhadap pasar kripto yang memiliki volatilitas ekstrem. Metrik ini mampu memberikan estimasi "},
+                    {text: "worst-case scenario", italic: true},
+                    {text: " yang realistis bagi investor, khususnya saat menghadapi fenomena "},
+                    {text: "crypto winter", italic: true},
+                    {text: " atau "},
+                    {text: "flash crash", italic: true},
+                    {text: " [11], [16]."}
                 ]),
                 emptyLine(),
                 
                 heading3("3.5.3. Tail Risk & Reward (Rachev Ratio)"),
                 mixedBody([
-                    {text: "Rachev Ratio digunakan untuk mengukur asimetri antara potensi imbal hasil ekstrem ("},
-                    {text: "upper tail", italic: true},
-                    {text: ") dan potensi kerugian ekstrem ("},
-                    {text: "lower tail", italic: true},
-                    {text: "). Metrik ini jauh lebih sensitif terhadap karakteristik "},
-                    {text: "fat-tail", italic: true},
-                    {text: " pada distribusi aset kripto dibandingkan Sharpe Ratio konvensional [17]."}
+                    {text: "Rachev Ratio", italic: true},
+                    {text: " merupakan ukuran performa yang secara eksplisit memperhitungkan distribusi ekor ("},
+                    {text: "tail distribution", italic: true},
+                    {text: ") dari "},
+                    {text: "return", italic: true},
+                    {text: " portofolio. Berbeda dengan Sharpe Ratio yang mengasumsikan distribusi normal, Rachev Ratio didefinisikan sebagai rasio antara "},
+                    {text: "Expected Tail Return", italic: true},
+                    {text: " (ETR) pada kuantil atas terhadap "},
+                    {text: "Expected Shortfall", italic: true},
+                    {text: " (ES) pada kuantil bawah:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 120, after: 120, line: 360 },
+                    children: [new TextRun({ text: "RR = ETR\u2090(R) / ES\u03B2(R)", font: "Times New Roman", size: 24, italics: true })]
+                }),
+                mixedBody([
+                    {text: "Nilai Rachev Ratio > 1 mengindikasikan bahwa potensi keuntungan ekstrem melebihi potensi kerugian ekstrem, sehingga portofolio memiliki profil risiko-imbalan yang asimetris dan menguntungkan. Metrik ini sangat krusial untuk pasar kripto yang dikenal memiliki karakteristik "},
+                    {text: "leptokurtic", italic: true},
+                    {text: " (ekor tebal), di mana kejadian ekstrem terjadi jauh lebih sering dibandingkan asumsi distribusi normal [17], [19]."}
                 ]),
 
                 emptyLine(),
                 heading2("3.6. Rencana Jadwal Penelitian"),
+                body("Penelitian ini direncanakan akan dilaksanakan selama empat bulan. Rincian jadwal pelaksanaan setiap tahapan kegiatan disajikan pada Tabel III.2 berikut:"),
+                emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     children: [new TextRun({ text: "Tabel III.2. Rencana Jadwal Penelitian", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
                     width: { size: 9026, type: WidthType.DXA },
-                    columnWidths: [2900, 1021, 1021, 1021, 1021, 1021, 1021],
+                    columnWidths: [3500, 1381, 1382, 1381, 1382],
                     rows: [
                         new TableRow({
                             tableHeader: true,
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 2900, type: WidthType.DXA },
+                                    borders, width: { size: 3500, type: WidthType.DXA },
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Kegiatan", font: "Times New Roman", size: 22, bold: true })] })]
                                 }),
-                                ...["Bln 1", "Bln 2", "Bln 3", "Bln 4", "Bln 5", "Bln 6"].map(h => new TableCell({
-                                    borders, width: { size: 1021, type: WidthType.DXA },
+                                ...["Bln 1", "Bln 2", "Bln 3", "Bln 4"].map(h => new TableCell({
+                                    borders, width: { size: 1381, type: WidthType.DXA },
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: h, font: "Times New Roman", size: 22, bold: true })] })]
@@ -1271,22 +1320,22 @@ const doc = new Document({
                             ]
                         }),
                         ...[
-                            ["Studi Literatur", ["✓", "", "", "", "", ""]],
-                            ["Pengumpulan Data", ["✓", "✓", "", "", "", ""]],
-                            ["Pra-pemrosesan Data", ["", "✓", "✓", "", "", ""]],
-                            ["Perancangan Model/Sistem", ["", "", "✓", "✓", "", ""]],
-                            ["Implementasi", ["", "", "", "✓", "✓", ""]],
-                            ["Pengujian dan Evaluasi", ["", "", "", "", "✓", "✓"]],
-                            ["Penulisan Laporan", ["✓", "✓", "✓", "✓", "", ""]],
+                            ["Studi Literatur", ["✓", "✓", "", ""]],
+                            ["Pengumpulan Data", ["✓", "", "", ""]],
+                            ["Pra-pemrosesan Data", ["✓", "✓", "", ""]],
+                            ["Perancangan Model/Sistem", ["", "✓", "✓", ""]],
+                            ["Implementasi", ["", "", "✓", "✓"]],
+                            ["Pengujian dan Evaluasi", ["", "", "✓", "✓"]],
+                            ["Penulisan Laporan", ["✓", "✓", "✓", "✓"]],
                         ].map(([activity, marks]) => new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 2900, type: WidthType.DXA },
+                                    borders, width: { size: 3500, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: activity, font: "Times New Roman", size: 22 })] })]
                                 }),
                                 ...marks.map(m => new TableCell({
-                                    borders, width: { size: 1021, type: WidthType.DXA },
+                                    borders, width: { size: 1381, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: m, font: "Times New Roman", size: 22 })] })]
                                 }))
