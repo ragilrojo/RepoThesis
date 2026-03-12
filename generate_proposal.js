@@ -879,6 +879,21 @@ const doc = new Document({
                     children: [new TextRun({ text: "Gambar III.1. Kerangka Kerja Penelitian Network Markowitz dengan Grid Search", font: "Times New Roman", size: 22, bold: true })]
                 }),
                 emptyLine(),
+                mixedBody([
+                    {text: "Secara visual, alur penelitian pada Gambar III.1 dibagi menjadi lima tahapan utama: (1) "},
+                    {text: "Data Acquisition", italic: true},
+                    {text: " yaitu pengumpulan data historis kripto; (2) "},
+                    {text: "RMT Filtering", italic: true},
+                    {text: " untuk pembersihan sinyal korelasi; (3) "},
+                    {text: "MST & Eigenvector Centrality Calculation", italic: true},
+                    {text: " untuk ekstraksi struktur jaringan; (4) "},
+                    {text: "Dynamic Grid Search", italic: true},
+                    {text: " (\u03b3-tuning) untuk optimasi parameter adaptif; dan (5) "},
+                    {text: "Portfolio Output & Evaluation", italic: true},
+                    {text: " untuk pengujian performa akhir."}
+                ]),
+                emptyLine(),
+                emptyLine(),
                 numItem("Studi Literatur"),
                 mixedBody([
                     {text: "Melakukan kajian komprehensif terhadap jurnal yang membahas "},
@@ -889,63 +904,59 @@ const doc = new Document({
                     {text: "Network Markowitz", italic: true},
                     {text: "."}
                 ]),
-                numItem("Pengumpulan Data & Pengkondisian"),
+                numItem("Data Acquisition"),
                 mixedBody([
                     {text: "Mengumpulkan seri harga "},
                     {text: "close", italic: true},
                     {text: " "},
                     {text: "cryptocurrency", italic: true},
-                    {text: ". Harga lalu diubah menjadi format "},
+                    {text: " dari Yahoo Finance. Harga lalu diubah menjadi format "},
                     {text: "log returns", italic: true},
-                    {text: "."}
+                    {text: " harian untuk menormalisasi distribusi imbal hasil."}
                 ]),
-                numItem("Pra-pemrosesan Data (RMT Filtering)"),
+                numItem("RMT Filtering"),
                 mixedBody([
-                    {text: "Data "},
+                    {text: "Mentransformasi "},
                     {text: "returns", italic: true},
-                    {text: " akan diubah menjadi Matriks Korelasi (Pearson). Selanjutnya struktur "},
+                    {text: " menjadi Matriks Korelasi Pearson, kemudian menerapkan filtrasi "},
+                    {text: "Random Matrix Theory (RMT)", italic: true},
+                    {text: " melalui mekanisme "},
+                    {text: "eigenvalue clipping", italic: true},
+                    {text: " untuk memisahkan sinyal korelasi pasar dari "},
                     {text: "noise", italic: true},
-                    {text: " historis dipotong menggunakan mekanisme filtrasi nilai eigen ("},
-                    {text: "eigenvalue clipping boundary", italic: true},
-                    {text: " batas Marchenko-Pastur)."}
+                    {text: " statistik."}
                 ]),
-                numItem("Kuantifikasi Jaringan Aset (MST & Centrality)"),
+                numItem("MST & Eigenvector Centrality Calculation"),
                 mixedBody([
-                    {text: "Pembangunan jarak konektivitas ("},
+                    {text: "Membangun "},
                     {text: "distance matrix", italic: true},
-                    {text: ") dari hasil korelasi terfilter untuk diekstraksi ke bentuk graf pohon "},
+                    {text: " dari korelasi terfilter untuk mengekstraksi struktur pohon "},
                     {text: "Minimum Spanning Tree (MST)", italic: true},
-                    {text: ". "},
-                    {text: "Node importance", italic: true},
-                    {text: " kemudian diukur melalui "},
+                    {text: ". Selanjutnya, dilakukan kuantifikasi "},
+                    {text: "node importance", italic: true},
+                    {text: " menggunakan "},
                     {text: "Eigenvector Centrality", italic: true},
-                    {text: "."}
+                    {text: " sebagai ukuran risiko sistemik tiap aset."}
                 ]),
-                numItem("Optimasi Jaringan Adaptif (Dynamic Grid-Search)"),
+                numItem("Dynamic Grid Search (\u03b3-tuning)"),
                 mixedBody([
-                    {text: "Merancang algoritma komputasi untuk menyesuaikan parameter "},
-                    {text: "impact", italic: true},
-                    {text: " korelasi (\u03b3) yang secara otomatis mengekang instrumen-instrumen bervolatilitas sistemik pada jendela uji terkalibrasi ke belakang ("},
-                    {text: "backtrack validity", italic: true},
-                    {text: ")."}
+                    {text: "Melakukan proses kalibrasi parameter penalti jaringan (\u03b3) secara dinamis menggunakan algoritma "},
+                    {text: "Grid Search", italic: true},
+                    {text: ". Parameter ini dioptimalkan pada setiap jendela waktu bergulir ("},
+                    {text: "rolling window", italic: true},
+                    {text: ") untuk memastikan model tetap adaptif terhadap perubahan rezim pasar."}
                 ]),
-                numItem("Eksekusi Backtesting Portofolio"),
+                numItem("Portfolio Output & Evaluation"),
                 mixedBody([
-                    {text: "Mensimulasikan pembelian pada titik waktu (t) dan meninjau portofolio secara periodik menggunakan sistem "},
-                    {text: "Rolling Window", italic: true},
-                    {text: ". Terdapat perlakuan pengenaan "},
-                    {text: "slippage/transaction cost", italic: true},
-                    {text: " pada "},
-                    {text: "rebalancing", italic: true},
-                    {text: " harian."}
-                ]),
-                numItem("Pengukuran Evaluasi Resiko (Performance Metrics)"),
-                mixedBody([
-                    {text: "Mengukur nilai profit kumulatif, asimetri VaR 95%, hingga penyesuaian "},
+                    {text: "Eksekusi alokasi bobot portofolio pada periode "},
+                    {text: "out-of-sample", italic: true},
+                    {text: " dan melakukan evaluasi performa menggunakan metrik "},
                     {text: "Sharpe Ratio", italic: true},
-                    {text: " dan "},
+                    {text: ", "},
+                    {text: "Value at Risk (VaR)", italic: true},
+                    {text: ", dan "},
                     {text: "Rachev Ratio", italic: true},
-                    {text: " di sepanjang berbagai transisi fasa pasar ekstrem."}
+                    {text: " [18]."}
                 ]),
                 emptyLine(),
                 heading2("3.2. Alat dan Bahan Penelitian"),
@@ -962,7 +973,49 @@ const doc = new Document({
                     {text: "library yfinance", italic: true},
                     {text: " pada Python. Data mencakup 10 aset "},
                     {text: "cryptocurrency", italic: true},
-                    {text: " berkapitalisasi pasar tinggi, yaitu: Bitcoin (BTC), Ethereum (ETH), Ripple (XRP), Tether (USDT), Bitcoin Cash (BCH), Litecoin (LTC), Binance Coin (BNB), EOS (EOS), Stellar (XLM), dan Tron (TRX). Pemilihan aset ini selaras dengan referensi Giudici et al. (2020) yang menjadi landasan penelitian ini."}
+                    {text: " berkapitalisasi pasar tinggi yang dirinci pada tabel berikut:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [new TextRun({ text: "Tabel III.1. Deskripsi Dataset Cryptocurrency", font: "Times New Roman", size: 24, bold: true })]
+                }),
+                new Table({
+                    width: { size: 9026, type: WidthType.DXA },
+                    columnWidths: [1000, 2500, 3500, 2026],
+                    rows: [
+                        new TableRow({
+                            tableHeader: true,
+                            children: [
+                                new TableCell({ borders, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, shading: { fill: "D5E8F0" }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true })] })] }),
+                            ]
+                        }),
+                        ...[
+                            ["BTC", "Bitcoin", "Layer 1 / Story of Value", "Yahoo Finance"],
+                            ["ETH", "Ethereum", "Layer 1 / Smart Contract", "Yahoo Finance"],
+                            ["XRP", "Ripple", "Payment / Bridge Currency", "Yahoo Finance"],
+                            ["USDT", "Tether", "Stablecoin / USD Pegged", "Yahoo Finance"],
+                            ["BCH", "Bitcoin Cash", "Payment / Peer-to-Peer Cash", "Yahoo Finance"],
+                            ["LTC", "Litecoin", "Payment / Digital Silver", "Yahoo Finance"],
+                            ["BNB", "Binance Coin", "Exchange Token / Layer 1", "Yahoo Finance"],
+                            ["EOS", "EOS", "Layer 1 / Smart Contract", "Yahoo Finance"],
+                            ["XLM", "Stellar", "Payment / Bridge Currency", "Yahoo Finance"],
+                            ["TRX", "Tron", "Layer 1 / Smart Contract", "Yahoo Finance"],
+                        ].map(([t, n, k, s]) => new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: t, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: n, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: k, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: s, font: "Times New Roman", size: 22 })] })] }),
+                            ]
+                        }))
+                    ]
+                }),
+                emptyLine(),
+                mixedBody([
+                    {text: "Pemilihan aset ini selaras dengan referensi Giudici et al. (2020) yang menjadi landasan penelitian ini."}
                 ]),
                 mixedBody([
                     {text: "Periode pengambilan data adalah 14 September 2017 hingga 17 Oktober 2019, yang secara sengaja dipilih untuk mencakup tiga rezim pasar berbeda: era "},
@@ -1111,6 +1164,18 @@ const doc = new Document({
                     ],
                 }),
                 emptyLine(),
+                heading3("3.4.1. Strategi Portofolio dan Benchmark"),
+                body("Penelitian ini membandingkan empat strategi utama untuk mengevaluasi performa model yang diusulkan terhadap standar industri dan metodologi mutakhir:"),
+                
+                bulletItem("Equally Weighted (EW): Strategi alokasi 1/N yang memberikan bobot yang sama ke setiap aset tanpa mempertimbangkan parameter risiko atau imbal hasil. EW berfungsi sebagai 'benchmark naif' yang sangat tangguh karena tidak memiliki risiko estimasi (estimation risk)."),
+                
+                bulletItem("Classical Markowitz (CM): Model optimasi Mean-Variance standar yang berupaya meminimalkan variansi portofolio untuk tingkat imbal hasil tertentu. CM bertindak sebagai representasi teori portofolio tradisional yang sering kali menderita masalah ketidakstabilan numerik pada data historis yang berisik."),
+                
+                bulletItem("Graphical Lasso Markowitz (GM): Model yang menggunakan algoritma Lasso pada matriks presisi (invers kovarians) untuk memaksa elemen-elemen korelasi yang tidak signifikan menjadi nol (sparsity). GM dipilih sebagai benchmark karena kemampuannya menangani masalah sparsitas pada data berdimensi tinggi, yang merupakan tantangan utama dalam data kripto yang sangat terkorelasi secara palsu."),
+                
+                bulletItem("Network Markowitz (NW): Model jaringan original (Giudici et al., 2020) yang menggunakan parameter penalti sentralitas (\u03b3) statis. NW digunakan sebagai pembanding langsung untuk menunjukkan sejauh mana penambahan fitur 'Dynamic Grid Search' pada model yang diusulkan dapat meningkatkan performa portofolio dibandingkan model jaringan dasar."),
+                emptyLine(),
+
                 mixedBody([
                     {text: "Pada penelitian ini, bobot \u03b3 tidak akan dilakukan "},
                     {text: "hard-coded", italic: true},
@@ -1155,7 +1220,7 @@ const doc = new Document({
                 heading2("3.6. Rencana Jadwal Penelitian"),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "Tabel III.1. Rencana Jadwal Penelitian", font: "Times New Roman", size: 24, bold: true })]
+                    children: [new TextRun({ text: "Tabel III.2. Rencana Jadwal Penelitian", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
                     width: { size: 9026, type: WidthType.DXA },
@@ -1328,6 +1393,12 @@ const doc = new Document({
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
                     children: [new TextRun({ text: "[17] A. Biglova, S. Ortobelli, S. T. Rachev, and S. V. Stoyanov, \"Different Approaches to Risk Estimation in Portfolio Theory,\" The Journal of Portfolio Management, vol. 31, no. 1, pp. 103-112, 2004.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[18] A. Arratia, \"Computational Finance: An Introductory Course with R,\" Atlantis Press, 2014.", font: "Times New Roman", size: 24 })]
                 }),
             ],
             footers: {
