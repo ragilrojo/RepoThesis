@@ -3,7 +3,7 @@ const {
     Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
     AlignmentType, HeadingLevel, BorderStyle, WidthType, ShadingType,
     LevelFormat, PageNumber, PageBreak, TabStopType, TabStopPosition,
-    VerticalAlign, ImageRun, Footer, NumberFormat
+    VerticalAlign, ImageRun, Footer, NumberFormat, SectionType
 } = docx;
 
 // Fallback for TabLeader which might be named differently or missing in some versions
@@ -222,7 +222,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
                 }
             },
             children: [
@@ -231,8 +231,18 @@ const doc = new Document({
                 centeredBold("UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO", 28),
                 emptyLine(),
                 emptyLine(),
-                emptyLine(),
-                centered("[Logo Universitas Nusa Mandiri]", 20),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new ImageRun({
+                            data: fs.readFileSync("e:\\ProjectNodeJs\\temp_doc_build\\logo_unm.png"),
+                            transformation: {
+                                width: 200, // Reduced slightly to save space
+                                height: 200,
+                            },
+                        }),
+                    ],
+                }),
                 emptyLine(),
                 emptyLine(),
                 centeredBold("PROPOSAL TESIS", 26),
@@ -243,6 +253,9 @@ const doc = new Document({
                 emptyLine(),
                 centeredBold("Ragil Yulianto", 24),
                 centered("14240007"),
+                emptyLine(),
+                emptyLine(),
+                emptyLine(),
                 emptyLine(),
                 emptyLine(),
                 centered("Program Studi Ilmu Komputer (S2)"),
@@ -257,9 +270,11 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
+                    pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
                 },
-                pageNumber: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
+                type: SectionType.NEXT_PAGE,
+                pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
                 default: new Footer({
@@ -312,8 +327,9 @@ const doc = new Document({
                 })(),
                 emptyLine(),
                 emptyLine(),
-                bodyNoIndent("Jakarta, 11 Maret 2026"),
-                emptyLine(),
+                new Paragraph({
+                    children: [new TextRun({ text: "Jakarta, 12 Maret 2026", font: "Times New Roman", size: 24 })]
+                }),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -350,9 +366,11 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
+                    pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
                 },
-                pageNumber: { formatType: NumberFormat.LOWER_ROMAN }
+                type: SectionType.NEXT_PAGE,
+                pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
                 default: new Footer({
@@ -403,9 +421,11 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
+                    pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
                 },
-                pageNumber: { start: 1, formatType: NumberFormat.DECIMAL }
+                type: SectionType.NEXT_PAGE,
+                pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
             },
             footers: {
                 default: new Footer({
@@ -435,7 +455,7 @@ const doc = new Document({
                         new TextRun({ text: "market crash", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: ") seperti fenomena ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "crypto winter", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " [1].", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: " [1], [10], [11].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -447,13 +467,13 @@ const doc = new Document({
                         new TextRun({ text: "drawdown", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " yang dalam). Untuk mengatasi tantangan tersebut, penelitian terkini mulai menggabungkan Teori Jaringan Kompleks (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Complex Network Theory", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") ke dalam optimasi portofolio [2]. Penggunaan instrumen seperti ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") ke dalam optimasi portofolio [1], [2]. Penggunaan instrumen seperti ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Minimum Spanning Tree (MST)", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " dan ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Eigenvector Centrality", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " terbukti efisien dalam memetakan interaksi antar aset dan menghukum (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "penalize", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") aset-aset yang menjadi titik pusat kegagalan sistemik.", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") aset-aset yang menjadi titik pusat kegagalan sistemik [5], [6], [12].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -561,10 +581,11 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
-                }
-                // Lanjutkan penomoran decimal dari section sebelumnya
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
+                },
+                type: SectionType.NEXT_PAGE
             },
+            // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
                 centeredBold("BAB II", 26),
                 centeredBold("LANDASAN/KERANGKA PEMIKIRAN", 26),
@@ -670,7 +691,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders, width: { size: 2826, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Mengusulkan Network Markowitz dan sukses mendemonstrasikan perbaikan struktur dibandingkan Markowitz biasa di era crypto winter.", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Mengusulkan Network Markowitz dan sukses mendemonstrasikan perbaikan struktur dibandingkan Markowitz biasa di era crypto winter.", font: "Times New Roman", size: 22 })] })]
                                 }),
                             ]
                         }),
@@ -684,17 +705,17 @@ const doc = new Document({
                                 new TableCell({
                                     borders, width: { size: 2500, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Papenbrock (2011)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha (2023)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders, width: { size: 3000, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Financial networks and risk management", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "A network-based strategy of price correlations for optimal cryptocurrency portfolios", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders, width: { size: 2826, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Bukti bahwa penggunaan analisis jaringan meningkatkan akurasi risk metrics.", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menggabungkan MST dan MPT untuk memilih 46 dari 157 kripto berdasarkan dekorelasi jaringan; portofolio MST mengungguli seluruh benchmark (BTC, TOP5, RAND); koin populer berkapitalisasi besar terbukti jarang optimal.", font: "Times New Roman", size: 22 })] })]
                                 }),
                             ]
                         }),
@@ -708,17 +729,65 @@ const doc = new Document({
                                 new TableCell({
                                     borders, width: { size: 2500, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Mantegna (1999)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2024)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders, width: { size: 3000, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Hierarchical structure in financial markets", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Network-based diversification of stock and cryptocurrency portfolios", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders, width: { size: 2826, type: WidthType.DXA },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "MST sukses memotret topologi kedekatan dan konektivitas sektor finansial dari pergerakan deret waktu pasar saham.", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menggunakan algoritma komunitas (Louvain & Affinity Propagation) untuk diversifikasi; strategi jaringan secara konsisten mengungguli portofolio acak dan indeks pasar; menunjukkan keunikan kripto di mana aset perifer (sentralitas rendah) menghasilkan return lebih tinggi.", font: "Times New Roman", size: 22 })] })]
+                                }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    borders, width: { size: 700, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "4", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2022)", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders, width: { size: 3000, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Cryptocurrency Portfolio Diversification Using Network Community Detection", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders, width: { size: 2826, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Memanfaatkan deteksi komunitas (Louvain & Affinity Propagation) pada jaringan korelasi kripto untuk diversifikasi; membantu mengurangi volatilitas dan mengoptimalkan return bagi investor.", font: "Times New Roman", size: 22 })] })]
+                                }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    borders, width: { size: 700, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "5", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. (2021)", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders, width: { size: 3000, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Network models to improve robot advisory portfolios", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders, width: { size: 2826, type: WidthType.DXA },
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menunjukkan bahwa model jaringan dapat meningkatkan performa portofolio robotik dengan memitigasi risiko sistemik melalui struktur keterhubungan pasar yang lebih akurat.", font: "Times New Roman", size: 22 })] })]
                                 }),
                             ]
                         }),
@@ -741,16 +810,35 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
-                }
-                // Lanjutkan penomoran decimal dari section sebelumnya
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
+                },
+                type: SectionType.NEXT_PAGE
             },
+            // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
                 centeredBold("BAB III", 26),
                 centeredBold("METODOLOGI PENELITIAN", 26),
                 emptyLine(),
                 heading2("3.1. Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new ImageRun({
+                            data: fs.readFileSync("e:\\ProjectNodeJs\\temp_doc_build\\framwrok.jpg"),
+                            transformation: {
+                                width: 550,
+                                height: 350,
+                            },
+                        }),
+                    ],
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [new TextRun({ text: "Gambar III.1. Kerangka Kerja Penelitian Network Markowitz dengan Grid Search", font: "Times New Roman", size: 22, bold: true })]
+                }),
+                emptyLine(),
                 numItem("Studi Literatur"),
                 mixedBody([
                     {text: "Melakukan kajian komprehensif terhadap jurnal yang membahas "},
@@ -1062,10 +1150,11 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1440, right: 1440, bottom: 1440, left: 1800 }
-                }
-                // Lanjutkan penomoran decimal dari section sebelumnya
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
+                },
+                type: SectionType.NEXT_PAGE
             },
+            // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
                 centeredBold("DAFTAR REFERENSI", 26),
                 emptyLine(),
@@ -1098,6 +1187,48 @@ const doc = new Document({
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
                     children: [new TextRun({ text: "[5] R. N. Mantegna, \"Hierarchical structure in financial markets,\" The European Physical Journal B, vol. 11, no. 1, pp. 193–197, 1999.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[6] Z. Jing and J. G. Rocha, \"A network-based strategy of price correlations for optimal cryptocurrency portfolios,\" Financial Innovation, vol. 9, no. 1, pp. 1–28, 2023.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[7] I. Kitanovski et al., \"Network-based diversification of stock and cryptocurrency portfolios,\" Expert Systems with Applications, 2024.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[8] I. Kitanovski et al., \"Cryptocurrency Portfolio Diversification Using Network Community Detection,\" Algorithms, 2022.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[9] P. Giudici and G. Policardo, \"Network models to improve robot advisory portfolios,\" Statistica Applicata - Italian Journal of Applied Statistics, 2021.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[10] L. Laloux, P. Cizeau, J. P. Bouchaud, and M. Potters, \"Noise dressing of financial correlation matrices,\" Physical Review Letters, vol. 83, no. 7, pp. 1467, 1999.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[11] S. Corbet, B. Lucey, A. Urquhart, and L. Yarovaya, \"Cryptocurrencies as a financial asset: A systematic analysis,\" International Review of Financial Analysis, vol. 62, pp. 182-199, 2019.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[12] G. Peralta and A. Zaresei, \"A network approach to portfolio selection,\" Journal of Network Theory in Finance, vol. 2, no. 4, pp. 1-20, 2016.", font: "Times New Roman", size: 24 })]
                 }),
             ],
             footers: {
