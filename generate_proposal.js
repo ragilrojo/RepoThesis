@@ -326,6 +326,10 @@ const doc = new Document({
                     });
                 })(),
                 emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [new TextRun({ text: "telah diperiksa dan disetujui untuk diajukan sebagai rencana pelaksanaan penelitian", font: "Times New Roman", size: 24 })]
+                }),
                 emptyLine(),
                 new Paragraph({
                     children: [new TextRun({ text: "Jakarta, 12 Maret 2026", font: "Times New Roman", size: 24 })]
@@ -401,17 +405,21 @@ const doc = new Document({
                 tocRow("2.1.1 Modern Portfolio Theory (Markowitz)", "4", 2),
                 tocRow("2.1.2 Random Matrix Theory (RMT) dan Kompleksitas Jaringan", "4", 2),
                 tocRow("2.1.3 Network Markowitz", "4", 2),
-                tocRow("2.1.4 Penelitian Terdahulu", "4", 2),
+                tocRow("2.1.4 Teori Siklus dan Rezim Pasar Kripto", "5", 2),
+                tocRow("2.1.5 Analisis Kebaruan (Gap Analysis)", "5", 2),
+                tocRow("2.1.6 Penelitian Terdahulu", "5", 2),
                 emptyLine(),
                 tocChapter("III", "METODOLOGI PENELITIAN", "6"),
                 tocRow("3.1 Tahapan Penelitian", "6", 1),
                 tocRow("3.2 Alat dan Bahan Penelitian", "7", 1),
                 tocRow("3.2.1 Perangkat Lunak", "7", 2),
                 tocRow("3.3 Dataset", "7", 1),
-                tocRow("3.4 Metode/Algoritma yang Digunakan", "7", 1),
-                tocRow("3.5 Rencana Jadwal Penelitian", "8", 1),
+                tocRow("3.4 Metode/Algoritma yang Digunakan", "8", 1),
+                tocRow("3.4.1 Strategi Portofolio dan Benchmark", "8", 2),
+                tocRow("3.5 Matriks Evaluasi Performa", "9", 1),
+                tocRow("3.6 Rencana Jadwal Penelitian", "10", 1),
                 emptyLine(),
-                tocRow("DAFTAR REFERENSI", "9", 0, true),
+                tocRow("DAFTAR REFERENSI", "11", 0, true),
                 emptyLine(),
                 emptyLine(),
             ]
