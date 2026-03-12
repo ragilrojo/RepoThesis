@@ -487,7 +487,7 @@ const doc = new Document({
                         new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: "). Oleh karena itu, diperlukan pendekatan adaptif yang mengintegrasikan teknik pembersihan sinyal berbasis ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Random Matrix Theory (RMT)", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " disandingkan dengan optimalisasi ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: " [3], [10] disandingkan dengan optimalisasi ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Grid Search", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " dinamis (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "rolling window", font: "Times New Roman", size: 24, italics: true }),
@@ -497,7 +497,7 @@ const doc = new Document({
                         new TextRun({ text: "upside gain", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " di saat pembalikan arah (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ").", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") [1], [13].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
@@ -593,13 +593,17 @@ const doc = new Document({
                 heading2("2.1. Kerangka Teori"),
                 heading3("2.1.1. Modern Portfolio Theory (Markowitz)"),
                 mixedBody([
-                    {text: "Teori Portofolio Modern, yang dipelopori oleh Harry Markowitz, berupaya memaksimalkan imbal hasil yang diharapkan ("},
+                    {text: "Teori Portofolio Modern (MPT), yang dipelopori oleh Harry Markowitz, berupaya memaksimalkan imbal hasil yang diharapkan ("},
                     {text: "expected return", italic: true},
                     {text: ") pada tingkat risiko ("},
                     {text: "variance", italic: true},
-                    {text: ") tertentu, atau sebaliknya. Masalah mendasarnya adalah bahwa kovarians dari kumpulan aset finansial sangat sensitif terhadap nilai-nilai ekstrem historis, yang dikenal sebagai "},
+                    {text: ") tertentu melalui pemilihan aset yang terdiversifikasi dalam sebuah "},
+                    {text: "Efficient Frontier", italic: true},
+                    {text: " [4]. Namun, dalam praktiknya, MPT memiliki keterbatasan signifikan terkait stabilitas estimasi. Masalah mendasarnya adalah bahwa kovarians dari kumpulan aset finansial sangat sensitif terhadap nilai-nilai ekstrem historis, yang dikenal sebagai "},
                     {text: "Markowitz Curse", italic: true},
-                    {text: " [4]."}
+                    {text: " atau enigma optimasi Markowitz [14]. Fenomena ini terjadi karena algoritma optimasi cenderung memperkuat kesalahan estimasi ("},
+                    {text: "error maximization", italic: true},
+                    {text: "), sehingga perubahan kecil pada input data dapat menghasilkan perubahan drastis pada alokasi bobot portofolio."}
                 ]),
                 emptyLine(),
                 heading3("2.1.2. Random Matrix Theory (RMT) dan Kompleksitas Jaringan"),
@@ -608,29 +612,65 @@ const doc = new Document({
                     {text: "Random Matrix", italic: true},
                     {text: " memungkinkan disaringnya "},
                     {text: "noise", italic: true},
-                    {text: " dari struktur korelasi dengan membandingkan nilai eigen ("},
+                    {text: " dari struktur korelasi dengan memisahkan nilai eigen ("},
                     {text: "eigenvalues", italic: true},
-                    {text: ") struktur empiris terhadap nilai batas distribusi teoritis Marchenko-Pastur [3]. Ini merupakan "},
+                    {text: ") yang membawa informasi sinyal pasar dari nilai eigen yang bersifat acak. Berdasarkan distribusi Marchenko-Pastur, nilai eigen yang jatuh dalam rentang "},
+                    {text: "noise bulk", italic: true},
+                    {text: " dianggap sebagai residu statistik, sementara nilai eigen yang berada di luar batas tersebut merepresentasikan korelasi ekonomi yang nyata [3], [10]. Filtrasi ini merupakan "},
                     {text: "vital element", italic: true},
-                    {text: " sebelum dilakukan visualisasi graf berupa "},
+                    {text: " untuk memastikan stabilitas topologi jaringan sebelum dilakukan visualisasi graf berupa "},
                     {text: "Minimum Spanning Tree (MST)", italic: true},
-                    {text: "."}
+                    {text: " [15]. Tanpa pembersihan RMT, struktur pohon yang dihasilkan cenderung tidak stabil dan sensitif terhadap fluktuasi data jangka pendek."}
                 ]),
                 emptyLine(),
                 heading3("2.1.3. Network Markowitz"),
                 mixedBody([
-                    {text: "Diperkenalkan baru-baru ini untuk penanganan "},
+                    {text: "Diferensiasi utama "},
+                    {text: "Network Markowitz", italic: true},
+                    {text: " dibanding model klasik terletak pada integrasi risiko sistemik ke dalam fungsi optimasi. Diperkenalkan baru-baru ini untuk penanganan "},
                     {text: "robo-advisory", italic: true},
                     {text: " pada kripto, komponen sentralitas "},
                     {text: "eigenvector", italic: true},
                     {text: " ditambahkan sebagai instrumen penalti di dalam penyelesaian optimasi "},
                     {text: "Mean-Variance", italic: true},
-                    {text: " [1]. Sentralitas mewakili kerentanan sebuah aset mentransmisikan "},
+                    {text: " [1], [9]. Sentralitas mewakili kerentanan sebuah aset mentransmisikan "},
                     {text: "shock", italic: true},
-                    {text: " pada seluruh jaringan koin di pasar."}
+                    {text: " pada seluruh jaringan koin di pasar. Dengan memberikan penalti pada aset yang memiliki sentralitas tinggi, model ini secara proaktif mengurangi paparan terhadap 'titik pusat kegagalan' sistemik ("},
+                    {text: "systemic points of failure", italic: true},
+                    {text: "), yang terbukti sangat efektif dalam menjaga stabilitas portofolio saat fenomena penularan pasar ("},
+                    {text: "market contagion", italic: true},
+                    {text: ") terjadi."}
                 ]),
                 emptyLine(),
-                heading3("2.1.4. Penelitian Terdahulu"),
+                heading3("2.1.4. Teori Siklus dan Rezim Pasar Kripto"),
+                mixedBody([
+                    {text: "Pasar kripto dicirikan oleh volatilitas yang jauh lebih tinggi dibandingkan pasar aset tradisional, dengan siklus yang terbagi dalam rezim pasar yang kontras. Secara teoritis, siklus ini terdiri dari fase "},
+                    {text: "Bullish", italic: true},
+                    {text: " (pertumbuhan eksponensial), "},
+                    {text: "Bearish/Crypto Winter", italic: true},
+                    {text: " (penyusutan nilai secara sistemik), dan "},
+                    {text: "Recovery", italic: true},
+                    {text: " (stabilisasi ulang). Dinamika korelasi antar aset cenderung meningkat drastis (korelasi positif kuat) saat pasar mengalami gejolak ("},
+                    {text: "market crash", italic: true},
+                    {text: "), yang secara drastis mengurangi manfaat diversifikasi model statis [11]. Oleh karena itu, pengenalan rezim pasar melalui pendekatan adaptif menjadi krusial untuk menjaga performa portofolio."}
+                ]),
+                emptyLine(),
+                heading3("2.1.5. Analisis Kebaruan (Gap Analysis)"),
+                mixedBody([
+                    {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. (2020). Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
+                    {text: "Optimized Dynamic Network Markowitz", italic: true},
+                    {text: ". Kebaruan utama terletak pada penggunaan algoritma "},
+                    {text: "Grid Search", italic: true},
+                    {text: " yang dikombinasikan dengan jendela uji bergulir ("},
+                    {text: "rolling window", italic: true},
+                    {text: ") untuk menentukan nilai \u03b3 yang termutakhir berdasarkan kondisi pasar terkini. Dengan demikian, model tidak hanya menyaring "},
+                    {text: "noise", italic: true},
+                    {text: " melalui RMT, tetapi juga secara aktif menyesuaikan intensitas kontrol sentralitas terhadap perubahan struktur jaringan aset secara "},
+                    {text: "real-time", italic: true},
+                    {text: "."}
+                ]),
+                emptyLine(),
+                heading3("2.1.6. Penelitian Terdahulu"),
                 body("Beberapa penelitian terdahulu yang relevan dengan penelitian ini antara lain:"),
                 emptyLine(),
                 new Paragraph({
@@ -1083,7 +1123,36 @@ const doc = new Document({
                     {text: " periode belakang."}
                 ]),
                 emptyLine(),
-                heading2("3.5. Rencana Jadwal Penelitian"),
+                heading2("3.5. Matriks Evaluasi Performa"),
+                body("Untuk mengukur efektivitas model portofolio yang dikembangkan, digunakan beberapa metrik evaluasi sebagai berikut:"),
+                
+                heading3("3.5.1. Risk-Adjusted Return (Sharpe Ratio)"),
+                mixedBody([
+                    {text: "Metrik ini mengukur imbal hasil berlebih per unit risiko (standar deviasi). Formula: SR = (R\u209A - R\u209B) / \u03C3\u209A. Nilai Sharpe Ratio yang lebih tinggi menunjukkan efisiensi portofolio yang lebih baik dalam mengonversi risiko menjadi keuntungan [4], [13]."}
+                ]),
+                emptyLine(),
+                
+                heading3("3.5.2. Downside Risk (Value at Risk - VaR)"),
+                mixedBody([
+                    {text: "Value at Risk (VaR) pada tingkat kepercayaan 95% digunakan untuk mengestimasi potensi kerugian maksimal dalam satu periode perdagangan [16]. Ini sangat relevan untuk menguji ketahanan portofolio terhadap guncangan ("},
+                    {text: "black swan event", italic: true},
+                    {text: ") di pasar kripto [11]."}
+                ]),
+                emptyLine(),
+                
+                heading3("3.5.3. Tail Risk & Reward (Rachev Ratio)"),
+                mixedBody([
+                    {text: "Rachev Ratio digunakan untuk mengukur asimetri antara potensi imbal hasil ekstrem ("},
+                    {text: "upper tail", italic: true},
+                    {text: ") dan potensi kerugian ekstrem ("},
+                    {text: "lower tail", italic: true},
+                    {text: "). Metrik ini jauh lebih sensitif terhadap karakteristik "},
+                    {text: "fat-tail", italic: true},
+                    {text: " pada distribusi aset kripto dibandingkan Sharpe Ratio konvensional [17]."}
+                ]),
+
+                emptyLine(),
+                heading2("3.6. Rencana Jadwal Penelitian"),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     children: [new TextRun({ text: "Tabel III.1. Rencana Jadwal Penelitian", font: "Times New Roman", size: 24, bold: true })]
@@ -1229,6 +1298,36 @@ const doc = new Document({
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
                     children: [new TextRun({ text: "[12] G. Peralta and A. Zaresei, \"A network approach to portfolio selection,\" Journal of Network Theory in Finance, vol. 2, no. 4, pp. 1-20, 2016.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[13] M. Lopez de Prado, \"Advances in Financial Machine Learning,\" John Wiley & Sons, 2018.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[14] R. O. Michaud, \"The Markowitz Optimization Enigma: Is 'Optimized' Optimal?\" Financial Analysts Journal, vol. 45, no. 1, pp. 31-42, 1989.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[15] C. Eom, G. Oh, S. Jung, H. Jeong, and S. Kim, \"Topological properties of stock networks based on minimal spanning tree and random matrix theory,\" Physica A: Statistical Mechanics and its Applications, vol. 388, no. 6, pp. 900-906, 2009.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[16] P. Jorion, \"Value at Risk: The New Benchmark for Managing Financial Risk,\" McGraw-Hill, 2000.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[17] A. Biglova, S. Ortobelli, S. T. Rachev, and S. V. Stoyanov, \"Different Approaches to Risk Estimation in Portfolio Theory,\" The Journal of Portfolio Management, vol. 31, no. 1, pp. 103-112, 2004.", font: "Times New Roman", size: 24 })]
                 }),
             ],
             footers: {
