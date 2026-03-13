@@ -340,7 +340,24 @@ const doc = new Document({
                 emptyLine(),
                 emptyLine(),
                 emptyLine(),
-                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new TextRun({
+                            text: " [ PLACEHOLDER: LOGO UNIVERSITAS NUSA MANDIRI ] ",
+                            font: "Times New Roman",
+                            size: 24,
+                            bold: true,
+                            color: "666666",
+                        })
+                    ],
+                    border: {
+                        top: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                        bottom: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                        left: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                        right: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                    }
+                }),
                 emptyLine(),
                 centeredBold("PROPOSAL TESIS", 26),
                 emptyLine(),
@@ -963,6 +980,24 @@ const doc = new Document({
                 heading2("3.1. Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
                 emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new TextRun({
+                            text: " [ PLACEHOLDER: GAMBAR KERANGKA KERJA PENELITIAN ] ",
+                            font: "Times New Roman",
+                            size: 22,
+                            bold: true,
+                            color: "666666",
+                        })
+                    ],
+                    border: {
+                        top: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                        bottom: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                        left: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                        right: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
+                    }
+                }),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
