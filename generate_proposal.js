@@ -792,12 +792,41 @@ const doc = new Document({
                 emptyLine(),
                 heading3("2.1.9. Penelitian Terdahulu"),
                 body("Beberapa penelitian terdahulu yang relevan dengan penelitian ini antara lain:"),
+                mixedBody([
+                    {text: "Penelitian yang dilakukan oleh Giudici dkk. (2020) mengusulkan kerangka kerja baru untuk manajemen portofolio kripto otomatis dengan memperluas model Markowitz tradisional melalui integrasi "},
+                    {text: "Random Matrix Theory", italic: true},
+                    {text: " (RMT) dan ukuran jaringan ("},
+                    {text: "network measures", italic: true},
+                    {text: "), seperti "},
+                    {text: "centrality", italic: true},
+                    {text: " dan "},
+                    {text: "Minimal Spanning Tree", italic: true},
+                    {text: " (MST). Metodologi ini bertujuan untuk meningkatkan profil risiko-imbal hasil pada instrumen keuangan yang sangat volatil seperti mata uang kripto. Hasil penelitian menunjukkan bahwa model yang menggabungkan RMT, MST, dan ukuran "},
+                    {text: "centrality", italic: true},
+                    {text: " secara konsisten mengungguli strategi alokasi aset lainnya, baik dalam kondisi pasar "},
+                    {text: "bullish", italic: true},
+                    {text: " maupun "},
+                    {text: "bearish", italic: true},
+                    {text: ". Model ini mampu memberikan perlindungan yang lebih baik terhadap kerugian signifikan selama penurunan pasar, sehingga menjadikannya strategi alokasi yang efisien dan adaptif untuk diintegrasikan dalam sistem "},
+                    {text: "robo-advisory", italic: true},
+                    {text: " guna mendukung konsultasi keuangan otomatis [1]."}
+                ]),
+                mixedBody([
+                    {text: "Lebih lanjut, Jing dkk. (2025) memperdalam integrasi antara analisis jaringan dan "},
+                    {text: "Modern Portfolio Theory", italic: true},
+                    {text: " (MPT) dengan memperkenalkan kerangka kerja teknis yang memanfaatkan "},
+                    {text: "Louvain network community algorithm", italic: true},
+                    {text: " dan "},
+                    {text: "consensus clustering", italic: true},
+                    {text: ". Pendekatan ini bertujuan untuk mendeteksi klaster mata uang kripto yang memiliki korelasi tinggi namun secara temporal stabil, dari mana pemilihan aset dilakukan. Penelitian ini juga mengintegrasikan model ARIMA untuk prediksi harga guna menjamin performa portofolio dalam cakrawala investasi jangka pendek (sampai 14 hari). Hasil analisis empiris selama periode 5 tahun menunjukkan bahwa pola harga tersembunyi dapat dimanfaatkan secara efektif melalui struktur jaringan untuk menghasilkan portofolio kripto yang menguntungkan secara konsisten meskipun di tengah volatilitas pasar yang ekstrem."}
+                ]),
                 emptyLine(),
                 new Paragraph({
-                    alignment: AlignmentType.CENTER,
+                    alignment: AlignmentType.LEFT,
                     children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
+                    alignment: AlignmentType.LEFT,
                     width: { size: 8200, type: WidthType.DXA },
                     columnWidths: [400, 1600, 2000, 4200],
                     rows: [
@@ -836,7 +865,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "1", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "1", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -846,36 +875,15 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Network Models to Improve Automated Cryptocurrency Portfolio Management", font: "Times New Roman", size: 22 })] })]
+                                    children: [
+                                        new Paragraph({ children: [new TextRun({ text: "Network Models to Enhance Automated Cryptocurrency Portfolio Management", font: "Times New Roman", size: 22 })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.3389/frai.2020.00022", font: "Times New Roman", size: 20, italics: true })] })
+                                    ]
                                 }),
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Mengusulkan Network Markowitz dan sukses mendemonstrasikan perbaikan struktur dibandingkan Markowitz biasa di era crypto winter.", font: "Times New Roman", size: 22 })] })]
-                                }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "2", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha (2023)", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "A network-based strategy of price correlations for optimal cryptocurrency portfolios", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menggabungkan MST dan MPT untuk memilih 46 dari 157 kripto berdasarkan dekorelasi jaringan; portofolio MST mengungguli seluruh benchmark (BTC, TOP5, RAND); koin populer berkapitalisasi besar terbukti jarang optimal.", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Mengusulkan Network Markowitz dan sukses mendemonstrasikan perbaikan struktur dibandingkan Markowitz biasa di era crypto winter.", font: "Times New Roman", size: 22 })] })]
                                 }),
                             ]
                         }),
@@ -884,31 +892,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "3", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2024)", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Network-based diversification of stock and cryptocurrency portfolios", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menggunakan algoritma komunitas (Louvain & Affinity Propagation) untuk diversifikasi; strategi jaringan secara konsisten mengungguli portofolio acak dan indeks pasar; menunjukkan keunikan kripto di mana aset perifer (sentralitas rendah) menghasilkan return lebih tinggi.", font: "Times New Roman", size: 22 })] })]
-                                }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "4", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "2", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -918,12 +902,15 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Cryptocurrency Portfolio Diversification Using Network Community Detection", font: "Times New Roman", size: 22 })] })]
+                                    children: [
+                                        new Paragraph({ children: [new TextRun({ text: "Cryptocurrency Portfolio Diversification Using Network Community Detection", font: "Times New Roman", size: 22 })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.1109/TELFOR56187.2022.9983742", font: "Times New Roman", size: 20, italics: true })] })
+                                    ]
                                 }),
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Memanfaatkan deteksi komunitas (Louvain & Affinity Propagation) pada jaringan korelasi kripto untuk diversifikasi; membantu mengurangi volatilitas dan mengoptimalkan return bagi investor.", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Memanfaatkan deteksi komunitas (Louvain & Affinity Propagation) pada jaringan korelasi kripto untuk diversifikasi; membantu mengurangi volatilitas dan mengoptimalkan return.", font: "Times New Roman", size: 22 })] })]
                                 }),
                             ]
                         }),
@@ -932,22 +919,81 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "5", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "3", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. (2021)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha (2023)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Network models to improve robot advisory portfolios", font: "Times New Roman", size: 22 })] })]
+                                    children: [
+                                        new Paragraph({ children: [new TextRun({ text: "A network-based strategy of price correlations for optimal cryptocurrency portfolios", font: "Times New Roman", size: 22 })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "arXiv: 2304.02362", font: "Times New Roman", size: 20, italics: true })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.1007/s40745-023-00473-7", font: "Times New Roman", size: 20, italics: true })] })
+                                    ]
                                 }),
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menunjukkan bahwa model jaringan dapat meningkatkan performa portofolio robotik dengan memitigasi risiko sistemik melalui struktur keterhubungan pasar yang lebih akurat.", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Menggabungkan MST dan MPT untuk memilih kripto berdasarkan dekorelasi jaringan; portofolio MST mengungguli seluruh benchmark (BTC, TOP5, RAND).", font: "Times New Roman", size: 22 })] })]
+                                }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "4", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2024)", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [
+                                        new Paragraph({ children: [new TextRun({ text: "Network-based diversification of stock and cryptocurrency portfolios", font: "Times New Roman", size: 22 })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "arXiv: 2408.11739", font: "Times New Roman", size: 20, italics: true })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.1007/s41109-025-00708-9", font: "Times New Roman", size: 20, italics: true })] })
+                                    ]
+                                }),
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Menunjukkan keunggulan strategi jaringan yang lebih resilient selama periode guncangan pasar (Pandemi & Perang) pada aset saham dan kripto.", font: "Times New Roman", size: 22 })] })]
+                                }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "5", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing, et al. (2025)", font: "Times New Roman", size: 22 })] })]
+                                }),
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [
+                                        new Paragraph({ children: [new TextRun({ text: "Optimising cryptocurrency portfolios through stable clustering of price correlation networks", font: "Times New Roman", size: 22 })] }),
+                                        new Paragraph({ children: [new TextRun({ text: "arXiv: 2505.24831", font: "Times New Roman", size: 20, italics: true })] })
+                                    ]
+                                }),
+                                new TableCell({
+                                    borders,
+                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
+                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Mengintegrasikan stable clustering dengan MPT untuk optimasi portofolio di bawah ketidakpastian; memperkuat validitas integrasi Network-MPT hingga fase pasar terbaru.", font: "Times New Roman", size: 22 })] })]
                                 }),
                             ]
                         }),
@@ -1576,7 +1622,7 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[1] P. Giudici, A. Sariev, and G. Toscani, \"Network Models to Improve Automated Cryptocurrency Portfolio Management,\" Risks, vol. 8, no. 3, p. 96, 2020. https://doi.org/10.3390/risks8030096.", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "[1] P. Giudici, P. Pagnottoni, and G. Polinesi, \"Network Models to Enhance Automated Cryptocurrency Portfolio Management,\" Frontiers in Artificial Intelligence, vol. 3, 2020. https://doi.org/10.3389/frai.2020.00022.", font: "Times New Roman", size: 24 })]
                 }),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
@@ -1606,19 +1652,19 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[6] Z. Jing and J. G. Rocha, \"A network-based strategy of price correlations for optimal cryptocurrency portfolios,\" Financial Innovation, vol. 9, no. 1, pp. 1–28, 2023.", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "[6] R. Jing and L. E. C. Rocha, \"A network-based strategy of price correlations for optimal cryptocurrency portfolios,\" Financial Innovation, vol. 9, no. 1, 2023. arXiv: 2304.02362. DOI: 10.1007/s40745-023-00473-7.", font: "Times New Roman", size: 24 })]
                 }),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[7] I. Kitanovski et al., \"Network-based diversification of stock and cryptocurrency portfolios,\" Expert Systems with Applications, 2024.", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "[7] D. Kitanovski, I. Mishkovski, V. Stojkoski, and M. Mirchev, \"Network-based diversification of stock and cryptocurrency portfolios,\" Applied Network Science, 2024. arXiv: 2408.11739. DOI: 10.1007/s41109-025-00708-9.", font: "Times New Roman", size: 24 })]
                 }),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[8] I. Kitanovski et al., \"Cryptocurrency Portfolio Diversification Using Network Community Detection,\" Algorithms, 2022.", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "[8] D. Kitanovski, M. Mirchev, I. Chorbev, and I. Mishkovski, \"Cryptocurrency Portfolio Diversification Using Network Community Detection,\" 2022 30th Telecommunications Forum (TELFOR), 2022. DOI: 10.1109/TELFOR56187.2022.9983742.", font: "Times New Roman", size: 24 })]
                 }),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
