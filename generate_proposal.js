@@ -339,18 +339,7 @@ const doc = new Document({
                 centeredBold("UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO", 28),
                 emptyLine(),
                 emptyLine(),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    children: [
-                        new ImageRun({
-                            data: fs.readFileSync("e:\\ProjectNodeJs\\temp_doc_build\\logo_unm.png"),
-                            transformation: {
-                                width: 200, // Reduced slightly to save space
-                                height: 200,
-                            },
-                        }),
-                    ],
-                }),
+                emptyLine(),
                 emptyLine(),
                 emptyLine(),
                 centeredBold("PROPOSAL TESIS", 26),
@@ -974,18 +963,7 @@ const doc = new Document({
                 heading2("3.1. Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
                 emptyLine(),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    children: [
-                        new ImageRun({
-                            data: fs.readFileSync("e:\\ProjectNodeJs\\temp_doc_build\\framwrok.jpg"),
-                            transformation: {
-                                width: 550,
-                                height: 350,
-                            },
-                        }),
-                    ],
-                }),
+                emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     children: [new TextRun({ text: "Gambar III.1. Kerangka Kerja Penelitian Network Markowitz dengan Grid Search", font: "Times New Roman", size: 22, bold: true })]
