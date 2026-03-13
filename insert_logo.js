@@ -4,70 +4,65 @@ const PizZip = require('pizzip');
 const Docxtemplater = require('docxtemplater');
 const ImageModule = require('docxtemplater-image-module-free');
 
-/**
- * Script untuk mengisi placeholder gambar [ %PLACEHOLDER: ... ] di file docx
- */
-
-const inputPath = path.join(__dirname, 'proposal_tesis_ragil.docx');
-if (!fs.existsSync(inputPath)) {
-    console.error("File proposal_tesis_ragil.docx tidak ditemukan!");
-    process.exit(1);
-}
-
-const content = fs.readFileSync(inputPath, 'binary');
-const zip = new PizZip(content);
-
-// Konfigurasi Modul Gambar
-const imageOpts = {
-    centered: true,
-    getImage: function(tagValue) {
-        return fs.readFileSync(tagValue);
-    },
-    getSize: function(img, tagValue, tagName) {
-        // Tentukan ukuran berdasarkan nama tag
-        if (tagName.includes("LOGO")) {
-            return [200, 200];
-        }
-        if (tagName.includes("KERANGKA")) {
-            return [550, 350]; // Sesuai ukuran framwrok.jpg sebelumnya
-        }
-        return [300, 300]; // Default
-    }
-};
-
-const doc = new Docxtemplater(zip, {
-    modules: [new ImageModule(imageOpts)],
-    delimiters: {
-        start: '[ ',
-        end: ' ]'
-    }
-});
-
-try {
-    const logoPath = path.join(__dirname, 'logo_unm.png');
-    const frameworkPath = path.join(__dirname, 'framwrok.jpg');
-
-    const renderData = {};
-
-    if (fs.existsSync(logoPath)) {
-        renderData["PLACEHOLDER: LOGO UNIVERSITAS NUSA MANDIRI"] = logoPath;
-    }
+async function processDocument() {
+    console.log("Memulai proses penyuntikan gambar logo dan kerangka kerja...");
+    const inputPath = path.resolve(__dirname, 'proposal_tesis_ragil.docx');
     
-    if (fs.existsSync(frameworkPath)) {
-        renderData["PLACEHOLDER: GAMBAR KERANGKA KERJA PENELITIAN"] = frameworkPath;
+    if (!fs.existsSync(inputPath)) {
+        console.error("File docx tidak ditemukan!");
+        return;
     }
 
-    doc.render(renderData);
+    const content = fs.readFileSync(inputPath, 'binary');
+    const zip = new PizZip(content);
 
-    const buf = doc.getZip().generate({ type: 'nodebuffer' });
-    fs.writeFileSync(inputPath, buf);
+    const imageOpts = {
+        centered: true,
+        getImage: function(tagValue) {
+            return fs.readFileSync(tagValue);
+        },
+        getSize: function(img, tagValue, tagName) {
+            if (tagName.includes("LOGO")) return [200, 200];
+            if (tagName.includes("FRAMEWORK")) return [550, 350];
+            return [300, 300];
+        }
+    };
 
-    console.log('--------------------------------------------------');
-    console.log('Sukses! Semua gambar placeholder telah diproses.');
-    console.log('File diperbarui: proposal_tesis_ragil.docx');
-    console.log('--------------------------------------------------');
+    const doc = new Docxtemplater(zip, {
+        modules: [new ImageModule(imageOpts)],
+        delimiters: { start: '[[', end: ']]' }
+    });
 
-} catch (error) {
-    console.error("Terjadi kesalahan saat memproses dokumen:");
-    console.error(error);
+    try {
+        const renderData = {};
+
+        // Hanya menangani gambar fisik
+        const logoPath = path.resolve(__dirname, 'logo_unm.png');
+        const frameworkPath = path.resolve(__dirname, 'framwrok.jpg');
+
+        if (fs.existsSync(logoPath)) {
+            renderData["LOGO_UNM"] = logoPath;
+            console.log("✓ Logo UNM siap.");
+        }
+        if (fs.existsSync(frameworkPath)) {
+            renderData["IMAGE_FRAMEWORK"] = frameworkPath;
+            console.log("✓ Gambar Kerangka Kerja siap.");
+        }
+
+        console.log("Menyuntikkan gambar ke dokumen...");
+        doc.render(renderData);
+
+        const buf = doc.getZip().generate({ type: 'nodebuffer' });
+        fs.writeFileSync(inputPath, buf);
+
+        console.log("-----------------------------------------");
+        console.log("SUKSES! Logo dan gambar kerangka kerja telah terpasang.");
+        console.log("Rumus kini menggunakan format native Word (bukan gambar).");
+        console.log("-----------------------------------------");
+
+    } catch (error) {
+        console.error("Gagal memproses dokumen:", error.message);
+    }
 }
+
+processDocument();

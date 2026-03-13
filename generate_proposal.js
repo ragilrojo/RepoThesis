@@ -20,16 +20,16 @@ function rumus(latexStr) {
     if (latexStr.includes("\\min_w") && latexStr.includes("\\Sigma^*")) {
         return [
             new MathLimitLower({
-                main: [new MathRun("min")],
+                children: [new MathRun("min")],
                 limit: [new MathRun("w")],
             }),
             new MathRun(" "),
             new MathSuperScript({
-                main: [new MathRun("w")],
+                children: [new MathRun("w")],
                 superScript: [new MathRun("T")],
             }),
             new MathSuperScript({
-                main: [new MathRun("\u03A3")],
+                children: [new MathRun("\u03A3")],
                 superScript: [new MathRun("*")],
             }),
             new MathRun("w + \u03B3"),
@@ -37,8 +37,8 @@ function rumus(latexStr) {
                 subScript: [new MathRun("i=1")],
                 superScript: [new MathRun("n")],
                 children: [
-                    new MathSubScript({ main: [new MathRun("x")], subScript: [new MathRun("i")] }),
-                    new MathSubScript({ main: [new MathRun("w")], subScript: [new MathRun("i")] })
+                    new MathSubScript({ children: [new MathRun("x")], subScript: [new MathRun("i")] }),
+                    new MathSubScript({ children: [new MathRun("w")], subScript: [new MathRun("i")] })
                 ]
             })
         ];
@@ -50,12 +50,21 @@ function rumus(latexStr) {
             new MathRun("Sharpe Ratio = "),
             new MathFraction({
                 numerator: [
-                    new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("p")] }),
+                    new MathSubScript({
+                        children: [new MathRun("R")],
+                        subScript: [new MathRun("p")]
+                    }),
                     new MathRun(" - "),
-                    new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("f")] })
+                    new MathSubScript({
+                        children: [new MathRun("R")],
+                        subScript: [new MathRun("f")]
+                    })
                 ],
                 denominator: [
-                    new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("p")] })
+                    new MathSubScript({
+                        children: [new MathRun("\u03C3")], // Simbol Sigma
+                        subScript: [new MathRun("p")]
+                    })
                 ]
             })
         ];
@@ -64,7 +73,7 @@ function rumus(latexStr) {
     // Penanganan untuk VaR
     if (latexStr.includes("VaR")) {
         return [
-            new MathSubScript({ main: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] }),
+            new MathSubScript({ children: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] }),
             new MathRoundBrackets({ children: [new MathRun("\u03B1")] }),
             new MathRun(" = -inf"),
             new MathRoundBrackets({ children: [new MathRun("x \u2208 \u211D : P(L > x) \u2264 1 - \u03B1")] })
@@ -77,11 +86,11 @@ function rumus(latexStr) {
             new MathRun("RR = "),
             new MathFraction({
                 numerator: [
-                    new MathSubScript({ main: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] }),
+                    new MathSubScript({ children: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] }),
                     new MathRoundBrackets({ children: [new MathRun("R")] })
                 ],
                 denominator: [
-                    new MathSubScript({ main: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] }),
+                    new MathSubScript({ children: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] }),
                     new MathRoundBrackets({ children: [new MathRun("R")] })
                 ]
             })
@@ -344,19 +353,11 @@ const doc = new Document({
                     alignment: AlignmentType.CENTER,
                     children: [
                         new TextRun({
-                            text: " [ %PLACEHOLDER: LOGO UNIVERSITAS NUSA MANDIRI ] ",
+                            text: "[[%LOGO_UNM]]",
                             font: "Times New Roman",
                             size: 24,
-                            bold: true,
-                            color: "666666",
                         })
-                    ],
-                    border: {
-                        top: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                        bottom: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                        left: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                        right: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                    }
+                    ]
                 }),
                 emptyLine(),
                 centeredBold("PROPOSAL TESIS", 26),
@@ -984,19 +985,11 @@ const doc = new Document({
                     alignment: AlignmentType.CENTER,
                     children: [
                         new TextRun({
-                            text: " [ %PLACEHOLDER: GAMBAR KERANGKA KERJA PENELITIAN ] ",
+                            text: "[[%IMAGE_FRAMEWORK]]",
                             font: "Times New Roman",
                             size: 22,
-                            bold: true,
-                            color: "666666",
                         })
-                    ],
-                    border: {
-                        top: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                        bottom: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                        left: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                        right: { color: "666666", space: 10, style: BorderStyle.DASHED, size: 6 },
-                    }
+                    ]
                 }),
                 emptyLine(),
                 new Paragraph({
@@ -1239,8 +1232,8 @@ const doc = new Document({
                         new Math({
                             children: rumus("\\min_w w^T \\Sigma^* w + \\gamma \\sum_{i=1}^n x_i w_i")
                         }),
-                        new TextRun({ text: "             (8)", font: "Times New Roman", size: 24, bold: true }),
-                    ]
+                        new TextRun({ text: "             (3.1)", font: "Times New Roman", size: 24, bold: true }),
+                    ],
                 }),
                 body("Keterangan:"),
                 new Table({
@@ -1257,28 +1250,28 @@ const doc = new Document({
                     rows: [
                         new TableRow({
                             children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "w", font: "Times New Roman", size: 24, italics: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("w")] })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor alokasi bobot untuk setiap aset kripto (total = 1).", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "S", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "f", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSuperScript({ children: [new MathRun("\u03A3")], superScript: [new MathRun("*")] })] })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Matriks Kovarians terfilter RMT.", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "\u03B3", font: "Times New Roman", size: 24, italics: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("\u03B3")] })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Parameter skalar penghukuman sentralitas graf.", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "C", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "e", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("C")], subScript: [new MathRun("e")] })] })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor skor Eigenvector Centrality tiap node aset.", font: "Times New Roman", size: 24 })] })] }),
                             ]
@@ -1322,50 +1315,55 @@ const doc = new Document({
                 ]),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    spacing: { before: 120, after: 120, line: 360 },
+                    spacing: { before: 120, after: 120 },
                     children: [
                         new Math({
-                            children: rumus("Sharpe\\ Ratio\\ =\\ \\frac{R_p\\ -\\ R_f}{R_p}")
-                        })
-                    ]
+                            children: rumus("Sharpe\\ Ratio = \\frac{R_p - R_f}{\\sigma_p}")
+                        }),
+                        new TextRun({ text: "             (3.2)", font: "Times New Roman", size: 24, bold: true }),
+                    ],
                 }),
-                new Paragraph({
-                    children: [
-                        new Math({
+                body("Keterangan:"),
+                new Table({
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [800, 400, 7000],
+                    borders: {
+                        top: { style: BorderStyle.NONE, size: 0 },
+                        bottom: { style: BorderStyle.NONE, size: 0 },
+                        left: { style: BorderStyle.NONE, size: 0 },
+                        right: { style: BorderStyle.NONE, size: 0 },
+                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
+                        insideVertical: { style: BorderStyle.NONE, size: 0 },
+                    },
+                    rows: [
+                        new TableRow({
                             children: [
-                                new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("p")] }),
-                                new MathRun(" = Return of portfolio")
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("p")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Imbal hasil (return) portofolio.", font: "Times New Roman", size: 24 })] })] }),
                             ]
-                        })
-                    ]
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
+                        }),
+                        new TableRow({
                             children: [
-                                new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("f")] }),
-                                new MathRun(" = Risk-Free rate")
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("f")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Tingkat imbal hasil bebas risiko (risk-free rate).", font: "Times New Roman", size: 24 })] })] }),
                             ]
-                        })
-                    ]
-                }),
-                new Paragraph({
-                    children: [
-                        new Math({
+                        }),
+                        new TableRow({
                             children: [
-                                new MathSubScript({ main: [new MathRun("\u03C3")], subScript: [new MathRun("p")] }),
-                                new MathRun(" = Standard deviation of portfolio's excess return")
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("\u03C3")], subScript: [new MathRun("p")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Standar deviasi dari imbal hasil berlebih portofolio.", font: "Times New Roman", size: 24 })] })] }),
                             ]
-                        })
-                    ]
+                        }),
+                    ],
                 }),
                 emptyLine(),
                 mixedBody([
-                    {text: "Nilai Sharpe Ratio > 1 dianggap baik, > 2 sangat baik, dan > 3 luar biasa. Metrik ini menjadi acuan utama dalam proses "},
-                    {text: "grid search", italic: true},
-                    {text: " untuk menentukan parameter \u03B3 optimal pada setiap "},
-                    {text: "rolling window", italic: true},
-                    {text: " [4], [13]."}
+                    {text: "Nilai Sharpe Ratio > 1 dianggap baik, > 2 sangat baik, dan > 3 luar biasa. Semakin besar nilai "},
+                    {text: "Sharpe Ratio", italic: true},
+                    {text: ", semakin baik kualitas portofolio karena menunjukkan imbal hasil yang lebih tinggi untuk setiap unit risiko yang diambil. Sebaliknya, semakin kecil nilai ini, semakin tidak efisien portofolio tersebut dalam menghasilkan imbal hasil terhadap risikonya [4], [13]."}
                 ]),
                 emptyLine(),
                 
@@ -1378,21 +1376,54 @@ const doc = new Document({
                 ]),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    spacing: { before: 120, after: 120, line: 360 },
+                    spacing: { before: 120, after: 120 },
                     children: [
                         new Math({
-                            children: rumus("VaR_\\alpha(\\alpha) = -inf\\{x \\in \\mathbb{R} : P(L > x) \\le 1 - \\alpha\\}")
-                        })
-                    ]
+                            children: rumus("VaR_\\alpha = -inf { x \u2208 \u211D : P(L > x) \u2264 1 - \u03B1 }")
+                        }),
+                        new TextRun({ text: "             (3.3)", font: "Times New Roman", size: 24, bold: true }),
+                    ],
+                }),
+                body("Keterangan:"),
+                new Table({
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [800, 400, 7000],
+                    borders: {
+                        top: { style: BorderStyle.NONE, size: 0 },
+                        bottom: { style: BorderStyle.NONE, size: 0 },
+                        left: { style: BorderStyle.NONE, size: 0 },
+                        right: { style: BorderStyle.NONE, size: 0 },
+                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
+                        insideVertical: { style: BorderStyle.NONE, size: 0 },
+                    },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Value at Risk pada tingkat kepercayaan \u03B1.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("\u03B1")] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Tingkat kepercayaan (confidence level), misal 95%.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("L")] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Variabel acak kerugian portofolio (Loss).", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                    ],
                 }),
                 mixedBody([
-                    {text: "VaR dipilih karena relevansinya yang tinggi terhadap pasar kripto yang memiliki volatilitas ekstrem. Metrik ini mampu memberikan estimasi "},
-                    {text: "worst-case scenario", italic: true},
-                    {text: " yang realistis bagi investor, khususnya saat menghadapi fenomena "},
-                    {text: "crypto winter", italic: true},
-                    {text: " atau "},
-                    {text: "flash crash", italic: true},
-                    {text: " [11], [16]."}
+                    {text: "VaR dipilih karena relevansinya yang tinggi terhadap pasar kripto yang memiliki volatilitas ekstrem. Semakin kecil nilai "},
+                    {text: "Value at Risk", italic: true},
+                    {text: " (mendekati nol), semakin aman suatu portofolio dari potensi kerugian ekstrem. Sebaliknya, semakin besar nilai VaR, semakin tinggi risiko kerugian yang mungkin dihadapi investor dalam kondisi pasar yang buruk [11], [16]."}
                 ]),
                 emptyLine(),
                 
@@ -1415,13 +1446,52 @@ const doc = new Document({
                     children: [
                         new Math({
                             children: rumus("RR = \\frac{ETR_\\alpha(R)}{ES_\\beta(R)}")
-                        })
+                        }),
+                        new TextRun({ text: "             (3.4)", font: "Times New Roman", size: 24, bold: true }),
                     ]
                 }),
+                body("Keterangan:"),
+                new Table({
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [800, 400, 7000],
+                    borders: {
+                        top: { style: BorderStyle.NONE, size: 0 },
+                        bottom: { style: BorderStyle.NONE, size: 0 },
+                        left: { style: BorderStyle.NONE, size: 0 },
+                        right: { style: BorderStyle.NONE, size: 0 },
+                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
+                        insideVertical: { style: BorderStyle.NONE, size: 0 },
+                    },
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("RR")] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Rachev Ratio.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Expected Tail Return pada tingkat kepercayaan \u03B1.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Expected Shortfall pada tingkat kepercayaan \u03B2.", font: "Times New Roman", size: 24 })] })] }),
+                            ]
+                        }),
+                    ],
+                }),
                 mixedBody([
-                    {text: "Nilai Rachev Ratio > 1 mengindikasikan bahwa potensi keuntungan ekstrem melebihi potensi kerugian ekstrem, sehingga portofolio memiliki profil risiko-imbalan yang asimetris dan menguntungkan. Metrik ini sangat krusial untuk pasar kripto yang dikenal memiliki karakteristik "},
+                    {text: "Nilai Rachev Ratio > 1 mengindikasikan bahwa potensi keuntungan ekstrem melebihi potensi kerugian ekstrem. Semakin besar nilai "},
+                    {text: "Rachev Ratio", italic: true},
+                    {text: ", semakin baik profil risiko-imbalan suatu portofolio karena menunjukkan kemampuan portofolio untuk menangkap keuntungan di 'ekor kanan' distribusi melampaui risiko di 'ekor kiri'. Metrik ini sangat krusial untuk pasar kripto yang dikenal memiliki karakteristik "},
                     {text: "leptokurtic", italic: true},
-                    {text: " (ekor tebal), di mana kejadian ekstrem terjadi jauh lebih sering dibandingkan asumsi distribusi normal [17], [19]."}
+                    {text: " [17], [19]."}
                 ]),
 
                 emptyLine(),
