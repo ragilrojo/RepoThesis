@@ -4,8 +4,93 @@ const {
     AlignmentType, HeadingLevel, BorderStyle, WidthType, ShadingType,
     LevelFormat, PageNumber, PageBreak, TabStopType, TabStopPosition,
     VerticalAlign, ImageRun, Footer, NumberFormat, SectionType,
-    TableOfContents
+    TableOfContents,
+    Math, MathRun, MathSubScript, MathSuperScript, MathFraction, MathSum, MathRoundBrackets, MathLimitLower
 } = docx;
+
+/**
+ * Helper sederhana untuk mengonversi string LaTeX dasar ke komponen docx Math.
+ * Mendukung: \min, \sum, \frac, simbol yunani (\Sigma, \gamma, \alpha, \dots), subskrip, dan superskrip.
+ */
+function rumus(latexStr) {
+    // Note: Ini adalah parser sederhana khusus untuk kebutuhan proposal ini.
+    // Jika ingin parser LaTeX full, biasanya diperlukan pustaka tambahan.
+    
+    // Penanganan khusus untuk rumus Network Markowitz (8)
+    if (latexStr.includes("\\min_w") && latexStr.includes("\\Sigma^*")) {
+        return [
+            new MathLimitLower({
+                main: [new MathRun("min")],
+                limit: [new MathRun("w")],
+            }),
+            new MathRun(" "),
+            new MathSuperScript({
+                main: [new MathRun("w")],
+                superScript: [new MathRun("T")],
+            }),
+            new MathSuperScript({
+                main: [new MathRun("\u03A3")],
+                superScript: [new MathRun("*")],
+            }),
+            new MathRun("w + \u03B3"),
+            new MathSum({
+                subScript: [new MathRun("i=1")],
+                superScript: [new MathRun("n")],
+                children: [
+                    new MathSubScript({ main: [new MathRun("x")], subScript: [new MathRun("i")] }),
+                    new MathSubScript({ main: [new MathRun("w")], subScript: [new MathRun("i")] })
+                ]
+            })
+        ];
+    }
+
+    // Penanganan untuk Sharpe Ratio
+    if (latexStr.includes("Sharpe\\ Ratio")) {
+        return [
+            new MathRun("Sharpe Ratio = "),
+            new MathFraction({
+                numerator: [
+                    new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("p")] }),
+                    new MathRun(" - "),
+                    new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("f")] })
+                ],
+                denominator: [
+                    new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("p")] })
+                ]
+            })
+        ];
+    }
+
+    // Penanganan untuk VaR
+    if (latexStr.includes("VaR")) {
+        return [
+            new MathSubScript({ main: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] }),
+            new MathRoundBrackets({ children: [new MathRun("\u03B1")] }),
+            new MathRun(" = -inf"),
+            new MathRoundBrackets({ children: [new MathRun("x \u2208 \u211D : P(L > x) \u2264 1 - \u03B1")] })
+        ];
+    }
+
+    // Penanganan untuk Rachev Ratio
+    if (latexStr.includes("RR")) {
+        return [
+            new MathRun("RR = "),
+            new MathFraction({
+                numerator: [
+                    new MathSubScript({ main: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] }),
+                    new MathRoundBrackets({ children: [new MathRun("R")] })
+                ],
+                denominator: [
+                    new MathSubScript({ main: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] }),
+                    new MathRoundBrackets({ children: [new MathRun("R")] })
+                ]
+            })
+        ];
+    }
+
+    return [new MathRun(latexStr)];
+}
+
 
 // Fallback for TabLeader which might be named differently or missing in some versions
 const TabLeader = docx.TabLeader || docx.TabStopLeader || { DOT: "dot" };
@@ -322,9 +407,8 @@ const doc = new Document({
                 (() => {
                     const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
                     const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
-                    const mkCell = (colW, text, isBold = true) => new TableCell({
+                    const mkCell = (text, isBold = true) => new TableCell({
                         borders: noBorders,
-                        width: { size: colW, type: WidthType.DXA },
                         margins: { top: 40, bottom: 40, left: 0, right: 80 },
                         children: [new Paragraph({ children: [new TextRun({ text, font: "Times New Roman", size: 24, bold: isBold })] })]
                     });
@@ -337,13 +421,13 @@ const doc = new Document({
                         ["Judul Tesis",   "OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO"],
                     ];
                     return new Table({
-                        width: { size: 8666, type: WidthType.DXA },
-                        columnWidths: [2100, 300, 6266],
+                        width: { size: 8200, type: WidthType.DXA },
+                        columnWidths: [1800, 300, 6100],
                         rows: rows.map(([label, value]) => new TableRow({
                             children: [
-                                mkCell(2100, label, false),
-                                mkCell(300,  ":", true),
-                                mkCell(6266, value, true),
+                                mkCell(label, false),
+                                mkCell(":", true),
+                                mkCell(value, true),
                             ]
                         }))
                     });
@@ -644,7 +728,9 @@ const doc = new Document({
                     {text: "Star-like", italic: true},
                     {text: " yang didominasi oleh aset sentral (seperti Bitcoin) menunjukkan ketergantungan sistemik yang tinggi, di mana gejolak pada pusat jaringan akan dengan cepat menyebar melintasi jaringan ("},
                     {text: "financial contagion", italic: true},
-                    {text: "). Sebaliknya, struktur "},
+                    {text: "). Fenomena ini seringkali memicu kegagalan beruntun ("},
+                    {text: "cascading failures", italic: true},
+                    {text: "), di mana likuidasi pada satu titik menyebar ke seluruh ekosistem akibat korelasi yang tinggi. Sebaliknya, struktur "},
                     {text: "Distributed", italic: true},
                     {text: " menawarkan manfaat diversifikasi yang lebih baik. Dengan menggunakan sentralitas sebagai penalti, model Network Markowitz secara efektif menggeser alokasi dari 'pusat penularan' ke 'periferi jaringan', sehingga memitigasi risiko kegagalan sistemik [5], [12]."}
                 ]),
@@ -669,7 +755,20 @@ const doc = new Document({
                     {text: ", maka parameter penalti portofolio (\u03b3) harus dikalibrasi secara dinamis untuk mencapai performa optimal."}
                 ]),
                 emptyLine(),
-                heading3("2.1.7. Analisis Kebaruan (Gap Analysis)"),
+                heading3("2.1.7. Walk-forward Analysis dan Filosofi Rolling Window"),
+                mixedBody([
+                    {text: "Walk-forward Analysis merupakan teknik validasi utama dalam Machine Learning finansial untuk menghindari "},
+                    {text: "look-ahead bias", italic: true},
+                    {text: ". Berbeda dengan "},
+                    {text: "cross-validation", italic: true},
+                    {text: " tradisional yang mengabaikan urutan waktu, metode "},
+                    {text: "rolling window", italic: true},
+                    {text: " memastikan bahwa pengujian model dilakukan menggunakan data yang secara kronologis berada setelah data pelatihan. Pendekatan ini memberikan kepastian bahwa optimalisasi parameter \u03b3 pada setiap jendela waktu dilakukan dengan integritas data yang tinggi, sehingga hasil "},
+                    {text: "backtesting", italic: true},
+                    {text: " mencerminkan realitas perdagangan sesungguhnya di pasar yang sangat dinamis."}
+                ]),
+                emptyLine(),
+                heading3("2.1.8. Analisis Kebaruan (Gap Analysis)"),
                 mixedBody([
                     {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. (2020). Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
                     {text: "Optimized Dynamic Network Markowitz", italic: true},
@@ -684,7 +783,7 @@ const doc = new Document({
                     {text: "."}
                 ]),
                 emptyLine(),
-                heading3("2.1.8. Penelitian Terdahulu"),
+                heading3("2.1.9. Penelitian Terdahulu"),
                 body("Beberapa penelitian terdahulu yang relevan dengan penelitian ini antara lain:"),
                 emptyLine(),
                 new Paragraph({
@@ -692,33 +791,33 @@ const doc = new Document({
                     children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
-                    width: { size: 9026, type: WidthType.DXA },
-                    columnWidths: [500, 1800, 2500, 4226],
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [400, 1600, 2000, 4200],
                     rows: [
                         new TableRow({
                             tableHeader: true,
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 500, type: WidthType.DXA },
+                                    borders,
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     verticalAlign: VerticalAlign.CENTER,
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "No", font: "Times New Roman", size: 22, bold: true })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 1800, type: WidthType.DXA },
+                                    borders,
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Penulis / Tahun", font: "Times New Roman", size: 22, bold: true })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    borders,
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Judul", font: "Times New Roman", size: 22, bold: true })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 4226, type: WidthType.DXA },
+                                    borders,
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Hasil", font: "Times New Roman", size: 22, bold: true })] })]
@@ -728,22 +827,22 @@ const doc = new Document({
                         new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "1", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 1800, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. (2020)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Network Models to Improve Automated Cryptocurrency Portfolio Management", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 4226, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Mengusulkan Network Markowitz dan sukses mendemonstrasikan perbaikan struktur dibandingkan Markowitz biasa di era crypto winter.", font: "Times New Roman", size: 22 })] })]
                                 }),
@@ -752,22 +851,22 @@ const doc = new Document({
                         new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "2", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 1800, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha (2023)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "A network-based strategy of price correlations for optimal cryptocurrency portfolios", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 4226, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menggabungkan MST dan MPT untuk memilih 46 dari 157 kripto berdasarkan dekorelasi jaringan; portofolio MST mengungguli seluruh benchmark (BTC, TOP5, RAND); koin populer berkapitalisasi besar terbukti jarang optimal.", font: "Times New Roman", size: 22 })] })]
                                 }),
@@ -776,22 +875,22 @@ const doc = new Document({
                         new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "3", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 1800, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2024)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Network-based diversification of stock and cryptocurrency portfolios", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 4226, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menggunakan algoritma komunitas (Louvain & Affinity Propagation) untuk diversifikasi; strategi jaringan secara konsisten mengungguli portofolio acak dan indeks pasar; menunjukkan keunikan kripto di mana aset perifer (sentralitas rendah) menghasilkan return lebih tinggi.", font: "Times New Roman", size: 22 })] })]
                                 }),
@@ -800,22 +899,22 @@ const doc = new Document({
                         new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "4", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 1800, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2022)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Cryptocurrency Portfolio Diversification Using Network Community Detection", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 4226, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Memanfaatkan deteksi komunitas (Louvain & Affinity Propagation) pada jaringan korelasi kripto untuk diversifikasi; membantu mengurangi volatilitas dan mengoptimalkan return bagi investor.", font: "Times New Roman", size: 22 })] })]
                                 }),
@@ -824,22 +923,22 @@ const doc = new Document({
                         new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "5", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 1800, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. (2021)", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 2500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: "Network models to improve robot advisory portfolios", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
-                                    borders, width: { size: 4226, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.JUSTIFIED, children: [new TextRun({ text: "Menunjukkan bahwa model jaringan dapat meningkatkan performa portofolio robotik dengan memitigasi risiko sistemik melalui struktur keterhubungan pasar yang lebih akurat.", font: "Times New Roman", size: 22 })] })]
                                 }),
@@ -999,16 +1098,16 @@ const doc = new Document({
                     children: [new TextRun({ text: "Tabel III.1. Deskripsi Dataset Cryptocurrency", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
-                    width: { size: 9026, type: WidthType.DXA },
-                    columnWidths: [800, 2226, 4000, 2000],
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [800, 2000, 3400, 2000],
                     rows: [
                         new TableRow({
                             tableHeader: true,
                             children: [
-                                new TableCell({ borders, width: { size: 800, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
-                                new TableCell({ borders, width: { size: 2226, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
-                                new TableCell({ borders, width: { size: 4000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
-                                new TableCell({ borders, width: { size: 2000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
                             ]
                         }),
                         ...[
@@ -1024,10 +1123,10 @@ const doc = new Document({
                             ["TRX", "Tron", "Layer 1 / Smart Contract", "Yahoo Finance"],
                         ].map(([t, n, k, s]) => new TableRow({
                             children: [
-                                new TableCell({ borders, width: { size: 800, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: t, font: "Times New Roman", size: 22 })] })] }),
-                                new TableCell({ borders, width: { size: 2226, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: n, font: "Times New Roman", size: 22 })] })] }),
-                                new TableCell({ borders, width: { size: 4000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: k, font: "Times New Roman", size: 22 })] })] }),
-                                new TableCell({ borders, width: { size: 2000, type: WidthType.DXA }, children: [new Paragraph({ children: [new TextRun({ text: s, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: t, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: n, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: k, font: "Times New Roman", size: 22 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: s, font: "Times New Roman", size: 22 })] })] }),
                             ]
                         }))
                     ]
@@ -1124,25 +1223,16 @@ const doc = new Document({
                     alignment: AlignmentType.CENTER,
                     spacing: { before: 240, after: 240 },
                     children: [
-                        new TextRun({ text: "min", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "w", font: "Times New Roman", size: 18, italics: true, subScript: true }),
-                        new TextRun({ text: " (", font: "Times New Roman", size: 26 }),
-                        new TextRun({ text: "w", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "T", font: "Times New Roman", size: 18, italics: true, superScript: true }),
-                        new TextRun({ text: " \u22C5 S", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "f", font: "Times New Roman", size: 18, italics: true, subScript: true }),
-                        new TextRun({ text: " \u22C5 w + \u03B3 ", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "\u2211", font: "Times New Roman", size: 28 }),
-                        new TextRun({ text: " (C", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "e", font: "Times New Roman", size: 18, italics: true, subScript: true }),
-                        new TextRun({ text: " \u22C5 w)", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ")", font: "Times New Roman", size: 26 }),
-                        new TextRun({ text: "             (III.1)", font: "Times New Roman", size: 24, bold: true }),
+                        new Math({
+                            children: rumus("\\min_w w^T \\Sigma^* w + \\gamma \\sum_{i=1}^n x_i w_i")
+                        }),
+                        new TextRun({ text: "             (8)", font: "Times New Roman", size: 24, bold: true }),
                     ]
                 }),
                 body("Keterangan:"),
                 new Table({
-                    width: { size: 100, type: WidthType.PERCENTAGE },
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [800, 400, 7000],
                     borders: {
                         top: { style: BorderStyle.NONE, size: 0 },
                         bottom: { style: BorderStyle.NONE, size: 0 },
@@ -1154,30 +1244,30 @@ const doc = new Document({
                     rows: [
                         new TableRow({
                             children: [
-                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "w", font: "Times New Roman", size: 24, italics: true })] })] }),
-                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Vektor alokasi bobot untuk setiap aset kripto (total = 1).", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "w", font: "Times New Roman", size: 24, italics: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor alokasi bobot untuk setiap aset kripto (total = 1).", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "S", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "f", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
-                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Matriks Kovarians terfilter RMT.", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "S", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "f", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Matriks Kovarians terfilter RMT.", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "\u03B3", font: "Times New Roman", size: 24, italics: true })] })] }),
-                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Parameter skalar penghukuman sentralitas graf.", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "\u03B3", font: "Times New Roman", size: 24, italics: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Parameter skalar penghukuman sentralitas graf.", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ width: { size: 8, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "C", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "e", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
-                                new TableCell({ width: { size: 4, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ width: { size: 88, type: WidthType.PERCENTAGE }, children: [new Paragraph({ children: [new TextRun({ text: "Vektor skor Eigenvector Centrality tiap node aset.", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "C", font: "Times New Roman", size: 24, italics: true }), new TextRun({ text: "e", font: "Times New Roman", size: 18, italics: true, subScript: true })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor skor Eigenvector Centrality tiap node aset.", font: "Times New Roman", size: 24 })] })] }),
                             ]
                         }),
                     ],
@@ -1220,14 +1310,45 @@ const doc = new Document({
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     spacing: { before: 120, after: 120, line: 360 },
-                    children: [new TextRun({ text: "SR = (R\u209A - R\u209B) / \u03C3\u209A", font: "Times New Roman", size: 24, italics: true })]
+                    children: [
+                        new Math({
+                            children: rumus("Sharpe\\ Ratio\\ =\\ \\frac{R_p\\ -\\ R_f}{R_p}")
+                        })
+                    ]
                 }),
+                new Paragraph({
+                    children: [
+                        new Math({
+                            children: [
+                                new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("p")] }),
+                                new MathRun(" = Return of portfolio")
+                            ]
+                        })
+                    ]
+                }),
+                new Paragraph({
+                    children: [
+                        new Math({
+                            children: [
+                                new MathSubScript({ main: [new MathRun("R")], subScript: [new MathRun("f")] }),
+                                new MathRun(" = Risk-Free rate")
+                            ]
+                        })
+                    ]
+                }),
+                new Paragraph({
+                    children: [
+                        new Math({
+                            children: [
+                                new MathSubScript({ main: [new MathRun("\u03C3")], subScript: [new MathRun("p")] }),
+                                new MathRun(" = Standard deviation of portfolio's excess return")
+                            ]
+                        })
+                    ]
+                }),
+                emptyLine(),
                 mixedBody([
-                    {text: "di mana R\u209A adalah "},
-                    {text: "return", italic: true},
-                    {text: " portofolio, R\u209B adalah "},
-                    {text: "risk-free rate", italic: true},
-                    {text: " (dalam konteks kripto, diasumsikan mendekati nol), dan \u03C3\u209A adalah standar deviasi portofolio. Nilai SR > 1 dianggap baik, SR > 2 sangat baik, dan SR > 3 luar biasa. Metrik ini menjadi acuan utama dalam proses "},
+                    {text: "Nilai Sharpe Ratio > 1 dianggap baik, > 2 sangat baik, dan > 3 luar biasa. Metrik ini menjadi acuan utama dalam proses "},
                     {text: "grid search", italic: true},
                     {text: " untuk menentukan parameter \u03B3 optimal pada setiap "},
                     {text: "rolling window", italic: true},
@@ -1245,7 +1366,11 @@ const doc = new Document({
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     spacing: { before: 120, after: 120, line: 360 },
-                    children: [new TextRun({ text: "VaR\u2090(\u03B1) = -inf{x \u2208 \u211D : P(L > x) \u2264 1 - \u03B1}", font: "Times New Roman", size: 24, italics: true })]
+                    children: [
+                        new Math({
+                            children: rumus("VaR_\\alpha(\\alpha) = -inf\\{x \\in \\mathbb{R} : P(L > x) \\le 1 - \\alpha\\}")
+                        })
+                    ]
                 }),
                 mixedBody([
                     {text: "VaR dipilih karena relevansinya yang tinggi terhadap pasar kripto yang memiliki volatilitas ekstrem. Metrik ini mampu memberikan estimasi "},
@@ -1274,7 +1399,11 @@ const doc = new Document({
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     spacing: { before: 120, after: 120, line: 360 },
-                    children: [new TextRun({ text: "RR = ETR\u2090(R) / ES\u03B2(R)", font: "Times New Roman", size: 24, italics: true })]
+                    children: [
+                        new Math({
+                            children: rumus("RR = \\frac{ETR_\\alpha(R)}{ES_\\beta(R)}")
+                        })
+                    ]
                 }),
                 mixedBody([
                     {text: "Nilai Rachev Ratio > 1 mengindikasikan bahwa potensi keuntungan ekstrem melebihi potensi kerugian ekstrem, sehingga portofolio memiliki profil risiko-imbalan yang asimetris dan menguntungkan. Metrik ini sangat krusial untuk pasar kripto yang dikenal memiliki karakteristik "},
@@ -1291,20 +1420,20 @@ const doc = new Document({
                     children: [new TextRun({ text: "Tabel III.2. Rencana Jadwal Penelitian", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
-                    width: { size: 9026, type: WidthType.DXA },
-                    columnWidths: [3500, 1381, 1382, 1381, 1382],
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [3400, 1200, 1200, 1200, 1200],
                     rows: [
                         new TableRow({
                             tableHeader: true,
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 3500, type: WidthType.DXA },
+                                    borders,
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Kegiatan", font: "Times New Roman", size: 22, bold: true })] })]
                                 }),
                                 ...["Bln 1", "Bln 2", "Bln 3", "Bln 4"].map(h => new TableCell({
-                                    borders, width: { size: 1381, type: WidthType.DXA },
+                                    borders,
                                     shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: h, font: "Times New Roman", size: 22, bold: true })] })]
@@ -1322,12 +1451,12 @@ const doc = new Document({
                         ].map(([activity, marks]) => new TableRow({
                             children: [
                                 new TableCell({
-                                    borders, width: { size: 3500, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ children: [new TextRun({ text: activity, font: "Times New Roman", size: 22 })] })]
                                 }),
                                 ...marks.map(m => new TableCell({
-                                    borders, width: { size: 1381, type: WidthType.DXA },
+                                    borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
                                     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: m, font: "Times New Roman", size: 22 })] })]
                                 }))
