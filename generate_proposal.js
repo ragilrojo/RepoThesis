@@ -1342,7 +1342,7 @@ const doc = new Document({
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("C")], subScript: [new MathRun("e")] })] })] })] }),
+                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("x")], subScript: [new MathRun("i")] })] })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
                                 new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor skor Eigenvector Centrality tiap node aset.", font: "Times New Roman", size: 24 })] })] }),
                             ]
