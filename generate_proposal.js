@@ -812,6 +812,31 @@ const doc = new Document({
                     {text: " guna mendukung konsultasi keuangan otomatis [1]."}
                 ]),
                 mixedBody([
+                    {text: "Penelitian Kitanovski dkk. (2022) mengeksplorasi diversifikasi portofolio mata uang kripto dengan memanfaatkan metode deteksi komunitas jaringan, seperti "},
+                    {text: "Louvain", italic: true},
+                    {text: " dan "},
+                    {text: "Affinity Propagation", italic: true},
+                    {text: ". Dengan mengelompokkan aset kripto berdasarkan korelasi harga, portofolio dibentuk dengan memilih perwakilan dari masing-masing komunitas yang berbeda. Pendekatan tersebut secara signifikan terbukti membantu mengurangi volatilitas keseluruhan portofolio dan mengoptimalkan tingkat pengembalian ("},
+                    {text: "return", italic: true},
+                    {text: ")."}
+                ]),
+                mixedBody([
+                    {text: "Pada penelitian lainnya, Jing dan Rocha (2023) merancang strategi portofolio kripto optimal dengan menggabungkan "},
+                    {text: "Minimum Spanning Tree", italic: true},
+                    {text: " (MST) bersama pemodelan "},
+                    {text: "Modern Portfolio Theory", italic: true},
+                    {text: " (MPT). Pemilihan aset pada ekosistem kripto ini didasarkan pada prinsip maksimalisasi dekorelasi dalam keterhubungan jaringan. Studi tersebut membuktikan bahwa portofolio berbasis MST mampu secara utuh mengungguli seluruh tolok ukur ("},
+                    {text: "benchmark", italic: true},
+                    {text: ") investasi lainnya, baik itu performa Bitcoin tunggal (BTC), portofolio 5 kripto tertinggi (TOP5), maupun pemilihan portofolio secara acak (RAND)."}
+                ]),
+                mixedBody([
+                    {text: "Terkait ketahanan portofolio menghadapi guncangan harga ekstrem, Kitanovski dkk. (2024) kembali memperlihatkan keunggulan strategi diversifikasi berbasis topologi jaringan pada kombinasi dua keranjang aset berisiko tinggi; saham dan kripto. Riset ini menyimpulkan bahwa portofolio berbasis konektivitas metrik graf jauh lebih "},
+                    {text: "resilient", italic: true},
+                    {text: " meredam ancaman kerugian dibandingkan indeks alokasi tradisional, terutama sangat efektif memberikan proteksi perlindungan "},
+                    {text: "drawdown", italic: true},
+                    {text: " pada saat-saat terjadinya volatilitas parah akibat krisis global (fase pandemi dan perang)."}
+                ]),
+                mixedBody([
                     {text: "Lebih lanjut, Jing dkk. (2025) memperdalam integrasi antara analisis jaringan dan "},
                     {text: "Modern Portfolio Theory", italic: true},
                     {text: " (MPT) dengan memperkenalkan kerangka kerja teknis yang memanfaatkan "},
