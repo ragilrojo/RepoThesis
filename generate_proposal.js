@@ -344,7 +344,7 @@ const doc = new Document({
                     alignment: AlignmentType.CENTER,
                     children: [
                         new TextRun({
-                            text: " [ PLACEHOLDER: LOGO UNIVERSITAS NUSA MANDIRI ] ",
+                            text: " [ %PLACEHOLDER: LOGO UNIVERSITAS NUSA MANDIRI ] ",
                             font: "Times New Roman",
                             size: 24,
                             bold: true,
@@ -984,7 +984,7 @@ const doc = new Document({
                     alignment: AlignmentType.CENTER,
                     children: [
                         new TextRun({
-                            text: " [ PLACEHOLDER: GAMBAR KERANGKA KERJA PENELITIAN ] ",
+                            text: " [ %PLACEHOLDER: GAMBAR KERANGKA KERJA PENELITIAN ] ",
                             font: "Times New Roman",
                             size: 22,
                             bold: true,
