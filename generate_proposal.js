@@ -847,11 +847,11 @@ const doc = new Document({
                 ]),
                 emptyLine(),
                 new Paragraph({
-                    alignment: AlignmentType.LEFT,
+                    alignment: AlignmentType.CENTER,
                     children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
-                    alignment: AlignmentType.LEFT,
+                    alignment: AlignmentType.CENTER,
                     width: { size: 8200, type: WidthType.DXA },
                     columnWidths: [400, 1600, 2000, 4200],
                     rows: [
