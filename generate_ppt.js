@@ -173,9 +173,6 @@ async function createPresentation() {
         { text: "   Target:", options: { bold: true } },
         { text: " Jika nilainya positif besar, artinya peluang profit jauh menutupi probabilitas loss.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
-    // --- Slide 7: Terima Kasih ---
-    let slide7 = pres.addSlide();
-    slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" });
 
     // --- Slide 9: Lampiran - Analogi RMT ---
     let slide9 = pres.addSlide();
@@ -487,9 +484,9 @@ async function createPresentation() {
         { text: "   4. Hasilnya, matriks korelasi terselamatkan dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 23: Lampiran - Peran USDT ---
+    // --- Slide 23: Lampiran - Peran USDT (Bagian 1) ---
     let slideOut2 = pres.addSlide();
-    slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut2.addText([
         { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
         { text: "\"Tether (USDT) itu stablecoin yang nilainya selalu fix ke 1 USD. Apakah tidak berbuat curang dengan berlindung pada aset yang tidak fluktuatif?\"", options: { italic: true, breakLine: true } },
@@ -500,14 +497,24 @@ async function createPresentation() {
         { text: " institusional.", options: { breakLine: true } },
         { text: "   2. Ketika pasar mendadak anjlok ekstrem (", options: { } },
         { text: "Bearish/Crash", options: { italic: true } },
-        { text: "), investor normal akan melikuidasi risiko dan melarikan senjatanya ke posisi uang tunai (USD) atau obligasi minimum risiko.", options: { breakLine: true } },
-        { text: "   3. Algoritma jaringan ", options: { } },
+        { text: "), investor normal akan melikuidasi risiko dan melarikan senjatanya ke posisi uang tunai (USD) atau obligasi minimum risiko.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 24: Lampiran - Peran USDT (Bagian 2) ---
+    let slideOut3 = pres.addSlide();
+    slideOut3.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideOut3.addText([
+        { text: "3. Algoritma jaringan ", options: { } },
         { text: "Network Markowitz (GS)", options: { bold: true } },
         { text: " dilatih secara matematis; jika mendeteksi korelasi ancaman kolaps merambat ke semua altcoin, ia akan melempar alokasi modalnya menuju node ", options: { } },
         { text: "USDT", options: { bold: true } },
         { text: " sebagai langkah evakuasi otomatis (Shock-Absorber).", options: { breakLine: true } },
         { text: "   4. Hal ini yang membuat performa Risk-GS sangat tangguh dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 25: Terima Kasih ---
+    let slideFinal = pres.addSlide();
+    slideFinal.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" });
 
     // --- Simpan File ---
     const outputFilename = "Presentasi_Proposal_Update.pptx";
