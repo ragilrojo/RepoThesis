@@ -165,43 +165,9 @@ async function createPresentation() {
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 7: Kesimpulan ---
+    // --- Slide 7: Terima Kasih ---
     let slide7 = pres.addSlide();
-    slide7.addText("Kesimpulan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
-    slide7.addText([
-        { text: "Superioritas ", options: { bold: true, bullet: true } },
-        { text: "Grid Search", options: { bold: true, italic: true } },
-        { text: " Adaptif:", options: { bold: true, breakLine: true } },
-
-        { text: "   Strategi NW (Return GS) dan NW (Risk GS) konsisten menjadi " },
-        { text: "all-terrain model", options: { italic: true } },
-        { text: " dari puncak " },
-        { text: "bull", options: { italic: true } },
-        { text: " hingga dasar " },
-        { text: "winter", options: { italic: true } },
-        { text: ".", options: { breakLine: true } },
-
-        { text: "Fleksibilitas Struktur Jaringan:", options: { bold: true, bullet: true, breakLine: true } },
-
-        { text: "   Teori graf terbukti tidak hanya meredam risiko keruntuhan berantai, tetapi mengungguli formulasi statis masa lalu.", options: { breakLine: true } },
-
-        { text: "Potensi Eksploitasi ", options: { bold: true, bullet: true } },
-        { text: "Market Recovery", options: { bold: true, italic: true } },
-        { text: ":", options: { bold: true, breakLine: true } },
-
-        { text: "   " },
-        { text: "Rachev ratio", options: { italic: true } },
-        { text: " membuktikan model jaringan memaksimalkan ceruk " },
-        { text: "gain", options: { italic: true } },
-        { text: " ekstrem saat pasar mulai " },
-        { text: "rebound", options: { italic: true } },
-        { text: "." }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
-
-    // --- Slide 8: Terima Kasih ---
-    let slide8 = pres.addSlide();
-    slide8.addText("Terima Kasih", { x: 0.5, y: 2.2, w: "90%", fontSize: 40, bold: true, align: "center", color: "2c3e50" });
-    slide8.addText("Sesi Tanya Jawab", { x: 0.5, y: 3.2, w: "90%", fontSize: 24, align: "center", color: "7f8c8d" });
+    slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "2c3e50" });
 
     // --- Slide 9: Lampiran - Analogi RMT ---
     let slide9 = pres.addSlide();
@@ -459,6 +425,32 @@ async function createPresentation() {
         { text: "Evolusi → Network Markowitz:", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "   Oleh karena itu, CM dikembangkan menjadi Network Markowitz di penelitian ini: membersihkan noise (RMT) dan menghukum koin dominan yang rawan hancur (MST).", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 21: Lampiran - Dynamic Grid Search ---
+    let slide21 = pres.addSlide();
+    slide21.addText("Lampiran: Apa itu Dynamic Grid Search (\u03b3-tuning)?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide21.addText([
+        { text: "Kalibrasi Dinamis (Walk-forward Analysis):", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "   Daripada menetapkan satu nilai penalti statis, model ", options: { } },
+        { text: "Optimized Dynamic Network Markowitz", options: { italic: true } },
+        { text: " menggunakan " },
+        { text: "Grid Search", options: { italic: true } },
+        { text: " untuk merekalibrasi parameter Gamma (\u03b3) terbaik secara komersil dalam periode berjalan.", options: { breakLine: true } },
+        
+        { text: "Evaluasi pada Jendela Bergulir (Rolling Window):", options: { bold: true, breakLine: true } },
+        { text: "   • Model membelah data historis menjadi jendela rentang waktu yang terus maju (bergeser) memotong waktu.", options: { breakLine: true } },
+        { text: "   • Tiap jendela mensimulasikan nilai \u03b3 lalu mengevaluasi model portofolio mana penghasil ", options: { } },
+        { text: "Sharpe Ratio", options: { italic: true } },
+        { text: " tertinggi.", options: { breakLine: true } },
+        
+        { text: "Sifat Adaptif (Adaptive Market Hypothesis):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Siklus aset kripto terus berevolusi (", options: { } },
+        { text: "Bearish, Recovery, Bullish", options: { italic: true } },
+        { text: "). Jika pasar mendadak crash, Grid Search merespons secara real-time dengan menaikkan nilai \u03b3 agar portofolio terlindungi dari anjlok ekstrem.", options: { breakLine: true } },
+        
+        { text: "Tujuan Utama (Research Gap):", options: { bold: true, breakLine: true } },
+        { text: "   Menghilangkan bias perkiraan buta karena optimalisasi penalti kini bisa bergerak lincah dan otomatis tanpa sentuhan teknis manusia sama sekali.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 17, color: "333333", valign: "top" });
 
     // --- Simpan File ---
     const outputFilename = "Presentasi_Proposal_Update.pptx";
