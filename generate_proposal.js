@@ -1194,7 +1194,7 @@ const doc = new Document({
                             ["USDT", "Tether", "Stablecoin / USD Pegged", "Yahoo Finance"],
                             ["BCH", "Bitcoin Cash", "Payment / Peer-to-Peer Cash", "Yahoo Finance"],
                             ["LTC", "Litecoin", "Payment / Digital Silver", "Yahoo Finance"],
-                            ["BNB", "Binance Coin", "Exchange Token / Layer 1", "Yahoo Finance"],
+                            ["BNB", "Binance Coin", "Layer 1 / Exchange Token", "Yahoo Finance"],
                             ["EOS", "EOS", "Layer 1 / Smart Contract", "Yahoo Finance"],
                             ["XLM", "Stellar", "Payment / Bridge Currency", "Yahoo Finance"],
                             ["TRX", "Tron", "Layer 1 / Smart Contract", "Yahoo Finance"],

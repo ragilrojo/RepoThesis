@@ -135,7 +135,7 @@ async function createPresentation() {
         ["USDT", "Tether", "Stablecoin / USD Pegged"],
         ["BCH", "Bitcoin Cash", "Payment / Peer-to-Peer Cash"],
         ["LTC", "Litecoin", "Payment / Digital Silver"],
-        ["BNB", "Binance Coin", "Exchange Token / Layer 1"],
+        ["BNB", "Binance Coin", "Layer 1 / Exchange Token"],
         ["EOS", "EOS", "Layer 1 / Smart Contract"],
         ["XLM", "Stellar", "Payment / Bridge Currency"],
         ["TRX", "Tron", "Layer 1 / Smart Contract"]
