@@ -130,6 +130,27 @@ async function createPresentation() {
         { text: " untuk optimasi parameter dinamis." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 3.5, fontSize: 20, color: "333333", valign: "top" });
 
+    // --- Slide 6: Matriks Evaluasi Performa ---
+    let slide6 = pres.addSlide();
+    slide6.addText("Matriks Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slide6.addText([
+        { text: "1. Sharpe Ratio (Risk-Adjusted Return):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Mengukur imbal hasil berlebih per unit risiko (Volatilitas) secara umum.", options: { breakLine: true } },
+        { text: "   Target:", options: { bold: true } },
+        { text: " Semakin besar nilainya semakin efisien kualitas portofolio tersebut.", options: { breakLine: true } },
+
+        { text: "2. Value at Risk (VaR) / Downside Risk:", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   Mengkuantifikasi potensi kemungkinan batas 'Kerugian Maksimal' yang dapat diderita model (kondisi crash).", options: { breakLine: true } },
+        { text: "   Target:", options: { bold: true } },
+        { text: " Semakin kecil batas toleransi kerugiannya (mendekati 0), tandanya model sukses menjadi perisai.", options: { breakLine: true } },
+
+        { text: "3. Rachev Ratio (Tail Risk & Reward):", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "   Karena kripto sering meledak tinggi/rendah secara instan (", options: { } },
+        { text: "fat-tail", options: { italic: true } },
+        { text: "), metrik ini secara spesifik membandingkan kuantil ekor ekstrem: Potensi 'Profit Ekstrem' vs Ancaman 'Loss Ekstrem'.", options: { breakLine: true } },
+        { text: "   Target:", options: { bold: true } },
+        { text: " Jika nilainya positif besar, artinya peluang profit jauh menutupi probabilitas loss.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
     // --- Slide 7: Terima Kasih ---
     let slide7 = pres.addSlide();
     slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "2c3e50" });
