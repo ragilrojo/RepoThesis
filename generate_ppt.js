@@ -92,6 +92,26 @@ async function createPresentation() {
         { text: "   Network Centrality: Metrik penghukuman pada aset pasar yang letaknya terpusat untuk menekan probabilitas risiko penularan letupan harga yang sistemik.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 13, color: "333333", valign: "top" });
 
+    // --- Slide 4.1: Penelitian Terdahulu ---
+    let slidePrev = pres.addSlide();
+    slidePrev.addText("Penelitian Terdahulu (State of the Art)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slidePrev.addText([
+        { text: "1. Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Pelopor model Network Markowitz yang memadukan RMT dan MST pada kripto.", options: { breakLine: true } },
+
+        { text: "2. Kitanovski et al. (2022):", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "   Mendemonstrasikan diversifikasi portofolio berbasis deteksi komunitas jaringan.", options: { breakLine: true } },
+
+        { text: "3. Jing & Rocha (2023):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   Membuktikan pemilihan koin dari analisis topologi MST mengalahkan semua benchmark.", options: { breakLine: true } },
+
+        { text: "4. Kitanovski et al. (2024):", options: { bold: true, breakLine: true, color: "16a085" } },
+        { text: "   Mengonfirmasi penalti graf sangat resilient meredam eksposur ekstrem saat guncangan global (Perang/Pandemi).", options: { breakLine: true } },
+        
+        { text: "5. Jing et al. (2025):", options: { bold: true, breakLine: true, color: "f39c12" } },
+        { text: "   Menguatkan efektivitas penggabungan Network-MPT hingga fase pasar terbaru dengan prediksi stabil.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 16, color: "333333", valign: "top" });
+
     // --- Slide 4.5: Kerangka Penelitian ---
     let slideFramework = pres.addSlide();
     slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
