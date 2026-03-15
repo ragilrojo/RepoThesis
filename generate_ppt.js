@@ -119,6 +119,36 @@ async function createPresentation() {
     slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideFramework.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/framwrok.jpg", x: 1.0, y: 1.1, w: 8.0, h: 4.0 });
 
+    // --- Slide 4.6: Dataset - 10 Aset Kripto Utama ---
+    let slideData = pres.addSlide();
+    slideData.addText("Dataset: 10 Aset Kripto Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+
+    let tableRows = [
+        [
+            { text: "Ticker", options: { bold: true, fill: "003366", color: "ffffff", align: "center" } },
+            { text: "Nama Aset", options: { bold: true, fill: "003366", color: "ffffff", align: "center" } },
+            { text: "Kategori / Use Case", options: { bold: true, fill: "003366", color: "ffffff", align: "center" } }
+        ],
+        ["BTC", "Bitcoin", "Layer 1 / Story of Value"],
+        ["ETH", "Ethereum", "Layer 1 / Smart Contract"],
+        ["XRP", "Ripple", "Payment / Bridge Currency"],
+        ["USDT", "Tether", "Stablecoin / USD Pegged"],
+        ["BCH", "Bitcoin Cash", "Payment / Peer-to-Peer Cash"],
+        ["LTC", "Litecoin", "Payment / Digital Silver"],
+        ["BNB", "Binance Coin", "Exchange Token / Layer 1"],
+        ["EOS", "EOS", "Layer 1 / Smart Contract"],
+        ["XLM", "Stellar", "Payment / Bridge Currency"],
+        ["TRX", "Tron", "Layer 1 / Smart Contract"]
+    ];
+
+    slideData.addTable(tableRows, {
+        x: 0.5, y: 1.1, w: 9.0,
+        colWidths: [1.2, 2.5, 5.3],
+        border: { type: "solid", color: "cccccc", pt: 1 },
+        fontSize: 16,
+        color: "333333"
+    });
+
     // --- Slide 5: Strategi yang Dibandingkan ---
     let slide5 = pres.addSlide();
     slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
