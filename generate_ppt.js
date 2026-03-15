@@ -33,26 +33,14 @@ async function createPresentation() {
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide2.addText([
         { text: "Tingginya volatilitas ekstrem dan ", options: { bullet: true } },
-        { text: "noise", options: { italic: true } },
-        { text: " di pasar " },
-        { text: "cryptocurrency", options: { italic: true } },
-        { text: " memerlukan manajemen rekam jejak risiko yang presisi.", options: { breakLine: true } },
-
-        { text: "Kelemahan Markowitz Tradisional: Rawan terhadap ", options: { bullet: true } },
-        { text: "estimation error", options: { italic: true } },
-        { text: " pada matriks kovarians, terutama ketika korelasi aset sangat berisik.", options: { breakLine: true } },
-
-        { text: "Potensi ", options: { bullet: true } },
-        { text: "Network Markowitz", options: { italic: true } },
-        { text: ": Menyaring " },
-        { text: "noise", options: { italic: true } },
-        { text: " menggunakan " },
-        { text: "Random Matrix Theory", options: { italic: true } },
-        { text: " (" },
-        { text: "RMT", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
-        { text: ") dan memetakan struktur pasar lewat " },
-        { text: "Minimum Spanning Tree", options: { italic: true } },
-        { text: " (MST) untuk penentuan penalti sentralitas." }
+        { text: "noise", options: { italic: true, bold: true } },
+        { text: " memerlukan manajemen risiko yang presisi.", options: { breakLine: true } },
+        { text: "Kelemahan Markowitz: Rawan terhadap ", options: { bullet: true } },
+        { text: "estimation error", options: { italic: true, bold: true } },
+        { text: " pada matriks kovarians.", options: { breakLine: true } },
+        { text: "Network Markowitz: Menyaring noise menggunakan ", options: { bullet: true } },
+        { text: "Random Matrix Theory", options: { italic: true, bold: true } },
+        { text: " (RMT) untuk rekonstruksi stabilitas." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 3, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 3: Konsep "Noise" dalam Cryptocurrency ---
@@ -60,19 +48,31 @@ async function createPresentation() {
     slide3.addText("Apa itu \"Noise\" di Pasar Kripto?", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide3.addText([
         { text: "Noise (Kebisingan) Pasar:", options: { bold: true, breakLine: true } },
-        { text: "   Fluktuasi harga acak akibat sentimen sesaat, rumor, FOMO, atau spekulasi yang tidak mencerminkan nilai fundamental aset.", options: { breakLine: true } },
+        { text: "   ", options: { bullet: true } },
+        { text: "Fluktuasi harga acak", options: { bold: true } },
+        { text: " akibat sentimen sesaat, rumor, FOMO, atau spekulasi yang tidak mencerminkan nilai fundamental aset.", options: { breakLine: true } },
         
-        { text: "Estimation Error (Korelasi Palsu):", options: { bold: true, breakLine: true } },
-        { text: "   Model tradisional seringkali menangkap pergerakan acak ini sebagai korelasi tinggi antar aset, menghasilkan matriks kovarians yang ", options: { } },
-        { text: "berisik", options: { italic: true } },
+        { text: "Estimation Error (", options: { bold: true } },
+        { text: "Korelasi Palsu", options: { bold: true } },
+        { text: "):", options: { bold: true, breakLine: true } },
+        { text: "   Model tradisional seringkali menangkap pergerakan acak ini sebagai korelasi tinggi antar aset, menghasilkan ", options: { } },
+        { text: "matriks kovarians", options: { bold: true } },
+        { text: " yang ", options: { } },
+        { text: "berisik", options: { italic: true, bold: true } },
         { text: " dan tidak stabil.", options: { breakLine: true } },
 
-        { text: "Solusi Random Matrix Theory (" },
+        { text: "Solusi Random Matrix Theory (", options: { bold: true } },
         { text: "RMT", options: { bold: true, hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
         { text: "):", options: { bold: true, breakLine: true } },
-        { text: "   Berfungsi sebagai filter untuk memisahkan korelasi sejati (sinyal struktur pasar) dari sekadar pergerakan kebetulan (", options: { } },
+        { text: "   Berfungsi sebagai ", options: { bullet: true } },
+        { text: "filter", options: { bold: true } },
+        { text: " untuk memisahkan ", options: { } },
+        { text: "korelasi sejati", options: { bold: true } },
+        { text: " (sinyal struktur pasar) dari sekadar pergerakan kebetulan (", options: { } },
         { text: "noise", options: { italic: true } },
-        { text: "), memastikan alokasi portofolio tidak tertipu oleh fluktuasi semu." }
+        { text: "), memastikan alokasi portofolio tidak tertipu oleh ", options: { } },
+        { text: "fluktuasi semu", options: { bold: true } },
+        { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 4: Landasan Teori ---
@@ -80,18 +80,36 @@ async function createPresentation() {
     slide4.addText("Landasan Teori Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide4.addText([
         { text: "Tinjauan Portofolio & Risiko:", options: { bold: true, breakLine: true } },
-        { text: "   Portofolio: Kumpulan aset finansial yang dikelola bersama untuk mengoptimalkan profil risiko-imbal hasil melalui diversifikasi.", options: { breakLine: true } },
-        { text: "   Volatilitas: Alat statistik pemetaan fluktuasi harga yang menjadi basis penentuan tingkat risiko pasar.", options: { breakLine: true } },
-        { text: "   Matriks Kovarians: Alat matematis yang mengukur arah pergerakan bersama (korelasi) serta tingkat fluktuasi seluruh aset dalam portofolio.", options: { breakLine: true } },
+        { text: "   Portofolio: Kumpulan aset finansial yang dikelola bersama untuk mengoptimalkan ", options: { bullet: true } },
+        { text: "profil risiko-imbal hasil", options: { bold: true } },
+        { text: " melalui diversifikasi.", options: { breakLine: true } },
+        { text: "   Volatilitas: Alat statistik pemetaan ", options: { bullet: true } },
+        { text: "fluktuasi harga", options: { bold: true } },
+        { text: " yang menjadi basis penentuan ", options: { } },
+        { text: "tingkat risiko", options: { bold: true } },
+        { text: " pasar.", options: { breakLine: true } },
+        { text: "   Matriks Kovarians: Alat matematis yang mengukur arah ", options: { bullet: true } },
+        { text: "pergerakan bersama", options: { bold: true } },
+        { text: " (korelasi) serta ", options: { } },
+        { text: "tingkat fluktuasi", options: { bold: true } },
+        { text: " seluruh aset dalam portofolio.", options: { breakLine: true } },
         
         { text: "Pendekatan Struktur Jaringan:", options: { bold: true, breakLine: true } },
-        { text: "   Random Matrix Theory (" },
+        { text: "   Random Matrix Theory (", options: { bullet: true } },
         { text: "RMT", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
-        { text: "): Metode fisika statistik pemfilter ", options: { } },
-        { text: "noise", options: { italic: true } },
-        { text: " untuk merekonstruksi kestabilan matriks korelasi.", options: { breakLine: true } },
-        { text: "   Minimum Spanning Tree (MST): Konstruksi jaringan antar aset berdasarkan jarak korelasi terpendek (paling kuat); menyaring informasi redundan tanpa membentuk siklus (loop).", options: { breakLine: true } },
-        { text: "   Network Centrality: Metrik penghukuman pada aset pasar yang letaknya terpusat untuk menekan probabilitas risiko penularan letupan harga yang sistemik.", options: { } }
+        { text: "): Metode fisika statistik ", options: { } },
+        { text: "pemfilter noise", options: { bold: true } },
+        { text: " untuk merekonstruksi kestabilan ", options: { } },
+        { text: "matriks korelasi", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "   Minimum Spanning Tree (MST): Konstruksi jaringan antar aset berdasarkan ", options: { bullet: true } },
+        { text: "jarak korelasi terpendek", options: { bold: true } },
+        { text: " (paling kuat); menyaring informasi redundan ", options: { } },
+        { text: "tanpa siklus", options: { bold: true } },
+        { text: " (loop).", options: { breakLine: true } },
+        { text: "   Network Centrality: Metrik penghukuman pada aset pasar yang letaknya terpusat untuk menekan probabilitas ", options: { bullet: true } },
+        { text: "risiko penularan", options: { bold: true } },
+        { text: " letupan harga yang sistemik.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 13, color: "333333", valign: "top" });
 
     // --- Slide 4.1: Penelitian Terdahulu ---
@@ -99,19 +117,25 @@ async function createPresentation() {
     slidePrev.addText("Penelitian Terdahulu (State of the Art)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slidePrev.addText([
         { text: "1. Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Pelopor model Network Markowitz yang memadukan RMT dan MST pada kripto.", options: { breakLine: true } },
-
+        { text: "Pelopor model Network Markowitz yang memadukan ", options: { } },
+        { text: "RMT dan MST", options: { bold: true } },
+        { text: " di kripto.", options: { breakLine: true } },
         { text: "2. Kitanovski et al. (2022):", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "   Mendemonstrasikan diversifikasi portofolio berbasis deteksi komunitas jaringan.", options: { breakLine: true } },
-
+        { text: "Mendemonstrasikan diversifikasi berbasis ", options: { } },
+        { text: "deteksi komunitas", options: { bold: true } },
+        { text: " jaringan.", options: { breakLine: true } },
         { text: "3. Jing & Rocha (2023):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   Membuktikan pemilihan koin dari analisis topologi MST mengalahkan semua benchmark.", options: { breakLine: true } },
-
+        { text: "Pemilihan koin topologi MST mengalahkan ", options: { } },
+        { text: "semua benchmark", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
         { text: "4. Kitanovski et al. (2024):", options: { bold: true, breakLine: true, color: "16a085" } },
-        { text: "   Mengonfirmasi penalti graf sangat resilient meredam eksposur ekstrem saat guncangan global (Perang/Pandemi).", options: { breakLine: true } },
-        
+        { text: "Penalti graf sangat resilien meredam ", options: { } },
+        { text: "eksposur ekstrem", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
         { text: "5. Jing et al. (2025):", options: { bold: true, breakLine: true, color: "f39c12" } },
-        { text: "   Menguatkan efektivitas penggabungan Network-MPT hingga fase pasar terbaru dengan prediksi stabil.", options: { breakLine: true } }
+        { text: "Penggabungan Network-MPT memberikan ", options: { } },
+        { text: "prediksi stabil", options: { bold: true } },
+        { text: " di fase terbaru.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 4.5: Kerangka Penelitian ---
@@ -153,32 +177,34 @@ async function createPresentation() {
     let slide5 = pres.addSlide();
     slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide5.addText([
-        { text: "1. EW (" },
-        { text: "Equally Weighted", options: { italic: true } },
-        { text: "): " },
-        { text: "Baseline", options: { italic: true } },
-        { text: " naif 1/N.", options: { breakLine: true } },
+        { text: "1. EW (", options: { bullet: true } },
+        { text: "Equally Weighted", options: { italic: true, bold: true } },
+        { text: "): ", options: { } },
+        { text: "Baseline naif", options: { italic: true, bold: true } },
+        { text: " 1/N.", options: { breakLine: true } },
 
-        { text: "2. CM (" },
-        { text: "Classical Markowitz", options: { italic: true } },
-        { text: "): " },
-        { text: "Mean-Variance Optimization", options: { italic: true } },
+        { text: "2. CM (", options: { bullet: true } },
+        { text: "Classical Markowitz", options: { italic: true, bold: true } },
+        { text: "): ", options: { } },
+        { text: "Mean-Variance Optimization", options: { italic: true, bold: true } },
         { text: " murni.", options: { breakLine: true } },
 
-        { text: "3. GM (" },
-        { text: "Glasso Markowitz", options: { italic: true } },
-        { text: "): Regularisasi L1 (" },
-        { text: "Graphical Lasso", options: { italic: true } },
+        { text: "3. GM (", options: { bullet: true } },
+        { text: "Glasso Markowitz", options: { italic: true, bold: true } },
+        { text: "): Regularisasi L1 (", options: { } },
+        { text: "Graphical Lasso", options: { italic: true, bold: true } },
         { text: ") pada matriks kovarians.", options: { breakLine: true } },
 
-        { text: "4. NW (" },
-        { text: "Network Markowitz", options: { italic: true } },
-        { text: ") Statis: Dengan parameter gamma statis (0, 1.0, 2.0).", options: { breakLine: true } },
+        { text: "4. NW (", options: { bullet: true } },
+        { text: "Network Markowitz", options: { italic: true, bold: true } },
+        { text: ") Statis: Dengan parameter ", options: { } },
+        { text: "gamma statis", options: { bold: true } },
+        { text: " (0, 1.0, 2.0).", options: { breakLine: true } },
 
-        { text: "5. NW (" },
-        { text: "Grid Search", options: { italic: true } },
-        { text: ") Adaptif: Menggunakan " },
-        { text: "rolling window", options: { italic: true } },
+        { text: "5. NW (", options: { bullet: true } },
+        { text: "Grid Search", options: { italic: true, bold: true } },
+        { text: ") Adaptif: Menggunakan ", options: { } },
+        { text: "rolling window", options: { italic: true, bold: true } },
         { text: " untuk optimasi parameter dinamis." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 3.5, fontSize: 20, color: "333333", valign: "top" });
 
@@ -187,76 +213,123 @@ async function createPresentation() {
     slideEW.addText("1. Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideEW.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
-        { text: "Strategi alokasi 1/N yang memberikan bobot sama ke setiap aset tanpa mempertimbangkan parameter risiko atau imbal hasil.", options: { bullet: true, breakLine: true } },
+        { text: "Strategi alokasi ", options: { bullet: true } },
+        { text: "1/N", options: { bold: true } },
+        { text: " tanpa mempertimbangkan ", options: { } },
+        { text: "parameter risiko", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
         { text: "Keunggulan:", options: { bold: true, breakLine: true } },
-        { text: "Berfungsi sebagai 'benchmark naif' yang sangat tangguh.", options: { bullet: true, breakLine: true } },
-        { text: "Tidak memiliki risiko estimasi (estimation risk) karena tidak memerlukan perhitungan statistik kompleks.", options: { bullet: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+        { text: "Berfungsi sebagai ", options: { bullet: true } },
+        { text: "benchmark naif", options: { bold: true } },
+        { text: " yang tangguh.", options: { breakLine: true } },
+        { text: "Tidak memiliki ", options: { bullet: true } },
+        { text: "estimation risk", options: { bold: true } },
+        { text: " karena minim statistik.", options: { } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.2: Classical Markowitz (CM) ---
     let slideCM = pres.addSlide();
     slideCM.addText("2. Classical Markowitz (CM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideCM.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
-        { text: "Model optimasi Mean-Variance standar yang berupaya meminimalkan variansi portofolio untuk tingkat imbal hasil tertentu.", options: { bullet: true, breakLine: true } },
-        { text: "Kelemahan di Pasar Kripto:", options: { bold: true, breakLine: true } },
-        { text: "Sering kali menderita masalah ketidakstabilan numerik pada data historis yang sangat 'berisik' (noisy).", options: { bullet: true, breakLine: true } },
-        { text: "Representasi teori portofolio tradisional yang menjadi pondasi dasar penelitian ini.", options: { bullet: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+        { text: "Meminimalkan variansi untuk tingkat ", options: { bullet: true } },
+        { text: "imbal hasil", options: { bold: true } },
+        { text: " tertentu.", options: { breakLine: true } },
+        { text: "Kelemahan:", options: { bold: true, breakLine: true } },
+        { text: "Menderita ", options: { bullet: true } },
+        { text: "ketidakstabilan numerik", options: { bold: true } },
+        { text: " pada data yang ", options: { } },
+        { text: "sangat berisik", options: { bold: true } },
+        { text: " (noisy).", options: { breakLine: true } },
+        { text: "Pondasi dasar sebagai ", options: { bullet: true } },
+        { text: "teori tradisional", options: { bold: true } },
+        { text: " dalam penelitian ini.", options: { } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
     let slideGM = pres.addSlide();
     slideGM.addText("3. Graphical Lasso Markowitz (GM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideGM.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
-        { text: "Menggunakan algoritma Lasso pada matriks presisi (invers kovarians) untuk memaksa korelasi yang tidak signifikan menjadi nol.", options: { bullet: true, breakLine: true } },
+        { text: "Menggunakan algoritma ", options: { bullet: true } },
+        { text: "Lasso", options: { bold: true } },
+        { text: " pada matriks presisi (invers kovarians) untuk memaksa korelasi yang tidak signifikan menjadi nol.", options: { breakLine: true } },
         { text: "Tujuan:", options: { bold: true, breakLine: true } },
-        { text: "Menciptakan struktur 'sparsity' (kerekatan) pada jaringan.", options: { bullet: true, breakLine: true } },
-        { text: "Menangani tantangan data kripto yang sering terkorelasi secara palsu (spurious correlations).", options: { bullet: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+        { text: "Menciptakan struktur ", options: { bullet: true } },
+        { text: "'sparsity'", options: { bold: true } },
+        { text: " (kerekatan) pada jaringan.", options: { breakLine: true } },
+        { text: "Menangani tantangan data kripto yang sering terkorelasi secara ", options: { bullet: true } },
+        { text: "palsu", options: { bold: true } },
+        { text: " (spurious correlations).", options: { } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.4: Network Markowitz (NW) Statis ---
     let slideNWStatic = pres.addSlide();
     slideNWStatic.addText("4. Network Markowitz (NW) Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWStatic.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
-        { text: "Model jaringan original (Giudici et al., 2020) yang menggabungkan filter RMT dan penalti sentralitas graf.", options: { bullet: true, breakLine: true } },
+        { text: "Model jaringan original (Giudici et al., 2020) yang menggabungkan ", options: { bullet: true } },
+        { text: "filter RMT", options: { bold: true } },
+        { text: " dan ", options: { } },
+        { text: "penalti sentralitas graf", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
         { text: "Karakteristik:", options: { bold: true, breakLine: true } },
-        { text: "Menggunakan parameter penalti (gamma) yang bersifat statis/tetap (hard-coded).", options: { bullet: true, breakLine: true } },
-        { text: "Digunakan sebagai pembanding langsung untuk menguji efisiensi parameter adaptif.", options: { bullet: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+        { text: "Menggunakan parameter penalti (gamma) yang bersifat ", options: { bullet: true } },
+        { text: "statis/tetap", options: { bold: true } },
+        { text: " (hard-coded).", options: { breakLine: true } },
+        { text: "Digunakan sebagai ", options: { bullet: true } },
+        { text: "pembanding langsung", options: { bold: true } },
+        { text: " untuk menguji efisiensi parameter adaptif.", options: { } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptif ---
     let slideNWAdaptive = pres.addSlide();
     slideNWAdaptive.addText("5. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWAdaptive.addText([
-        { text: "Konsep Dasar (Proposed Model):", options: { bold: true, breakLine: true } },
-        { text: "Mengintegrasikan model NW dengan mekanisme 'Dynamic Grid Search' untuk kalibrasi parameter secara otomatis.", options: { bullet: true, breakLine: true } },
-        { text: "Inovasi:", options: { bold: true, breakLine: true } },
-        { text: "Parameter gamma dioptimalkan pada setiap jendela waktu bergulir (rolling window).", options: { bullet: true, breakLine: true } },
-        { text: "Memastikan model tetap adaptif terhadap perubahan rezim pasar (bullish/bearish) secara temporal.", options: { bullet: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+        { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true } },
+        { text: "Rolling Window: Menggunakan jendela estimasi data historis selama ", options: { bullet: true } },
+        { text: "120 hari", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Rebalancing Frequency: Dilakukan setiap ", options: { bullet: true } },
+        { text: "7 hari", options: { bold: true } },
+        { text: " sekali.", options: { breakLine: true } },
+        { text: "Transaction Cost: Biaya transaksi sebesar ", options: { bullet: true } },
+        { text: "0.1% (10 bps)", options: { bold: true } },
+        { text: " diperhitungkan dalam simulasi.", options: { breakLine: true } },
+        { text: "Grid Search: Parameter gamma diuji dalam rentang ", options: { bullet: true } },
+        { text: "[0.0 - 2.0]", options: { bold: true } },
+        { text: " dengan iterasi 0.1.", options: { breakLine: true } },
+        { text: "Split Validasi Internal (80/20):", options: { bold: true, bullet: true, breakLine: true } },
+        { text: "Training (80% ≈ 96 hari): Untuk estimasi ", options: { bullet: { indent: 20 } } },
+        { text: "bobot kandidat", options: { bold: true } },
+        { text: " gamma.", options: { breakLine: true } },
+        { text: "Validation (20% ≈ 24 hari): Untuk seleksi ", options: { bullet: { indent: 20 } } },
+        { text: "gamma terbaik", options: { bold: true } },
+        { text: " dengan performa optimal.", options: { breakLine: true } },
+        { text: "Penanganan Data/Gagal: Menggunakan strategi ", options: { bullet: true } },
+        { text: "fallback 'EW'", options: { bold: true } },
+        { text: " jika jendela data < 120 hari.", options: { breakLine: true } },
+        { text: "Tujuan: Adaptasi terhadap perubahan ", options: { bullet: true } },
+        { text: "rezim pasar", options: { bold: true } },
+        { text: " secara real-time.", options: { } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
     slide6.addText("Matriks Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
-        { text: "1. Sharpe Ratio (Risk-Adjusted Return):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Mengukur imbal hasil berlebih per unit risiko (Volatilitas) secara umum.", options: { breakLine: true } },
-        { text: "   Target:", options: { bold: true } },
-        { text: " Semakin besar nilainya semakin efisien kualitas portofolio tersebut.", options: { breakLine: true } },
-
-        { text: "2. Value at Risk (VaR) / Downside Risk:", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   Mengkuantifikasi potensi kemungkinan batas 'Kerugian Maksimal' yang dapat diderita model (kondisi crash).", options: { breakLine: true } },
-        { text: "   Target:", options: { bold: true } },
-        { text: " Semakin kecil batas toleransi kerugiannya (mendekati 0), tandanya model sukses menjadi perisai.", options: { breakLine: true } },
-
-        { text: "3. Rachev Ratio (Tail Risk & Reward):", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "   Karena kripto sering meledak tinggi/rendah secara instan (", options: { } },
-        { text: "fat-tail", options: { italic: true } },
-        { text: "), metrik ini secara spesifik membandingkan kuantil ekor ekstrem: Potensi 'Profit Ekstrem' vs Ancaman 'Loss Ekstrem'.", options: { breakLine: true } },
-        { text: "   Target:", options: { bold: true } },
-        { text: " Jika nilainya positif besar, artinya peluang profit jauh menutupi probabilitas loss.", options: { breakLine: true } }
+        { text: "1. Sharpe Ratio:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Imbal hasil per unit risiko. Semakin besar menunjukkan kualitas ", options: { } },
+        { text: "efisiensi portofolio", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "2. Value at Risk (VaR):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   Batas ", options: { } },
+        { text: "kerugian maksimal", options: { bold: true } },
+        { text: " kondiri crash. Semakin kecil tandanya perisai sukses.", options: { breakLine: true } },
+        { text: "3. Rachev Ratio:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "   Membandingkan potensi 'Profit Ekstrem' vs ", options: { } },
+        { text: "Ancaman Loss", options: { bold: true } },
+        { text: ". Menilai asimetri ekor.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 7: Terima Kasih ---
@@ -272,21 +345,24 @@ async function createPresentation() {
     ], { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide9.addText([
         { text: "Pasar Kripto = Pesta yang Bising:", options: { bold: true, breakLine: true } },
-        { text: "   Banyak fluktuasi harga karena sentimen sesaat / kebetulan (", options: { } },
-        { text: "noise", options: { italic: true } },
-        { text: ").", options: { breakLine: true } },
+        { text: "Banyak fluktuasi harga karena ", options: { bullet: true } },
+        { text: "sentimen sesaat", options: { bold: true } },
+        { text: " / kebetulan (noise).", options: { breakLine: true } },
         
         { text: "Sinyal Korelasi Asli = Suara yang Ingin Didengar:", options: { bold: true, breakLine: true } },
-        { text: "   Hubungan nyata antar-aset yang stabil dan berbobot.", options: { breakLine: true } },
-
-        { text: "Random Matrix Theory (" },
-        { text: "RMT", options: { bold: true, hyperlink: { slide: '9' } } },
-        { text: ") = Headphone Noise-Canceling:", options: { bold: true, breakLine: true } },
-        { text: "Membedakan gelombang statistik acak (noise) dari pola suara asli (signal) menggunakan distribusi Marchenko-Pastur.", options: { bullet: true, breakLine: true } },
-        { text: "\"Meredam\" spekulasi jangka pendek untuk mencegah ", options: { bullet: true } },
-        { text: "estimation error", options: { italic: true } },
+        { text: "Hubungan nyata antar-aset yang ", options: { bullet: true } },
+        { text: "stabil dan berbobot", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
-        { text: "Matriks tersisa adalah hubungan antar-aset yang bersih, kuat, & terpercaya.", options: { bullet: true } }
+        { text: "Random Matrix Theory (RMT) = Headphone Noise-Canceling:", options: { bold: true, breakLine: true } },
+        { text: "Membedakan gelombang statistik acak dari ", options: { bullet: true } },
+        { text: "pola suara asli", options: { bold: true } },
+        { text: " menggunakan MP-Distribution.", options: { breakLine: true } },
+        { text: "Meredam spekulasi jangka pendek untuk mencegah ", options: { bullet: true } },
+        { text: "estimation error", options: { italic: true, bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Matriks tersisa adalah hubungan yang ", options: { bullet: true } },
+        { text: "bersih dan terpercaya", options: { bold: true } },
+        { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
 
     // --- Slide 10: Lampiran - Signal vs Noise ---
@@ -294,19 +370,25 @@ async function createPresentation() {
     slide10.addText("Lampiran: Membedakan Hubungan Sejati (Signal) vs Noise", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide10.addText([
         { text: "1. Mencari Nilai Eigen (Eigenvalues):", options: { bold: true, breakLine: true } },
-        { text: "   Mengekstrak angka dari matriks korelasi yang mewakili kekuatan pola pergerakan bersama antar-aset.", options: { breakLine: true } },
+        { text: "Mengekstrak angka yang mewakili ", options: { bullet: true } },
+        { text: "kekuatan pola", options: { bold: true } },
+        { text: " pergerakan bersama.", options: { breakLine: true } },
         
-        { text: "2. Batas Noise (Marchenko-Pastur/MP):", options: { bold: true, breakLine: true } },
-        { text: "   RMT menghitung batas teoretis maksimum (", options: { } },
-        { text: "λ_max", options: { italic: true } },
-        { text: ") dari sebuah matriks yang diasumsikan 100% acak tanpa pola.", options: { breakLine: true } },
-
+        { text: "2. Batas Noise (Marchenko-Pastur):", options: { bold: true, breakLine: true } },
+        { text: "RMT menghitung ", options: { bullet: true } },
+        { text: "batas teoretis", options: { bold: true } },
+        { text: " maksimum dari matriks acak.", options: { breakLine: true } },
         { text: "3. Uji Coba Signal vs Noise:", options: { bold: true, breakLine: true } },
-        { text: "   • JALUR NOISE: Jika Eigenvalue < λ_max. Dianggap hanya kebetulan acak (hubungan palsu).", options: { breakLine: true } },
-        { text: "   • JALUR SIGNAL: Jika Eigenvalue > λ_max. Dianggap memiliki ikatan fundamental (hubungan sejati).", options: { breakLine: true } },
-
+        { text: "NOISE JALUR: Jika Eigenvalue < λ_max. Dianggap ", options: { bullet: true } },
+        { text: "kebetulan acak", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "SIGNAL JALUR: Jika Eigenvalue > λ_max. Dianggap ", options: { bullet: true } },
+        { text: "ikatan fundamental", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
         { text: "4. Pembersihan & Rekonstruksi:", options: { bold: true, breakLine: true } },
-        { text: "   Eigenvalues yang tergolong noise dibersihkan (dinolkan) dan hanya nilai signal yang dipertahankan untuk membangun ulang matriks korelasi yang bersih.", options: { breakLine: true } }
+        { text: "Hanya nilai signal yang dipertahankan untuk membangun ", options: { bullet: true } },
+        { text: "matriks korelasi bersih", options: { bold: true } },
+        { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 4.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 11: Lampiran - Menghitung Nilai Eigen ---
@@ -314,23 +396,21 @@ async function createPresentation() {
     slide11.addText("Lampiran: Bagaimana Menghitung Nilai Eigen?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide11.addText([
         { text: "1. Matriks Korelasi (C):", options: { bold: true, breakLine: true } },
-        { text: "   Membentuk matriks (N x N) yang menjabarkan seluruh korelasi pergerakan harga antar sepasang mata uang kripto secara historis.", options: { breakLine: true } },
-        
+        { text: "Membentuk tabel yang menjabarkan seluruh ", options: { bullet: true } },
+        { text: "korelasi pergerakan", options: { bold: true } },
+        { text: " harga antar sepasang koin.", options: { breakLine: true } },
         { text: "2. Konsep Persamaan Karakteristik:", options: { bold: true, breakLine: true } },
-        { text: "   Mencari sebuah besaran skalar ", options: { } },
-        { text: "λ (lambda/eigenvalue)", options: { italic: true } },
-        { text: " dan vektor ", options: { } },
-        { text: "v (eigenvector)", options: { italic: true } },
-        { text: " yang dapat memenuhi ekuivalensi matriks linier: ", options: { } },
+        { text: "Mencari besaran skalar ", options: { bullet: true } },
+        { text: "λ (eigenvalue)", options: { italic: true, bold: true } },
+        { text: " dan vektor arah yang memenuhi: ", options: { } },
         { text: "C × v = λ × v", options: { bold: true, color: "c0392b", breakLine: true } },
-
         { text: "3. Solusi Determinan:", options: { bold: true, breakLine: true } },
-        { text: "   Secara matematis, nilai λ tersebut adalah akar yang dicari dengan menyelesaikan persamaan determinan: ", options: { } },
+        { text: "Nilai λ adalah akar dari persamaan determinan: ", options: { bullet: true } },
         { text: "Det(C - λI) = 0", options: { bold: true, color: "c0392b", breakLine: true } },
-        { text: "   (di mana I mewakili matriks Indentitas).", options: { italic: true, breakLine: true } },
-
         { text: "4. Arti dari Spektrum Hasil:", options: { bold: true, breakLine: true } },
-        { text: "   Mesin (seperti metode Eigen-Decomposition) akan menemukan sekumpulan nilai λ yang memuaskan persamaan di atas. Nilai λ yang paling besar mewakili penggerak pasar terbesar (Market Factor).", options: { breakLine: true } }
+        { text: "Nilai λ terbesar mewakili ", options: { bullet: true } },
+        { text: "penggerak pasar", options: { bold: true } },
+        { text: " utama (Market Factor).", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 12: Lampiran - Contoh Praktek (Dummy Data) ---
@@ -338,22 +418,24 @@ async function createPresentation() {
     slide12.addText("Lampiran: Praktek Sederhana Menghitung Eigenvalue", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide12.addText([
         { text: "Konteks Dummy: 2 Koin (BTC & ETH) dengan korelasi = 0.5", options: { bold: true, breakLine: true } },
-        
         { text: "1. Matriks Korelasi (C):", options: { bold: true, breakLine: true } },
         { text: "   C = [ 1.0  0.5 ]", options: { fontFace: "Courier New", breakLine: true } },
         { text: "       [ 0.5  1.0 ]", options: { fontFace: "Courier New", breakLine: true } },
-        
         { text: "2. Persamaan: Det(C - λI) = 0", options: { bold: true, breakLine: true } },
         { text: "   (1 - λ)² - (0.5)² = 0", options: { breakLine: true } },
         { text: "   λ² - 2λ + 0.75 = 0  ", options: { breakLine: true } },
         { text: "   (λ - 1.5)(λ - 0.5) = 0", options: { breakLine: true } },
-
         { text: "3. Hasil Akar Nilai Eigen:", options: { bold: true, breakLine: true } },
-        { text: "   • λ₁ = 1.5 (Market Factor / Signal Kuat)", options: { bold: true, color: "27ae60", breakLine: true } },
-        { text: "   • λ₂ = 0.5 (Idiosyncratic Risk / Noise)", options: { bold: true, color: "c0392b", breakLine: true } },
-
+        { text: "   • λ₁ = 1.5 : ", options: { bullet: true } },
+        { text: "Market Factor", options: { bold: true, color: "27ae60" } },
+        { text: " (Signal Kuat).", options: { breakLine: true } },
+        { text: "   • λ₂ = 0.5 : ", options: { bullet: true } },
+        { text: "Idiosyncratic Risk", options: { bold: true, color: "c0392b" } },
+        { text: " (Noise).", options: { breakLine: true } },
         { text: "Kesimpulan Filtering:", options: { bold: true, breakLine: true } },
-        { text: "   Jika RMT mematok batas λ_max = 1.0, maka λ₂ (0.5) akan dianggap sebagai Noise lalu dinolkan, sementara λ₁ (1.5) dijaga sebagai korelasi sejati (Signal).", options: { breakLine: true } }
+        { text: "   Jika RMT mematok batas λ_max = 1.0, maka λ₂ dianggap ", options: { bullet: true } },
+        { text: "Noise", options: { bold: true } },
+        { text: " lalu dinolkan, sementara λ₁ dijaga sebagai sinyal sejati.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 13: Lampiran - Bagaimana Menghitung Korelasi? ---
@@ -361,28 +443,19 @@ async function createPresentation() {
     slide13.addText("Lampiran: Bagaimana Menghitung Korelasi?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide13.addText([
         { text: "1. Data Historis (Returns):", options: { bold: true, breakLine: true } },
-        { text: "   Input dasar berupa data runtut waktu (time-series) dari return harian aset-aset cryptocurrency.", options: { breakLine: true } },
-        
+        { text: "Input berupa runtut waktu dari ", options: { bullet: true } },
+        { text: "return harian", options: { bold: true } },
+        { text: " aset kripto.", options: { breakLine: true } },
         { text: "2. Library & Metode Python:", options: { bold: true, breakLine: true } },
-        { text: "   Dalam script ", options: { } },
-        { text: "strategy_comparison.ipynb", options: { italic: true } },
-        { text: ", korelasi dihitung menggunakan library ", options: { } },
-        { text: "Pandas (df.corr())", options: { fontFace: "Courier New", color: "c0392b" } },
-        { text: " atau ", options: { } },
-        { text: "NumPy (np.corrcoef())", options: { fontFace: "Courier New", color: "c0392b", breakLine: true } },
-        { text: "   Secara bawaan (default), fungsi ini menghitung algoritma ", options: { } },
-        { text: "Koefisien Korelasi Pearson", options: { bold: true, breakLine: true } },
-
+        { text: "Dihitung menggunakan ", options: { bullet: true } },
+        { text: "Pandas (df.corr())", options: { fontFace: "Courier New", color: "c0392b", bold: true } },
+        { text: " berbasis koefisien Pearson.", options: { breakLine: true } },
         { text: "3. Formula Pearson Correlation:", options: { bold: true, breakLine: true } },
-        { text: "   ρ(X,Y) = Cov(X,Y) / (σX × σY)", options: { bold: true, color: "27ae60", breakLine: true } },
-        { text: "   (Cov = kovarians antara dua koin, σ = standar deviasi tingkat volatilitas).", options: { italic: true, breakLine: true } },
-
+        { text: "ρ(X,Y) = Cov(X,Y) / (σX × σY)", options: { bold: true, color: "27ae60", breakLine: true } },
         { text: "4. Output Matriks (N x N):", options: { bold: true, breakLine: true } },
-        { text: "   Menghasilkan tabel bersilang berisi nilai antara ", options: { } },
-        { text: "-1 (Berkebalikan arah)", options: { bold: true } },
-        { text: " hingga ", options: { } },
-        { text: "1 (Bergerak searah)", options: { bold: true } },
-        { text: ". Nilai diagonal matriks ini selalu 1 (korelasi koin terhadap dirinya sendiri).", options: { breakLine: true } }
+        { text: "Nilai berkisar antara -1 hingga ", options: { bullet: true } },
+        { text: "1 (searah)", options: { bold: true } },
+        { text: ". Diagonal selalu 1.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 14: Lampiran - Apakah Nilai Eigen Statis? ---
@@ -390,24 +463,19 @@ async function createPresentation() {
     slide14.addText("Lampiran: Apakah Nilai Eigen Statis?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide14.addText([
         { text: "Apakah Nilai Eigen Sudah Ditentukan (Statis)?", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   TIDAK. Nilai Eigen (Eigenvalue) adalah hasil perhitungan dinamis yang diekstrak langsung dari matriks korelasi aset-aset pada saat itu.", options: { breakLine: true } },
-        
-        { text: "Proses Dinamis dalam Framework Network Markowitz:", options: { bold: true, breakLine: true } },
-        { text: "1. Matriks Korelasi Berubah:", options: { bold: true } },
-        { text: " Dihitung ulang dari data pergerakan harga terbaru (rolling window).", options: { breakLine: true } },
-        
-        { text: "2. Dekomposisi Eigen Diperbarui:", options: { bold: true } },
-        { text: " Matriks korelasi baru dipecah menjadi Nilai Eigen (kekuatan pola) dan Vektor Eigen (arah).", options: { breakLine: true } },
-        
-        { text: "3. Batas Filter MP Ikut Berubah:", options: { bold: true } },
-        { text: " Batas noise (Marchenko-Pastur) juga dihitung ulang mengikuti rasio jumlah data harian dibagi jumlah aset.", options: { breakLine: true } },
-        
-        { text: "4. Korelasi Bersih Terbentuk:", options: { bold: true } },
-        { text: " Nilai eigen yang masuk kategori noise dinolkan, dan nilai eigen sinyal (signal) digunakan untuk merekonstruksi korelasi yang stabil.", options: { breakLine: true } },
-        
-        { text: "→ Kesimpulan: Sifat adaptif secara ", options: { bold: true, color: "27ae60" } },
-        { text: "real-time", options: { bold: true, italic: true, color: "27ae60" } },
-        { text: " inilah yang membuat model sanggup merespons dengan cepat perubahan rezim dari bull ke bear market.", options: { bold: true, color: "27ae60", breakLine: true } }
+        { text: "TIDAK. Nilai Eigen diekstrak langsung dari matriks korelasi ", options: { bullet: true } },
+        { text: "saat rebalancing", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Proses Dinamis:", options: { bold: true, breakLine: true } },
+        { text: "Matriks korelasi dihitung dari data terbaru via ", options: { bullet: true } },
+        { text: "rolling window", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Batas filter Marchenko-Pastur ikut ", options: { bullet: true } },
+        { text: "dihitung ulang", options: { bold: true } },
+        { text: " mengikuti rasio data.", options: { breakLine: true } },
+        { text: "Kesimpulan: Sifat adaptif secara ", options: { bullet: true } },
+        { text: "real-time", options: { bold: true, italic: true } },
+        { text: " merespons perubahan rezim pasar dengan cepat.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 15: Lampiran - Batas Noise Marchenko-Pastur ---
@@ -415,21 +483,21 @@ async function createPresentation() {
     slide15.addText("Lampiran: Menentukan Batas Noise (Marchenko-Pastur)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide15.addText([
         { text: "Apa itu Batas Marchenko-Pastur (MP)?", options: { bold: true, breakLine: true } },
-        { text: "   Distribusi MP adalah teori probabilitas yang memprediksi seperti apa bentuk (distribusi eigenvalue) dari sebuah matriks yang 100% berisi angka acak (noise).", options: { breakLine: true } },
-        
+        { text: "Prediksi bentuk distribusi dari matriks yang ", options: { bullet: true } },
+        { text: "100% acak", options: { bold: true } },
+        { text: " (noise).", options: { breakLine: true } },
         { text: "Menghitung Batas Atas Noise (λ_max):", options: { bold: true, breakLine: true } },
-        { text: "   λ_max = 1 + (1/Q) + 2√(1/Q)", options: { bold: true, color: "c0392b", breakLine: true } },
-        
+        { text: "λ_max = 1 + (1/Q) + 2√(1/Q)", options: { bold: true, color: "c0392b", breakLine: true } },
         { text: "Apa itu Rasio Q?", options: { bold: true, breakLine: true } },
-        { text: "   ", options: { } },
-        { text: "Q = T / N", options: { bold: true, color: "27ae60", breakLine: true } },
-        { text: "   • T = Jumlah baris data historis (Misal: pergerakan harga selama 365 hari)", options: { bullet: true, breakLine: true } },
-        { text: "   • N = Jumlah kolom / aset / koin (Misal: 10 koin kripto)", options: { bullet: true, breakLine: true } },
-        
-        { text: "Mekanisme Pemfilteran:", options: { bold: true, breakLine: true } },
-        { text: "   Setiap nilai eigen (eigenvalue) dari matriks korelasi kripto akan dibandingkan dengan λ_max ini.", options: { breakLine: true } },
-        { text: "   • Eigenvalue < λ_max : Dihapus (Dianggap Noise/Acak)", options: { bold: true, color: "7f8c8d", breakLine: true } },
-        { text: "   • Eigenvalue > λ_max : Dipertahankan (Dianggap Sinyal Fundamental)", options: { bold: true, color: "27ae60", breakLine: true } }
+        { text: "Q = T / N", options: { bold: true, color: "27ae60" } },
+        { text: " (Baris Data / Aset).", options: { breakLine: true } },
+        { text: "Mekanisme Filtering:", options: { bold: true, breakLine: true } },
+        { text: "Eigenvalue < λ_max : ", options: { bullet: true } },
+        { text: "Dihapus (Noise)", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Eigenvalue > λ_max : ", options: { bullet: true } },
+        { text: "Dipertahankan (Sinyal)", options: { bold: true } },
+        { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 16: Lampiran - Analogi Minimum Spanning Tree (Bagian 1) ---
@@ -437,17 +505,15 @@ async function createPresentation() {
     slide16.addText("Lampiran: Analogi Minimum Spanning Tree (MST)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide16.addText([
         { text: "Membangun Jaringan Jalan Tol Antar Kota:", options: { bold: true, breakLine: true } },
-        { text: "   Bayangkan aset-aset kripto (BTC, ETH, BNB) adalah kota-kota yang ingin dihubungkan dengan jalan tol (korelasi).", options: { breakLine: true } },
-        
-        { text: "Aturan MST (Minimum Spanning Tree):", options: { bold: true, breakLine: true } },
-        { text: "1. Hubungkan Kota yang Paling Dekat Dulu:", options: { bold: true, color: "27ae60" } },
-        { text: " (Memprioritaskan korelasi yang paling kuat antar aset).", options: { breakLine: true } },
-        
-        { text: "2. Jangkau Semua Kota:", options: { bold: true, color: "27ae60" } },
-        { text: " (Semua koin dalam portofolio harus terhubung dalam 1 jaringan yang sama).", options: { breakLine: true } },
-        
-        { text: "3. Dilarang Membuat Jalan Memutar (Tanpa Loop):", options: { bold: true, color: "c0392b" } },
-        { text: " (Agar tidak ada informasi pergerakan harga yang bergema/berputar-putar secara redundan yang bisa memicu reaksi berlebihan).", options: { breakLine: true } }
+        { text: "Hubungkan aset yang ", options: { bullet: true } },
+        { text: "paling dekat", options: { bold: true } },
+        { text: " (korelasi terkuat).", options: { breakLine: true } },
+        { text: "Semua koin harus ", options: { bullet: true } },
+        { text: "terhubung satu jaringan", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Dilarang membuat ", options: { bullet: true } },
+        { text: "jalan memutar", options: { bold: true } },
+        { text: " (tanpa loop/redundansi).", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 17: Lampiran - Analogi Minimum Spanning Tree (Bagian 2) ---
@@ -455,14 +521,16 @@ async function createPresentation() {
     slide17.addText("Lampiran: Mengapa Kita Membutuhkan MST?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide17.addText([
         { text: "Menemukan Titik Kemacetan (Hub Centrality):", options: { bold: true, color: "8e44ad", breakLine: true } },
-        { text: "   • Di sebuah jaringan jalan tol, pasti ada 1 kota besar yang menjadi pusat persimpangan (Banyak jalan terhubung ke sana).", options: { breakLine: true } },
-        
-        { text: "   • Di pasar kripto, kota pusat ini mewakili koin yang ", options: { breakLine: true } },
-        { text: "Sangat Sentral", options: { bold: true, italic: true } },
-        { text: ". Jika terjadi \"kecelakaan\" (harga anjlok) di koin sentral ini, efeknya akan langsung menular ke seluruh jaringan.", options: { breakLine: true } },
-        
+        { text: "Di jaringan tol, kota besar menjadi pusat persimpangan. Di kripto, ini mewakili koin yang ", options: { bullet: true } },
+        { text: "sangat sentral", options: { bold: true, italic: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Jika terjadi kecelakaan di koin sentral, efeknya akan ", options: { bullet: true } },
+        { text: "langsung menular", options: { bold: true } },
+        { text: " ke seluruh jaringan.", options: { breakLine: true } },
         { text: "Solusi Network Markowitz:", options: { bold: true, breakLine: true } },
-        { text: "   Koin sentral/pusat ini akan diberi hukuman (penalti bobot alokasi) agar portofolio tidak hancur seketika saat koin tersebut crash.", options: { breakLine: true } }
+        { text: "Koin sentral akan diberi ", options: { bullet: true } },
+        { text: "hukuman penalti", options: { bold: true } },
+        { text: " agar portofolio tetap kokoh saat koin tersebut crash." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 18: Lampiran - Penalti (Gamma) Optimal ---
@@ -470,24 +538,21 @@ async function createPresentation() {
     slide18.addText("Lampiran: Berapa Nilai \"Penalti\" (Gamma) yang Optimal?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide18.addText([
         { text: "Apakah Ada Satu Angka Penalti yang Sempurna?", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   TIDAK. Secara teori, tidak ada nilai penalti statis yang selalu cocok sepanjang waktu akibat perubahan siklus (rezim) pada fluktuasi uang kripto.", options: { breakLine: true } },
-        
-        { text: "1. Ketika Fase Bull Market (Pasar Menguat):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Koin-koin cenderung naik bersamaan. Di fase ini, jika koin sentral diberi penalti terlalu berat (misal $\\gamma$ = 2.0), Anda berisiko kehilangan peluang mendulang untung yang besar.", options: { breakLine: true } },
-        { text: "   • ", options: { } },
-        { text: "Nilai Optimal:", options: { bold: true } },
-        { text: " Cenderung rendah (mulai mendekati 0).", options: { breakLine: true } },
-        
-        { text: "2. Ketika Fase Bear Market / Crash (Pasar Jatuh):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   Kepanikan massal membuat koreksi harga saling menular. Keruntuhan 1 koin sentral bisa mematikan seluruh portofolio Anda secara seketika (", options: { } },
-        { text: "Tail-Risk", options: { italic: true } },
-        { text: ").", options: { breakLine: true } },
-        { text: "   • ", options: { } },
-        { text: "Nilai Optimal:", options: { bold: true } },
-        { text: " Cenderung tinggi (bisa $\\gamma$ = 1.0, 2.0, dst.) untuk melumpuhkan bobot eksposur koin yang krusial tersebut.", options: { breakLine: true } },
-        
-        { text: "Kesimpulan Strategi Grid Search (GS):", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "   Alih-alih menebak satu tebakan buta, Network Markowitz GS membiarkan komputer \"terus belajar dan menyesuaikan\" nilai Gamma yang paling sesuai dengan data harga harian terbaru.", options: { breakLine: true } }
+        { text: "TIDAK. Nilai gamma optimal berubah tergantung ", options: { bullet: true } },
+        { text: "siklus fluktuasi", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "1. Fase Bull Market (Pasar Menguat):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Penalti berat berisiko menghilangkan ", options: { bullet: true } },
+        { text: "peluang untung", options: { bold: true } },
+        { text: ". Gamma optimal cenderung rendah.", options: { breakLine: true } },
+        { text: "2. Fase Bear Market / Crash (Pasar Jatuh):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "Keruntuhan koin sentral bisa memicu penularan (", options: { bullet: true } },
+        { text: "Tail-Risk", options: { bold: true, italic: true } },
+        { text: "). Gamma optimal cenderung tinggi.", options: { breakLine: true } },
+        { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Grid Search membiarkan komputer menyesuaikan gamma secara otomatis dengan ", options: { bullet: true } },
+        { text: "data terbaru", options: { bold: true } },
+        { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 19: Lampiran - Classical Markowitz (Bagian 1) ---
@@ -495,29 +560,33 @@ async function createPresentation() {
     slide19.addText("Lampiran: Apa itu Classical Markowitz (CM)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide19.addText([
         { text: "Modern Portfolio Theory (MPT) / Mean-Variance Optimization:", options: { bold: true, breakLine: true } },
-        { text: "   Merupakan teori klasik (ditemukan oleh Harry Markowitz tahun 1952) yang mencoba meramu komposisi/bobot aset dalam portofolio dengan tujuan matematika murni:", options: { breakLine: true } },
-        { text: "   • Memaksimalkan tingkat keuntungan (Return) pada tingkat risiko tertentu, ATAU", options: { breakLine: true } },
-        { text: "   • Meminimalkan risiko (Variance) pada tingkat keuntungan tertentu.", options: { breakLine: true } },
-        
+        { text: "Merupakan teori klasik (ditemukan oleh Harry Markowitz tahun 1952) yang mencoba meramu komposisi/bobot aset dalam portofolio dengan tujuan matematika murni:", options: { bullet: true } },
+        { text: "Memaksimalkan tingkat keuntungan (Return) pada tingkat risiko tertentu, ATAU", options: { bullet: true } },
+        { text: "Meminimalkan risiko (Variance) pada tingkat keuntungan tertentu.", options: { bullet: true } },
         { text: "Asumsi Dasar Classical Markowitz:", options: { bold: true, breakLine: true } },
-        { text: "   • Investor diasumsikan sepenuhnya rasional dan benci risiko (", options: { } },
-        { text: "Risk-averse", options: { italic: true } },
+        { text: "Investor diasumsikan sepenuhnya rasional dan benci risiko (", options: { bullet: true } },
+        { text: "Risk-averse", options: { italic: true, bold: true } },
         { text: ").", options: { breakLine: true } },
-        { text: "   • Model ini sangat bergantung pada matriks kovarians historis sebagai pedoman utama memprediksi masa depan.", options: { breakLine: true } }
+        { text: "Model ini sangat bergantung pada ", options: { bullet: true } },
+        { text: "matriks kovarians historis", options: { bold: true } },
+        { text: " sebagai pedoman utama memprediksi masa depan.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 20: Lampiran - Classical Markowitz (Bagian 2) ---
     let slide20 = pres.addSlide();
     slide20.addText("Lampiran: Mengapa Classical Markowitz Kesulitan? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide20.addText([
-        { text: "Kelemahan Klasik di Pasar Kripto (Estimation Error):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   1. Pasar kripto sangat liar (", options: { } },
-        { text: "hyper-volatile", options: { italic: true } },
-        { text: ") dan memiliki korelasi ekor tebal. Fluktuasi historis belum tentu berulang di masa depan.", options: { breakLine: true } },
-        { text: "   2. CM memakan mentah-mentah noise (angka semu/acak) tanpa memfilternya, yang berujung pada portofolio gagal yang terlalu percaya diri pada korelasi historis palsu.", options: { breakLine: true } },
-
+        { text: "Kelemahan Klasik di Pasar Kripto:", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "Pasar kripto bersifat ", options: { bullet: true } },
+        { text: "hyper-volatile", options: { bold: true, italic: true } },
+        { text: " dengan korelasi ekor tebal.", options: { breakLine: true } },
+        { text: "Model CM memakan mentah-mentah ", options: { bullet: true } },
+        { text: "noise acak", options: { bold: true } },
+        { text: " tanpa filter, berujung pada kegagalan prediksi.", options: { breakLine: true } },
         { text: "Evolusi → Network Markowitz:", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Oleh karena itu, CM dikembangkan menjadi Network Markowitz di penelitian ini: membersihkan noise (RMT) dan menghukum koin dominan yang rawan hancur (MST).", options: { breakLine: true } }
+        { text: "Mengembangkan CM dengan membersihkan noise (RMT) dan menghukum koin yang rawan menderita ", options: { bullet: true } },
+        { text: "efek contagion", options: { bold: true } },
+        { text: " (MST).", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 21: Lampiran - Dua Tipe Grid Search ---
@@ -525,32 +594,19 @@ async function createPresentation() {
     slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide22.addText([
         { text: "Dua Objektif Optimasi (Return vs Risk):", options: { bold: true, breakLine: true } },
-        { text: "   Dalam penelitian ini, Grid Search dibelah menjadi 2 pendekatan utama agar sejalan dengan tujuan dari masing-masing investor (Mau untung besar vs Cari aman).", options: { breakLine: true } },
-        
         { text: "1. Network Markowitz dengan Target Return (NW - Return GS):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   • ", options: { } },
-        { text: "Tujuan:", options: { bold: true } },
-        { text: " Memaksimalkan capaian tingkat imbal hasil (", options: { } },
-        { text: "Expected Return", options: { italic: true } },
-        { text: ") portofolio.", options: { breakLine: true } },
-        { text: "   • ", options: { } },
-        { text: "Sifat:", options: { bold: true } },
-        { text: " Lebih Agresif. Grid search akan mencari kombinasi penalti (\u03b3) dan alokasi aset yang bisa menyerok keuntungan sebesar mungkin, sangat cocok untuk mengeksploitasi reli harga saat pasar ", options: { } },
-        { text: "Bullish / Recovery", options: { italic: true } },
+        { text: "Memaksimalkan capaian ", options: { bullet: true } },
+        { text: "imbal hasil", options: { bold: true } },
+        { text: " portofolio.", options: { breakLine: true } },
+        { text: "Lebih Agresif untuk mengeksploitasi reli pada pasar ", options: { bullet: true } },
+        { text: "Bullish", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
-        
         { text: "2. Network Markowitz dengan Target Risiko (NW - Risk GS):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   • ", options: { } },
-        { text: "Tujuan:", options: { bold: true } },
-        { text: " Menekan parameter risiko total portofolio (", options: { } },
-        { text: "Variance", options: { italic: true } },
-        { text: ") hingga ke tingkat minimal.", options: { breakLine: true } },
-        { text: "   • ", options: { } },
-        { text: "Sifat:", options: { bold: true } },
-        { text: " Lebih Defensif. Algoritma akan mencari nilai \u03b3 tinggi yang paling efektif meredam fluktuasi harga dan mengamankan modal (Mengerem penyebaran efek ", options: { } },
-        { text: "Contagion", options: { italic: true } },
-        { text: ") saat terjadi crash di fase ", options: { } },
-        { text: "Crypto Winter", options: { italic: true } },
+        { text: "Menekan parameter ", options: { bullet: true } },
+        { text: "risiko total", options: { bold: true } },
+        { text: " hingga minimal.", options: { breakLine: true } },
+        { text: "Lebih Defensif untuk meredam fluktuasi saat ", options: { bullet: true } },
+        { text: "Crypto Winter", options: { bold: true } },
         { text: ".", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
     // --- Slide 22: Lampiran - Penanganan Missing Value ---
@@ -562,15 +618,17 @@ async function createPresentation() {
         
         { text: "Jawaban (Kenapa RMT sangat Krusial):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "   1. Praktik pengisian data diam (", options: { } },
-        { text: "backward fill", options: { italic: true } },
-        { text: ") memang menciptakan rentetan nilai harga yang statis / tidak bergerak.", options: { breakLine: true } },
+        { text: "backward fill", options: { italic: true, bold: true } },
+        { text: ") memang menciptakan rentetan nilai harga yang statis.", options: { breakLine: true } },
         { text: "   2. Namun, kehebatan ", options: { } },
-        { text: "Random Matrix Theory (RMT)", options: { bold: true } },
-        { text: " diuji di sini! Karena data yang datar tersebut sama sekali tidak punya korelasi nyata dengan pergerakan organik aset dominan (seperti Bitcoin).", options: { breakLine: true } },
-        { text: "   3. RMT otomatis akan mendeteksi nilai-nilai korelasi buatan tersebut sebagai probabilitas ", options: { } },
+        { text: "Random Matrix Theory", options: { bold: true } },
+        { text: " diuji di sini! Karena data yang datar sama sekali tidak punya korelasi nyata.", options: { breakLine: true } },
+        { text: "   3. RMT otomatis akan mendeteksi korelasi buatan tersebut sebagai probabilitas ", options: { } },
         { text: "Noise Acak", options: { bold: true, italic: true } },
-        { text: " (berada di bawah batas Marchenko-Pastur), lalu membuangnya menjadi 0.", options: { breakLine: true } },
-        { text: "   4. Hasilnya, matriks korelasi terselamatkan dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
+        { text: ", lalu membuangnya menjadi 0.", options: { breakLine: true } },
+        { text: "   4. Hasilnya, matriks korelasi ", options: { } },
+        { text: "terselamatkan", options: { bold: true } },
+        { text: " dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 23: Lampiran - Peran USDT (Bagian 1) ---
@@ -578,15 +636,15 @@ async function createPresentation() {
     slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut2.addText([
         { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
-        { text: "\"Tether (USDT) itu stablecoin yang nilainya selalu fix ke 1 USD. Apakah tidak berbuat curang dengan berlindung pada aset yang tidak fluktuatif?\"", options: { italic: true, breakLine: true } },
+        { text: "\"Tether (USDT) itu stablecoin yang nilainya selalu fix ke 1 USD. Apakah tidak berbuat curang?\"", options: { italic: true, breakLine: true } },
         
         { text: "Jawaban (Dinamika Portofolio Cerdas):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   1. Model ini disusun persis untuk mensimulasikan perilaku paling realistis dari ", options: { } },
+        { text: "Model ini mensimulasikan perilaku ", options: { bullet: true } },
         { text: "Robo-Advisory", options: { bold: true, italic: true } },
         { text: " institusional.", options: { breakLine: true } },
-        { text: "   2. Ketika pasar mendadak anjlok ekstrem (", options: { } },
-        { text: "Bearish/Crash", options: { italic: true } },
-        { text: "), investor normal akan melikuidasi risiko dan melarikan senjatanya ke posisi uang tunai (USD) atau obligasi minimum risiko.", options: { breakLine: true } }
+        { text: "Ketika pasar anjlok ekstrem, investor akan melarikan senjatanya ke posisi ", options: { bullet: true } },
+        { text: "tunai (USDT)", options: { bold: true } },
+        { text: " sebagai evakuasi risiko.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 24: Lampiran - Peran USDT (Bagian 2) ---
@@ -597,8 +655,49 @@ async function createPresentation() {
         { text: "Network Markowitz (GS)", options: { bold: true } },
         { text: " dilatih secara matematis; jika mendeteksi korelasi ancaman kolaps merambat ke semua altcoin, ia akan melempar alokasi modalnya menuju node ", options: { } },
         { text: "USDT", options: { bold: true } },
-        { text: " sebagai langkah evakuasi otomatis (Shock-Absorber).", options: { breakLine: true } },
-        { text: "   4. Hal ini yang membuat performa Risk-GS sangat tangguh dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
+        { text: " sebagai langkah ", options: { } },
+        { text: "evakuasi otomatis", options: { bold: true } },
+        { text: " (Shock-Absorber).", options: { breakLine: true } },
+        { text: "   4. Hal ini yang membuat performa Risk-GS sangat ", options: { } },
+        { text: "tangguh", options: { bold: true } },
+        { text: " dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 25: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
+    let slideOut4 = pres.addSlide();
+    slideOut4.addText("Lampiran: Bukti Empiris Non-Stationarity Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideOut4.addText([
+        { text: "Masalah: ", options: { bold: true, color: "c0392b" } },
+        { text: "Kenapa harus menggunakan model Adaptif (Dynamic Gamma)?", options: { italic: true, breakLine: true } },
+        { text: "Bukti dari Grid Search:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Data menunjukkan nilai Gamma (γ) optimal ", options: { bullet: true } },
+        { text: "terus bergeser", options: { bold: true } },
+        { text: " setiap periode rebalancing.", options: { breakLine: true } },
+        { text: "Penggunaan γ statis tidak cukup untuk menangkap perubahan ", options: { bullet: true } },
+        { text: "struktur korelasi", options: { bold: true } },
+        { text: " yang sangat cepat di pasar kripto.", options: { breakLine: true } },
+        { text: "Ini membenarkan bahwa pasar kripto membutuhkan ", options: { bullet: true } },
+        { text: "kalibrasi otomatis", options: { bold: true } },
+        { text: " secara temporal.", options: { } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 26: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
+    let slideOut5 = pres.addSlide();
+    slideOut5.addText("Lampiran: Jaringan sebagai 'Shock-Absorber'", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideOut5.addText([
+        { text: "Konsep Teoritis:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Eigenvector Centrality mengidentifikasi koin yang menjadi ", options: { bullet: true } },
+        { text: "hub risiko", options: { bold: true } },
+        { text: ".", options: { breakLine: true } },
+        { text: "Penalti Gamma memaksa portofolio ", options: { bullet: true } },
+        { text: "menjauhi aset", options: { bold: true } },
+        { text: " yang terlalu dominan secara sistemik saat volatilitas tinggi.", options: { breakLine: true } },
+        { text: "Hasil pada ", options: { bullet: true } },
+        { text: "Tabel 5", options: { bold: true } },
+        { text: " membuktikan bahwa saat crash, distribusi kerugian ekor model NW jauh lebih terjaga.", options: { breakLine: true } },
+        { text: "Kesimpulan: Topologi jaringan memberikan sinyal ", options: { bullet: true } },
+        { text: "diversifikasi akurat", options: { bold: true } },
+        { text: " daripada sekadar variansi harga.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
 
