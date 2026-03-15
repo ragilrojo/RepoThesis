@@ -438,10 +438,12 @@ async function createPresentation() {
         { text: " untuk merekalibrasi parameter Gamma (\u03b3) terbaik secara komersil dalam periode berjalan.", options: { breakLine: true } },
         
         { text: "Evaluasi pada Jendela Bergulir (Rolling Window):", options: { bold: true, breakLine: true } },
-        { text: "   • Model membelah data historis menjadi jendela rentang waktu yang terus maju (bergeser) memotong waktu.", options: { breakLine: true } },
-        { text: "   • Tiap jendela mensimulasikan nilai \u03b3 lalu mengevaluasi model portofolio mana penghasil ", options: { } },
-        { text: "Sharpe Ratio", options: { italic: true } },
-        { text: " tertinggi.", options: { breakLine: true } },
+        { text: "   • Model membelah sekuens data waktu menjadi set latih dan set validasi (out-of-sample) yang terus maju bergeser.", options: { breakLine: true } },
+        { text: "   • Tiap jendela mensimulasikan nilai \u03b3 (dari 0.0 hingga 2.0) dan memburu parameter mana yang membuahkan ", options: { } },
+        { text: "Return Terbesar", options: { bold: true, color: "27ae60" } },
+        { text: " ATAU ", options: { bold: true } },
+        { text: "Risiko Terkecil", options: { bold: true, color: "c0392b" } },
+        { text: " di periode tersebut.", options: { breakLine: true } },
         
         { text: "Sifat Adaptif (Adaptive Market Hypothesis):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "   Siklus aset kripto terus berevolusi (", options: { } },
@@ -451,6 +453,40 @@ async function createPresentation() {
         { text: "Tujuan Utama (Research Gap):", options: { bold: true, breakLine: true } },
         { text: "   Menghilangkan bias perkiraan buta karena optimalisasi penalti kini bisa bergerak lincah dan otomatis tanpa sentuhan teknis manusia sama sekali.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 17, color: "333333", valign: "top" });
+
+    // --- Slide 22: Lampiran - Dua Tipe Grid Search ---
+    let slide22 = pres.addSlide();
+    slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide22.addText([
+        { text: "Dua Objektif Optimasi (Return vs Risk):", options: { bold: true, breakLine: true } },
+        { text: "   Dalam penelitian ini, Grid Search dibelah menjadi 2 pendekatan utama agar sejalan dengan tujuan dari masing-masing investor (Mau untung besar vs Cari aman).", options: { breakLine: true } },
+        
+        { text: "1. Network Markowitz dengan Target Return (NW - Return GS):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   • ", options: { } },
+        { text: "Tujuan:", options: { bold: true } },
+        { text: " Memaksimalkan capaian tingkat imbal hasil (", options: { } },
+        { text: "Expected Return", options: { italic: true } },
+        { text: ") portofolio.", options: { breakLine: true } },
+        { text: "   • ", options: { } },
+        { text: "Sifat:", options: { bold: true } },
+        { text: " Lebih Agresif. Grid search akan mencari kombinasi penalti (\u03b3) dan alokasi aset yang bisa menyerok keuntungan sebesar mungkin, sangat cocok untuk mengeksploitasi reli harga saat pasar ", options: { } },
+        { text: "Bullish / Recovery", options: { italic: true } },
+        { text: ".", options: { breakLine: true } },
+        
+        { text: "2. Network Markowitz dengan Target Risiko (NW - Risk GS):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   • ", options: { } },
+        { text: "Tujuan:", options: { bold: true } },
+        { text: " Menekan parameter risiko total portofolio (", options: { } },
+        { text: "Variance", options: { italic: true } },
+        { text: ") hingga ke tingkat minimal.", options: { breakLine: true } },
+        { text: "   • ", options: { } },
+        { text: "Sifat:", options: { bold: true } },
+        { text: " Lebih Defensif. Algoritma akan mencari nilai \u03b3 tinggi yang paling efektif meredam fluktuasi harga dan mengamankan modal (Mengerem penyebaran efek ", options: { } },
+        { text: "Contagion", options: { italic: true } },
+        { text: ") saat terjadi crash di fase ", options: { } },
+        { text: "Crypto Winter", options: { italic: true } },
+        { text: ".", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Simpan File ---
     const outputFilename = "Presentasi_Proposal_Update.pptx";
