@@ -512,9 +512,6 @@ async function createPresentation() {
         { text: "   4. Hal ini yang membuat performa Risk-GS sangat tangguh dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 25: Terima Kasih ---
-    let slideFinal = pres.addSlide();
-    slideFinal.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" });
 
     // --- Simpan File ---
     const outputFilename = "Presentasi_Proposal_Update.pptx";
