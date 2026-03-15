@@ -465,6 +465,47 @@ async function createPresentation() {
         { text: "Crypto Winter", options: { italic: true } },
         { text: ".", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    // --- Slide 22: Lampiran - Penanganan Missing Value ---
+    let slideOut1 = pres.addSlide();
+    slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slideOut1.addText([
+        { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
+        { text: "\"Beberapa koin seperti Binance/EOS belum rilis di awal 2017 sehingga datanya kosong. Bukankah backward-fill memalsukan harga dan merusak matriks?\"", options: { italic: true, breakLine: true } },
+        
+        { text: "Jawaban (Kenapa RMT sangat Krusial):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   1. Praktik pengisian data diam (", options: { } },
+        { text: "backward fill", options: { italic: true } },
+        { text: ") memang menciptakan rentetan nilai harga yang statis / tidak bergerak.", options: { breakLine: true } },
+        { text: "   2. Namun, kehebatan ", options: { } },
+        { text: "Random Matrix Theory (RMT)", options: { bold: true } },
+        { text: " diuji di sini! Karena data yang datar tersebut sama sekali tidak punya korelasi nyata dengan pergerakan organik aset dominan (seperti Bitcoin).", options: { breakLine: true } },
+        { text: "   3. RMT otomatis akan mendeteksi nilai-nilai korelasi buatan tersebut sebagai probabilitas ", options: { } },
+        { text: "Noise Acak", options: { bold: true, italic: true } },
+        { text: " (berada di bawah batas Marchenko-Pastur), lalu membuangnya menjadi 0.", options: { breakLine: true } },
+        { text: "   4. Hasilnya, matriks korelasi terselamatkan dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 23: Lampiran - Peran USDT ---
+    let slideOut2 = pres.addSlide();
+    slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slideOut2.addText([
+        { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
+        { text: "\"Tether (USDT) itu stablecoin yang nilainya selalu fix ke 1 USD. Apakah tidak berbuat curang dengan berlindung pada aset yang tidak fluktuatif?\"", options: { italic: true, breakLine: true } },
+        
+        { text: "Jawaban (Dinamika Portofolio Cerdas):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   1. Model ini disusun persis untuk mensimulasikan perilaku paling realistis dari ", options: { } },
+        { text: "Robo-Advisory", options: { bold: true, italic: true } },
+        { text: " institusional.", options: { breakLine: true } },
+        { text: "   2. Ketika pasar mendadak anjlok ekstrem (", options: { } },
+        { text: "Bearish/Crash", options: { italic: true } },
+        { text: "), investor normal akan melikuidasi risiko dan melarikan senjatanya ke posisi uang tunai (USD) atau obligasi minimum risiko.", options: { breakLine: true } },
+        { text: "   3. Algoritma jaringan ", options: { } },
+        { text: "Network Markowitz (GS)", options: { bold: true } },
+        { text: " dilatih secara matematis; jika mendeteksi korelasi ancaman kolaps merambat ke semua altcoin, ia akan melempar alokasi modalnya menuju node ", options: { } },
+        { text: "USDT", options: { bold: true } },
+        { text: " sebagai langkah evakuasi otomatis (Shock-Absorber).", options: { breakLine: true } },
+        { text: "   4. Hal ini yang membuat performa Risk-GS sangat tangguh dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Simpan File ---
     const outputFilename = "Presentasi_Proposal_Update.pptx";
