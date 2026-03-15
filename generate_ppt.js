@@ -174,6 +174,10 @@ async function createPresentation() {
         { text: " Jika nilainya positif besar, artinya peluang profit jauh menutupi probabilitas loss.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 7: Terima Kasih ---
+    let slide7 = pres.addSlide();
+    slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" });
+
     // --- Slide 9: Lampiran - Analogi RMT ---
     let slide9 = pres.addSlide();
     slide9.addText([
