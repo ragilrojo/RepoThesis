@@ -14,7 +14,7 @@ async function createPresentation() {
     // --- Slide 1: Judul ---
     let slide1 = pres.addSlide();
     slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio Adaptif", { 
-        x: 0.5, y: 1.2, w: "90%", fontSize: 40, bold: true, align: "center", color: "2c3e50" 
+        x: 0.5, y: 1.2, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" 
     });
     slide1.addText([
         { text: "Berbasis Pendekatan\n" },
@@ -30,7 +30,7 @@ async function createPresentation() {
 
     // --- Slide 2: Latar Belakang ---
     let slide2 = pres.addSlide();
-    slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide2.addText([
         { text: "Tingginya volatilitas ekstrem dan ", options: { bullet: true } },
         { text: "noise", options: { italic: true } },
@@ -57,7 +57,7 @@ async function createPresentation() {
 
     // --- Slide 3: Konsep "Noise" dalam Cryptocurrency ---
     let slide3 = pres.addSlide();
-    slide3.addText("Apa itu \"Noise\" di Pasar Kripto?", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slide3.addText("Apa itu \"Noise\" di Pasar Kripto?", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide3.addText([
         { text: "Noise (Kebisingan) Pasar:", options: { bold: true, breakLine: true } },
         { text: "   Fluktuasi harga acak akibat sentimen sesaat, rumor, FOMO, atau spekulasi yang tidak mencerminkan nilai fundamental aset.", options: { breakLine: true } },
@@ -77,7 +77,7 @@ async function createPresentation() {
 
     // --- Slide 4: Landasan Teori ---
     let slide4 = pres.addSlide();
-    slide4.addText("Landasan Teori Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slide4.addText("Landasan Teori Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide4.addText([
         { text: "Tinjauan Portofolio & Risiko:", options: { bold: true, breakLine: true } },
         { text: "   Portofolio: Kumpulan aset finansial yang dikelola bersama untuk mengoptimalkan profil risiko-imbal hasil melalui diversifikasi.", options: { breakLine: true } },
@@ -96,7 +96,7 @@ async function createPresentation() {
 
     // --- Slide 4.1: Penelitian Terdahulu ---
     let slidePrev = pres.addSlide();
-    slidePrev.addText("Penelitian Terdahulu (State of the Art)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slidePrev.addText("Penelitian Terdahulu (State of the Art)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slidePrev.addText([
         { text: "1. Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "   Pelopor model Network Markowitz yang memadukan RMT dan MST pada kripto.", options: { breakLine: true } },
@@ -116,12 +116,12 @@ async function createPresentation() {
 
     // --- Slide 4.5: Kerangka Penelitian ---
     let slideFramework = pres.addSlide();
-    slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideFramework.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/framwrok.jpg", x: 1.0, y: 1.1, w: 8.0, h: 4.0 });
 
     // --- Slide 5: Strategi yang Dibandingkan ---
     let slide5 = pres.addSlide();
-    slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide5.addText([
         { text: "1. EW (" },
         { text: "Equally Weighted", options: { italic: true } },
@@ -154,7 +154,7 @@ async function createPresentation() {
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
-    slide6.addText("Matriks Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    slide6.addText("Matriks Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
         { text: "1. Sharpe Ratio (Risk-Adjusted Return):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "   Mengukur imbal hasil berlebih per unit risiko (Volatilitas) secara umum.", options: { breakLine: true } },
@@ -175,7 +175,7 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
     // --- Slide 7: Terima Kasih ---
     let slide7 = pres.addSlide();
-    slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "2c3e50" });
+    slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" });
 
     // --- Slide 9: Lampiran - Analogi RMT ---
     let slide9 = pres.addSlide();
@@ -183,7 +183,7 @@ async function createPresentation() {
         { text: "Lampiran: Analogi " },
         { text: "RMT", options: { hyperlink: { slide: '9' } } },
         { text: " sebagai \"Noise-Canceling\"" }
-    ], { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
+    ], { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide9.addText([
         { text: "Pasar Kripto = Pesta yang Bising:", options: { bold: true, breakLine: true } },
         { text: "   Banyak fluktuasi harga karena sentimen sesaat / kebetulan (", options: { } },
@@ -205,7 +205,7 @@ async function createPresentation() {
 
     // --- Slide 10: Lampiran - Signal vs Noise ---
     let slide10 = pres.addSlide();
-    slide10.addText("Lampiran: Membedakan Hubungan Sejati (Signal) vs Noise", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide10.addText("Lampiran: Membedakan Hubungan Sejati (Signal) vs Noise", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide10.addText([
         { text: "1. Mencari Nilai Eigen (Eigenvalues):", options: { bold: true, breakLine: true } },
         { text: "   Mengekstrak angka dari matriks korelasi yang mewakili kekuatan pola pergerakan bersama antar-aset.", options: { breakLine: true } },
@@ -225,7 +225,7 @@ async function createPresentation() {
 
     // --- Slide 11: Lampiran - Menghitung Nilai Eigen ---
     let slide11 = pres.addSlide();
-    slide11.addText("Lampiran: Bagaimana Menghitung Nilai Eigen?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide11.addText("Lampiran: Bagaimana Menghitung Nilai Eigen?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide11.addText([
         { text: "1. Matriks Korelasi (C):", options: { bold: true, breakLine: true } },
         { text: "   Membentuk matriks (N x N) yang menjabarkan seluruh korelasi pergerakan harga antar sepasang mata uang kripto secara historis.", options: { breakLine: true } },
@@ -249,7 +249,7 @@ async function createPresentation() {
 
     // --- Slide 12: Lampiran - Contoh Praktek (Dummy Data) ---
     let slide12 = pres.addSlide();
-    slide12.addText("Lampiran: Praktek Sederhana Menghitung Eigenvalue", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide12.addText("Lampiran: Praktek Sederhana Menghitung Eigenvalue", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide12.addText([
         { text: "Konteks Dummy: 2 Koin (BTC & ETH) dengan korelasi = 0.5", options: { bold: true, breakLine: true } },
         
@@ -272,7 +272,7 @@ async function createPresentation() {
 
     // --- Slide 13: Lampiran - Bagaimana Menghitung Korelasi? ---
     let slide13 = pres.addSlide();
-    slide13.addText("Lampiran: Bagaimana Menghitung Korelasi?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide13.addText("Lampiran: Bagaimana Menghitung Korelasi?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide13.addText([
         { text: "1. Data Historis (Returns):", options: { bold: true, breakLine: true } },
         { text: "   Input dasar berupa data runtut waktu (time-series) dari return harian aset-aset cryptocurrency.", options: { breakLine: true } },
@@ -301,7 +301,7 @@ async function createPresentation() {
 
     // --- Slide 14: Lampiran - Apakah Nilai Eigen Statis? ---
     let slide14 = pres.addSlide();
-    slide14.addText("Lampiran: Apakah Nilai Eigen Statis?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide14.addText("Lampiran: Apakah Nilai Eigen Statis?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide14.addText([
         { text: "Apakah Nilai Eigen Sudah Ditentukan (Statis)?", options: { bold: true, breakLine: true, color: "c0392b" } },
         { text: "   TIDAK. Nilai Eigen (Eigenvalue) adalah hasil perhitungan dinamis yang diekstrak langsung dari matriks korelasi aset-aset pada saat itu.", options: { breakLine: true } },
@@ -326,7 +326,7 @@ async function createPresentation() {
 
     // --- Slide 15: Lampiran - Batas Noise Marchenko-Pastur ---
     let slide15 = pres.addSlide();
-    slide15.addText("Lampiran: Menentukan Batas Noise (Marchenko-Pastur)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide15.addText("Lampiran: Menentukan Batas Noise (Marchenko-Pastur)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide15.addText([
         { text: "Apa itu Batas Marchenko-Pastur (MP)?", options: { bold: true, breakLine: true } },
         { text: "   Distribusi MP adalah teori probabilitas yang memprediksi seperti apa bentuk (distribusi eigenvalue) dari sebuah matriks yang 100% berisi angka acak (noise).", options: { breakLine: true } },
@@ -348,7 +348,7 @@ async function createPresentation() {
 
     // --- Slide 16: Lampiran - Analogi Minimum Spanning Tree (Bagian 1) ---
     let slide16 = pres.addSlide();
-    slide16.addText("Lampiran: Analogi Minimum Spanning Tree (MST)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide16.addText("Lampiran: Analogi Minimum Spanning Tree (MST)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide16.addText([
         { text: "Membangun Jaringan Jalan Tol Antar Kota:", options: { bold: true, breakLine: true } },
         { text: "   Bayangkan aset-aset kripto (BTC, ETH, BNB) adalah kota-kota yang ingin dihubungkan dengan jalan tol (korelasi).", options: { breakLine: true } },
@@ -366,7 +366,7 @@ async function createPresentation() {
 
     // --- Slide 17: Lampiran - Analogi Minimum Spanning Tree (Bagian 2) ---
     let slide17 = pres.addSlide();
-    slide17.addText("Lampiran: Mengapa Kita Membutuhkan MST?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide17.addText("Lampiran: Mengapa Kita Membutuhkan MST?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide17.addText([
         { text: "Menemukan Titik Kemacetan (Hub Centrality):", options: { bold: true, color: "8e44ad", breakLine: true } },
         { text: "   • Di sebuah jaringan jalan tol, pasti ada 1 kota besar yang menjadi pusat persimpangan (Banyak jalan terhubung ke sana).", options: { breakLine: true } },
@@ -381,7 +381,7 @@ async function createPresentation() {
 
     // --- Slide 18: Lampiran - Penalti (Gamma) Optimal ---
     let slide18 = pres.addSlide();
-    slide18.addText("Lampiran: Berapa Nilai \"Penalti\" (Gamma) yang Optimal?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide18.addText("Lampiran: Berapa Nilai \"Penalti\" (Gamma) yang Optimal?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide18.addText([
         { text: "Apakah Ada Satu Angka Penalti yang Sempurna?", options: { bold: true, breakLine: true, color: "c0392b" } },
         { text: "   TIDAK. Secara teori, tidak ada nilai penalti statis yang selalu cocok sepanjang waktu akibat perubahan siklus (rezim) pada fluktuasi uang kripto.", options: { breakLine: true } },
@@ -406,7 +406,7 @@ async function createPresentation() {
 
     // --- Slide 19: Lampiran - Classical Markowitz (Bagian 1) ---
     let slide19 = pres.addSlide();
-    slide19.addText("Lampiran: Apa itu Classical Markowitz (CM)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide19.addText("Lampiran: Apa itu Classical Markowitz (CM)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide19.addText([
         { text: "Modern Portfolio Theory (MPT) / Mean-Variance Optimization:", options: { bold: true, breakLine: true } },
         { text: "   Merupakan teori klasik (ditemukan oleh Harry Markowitz tahun 1952) yang mencoba meramu komposisi/bobot aset dalam portofolio dengan tujuan matematika murni:", options: { breakLine: true } },
@@ -422,7 +422,7 @@ async function createPresentation() {
 
     // --- Slide 20: Lampiran - Classical Markowitz (Bagian 2) ---
     let slide20 = pres.addSlide();
-    slide20.addText("Lampiran: Mengapa Classical Markowitz Kesulitan? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide20.addText("Lampiran: Mengapa Classical Markowitz Kesulitan? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide20.addText([
         { text: "Kelemahan Klasik di Pasar Kripto (Estimation Error):", options: { bold: true, breakLine: true, color: "c0392b" } },
         { text: "   1. Pasar kripto sangat liar (", options: { } },
@@ -436,7 +436,7 @@ async function createPresentation() {
 
     // --- Slide 21: Lampiran - Dua Tipe Grid Search ---
     let slide22 = pres.addSlide();
-    slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide22.addText([
         { text: "Dua Objektif Optimasi (Return vs Risk):", options: { bold: true, breakLine: true } },
         { text: "   Dalam penelitian ini, Grid Search dibelah menjadi 2 pendekatan utama agar sejalan dengan tujuan dari masing-masing investor (Mau untung besar vs Cari aman).", options: { breakLine: true } },
@@ -469,7 +469,7 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
     // --- Slide 22: Lampiran - Penanganan Missing Value ---
     let slideOut1 = pres.addSlide();
-    slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut1.addText([
         { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
         { text: "\"Beberapa koin seperti Binance/EOS belum rilis di awal 2017 sehingga datanya kosong. Bukankah backward-fill memalsukan harga dan merusak matriks?\"", options: { italic: true, breakLine: true } },
@@ -489,7 +489,7 @@ async function createPresentation() {
 
     // --- Slide 23: Lampiran - Peran USDT ---
     let slideOut2 = pres.addSlide();
-    slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut2.addText([
         { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
         { text: "\"Tether (USDT) itu stablecoin yang nilainya selalu fix ke 1 USD. Apakah tidak berbuat curang dengan berlindung pada aset yang tidak fluktuatif?\"", options: { italic: true, breakLine: true } },
