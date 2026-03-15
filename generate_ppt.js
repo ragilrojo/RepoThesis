@@ -1,4 +1,6 @@
 const pptxgen = require("pptxgenjs");
+const fs = require("fs");
+const path = require("path");
 
 async function createPresentation() {
     console.log("Memulai pembuatan presentasi sesuai hasil riset...");
@@ -506,6 +508,41 @@ async function createPresentation() {
         { text: " sebagai langkah evakuasi otomatis (Shock-Absorber).", options: { breakLine: true } },
         { text: "   4. Hal ini yang membuat performa Risk-GS sangat tangguh dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    // --- Slide 24: Visualisasi MST ---
+    let slideOut3 = pres.addSlide();
+    slideOut3.addText("Lampiran: Peta Jaringan Minimum Spanning Tree (MST)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    if (fs.existsSync(path.join(__dirname, "mst_1.png"))) {
+        slideOut3.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/mst_1.png", x: 0.5, y: 1.2, w: 4.5, h: 3.5 });
+        slideOut3.addText("MST Periode Bullish", { x: 0.5, y: 4.8, w: 4.5, fontSize: 14, align: "center" });
+    } else {
+        slideOut3.addText("[Jalankan Jupyter Notebook untuk memunculkan Gambar MST_1]", { x: 0.5, y: 2.0, w: 4.5, fontSize: 14, color: "c0392b" });
+    }
+    if (fs.existsSync(path.join(__dirname, "mst_2.png"))) {
+        slideOut3.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/mst_2.png", x: 5.2, y: 1.2, w: 4.5, h: 3.5 });
+        slideOut3.addText("MST Periode Bearish", { x: 5.2, y: 4.8, w: 4.5, fontSize: 14, align: "center" });
+    } else {
+        slideOut3.addText("[Jalankan Jupyter Notebook untuk memunculkan Gambar MST_2]", { x: 5.2, y: 2.0, w: 4.5, fontSize: 14, color: "c0392b" });
+    }
+
+    // --- Slide 25: Visualisasi Dinamika Gamma ---
+    let slideOut4 = pres.addSlide();
+    slideOut4.addText("Lampiran: Bukti Sifat Adaptif Grid Search (Rolling \u03b3)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    if (fs.existsSync(path.join(__dirname, "gamma_plot.png"))) {
+        slideOut4.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/gamma_plot.png", x: 0.5, y: 1.5, w: 9.0, h: 3.0 });
+        slideOut4.addText("*Grafik di atas membuktikan bahwa AI (Grid Search) selalu merekalibrasi angka penaltinya sesuai kondisi pasar eksternal terkini.", { x: 0.5, y: 4.7, w: "90%", fontSize: 13, italic: true });
+    } else {
+        slideOut4.addText("[Jalankan Jupyter Notebook untuk memunculkan Plot Fluktuasi Gamma]", { x: 0.5, y: 2.0, w: "90%", fontSize: 16, color: "c0392b", align: "center" });
+    }
+
+    // --- Slide 26: Visualisasi Performa ---
+    let slideOut5 = pres.addSlide();
+    slideOut5.addText("Lampiran: Uji Coba Terbatas (Sandbox Preliminary)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
+    if (fs.existsSync(path.join(__dirname, "performance_plot.png"))) {
+        slideOut5.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/performance_plot.png", x: 0.5, y: 1.2, w: 9.0, h: 3.5 });
+        slideOut5.addText("*Simulasi eksperimental untuk menegaskan landasan teori Proposal. Garis hijau/ungu (Network Markowitz) terlihat jauh lebih tangguh menghadapi Crypto Winter.", { x: 0.5, y: 4.8, w: "90%", fontSize: 13, italic: true });
+    } else {
+        slideOut5.addText("[Jalankan Jupyter Notebook untuk memunculkan Profil Kinerja Portofolio]", { x: 0.5, y: 2.0, w: "90%", fontSize: 16, color: "c0392b", align: "center" });
+    }
 
     // --- Simpan File ---
     const outputFilename = "Presentasi_Proposal_Update.pptx";
