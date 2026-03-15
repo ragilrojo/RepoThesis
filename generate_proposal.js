@@ -1188,7 +1188,7 @@ const doc = new Document({
                             ]
                         }),
                         ...[
-                            ["BTC", "Bitcoin", "Layer 1 / Story of Value", "Yahoo Finance"],
+                            ["BTC", "Bitcoin", "Layer 1 / Store of Value", "Yahoo Finance"],
                             ["ETH", "Ethereum", "Layer 1 / Smart Contract", "Yahoo Finance"],
                             ["XRP", "Ripple", "Payment / Bridge Currency", "Yahoo Finance"],
                             ["USDT", "Tether", "Stablecoin / USD Pegged", "Yahoo Finance"],

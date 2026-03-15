@@ -129,7 +129,7 @@ async function createPresentation() {
             { text: "Nama Aset", options: { bold: true, fill: "003366", color: "ffffff", align: "center" } },
             { text: "Kategori / Use Case", options: { bold: true, fill: "003366", color: "ffffff", align: "center" } }
         ],
-        ["BTC", "Bitcoin", "Layer 1 / Story of Value"],
+        ["BTC", "Bitcoin", "Layer 1 / Store of Value"],
         ["ETH", "Ethereum", "Layer 1 / Smart Contract"],
         ["XRP", "Ripple", "Payment / Bridge Currency"],
         ["USDT", "Tether", "Stablecoin / USD Pegged"],
@@ -181,6 +181,61 @@ async function createPresentation() {
         { text: "rolling window", options: { italic: true } },
         { text: " untuk optimasi parameter dinamis." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 3.5, fontSize: 20, color: "333333", valign: "top" });
+
+    // --- Slide 5.1: Equally Weighted (EW) ---
+    let slideEW = pres.addSlide();
+    slideEW.addText("1. Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideEW.addText([
+        { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
+        { text: "Strategi alokasi 1/N yang memberikan bobot sama ke setiap aset tanpa mempertimbangkan parameter risiko atau imbal hasil.", options: { bullet: true, breakLine: true } },
+        { text: "Keunggulan:", options: { bold: true, breakLine: true } },
+        { text: "Berfungsi sebagai 'benchmark naif' yang sangat tangguh.", options: { bullet: true, breakLine: true } },
+        { text: "Tidak memiliki risiko estimasi (estimation risk) karena tidak memerlukan perhitungan statistik kompleks.", options: { bullet: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+
+    // --- Slide 5.2: Classical Markowitz (CM) ---
+    let slideCM = pres.addSlide();
+    slideCM.addText("2. Classical Markowitz (CM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideCM.addText([
+        { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
+        { text: "Model optimasi Mean-Variance standar yang berupaya meminimalkan variansi portofolio untuk tingkat imbal hasil tertentu.", options: { bullet: true, breakLine: true } },
+        { text: "Kelemahan di Pasar Kripto:", options: { bold: true, breakLine: true } },
+        { text: "Sering kali menderita masalah ketidakstabilan numerik pada data historis yang sangat 'berisik' (noisy).", options: { bullet: true, breakLine: true } },
+        { text: "Representasi teori portofolio tradisional yang menjadi pondasi dasar penelitian ini.", options: { bullet: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+
+    // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
+    let slideGM = pres.addSlide();
+    slideGM.addText("3. Graphical Lasso Markowitz (GM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideGM.addText([
+        { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
+        { text: "Menggunakan algoritma Lasso pada matriks presisi (invers kovarians) untuk memaksa korelasi yang tidak signifikan menjadi nol.", options: { bullet: true, breakLine: true } },
+        { text: "Tujuan:", options: { bold: true, breakLine: true } },
+        { text: "Menciptakan struktur 'sparsity' (kerekatan) pada jaringan.", options: { bullet: true, breakLine: true } },
+        { text: "Menangani tantangan data kripto yang sering terkorelasi secara palsu (spurious correlations).", options: { bullet: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+
+    // --- Slide 5.4: Network Markowitz (NW) Statis ---
+    let slideNWStatic = pres.addSlide();
+    slideNWStatic.addText("4. Network Markowitz (NW) Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWStatic.addText([
+        { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
+        { text: "Model jaringan original (Giudici et al., 2020) yang menggabungkan filter RMT dan penalti sentralitas graf.", options: { bullet: true, breakLine: true } },
+        { text: "Karakteristik:", options: { bold: true, breakLine: true } },
+        { text: "Menggunakan parameter penalti (gamma) yang bersifat statis/tetap (hard-coded).", options: { bullet: true, breakLine: true } },
+        { text: "Digunakan sebagai pembanding langsung untuk menguji efisiensi parameter adaptif.", options: { bullet: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
+
+    // --- Slide 5.5: Network Markowitz (NW) Adaptif ---
+    let slideNWAdaptive = pres.addSlide();
+    slideNWAdaptive.addText("5. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWAdaptive.addText([
+        { text: "Konsep Dasar (Proposed Model):", options: { bold: true, breakLine: true } },
+        { text: "Mengintegrasikan model NW dengan mekanisme 'Dynamic Grid Search' untuk kalibrasi parameter secara otomatis.", options: { bullet: true, breakLine: true } },
+        { text: "Inovasi:", options: { bold: true, breakLine: true } },
+        { text: "Parameter gamma dioptimalkan pada setiap jendela waktu bergulir (rolling window).", options: { bullet: true, breakLine: true } },
+        { text: "Memastikan model tetap adaptif terhadap perubahan rezim pasar (bullish/bearish) secara temporal.", options: { bullet: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", fontSize: 20, color: "333333" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
