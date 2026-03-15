@@ -1,0 +1,24 @@
+{
+  "name": "temp_doc_build",
+  "version": "1.0.0",
+  "description": "",
+  "main": "generate_proposal_tesis.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "docx": "^9.6.1",
+    "docxtemplater": "^3.68.3",
+    "docxtemplater-image-module-free": "^1.1.1",
+    "image-size": "^2.0.2",
+    "mathjax-node": "^2.1.1",
+    "pdf-parse": "^2.4.5",
+    "pizzip": "^3.2.0",
+    "pptxgenjs": "^4.0.1",
+    "svg2img": "^1.0.0-beta.2"
+  }
+}

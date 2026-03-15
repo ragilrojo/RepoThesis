@@ -1,0 +1,2313 @@
+Pedoman  Penulisan  Tesis  Program  Studi  Ilmu  Komputer   (S2)     1 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+PEDOMAN PENYUSUNAN 
+TESIS  
+PROGRAM STUDI ILMU KOMPUTER (S2)  
+FAKULTAS TEKNOLOGI INFORMASI  
+UNIVERSITAS NUSA MANDIRI  
+2024 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          ii 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 
+PEDOMAN  PENYUSUNAN  TESIS  
+PROGRAM STUDI ILMU KOMPUTER (S2)  
+FAKULTAS TEKNOLOGI INFORMASI  
+UNIVERSITAS NUSA MANDIRI  
+ 
+ 
+ 
+ 
+Revisi  2 
+Tanggal  6 Februari 2024  
+Dikendalikan  Oleh  Badan Penjamin Mutu (BPM)  
+ 
+ 
+ 
+Diajukan  Oleh,  Dikaji  Oleh,  Ditetapkan  Oleh,  
+Ketua  
+Tim Penyusun  Kepala Lembaga  
+Pengembangan Pendidikan  
+dan Pe mbelajaran (LPPP)  Dekan  
+Fakultas Teknologi Informasi  
+Tanggal:  1 Februari 2024  Tanggal:  6 Februari 2024  Tanggal:  12 Februari 2024  
+ 
+ 
+ 
+ 
+ 
+Eni Heni Hermaliani , MM, M.Kom   
+ 
+ 
+ 
+ 
+Nurmalasari , M.Kom   
+ 
+ 
+ 
+ 
+Anton, M.Kom  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          1 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+  
+ 
+ 
+ 
+  
+ 
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          1 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+  
+ 
+ 
+ 
+ 
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          v 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ KATA  PENGANTAR  
+ 
+Dalam  rangka  mempermudah  penyusunan  dan pendokumentasian  tesis pada 
+Program Magister Program Studi  Ilmu Komputer di Fakultas Teknologi Informasi  
+Universitas  Nusa  Mandiri,  serta sebagai alat ukur dan menjaga kualitas tesis sekaligus 
+menjaga kualitas lulusan yang dihasilkan baik dalam  bentuk  tercetak  maupun  digital,  
+diperlukan  buku pedoman  teknis  dalam  penyusunan  tesis yang  dapat  pergunakan  oleh 
+mahasiswa.  Buku pedoman  ini memberikan  tuntunan  kepada  mahasiswa  dari mulai 
+format penulisan proposal sampai dengan penulisan tesis . Mahasiswa agar dapat 
+secara mandiri mempersiapkan dan menulis materi tesis dengan lebih baik serta 
+proses pembimbingan dapat dilakukan lebih efektif dan efisien. Dengan demikian 
+pedoman ini mencakup dua bidang yaitu : implikasi dari metodologi penelitian dan 
+publikasi . 
+ 
+Tesis adalah karya ilmiah yang disusun menurut kaidah keilmuan dan ditulis  
+berdasarkan  kaidah  Bahasa  Indonesia,  dibawah  pengawasan  atau pengarahan  dosen  
+pembimbing,  untuk  memenuhi  kriteria -kriteria  kualitas  yang  telah  ditetapkan  sesuai  
+keilmuannya  masing -masing. Di  dalam tesis disajikan pengembangan dan penetapan 
+ilmu pengetahuan dan teknologi, baik murni maupun aplikasi serta kompatibel 
+dengan sajian karya ilmiah nasional maupun internasional. Tesis dapat juga 
+dikatakan sebagai puncak pemikiran dan hasil kinerja akademik mahasiswa.  Tesis  
+merupakan  sebagai  salah  satu persyaratan  untuk  menyelesaikan  Program  Magister  
+dan memperoleh gelar Magister Komputer (M.Kom) pada Program  Studi  Ilmu 
+Komputer  (S2) Fakultas Teknologi Informasi Universitas Nusa Mandiri.  
+ 
+Penulis  mengucapkan  terima  kasih  yang  sebesar -besarnya  kepada  dosen  
+pembimbing, dan seluruh sivitas akademika di lingkungan Universitas Nusa 
+Mandiri  yang  telah  memberikan  masukannya  dalam  proses  penyusunan  pedoman  
+penyusunan  tesis ini. Meskipun demikian pepatah mengatakan bahwa tak ada 
+gading yang tak retak,  tak ada karya tulis yang sempurna, tak ada lembaran putih 
+yang tak berbercak,  sehingga  penulis  sangat  mengharapkan  tanggapan,  kritik  dan 
+saran -saran  yang  sifatnya membangun  untuk penyempurnaan lebih lanjut dan demi 
+kesempurnaan  pedoman  penyusunan  tesis ini.  
+ 
+Akhir kata, penulis mengucapkan semoga buku pedoman penyusunan  tesis ini  
+dapat bermanfaat sebagai petunjuk khususnya bagi mahasiswa akan  dan sedang  
+menyusun  tesis dan pembaca  pada  umumnya.  
+ 
+ 
+Jakarta,  Februari  2024 
+ 
+ 
+ 
+Tim Penyusu n 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          vi 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ DAFTAR ISI  
+ 
+LEMBAR JUDUL  ................................ ................................ ................................ ...... i 
+LEMBAR PENGESAHAN  ................................ ................................ .......................  ii 
+KATA PENGANTAR  ................................ ................................ ...............................  v 
+DAFTAR ISI  ................................ ................................ ................................ .............  vi 
+DAFTAR LAMPIRAN  ................................ ................................ ...........................  viii 
+ 
+BAB I  PENDAHULUAN  ................................ ................................ .......................  1 
+BAB  II TEMPLATE  PROPOSAL  TESIS  ................................ ................................  2 
+BAB  III PROSEDUR TATA LAKSANA  ................................ ................................ . 4 
+3.1. Syarat Tesis  ................................ ................................ ........................  4 
+3.2. Arahan Umum  ................................ ................................ ....................  4 
+3.3. Pendaftaran Sidang  ................................ ................................ .............  4 
+3.4. Kelengkapan Sidang  ................................ ................................ ...........  4 
+3.5. Grading  ................................ ................................ ...............................  5 
+3.6. Hal-hal yang Menggagalkan Sidang  ................................ ..................  5 
+3.7. Setelah Sidang  ................................ ................................ ....................  5 
+BAB IV  FORMAT PENULISAN LAPORAN TESIS  ................................ .............  8 
+4.1. Bagian Awal  ................................ ................................ .......................  8 
+4.1.1. Halaman Judul  ................................ ................................ ..........  8 
+4.1.2. Surat Pernyataan Orisinalitas dan Bebas Plagiarisme  ..............  8 
+4.1.3. Surat Pernyataan Persetujuan Publikasi Karya Ilmiah untuk 
+Kepentingan Akademis  ................................ ................................ ...... 8 
+4.1.4. Halaman Persetujuan Pengesahan  ................................ ............  9 
+4.1.5. Lembar Bimbingan Tesis  ................................ .........................  9 
+4.1.6. Kata Pengantar  ................................ ................................ .........  9 
+4.1.7. Abstrak  ................................ ................................ .....................  9 
+4.1.8. Daftar Isi  ................................ ................................ ...................  9 
+4.1.9. Daftar Tabel, Daftar Gambar, Daftar Rumus, Daftar Lain dan 
+Daftar Lampiran  ................................ ................................ .................  9 
+4.2. Bagian Isi  ................................ ................................ ..........................  10 
+4.3. Bagian Akhir  ................................ ................................ ....................  11 
+4.3.1. Daftar Referensi  ................................ ................................ ..... 11 
+4.3.2. Daftar Riwayat Hidup  ................................ ............................  11 
+4.3.3. Surat Keterangan Riset  ................................ ...........................  11 
+4.3.4.  Lampiran  ................................ ................................ .................  11 
+BAB V  TATA CARA PENULISAN  ................................ ................................ .... 12 
+5.1. Kertas  ................................ ................................ ...............................  12 
+5.2. Pengetikan  ................................ ................................ ........................  12 
+5.3. Penomoran Halaman  ................................ ................................ ........  12 
+5.3.1. Angka Romawi Kecil  ................................ .............................  12 
+5.3.2. Angka Latin  ................................ ................................ ............  13 
+5.4. Halaman Judul  ................................ ................................ ..................  13 
+5.5. Surat Pernyataan Orisinalitas dan Bebas Plagiarisme  ......................  14 
+5.6. Surat Pernyataan Persetujuan Publikasi Karya Ilmiah untuk 
+Kepentingan Akademis  ................................ ................................ ...........  14 
+5.7. Halaman Persetujuan dan Pengesahan  ................................ .............  14 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          vii 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 5.8. Kata Pengantar  ................................ ................................ .................  14 
+5.9. Abstrak  ................................ ................................ .............................  14 
+5.10.  Daftar Isi  ................................ ................................ ........................  15 
+5.11.  Daftar Tabel, Daftar Gambar, Daftar Rumus, Daftar Lain dan 
+Daftar Lampiran  ................................ ................................ ......................  15 
+5.12.  Isi Tesis  ................................ ................................ ..........................  15 
+5.13.  Tabel dan Gambar  ................................ ................................ ..........  16 
+5.14.  Persamaan Matematika  ................................ ................................ .. 18 
+5.15.  Angka  ................................ ................................ .............................  18 
+5.16.  Daftar Referensi  ................................ ................................ .............  18 
+5.17.  Lampiran  ................................ ................................ ........................  18 
+BAB VI  PENULISAN KUTIPAN  ................................ ................................ ...........  19 
+6.1. Penulisan Kutipan dengan bentuk Institute of Electrical and 
+Electronics Engineers  (IEEE)  ................................ ................................ . 22 
+6.1.1. Penulisan Kutipan Tidak Langsung  ................................ ....... 22 
+6.1.2. Penulisan Kutipan Langsung  ................................ ..................  22 
+BAB VI I DAFTAR  REFERENSI  ................................ ................................ ...........  23 
+7.1. Bentuk Institute of Electrical and Electronics Engineers  (IEEE)  .... 23 
+BAB  VIII PROSEDUR PENGUMPULAN LAPORAN TESIS  .............................  25 
+8.1. Ketentuan Umum  ................................ ................................ ..............  25 
+8.2. Ketentuan Pembuatan Hasil Publikasi Karya Ilmiah dari Penelitian 
+Tesis dalam Bentuk Jurnal  ................................ ................................ ...... 26 
+BAB IX  PENUTUP  ................................ ................................ ................................ . 27 
+LAMPIRAN -LAMPIRAN  ................................ ................................ ......................  28 
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          viii 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ DAFTAR LAMPIRAN  
+Lampiran  1 Contoh  Halaman  Judul  ................................ ................................ ...... 34 
+Lampiran  2 Contoh  Cover Depan pada Hardcover  ................................ ...............  35 
+Lampiran  3 Contoh  Pencetakan pada Bagian Punggung  Hardcover ....................  36 
+Lampiran  4 Contoh  Lembar  Pembatas Tesi s ................................ ........................  37  
+Lampiran  5 Contoh  Surat  Pernyataan  Orisinalitas dan Bebas  Plagiarism e ..........  38 
+Lampiran 6 Contoh Surat Pernyataan Persetujuan Publikasi  ...............................  39 
+Lampiran  7 Contoh  Halaman  Persetujuan  dan Pengesahan Untuk 
+Dipertahankan  ................................ ................................ ................................ ....... 40 
+Lampiran  8 Contoh  Halaman  Persetujuan  dan Pengesahan  Telah 
+Dipertahankan  ................................ ................................ ................................ ....... 41 
+Lampiran  9 Contoh  Lembar  Bimbingan  Tesis  ................................ ..........................  42 
+Lampiran  10 Contoh  Kata Pengantar  ................................ ................................ ........  43 
+Lampiran  11 Contoh  Abstrak  (Bahasa Indonesia)  ................................ ................  45 
+Lampiran  12 Contoh  Abstrak  (Bahasa  Inggris)  ................................ ....................  46 
+Lampiran  13 Contoh  Daftar  Isi ................................ ................................ .............  47 
+Lampiran  14 Contoh  Daftar  Tabel  ................................ ................................ ........  48 
+Lampiran  15 Contoh  Daftar  Gambar  ................................ ................................ .... 49 
+Lampiran  16 Contoh  Daftar Lampiran  ................................ ................................ .. 50 
+Lampiran  17 Contoh  Daftar  Riwayat  Hidup  ................................ .............................  51 
+Lampiran  18 Contoh  Surat  Keterangan  Riset  ................................ .......................  52 
+Lampiran 19 Contoh Bukti Hasil Pengecekan Plagiarisme Laporan Tesis  ..........  53 
+Lampiran 20 Contoh Bukti Submit/Publish Artikel Ilmiah  ................................ .. 54 
+Lampiran 21 Contoh Format Isi File ( Upload Soft file Validasi)  .........................  55 
+ 
+ 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          1 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB I 
+PENDAHULUAN  
+ 
+Tesis adalah karya tulis akademik hasil studi dan/atau penelitian mendalam 
+yang dilakukan secara mandiri dan berisi sumbangan baru bagi perkembangan ilmu 
+pengetahuan, atau menemukan jawaban baru bagi masalah -masalah (yang 
+sementara) telah diketahui jawabannya, atau mengajukan pertanyaan -pertanyaan 
+baru terhadap hal -hal yang dipandang telah mapan; di bidang ilmu pengetahuan, 
+teknologi, dan kesenian;  yang dilakukan calon Magister di bawah pengawasan para 
+pembimbingnya (KEPMENDIKBUD  No. 212/U/1999).  
+ 
+Untuk mencapai standar kualitas penulisan tesis, maka diperlukan buku 
+Pedoman Penyusunan  Tesis.  Buku pedoman ini menjelaskan beberapa bagian 
+utama, yaitu:  
+1. Template Penulisan Proposal Tesis  
+2. Prosedur Tata Laksana Tesis  
+3. Format Penulisan Tesis  
+4. Tata Cara Penulisan Tesis  
+5. Penulisan Kutipan  
+6. Prosedur Pengumpulan Tesis  
+ 
+Tujuan penyusunan tesis yaitu untuk memberikan kesempatan kepada 
+mahasiswa dalam memformulasikan ide dan konsepnya sesuai bidang ilmu dan 
+pengetahuan yang diperoleh selama menempuh pendidikan S2, serta dapat 
+mengkomunikasikan hasil penelitian yang dilakukan ke dalam bentuk karya ilmiah.  
+ 
+Selama penyusunan tesis, mahasiswa akan didampingi oleh dosen 
+pembimbing tesis. Dosen pembimbing mempunyai tanggung jawab akademik 
+terhadap penelitian tesis mahasiswa bimbingannya, dalam hal kebenaran ilmiah dan 
+format penulisannya, dibuktikan dengan tanda tangan dosen pembimbing pada 
+lembar persetujuan tesis sebelum pelaksanaan ujian sidang tesis.  
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          2 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB  II 
+TEMPLATE  PROPOSAL  TESIS  
+ 
+Penulisan  proposal  tesis merupakan  salah  satu syarat  bagi mahasiswa  sebelum  
+menyusun  Tesis  dan Sidang Tesis  untuk  memperoleh  gelar Magister.  Penulisan  
+proposal ini berguna untuk mendiskusikan materi terkait tesis yang akan diajukan,  
+kemudian dapat didiskusikan dengan pembimbing terkait topik dan objek 
+penelitian.  Template  proposal  ini wajib  menjadi  acuan  mahasiswa  Program  Studi  
+Ilmu  Komputer  (S2) Fakultas Teknologi Informasi  Universitas  Nusa  Mandiri.  
+ 
+Proposal tesis merupakan uraian rencana pelaksanaan  penelitian bagi 
+mahasiswa Program Studi  Ilmu Komputer (S2) Fakultas Teknologi Informasi  
+Universitas Nusa Mandiri . Adapun beberapa hal  yang harus diperhatikan perihal, a) 
+Feasibil ity stud y merupakan k elayakan / kemungkinan / latar belakang tema yang 
+akan diangkat ; b) Literature review berisi tentang penelitian -penelitian sebelumnya 
+yang mendukung tema yang akan diambil ; c) Time  merupakan p enjelasan waktu 
+pengerjaan tesis . 
+ 
+Proposal  tesis memenuhi ketentuan sebagai berikut :  
+- Jumlah 15 s.d 30 halaman  
+- Jarak spasi 1 ,5  
+- Jenis huruf Times New Roman size  12  
+- Margin naskah proposal tesis: 4  - 3 - 2,5 - 2,5 (kiri-atas-kanan -bawah)  
+- Ukuran kertas A4 dengan berat 80 gram  
+- Proposal tesis diupload menjelang pendaftaran tesis  
+- Satu pekan berikutnya setelah didiskusikan dengan pembimbing, akan 
+dilakukan presentasi paparan dihadapan evaluator dan dosen pembimbing  
+ 
+HALAMAN SAMPUL  
+Ketentuan halaman sampul proposal tesis yaitu diketik simetris di tengah 
+(center ). Judul tidak diperkenankan menggunakan singkatan, kecuali nama atau 
+istilah (contoh: PT, UD, CV) dan tidak disusun dalam kalimat tanya serta tidak 
+perlu ditutup dengan tanda baca apa pun.  
+ 
+Judul Proposal Tesis  
+Logo Universitas Nusa Mandiri  
+Kata “PROPOSAL TESIS”  
+Kalimat “Diajukan sebagai salah satu syarat untuk memperoleh gelar 
+Magister Komputer (M.Kom)”  
+Nama dan NIM  
+Program Studi Ilmu Komputer (S2)  
+Fakultas Teknologi Informasi  
+Universitas Nusa Mandiri   
+Kota Penyusunan “Jakarta”  
+Tahun disahkannya proposal tesis dan dituliskan dalam angka dengan bentuk 
+empat digit  
+ 
+ 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          3 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ HALAMAN PENGESAHAN  
+Merupakan bukti persetujuan pembimbing terhadap rencana pelaksanaan 
+penelitian . Halaman ini berisi persetujuan oleh dosen pembimbing,  dilengkapi 
+dengan tanda tangan dan tanggal penandatanganan. Tanggal ditulis dengan urutan: 
+tanggal, bulan, tahun.  
+ 
+ISI PROPOSAL TESIS  
+Proposal tesis  terdiri dari 3 (tiga) Bab dengan format sebagai berikut :  
+ 
+BAB  I   PENDAHULUAN  
+Berisi gambaran secara singkat mengenai isi proposal tesis, yang terdiri 
+dari :  
+1.1 Latar  Belakang  
+Ditulis persoalan -persoalan yang muncul dan dihadapi, kesenjanga n 
+antara keadaan nyata dan keadaan ideal yang diharapkan sehingga 
+melahirkan inti masalah baru yang harus diselesaikan dengan merujuk 
+pada penelitian sebelumnya (dengan mencantumkan sumber -sumber 
+rujukannya). Latar belakang juga memuat uraian makna penting 
+alasan penelitian harus dilaksanakan.  
+1.2 Identifikasi  Masalah  
+Intisari latar  belakang dalam bentuk ringkas dan terfokus.  
+1.3 Tujuan  Penelitian  
+Memuat hal -hal yang akan dicapai setelah penelitian  berakhir . 
+1.4 Ruang  Lingkup  Penelitian  
+Penegasan bagian masalah yang akan dipecahkan, termasuk  asumsi -
+asumsi yang digunakan.  
+1.5 Sistematika Penulisan  
+Urutan secara sistematis dari bab per bab pada proposal tesis . 
+ 
+BAB  II  LANDASAN  / KERANGKA  PEMIKIRAN  
+Berisi hasil peninjauan kembali dari berbagai sumber pustaka seperti buku, 
+artikel, jurnal atau karya ilmiah lainnya yang memiliki kemiripan antara 
+penelitian yang akan dilakukan dengan penelitian terdahulu.  
+2.1 Kerangka Teori  
+Berisi teori yang relevan, lengkap, mutakhir dan urut sejalan dengan 
+permasalahan  
+2.2 Tinjauan  Organisasi/Obyek  Penelitian (opsional)  
+Berisi uraian profil dari organisasi atau obyek penelitian  
+ 
+BAB III METODOLOGI  PENELITIAN   
+Pada bab ini, penulis harus menjelaskan secara bertahap dan terperinci 
+tentang langkah -langkah (metodologi) yang digunakannya untuk mencari, 
+mengumpulkan dan menganalisa tema dalam penulisan tesis. Metodologi 
+dapat berisi tentang alat -alat, pendekatan atau algoritma, serta uraian 
+model yang digunakan sehingga tujuan dari penulisan dapat tercapai. 
+Metodologi ini harus merujuk kepada tujuan penelitian  yang ditulis pada 
+Bab I Pendahuluan.  
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          4 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB  III 
+PROSEDUR TATA LAKSANA  
+ 
+3.1. Syarat Tesis  
+1. Minimum sudah menempuh sampai dengan semester 3  
+2. IPK minimal 3,00  
+3. Lulus semua mata kuliah dengan nilai minimal B - 
+4. Telah LULUS mata kuliah Research Methodology  (upload Proposal Tesis 
+dan atau Seminar/Sidang  Proposal Tesis)  
+ 
+3.2. Arahan Umum  
+1. Pemilihan judul tesis WAJIB memiliki latar belakang yang jelas dengan 
+menyertakan minimal 15 (lima belas) referensi ilmiah yang terkait dengan 
+tema tesis yang dipilih. Referensi tersebut dapat diambil dari jurnal, paper 
+ilmiah, prosiding, buku, white paper , majalah ilmiah dan buku tesis. Setiap 
+referensi ilmiah yang disertakan wajib dicantumkan dalam daftar pustaka.  
+2. Aturan Umum :  
+a. Isi BAB I sampai dengan BAB V minimum 40 halaman, tidak termasuk 
+lampiran - lampiran pelengkap  
+b. Total halaman BAB III dan BAB IV lebih besar (jumlah halaman) dari 
+jumlah BAB I, BAB II, dan BAB V  
+c. Pada halaman yang hanya berisikan gambar screenshot  saja tidak dihitung 
+sebagai halaman. Tambahkan penjelasan atau keterangan gambar.  
+d. Halaman yang berisi hanya diagram kompleks (Diagram Metode 
+Penelitian, AUC Curve, ROC Curve , Diagram Pohon Keputusan, atau 
+diagram lain yang mendukung) DIHITUNG sebagai halaman. 
+Tambahkan penjelasan atau keterangan gambar.  
+e. Melanggar ketentuan (a) dan (b) mendapatkan nilai penulisan maksimum 
+50 dari 100.  
+ 
+3.3. Pendaftaran Sidang  
+Pendaftaran Sidang Tesis dilaksanakan dalam 2 periode, periode 1 
+diperkirakan akan diselenggarakan pada bulan Maret sampai dengan Agustus 
+dan periode 2 diperkirakan akan diselenggarakan pada bulan September sampai 
+dengan Februari. Sedangkan Pelaksanaan Sidang Tesis diperkirakan akan 
+diselenggarakan 1 minggu setelah pendaftaran. Jika ada perubahan jadwal akan 
+diinformasikan melalui www.nusamandiri.ac.id . Sarana yang disediakan adalah 
+LCD Projector . Sidang dilaksanakan selama (±) 60 menit.  
+ 
+3.4. Kelengkapan Sidang  
+1. Pria : Kemeja putih polos, celana panjang bahan warna hitam polos, dasi 
+polos warna hitam, jas hitam polos dan atau jaket almamater*.  
+2. Wanita : Kemeja putih polos, celana panjang/rok bahan warna hitam polos, 
+dasi polos warna hitam, jas hitam polos dan atau jaket almamater*. Bagi 
+yang berhijab, kerudung berwarna hitam.  
+3. Mengenakan sepatu formal (bukan sepatu sandal atau sepatu olah raga).  
+4. Berlaku sopan selama di ruang Sidang.  
+5. Harus membawa buku Laporan Tesis sebanyak 4 rangkap dan sudah  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          5 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ ditandatangani dosen pembimbing.  
+6. Harus dapat menampilkan presentasi menggunakan media presentasi Power 
+Point (PPT) atau sejenisnya. Datang 60 menit sebelum waktu sidang.  
+ 
+* Jaket almamater wajib digunakan bagi mahasiswa mulai tahun masuk 
+Gasal September  2019 . 
+ 
+3.5. Grading  
+Untuk nilai sidang Tesis berlaku aturan berikut :  
+No. Huruf  Mutu  Range  Nilai  Angka  Mutu  
+1. A 86 – 100 3.71 – 4.00 
+2. A- 81 – 85 3.31 – 3.70 
+3. B+ 76 – 80 3.01 – 3.30 
+4. B 71 – 75 2.71 – 3.00 
+5. B- 66 – 70 2.31 – 2.70 
+6. C+ 61 – 65 2.01 – 2.30 
+7. C 56 – 60 1.71 – 2.00 
+8. D 31 – 55 1.01 – 1.70 
+9. E 0 – 30 0.00 – 1.00 
+ 
+3.6. Hal-hal yang Menggagalkan Sidang  
+1. Tidak membawa buku laporan tesis sebanyak 4 rangkap dan/atau belum 
+disetujui dosen pembimbing  
+2. Tidak membawa Surat Keterangan Riset asli (tanda tangan dan stempel 
+basah) apabila melakukan riset di  sebuah instansi  
+3. Tidak membawa KPU Ujian Sidang  
+4. Tidak membawa Lembar Verifikasi Ijazah  
+5. Tidak hadir tepat waktu sesuai jadwal sidang  
+6. Tidak berpakaian dan berpenampilan sesuai ketentuan (pada point 3.4)  
+7. Sesuai kesepakatan tim penguji & pembimbing dalam sidang  
+8. Referensi ilmiah yang terkait dengan tema tesis yang dipilih kurang dari 15  
+ 
+3.7. Setelah Sidang  
+1. Jika dinyatakan GAGAL  
+a. Segera daftar sidang perbaikan pada periode berjalan.  
+b. Segera lakukan revisi yang sesuai dengan arahan dari dosen penguji dan 
+dosen pembimbing.  
+2. Jika dinyatakan LULUS  
+Segera lakukan revisi yang sesuai dengan arahan dari dosen penguji dan 
+dosen pembimbing.  
+3. Batas waktu melakukan revisi adalah sebelum berakhirnya waktu upload 
+laporan  tesis dan jurnal tesis yang ada pada juklak wisuda pada ruang  
+mahasiswa masing -masing.  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          6 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 4. Jika melebihi dari yang telah ditentukan, maka dosen penguji dan dosen 
+pembimbing berhak menolak revisi dan nilai yang telah diberikan 
+dibatalkan.  
+5. Mahasiswa membuat jilid hardcopy  (format hardcover ) 1 (satu) eksemplar 
+dengan lembar pengesahan yang mencantumkan nama -nama dosen penguji.  
+6. Pastikan tidak ada kesalahan pada lembar pengesahan (sebelum meminta 
+tanda tangan dosen pembimbing setelah revisi).  
+7. Bawa laporan tesis yang sudah ditandatangani oleh pembimbing dan penguji 
+kepada Bagian Administrasi Universitas Nusa Mandiri.  
+8. Mempublikasikan hasil karya tesisnya pada Jurnal Nasional terakreditasi 
+(disarankan minimal Sinta 4) , Konferensi Internasional, Jurnal 
+Internasional  dan atau  Jurnal Internasional terindeks Scopus atau 
+Thomson Reuters dengan afiliasi penulis adalah Universitas Nusa 
+Mandiri dengan  mencantumkan nama mahasiswa sebagai penulis 
+pertama dan dosen pembimbing sebagai nama penulis kedua  sesuai 
+edaran Informasi Publikasi Tesis Nomor 015/2.02/UNM/VI/2022 . 
+ 
+ 
+Gambar 3.1. Surat Edaran  Rektor Universitas Nusa Mandiri  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          7 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+  
+Gambar 3.2. Surat Keterangan Publikasi KEMENRISTEK DIKTI  
+ 
+ 
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          8 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB  IV 
+FORMAT PENULISAN LAPORAN TESIS  
+ 
+Penulisan laporan tesis dibagi dalam tiga bagian, yaitu : bagian awal, bagian 
+isi dan bagian akhir.  
+ 
+4.1. Bagian Awal  
+Bagian awal laporan tesis terdiri atas :  
+1. Halaman judul  
+2. Surat  pernyataan orisinalitas dan bebas plagiarism e 
+3. Surat pernyataan persetujuan publikasi karya ilmiah untuk kepentingan 
+akademis  
+4. Halaman persetujuan dan pengesahan  
+5. Lembar bimbingan tesis  
+6. Kata pengantar  
+7. Abstrak (dalam Bahasa Indonesia dan Bahasa Inggris)  
+8. Daftar isi  
+9. Daftar tabel  
+10. Daftar gambar  
+11. Daftar rumus (jika diperlukan)  
+12. Daftar lain (jika diperlukan)  
+13. Daftar lampira n 
+ 
+4.1.1. Halaman Judul  
+Sebagai halaman terdepan yang pertama terbaca dari suatu karya ilmiah, 
+halaman judul  harus dapat memberikan informasi singkat, jelas dan tidak bermakna 
+ganda (ambigu) kepada pembaca tentang karya ilmiah tersebut . Informasi berupa 
+judul  tesis, logo Universitas Nusa Mandiri, jenis karya ilmiah (tesis), tujuan dan 
+dalam rangka apa karya ilmiah itu dibuat , identitas penulis, institusi, kota serta  
+tahun pengesahan. Ketentuan mengenai penulisan halaman judul  dapat dilihat pada 
+butir  5.4 dan contoh halaman judul  dapat dilihat pada lampiran 1.  
+Warna sampul hardcover  Program Studi Ilmu Komputer (S2) Universitas 
+Nusa Mandiri berwarna coklat tua  dengan tinta kuning emas, disertai halaman judul 
+menggunakan kertas putih dengan  tinta berwarna.  Contoh pencetakan  cover  dan 
+punggung  hardcover  dapat dilihat pada lampiran 2 dan lampiran 3.  
+ 
+4.1.2. Surat  Pernyataan Orisinalitas dan Bebas Plagiarism e 
+Surat  ini berisi pernyataan tertulis dari penulis bahwa laporan tesis yang 
+disusun adalah hasil karyanya sendiri dan ditulis dengan mengikuti kaidah penulisan 
+ilmiah. Ketentuan mengenai penulisan surat  pernyataan orisinalitas dapat dilihat 
+pada butir 5.5 dan contoh surat  pernyataan orisinalitas dapat dilihat pada lampiran 5. 
+ 
+4.1.3. Surat Pernyataan Persetujuan Publikasi Karya Ilmiah untuk 
+Kepentingan Akademis  
+Surat ini berisi pernyataan dari mahasiswa penyusun laporan tesis yang 
+memberikan kewenangan kepada Universitas Nusa Mandiri untuk menyimpan, 
+mengalih -media atau bentuk -kan, mengelolanya dalam pangkalan  data (database) , 
+mendistribusikannya dan menampilkan atau mempublikasikannya  di internet atau 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          9 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ media lain untuk kepentingan  akademis . Artinya, Universitas Nusa Mandiri 
+berwenang untuk mempublikasikan suatu tesis hanya untuk kepentingan 
+pengembangan ilmu pengetahuan, sedangkan hak cipta tetap pada penulis. Contoh 
+surat  pernyataan dapat dilihat pada lampiran 6. 
+ 
+4.1.4.  Halaman Persetujuan Pengesahan  
+Halaman persetujuan dan pengesahan berfungsi untuk menjamin keabsahan 
+karya ilmiah atau pernyataan tentang penerimaannya. Ketentuan mengenai 
+penulisan halama n persetujuan dan pengesahan dapat dilihat pada butir 5.7 dan 
+contoh halaman persetujuan dan pengesahan dapat dilihat pada lampiran 7 dan 8 . 
+ 
+4.1.5. Lembar Bimbingan Tesis  
+Lembar bimbingan Tesis diketik dengan minimal 8 (delapan) kali bimbingan 
+dan telah ditanda tangani oleh Dosen Pembimbing. Contoh  lembar bimbingan dapat 
+dilihat pada lampiran 9.  
+ 
+4.1.6. Kata Pengantar  
+Kata pengantar berisi pengantar singkat atas karya ilmiah dan ucapan terima 
+kasih atau penghargaan kepada berbagai pihak yang telah membantu dalam 
+penyusunan laporan tesis. Sebaiknya, ucapan terima kasih atau penghargaan 
+tersebut juga mencantumkan bantuan yang mereka berikan, misalnya bantuan dalam 
+memperoleh masukan, data, sumber informasi, dan bantuan dalam menyelesaikan 
+laporan tesis. Ketentuan mengenai penulisan kata pengantar dapat dilihat pada butir  
+5.8 dan contoh kata pengantar dapat dilihat pada lampiran 10. 
+ 
+4.1.7.  Abstrak  
+Abstrak merupakan ikhtisar suatu tesis yang memuat permasalahan, tujuan, 
+metode penelitian, hasil dan kesimpulan. Abstrak dibuat untuk memudahkan 
+pembaca mengerti secara cepat isi laporan tesis untuk memutuskan apakah perlu 
+membaca lebih lanjut atau tidak. Ketentuan yang menyangkut penulisan abstrak 
+dapat dilihat pada butir 5.9 dan contoh abstrak dalam Bahasa Indonesia dan Bahasa 
+Inggris dapat dilihat pada lampiran 11 dan lampiran 1 2. 
+ 
+4.1.8.  Daftar Isi  
+Daftar isi memuat semua bagian tulisan beserta nomor halaman masing - 
+masing, yang ditulis sama dengan isi yang bersangkutan. Biasanya, agar daftar isi 
+ringkas dan jelas, subbab derajat ke dua dan ke tiga boleh tidak ditulis. Ketentuan 
+yang menyangkut penulisan daftar isi dapat dilihat pada butir 5.10 dan contoh daftar 
+isi dapat dilihat pada lampiran 1 3. 
+ 
+4.1.9.  Daftar Tabel, Daftar Gambar , Daftar Rumus, Daftar Lain  dan Daftar 
+Lampiran  
+Digunakan untuk memuat nama tabel,  nama  gambar, rumus, lampiran dan 
+sebagainya yang ada dalam laporan tesis. Penulisan nama tabel, gambar dan 
+sebagainya menggunakan huruf kapital di awal kata ( title case ). Ketentuan yang 
+menyangkut penulisan dapat dilihat pada butir 5.11 dan contoh dapat dilihat pada 
+lampiran 14, lampiran 15 dan lampiran 16.  
+ 
+ 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          10 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 4.2. Bagian Isi  
+Isi laporan tesis disampaikan dalam lima bab. Pembagian bab dari pendahuluan 
+sampai penutup diatur sesuai peraturan yang terdapat pada butir 5.12. 
+ 
+BAB I  PENDAHULUAN  
+Latar Belakang , dengan menuliskan persoalan -persoalan yang muncul dan 
+dihadapi, kesenjangan antara keadaan nyata dan keadaan ideal yang diharapkan 
+sehingga melahirkan inti masalah baru yang harus diselesaikan dengan merujuk 
+pada penelitian sebelumnya (dengan mencantumkan sumber -sumber 
+rujukannya). Latar belakang juga memuat uraian makna penting alasan 
+penelitian harus dilaksanakan.  
+Identifikasi Masalah , merupakan intisari latar belakang dalam bentuk ringkas 
+dan terfokus.  
+Tujuan Penelitian , bagian ini memuat hal -hal yang akan dicapai setelah 
+penelitian berakhir.  
+Ruang Lingkup Penelitian , merupakan penegasan bagian masalah yang akan 
+dipecahkan, termasuk asumsi -asumsi yang digunakan.  
+Sistematika Penulisan , merupakan urutan secara sistematis dari bab per bab 
+pada laporan tesis.  
+ 
+BAB II LANDASAN/KERANGKA PEMIKIRAN  
+Kerangka Teori , berisi teori yang relevan, lengkap, mutakhir dan urut sejalan 
+dengan permasalahan  
+Tinjauan Organisasi/Obyek Penelitian (opsional) , berisi uraian profil dari 
+organisasi atau obyek penelitian  
+ 
+BAB III METODOLOGI PENELITIAN  
+Pada bab ini, penulis harus menjelaskan secara bertahap dan terperinci tentang 
+langkah -langkah (metodologi)  yang digunakannya untuk mencari, 
+mengumpulkan dan menganalisa tema dalam penulisan tesis. Metodologi dapat 
+berisi tentang alat -alat, pendekatan atau algoritma, serta uraian model yang 
+digunakan sehingga tujuan dari penulisan dapat tercapai. Metodologi ini harus 
+merujuk kepada tujuan penelitian  yang ditulis pada Bab I Pendahuluan.  
+ 
+BAB IV HASIL PENELITIAN DAN PEMBAHASAN  
+Bagian ini menyajikan hasil -hasil yang diperoleh dan cara pencapaiannya. 
+Uraian harus komprehensif namun tetap ringkas dan  runut . Susunan  
+pembahasan, struktur dan sistematika selaras dengan yang ditulis pada 
+Metodologi Penelitian. Pembahasan hasil penelitian meliputi kelebihan dan 
+kekurangan, termasuk pengujian.  
+ 
+BAB V PENUTUP  
+Kesimpulan , merupakan rangkuman hasil yang dicapai dan merupakan 
+jawaban rumusan masalah.  
+Saran , menguraikan saran -saran yang perlu diperhatikan berdasarkan 
+keterbatasan yang ditemukan dan asumsi yang dibuat, termasuk saran untuk 
+pengembangan lebih lanjut.  
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          11 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 4.3. Bagian Akhir  
+Bagian akhir laporan tesis terdiri atas  Daftar Referensi , Daftar Riwayat Hidup, 
+Surat Keterangan Riset dan Lampiran.  
+ 
+4.3.1.  Daftar Referensi  
+Daftar referensi merupakan daftar bacaan yang menjadi sumber, referensi atau 
+acuan dan dasar penulisan laporan tesis. Sumber referensi minimal 15 (lima belas) 
+referensi ilmiah, dapat bersumber dari artikel berupa paper dari jurnal internasional 
+dan atau prosiding internasional, jurnal nasional, buku, majalah, surat kabar, 
+wawancara dan sebagainya. Dianjurkan agar 70% daftar referensi yang digunakan 
+merupakan jurnal jurnal internasional terindeks dan atau prosiding internasional 
+serta jurnal nasional terakreditasi  terbitan terbaru (minimal terbitan 5 tahun 
+terakhir), sedangkan sumber referensi dari buku minimal terbitan 10 tahun terakhir . 
+ 
+4.3.2. Daftar Riwayat Hidup  
+Uraian ini berisikan tentang riwayat hidup penulis atau penyusun laporan 
+tesis, dimana penjelasan tentang daftar riwayat hidup berisikan tentang :  
+a. Biodata Mahasiswa, terdiri dari Nomor Induk Mahasiswa (NIM), nama 
+lengkap, tempat dan tanggal lahir , jenis kelamin dan alamat lengkap 
+tempat tinggal  
+b. Riwayat Pendidikan Formal dan Non-Formal , terdiri dari pendidikan SD, 
+SMP, SMA, S1, sekolah lainnya, lembaga pendidikan dan kursus yang 
+pernah diikuti  
+c. Riwayat Pengalaman Organisasi / Pekerjaan , terdiri dari nama organisasi 
+atau tempat bekerja, jabatan atau kedudukan dan tahun atau periodenya  
+d. Pas foto ukuran 3x4 dan tanda tangan mahasiswa. Pas foto berwarna, 
+kemeja putih polos dan berdasi, mengenakan jaket almamater dengan 
+berlatar warna merah sertaa diperbolehkan dalam bentuk digital  
+ 
+Contoh daftar riwayat hidup dapat dilihat pada lampiran 17 . 
+ 
+4.3.3. Surat Keterangan Riset  
+Dokumen ini w ajib dilampirkan dalam Laporan Tesis bagi mahasiswa yang 
+melaksanakan riset/PKL dari perusahaan/instansi beserta cap/stempel basah dan 
+tanda tangan. Pada kop surat terdapat alamat dan nomor telepon. 
+Perusahaan/instansi yang dijadikan tempat riset/PKL adalah yang berbadan hukum 
+(PT, CV, Firma, Perum, UD, PD, Koperasi, Lembaga Sosial (Yayasan/LSM), 
+Instansi Pemerintah, Lembaga Pendidikan, Organisasi Profesi, Organisasi 
+Kemasyarakatan/Politik dan Organisasi Kepemudaan).  Contoh surat keterangan 
+riset dapat dilihat pada lampiran 18.  
+ 
+4.3.4. Lampiran  
+Lampiran merupakan data atau pelengkap atau hasil olahan yang menunjang 
+penulisan laporan tesis, tetapi tidak dicantumkan di dalam isi laporan tesis. Hal ini 
+dikarenakan akan mengganggu kesinambungan pembacaan Lampiran yang perlu 
+disertakan dikelompokkan menurut jenisnya, antara lain jadwal, label, daftar 
+pertanyaan, gambar, grafik  dan desain. Pengelompokan lampiran disesuaikan 
+dengan kebutuhan.  
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          12 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB  V 
+TATA CARA PENULISAN  
+ 
+Penampilan merupakan faktor penting untuk mewujudkan laporan tesis yang 
+rapi dan seragam.  
+ 
+5.1. Kertas  
+Spesifikasi kertas yang digunakan dalam penulisan laporan tesis adalah kertas 
+jenis HVS warna putih polos dengan berat 80 gram dan ukuran A4 (21,5 cm x 29,7 
+cm). 
+ 
+5.2. Pengetikan  
+Ketentuan pengetikan laporan tesis adalah :  
+a. Pencetakan dilakukan pada satu sisi kertas ( single side ). 
+b. Batas pengetikan naskah laporan tesis adalah : 4 - 3 - 2,5 - 2,5 (kiri-atas-
+kanan -bawah) . 
+c. Setiap halaman pada naskah laporan tesis, mulai halaman abstrak sampai 
+halaman daftar referensi harus diberi auto text  pada footer  dengan tulisan 
+“Program Studi Ilmu Komputer (S2)  FTI Universitas Nusa Mandiri ” 
+(Times New Roman  size 10 cetak tebal), ditulis pada posisi rata kanan 
+(align right ) di bawah nomor halaman.  
+ 
+ 
+Gambar 5.1. Contoh Auto Text  pada Footer  
+ 
+d. Pengetikan naskah laporan tesis menggunakan huruf jenis  huruf  Times New 
+Roman size  12 (ukuran sebenarnya) dan diketik rapi rata kiri kanan  
+(justify ). 
+e. Pengetikan dilakukan dengan spasi 1,5 ( line spacing = 1 ,5 lines ). 
+f. Huruf yang tercetak dari printer  harus berwarna hitam pekat dan seragam.  
+ 
+5.3. Penomoran Halaman  
+Penomoran halaman tidak diberi imbuhan apa pun  dengan jenis huruf Times 
+New Roman size  12. Jenis nomor halaman ada dua macam, yaitu angka romawi 
+kecil dan angka latin.   
+ 
+5.3.1. Angka Romawi Kecil  
+Angka romawi kecil digunakan dengan ketentuan sebagai berikut :  
+a. Digunakan untuk bagian awal laporan tesis (lihat butir 4.1), kecuali  
+halaman sampul.  
+b. Letak : tengah 2,5 cm dari tepi bawah kertas.  
+c. Khusus untuk halaman judul, penomorannya tidak ditulis tetapi tetap 
+diperhitungkan.   
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          13 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 5.3.2. Angka Latin  
+Angka latin digunakan dengan ketentuan sebagai berikut :  
+a. Digunakan untuk bagian isi dan bagian akhir laporan tesis  
+b. Letak  : sudut kanan atas 1,5 cm dari tepi atas kertas dan 3 cm dari tepi 
+kanan kertas  
+c. Khusus untuk halaman pertama setiap bab, penomorannya diletakkan di 
+tengah 2,5 cm dari tepi bawah kertas.  
+ 
+5.4. Halaman Judul  
+Halaman judul  laporan tesis  dicetak dengan k etentuan sebagai berikut:  
+a. Halaman sampul  hardcover  laporan tesis terbuat dari karton tebal berwarna 
+coklat tua.  
+b. Semua huruf pada sampul hardcover  dicetak dengan tinta kuning emas 
+dengan spasi 1,5 dan ukuran sesuai dengan contoh di lampiran 1.  
+c. Diketik simetris di tengah ( center ). Judul tidak diperkenankan menggunakan 
+singkatan, kecuali nama atau istilah (contoh: PT, UD, CV) dan tidak disusun 
+dalam kalimat tanya serta tidak perlu ditutup dengan tanda baca apa pun .  
+ 
+Judul Tesis  
+Logo Universitas Nusa Mandiri  (dicetak  dengan warna kuning emas ) 
+Kata “TESIS”  
+Kalimat “ Diajukan sebagai salah satu syarat untuk memperoleh gelar  
+Magister Komputer (M.Kom) ” 
+Nama dan NIM  
+Program Studi Ilmu Komputer (S2)  
+Fakultas Teknologi Informasi  
+Universitas Nusa Mandiri   
+Kota Penyusunan “Jakarta”  
+Tahun disahkannya tesis dan dituliskan dalam angka dengan bentuk empat 
+digit 
+ 
+d. Informasi yang dicantumkan pada punggung hardcover  adalah : nama, NIM, 
+judul tesis , logo Universitas Nusa Mandiri dan tahun . Informasi yang 
+dicantumkan seluruhnya menggunakan huruf kapital , dengan jenis huruf 
+Times New Roman  size 12, tinta kuning emas dan ditulis di tengah punggung 
+halaman sampul ( center alignment ). 
+e. Halaman sampul hardcover  tidak boleh diberi siku besi pada ujung -
+ujungnya.  
+f. Halaman pertama pada laporan tesis merupakan h alaman judul yang isinya 
+sama dengan halaman sampul hardcover , namun dicetak menggunakan 
+kertas putih dengan tinta berwarna . 
+g. Setiap pembahasan yang berbeda diberikan kertas pembatas berwarna 
+kuning yang disertai logo Universitas Nusa Mandiri  sesuai dengan contoh di 
+lampiran 4.  
+h. Sertakan 1 buah  pita pembatas berwarna kuning emas . 
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          14 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 5.5. Surat  Pernyataan Orisinalitas dan Bebas Plagiarism e 
+Surat  pernyataan orisinalitas ditulis dengan spasi tunggal ( line spacing  = 1 
+lines ) dan jenis huruf  Times New Roman  size 12 sesuai dengan contoh pada 
+lampiran 5. 
+ 
+5.6. Surat Pernyataan Persetujuan Publikasi Karya Ilmiah untuk Kepentingan 
+Akademis  
+Ketentuan penulisan s urat pernyataan persetujuan publikasi secara umum 
+adalah sebagai berikut:  
+a. Semua huruf ditulis dengan jenis huruf Times New Roman size  12 dengan 
+spasi 1 ( line spacing = 1 lines ) dan ukuran sesuai dengan contoh pada 
+lampiran 6.  
+b. Khusus untuk judul surat  pernyataan persetujuan publikasi  ditulis dengan 
+jenis huruf  Times New Roman size  12, dicetak tebal dan huruf besar (kapital) 
+dengan spasi tunggal ( line spacing = 1 lines ) 
+ 
+5.7. Halaman Persetujuan dan Pengesahan  
+Halaman persetujuan dan pengesahan laporan tesis ditulis dengan dengan spasi 
+tunggal ( line spacing = 1 lines ) dan jenis huruf  Times New Roman  size 12 sesuai 
+dengan contoh pada lampiran 7 dan lampiran 8 . 
+ 
+5.8. Kata Pengantar  
+Halaman kata pengantar laporan tesis secara umum adalah sebagai berikut:  
+a. Semua huruf ditulis dengan jenis huruf  Times New Roman size  12, spasi 1,5 
+(line spacing = 1,5 lines ) dan ukuran sesuai dengan contoh pada lampiran 
+10. 
+b. Judul kata pengantar ditulis dengan jenis huruf  Times New Roman size  12, 
+dicetak tebal dan huruf besar.  
+c. Urutan pihak -pihak yang diberi ucapan terima kasih pada kata pengantar 
+dimulai dari pihak luar, lalu keluarga atau teman.  
+ 
+5.9. Abstrak  
+Ketentuan penulisan abstrak adalah sebagai berikut:  
+a. Abstrak adalah ringkasan atau inti atau ikhtisar dari laporan tesis.  
+b. Minimum 100 kata dan maksimum 150 kata dalam satu paragraf, diketik 
+dengan jenis huruf  Times New Roman size  12, spasi tunggal ( line spacing = 
+1 lines ). 
+c. Abstrak disusun dalam dua bahasa, yaitu Bahasa Indonesia dan Bahasa 
+Inggris. Setiap versi bahasa mengikuti ketentuan butir b.  
+d. Pada bagian bawah abstrak dituliskan kata kunci. Untuk abstrak dalam 
+Bahasa Indonesia, kata kunci diberikan dalam Bahasa Indonesia. Untuk 
+abstrak dalam Bahasa Inggris, kata kunci diberikan dalam Bahasa Inggris 
+(dicari padanan katanya).  
+e. Semua istilah asing, kecuali nama, dicetak miring ( italic ). Contoh abstrak 
+dapat dilihat pada lampiran 11 dan lampiran 1 2. 
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          15 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 5.10. Daftar Isi  
+Halaman daftar isi tesis secara umum adalah sebagai berikut:  
+a. Semua huruf ditulis dengan jenis huruf  Times New Roman size  12 dengan 
+spasi tunggal ( line spacing = 1 lines ). 
+b. Khusus untuk judul tiap bab ditulis dengan  jenis huruf  Times New Roman 
+size 12 dicetak tebal dan huruf besar (kapital) . Contoh daftar isi dapat 
+dilihat pada lampiran 1 3. 
+ 
+5.11. Daftar Tabel, Daftar Gambar, Daftar Rumus, Daftar Lain dan Daftar 
+Lampiran  
+Ketentuan penulisan daftar tabel, daftar gambar, dan sebagainya  secara umum 
+adalah sebagai berikut :  
+a. Semua huruf ditulis dengan jenis huruf  Times New Roman  size 12 dalam 
+spasi tunggal ( line spacing = 1 lines ) sesuai dengan contoh pada lampiran 
+14, lampiran 15 dan lampiran 16 . 
+b. Khusus untuk judul ditulis dengan jenis huruf  Times New Roman  size 12, 
+dicetak tebal dan huruf besar (kapital).  
+ 
+5.12. Isi Tesis  
+Bagian tubuh  atau pokok memuat uraian/penjabaran/analisis yang dilakukan 
+oleh penulis. Penjabaran mencakup tinjauan pustaka, metode penelitian, hasil dan 
+pembahasannya. Penggunaan istilah atau judul tiap bab dan subbab, serta 
+penambahan subbab disesuaikan dengan kebutuhan. Sistematika yang umumnya 
+dipakai dalam penulisan laporan tesis adalah:  
+ 
+1. PENDAHULUAN  
+1.1. Subbab  Derajat  Kesatu  
+1.1.1. Subbab  Derajat  Kedua  Butir yang  Pertama  
+1.1.2. Subbab  Derajat  Kedua  Butir  yang  Kedua  
+1.1.2.1.  Subbab Derajat Ketiga Butir yang Pertama   
+Tingkatan  subbab maksimal  3 
+ 
+Ketentuan penulisan untuk setiap bab adalah sebagai berikut:  
+a. Setiap bab dimulai pada halaman baru.  
+b. Judul bab seluruhnya diketik dengan huruf kapital, simetris di tengah ( center ), 
+cetak tebal ( bold), tanpa garis bawah. tidak diakhiri tanda titik, dan satu spasi 
+simetris tengah ( center ), jika lebih dari satu baris.  
+c. Judul bab selalu diawali penulisan kata ‘BAB’, lalu angka yang menunjukkan 
+angka dari bab yang bersangkutan dan ditulis dengan huruf kapital, jenis huruf  
+Times New Roman size 12 dan cetak tebal ( bold). 
+d. Suatu yang bukan merupakan subordinat dari judul tulisan harus ditulis 
+dengan sandi berikut:  
+1. Bullet  atau huruf  
+Jika tidak akan dirujuk di bagian lain dari laporan tesis, bentuknya bebas, 
+asalkan berupa bentuk dasar (bulat, kotak, tanda minus) dan konsisten 
+dalam keseluruhan laporan tesis.  
+2. Huru f 
+Jika akan dirujuk dibagian lain dari laporan tesis, harus digunakan huruf 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          16 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ untuk menghindari kerancuan dengan penggunaan angka untuk bab dan 
+subbab. Bentuknya bebas, asalkan konsisten dalam keseluruhan tugas 
+akhir . Contoh: a atau a) atau (a) . Ini merupakan derajat terakhir, dalam 
+arti tidak boleh memiliki subperincian di dalamnya . 
+ 
+Contoh penggunaan subperincian yang dilarang , sebagai berikut :  
+a. Novell Netware  
+b. Microsoft  Windows  
+▪ Microsoft Windows NT 4 0  
+▪ Microsoft Windows 2000 Server  
+▪ Microsoft Windows Server 2003  
+▪ Microsoft Windows Server 2008  
+c. Linux  
+d. Unixe  
+e. BSD  
+▪ FreeBSD  
+▪ OpenBSD  
+ 
+Sistematika penulisan laporan tesis  Program Studi Ilmu Komputer (S2) 
+sebagai berikut:  
+ 
+BAB I. PENDAHULUAN  
+1.1. Latar Belakang  
+1.2. Identifikasi Masalah  
+1.3. Tujuan Penelitian  
+1.4. Ruang Lingkup Penelitian  
+1.5. Sistematika Penulisan  
+BAB II. LANDASAN/KERANGKA PEMIKIRAN  
+2.1. Kerangka Teori  
+2.2. Tinjauan Organisasi/Obyek Penelitian (opsional)  
+BAB III. METODOLOGI PENELITIAN  
+BAB IV. HASIL PENELITIAN DAN PEMBAHASAN  
+BAB V. PENUTUP  
+5.1. Kesimpulan  
+5.2. Saran  
+ 
+Penggunaan istilah atau judul pada Bab Metodologi Penelitian dan Bab Hasil 
+Penelitian dan Pembahasan  disesuaikan dengan kebutuhan.  
+ 
+5.13. Tabel dan Gambar  
+Yang tergolong gambar adalah gambar, grafik dan diagram. Ketentuan 
+pembuatan label dan gambar adalah sebagai berikut:  
+a. Gambar, grafik dan diagram diberi nama.  
+b. Penulisan nama tabel, gambar dan lainnya menggunakan huruf besar di 
+awal kata ( title case ). 
+c. Tabel dan gambar ditempatkan di antara bagian teks yang paling banyak 
+membahasnya. Tabel dan gambar harus dibuat sedemikian rupa sehingga 
+dapat berdiri sendiri, agar dapat dimengerti oleh pembaca tanpa membaca 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          17 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ keterangan dalam teks.  
+d. Jika tabel ditulis dalam posisi landscape , sisi atas tabel adalah sisi yang 
+dijilid. Tabel dan gambar selalu simetris di tengah ( center ) terhadap 
+halaman.  
+e. Nomor tabel dan gambar harus menyertakan nomor bab tabel dan gambar 
+tersebut berada. Misalnya tabel I.1 berarti tabel pertama yang ada di bab I. 
+Jika dalam suatu tesis hanya terdapat 1 (satu) buah tabel atau gambar, 
+maka tidak perlu diberi nomor.  
+f. Daftar notasi dan daftar singkatan ditulis dengan huruf aslinya (tidak 
+dibuat kapital ataupun lowercase ) dan disusun berdasarkan abjad. 
+Penulisannya diurutkan dari huruf kecil, huruf besar, dan simbol (contoh : 
+a, B, ?)  
+g. Penulisan judul tabel dan gambar.  
+1. Tabel  
+Judul ditulis di atas tabel, rata kiri atau simetris di tengah ( center ) 
+berjarak 1,5 spasi terhadap tabel yang bersangkutan. Judul tabel ditulis 
+langsung mengikuti nomor tabelnya.  
+2. Gamba r 
+Judul ditulis di bawah gambar berjarak 1,5 spasi, simetris ( center ) 
+terhadap gambar yang bersangkutan. Judul gambar ditulis langsung 
+mengikuti nomor gambarnya.  
+h. Penulisan sumber gambar dan tabel.  
+1. Tabel  
+Sumber tabel (jika bukan olahan sendiri) ditulis di bagian bawah tabel 
+berjarak 1,5 spasi dari tabel, huruf tegak Times New Roman size  10. 
+Sumber yang sudah diolah lebih lanjut perlu diberi catatan “telah 
+diolah kembali ”. 
+2. Gambar  
+Sumber gambar (jika bukan olahan sendiri) harus ditulis di bagian 
+bawah judul gambar berjarak 1,5 spasi dari judul gambar, huruf tegak 
+Times New Roman size  10. Sumber yang sudah diolah lebih lanjut 
+perlu diberi catatan “telah diolah kembali ”. 
+i. Peletakan tabel atau gambar, berjarak tiga spasi setelah teks. Penulisan 
+teks setelah tabel atau gambar dilanjutkan dengan jarak 1,5 spasi dari 
+baris terakhir judul gambar.  
+j. Apabila judul gambar atau label melebihi satu baris, penulisannya 
+simetris di tengah ( center ) dan diketik dengan satu spasi . 
+k. Jika tabel dan gambar terlalu panjang, dapat diputus dan dilanjutkan 
+dengan mengetikkan nomornya dan keterangan “sambungan ” dalam tanda 
+kurung, jika tabel dan gambar terlalu lebar, terdapat beberapa ketentuan 
+sebagai berikut:  
+1. Ditempatkan secara memanjang di halaman tersendiri.  
+2. Ditempatkan pada kertas lebar kemudian dilipat agar tidak melebihi 
+bentuk kertas.  
+3. Diperkecil ukurannya sesuai bentuk tesis, tetapi ukuran huruf yang 
+tercantum di dalamnya tidak boleh lebih kecil dari 10 poin (ukuran 
+sebenarnya).  
+ 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          18 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 5.14. Persamaan Matematika  
+Persamaan matematika lebih baik ditulis dalam bentuk yang lazim dalam 
+matematika walaupun dalam satu baris. Semua persamaan matematika ditulis 
+dengan tabulasi 1,5 cm dari kiri dan harus mempunyai nomor yang diletakkan di 
+sebelahnya dan rata kanan terhadap batas kanan pengetikan.  
+ 
+Contoh:  
+Z = C1x1 + C2x2+ C3x3 +………….+  Cnxn ................................ ................................ .........................  (4.1) 
+ 
+Keterangan : 4 artinya persamaan itu ditulis pada bab 4.  Sedangkan  1 artinya 
+persamaan itu adalah persamaan matematika pertama yang ditulis pada bab tersebut.  
+ 
+5.15. Angka  
+Penulisan angka mengikuti peraturan yang berlaku pada pedoman ejaan yang 
+disempurnakan edisi terbaru.  
+  
+5.16. Daftar Referensi  
+Jenis media yang makin berkembang memungkinkan penulis untuk mencari 
+sumber informasi dari berbagai jenis media, perkembangan itu diikuti oleh 
+perkembangan berbagai bentuk penulisan kutipan dan daftar referensi. Contoh 
+penulisan kutipan berdasarkan bentuk IEEE dapat dilihat pada lampiran 
+pembahasan tersendiri.  
+ 
+5.17. Lampiran  
+Ketentuan pembuatan lampiran adalah sebagai berikut:  
+a. Nomor dan judul lampiran ditulis di sudut kiri atas halaman ( left- 
+aligned ) dengan huruf tegak Times New Roman size 12 cetak tebal 
+(bold) . 
+b. Judul lampiran diketik dalam satu baris menggunakan huruf kapital di 
+awal kata ( title case ). 
+c. Lampiran yang lebih dari satu halaman, pada halaman berikutnya diberi 
+keterangan “lanjutan ” dalam tanda kurung pada sudut kiri atas halaman 
+(left- aligned ). 
+d. Isi dan urutan pengelompokan lampiran disesuaikan dengan daftar 
+lampiran.  
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          19 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB VI 
+PENULISAN KUTIPAN  
+ 
+Salah satu bagian penting dalam sebuah proses penelitian adalah studi literatur 
+(membaca dari berbagai sumber) sesuai dengan topik yang diteliti untuk 
+menghasilkan ide atau analisis baru yang dipresentasikan dalam sebuah hasil 
+penelitian . Ide atau hasil penelitian orang lain itu harus dituliskan sebagai kutipan. 
+Informasi lengkap tentang sumber kutipan dituliskan dalam sebuah daftar yang 
+disebut Daftar Referensi atau Daftar Pustaka. Format penulisan kutipan harus sama 
+dengan bentuk yang dipakai pada penulisan daftar referensi. Sebagai contoh jika 
+penulisan kutipan menggunakan bentuk Institute of Electrical and Electronics 
+Engineers  (IEEE), penulisan daftar referensi juga harus menggunakan bentuk IEEE.  
+ 
+Jenis kutipan terbagi menjadi dua macam, yaitu :  
+1. Kutipan tidak langsung, yaitu ide atau konsep orang lain yang dikutip dengan 
+menggunakan kata -kata penulis atau peneliti sendiri.  
+2. Kutipan langsung adalah ide atau konsep orang lain yang disalin sesuai 
+dengan aslinya.  
+ 
+Teknik pengutipan diwajibkan menggunakan salah satu aplikasi manajemen 
+referensi  seperti Mendeley . Tingkat plagiarisme tidak boleh lebih dari 25% 
+untuk keseluruhan  laporan tesis dan 20% untuk artikel ilmiah  dari hasil 
+penelitian tesis . Pengecekan plagiarisme  diutamakan  menggunakan software 
+Turnitin atau iThenticate  dan sertakan bukti hasil pengecekan  pada lampiran 
+tesis.  Contoh bukti hasil pengecekan plagiarisme laporan tesis dan artikel ilmiah 
+dapat dilihat pada lampiran 19. 
+Laporan tesis mensitasi minimal 10 paper dosen di lingkungan 
+Universitas Nusa Mandiri diutamakan 5 tahun terakhir periode laporan tesis, dari 
+jurnal yang sudah memiliki OJS meliputi Jurnal Nasional Terakreditasi, atau 
+Prosiding Seminar Internasional, atau Jurnal Internasional, atau Jurnal Internasional 
+bereputasi (terindeks Scopus, Thomson Reuters atau Web of Science).  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          20 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+  
+ 
+Gambar 6.1. Salinan Peraturan atau Kode Etik Mengenai Plagiarisme  
+ 
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          21 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+  
+ 
+Gambar 6.2. Surat Edaran Larangan Gratifikasi  
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          22 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 6.1. Penulisan Kutipan dengan bentuk Institute of Electrical and Electronics 
+Engineers  (IEEE)  
+ 
+6.1.1. Penulisan Kutipan Tidak Langsung  
+Pada bentuk IEEE, kutipan tidak langsung dituliskan dalam kalimat atau teks 
+dengan mencantumkan nomor urut referensi yang diapit dengan kurung persegi 
+‘[1]’ tanpa menuliskan nama pengarang dan tahun penerbitan serta halaman karya 
+yang dikutip . 
+Agar kutipan tidak langsung tidak dianggap plagiat maka harus dibuat 
+parafrase yaitu penguraian kembali suatu teks dalam bentuk susunan kata yang lain 
+dengan tujuan dapat menjelaskan maknanya yang tersembunyi. Parafrase 
+memungkinkan seorang penulis memberikan penekanan yang berbeda dengan 
+penulis aslinya.  
+ 
+Contoh :  
+Kalimat  asli : Komputer mampu membawa orang ke tempat -tempat yang belum 
+pernah bisa mereka kunjungi sebelumnya, termasuk ke permukaan planet lain.  
+ 
+Parafrase  : Melalui komputer, orang dapat pergi ke tempat yang belum pernah 
+mereka kenal  [1]. 
+ 
+6.1.2. Penulisan Kutipan Langsung  
+Kutipan langsung yang merupakan ide atau konsep orang lain yang disalin 
+sesuai dengan aslinya dalam bentuk IEEE dibuat dengan mencantumkan nomor urut 
+referensi yang diapit dengan kurung persegi ‘[1]’ tanpa menuliskan nama pengarang 
+dan tahun penerbitan serta halaman karya yang dikuti.  
+ 
+Contoh :  
+Kalimat asli  : Komputer mampu membawa orang ke tempat -tempat yang belum 
+pernah bisa mereka kunjungi sebelumnya, termasuk ke permukaan planet lain.  
+ 
+Parafras e : Komputer mampu membawa orang ke tempat -tempat yang belum 
+pernah bisa mereka kunjungi sebelumnya, termasuk ke permukaan planet lain  [1]. 
+ 
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          23 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB VII 
+DAFTAR  REFERENSI  
+ 
+Daftar referensi adalah kumpulan sumber informasi yang digunakan dalam  
+sebuah  penulisan,  yang  disusun  secara  alfabetis.  Sumber  informasi  yang  
+dicantumkan dalam daftar itu adalah yang dikutip dalam uraian atau teks dan yang  
+mendukung atau dipakai sebagai acuan. Informasi tentang sumber yang digunakan  
+harus  ditulis  secara  benar,  lengkap  dan konsisten  dengan  menggunakan  bentuk  atau 
+standar tertentu. Saat ini format yang digunakan adalah Institute of Electrical and  
+Electronics  Engineers  (IEEE).  
+ 
+7.1. Bentuk  Institute of Electrical and Electronics Engineers  (IEEE)  
+ 
+a. Satu Pengarang  
+ 
+[1] H. F. Pardede, “On the Impact of Normalizing Power -Based Features on  
+Robustness  Against  Noise  for Speech  Recognition,”  Int. Conf.  Inf. 
+Technol.  Electr.  Eng., 2017.  
+[2] D. Riana,  “Improve  Hierarchical  Decision  Approach  for Single  Image  
+Classification of Pap Smear,” Int. J. Electr. Comput. Eng., vol. 8, no. 6, 
+pp. 5415 –5424, 2019.  
+[3] M. Hasan,  “Prediksi  Tingkat  Kelancaran  Pembayaran  Kredit  Bank  
+Menggunakan  Algoritma  Naive  Bayes  Berbasis  Berbasis  Forward  
+Selection,” ILKOM  Jurnal  Ilmiah, vol. 9,  no. 3,  pp. 317 –324, 2017.  
+ 
+b. Dua Pengarang  
+ 
+[4] M. Sudhakar  and C. V. K. Reddy,  “Two  Step Credit  Risk Assessment  
+Model  for Retail  Bank  Loan  Applications  Using  Decision  Tree Data  
+Mining  Technique,”  International  Journal  of Advanced  Research  in 
+Computer  Engineering  & Technology, vol. 5, no. 3, pp. 705 –718, 2016.  
+[5] D. Susilawati and D. Riana, “Optimization the Naive Bayes Classifier  
+Method to diagnose diabetes Mellitus,” IAIC Trans. Sustain. Digit. 
+Innov.,  vol. 1, no. 1, pp. 78 –86, 2019.  
+[6] H. Fatah and A. Subekti, “ Prediksi Harga Cryptocurrency  Dengan  
+Metode  K-Nearest  Neighbours  K-Nearest  Neighbours ,” J. PILAR Nusa 
+Mandiri, vol. 14, no. 2, pp. 137 –144, 2018.  
+ 
+c. Tiga Pengarang  atau Lebih  
+ 
+[7] H. F. Mustika, A. F. Syafiandini, L. P. Manik, and Y. Rianto, 
+“Evaluating  Naïve  Bayes  Automated  Classification  for GBAORD,”  
+Comput.  Eng. Appl., vol. 9, no. 1, pp. 29 –37, 2020.  
+[8] M. L. Hadiwidjaja, P. H. Gunawan, E. Prakasa, Y. Rianto, B. Sugiarto, 
+R. Wardoyo, R. Damayanti, Krisdianto, Sugiyanto, L. M. Dewi, and V. 
+F. Astutiputri10,  “Developing  Wood  Identification  System  by Local  
+Binary  
+[9] J. Manurung, H. Mawengkang, and E. Zamzami, “Optimizing Support 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          24 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Vector Machine Parameters with Genetic Algorithm for Credit Risk 
+Assessment,” Journal of Physics: Conference Series, vol. 930, no. 1, 
+2017.  
+ 
+d. Penulisan daftar pustaka yang diambil dari referensi Majalah, Buletin atau 
+Surat Kabar , sebagai berikut:  
+ 
+[10] R.R. Yager,  “Multiple  Objective  Decision -Making  using Fuzzy Sets ,” 
+International Journal of Man -Machine Studies, vol. 9, no. 4, pp.375 -382, 
+Jul. 2017.  
+ 
+e. Penulisan  daftar  pustaka yang  diambil  dari referensi  internet,  sebagai  berikut:  
+ 
+a) Webpage  
+[1] J. Nielsen,  “Ten  Usability  Heuristics,”  2016,  Available: 
+http://www.useit.com/papers/heuristic/heuristic_list.html.  
+ 
+b) Dokumen dalam website  
+[2] Microsoft  Corporation,  “Site  Managemen t Cycle ,” 2018, Available:
+ http://msdn.microsoft.com/library/en -
+us/comsrv2k/htm/cs_gs_concepts_ntqq.asp.  
+ 
+c) Tulisan berita atau majalah elektronik  
+[3] C.    Sherman,  “Teoma    vs.    Google,  Round  Two,”  April  2, 2017, 
+Available:  http://searchenginewatch.com/searchday/02/sd0402 - 
+teoma.html.  
+ 
+d) E-Books  
+[4] T. Eckes, The Developmental Social Psychology of Gender. Mahwah 
+NJ: Lawrence Erlbaum, 2019. [E -book] Available: netLibrary e -
+book.  
+ 
+e) E-Jurnal  
+[5] A. Holub, “Is Software Engineering an Oxymoron ?” Software 
+Development Times,  p. 28+, March  2015.  [Online].  Available: 
+ProQuest, http://il.proquest.com. [Accessed May 23, 2005].  
+ 
+f) Artikel dari internet  
+[6] C. Wilson -Clark, “Computers Ranked as Key Literacy ,” The West 
+Australian, para. 3, March 29, 2015. [Online]. Available: 
+http://www.thewest.com.au. [Accessed Sept. 18, 2015].  
+ 
+g) E-Mail  
+[7] S. H. Gold. (2018, Oct. 10). Inter -Network Talk [Online]. Available 
+e-mail: comserve@rpiecs Message: Get Network Talk  
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          25 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB  VIII 
+PROSEDUR  PENGUMPULAN  LAPORAN  TESIS  
+ 
+8.1. Ketentuan Umum  
+Ketentuan secara umum untuk pengumpulan laporan tesis setelah dinyatakan 
+lulus sidang tesis adalah:  
+1. Mahasiswa diwajibkan untuk menyerahkan laporan tesis dalam bentuk 
+cetakan ( hardcopy ) yang sudah dijilid ( hardcover ) dengan warna coklat tua 
+dan tulisan berwarna kuning emas . Setiap pembahasan diberi kertas 
+pembatas berwarna kuning dan satu pita pembatas . Hardcopy  laporan tesis 
+ini telah ditandatangani asli  oleh pembimbing dan penguji  tesis, 
+kemudian dikumpulkan sebanyak satu eksemplar kepada bagian 
+Administrasi Universitas Nusa Mandiri.  
+Gambar 8.1. Warna Hardcover  (Coklat Tua  Kode Warna #402615 ) 
+ 
+2. Laporan t esis wajib disertakan dengan Surat Pernyataan Orisinalitas dan 
+Bebas Plagiarism e dan Surat  Pernyataan Persetujuan Publikasi Karya 
+Ilmiah untuk Kepentingan Akademis dengan tanda tangan asli penulis 
+(bukan fotocopy ) di atas materai Rp. 10.000, -. 
+3. Mahasiswa  diwajibkan mengisi data ringkasan  laporan tesis dan 
+mengunggah file  (softcopy ) laporan tesis per bab. Mahasiswa  wajib 
+mengunggah paper yang telah terbit  atau draft paper dan Surat Pernyataan 
+Persetujuan Publikasi. Semua proses ini dilakukan pad a laman  
+http://student.nusamandiri.ac.id/  dalam bentuk file PDF/DOC  pada periode 
+yang ditentukan . Laporan yang diunggah sudah  ditandatang ani asli oleh 
+dosen pembimbing dan penguji . 
+4. Seluruh dokumen pada poin 3 akan dilakukan validasi oleh dosen 
+pembimbing. Mahasiswa wajib melakukan revisi dari hasil validasi oleh 
+dosen pembimbing. Bukti validasi laporan  wajib dicetak dan diserahkan 
+kepada Administrasi bersamaan dengan hardcopy tesis. 
+5. Mahasiswa diwajibkan  untuk membuat publikasi karya ilmiah hasil tesis  
+sesuai dengan keterangan yang tercantum pada butir 3.7 poin 8.  
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          26 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 8.2. Ketentuan Pembuatan Hasil Publikasi Karya Ilmiah dari Penelitian Tesis 
+dalam Bentuk Jurnal   
+Setiap mahasiswa diwajibkan untuk membuat publikasi karya ilmiah dalam 
+bentuk jurnal dengan ketentuan yang ada dalam jurnal Pilar Nusa Mandiri dengan 
+link http://ejournal.nusamandiri.ac.id/index.php/pilar . Apabila jurnal telah 
+terpublikasi pada  Jurnal Nasional Terakreditasi , Konferensi  Internasional, Jurnal 
+Internasional  dan atau  Jurnal Internasional  terindex Scopus  maka format 
+menyesuaikan masing -masing  jurnal . 
+Publikasi karya ilmiah diunggah pada laman http://student.nusamandiri.ac.id/  
+sesuai butir 8.1  point 3.  Contoh bukti submit/publish artikel ilmiah dapat dilihat 
+pada lampiran 20.  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          27 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ BAB IX 
+PENUTUP  
+ 
+Laporan tesis pada Program Studi Ilmu Komputer (S2) Fakultas Teknologi 
+Informasi Universitas Nusa Mandiri merupakan salah satu jenis tugas akhir jenjang 
+Magister yang dilaksanakan melalui proses penelitian ilmiah yang mengikuti 
+langkah -langkah metode ilmiah dalam tahapan pelaksanaannya.  
+ 
+Demikian buku Pedoman Penyusunan  Tesis ini disusun sebagai panduan 
+umum bagi mahasiswa dalam rangka penyelesaian laporan tesisnya di Program 
+Studi Ilmu Komputer (S2) Fakultas Teknologi Informasi Universitas Nusa Mandiri.  
+ 
+Penyusun yakin bahwa naskah buku Pedoman Penyusunan  Tesis ini masih 
+perlu disempurnakan lebih lanjut, sehingga penulis sangat mengharapkan kritik dan 
+saran yang sifatnya membangun dari semua pihak untuk penyempurnaan buku 
+Pedoman Penyusunan  Tesis ini. Akhir kata, penyusun mengucapkan selamat 
+berkerja dan berkarya . Semoga kita semua selalu dalam limpahan rahmat dan 
+hidayah Tuhan Yang Maha Esa.  Aamiin.  
+  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          28 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+  
+ 
+  
+LAMPIRAN -
+LAMPIRAN
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          29 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  1. Contoh Halaman  Judul  
+ 
+ 
+ 
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          30 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  2. Contoh  Cover Depan pada Hardcover  
+ 
+ 
+ 
+Catatan :  - Logo UNM ukuran 5x5  cm 
+                - Teks sesuai dengan penulisan halaman  judul  
+                - Warna hardcover  Coklat Tua (k ode warna #402615 ) 
+                - Warna tinta kuning emas  
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          31 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  3. Contoh  Pencetakan pada Bagian Punggung  Hardcover 
+ 
+ 
+ 
+Catatan  : - Pita pembatas berwarna kuning  emas  
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          32 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  4: Contoh  Lembar  Pembatas Tesis  
+ 
+ 
+          
+Catatan  : - Logo UNM ukuran 8x8 cm     
+   - Kertas berwarna kuning seperti contoh di  atas 
+   - Posisi  kertas pembatas sebelum  = Abstrak , Bab I, Bab II, Bab III, Bab 
+IV, Bab V, Daftar Referensi dan Lampiran  
+  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          33 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran 5. Contoh Surat  Pernyataan Or isinalitas dan Bebas Plagiarism e 
+ 
+SURAT PERNYATAAN ORISINALITAS DAN   
+BEBAS PLAGIARISME  
+ 
+ 
+Yang bertanda tangan di bawah ini :  
+ 
+Nama  : Fuad Muftie  
+NIM  : 14210197  
+Program Studi  : Ilmu Komputer   
+Fakultas  : Teknologi Informasi  
+Jenjang  : Strata Dua (S2)  
+Peminatan  : Data Mining  
+ 
+Dengan ini menyatakan bahwa tesis yang telah saya buat dengan judul: 
+“Augmentasi Data Berbasis IndoBERT untuk Pengklasifikasian Teks Bahasa 
+Indonesia ” adalah hasil karya sendiri, dan semua sumber baik yang dikutip maupun 
+yang dirujuk telah saya nyatakan dengan benar , serta belum pernah diterbitkan atau 
+dipublikasikan dimanapun dan dalam bentuk apapun . 
+ 
+Demikianlah surat pernyataan ini saya buat dengan sebenar -benarnya . Apabila 
+dikemudian hari ternyata saya memberikan keterangan palsu dan atau ada pihak lain 
+yang mengklaim bahwa tesis yang telah saya buat adalah hasil karya milik 
+seseorang atau badan tertentu, saya bersedia diproses baik secara pidana maupun 
+perdata dan kelulusan saya dari Program Studi Ilmu Komputer (S2) Fakultas 
+Teknologi Informasi Universitas Nusa Mandiri dicabut/dibatalkan.  
+ 
+ 
+Jakarta, 24 Agustus 2023  
+Yang menyatakan,  
+ 
+ 
+Materai Rp 10.000, - 
+ 
+ 
+ 
+ Fuad Muftie  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ii 
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          34 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran 6. Contoh Surat Pernyataan Persetujuan Publikasi  
+ 
+SURAT PERNYATAAN PERSETUJUAN PUBLIKASI KARYA ILMIAH 
+UNTUK  KEPENTINGAN AKADEMIS  
+ 
+ 
+Yang  bertanda  tangan  di bawah  ini, saya : 
+ 
+Nama  : Fuad Muftie  
+NIM  : 14210197  
+Program Studi  : Ilmu Komputer    
+Fakultas  : Teknologi Informasi  
+Jenjang  : Strata Dua (S2)  
+Peminatan  : Data Mining  
+Jenis  Karya  : Tesis  
+ 
+Demi pengembangan ilmu pengetahuan, dengan ini menyetujui untuk  memberikan  
+izin kepada pihak Program Studi Ilmu Komputer (S2) Fakultas Teknologi Informasi 
+Universitas Nusa  Mandiri, Hak Bebas  Royalti  Non-Eksklusif  (Non -exclusive  
+Royalti -Free  Right)  atas karya  ilmiah  saya yang  berjudul  : “Augmentasi Data 
+Berbasis IndoBERT untuk Pengklasifikasian Teks Bahasa Indonesia ” beserta  
+perangkat  yang  diperlukan (apabila  ada).  
+ 
+Dengan  Hak Bebas  Royalti  Non-Eksklusif  ini, pihak  Universitas  Nusa  Mandiri  
+berhak  menyimpan, mengalih -media atau bentuk -kan, mengelola nya dalam 
+pangkalan  data (database) , mendistribusikannya dan menampilkan atau 
+mempublikasikannya  di internet atau media lain untuk kepentingan  akademis tanpa 
+perlu meminta i zin dari saya selama tetap mencantumkan nama saya sebagai 
+penulis/pencipta karya  ilmiah  tersebut.  
+ 
+Saya bersedia untuk menanggung secara pribadi, tanpa melibatkan pihak 
+Universitas  Nusa Mandiri, segala bentuk tuntutan hukum yang timbul atas 
+pelanggaran Hak  Cipta  dalam karya  ilmiah  saya ini. 
+ 
+Demikian  pernyataan  ini saya  buat dengan  sebenarnya.  
+ 
+Jakarta, 24 Agustus 2023  
+Yang menyatakan,  
+ 
+ 
+Materai Rp 10.000, - 
+ 
+ 
+ 
+ Fuad Muftie  
+ 
+ 
+iii 
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          35 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran 7. Contoh Halaman Persetujuan dan Pengesahan  Untuk Dipertahankan  
+ 
+PERSETUJUAN DAN PENGESAHAN TESIS  
+ 
+ 
+Tesis ini diajukan oleh  : 
+ 
+Nama  : Fuad Muftie  
+NIM  : 14210197  
+Program Studi  : Ilmu Komputer  
+Fakultas  : Teknologi Informasi  
+Jenjang  : Strata Dua (S2)  
+Peminatan  : Data Mining  
+Judul Tesis  : Augmentasi Data Berbasis IndoBERT untuk Pengklasifikasian Teks 
+Bahasa Indonesia  
+ 
+Untuk dipertahankan pada periode 202 3-1 dihadapan Dewan Penguji dan diterima 
+sebagai bagian persyaratan yang diperlukan untuk memperoleh gelar Magister 
+Komputer (M.Kom) pada Program Studi Ilmu Komputer (S2) Fakultas Teknologi 
+Informasi Universitas Nusa Mandiri.  
+ 
+Jakarta, 24 Agustus 2023  
+ 
+ 
+PEMBIMBING TESIS  
+ 
+ 
+ 
+Pembimbing  : Dr. Muhammad Haris, M. Eng  ………………………………..  
+ 
+ 
+D E W A N   P E N G U J I 
+ 
+ 
+Penguji I  : ………………………………..  ………………………………..  
+ 
+ 
+Penguji II  : ………………………………..  ………………………………..  
+ 
+ 
+Penguji I II/ : ………………………………..  ………………………………..  
+Pembimbing  
+ 
+ 
+Catatan:  
+* Lembar  Persetujuan  & Pengesahan  ini WAJIB  ditanda  tangani  oleh Pembimbing  & Asisten  Pembimbing  
+* Penulisan  tanggal, bulan  dan tahun adalah  tanggal  pengesahan  tesis 
+ 
+ 
+iv 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          36 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran 8. Contoh Halaman Persetujuan dan Pengesahan Telah Dipertahankan  
+ 
+PERSETUJUAN DAN PENGESAHAN TESIS  
+ 
+ 
+Tesis ini diajukan oleh  : 
+ 
+Nama  : Fuad Muftie  
+NIM  : 14210197  
+Program Studi  : Ilmu Komputer  
+Fakultas  : Teknologi Informasi  
+Jenjang  : Strata Dua (S2)  
+Peminatan  : Data Mining  
+Judul Tesis  : Augmentasi Data Berbasis IndoBERT untuk Pengklasifikasian Teks 
+Bahasa Indonesia  
+ 
+Telah  dipertahankan pada periode 202 3-1 dihadapan Dewan Penguji dan diterima 
+sebagai bagian persyaratan yang diperlukan untuk memperoleh gelar Magister 
+Komputer (M.Kom) pada Program Studi Ilmu Komputer (S2) Fakultas Teknologi 
+Informasi Universitas Nusa Mandiri.  
+ 
+Jakarta, 24 Agustus 2023  
+ 
+ 
+PEMBIMBING TESIS  
+ 
+ 
+ 
+Pembimbing  : Dr. Muhammad Haris, M. Eng  ………………………………..  
+ 
+ 
+D E W A N   P E N G U J I 
+ 
+ 
+Penguji I  : ………………………………..  ………………………………..  
+ 
+ 
+Penguji II  : ………………………………..  ………………………………..  
+ 
+ 
+Penguji I II/ : ………………………………..  ………………………………..  
+Pembimbing  
+ 
+ 
+Catatan:  
+* Lembar  Persetujuan  & Pengesahan  ini WAJIB  ditanda  tangani  oleh Pembimbing  & Asisten  Pembimbing  
+* Penulisan  tanggal, bulan  dan tahun adalah  tanggal  pengesahan  tesis 
+ 
+ 
+iv 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          37 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  9. Contoh Lembar  Bimbingan  Tesis  
+ 
+ 
+ LEMBAR  BIMBINGAN  TESIS  
+UNIVERSITAS  NUSA  MANDIRI  
+ 
+NIM  : 14210197  
+Nama Lengkap  : Fuad Muftie  
+Dosen  Pembimbing  : Dr. Muhammad Haris, M. Eng  
+Judul  Tesis  : Augmentasi Data Berbasis IndoBERT untuk Pengklasifikasian 
+Teks Bahasa Indonesia  
+ 
+No Tanggal  
+Bimbingan  Pokok  
+Bahasan  Paraf Dosen  
+Pembimbing  
+1    
+2    
+3    
+4    
+5    
+6    
+7    
+8    
+ 
+Catatan untuk dosen pembimbing   
+Bimbingan  Tesis  
+• Dimulai  pada  tanggal  : ……………….  
+• Diakhiri  pada  tanggal  : ……………….  
+• Jumlah  pertemuan  bimbingan  : 8 (delapan)  kali bimbingan  
+ 
+ 
+Disetujui  oleh,  
+Dosen  Pembimbing  
+ 
+ 
+ 
+ 
+(Dr. Muhammad Haris, M. Eng ) 
+ 
+ 
+ 
+ 
+v 
+ 
+Keterangan:  
+* Lembar bimbingan Tesis  diketik d engan minimal 8 (delapan) kali bimbingan dan telah ditanda  tangani oleh 
+Dosen Pembimbing  
+
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          38 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  10. Contoh  Kata Pengantar  
+ 
+KATA  PENGANTAR  
+ 
+ 
+Puji syukur alhamdullillah, penulis panjatkan kehadirat Allah, SWT, yang 
+telah  melimpahkan rahmat dan karunia -Nya, sehingga pada akhirnya  penulis  dapat  
+menyelesaikan laporan tesis ini tepat pada waktunya. Dimana laporan tesis ini  
+penulis  sajikan dalam bentuk buku  yang  sederhana.  Adapun  judul  tesis,  yang  
+penulis  ambil  sebagai  berikut  “Augmentasi Data Berbasis IndoBERT untuk 
+Pengklasifikasian Teks Bahasa Indonesia ”. 
+Tujuan penulisan laporan tesis ini dibuat sebagai salah satu  syarat  untuk 
+mendapatkan  gelar Magister Komputer (M.Kom) pada Program Studi Ilmu 
+Komputer (S2)  Fakultas Teknologi Informasi Universitas Nusa  Mandiri.  
+Laporan  Tesis  ini diambil  berdasarkan  hasil  penelitian  atau riset mengenai  
+teknik augmentasi berbasis language mode l (IndoBERT) & POS Tagging . Penulis 
+juga mencari dan menganalisa berbagai macam sumber referensi, baik dalam 
+bentuk  jurnal ilmiah, buku -buku literatur, internet , dll yang terkait dengan 
+pembahasan  pada  laporan tesis ini.  
+Penulis menyadari bahwa tanpa bimbingan dan dukungan dari semua pihak 
+dalam  pembuatan laporan tesis ini, maka penulis tidak dapat menyelesaikan laporan 
+tesis ini tepat  pada  waktunya.  Untuk  itu pada kesempatan  ini penulis 
+menyampaikan ucapan terimakasih kepada :  
+1. Rektor  Universitas Nusa  Mandiri  
+2. Wakil  Rektor I Bidang Akademik Universitas  Nusa  Mandiri  
+3. Dekan Fakultas Teknologi Informasi Universitas Nusa Mandiri  
+4. Ketua  Program  Studi  Ilmu  Komputer  (S2) 
+5. Ibu Dr. Muhammad Haris, M. Eng selaku dosen pembimbing yang telah  
+menyediakan waktu, pikiran dan tenaga dalam membimbing penulis dalam  
+menyelesaikan  tesis ini 
+ 
+ 
+vi 
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          39 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ 6. Orang  tua tercinta yang  telah  memberikan  dukungan  material  dan moral  
+kepada  penulis  
+7. Seluruh Dosen Program Studi Ilmu Komputer (S2) Fakultas Teknologi 
+Informasi Universitas Nusa Mandiri yang  telah  memberikan  pelajaran yang  
+berarti  bagi penulis  selama menempuh  studi  
+8. Seluruh staf di lingkungan Universitas  Nusa Mandiri yang telah melayani 
+penulis  dengan  baik selama  kuliah  
+ 
+Serta  semua  pihak  yang  terlalu  banyak  untuk  penulis  sebutkan  satu persatu  
+sehingga  terwujudnya  penulisan  laporan  tesis ini. Penulis  menyadari  bahwa  
+penulisan  lapor an tesis ini  masih jauh sekali dari sempurna, untuk itu penulis 
+mohon kritik dan saran  yang bersifat membangun demi kesempurnaan penulisan 
+karya ilmia h di masa  yang  akan  datang.  
+Akhir kata semoga laporan tesis ini dapat bermanfaat bagi penulis khususnya  
+dan bagi para  pembaca  yang  berminat pada  umumnya.  
+ 
+ 
+Jakarta,  24 Agustus 2023  
+Penulis  
+ 
+ 
+ 
+Fuad Muftie  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+vii  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          40 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  11. Contoh  Abstrak  (Bahasa  Indonesia)  
+ 
+ABSTRAK  
+ 
+ 
+Nama  : Fuad Muftie  
+NIM  : 14210197  
+Program  Studi  : Ilmu Komputer   
+Fakultas  : Teknologi Informasi  
+Jenjang  : Strata  Dua (S2) 
+Peminatan  : Data Mining  
+Judul  : Augmentasi Data Berbasis IndoBERT untuk Pengklasifikasian 
+Teks Bahasa Indonesia  
+ 
+Augmentasi data teks telah mampu meningkatkan performa model atau algoritma 
+untuk klasifikasi teks dan analisis sentimen. Teknik augmentasi berbasis aturan 
+dapat dengan mudah diterapkan untuk seluruh jenis bahasa, sementara teknik 
+augmentasi berbasis language model  masih memiliki peluang untuk dikembangkan 
+pada data bahasa Indonesia. Dalam paper ini dilakukan model pengolahan data teks 
+bahasa Indonesia yang memiliki keterbatasan jumlah data, untuk dilakukan 
+preprocessing text  dan teknik augmentasi data dengan menyisipkan kata secara 
+selektif berbasiskan IndoBERT. Augmentasi berbasis IndoBERT ini mampu 
+menghasilkan data yang tetap memiliki makna dan tetap memiliki sentimen sesuai 
+data aslinya. Dalam pengujian dataset teks twitter ini diperoleh hasil bahwa teknik 
+augmenta si yang diusulkan mampu menaikkan akurasi dan mengungguli teknik 
+augmentasi Random Insert . 
+ 
+Kata  kunci: Augmentasi, Bi -LSTM, CNN, IndoBERT, Language Model  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+viii  
+Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)          41 
+Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  12. Contoh  Abstrak  (Bahasa  Inggris)  
+ 
+ABSTRACT  
+ 
+ 
+Nam e : Fuad Muftie  
+NIM  : 14210197  
+Study of Program  : Computer Science   
+Faculty  : Information Technology  
+Levels  : Master Degree  (S2) 
+Concentration  : Data Mining  
+Title : IndoBERT Based Data Augmentation for Indonesian Text 
+Classification  
+ 
+Text data augmentation has been able to improve the performance of models or 
+algorithms for text classification and sentiment analysis. In major cases, rule -based 
+augmentation techniques can be easily applied to various languages such as 
+Indonesia language. However, language model -based augmentation techniques still 
+have potential to be developed for Indonesian language data set. Therefore, this 
+paper presents a text data processing model for Indonesian language, which has 
+limited data, to perform text preprocessing and data augmentation techniques by 
+selectively inserting words based on IndoBERT. This IndoBERT -based 
+augmentation is able to generate data that still retains meaning and sentiment 
+similar to the original data. The testing of this Twitter text dataset yielded results 
+showing that the proposed augmentation technique was able to increase accuracy 
+and outperform the Random Insert augmentation technique . 
+ 
+Keywords : Augmentation, Bi -LSTM, CNN, IndoBERT, Language Model  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ix
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  42 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  13. Contoh  Daftar  Isi 
+ 
+DAFTAR  ISI 
+Halaman   
+HALAMAN  JUDUL  ................................ ................................ ...............................   i 
+SURAT  PERNYATAAN  ORISINALITAS  DAN  BEBAS  PLAGIARISM E .........   ii 
+ SURAT PERNYATAAN PERSETUJUAN PUBLIKASI KARYA ILMIAH  
+UNTUK  KEPENTINGAN  AKADEMIS  ................................ ................................   iii 
+PERSETUJUAN  DAN  PENGESAHAN  TESIS  ................................ .....................   iv 
+LEMBAR  BIMBINGAN  TESIS  ................................ ................................ .............   v 
+KATA  PENGANTAR  ................................ ................................ .............................   vi 
+ABSTRAK  ................................ ................................ ................................ ...............   viii 
+ABSTR ACT ................................ ................................ ................................ .............   ix 
+DAFTAR  ISI ................................ ................................ ................................ ............   x 
+DAFTAR  TABEL  ................................ ................................ ................................ ....  xi 
+DAFTAR  GAMBAR  ................................ ................................ ...............................   xii 
+DAFTAR  LAMPIRAN  ................................ ................................ ............................   xiii 
+ 
+BAB  I PENDAHULUAN  ................................ ................................ ......................   1 
+1.1 Latar  Belakang  ................................ ................................ ....................   1 
+1.2 Identifikasi  Masalah  ................................ ................................ ............   2 
+1.3 Tujuan  Penelitian  ................................ ................................ ................   2 
+1.4 Ruang  Lingkup  Penelitian ................................ ................................ ...  3 
+1.5 Sistematika Penulisan  ................................ ................................ .........   4 
+ 
+BAB  II LANDASAN/KERANGKA  PEMIKIRAN  ................................ ............   5 
+2.1 Kerangka Teori  ................................ ................................ ....................   5 
+2.2 Tinjauan  Organisasi/Obyek  Penelitian  ................................ .................   13 
+ 
+BAB  III METODOLOGI  PENELITIAN  ................................ ...........................   18 
+ 
+BAB  IV HASI L PENELITIAN  DAN  PEMBAHASAN  ................................ .....  35 
+ 
+BAB   V PENUTUP  ................................ ................................ ................................   60 
+5.1 Kesimpulan  ................................ ................................ .........................   61 
+5.2 Saran  ................................ ................................ ................................ ...  62 
+ 
+DAFTAR  REFERENSI  ................................ ................................ ...........................   63 
+DAFTAR  RIWAYAT  HIDUP  ................................ ................................ ................   64 
+SURAT  KETERANGAN  RISET  ................................ ................................ ............   65 
+LAMPIRAN  ................................ ................................ ................................ .............   66 
+ 
+ 
+ 
+x 
+  
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  43 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  14. Contoh  Daftar  Tabel  
+ 
+DAFTAR  TABEL  
+Halaman  
+Tabel  II.1. Isi Tabel   ................................ ................................ ......................  7 
+Tabel  II.2. Isi Tabel   ................................ ................................ ......................  8 
+Tabel  II.3. Isi Tabel   ................................ ................................ ......................  10 
+Tabel  II.4. Isi Tabel   ................................ ................................ ......................  11 
+Tabel  II.5. Isi Tabel   ................................ ................................ ......................  14 
+Tabel  III.1.  Isi Tabel   ................................ ................................ ....................  20 
+Tabel  III.2. Isi Tabel  ................................ ................................ .....................  23 
+Tabel  III.3.  Isi  Tabel  ................................ ................................ .....................  25 
+Tabel  III.4. Isi Tabel  ................................ ................................ .....................  30 
+Tabel  III.5. Isi Tabel  ................................ ................................ .....................  33 
+Tabel  IV.1. Isi Tabel   ................................ ................................ ....................  36 
+Tabel  IV.2. Isi Tabel   ................................ ................................ ....................  39 
+Tabel  IV.3. Isi Tabel   ................................ ................................ ....................  42 
+Tabel  IV.4. Isi Tabel   ................................ ................................ ....................  50 
+Tabel  IV.5. Isi Tabel   ................................ ................................ ....................  59 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+xi 
+  
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  44 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  15. Contoh  Daftar  Gambar  
+ 
+DAFTAR  GAMBAR  
+Halaman  
+Gambar  II.1. Isi Gambar   ................................ ................................ ...............  7 
+Gambar  II.2. Isi Gambar   ................................ ................................ ...............  9 
+Gambar  II.3. Isi Gambar   ................................ ................................ ...............  11 
+Gambar  II.4. Isi Gambar   ................................ ................................ ...............  14 
+Gambar  II.5. Isi Gambar   ................................ ................................ ...............  19 
+Gambar  III.1. Isi Gambar   ................................ ................................ ..............  23 
+Gambar  III.2. Isi Gambar   ................................ ................................ ..............  25 
+Gambar  III.3. Isi Gambar   ................................ ................................ ..............  29 
+Gambar  III.4. Isi Gambar   ................................ ................................ ..............  30 
+Gambar  III.5. Isi Gambar   ................................ ................................ ....................  33 
+Gambar  IV.1. Isi Gambar   ................................ ................................ ..............  38 
+Gambar  IV.2. Isi Gambar   ................................ ................................ ..............  40 
+Gambar  IV.3. Isi Gambar   ................................ ................................ ..............  45 
+Gambar  IV.4. Isi Gambar   ................................ ................................ ..............  50 
+Gambar  IV.5. Isi Gambar   ................................ ................................ ..............  55 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+xii 
+  
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  45 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  16. Contoh  Daftar Lampiran  
+ 
+DAFTAR  LAMPIRAN  
+Halaman  
+Lampiran  1. Bukti Hasil Pengecekan Plagiarisme  Laporan Tesis  .............  66 
+Lampiran  2. Bukti Hasil Pengecekan Plagiarisme  Artikel I lmiah  ............  68 
+Lampiran  3. Bukti Submit/Publish Artikel Ilmiah   ................................ .... 70 
+Lampiran  4. Isi lampiran  4  ................................ ................................ ........  72 
+Lampiran  5. Isi lampiran  5  ................................ ................................ ........  80 
+Lampiran  6. Isi lampiran  6  ................................ ................................ ........  82 
+Lampiran  7. Isi lampiran  7  ................................ ................................ ........  83 
+Lampiran  8. Isi lampiran  8  ................................ ................................ ........  85 
+Lampiran  9. Isi lampiran  9  ................................ ................................ ........  90 
+Lampiran  10.   Isilampiran  10  ................................ ................................ ....... 100 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+xiii 
+  
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  46 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  17. Contoh  Daftar  Riwayat  Hidup  
+ 
+DAFTAR  RIWAYAT  HIDUP  
+ 
+ 
+A. Biodata  Mahasiswa  
+NIM  : 14210197  
+Nama Lengkap  : Fuad Muftie  
+Tempat  dan Tanggal  Lahir  :  
+Jenis  Kelamin   :  
+Alamat   :  
+ 
+B. Riwayat  Pendidikan  Formal  dan Non -Formal  
+1. SD …… , lulus tahun  ……  
+2. SMP  …… , lulus tahun  ……  
+3. SMA …… , lulus tahun  ……  
+4. S1 …… , lulus tahun  ……  
+5. Kursus  Komputer  …… , lulus tahun  ……  
+ 
+C. Riwayat  Pengalaman  Organisasi  / Pekerjaan  
+1. Ketua OSIS …… (tahun)  
+2. Karyawan  di …… (tahun)  
+ 
+ 
+ 
+Jakarta,  24 Agustus 2023  
+ 
+ 
+ 
+ 
+ 
+(Fuad Muftie ) 
+ 
+ 
+ 
+ 
+Catatan:  
+* Diketik dengan jarak satu spasi  
+* Pas foto berwarna, kemeja putih polos dan berdasi, mengenakan jaket almamater dengan berlatar warna merah  
+* Pas foto diperbolehkan dalam bentuk digital  
+ 
+ 
+ 
+64  
+ 
+      Foto 3x4  
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  47 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  18. Contoh  Surat  Keterangan  Riset  
+ 
+PT Telekomunikasi  Indonesia,  Tbk 
+Kantor Pusat: Jl Japati, Bandung - Jawa Barat   
+Telp (022)  250-0000  Faks  022) 250-0000  
+Website : http://www  telkom -indonesia  com 
+ 
+ 
+No : Nomor  Surat  Perusahaan  Jakarta,  23 Juni 2023 
+Lampiran  : - 
+Hal : Surat  Keterangan  Riset  
+ 
+ 
+SURAT  KETERANGAN  
+ 
+Yang  bertanda  tangan  di bawah  ini : 
+ 
+Nama  : ………………………………………………………………  
+NIK : ………………………………………………………………  
+Jabatan  : ………………………………………………………………  
+Dengan ini menerangkan bahwa, yang tersebut di bawah ini :  
+Nama  : Fuad Muftie  
+NIM  : 14210197  
+Perguruan  Tingg i :Program  Studi Ilmu  Komputer  (S2) 
+   Universitas Nusa  Mandiri  
+ 
+Adalah benar telah melakukan Riset pada Kantor  Pusat  PT Telekomunikasi  
+Indonesia,  Tbk terhitung  sejak  tanggal  01 Mei s/d 23 Juni 202 3, dan yang 
+bersangkutan telah melaksanakan tugasnya dengan bai k dan penuh tanggung  jawab . 
+ 
+Demikian  surat  keterangan  ini dibuat  dengan  benar,  agar dapat  dipergunakan  
+sebagaimana  mestinya  
+ 
+PT Telekomunikasi Indonesia, Tbk  
+Nama  Jabatan  
+ 
+ 
+ 
+ 
+Nama Pejabat yang Berwenang  
+NIK 
+ 
+Catatan: Wajib dilampirkan dalam Laporan Tesis bagi mahasiswa yang melaksanakan riset/PKL dari 
+perusahaan/instansi beserta cap/stempel basah dan tanda tangan. Pada kop surat terdapat alamat dan nomor 
+telepon. Perusahaan/instansi yang dijadikan tempat riset/PKL adalah yang berbadan hukum (PT, CV, Firma, 
+Perum, UD, PD, Koperasi, Lembaga Sosial (Yayasan/LSM), Instansi Pemerintah, Lembaga Pendidikan, 
+Organisasi Profesi, Organisasi Kemasyarakatan/Politik dan Organisasi Kepemudaan).  
+
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  48 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  19. Contoh  Bukti Hasil Pengecekan Plagiarisme Laporan Tesis  
+ 
+Lampiran  1. Bukti Hasil Pengecekan Plagiarisme Laporan Tesis  
+ 
+  
+
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  49 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  20. Contoh  Bukti Submit/Publish Artikel Ilmiah  
+ 
+Lampiran  3. Bukti Submit/Publish Artikel Ilmiah  
+ 
+ 
+ 
+  
+
+ Pedoman  Penyusunan  Tesis  Program  Studi  Ilmu Komputer  (S2)                  50 
+ Fakultas Teknologi Informasi Universitas  Nusa  Mandiri   
+ 
+ 
+ 
+ Lampiran  21. Contoh Format Isi File ( Upload Soft file  Validasi ) 
+ 
+File_1 Cover  : Halaman Judul Laporan Tesis  
+File_2 Awal  :  1. Surat Pernyataan Orisinalitas dan Bebas Plagiarisme  * 
+  2. Surat Pernyataan Persetujuan Publikasi Karya Ilmiah  * 
+  3. Persetujuan dan Pengesahan  Tesis  ** 
+  4. Lembar Bimbingan Tesis  ** 
+  5. Kata Pengantar  
+  6. Abstrak  
+  7. Abstract  
+  8. Daftar Isi  
+  9. Daftar Tabel  
+  10. Daftar Gambar  
+  11. Daftar Lampiran  
+File_3 Abstrak  : Abstrak dalam Bahasa Indonesia dan Bahasa Inggris  
+File_4 Bab I  
+File_5 Bab II  
+File_6 Bab III  
+File_7 Bab IV  
+File_8 Bab V 
+File_9 Daftar Referensi  
+File_ 10 Lampiran : 1. Daftar Riwayat Hidup  
+  2. Surat Keterangan Riset  
+  3. Lampiran  lainnya  
+File_1 1 Jurnal  : Draft/ publikasi karya ilmiah dari penelitian tesis dalam bentuk jurnal  
+File_12 Surat Pernyataan : Download format di  laman http://student.nusamandiri.ac.id/  * 
+File_13 Tesis Keseluruhan : Dari cover sampai lampiran  
+ 
+ 
+ 
+Keterangan:  
+* Tempelkan materai Rp 10.000 dan diberi tanda tangan mahasiswa  
+** Wajib sudah bertanda tangan dosen penguji  dan atau dosen pembimbing  
