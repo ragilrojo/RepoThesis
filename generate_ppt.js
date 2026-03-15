@@ -130,41 +130,6 @@ async function createPresentation() {
         { text: " untuk optimasi parameter dinamis." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 3.5, fontSize: 20, color: "333333", valign: "top" });
 
-    // --- Slide 6: Temuan Utama: Performa ---
-    let slide6 = pres.addSlide();
-    slide6.addText("Temuan Utama: Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "2980b9" });
-    slide6.addText([
-        { text: "Fase ", options: { bold: true, bullet: true } },
-        { text: "Bearish & Crypto Winter", options: { bold: true, italic: true } },
-        { text: " Ekstrem (2018-2019):", options: { bold: true, breakLine: true } },
-
-        { text: "   " },
-        { text: "Network Markowitz", options: { italic: true } },
-        { text: " (gamma = 2.0) meredam " },
-        { text: "drawdowns", options: { italic: true } },
-        { text: " secara signifikan dibandingkan EW dan CM.", options: { breakLine: true } },
-
-        { text: "Ketahanan Risiko (", options: { bold: true, bullet: true } },
-        { text: "Value at Risk", options: { bold: true, italic: true } },
-        { text: " / VaR):", options: { bold: true, breakLine: true } },
-
-        { text: "   Pembatasan eksposur pada sentralitas tinggi (MST) membantu mengamankan modal dengan VaR sangat stabil.", options: { breakLine: true } },
-
-        { text: "Pengelolaan ", options: { bold: true, bullet: true } },
-        { text: "Tail-Risk", options: { bold: true, italic: true } },
-        { text: " (", options: { bold: true } },
-        { text: "Rachev Ratio", options: { bold: true, italic: true } },
-        { text: "):", options: { bold: true, breakLine: true } },
-
-        { text: "   Mengindikasikan " },
-        { text: "Network Markowitz", options: { italic: true } },
-        { text: " sukses bertindak sebagai " },
-        { text: "shock-absorber", options: { italic: true } },
-        { text: " dalam meredam " },
-        { text: "market crash", options: { italic: true } },
-        { text: "." }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
-
     // --- Slide 7: Terima Kasih ---
     let slide7 = pres.addSlide();
     slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "2c3e50" });
