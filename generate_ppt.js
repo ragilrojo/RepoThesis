@@ -426,35 +426,7 @@ async function createPresentation() {
         { text: "   Oleh karena itu, CM dikembangkan menjadi Network Markowitz di penelitian ini: membersihkan noise (RMT) dan menghukum koin dominan yang rawan hancur (MST).", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 21: Lampiran - Dynamic Grid Search ---
-    let slide21 = pres.addSlide();
-    slide21.addText("Lampiran: Apa itu Dynamic Grid Search (\u03b3-tuning)?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
-    slide21.addText([
-        { text: "Kalibrasi Dinamis (Walk-forward Analysis):", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "   Daripada menetapkan satu nilai penalti statis, model ", options: { } },
-        { text: "Optimized Dynamic Network Markowitz", options: { italic: true } },
-        { text: " menggunakan " },
-        { text: "Grid Search", options: { italic: true } },
-        { text: " untuk merekalibrasi parameter Gamma (\u03b3) terbaik secara komersil dalam periode berjalan.", options: { breakLine: true } },
-        
-        { text: "Evaluasi pada Jendela Bergulir (Rolling Window):", options: { bold: true, breakLine: true } },
-        { text: "   • Model membelah sekuens data waktu menjadi set latih dan set validasi (out-of-sample) yang terus maju bergeser.", options: { breakLine: true } },
-        { text: "   • Tiap jendela mensimulasikan nilai \u03b3 (dari 0.0 hingga 2.0) dan memburu parameter mana yang membuahkan ", options: { } },
-        { text: "Return Terbesar", options: { bold: true, color: "27ae60" } },
-        { text: " ATAU ", options: { bold: true } },
-        { text: "Risiko Terkecil", options: { bold: true, color: "c0392b" } },
-        { text: " di periode tersebut.", options: { breakLine: true } },
-        
-        { text: "Sifat Adaptif (Adaptive Market Hypothesis):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Siklus aset kripto terus berevolusi (", options: { } },
-        { text: "Bearish, Recovery, Bullish", options: { italic: true } },
-        { text: "). Jika pasar mendadak crash, Grid Search merespons secara real-time dengan menaikkan nilai \u03b3 agar portofolio terlindungi dari anjlok ekstrem.", options: { breakLine: true } },
-        
-        { text: "Tujuan Utama (Research Gap):", options: { bold: true, breakLine: true } },
-        { text: "   Menghilangkan bias perkiraan buta karena optimalisasi penalti kini bisa bergerak lincah dan otomatis tanpa sentuhan teknis manusia sama sekali.", options: { breakLine: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 17, color: "333333", valign: "top" });
-
-    // --- Slide 22: Lampiran - Dua Tipe Grid Search ---
+    // --- Slide 21: Lampiran - Dua Tipe Grid Search ---
     let slide22 = pres.addSlide();
     slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "2980b9" });
     slide22.addText([
