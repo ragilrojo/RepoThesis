@@ -48,23 +48,22 @@ async function createPresentation() {
     slide3.addText("Apa itu \"Noise\" di Pasar Kripto?", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide3.addText([
         { text: "Noise (Kebisingan) Pasar:", options: { bold: true, breakLine: true } },
-        { text: "   ", options: { bullet: true } },
         { text: "Fluktuasi harga acak", options: { bold: true } },
         { text: " akibat sentimen sesaat, rumor, FOMO, atau spekulasi yang tidak mencerminkan nilai fundamental aset.", options: { breakLine: true } },
-        
-        { text: "Estimation Error (", options: { bold: true } },
-        { text: "Korelasi Palsu", options: { bold: true } },
-        { text: "):", options: { bold: true, breakLine: true } },
-        { text: "   Model tradisional seringkali menangkap pergerakan acak ini sebagai korelasi tinggi antar aset, menghasilkan ", options: { } },
+        { text: "", options: { breakLine: true } }, // Spasi antar poin
+
+        { text: "Estimation Error (Korelasi Palsu):", options: { bold: true, breakLine: true } },
+        { text: "Model tradisional seringkali menangkap pergerakan acak ini sebagai korelasi tinggi antar aset, menghasilkan ", options: { } },
         { text: "matriks kovarians", options: { bold: true } },
         { text: " yang ", options: { } },
-        { text: "berisik", options: { italic: true, bold: true } },
+        { text: "berisik", options: { italic: true } },
         { text: " dan tidak stabil.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } }, // Spasi antar poin
 
         { text: "Solusi Random Matrix Theory (", options: { bold: true } },
         { text: "RMT", options: { bold: true, hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
         { text: "):", options: { bold: true, breakLine: true } },
-        { text: "   Berfungsi sebagai ", options: { bullet: true } },
+        { text: "Berfungsi sebagai ", options: { } },
         { text: "filter", options: { bold: true } },
         { text: " untuk memisahkan ", options: { } },
         { text: "korelasi sejati", options: { bold: true } },
@@ -73,7 +72,7 @@ async function createPresentation() {
         { text: "), memastikan alokasi portofolio tidak tertipu oleh ", options: { } },
         { text: "fluktuasi semu", options: { bold: true } },
         { text: "." }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 4: Landasan Teori ---
     let slide4 = pres.addSlide();
