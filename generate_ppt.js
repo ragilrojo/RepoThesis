@@ -225,7 +225,7 @@ async function createPresentation() {
         { text: "5. ", options: { bold: true } },
         { text: "NW Adaptif", options: { bold: true, underline: true } },
         { text: " (Grid Search): Menggunakan ", options: { } },
-        { text: "rolling window", options: { bold: true } },
+        { text: "4 variasi rolling window", options: { bold: true } },
         { text: " untuk optimasi parameter dinamis." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
@@ -308,8 +308,8 @@ async function createPresentation() {
     slideNWAdaptive.addText("5. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWAdaptive.addText([
         { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true } },
-        { text: "❑ Rolling Window: Menggunakan jendela estimasi data historis selama ", options: { } },
-        { text: "120 hari", options: { bold: true } },
+        { text: "❑ Rolling Window: Menggunakan 4 variasi jendela estimasi: ", options: { } },
+        { text: "30, 60, 90, dan 120 hari", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
         { text: "❑ Rebalancing Frequency: Dilakukan setiap ", options: { } },
         { text: "7 hari", options: { bold: true } },
@@ -322,15 +322,15 @@ async function createPresentation() {
         { text: " dengan iterasi 0.1.", options: { breakLine: true } },
 
         { text: "Split Validasi Internal (80/20):", options: { bold: true, breakLine: true } },
-        { text: "❑ Training (80% ≈ 96 hari): Untuk estimasi ", options: { } },
+        { text: "❑ Training (80%): Untuk estimasi ", options: { } },
         { text: "bobot kandidat", options: { bold: true } },
         { text: " gamma.", options: { breakLine: true } },
-        { text: "❑ Validation (20% ≈ 24 hari): Untuk seleksi ", options: { } },
+        { text: "❑ Validation (20%): Untuk seleksi ", options: { } },
         { text: "gamma terbaik", options: { bold: true } },
         { text: " dengan performa optimal.", options: { breakLine: true } },
         { text: "❑ Penanganan Data/Gagal: Menggunakan strategi ", options: { } },
         { text: "fallback 'EW'", options: { bold: true } },
-        { text: " jika jendela data < 120 hari.", options: { breakLine: true } },
+        { text: " jika jendela data tidak mencukupi sesuai variasi.", options: { breakLine: true } },
         { text: "❑ Tujuan: Adaptasi terhadap perubahan ", options: { } },
         { text: "rezim pasar", options: { bold: true } },
         { text: " secara real-time.", options: { } }
