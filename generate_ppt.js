@@ -79,37 +79,55 @@ async function createPresentation() {
     slide4.addText("Landasan Teori Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide4.addText([
         { text: "Tinjauan Portofolio & Risiko:", options: { bold: true, breakLine: true } },
-        { text: "   Portofolio: Kumpulan aset finansial yang dikelola bersama untuk mengoptimalkan ", options: { bullet: true } },
+        { text: "➤ ", options: { } },
+        { text: "Portofolio", options: { underline: true } },
+        { text: ": Kumpulan aset finansial yang dikelola bersama untuk mengoptimalkan ", options: { } },
         { text: "profil risiko-imbal hasil", options: { bold: true } },
         { text: " melalui diversifikasi.", options: { breakLine: true } },
-        { text: "   Volatilitas: Alat statistik pemetaan ", options: { bullet: true } },
+
+        { text: "➤ ", options: { } },
+        { text: "Volatilitas", options: { underline: true } },
+        { text: ": Alat statistik pemetaan ", options: { } },
         { text: "fluktuasi harga", options: { bold: true } },
         { text: " yang menjadi basis penentuan ", options: { } },
         { text: "tingkat risiko", options: { bold: true } },
         { text: " pasar.", options: { breakLine: true } },
-        { text: "   Matriks Kovarians: Alat matematis yang mengukur arah ", options: { bullet: true } },
+
+        { text: "➤ ", options: { } },
+        { text: "Matriks", options: { underline: true } },
+        { text: " Kovarians: Alat matematis yang mengukur arah ", options: { } },
         { text: "pergerakan bersama", options: { bold: true } },
         { text: " (korelasi) serta ", options: { } },
         { text: "tingkat fluktuasi", options: { bold: true } },
         { text: " seluruh aset dalam portofolio.", options: { breakLine: true } },
         
+        { text: "", options: { breakLine: true } }, // Spasi antar kelompok
+
         { text: "Pendekatan Struktur Jaringan:", options: { bold: true, breakLine: true } },
-        { text: "   Random Matrix Theory (", options: { bullet: true } },
-        { text: "RMT", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
+        { text: "➤ ", options: { } },
+        { text: "Random Matrix Theory", options: { underline: true } },
+        { text: " (", options: { } },
+        { text: "RMT", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true, bold: true } },
         { text: "): Metode fisika statistik ", options: { } },
         { text: "pemfilter noise", options: { bold: true } },
         { text: " untuk merekonstruksi kestabilan ", options: { } },
         { text: "matriks korelasi", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
-        { text: "   Minimum Spanning Tree (MST): Konstruksi jaringan antar aset berdasarkan ", options: { bullet: true } },
+
+        { text: "➤ ", options: { } },
+        { text: "Minimum Spanning Tree", options: { underline: true } },
+        { text: " (MST): Konstruksi jaringan antar aset berdasarkan ", options: { } },
         { text: "jarak korelasi terpendek", options: { bold: true } },
         { text: " (paling kuat); menyaring informasi redundan ", options: { } },
         { text: "tanpa siklus", options: { bold: true } },
         { text: " (loop).", options: { breakLine: true } },
-        { text: "   Network Centrality: Metrik penghukuman pada aset pasar yang letaknya terpusat untuk menekan probabilitas ", options: { bullet: true } },
+
+        { text: "➤ ", options: { } },
+        { text: "Network Centrality", options: { underline: true } },
+        { text: ": Metrik penghukuman pada aset pasar yang letaknya terpusat untuk menekan probabilitas ", options: { } },
         { text: "risiko penularan", options: { bold: true } },
         { text: " letupan harga yang sistemik.", options: { } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 13, color: "333333", valign: "top" });
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 13.5, color: "333333", valign: "top" });
 
     // --- Slide 4.1: Penelitian Terdahulu ---
     let slidePrev = pres.addSlide();
@@ -176,36 +194,40 @@ async function createPresentation() {
     let slide5 = pres.addSlide();
     slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide5.addText([
-        { text: "1. EW (", options: { bullet: true } },
-        { text: "Equally Weighted", options: { italic: true, bold: true } },
-        { text: "): ", options: { } },
-        { text: "Baseline naif", options: { italic: true, bold: true } },
-        { text: " 1/N.", options: { breakLine: true } },
+        { text: "1. ", options: { bold: true } },
+        { text: "EW", options: { bold: true, underline: true } },
+        { text: " (Equally Weighted): ", options: { } },
+        { text: "Baseline naif", options: { bold: true } },
+        { text: " 1/N sebagai pembanding dasar.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } }, // Spasi
 
-        { text: "2. CM (", options: { bullet: true } },
-        { text: "Classical Markowitz", options: { italic: true, bold: true } },
-        { text: "): ", options: { } },
-        { text: "Mean-Variance Optimization", options: { italic: true, bold: true } },
-        { text: " murni.", options: { breakLine: true } },
+        { text: "2. ", options: { bold: true } },
+        { text: "CM", options: { bold: true, underline: true } },
+        { text: " (Classical Markowitz): Optimasi ", options: { } },
+        { text: "Mean-Variance", options: { bold: true } },
+        { text: " murni tanpa filter noise.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } }, // Spasi
 
-        { text: "3. GM (", options: { bullet: true } },
-        { text: "Glasso Markowitz", options: { italic: true, bold: true } },
-        { text: "): Regularisasi L1 (", options: { } },
-        { text: "Graphical Lasso", options: { italic: true, bold: true } },
-        { text: ") pada matriks kovarians.", options: { breakLine: true } },
+        { text: "3. ", options: { bold: true } },
+        { text: "GM", options: { bold: true, underline: true } },
+        { text: " (Glasso Markowitz): ", options: { } },
+        { text: "Regularisasi L1", options: { bold: true } },
+        { text: " (Graphical Lasso) pada matriks kovarians.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } }, // Spasi
 
-        { text: "4. NW (", options: { bullet: true } },
-        { text: "Network Markowitz", options: { italic: true, bold: true } },
-        { text: ") Statis: Dengan parameter ", options: { } },
-        { text: "gamma statis", options: { bold: true } },
+        { text: "4. ", options: { bold: true } },
+        { text: "NW Statis", options: { bold: true, underline: true } },
+        { text: " (Network Markowitz): Optimasi menggunakan parameter ", options: { } },
+        { text: "gamma tetap", options: { bold: true } },
         { text: " (0, 1.0, 2.0).", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } }, // Spasi
 
-        { text: "5. NW (", options: { bullet: true } },
-        { text: "Grid Search", options: { italic: true, bold: true } },
-        { text: ") Adaptif: Menggunakan ", options: { } },
-        { text: "rolling window", options: { italic: true, bold: true } },
+        { text: "5. ", options: { bold: true } },
+        { text: "NW Adaptif", options: { bold: true, underline: true } },
+        { text: " (Grid Search): Menggunakan ", options: { } },
+        { text: "rolling window", options: { bold: true } },
         { text: " untuk optimasi parameter dinamis." }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 3.5, fontSize: 20, color: "333333", valign: "top" });
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 5.1: Equally Weighted (EW) ---
     let slideEW = pres.addSlide();
@@ -286,32 +308,33 @@ async function createPresentation() {
     slideNWAdaptive.addText("5. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWAdaptive.addText([
         { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true } },
-        { text: "Rolling Window: Menggunakan jendela estimasi data historis selama ", options: { bullet: true } },
+        { text: "❑ Rolling Window: Menggunakan jendela estimasi data historis selama ", options: { } },
         { text: "120 hari", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
-        { text: "Rebalancing Frequency: Dilakukan setiap ", options: { bullet: true } },
+        { text: "❑ Rebalancing Frequency: Dilakukan setiap ", options: { } },
         { text: "7 hari", options: { bold: true } },
         { text: " sekali.", options: { breakLine: true } },
-        { text: "Transaction Cost: Biaya transaksi sebesar ", options: { bullet: true } },
+        { text: "❑ Transaction Cost: Biaya transaksi sebesar ", options: { } },
         { text: "0.1% (10 bps)", options: { bold: true } },
         { text: " diperhitungkan dalam simulasi.", options: { breakLine: true } },
-        { text: "Grid Search: Parameter gamma diuji dalam rentang ", options: { bullet: true } },
+        { text: "❑ Grid Search: Parameter gamma diuji dalam rentang ", options: { } },
         { text: "[0.0 - 2.0]", options: { bold: true } },
         { text: " dengan iterasi 0.1.", options: { breakLine: true } },
-        { text: "Split Validasi Internal (80/20):", options: { bold: true, bullet: true, breakLine: true } },
-        { text: "Training (80% ≈ 96 hari): Untuk estimasi ", options: { bullet: { indent: 20 } } },
+
+        { text: "Split Validasi Internal (80/20):", options: { bold: true, breakLine: true } },
+        { text: "❑ Training (80% ≈ 96 hari): Untuk estimasi ", options: { } },
         { text: "bobot kandidat", options: { bold: true } },
         { text: " gamma.", options: { breakLine: true } },
-        { text: "Validation (20% ≈ 24 hari): Untuk seleksi ", options: { bullet: { indent: 20 } } },
+        { text: "❑ Validation (20% ≈ 24 hari): Untuk seleksi ", options: { } },
         { text: "gamma terbaik", options: { bold: true } },
         { text: " dengan performa optimal.", options: { breakLine: true } },
-        { text: "Penanganan Data/Gagal: Menggunakan strategi ", options: { bullet: true } },
+        { text: "❑ Penanganan Data/Gagal: Menggunakan strategi ", options: { } },
         { text: "fallback 'EW'", options: { bold: true } },
         { text: " jika jendela data < 120 hari.", options: { breakLine: true } },
-        { text: "Tujuan: Adaptasi terhadap perubahan ", options: { bullet: true } },
+        { text: "❑ Tujuan: Adaptasi terhadap perubahan ", options: { } },
         { text: "rezim pasar", options: { bold: true } },
         { text: " secara real-time.", options: { } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 13, color: "333333", valign: "top" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
