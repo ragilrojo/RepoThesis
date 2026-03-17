@@ -194,39 +194,26 @@ async function createPresentation() {
     let slide5 = pres.addSlide();
     slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide5.addText([
-        { text: "1. ", options: { bold: true } },
-        { text: "EW", options: { bold: true, underline: true } },
-        { text: " (Equally Weighted): ", options: { } },
-        { text: "Baseline naif", options: { bold: true } },
-        { text: " 1/N sebagai pembanding dasar.", options: { breakLine: true } },
-        { text: "", options: { breakLine: true } }, // Spasi
+        { text: "1. Kelompok Baseline:", options: { bold: true, color: "2c3e50", breakLine: true } },
+        { text: "   • EW (Equally Weighted): ", options: { bold: true } },
+        { text: "Portofolio naif 1/N sebagai pembanding dasar.", options: { breakLine: true } },
+        { text: "   • CM (Classical Markowitz): ", options: { bold: true } },
+        { text: "Optimasi Mean-Variance tradisional tanpa filter noise.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
 
-        { text: "2. ", options: { bold: true } },
-        { text: "CM", options: { bold: true, underline: true } },
-        { text: " (Classical Markowitz): Optimasi ", options: { } },
-        { text: "Mean-Variance", options: { bold: true } },
-        { text: " murni tanpa filter noise.", options: { breakLine: true } },
-        { text: "", options: { breakLine: true } }, // Spasi
+        { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "2c3e50", breakLine: true } },
+        { text: "   • GM (Glasso Markowitz): ", options: { bold: true } },
+        { text: "Menggunakan Graphical Lasso (L1) pada matriks kovarians.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
 
-        { text: "3. ", options: { bold: true } },
-        { text: "GM", options: { bold: true, underline: true } },
-        { text: " (Glasso Markowitz): ", options: { } },
-        { text: "Regularisasi L1", options: { bold: true } },
-        { text: " (Graphical Lasso) pada matriks kovarians.", options: { breakLine: true } },
-        { text: "", options: { breakLine: true } }, // Spasi
+        { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "2c3e50", breakLine: true } },
+        { text: "   • NW Statis: ", options: { bold: true } },
+        { text: "Parameter penalti gamma (γ) tetap: 0, 1.0, dan 2.0.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
 
-        { text: "4. ", options: { bold: true } },
-        { text: "NW Statis", options: { bold: true, underline: true } },
-        { text: " (Network Markowitz): Optimasi menggunakan parameter ", options: { } },
-        { text: "gamma tetap", options: { bold: true } },
-        { text: " (0, 1.0, 2.0).", options: { breakLine: true } },
-        { text: "", options: { breakLine: true } }, // Spasi
-
-        { text: "5. ", options: { bold: true } },
-        { text: "NW Adaptif", options: { bold: true, underline: true } },
-        { text: " (Grid Search): Menggunakan ", options: { } },
-        { text: "4 variasi rolling window", options: { bold: true } },
-        { text: " untuk optimasi parameter dinamis." }
+        { text: "4. Kelompok Network (Adaptif):", options: { bold: true, color: "2c3e50", breakLine: true } },
+        { text: "   • NW Adaptif (Grid Search): ", options: { bold: true } },
+        { text: "Optimasi penalti dinamis dengan Jendela Rolling (30, 60, 90, 120 hari).", options: {} }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 5.1: Equally Weighted (EW) ---
@@ -305,7 +292,7 @@ async function createPresentation() {
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptif ---
     let slideNWAdaptive = pres.addSlide();
-    slideNWAdaptive.addText("5. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWAdaptive.addText("Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWAdaptive.addText([
         { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true } },
         { text: "❑ Rolling Window: Menggunakan 4 variasi jendela estimasi: ", options: { } },
