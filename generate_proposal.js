@@ -3,7 +3,7 @@ const {
     Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
     AlignmentType, HeadingLevel, BorderStyle, WidthType, ShadingType,
     LevelFormat, PageNumber, PageBreak, TabStopType, TabStopPosition,
-    VerticalAlign, ImageRun, Footer, NumberFormat, SectionType,
+    VerticalAlign, ImageRun, Header, Footer, NumberFormat, SectionType,
     TableOfContents,
     Math, MathRun, MathSubScript, MathSuperScript, MathFraction, MathSum, MathRoundBrackets, MathLimitLower
 } = docx;
@@ -119,14 +119,14 @@ function heading1(text) {
     return new Paragraph({
         heading: HeadingLevel.HEADING_1,
         alignment: AlignmentType.CENTER,
-        children: [new TextRun({ text, font: "Times New Roman", size: 28, bold: true })]
+        children: [new TextRun({ text, font: "Times New Roman", size: 24, bold: true })]
     });
 }
 
 function heading2(text) {
     return new Paragraph({
         heading: HeadingLevel.HEADING_2,
-        children: [new TextRun({ text, font: "Times New Roman", size: 26, bold: true })]
+        children: [new TextRun({ text, font: "Times New Roman", size: 24, bold: true })]
     });
 }
 
@@ -176,7 +176,7 @@ function centeredBold(text, size = 24) {
     });
 }
 
-function chapterHeading(bab, title, size = 26) {
+function chapterHeading(bab, title, size = 24) {
     return new Paragraph({
         heading: HeadingLevel.HEADING_1,
         alignment: AlignmentType.CENTER,
@@ -189,7 +189,7 @@ function chapterHeading(bab, title, size = 26) {
     });
 }
 
-function sectionTitle(text, size = 26) {
+function sectionTitle(text, size = 24) {
     return new Paragraph({
         heading: HeadingLevel.HEADING_1,
         alignment: AlignmentType.CENTER,
@@ -318,12 +318,12 @@ const doc = new Document({
         paragraphStyles: [
             {
                 id: "Heading1", name: "Heading 1", basedOn: "Normal", next: "Normal", quickFormat: true,
-                run: { size: 28, bold: true, font: "Times New Roman" },
+                run: { size: 24, bold: true, font: "Times New Roman" },
                 paragraph: { spacing: { before: 240, after: 120 }, outlineLevel: 0 }
             },
             {
                 id: "Heading2", name: "Heading 2", basedOn: "Normal", next: "Normal", quickFormat: true,
-                run: { size: 26, bold: true, font: "Times New Roman" },
+                run: { size: 24, bold: true, font: "Times New Roman" },
                 paragraph: { spacing: { before: 200, after: 100 }, outlineLevel: 1 }
             },
             {
@@ -388,7 +388,7 @@ const doc = new Document({
                     margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
                     pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
                 },
-                type: SectionType.NEXT_PAGE,
+                type: SectionType.NEXT_PAGE, titlePage: true,
                 pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
@@ -488,7 +488,7 @@ const doc = new Document({
                     margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
                     pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
                 },
-                type: SectionType.NEXT_PAGE,
+                type: SectionType.NEXT_PAGE, titlePage: true,
                 pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
@@ -521,11 +521,21 @@ const doc = new Document({
                     margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
                     pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
                 },
-                type: SectionType.NEXT_PAGE,
+                type: SectionType.NEXT_PAGE, titlePage: true,
                 pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
             },
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
             footers: {
-                default: new Footer({
+                first: new Footer({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
@@ -539,7 +549,7 @@ const doc = new Document({
                 emptyLine(),
                 body("Bab ini membahas secara komprehensif latar belakang permasalahan, perumusan penelitian, tujuan, dan ruang lingkup yang menjadi batasan penelitian ini."),
                 emptyLine(),
-                heading2("1.1. Latar Belakang"),
+                heading2("1.1 Latar Belakang"),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
@@ -599,7 +609,7 @@ const doc = new Document({
                     ]
                 }),
                 emptyLine(),
-                heading2("1.2. Identifikasi Masalah"),
+                heading2("1.2 Identifikasi Masalah"),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
@@ -632,19 +642,19 @@ const doc = new Document({
                     ]
                 }),
                 emptyLine(),
-                heading2("1.3. Tujuan Penelitian"),
+                heading2("1.3 Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
                 letterItem("Menganalisis keandalan metodologi Network Markowitz (dengan integrasi RMT filter dan Eigenvector Centrality) dalam menekan ekstrimitas downside risk dibandingkan pendekatan portofolio naif dan konvensional.", "letters1"),
                 letterItem("Merancang dan menguji model Network Markowitz adaptif (Grid Search Optimization) yang mampu melakukan re-kalibrasi dinamis dengan menggunakan paradigma rolling window pada berbagai lanskap pasar (Bearish, Recovery, Stable).", "letters1"),
                 letterItem("Membandingkan performa perlindungan risiko sistemik (VaR) dan asimetri imbal hasil (Rachev Ratio) antara pemodelan baru dengan metode-metode baseline pada reksadana aset kripto.", "letters1"),
                 emptyLine(),
-                heading2("1.4. Ruang Lingkup Penelitian"),
+                heading2("1.4 Ruang Lingkup Penelitian"),
                 body("Ruang lingkup penelitian ini dibatasi pada:"),
                 letterItem("Objek penelitian terfokus pada data fluktuasi harga harian dari 10 (sepuluh) aset kripto utama dalam kerangka waktu historis termasuk masa resesi crypto winter (14 September 2017 hingga 17 Oktober 2019).", "letters2"),
                 letterItem("Metode yang dibandingkan secara teknis mencakup Equally Weighted (EW), Classical Markowitz (CM), Glasso Markowitz (GM), Network Markowitz statis (\u03b3 = 0, 1.0, 2.0), serta Optimized Network Markowitz secara dinamis berbasis Grid Search.", "letters2"),
                 letterItem("Pengujian (backtesting) dilakukan dalam out-of-sample rolling window (120 observasi ke belakang dengan frekuensi penyesuaian rebalance 7 hari) yang disimulasikan menggunakan transaction cost atau estimasi biaya bursa (0.1%).", "letters2"),
                 emptyLine(),
-                heading2("1.5. Sistematika Penulisan"),
+                heading2("1.5 Sistematika Penulisan"),
                 body("Sistematika penulisan proposal tesis ini disusun sebagai berikut:"),
                 emptyLine(),
                 new Paragraph({
@@ -663,8 +673,18 @@ const doc = new Document({
                 }),
                 body("Bab ini menjelaskan alur sistematis eksperimen yang digunakan untuk memproses data instrumen kripto, penyaringan RMT pada matriks korelasi historis, pembangunan MST, fungsi objektif Markowitz modifikasi, dan komputasi skema backtesting."),
             ],
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
             footers: {
-                default: new Footer({
+                first: new Footer({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
@@ -681,7 +701,7 @@ const doc = new Document({
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
                 },
-                type: SectionType.NEXT_PAGE
+                type: SectionType.NEXT_PAGE, titlePage: true
             },
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
@@ -689,7 +709,7 @@ const doc = new Document({
                 emptyLine(),
                 body("Bab ini menguraikan berbagai teori dasar, konsep, serta tinjauan pustaka dari penelitian terdahulu yang menjadi landasan pemikiran bagi pengembangan sistem portofolio dalam penelitian ini."),
                 emptyLine(),
-                heading2("2.1. Modern Portfolio Theory (Markowitz)"),
+                heading2("2.1 Modern Portfolio Theory (Markowitz)"),
                 mixedBody([
                     {text: "Teori Portofolio Modern (MPT), yang dipelopori oleh Harry Markowitz, berupaya memaksimalkan imbal hasil yang diharapkan ("},
                     {text: "expected return", italic: true},
@@ -704,7 +724,7 @@ const doc = new Document({
                     {text: "), sehingga perubahan kecil pada input data dapat menghasilkan perubahan drastis pada alokasi bobot portofolio."}
                 ]),
                 emptyLine(),
-                heading2("2.2. Random Matrix Theory dan Distribusi Marchenko-Pastur"),
+                heading2("2.2 Random Matrix Theory dan Distribusi Marchenko-Pastur"),
                 mixedBody([
                     {text: "Teori "},
                     {text: "Random Matrix", italic: true},
@@ -715,7 +735,7 @@ const doc = new Document({
                     {text: ") dari matriks korelasi acak sebagai \u03bb\u208A = \u03c3\u00b2(1 + \u221aq/N)\u00b2. Nilai eigen yang melampaui batas \u03bb\u208A merepresentasikan sinyal pasar kolektif, sementara nilai eigen di bawahnya dianggap sebagai residu yang harus dibersihkan agar stabilisasi topologi jaringan (MST) dapat tercapai secara konsisten [3], [15]."}
                 ]),
                 emptyLine(),
-                heading2("2.3. Teori Risiko Koheren (Coherent Risk Measures)"),
+                heading2("2.3 Teori Risiko Koheren (Coherent Risk Measures)"),
                 mixedBody([
                     {text: "Penggunaan metrik risiko dalam optimasi portofolio harus memenuhi kriteria risiko koheren sebagaimana didefinisikan oleh Artzner et al. [19]. Kriteria tersebut mencakup empat aksioma: "},
                     {text: "monotonicity, sub-additivity, homogeneity,", italic: true},
@@ -736,7 +756,7 @@ const doc = new Document({
                 bulletItem("Homogeneity: Menambah kelipatan ukuran posisi sejalan dengan mengalikan besaran risikonya (\u03c1(cX) = c \u03c1(X) untuk c > 0)."),
                 bulletItem("Translational Invariance: Menambah sejumlah modal pasti bebas risiko ke portofolio akan mengurangi risiko sebesar persis nilai nominal tersebut."),
                 emptyLine(),
-                heading2("2.4. Topologi Jaringan Keuangan dan Risiko Penularan"),
+                heading2("2.4 Topologi Jaringan Keuangan dan Risiko Penularan"),
                 mixedBody([
                     {text: "Dalam perspektif teori jaringan, pasar kripto dapat dipetakan menjadi struktur topologi tertentu. Struktur "},
                     {text: "Star-like", italic: true},
@@ -767,12 +787,12 @@ const doc = new Document({
                     ]
                 }),
                 emptyLine(),
-                heading2("2.5. Network Markowitz"),
+                heading2("2.5 Network Markowitz"),
                 mixedBody([
                     {text: "Integrasi variabel jaringan ke dalam fungsi objektif Markowitz memungkinkan model untuk 'menghukum' aset yang memiliki tingkat keterhubungan sistemik tinggi. Formula optimasi dimodifikasi dengan menambahkan faktor \u03b3 yang dikalikan dengan skor sentralitas vektor eigen [1], [9]. Hal ini memastikan bahwa portofolio tidak hanya efisien secara variansi-imbal hasil, tetapi juga tangguh terhadap dinamika struktur jaringan pasar kripto yang bervariasi mengikuti transisi fasa."}
                 ]),
                 emptyLine(),
-                heading2("2.6. Teori Siklus dan Adaptive Market Hypothesis (AMH)"),
+                heading2("2.6 Teori Siklus dan Adaptive Market Hypothesis (AMH)"),
                 mixedBody([
                     {text: "Kelemahan efisiensi pasar kripto dijelaskan melalui "},
                     {text: "Adaptive Market Hypothesis", italic: true},
@@ -787,7 +807,7 @@ const doc = new Document({
                     {text: ", maka parameter penalti portofolio (\u03b3) harus dikalibrasi secara dinamis untuk mencapai performa optimal."}
                 ]),
                 emptyLine(),
-                heading2("2.7. Walk-forward Analysis dan Filosofi Rolling Window"),
+                heading2("2.7 Walk-forward Analysis dan Filosofi Rolling Window"),
                 mixedBody([
                     {text: "Walk-forward Analysis merupakan teknik validasi utama dalam Machine Learning finansial untuk menghindari "},
                     {text: "look-ahead bias", italic: true},
@@ -800,7 +820,7 @@ const doc = new Document({
                     {text: " mencerminkan realitas perdagangan sesungguhnya di pasar yang sangat dinamis."}
                 ]),
                 emptyLine(),
-                heading2("2.8. Analisis Kebaruan (Gap Analysis)"),
+                heading2("2.8 Analisis Kebaruan (Gap Analysis)"),
                 mixedBody([
                     {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. [1]. Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
                     {text: "Optimized Dynamic Network Markowitz", italic: true},
@@ -815,7 +835,7 @@ const doc = new Document({
                     {text: "."}
                 ]),
                 emptyLine(),
-                heading2("2.9. Penelitian Terdahulu"),
+                heading2("2.9 Penelitian Terdahulu"),
                 body("Beberapa penelitian terdahulu yang relevan dengan penelitian ini antara lain:"),
                 mixedBody([
                     {text: "Penelitian yang dilakukan oleh Giudici dkk. (2020) mengusulkan kerangka kerja baru untuk manajemen portofolio kripto otomatis dengan memperluas model Markowitz tradisional melalui integrasi "},
@@ -1050,8 +1070,18 @@ const doc = new Document({
                     ]
                 }),
             ],
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
             footers: {
-                default: new Footer({
+                first: new Footer({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
@@ -1068,7 +1098,7 @@ const doc = new Document({
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
                 },
-                type: SectionType.NEXT_PAGE
+                type: SectionType.NEXT_PAGE, titlePage: true
             },
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
@@ -1076,7 +1106,7 @@ const doc = new Document({
                 emptyLine(),
                 body("Bab ini menyajikan metodologi yang diaplikasikan dalam penelitian ini, mencakup rancangan tahapan logis penelitian, persiapan data, serta metrik evaluasi performa."),
                 emptyLine(),
-                heading2("3.1. Tahapan Penelitian"),
+                heading2("3.1 Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
                 emptyLine(),
                 new Paragraph({
@@ -1181,13 +1211,13 @@ const doc = new Document({
                     {text: " [18]."}
                 ]),
                 emptyLine(),
-                heading2("3.2. Alat dan Bahan Penelitian"),
-                heading3("3.2.1. Perangkat Lunak"),
+                heading2("3.2 Alat dan Bahan Penelitian"),
+                heading3("3.2.1 Perangkat Lunak"),
                 bulletItem("Sistem Operasi: Windows 10/11"),
                 bulletItem("Bahasa Pemrograman: Python 3.x (dengan ekosistem Anaconda)"),
                 bulletItem("Framework/Library: Pandas, Numpy, Scipy (Optimization), Scikit-Learn, NetworkX (Graph Analytics)"),
                 emptyLine(),
-                heading2("3.3. Dataset"),
+                heading2("3.3 Dataset"),
                 mixedBody([
                     {text: "Data historis harga harian diperoleh dari "},
                     {text: "Yahoo Finance", italic: true},
@@ -1314,7 +1344,7 @@ const doc = new Document({
                     {text: " memiliki karakteristik distribusi yang berbeda dari aset lainnya — dengan volatilitas mendekati nol dan korelasi yang sangat rendah terhadap semua aset. Keberadaannya dalam pool tetap dipertahankan karena merupakan bagian dari 10 aset teratas berdasarkan kapitalisasi pasar pada periode tersebut, dan memberikan kontribusi diversifikasi yang unik dalam konstruksi jaringan portofolio."}
                 ]),
                 emptyLine(),
-                heading2("3.4. Metode/Algoritma yang Digunakan"),
+                heading2("3.4 Metode/Algoritma yang Digunakan"),
                 mixedBody([
                     {text: "Optimasi yang diajukan akan merubah fungsi pencarian model klasik Markowitz menjadi kerangka berbasis "},
                     {text: "penalty function", italic: true},
@@ -1377,7 +1407,7 @@ const doc = new Document({
                     ],
                 }),
                 emptyLine(),
-                heading3("3.4.1. Strategi Portofolio dan Benchmark"),
+                heading3("3.4.1 Strategi Portofolio dan Benchmark"),
                 body("Penelitian ini membandingkan empat strategi utama untuk mengevaluasi performa model yang diusulkan terhadap standar industri dan metodologi mutakhir:"),
                 
                 bulletItem("Equally Weighted (EW): Strategi alokasi 1/N yang memberikan bobot yang sama ke setiap aset tanpa mempertimbangkan parameter risiko atau imbal hasil. EW berfungsi sebagai 'benchmark naif' yang sangat tangguh karena tidak memiliki risiko estimasi (estimation risk)."),
@@ -1401,10 +1431,10 @@ const doc = new Document({
                     {text: " periode belakang."}
                 ]),
                 emptyLine(),
-                heading2("3.5. Matriks Evaluasi Performa"),
+                heading2("3.5 Matriks Evaluasi Performa"),
                 body("Untuk mengukur efektivitas model portofolio yang dikembangkan, digunakan beberapa metrik evaluasi sebagai berikut:"),
                 
-                heading3("3.5.1. Risk-Adjusted Return (Sharpe Ratio)"),
+                heading3("3.5.1 Risk-Adjusted Return (Sharpe Ratio)"),
                 mixedBody([
                     {text: "Sharpe Ratio", italic: true},
                     {text: " merupakan metrik standar industri yang diperkenalkan oleh William F. Sharpe (1966) untuk mengukur imbal hasil berlebih ("},
@@ -1465,7 +1495,7 @@ const doc = new Document({
                 ]),
                 emptyLine(),
                 
-                heading3("3.5.2. Downside Risk (Value at Risk - VaR)"),
+                heading3("3.5.2 Downside Risk (Value at Risk - VaR)"),
                 mixedBody([
                     {text: "Value at Risk", italic: true},
                     {text: " (VaR) mengkuantifikasi potensi kerugian maksimal yang mungkin dialami portofolio dalam satu periode perdagangan pada tingkat kepercayaan tertentu. Pada penelitian ini digunakan VaR "},
@@ -1525,7 +1555,7 @@ const doc = new Document({
                 ]),
                 emptyLine(),
                 
-                heading3("3.5.3. Tail Risk & Reward (Rachev Ratio)"),
+                heading3("3.5.3 Tail Risk & Reward (Rachev Ratio)"),
                 mixedBody([
                     {text: "Rachev Ratio", italic: true},
                     {text: " merupakan ukuran performa yang secara eksplisit memperhitungkan distribusi ekor ("},
@@ -1593,7 +1623,7 @@ const doc = new Document({
                 ]),
 
                 emptyLine(),
-                heading2("3.6. Rencana Jadwal Penelitian"),
+                heading2("3.6 Rencana Jadwal Penelitian"),
                 body("Penelitian ini direncanakan akan dilaksanakan selama empat bulan. Rincian jadwal pelaksanaan setiap tahapan kegiatan disajikan pada Tabel III.2 berikut:"),
                 emptyLine(),
                 new Paragraph({
@@ -1646,8 +1676,18 @@ const doc = new Document({
                     ]
                 }),
             ],
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
             footers: {
-                default: new Footer({
+                first: new Footer({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
@@ -1664,7 +1704,7 @@ const doc = new Document({
                     size: { width: 11906, height: 16838 },
                     margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
                 },
-                type: SectionType.NEXT_PAGE
+                type: SectionType.NEXT_PAGE, titlePage: true
             },
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
@@ -1797,8 +1837,18 @@ const doc = new Document({
                     children: [new TextRun({ text: "[21] R. Jing, X. Zhao, and L. E. C. Rocha, \"Optimising cryptocurrency portfolios through stable clustering of price correlation networks,\" arXiv preprint arXiv:2505.24831, 2025.", font: "Times New Roman", size: 24 })]
                 }),
             ],
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
             footers: {
-                default: new Footer({
+                first: new Footer({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
