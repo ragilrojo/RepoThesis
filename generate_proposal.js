@@ -107,6 +107,8 @@ const fs = require('fs');
 
 const border = { style: BorderStyle.SINGLE, size: 1, color: "CCCCCC" };
 const borders = { top: border, bottom: border, left: border, right: border };
+const noBorder = { style: BorderStyle.NONE, size: 0, color: "auto" };
+const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder, insideHorizontal: noBorder, insideVertical: noBorder };
 
 function p(text, opts = {}) {
     return new Paragraph({
@@ -352,10 +354,13 @@ const doc = new Document({
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     children: [
-                        new TextRun({
-                            text: "[[%LOGO_UNM]]",
-                            font: "Times New Roman",
-                            size: 24,
+                        new ImageRun({
+                            data: fs.readFileSync("logo_unm.png"),
+                            extension: "png",
+                            transformation: {
+                                width: 150,
+                                height: 150,
+                            },
                         })
                     ]
                 }),
@@ -410,35 +415,22 @@ const doc = new Document({
                 emptyLine(),
                 bodyNoIndent("Proposal tesis ini diajukan oleh:", { bold: true }),
                 emptyLine(),
-                // Tabel transparan 3 kolom: Label | : | Nilai
-                (() => {
-                    const noBorder = { style: BorderStyle.NONE, size: 0, color: "FFFFFF" };
-                    const noBorders = { top: noBorder, bottom: noBorder, left: noBorder, right: noBorder };
-                    const mkCell = (text, isBold = true) => new TableCell({
-                        borders: noBorders,
-                        margins: { top: 40, bottom: 40, left: 0, right: 80 },
-                        children: [new Paragraph({ children: [new TextRun({ text, font: "Times New Roman", size: 24, bold: isBold })] })]
-                    });
-                    const rows = [
-                        ["Nama",          "Ragil Yulianto"],
-                        ["NIM",           "14240007"],
-                        ["Program Studi", "Ilmu Komputer"],
-                        ["Fakultas",      "Teknologi Informasi"],
-                        ["Jenjang",       "Strata Dua (S2)"],
-                        ["Judul Tesis",   "OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO"],
-                    ];
-                    return new Table({
-                        width: { size: 8200, type: WidthType.DXA },
-                        columnWidths: [1800, 300, 6100],
-                        rows: rows.map(([label, value]) => new TableRow({
-                            children: [
-                                mkCell(label, false),
-                                mkCell(":", true),
-                                mkCell(value, true),
-                            ]
-                        }))
-                    });
-                })(),
+                ...[
+                    ["Nama",          "Ragil Yulianto"],
+                    ["NIM",           "14240007"],
+                    ["Program Studi", "Ilmu Komputer"],
+                    ["Fakultas",      "Teknologi Informasi"],
+                    ["Jenjang",       "Strata Dua (S2)"],
+                    ["Judul Tesis",   "OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO"],
+                ].map(([label, value]) => new Paragraph({
+                    indent: { left: 720 },
+                    spacing: { line: 360 },
+                    tabStops: [{ type: TabStopType.LEFT, position: 2500 }],
+                    children: [
+                        new TextRun({ text: label, font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "\t: " + value, font: "Times New Roman", size: 24, bold: true }),
+                    ]
+                })),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.LEFT,
@@ -575,13 +567,13 @@ const doc = new Document({
                         new TextRun({ text: "drawdown", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " yang dalam). Untuk mengatasi tantangan tersebut, penelitian terkini mulai menggabungkan Teori Jaringan Kompleks (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Complex Network Theory", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") ke dalam optimasi portofolio [1], [2]. Penggunaan instrumen seperti ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") ke dalam optimasi portofolio [mendeley_cite:giudici2020network], [mendeley_cite:momeni2021portfolio]. Penggunaan instrumen seperti ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Minimum Spanning Tree (MST)", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " dan ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Eigenvector Centrality", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " terbukti efisien dalam memetakan interaksi antar aset dan menghukum (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "penalize", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") aset-aset yang menjadi titik pusat kegagalan sistemik [5], [6], [12].", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") aset-aset yang menjadi titik pusat kegagalan sistemik [mendeley_cite:mantegna1999hierarchical], [mendeley_cite:jing2023network], [mendeley_cite:peralta2016network].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -595,7 +587,7 @@ const doc = new Document({
                         new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: "). Oleh karena itu, diperlukan pendekatan adaptif yang mengintegrasikan teknik pembersihan sinyal berbasis ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Random Matrix Theory (RMT)", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " [3], [10] disandingkan dengan optimalisasi ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: " [mendeley_cite:marchenko1967distribution], [mendeley_cite:laloux1999noise] disandingkan dengan optimalisasi ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Grid Search", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " dinamis (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "rolling window", font: "Times New Roman", size: 24, italics: true }),
@@ -605,7 +597,7 @@ const doc = new Document({
                         new TextRun({ text: "upside gain", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " di saat pembalikan arah (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") [1], [13].", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") [mendeley_cite:giudici2020network], [mendeley_cite:lopezdeprado2018advances].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
@@ -717,9 +709,9 @@ const doc = new Document({
                     {text: "variance", italic: true},
                     {text: ") tertentu melalui pemilihan aset yang terdiversifikasi dalam sebuah "},
                     {text: "Efficient Frontier", italic: true},
-                    {text: " [4]. Namun, dalam praktiknya, MPT memiliki keterbatasan signifikan terkait stabilitas estimasi. Masalah mendasarnya adalah bahwa kovarians dari kumpulan aset finansial sangat sensitif terhadap nilai-nilai ekstrem historis, yang dikenal sebagai "},
+                    {text: " [mendeley_cite:markowitz1952portfolio]. Namun, dalam praktiknya, MPT memiliki keterbatasan signifikan terkait stabilitas estimasi. Masalah mendasarnya adalah bahwa kovarians dari kumpulan aset finansial sangat sensitif terhadap nilai-nilai ekstrem historis, yang dikenal sebagai "},
                     {text: "Markowitz Curse", italic: true},
-                    {text: " atau enigma optimasi Markowitz [14]. Fenomena ini terjadi karena algoritma optimasi cenderung memperkuat kesalahan estimasi ("},
+                    {text: " atau enigma optimasi Markowitz [mendeley_cite:michaud1989markowitz]. Fenomena ini terjadi karena algoritma optimasi cenderung memperkuat kesalahan estimasi ("},
                     {text: "error maximization", italic: true},
                     {text: "), sehingga perubahan kecil pada input data dapat menghasilkan perubahan drastis pada alokasi bobot portofolio."}
                 ]),
@@ -730,14 +722,14 @@ const doc = new Document({
                     {text: "Random Matrix", italic: true},
                     {text: " (RMT) digunakan untuk memisahkan korelasi yang mengandung informasi ekonomi sejati dari "},
                     {text: "noise", italic: true},
-                    {text: " statistik pada matriks korelasi berdimensi tinggi. Inti dari filtrasi RMT terletak pada distribusi Marchenko-Pastur [3], yang mendefinisikan batas teoritis nilai eigen ("},
+                    {text: " statistik pada matriks korelasi berdimensi tinggi. Inti dari filtrasi RMT terletak pada distribusi Marchenko-Pastur [mendeley_cite:marchenko1967distribution], yang mendefinisikan batas teoritis nilai eigen ("},
                     {text: "eigenvalues", italic: true},
-                    {text: ") dari matriks korelasi acak sebagai \u03bb\u208A = \u03c3\u00b2(1 + \u221aq/N)\u00b2. Nilai eigen yang melampaui batas \u03bb\u208A merepresentasikan sinyal pasar kolektif, sementara nilai eigen di bawahnya dianggap sebagai residu yang harus dibersihkan agar stabilisasi topologi jaringan (MST) dapat tercapai secara konsisten [3], [15]."}
+                    {text: ") dari matriks korelasi acak sebagai \u03bb\u208A = \u03c3\u00b2(1 + \u221aq/N)\u00b2. Nilai eigen yang melampaui batas \u03bb\u208A merepresentasikan sinyal pasar kolektif, sementara nilai eigen di bawahnya dianggap sebagai residu yang harus dibersihkan agar stabilisasi topologi jaringan (MST) dapat tercapai secara konsisten [mendeley_cite:marchenko1967distribution], [mendeley_cite:eom2009topological]."}
                 ]),
                 emptyLine(),
                 heading2("2.3 Teori Risiko Koheren (Coherent Risk Measures)"),
                 mixedBody([
-                    {text: "Penggunaan metrik risiko dalam optimasi portofolio harus memenuhi kriteria risiko koheren sebagaimana didefinisikan oleh Artzner et al. [19]. Kriteria tersebut mencakup empat aksioma: "},
+                    {text: "Penggunaan metrik risiko dalam optimasi portofolio harus memenuhi kriteria risiko koheren sebagaimana didefinisikan oleh Artzner et al. [mendeley_cite:artzner1999coherent]. Kriteria tersebut mencakup empat aksioma: "},
                     {text: "monotonicity, sub-additivity, homogeneity,", italic: true},
                     {text: " dan "},
                     {text: "translational invariance", italic: true},
@@ -766,7 +758,7 @@ const doc = new Document({
                     {text: "cascading failures", italic: true},
                     {text: "), di mana likuidasi pada satu titik menyebar ke seluruh ekosistem akibat korelasi yang tinggi. Sebaliknya, struktur "},
                     {text: "Distributed", italic: true},
-                    {text: " menawarkan manfaat diversifikasi yang lebih baik. Dengan menggunakan sentralitas sebagai penalti, model Network Markowitz secara efektif menggeser alokasi dari 'pusat penularan' ke 'periferi jaringan', sehingga memitigasi risiko kegagalan sistemik [5], [12]."}
+                    {text: " menawarkan manfaat diversifikasi yang lebih baik. Dengan menggunakan sentralitas sebagai penalti, model Network Markowitz secara efektif menggeser alokasi dari 'pusat penularan' ke 'periferi jaringan', sehingga memitigasi risiko kegagalan sistemik [mendeley_cite:mantegna1999hierarchical], [mendeley_cite:peralta2016network]."}
                 ]),
                 emptyLine(),
                 new Paragraph({
@@ -789,14 +781,14 @@ const doc = new Document({
                 emptyLine(),
                 heading2("2.5 Network Markowitz"),
                 mixedBody([
-                    {text: "Integrasi variabel jaringan ke dalam fungsi objektif Markowitz memungkinkan model untuk 'menghukum' aset yang memiliki tingkat keterhubungan sistemik tinggi. Formula optimasi dimodifikasi dengan menambahkan faktor \u03b3 yang dikalikan dengan skor sentralitas vektor eigen [1], [9]. Hal ini memastikan bahwa portofolio tidak hanya efisien secara variansi-imbal hasil, tetapi juga tangguh terhadap dinamika struktur jaringan pasar kripto yang bervariasi mengikuti transisi fasa."}
+                    {text: "Integrasi variabel jaringan ke dalam fungsi objektif Markowitz memungkinkan model untuk 'menghukum' aset yang memiliki tingkat keterhubungan sistemik tinggi. Formula optimasi dimodifikasi dengan menambahkan faktor \u03b3 yang dikalikan dengan skor sentralitas vektor eigen [mendeley_cite:giudici2020network], [mendeley_cite:giudici2021network]. Hal ini memastikan bahwa portofolio tidak hanya efisien secara variansi-imbal hasil, tetapi juga tangguh terhadap dinamika struktur jaringan pasar kripto yang bervariasi mengikuti transisi fasa."}
                 ]),
                 emptyLine(),
                 heading2("2.6 Teori Siklus dan Adaptive Market Hypothesis (AMH)"),
                 mixedBody([
                     {text: "Kelemahan efisiensi pasar kripto dijelaskan melalui "},
                     {text: "Adaptive Market Hypothesis", italic: true},
-                    {text: " (AMH) oleh Andrew Lo [20]. AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan hasil adaptasi pelaku pasar terhadap perubahan lingkungan. Hal ini memberikan landasan teoritis kuat bagi penggunaan metode "},
+                    {text: " (AMH) oleh Andrew Lo [mendeley_cite:lo2004adaptive]. AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan hasil adaptasi pelaku pasar terhadap perubahan lingkungan. Hal ini memberikan landasan teoritis kuat bagi penggunaan metode "},
                     {text: "Rolling Window", italic: true},
                     {text: " dan "},
                     {text: "Grid Search", italic: true},
@@ -822,7 +814,7 @@ const doc = new Document({
                 emptyLine(),
                 heading2("2.8 Analisis Kebaruan (Gap Analysis)"),
                 mixedBody([
-                    {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. [1]. Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
+                    {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. [mendeley_cite:giudici2020network]. Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
                     {text: "Optimized Dynamic Network Markowitz", italic: true},
                     {text: ". Kebaruan utama terletak pada penggunaan algoritma "},
                     {text: "Grid Search", italic: true},
@@ -854,10 +846,10 @@ const doc = new Document({
                     {text: "bearish", italic: true},
                     {text: ". Model ini mampu memberikan perlindungan yang lebih baik terhadap kerugian signifikan selama penurunan pasar, sehingga menjadikannya strategi alokasi yang efisien dan adaptif untuk diintegrasikan dalam sistem "},
                     {text: "robo-advisory", italic: true},
-                    {text: " guna mendukung konsultasi keuangan otomatis [1]."}
+                    {text: " guna mendukung konsultasi keuangan otomatis [mendeley_cite:giudici2020network]."}
                 ]),
                 mixedBody([
-                    {text: "Penelitian Kitanovski et al. [8] mengeksplorasi diversifikasi portofolio mata uang kripto dengan memanfaatkan metode deteksi komunitas jaringan, seperti "},
+                    {text: "Penelitian Kitanovski et al. [mendeley_cite:kitanovski2022cryptocurrency] mengeksplorasi diversifikasi portofolio mata uang kripto dengan memanfaatkan metode deteksi komunitas jaringan, seperti "},
                     {text: "Louvain", italic: true},
                     {text: " dan "},
                     {text: "Affinity Propagation", italic: true},
@@ -866,7 +858,7 @@ const doc = new Document({
                     {text: ")."}
                 ]),
                 mixedBody([
-                    {text: "Pada penelitian lainnya, Jing dan Rocha [6] merancang strategi portofolio kripto optimal dengan menggabungkan "},
+                    {text: "Pada penelitian lainnya, Jing dan Rocha [mendeley_cite:jing2023network] merancang strategi portofolio kripto optimal dengan menggabungkan "},
                     {text: "Minimum Spanning Tree", italic: true},
                     {text: " (MST) bersama pemodelan "},
                     {text: "Modern Portfolio Theory", italic: true},
@@ -875,14 +867,14 @@ const doc = new Document({
                     {text: ") investasi lainnya, baik itu performa Bitcoin tunggal (BTC), portofolio 5 kripto tertinggi (TOP5), maupun pemilihan portofolio secara acak (RAND)."}
                 ]),
                 mixedBody([
-                    {text: "Terkait ketahanan portofolio menghadapi guncangan harga ekstrem, Kitanovski et al. [7] kembali memperlihatkan keunggulan strategi diversifikasi berbasis topologi jaringan pada kombinasi dua keranjang aset berisiko tinggi; saham dan kripto. Riset ini menyimpulkan bahwa portofolio berbasis konektivitas metrik graf jauh lebih "},
+                    {text: "Terkait ketahanan portofolio menghadapi guncangan harga ekstrem, Kitanovski et al. [mendeley_cite:kitanovski2024network] kembali memperlihatkan keunggulan strategi diversifikasi berbasis topologi jaringan pada kombinasi dua keranjang aset berisiko tinggi; saham dan kripto. Riset ini menyimpulkan bahwa portofolio berbasis konektivitas metrik graf jauh lebih "},
                     {text: "resilient", italic: true},
                     {text: " meredam ancaman kerugian dibandingkan indeks alokasi tradisional, terutama sangat efektif memberikan proteksi perlindungan "},
                     {text: "drawdown", italic: true},
                     {text: " pada saat-saat terjadinya volatilitas parah akibat krisis global (fase pandemi dan perang)."}
                 ]),
                 mixedBody([
-                    {text: "Lebih lanjut, Jing et al. [21] memperdalam integrasi antara analisis jaringan dan "},
+                    {text: "Lebih lanjut, Jing et al. [mendeley_cite:jing2025optimising] memperdalam integrasi antara analisis jaringan dan "},
                     {text: "Modern Portfolio Theory", italic: true},
                     {text: " (MPT) dengan memperkenalkan kerangka kerja teknis yang memanfaatkan "},
                     {text: "Louvain network community algorithm", italic: true},
@@ -940,7 +932,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. [1]", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. [mendeley_cite:giudici2020network]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -967,7 +959,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [8]", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [mendeley_cite:kitanovski2022cryptocurrency]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -994,7 +986,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha [6]", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha [mendeley_cite:jing2023network]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -1022,7 +1014,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [7]", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [mendeley_cite:kitanovski2024network]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -1050,7 +1042,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing, et al. [21]", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing, et al. [mendeley_cite:jing2025optimising]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -1208,7 +1200,7 @@ const doc = new Document({
                     {text: "Value at Risk (VaR)", italic: true},
                     {text: ", dan "},
                     {text: "Rachev Ratio", italic: true},
-                    {text: " [18]."}
+                    {text: " [mendeley_cite:arratia2014computational]."}
                 ]),
                 emptyLine(),
                 heading2("3.2 Alat dan Bahan Penelitian"),
@@ -1238,10 +1230,10 @@ const doc = new Document({
                         new TableRow({
                             tableHeader: true,
                             children: [
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true, underline: { type: "single" } })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ticker", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Nama Aset", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Kategori / Use Case", font: "Times New Roman", size: 22, bold: true })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sumber", font: "Times New Roman", size: 22, bold: true })] })] }),
                             ]
                         }),
                         ...[
@@ -1267,7 +1259,7 @@ const doc = new Document({
                 }),
                 emptyLine(),
                 mixedBody([
-                    {text: "Pemilihan aset ini selaras dengan referensi Giudici et al. [1] yang menjadi landasan penelitian ini."}
+                    {text: "Pemilihan aset ini selaras dengan referensi Giudici et al. [mendeley_cite:giudici2020network] yang menjadi landasan penelitian ini."}
                 ]),
                 mixedBody([
                     {text: "Periode pengambilan data adalah 14 September 2017 hingga 17 Oktober 2019, yang secara sengaja dipilih untuk mencakup tiga rezim pasar berbeda: era "},
@@ -1491,7 +1483,7 @@ const doc = new Document({
                 mixedBody([
                     {text: "Nilai Sharpe Ratio > 1 dianggap baik, > 2 sangat baik, dan > 3 luar biasa. Semakin besar nilai "},
                     {text: "Sharpe Ratio", italic: true},
-                    {text: ", semakin baik kualitas portofolio karena menunjukkan imbal hasil yang lebih tinggi untuk setiap unit risiko yang diambil. Sebaliknya, semakin kecil nilai ini, semakin tidak efisien portofolio tersebut dalam menghasilkan imbal hasil terhadap risikonya [4], [13]."}
+                    {text: ", semakin baik kualitas portofolio karena menunjukkan imbal hasil yang lebih tinggi untuk setiap unit risiko yang diambil. Sebaliknya, semakin kecil nilai ini, semakin tidak efisien portofolio tersebut dalam menghasilkan imbal hasil terhadap risikonya [mendeley_cite:markowitz1952portfolio], [mendeley_cite:lopezdeprado2018advances]."}
                 ]),
                 emptyLine(),
                 
@@ -1551,7 +1543,7 @@ const doc = new Document({
                 mixedBody([
                     {text: "VaR dipilih karena relevansinya yang tinggi terhadap pasar kripto yang memiliki volatilitas ekstrem. Semakin kecil nilai "},
                     {text: "Value at Risk", italic: true},
-                    {text: " (mendekati nol), semakin aman suatu portofolio dari potensi kerugian ekstrem. Sebaliknya, semakin besar nilai VaR, semakin tinggi risiko kerugian yang mungkin dihadapi investor dalam kondisi pasar yang buruk [11], [16]."}
+                    {text: " (mendekati nol), semakin aman suatu portofolio dari potensi kerugian ekstrem. Sebaliknya, semakin besar nilai VaR, semakin tinggi risiko kerugian yang mungkin dihadapi investor dalam kondisi pasar yang buruk [mendeley_cite:corbet2019cryptocurrencies], [mendeley_cite:jorion2000value]."}
                 ]),
                 emptyLine(),
                 
@@ -1579,47 +1571,39 @@ const doc = new Document({
                     ]
                 }),
                 body("Keterangan:"),
-                new Table({
-                    width: { size: 8200, type: WidthType.DXA },
-                    columnWidths: [800, 400, 7000],
-                    borders: {
-                        top: { style: BorderStyle.NONE, size: 0 },
-                        bottom: { style: BorderStyle.NONE, size: 0 },
-                        left: { style: BorderStyle.NONE, size: 0 },
-                        right: { style: BorderStyle.NONE, size: 0 },
-                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
-                        insideVertical: { style: BorderStyle.NONE, size: 0 },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("RR")] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Rachev Ratio.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Expected Tail Return pada tingkat kepercayaan \u03B1.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Expected Shortfall pada tingkat kepercayaan \u03B2.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                    ],
+                new Paragraph({
+                    indent: { left: 720 },
+                    spacing: { line: 360 },
+                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }],
+                    children: [
+                        new Math({ children: [new MathRun("RR")] }),
+                        new TextRun({ text: "\t= Rachev Ratio.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                new Paragraph({
+                    indent: { left: 720 },
+                    spacing: { line: 360 },
+                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }],
+                    children: [
+                        new Math({ children: [new MathSubScript({ children: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] })] }),
+                        new TextRun({ text: "\t= Expected Tail Return pada tingkat kepercayaan \u03B1.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                new Paragraph({
+                    indent: { left: 720 },
+                    spacing: { line: 360 },
+                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }],
+                    children: [
+                        new Math({ children: [new MathSubScript({ children: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] })] }),
+                        new TextRun({ text: "\t= Expected Shortfall pada tingkat kepercayaan \u03B2.", font: "Times New Roman", size: 24 }),
+                    ]
                 }),
                 mixedBody([
                     {text: "Nilai Rachev Ratio > 1 mengindikasikan bahwa potensi keuntungan ekstrem melebihi potensi kerugian ekstrem. Semakin besar nilai "},
                     {text: "Rachev Ratio", italic: true},
                     {text: ", semakin baik profil risiko-imbalan suatu portofolio karena menunjukkan kemampuan portofolio untuk menangkap keuntungan di 'ekor kanan' distribusi melampaui risiko di 'ekor kiri'. Metrik ini sangat krusial untuk pasar kripto yang dikenal memiliki karakteristik "},
                     {text: "leptokurtic", italic: true},
-                    {text: " [17], [19]."}
+                    {text: " [mendeley_cite:rachev2008advanced], [mendeley_cite:artzner1999coherent]."}
                 ]),
 
                 emptyLine(),
@@ -1713,128 +1697,7 @@ const doc = new Document({
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[1] P. Giudici, P. Pagnottoni, and G. Polinesi, \"Network Models to Enhance Automated Cryptocurrency Portfolio Management,\" Frontiers in Artificial Intelligence, vol. 3, 2020. https://doi.org/10.3389/frai.2020.00022.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[2] S. S. Momeni dan R. E. Rostami, \"Portfolio selection using a hybrid methodology of network theory and optimization,\" Annals of Operations Research, vol. 308, pp. 317–345, 2021.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[3] V. A. Marchenko and L. A. Pastur, \"Distribution of eigenvalues for some sets of random matrices,\" Mathematics of the USSR-Sbornik, vol. 1, no. 4, pp. 457–483, 1967.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[4] H. Markowitz, \"Portfolio Selection,\" The Journal of Finance, vol. 7, no. 1, pp. 77–91, 1952.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[5] R. N. Mantegna, \"Hierarchical structure in financial markets,\" The European Physical Journal B, vol. 11, no. 1, pp. 193–197, 1999.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[6] R. Jing and L. E. C. Rocha, \"A network-based strategy of price correlations for optimal cryptocurrency portfolios,\" Financial Innovation, vol. 9, no. 1, 2023. arXiv: 2304.02362. DOI: 10.1007/s40745-023-00473-7.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[7] D. Kitanovski, I. Mishkovski, V. Stojkoski, and M. Mirchev, \"Network-based diversification of stock and cryptocurrency portfolios,\" Applied Network Science, 2024. arXiv: 2408.11739. DOI: 10.1007/s41109-025-00708-9.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[8] D. Kitanovski, M. Mirchev, I. Chorbev, and I. Mishkovski, \"Cryptocurrency Portfolio Diversification Using Network Community Detection,\" 2022 30th Telecommunications Forum (TELFOR), 2022. DOI: 10.1109/TELFOR56187.2022.9983742.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[9] P. Giudici and G. Policardo, \"Network models to improve robot advisory portfolios,\" Statistica Applicata - Italian Journal of Applied Statistics, 2021.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[10] L. Laloux, P. Cizeau, J. P. Bouchaud, and M. Potters, \"Noise dressing of financial correlation matrices,\" Physical Review Letters, vol. 83, no. 7, pp. 1467, 1999.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[11] S. Corbet, B. Lucey, A. Urquhart, and L. Yarovaya, \"Cryptocurrencies as a financial asset: A systematic analysis,\" International Review of Financial Analysis, vol. 62, pp. 182-199, 2019.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[12] G. Peralta and A. Zaresei, \"A network approach to portfolio selection,\" Journal of Network Theory in Finance, vol. 2, no. 4, pp. 1-20, 2016.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[13] M. Lopez de Prado, \"Advances in Financial Machine Learning,\" John Wiley & Sons, 2018.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[14] R. O. Michaud, \"The Markowitz Optimization Enigma: Is 'Optimized' Optimal?\" Financial Analysts Journal, vol. 45, no. 1, pp. 31-42, 1989.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[15] C. Eom, G. Oh, S. Jung, H. Jeong, and S. Kim, \"Topological properties of stock networks based on minimal spanning tree and random matrix theory,\" Physica A: Statistical Mechanics and its Applications, vol. 388, no. 6, pp. 900-906, 2009.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[16] P. Jorion, \"Value at Risk: The New Benchmark for Managing Financial Risk,\" McGraw-Hill, 2000.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[17] S. T. Rachev, S. V. Stoyanov, and F. J. Fabozzi, \"Advanced Stochastic Models, Risk Assessment, and Portfolio Optimization,\" John Wiley & Sons, 2008.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[18] A. Arratia, \"Computational Finance: An Introductory Course with R,\" Atlantis Press, 2014.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[19] P. Artzner, F. Delbaen, J. M. Eber, and D. Heath, \"Coherent measures of risk,\" Mathematical Finance, vol. 9, no. 3, pp. 203-228, 1999.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[20] A. W. Lo, \"The adaptive markets hypothesis,\" The Journal of Portfolio Management, vol. 30, no. 5, pp. 15-29, 2004.", font: "Times New Roman", size: 24 })]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 120, line: 360 },
-                    indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[21] R. Jing, X. Zhao, and L. E. C. Rocha, \"Optimising cryptocurrency portfolios through stable clustering of price correlation networks,\" arXiv preprint arXiv:2505.24831, 2025.", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "[mendeley_bibliography]", font: "Times New Roman", size: 24 })]
                 }),
             ],
             headers: {
