@@ -537,6 +537,8 @@ const doc = new Document({
             children: [
                 chapterHeading("BAB I", "PENDAHULUAN"),
                 emptyLine(),
+                body("Bab ini membahas secara komprehensif latar belakang permasalahan, perumusan penelitian, tujuan, dan ruang lingkup yang menjadi batasan penelitian ini."),
+                emptyLine(),
                 heading2("1.1. Latar Belakang"),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
@@ -685,8 +687,9 @@ const doc = new Document({
             children: [
                 chapterHeading("BAB II", "LANDASAN/KERANGKA PEMIKIRAN"),
                 emptyLine(),
-                heading2("2.1. Kerangka Teori"),
-                heading3("2.1.1. Modern Portfolio Theory (Markowitz)"),
+                body("Bab ini menguraikan berbagai teori dasar, konsep, serta tinjauan pustaka dari penelitian terdahulu yang menjadi landasan pemikiran bagi pengembangan sistem portofolio dalam penelitian ini."),
+                emptyLine(),
+                heading2("2.1. Modern Portfolio Theory (Markowitz)"),
                 mixedBody([
                     {text: "Teori Portofolio Modern (MPT), yang dipelopori oleh Harry Markowitz, berupaya memaksimalkan imbal hasil yang diharapkan ("},
                     {text: "expected return", italic: true},
@@ -701,20 +704,20 @@ const doc = new Document({
                     {text: "), sehingga perubahan kecil pada input data dapat menghasilkan perubahan drastis pada alokasi bobot portofolio."}
                 ]),
                 emptyLine(),
-                heading3("2.1.2. Random Matrix Theory dan Distribusi Marchenko-Pastur"),
+                heading2("2.2. Random Matrix Theory dan Distribusi Marchenko-Pastur"),
                 mixedBody([
                     {text: "Teori "},
                     {text: "Random Matrix", italic: true},
                     {text: " (RMT) digunakan untuk memisahkan korelasi yang mengandung informasi ekonomi sejati dari "},
                     {text: "noise", italic: true},
-                    {text: " statistik pada matriks korelasi berdimensi tinggi. Inti dari filtrasi RMT terletak pada distribusi Marchenko-Pastur [21], yang mendefinisikan batas teoritis nilai eigen ("},
+                    {text: " statistik pada matriks korelasi berdimensi tinggi. Inti dari filtrasi RMT terletak pada distribusi Marchenko-Pastur [3], yang mendefinisikan batas teoritis nilai eigen ("},
                     {text: "eigenvalues", italic: true},
                     {text: ") dari matriks korelasi acak sebagai \u03bb\u208A = \u03c3\u00b2(1 + \u221aq/N)\u00b2. Nilai eigen yang melampaui batas \u03bb\u208A merepresentasikan sinyal pasar kolektif, sementara nilai eigen di bawahnya dianggap sebagai residu yang harus dibersihkan agar stabilisasi topologi jaringan (MST) dapat tercapai secara konsisten [3], [15]."}
                 ]),
                 emptyLine(),
-                heading3("2.1.3. Teori Risiko Koheren (Coherent Risk Measures)"),
+                heading2("2.3. Teori Risiko Koheren (Coherent Risk Measures)"),
                 mixedBody([
-                    {text: "Penggunaan metrik risiko dalam optimasi portofolio harus memenuhi kriteria risiko koheren sebagaimana didefinisikan oleh Artzner et al. (1999) [19]. Kriteria tersebut mencakup empat aksioma: "},
+                    {text: "Penggunaan metrik risiko dalam optimasi portofolio harus memenuhi kriteria risiko koheren sebagaimana didefinisikan oleh Artzner et al. [19]. Kriteria tersebut mencakup empat aksioma: "},
                     {text: "monotonicity, sub-additivity, homogeneity,", italic: true},
                     {text: " dan "},
                     {text: "translational invariance", italic: true},
@@ -728,8 +731,12 @@ const doc = new Document({
                     {text: "fat-tail events", italic: true},
                     {text: ") di pasar kripto."}
                 ]),
+                bulletItem("Monotonicity: Jika portofolio X selalu tidak lebih buruk dari Y, maka risiko X harus lebih kecil atau sama dari Y (\u03c1(X) \u2264 \u03c1(Y) untuk X \u2265 Y)."),
+                bulletItem("Sub-additivity: Risiko gabungan tidak boleh lebih dari jumlah risiko masing-masing (\u03c1(X + Y) \u2264 \u03c1(X) + \u03c1(Y)). Ini adalah kaidah efek diversifikasi."),
+                bulletItem("Homogeneity: Menambah kelipatan ukuran posisi sejalan dengan mengalikan besaran risikonya (\u03c1(cX) = c \u03c1(X) untuk c > 0)."),
+                bulletItem("Translational Invariance: Menambah sejumlah modal pasti bebas risiko ke portofolio akan mengurangi risiko sebesar persis nilai nominal tersebut."),
                 emptyLine(),
-                heading3("2.1.4. Topologi Jaringan Keuangan dan Risiko Penularan"),
+                heading2("2.4. Topologi Jaringan Keuangan dan Risiko Penularan"),
                 mixedBody([
                     {text: "Dalam perspektif teori jaringan, pasar kripto dapat dipetakan menjadi struktur topologi tertentu. Struktur "},
                     {text: "Star-like", italic: true},
@@ -742,16 +749,34 @@ const doc = new Document({
                     {text: " menawarkan manfaat diversifikasi yang lebih baik. Dengan menggunakan sentralitas sebagai penalti, model Network Markowitz secara efektif menggeser alokasi dari 'pusat penularan' ke 'periferi jaringan', sehingga memitigasi risiko kegagalan sistemik [5], [12]."}
                 ]),
                 emptyLine(),
-                heading3("2.1.5. Network Markowitz"),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new TextRun({
+                            text: "[[%IMAGE_TOPOLOGY]]",
+                            font: "Times New Roman",
+                            size: 22,
+                        })
+                    ]
+                }),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    children: [
+                        new TextRun({ text: "Gambar II.1. Ilustrasi Topologi Finansial Star-like vs Distributed", font: "Times New Roman", size: 22, bold: true })
+                    ]
+                }),
+                emptyLine(),
+                heading2("2.5. Network Markowitz"),
                 mixedBody([
                     {text: "Integrasi variabel jaringan ke dalam fungsi objektif Markowitz memungkinkan model untuk 'menghukum' aset yang memiliki tingkat keterhubungan sistemik tinggi. Formula optimasi dimodifikasi dengan menambahkan faktor \u03b3 yang dikalikan dengan skor sentralitas vektor eigen [1], [9]. Hal ini memastikan bahwa portofolio tidak hanya efisien secara variansi-imbal hasil, tetapi juga tangguh terhadap dinamika struktur jaringan pasar kripto yang bervariasi mengikuti transisi fasa."}
                 ]),
                 emptyLine(),
-                heading3("2.1.6. Teori Siklus dan Adaptive Market Hypothesis (AMH)"),
+                heading2("2.6. Teori Siklus dan Adaptive Market Hypothesis (AMH)"),
                 mixedBody([
                     {text: "Kelemahan efisiensi pasar kripto dijelaskan melalui "},
                     {text: "Adaptive Market Hypothesis", italic: true},
-                    {text: " (AMH) oleh Andrew Lo (2004) [20]. AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan hasil adaptasi pelaku pasar terhadap perubahan lingkungan. Hal ini memberikan landasan teoritis kuat bagi penggunaan metode "},
+                    {text: " (AMH) oleh Andrew Lo [20]. AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan hasil adaptasi pelaku pasar terhadap perubahan lingkungan. Hal ini memberikan landasan teoritis kuat bagi penggunaan metode "},
                     {text: "Rolling Window", italic: true},
                     {text: " dan "},
                     {text: "Grid Search", italic: true},
@@ -762,7 +787,7 @@ const doc = new Document({
                     {text: ", maka parameter penalti portofolio (\u03b3) harus dikalibrasi secara dinamis untuk mencapai performa optimal."}
                 ]),
                 emptyLine(),
-                heading3("2.1.7. Walk-forward Analysis dan Filosofi Rolling Window"),
+                heading2("2.7. Walk-forward Analysis dan Filosofi Rolling Window"),
                 mixedBody([
                     {text: "Walk-forward Analysis merupakan teknik validasi utama dalam Machine Learning finansial untuk menghindari "},
                     {text: "look-ahead bias", italic: true},
@@ -775,9 +800,9 @@ const doc = new Document({
                     {text: " mencerminkan realitas perdagangan sesungguhnya di pasar yang sangat dinamis."}
                 ]),
                 emptyLine(),
-                heading3("2.1.8. Analisis Kebaruan (Gap Analysis)"),
+                heading2("2.8. Analisis Kebaruan (Gap Analysis)"),
                 mixedBody([
-                    {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. (2020). Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
+                    {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. [1]. Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
                     {text: "Optimized Dynamic Network Markowitz", italic: true},
                     {text: ". Kebaruan utama terletak pada penggunaan algoritma "},
                     {text: "Grid Search", italic: true},
@@ -790,7 +815,7 @@ const doc = new Document({
                     {text: "."}
                 ]),
                 emptyLine(),
-                heading3("2.1.9. Penelitian Terdahulu"),
+                heading2("2.9. Penelitian Terdahulu"),
                 body("Beberapa penelitian terdahulu yang relevan dengan penelitian ini antara lain:"),
                 mixedBody([
                     {text: "Penelitian yang dilakukan oleh Giudici dkk. (2020) mengusulkan kerangka kerja baru untuk manajemen portofolio kripto otomatis dengan memperluas model Markowitz tradisional melalui integrasi "},
@@ -812,7 +837,7 @@ const doc = new Document({
                     {text: " guna mendukung konsultasi keuangan otomatis [1]."}
                 ]),
                 mixedBody([
-                    {text: "Penelitian Kitanovski dkk. (2022) mengeksplorasi diversifikasi portofolio mata uang kripto dengan memanfaatkan metode deteksi komunitas jaringan, seperti "},
+                    {text: "Penelitian Kitanovski et al. [8] mengeksplorasi diversifikasi portofolio mata uang kripto dengan memanfaatkan metode deteksi komunitas jaringan, seperti "},
                     {text: "Louvain", italic: true},
                     {text: " dan "},
                     {text: "Affinity Propagation", italic: true},
@@ -821,7 +846,7 @@ const doc = new Document({
                     {text: ")."}
                 ]),
                 mixedBody([
-                    {text: "Pada penelitian lainnya, Jing dan Rocha (2023) merancang strategi portofolio kripto optimal dengan menggabungkan "},
+                    {text: "Pada penelitian lainnya, Jing dan Rocha [6] merancang strategi portofolio kripto optimal dengan menggabungkan "},
                     {text: "Minimum Spanning Tree", italic: true},
                     {text: " (MST) bersama pemodelan "},
                     {text: "Modern Portfolio Theory", italic: true},
@@ -830,14 +855,14 @@ const doc = new Document({
                     {text: ") investasi lainnya, baik itu performa Bitcoin tunggal (BTC), portofolio 5 kripto tertinggi (TOP5), maupun pemilihan portofolio secara acak (RAND)."}
                 ]),
                 mixedBody([
-                    {text: "Terkait ketahanan portofolio menghadapi guncangan harga ekstrem, Kitanovski dkk. (2024) kembali memperlihatkan keunggulan strategi diversifikasi berbasis topologi jaringan pada kombinasi dua keranjang aset berisiko tinggi; saham dan kripto. Riset ini menyimpulkan bahwa portofolio berbasis konektivitas metrik graf jauh lebih "},
+                    {text: "Terkait ketahanan portofolio menghadapi guncangan harga ekstrem, Kitanovski et al. [7] kembali memperlihatkan keunggulan strategi diversifikasi berbasis topologi jaringan pada kombinasi dua keranjang aset berisiko tinggi; saham dan kripto. Riset ini menyimpulkan bahwa portofolio berbasis konektivitas metrik graf jauh lebih "},
                     {text: "resilient", italic: true},
                     {text: " meredam ancaman kerugian dibandingkan indeks alokasi tradisional, terutama sangat efektif memberikan proteksi perlindungan "},
                     {text: "drawdown", italic: true},
                     {text: " pada saat-saat terjadinya volatilitas parah akibat krisis global (fase pandemi dan perang)."}
                 ]),
                 mixedBody([
-                    {text: "Lebih lanjut, Jing dkk. (2025) memperdalam integrasi antara analisis jaringan dan "},
+                    {text: "Lebih lanjut, Jing et al. [21] memperdalam integrasi antara analisis jaringan dan "},
                     {text: "Modern Portfolio Theory", italic: true},
                     {text: " (MPT) dengan memperkenalkan kerangka kerja teknis yang memanfaatkan "},
                     {text: "Louvain network community algorithm", italic: true},
@@ -895,7 +920,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. (2020)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. [1]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -922,7 +947,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2022)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [8]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -949,7 +974,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha (2023)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha [6]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -977,7 +1002,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. (2024)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [7]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -1005,7 +1030,7 @@ const doc = new Document({
                                 new TableCell({
                                     borders,
                                     margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing, et al. (2025)", font: "Times New Roman", size: 22 })] })]
+                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing, et al. [21]", font: "Times New Roman", size: 22 })] })]
                                 }),
                                 new TableCell({
                                     borders,
@@ -1048,6 +1073,8 @@ const doc = new Document({
             // Lanjutkan penomoran decimal dari section sebelumnya
             children: [
                 chapterHeading("BAB III", "METODOLOGI PENELITIAN"),
+                emptyLine(),
+                body("Bab ini menyajikan metodologi yang diaplikasikan dalam penelitian ini, mencakup rancangan tahapan logis penelitian, persiapan data, serta metrik evaluasi performa."),
                 emptyLine(),
                 heading2("3.1. Tahapan Penelitian"),
                 body("Penelitian ini dilaksanakan melalui tahapan-tahapan sebagai berikut:"),
@@ -1210,7 +1237,7 @@ const doc = new Document({
                 }),
                 emptyLine(),
                 mixedBody([
-                    {text: "Pemilihan aset ini selaras dengan referensi Giudici et al. (2020) yang menjadi landasan penelitian ini."}
+                    {text: "Pemilihan aset ini selaras dengan referensi Giudici et al. [1] yang menjadi landasan penelitian ini."}
                 ]),
                 mixedBody([
                     {text: "Periode pengambilan data adalah 14 September 2017 hingga 17 Oktober 2019, yang secara sengaja dipilih untuk mencakup tiga rezim pasar berbeda: era "},
@@ -1743,6 +1770,12 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
+                    children: [new TextRun({ text: "[17] S. T. Rachev, S. V. Stoyanov, and F. J. Fabozzi, \"Advanced Stochastic Models, Risk Assessment, and Portfolio Optimization,\" John Wiley & Sons, 2008.", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360 },
+                    indent: { left: 720, hanging: 720 },
                     children: [new TextRun({ text: "[18] A. Arratia, \"Computational Finance: An Introductory Course with R,\" Atlantis Press, 2014.", font: "Times New Roman", size: 24 })]
                 }),
                 new Paragraph({
@@ -1761,7 +1794,7 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360 },
                     indent: { left: 720, hanging: 720 },
-                    children: [new TextRun({ text: "[21] V. A. Marchenko and L. A. Pastur, \"Distribution of eigenvalues for some sets of random matrices,\" Matematicheskii Sbornik, vol. 114, no. 4, pp. 507-536, 1967.", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "[21] R. Jing, X. Zhao, and L. E. C. Rocha, \"Optimising cryptocurrency portfolios through stable clustering of price correlation networks,\" arXiv preprint arXiv:2505.24831, 2025.", font: "Times New Roman", size: 24 })]
                 }),
             ],
             footers: {
