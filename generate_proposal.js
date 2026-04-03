@@ -563,7 +563,7 @@ const doc = new Document({
                         new TextRun({ text: "market crash", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: ") seperti fenomena ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "crypto winter", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " [1], [10], [11].", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: " [mendeley_cite:giudici2020network], [mendeley_cite:laloux1999noise], [mendeley_cite:corbet2019cryptocurrencies].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
