@@ -387,7 +387,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
+                    margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1417 },
                     pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true,
@@ -398,7 +398,7 @@ const doc = new Document({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
-                            children: [new TextRun({ text: "ii", font: "Times New Roman", size: 24 })]
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
                 })
@@ -474,7 +474,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
+                    margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1417 },
                     pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true,
@@ -485,7 +485,7 @@ const doc = new Document({
                     children: [
                         new Paragraph({
                             alignment: AlignmentType.CENTER,
-                            children: [new TextRun({ text: "iii", font: "Times New Roman", size: 24 })]
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
                 })
@@ -512,26 +512,6 @@ const doc = new Document({
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true,
                 pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
-            },
-            headers: {
-                default: new Header({
-                    children: [
-                        new Paragraph({
-                            alignment: AlignmentType.RIGHT,
-                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
-                        })
-                    ]
-                })
-            },
-            footers: {
-                first: new Footer({
-                    children: [
-                        new Paragraph({
-                            alignment: AlignmentType.CENTER,
-                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
-                        })
-                    ]
-                })
             },
             children: [
                 chapterHeading("BAB I", "PENDAHULUAN"),
@@ -670,7 +650,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                first: new Header({ children: [new Paragraph({})] })
             },
             footers: {
                 first: new Footer({
@@ -680,7 +661,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                default: new Footer({ children: [new Paragraph({})] })
             }
         },
         // ==================== BAB II ====================
@@ -1067,7 +1049,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                first: new Header({ children: [new Paragraph({})] })
             },
             footers: {
                 first: new Footer({
@@ -1077,7 +1060,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                default: new Footer({ children: [new Paragraph({})] })
             }
         },
         // ==================== BAB III ====================
@@ -1665,7 +1649,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                first: new Header({ children: [new Paragraph({})] })
             },
             footers: {
                 first: new Footer({
@@ -1675,7 +1660,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                default: new Footer({ children: [new Paragraph({})] })
             }
         },
         // ==================== DAFTAR REFERENSI ====================
@@ -1705,7 +1691,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                first: new Header({ children: [new Paragraph({})] })
             },
             footers: {
                 first: new Footer({
@@ -1715,7 +1702,8 @@ const doc = new Document({
                             children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
                         })
                     ]
-                })
+                }),
+                default: new Footer({ children: [new Paragraph({})] })
             }
         },
     ]
