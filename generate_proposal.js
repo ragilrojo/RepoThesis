@@ -354,13 +354,10 @@ const doc = new Document({
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
                     children: [
-                        new ImageRun({
-                            data: fs.readFileSync("logo_unm.png"),
-                            extension: "png",
-                            transformation: {
-                                width: 150,
-                                height: 150,
-                            },
+                        new TextRun({
+                            text: "[[%LOGO_UNM]]",
+                            font: "Times New Roman",
+                            size: 22,
                         })
                     ]
                 }),
@@ -510,7 +507,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 },
+                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 },
                     pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true,
@@ -691,7 +688,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
+                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true
             },
@@ -1088,7 +1085,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
+                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true
             },
@@ -1686,7 +1683,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
+                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true
             },
