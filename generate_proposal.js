@@ -332,6 +332,10 @@ const doc = new Document({
                 id: "Heading3", name: "Heading 3", basedOn: "Normal", next: "Normal", quickFormat: true,
                 run: { size: 24, bold: true, font: "Times New Roman" },
                 paragraph: { spacing: { before: 160, after: 80 }, outlineLevel: 2 }
+            },
+            {
+                id: "TOC1", name: "toc 1", basedOn: "Normal", next: "Normal", quickFormat: true,
+                run: { size: 24, bold: true, font: "Times New Roman" },
             }
         ]
     },
@@ -392,7 +396,7 @@ const doc = new Document({
                 emptyLine(),
                 emptyLine(),
                 emptyLine(),
-                centered("Program Studi Ilmu Komputer (S2)"),
+                centered("Program Studi Informatika (S2)"),
                 centered("Fakultas Teknologi Informasi"),
                 centered("Universitas Nusa Mandiri"),
                 centered("Jakarta"),
@@ -432,7 +436,7 @@ const doc = new Document({
                 ...[
                     ["Nama",          "Ragil Yulianto"],
                     ["NIM",           "14240007"],
-                    ["Program Studi", "Ilmu Komputer"],
+                    ["Program Studi", "Informatika"],
                     ["Fakultas",      "Teknologi Informasi"],
                     ["Jenjang",       "Strata Dua (S2)"],
                     ["Judul Tesis",   "OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO"],
