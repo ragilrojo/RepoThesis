@@ -218,7 +218,7 @@ async function createPresentation() {
 
     // --- Slide 5.1: Equally Weighted (EW) ---
     let slideEW = pres.addSlide();
-    slideEW.addText("1. Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideEW.addText("1.1. Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideEW.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
         { text: "Strategi alokasi ", options: { bullet: true } },
@@ -237,7 +237,7 @@ async function createPresentation() {
 
     // --- Slide 5.2: Classical Markowitz (CM) ---
     let slideCM = pres.addSlide();
-    slideCM.addText("2. Classical Markowitz (CM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideCM.addText("1.2. Classical Markowitz (CM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideCM.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
         { text: "Meminimalkan variansi untuk tingkat ", options: { bullet: true } },
@@ -256,7 +256,7 @@ async function createPresentation() {
 
     // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
     let slideGM = pres.addSlide();
-    slideGM.addText("3. Graphical Lasso Markowitz (GM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideGM.addText("2. Graphical Lasso Markowitz (GM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideGM.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
         { text: "Menggunakan algoritma ", options: { bullet: true } },
@@ -273,7 +273,7 @@ async function createPresentation() {
 
     // --- Slide 5.4: Network Markowitz (NW) Statis ---
     let slideNWStatic = pres.addSlide();
-    slideNWStatic.addText("4. Network Markowitz (NW) Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWStatic.addText("3. Network Markowitz (NW) Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWStatic.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
         { text: "Model jaringan original (Giudici et al., 2020) yang menggabungkan ", options: { bullet: true } },
@@ -292,7 +292,7 @@ async function createPresentation() {
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptif ---
     let slideNWAdaptive = pres.addSlide();
-    slideNWAdaptive.addText("Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWAdaptive.addText("4. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWAdaptive.addText([
         { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true } },
         { text: "❑ Rolling Window: Menggunakan 4 variasi jendela estimasi: ", options: { } },
