@@ -39,6 +39,7 @@ async function processDocument() {
         // Hanya menangani gambar fisik
         const logoPath = path.resolve(__dirname, 'logo_unm.png');
         const frameworkPath = path.resolve(__dirname, 'framwrok.jpg');
+        const topologyPath = path.resolve(__dirname, 'financial_network_comparison.png');
 
         if (fs.existsSync(logoPath)) {
             renderData["LOGO_UNM"] = logoPath;
@@ -47,6 +48,10 @@ async function processDocument() {
         if (fs.existsSync(frameworkPath)) {
             renderData["IMAGE_FRAMEWORK"] = frameworkPath;
             console.log("✓ Gambar Kerangka Kerja siap.");
+        }
+        if (fs.existsSync(topologyPath)) {
+            renderData["IMAGE_TOPOLOGY"] = topologyPath;
+            console.log("✓ Gambar Topologi siap.");
         }
 
         console.log("Menyuntikkan gambar ke dokumen...");
