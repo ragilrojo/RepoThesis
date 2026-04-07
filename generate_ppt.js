@@ -49,7 +49,7 @@ async function createPresentation() {
     slide3.addText([
         { text: "Noise (Kebisingan) Pasar:", options: { bold: true, breakLine: true } },
         { text: "Fluktuasi harga acak", options: { bold: true } },
-        { text: " akibat sentimen sesaat, rumor, FOMO, atau spekulasi yang tidak mencerminkan nilai fundamental aset.", options: { breakLine: true } },
+        { text: " akibat sentimen sesaat, rumor, FOMO (Fear Of Missing Out), atau spekulasi yang tidak mencerminkan nilai fundamental aset.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } }, // Spasi antar poin
 
         { text: "Estimation Error (Korelasi Palsu):", options: { bold: true, breakLine: true } },
@@ -96,10 +96,10 @@ async function createPresentation() {
     slide4.addText([
         { text: "Pendekatan Struktur Jaringan:", options: { bold: true, breakLine: true, color: "003366" } },
         { text: "➤ ", options: { } },
-        { text: "RMT", options: { bold: true, underline: true } },
+        { text: "RMT (Random Matrix Theory)", options: { bold: true, underline: true } },
         { text: ": Filter noise untuk kestabilan matriks.", options: { breakLine: true } },
         { text: "➤ ", options: { } },
-        { text: "MST", options: { bold: true, underline: true } },
+        { text: "MST (Minimum Spanning Tree)", options: { bold: true, underline: true } },
         { text: ": Jaringan korelasi terkuat tanpa loop.", options: { breakLine: true } },
         { text: "➤ ", options: { } },
         { text: "Centrality", options: { bold: true, underline: true } },
@@ -112,14 +112,16 @@ async function createPresentation() {
     slidePrev.addText([
         { text: "1. Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Pelopor model Network Markowitz yang memadukan ", options: { } },
-        { text: "RMT dan MST", options: { bold: true } },
+        { text: "RMT (Random Matrix Theory)", options: { bold: true } },
+        { text: " dan ", options: { } },
+        { text: "MST (Minimum Spanning Tree)", options: { bold: true } },
         { text: " di kripto.", options: { breakLine: true } },
         { text: "2. Kitanovski et al. (2022):", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Mendemonstrasikan diversifikasi berbasis ", options: { } },
         { text: "deteksi komunitas", options: { bold: true } },
         { text: " jaringan.", options: { breakLine: true } },
         { text: "3. Jing & Rocha (2023):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "Pemilihan koin topologi MST mengalahkan ", options: { } },
+        { text: "Pemilihan koin topologi MST (Minimum Spanning Tree) mengalahkan ", options: { } },
         { text: "semua benchmark", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
         { text: "4. Kitanovski et al. (2024):", options: { bold: true, breakLine: true, color: "16a085" } },
@@ -127,7 +129,7 @@ async function createPresentation() {
         { text: "eksposur ekstrem", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
         { text: "5. Jing et al. (2025):", options: { bold: true, breakLine: true, color: "f39c12" } },
-        { text: "Penggabungan Network-MPT memberikan ", options: { } },
+        { text: "Penggabungan Network-MPT (Modern Portfolio Theory) memberikan ", options: { } },
         { text: "prediksi stabil", options: { bold: true } },
         { text: " di fase terbaru.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 16, color: "333333", valign: "top" });
@@ -249,7 +251,7 @@ async function createPresentation() {
     slideNWStatic.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
         { text: "Model jaringan original (Giudici et al., 2020) yang menggabungkan ", options: { bullet: true } },
-        { text: "filter RMT", options: { bold: true } },
+        { text: "filter RMT (Random Matrix Theory)", options: { bold: true } },
         { text: " dan ", options: { } },
         { text: "penalti sentralitas graf", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
@@ -270,7 +272,7 @@ async function createPresentation() {
         { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true, color: "003366" } },
         { text: "❑ Rolling Window: 30, 60, 90, 120 hari.", options: { breakLine: true } },
         { text: "❑ Rebalancing: Setiap 7 hari.", options: { breakLine: true } },
-        { text: "❑ Transaction Cost: 0.1% (10 bps).", options: { breakLine: true } },
+        { text: "❑ Transaction Cost: 0.1% (10 basis points).", options: { breakLine: true } },
         { text: "❑ Grid Search γ: Rentang [0.0 - 2.0].", options: { breakLine: true } }
     ], { x: 0.5, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
@@ -279,7 +281,7 @@ async function createPresentation() {
         { text: "Split Validasi Internal (80/20):", options: { bold: true, breakLine: true, color: "003366" } },
         { text: "❑ Training: Estimasi bobot gamma.", options: { breakLine: true } },
         { text: "❑ Validation: Seleksi performa optimal.", options: { breakLine: true } },
-        { text: "❑ Fallback: Menggunakan strategi EW.", options: { breakLine: true } },
+        { text: "❑ Fallback: Menggunakan strategi EW (Equally Weighted).", options: { breakLine: true } },
         { text: "❑ Tujuan: Adaptasi rezim pasar.", options: { breakLine: true } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
@@ -309,7 +311,7 @@ async function createPresentation() {
     let slide9 = pres.addSlide();
     slide9.addText([
         { text: "Lampiran: Analogi " },
-        { text: "RMT", options: { hyperlink: { slide: '9' } } },
+        { text: "RMT (Random Matrix Theory)", options: { hyperlink: { slide: '9' } } },
         { text: " sebagai \"Noise-Canceling\"" }
     ], { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide9.addText([
@@ -325,7 +327,7 @@ async function createPresentation() {
         { text: "Random Matrix Theory (RMT) = Headphone Noise-Canceling:", options: { bold: true, breakLine: true } },
         { text: "Membedakan gelombang statistik acak dari ", options: { bullet: true } },
         { text: "pola suara asli", options: { bold: true } },
-        { text: " menggunakan MP-Distribution.", options: { breakLine: true } },
+        { text: " menggunakan Distribusi MP (Marchenko-Pastur).", options: { breakLine: true } },
         { text: "Meredam spekulasi jangka pendek untuk mencegah ", options: { bullet: true } },
         { text: "estimation error", options: { italic: true, bold: true } },
         { text: ".", options: { breakLine: true } },
@@ -344,7 +346,7 @@ async function createPresentation() {
         { text: " pergerakan bersama.", options: { breakLine: true } },
         
         { text: "2. Batas Noise (Marchenko-Pastur):", options: { bold: true, breakLine: true } },
-        { text: "RMT menghitung ", options: { bullet: true } },
+        { text: "RMT (Random Matrix Theory) menghitung ", options: { bullet: true } },
         { text: "batas teoretis", options: { bold: true } },
         { text: " maksimum dari matriks acak.", options: { breakLine: true } },
         { text: "3. Uji Coba Signal vs Noise:", options: { bold: true, breakLine: true } },
@@ -386,7 +388,7 @@ async function createPresentation() {
     let slide12 = pres.addSlide();
     slide12.addText("Lampiran: Praktek Sederhana Menghitung Eigenvalue", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide12.addText([
-        { text: "Konteks Dummy: 2 Koin (BTC & ETH) dengan korelasi = 0.5", options: { bold: true, breakLine: true } },
+        { text: "Konteks Dummy: 2 Koin, BTC (Bitcoin) & ETH (Ethereum), korelasi = 0.5", options: { bold: true, breakLine: true } },
         { text: "1. Matriks Korelasi (C):", options: { bold: true, breakLine: true } },
         { text: "   C = [ 1.0  0.5 ]", options: { fontFace: "Courier New", breakLine: true } },
         { text: "       [ 0.5  1.0 ]", options: { fontFace: "Courier New", breakLine: true } },
@@ -402,7 +404,7 @@ async function createPresentation() {
         { text: "Idiosyncratic Risk", options: { bold: true, color: "c0392b" } },
         { text: " (Noise).", options: { breakLine: true } },
         { text: "Kesimpulan Filtering:", options: { bold: true, breakLine: true } },
-        { text: "   Jika RMT mematok batas λ_max = 1.0, maka λ₂ dianggap ", options: { bullet: true } },
+        { text: "   Jika RMT (Random Matrix Theory) mematok batas λ_max = 1.0, maka λ₂ dianggap ", options: { bullet: true } },
         { text: "Noise", options: { bold: true } },
         { text: " lalu dinolkan, sementara λ₁ dijaga sebagai sinyal sejati.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
@@ -549,13 +551,13 @@ async function createPresentation() {
         { text: "Pasar kripto bersifat ", options: { bullet: true } },
         { text: "hyper-volatile", options: { bold: true, italic: true } },
         { text: " dengan korelasi ekor tebal.", options: { breakLine: true } },
-        { text: "Model CM memakan mentah-mentah ", options: { bullet: true } },
+        { text: "Model CM (Classical Markowitz) memakan mentah-mentah ", options: { bullet: true } },
         { text: "noise acak", options: { bold: true } },
         { text: " tanpa filter, berujung pada kegagalan prediksi.", options: { breakLine: true } },
         { text: "Evolusi → Network Markowitz:", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "Mengembangkan CM dengan membersihkan noise (RMT) dan menghukum koin yang rawan menderita ", options: { bullet: true } },
+        { text: "Mengembangkan CM (Classical Markowitz) dengan membersihkan noise menggunakan RMT (Random Matrix Theory) dan menghukum koin yang rawan menderita ", options: { bullet: true } },
         { text: "efek contagion", options: { bold: true } },
-        { text: " (MST).", options: { } }
+        { text: " menggunakan MST (Minimum Spanning Tree).", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 21: Lampiran - Dua Tipe Grid Search ---
@@ -563,14 +565,14 @@ async function createPresentation() {
     slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide22.addText([
         { text: "Dua Objektif Optimasi (Return vs Risk):", options: { bold: true, breakLine: true } },
-        { text: "1. Network Markowitz dengan Target Return (NW - Return GS):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "1. Network Markowitz dengan Target Return (NW - Return Grid Search):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Memaksimalkan capaian ", options: { bullet: true } },
         { text: "imbal hasil", options: { bold: true } },
         { text: " portofolio.", options: { breakLine: true } },
         { text: "Lebih Agresif untuk mengeksploitasi reli pada pasar ", options: { bullet: true } },
         { text: "Bullish", options: { bold: true } },
         { text: ".", options: { breakLine: true } },
-        { text: "2. Network Markowitz dengan Target Risiko (NW - Risk GS):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "2. Network Markowitz dengan Target Risiko (NW - Risk Grid Search):", options: { bold: true, breakLine: true, color: "c0392b" } },
         { text: "Menekan parameter ", options: { bullet: true } },
         { text: "risiko total", options: { bold: true } },
         { text: " hingga minimal.", options: { breakLine: true } },
@@ -590,7 +592,7 @@ async function createPresentation() {
         { text: "backward fill", options: { italic: true, bold: true } },
         { text: ") memang menciptakan rentetan nilai harga yang statis.", options: { breakLine: true } },
         { text: "   2. Namun, kehebatan ", options: { } },
-        { text: "Random Matrix Theory", options: { bold: true } },
+        { text: "Random Matrix Theory (RMT)", options: { bold: true } },
         { text: " diuji di sini! Karena data yang datar sama sekali tidak punya korelasi nyata.", options: { breakLine: true } },
         { text: "   3. RMT otomatis akan mendeteksi korelasi buatan tersebut sebagai probabilitas ", options: { } },
         { text: "Noise Acak", options: { bold: true, italic: true } },
@@ -621,13 +623,13 @@ async function createPresentation() {
     slideOut3.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut3.addText([
         { text: "3. Algoritma jaringan ", options: { } },
-        { text: "Network Markowitz (GS)", options: { bold: true } },
+        { text: "Network Markowitz GS (Grid Search)", options: { bold: true } },
         { text: " dilatih secara matematis; jika mendeteksi korelasi ancaman kolaps merambat ke semua altcoin, ia akan melempar alokasi modalnya menuju node ", options: { } },
-        { text: "USDT", options: { bold: true } },
+        { text: "USDT (Tether)", options: { bold: true } },
         { text: " sebagai langkah ", options: { } },
         { text: "evakuasi otomatis", options: { bold: true } },
         { text: " (Shock-Absorber).", options: { breakLine: true } },
-        { text: "   4. Hal ini yang membuat performa Risk-GS sangat ", options: { } },
+        { text: "   4. Hal ini yang membuat performa Risk-GS (Grid Search) sangat ", options: { } },
         { text: "tangguh", options: { bold: true } },
         { text: " dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
@@ -663,7 +665,7 @@ async function createPresentation() {
         { text: " yang terlalu dominan secara sistemik saat volatilitas tinggi.", options: { breakLine: true } },
         { text: "Hasil pada ", options: { bullet: true } },
         { text: "Tabel 5", options: { bold: true } },
-        { text: " membuktikan bahwa saat crash, distribusi kerugian ekor model NW jauh lebih terjaga.", options: { breakLine: true } },
+        { text: " membuktikan bahwa saat crash, distribusi kerugian ekor model NW (Network Markowitz) jauh lebih terjaga.", options: { breakLine: true } },
         { text: "Kesimpulan: Topologi jaringan memberikan sinyal ", options: { bullet: true } },
         { text: "diversifikasi akurat", options: { bold: true } },
         { text: " daripada sekadar variansi harga.", options: { } }
