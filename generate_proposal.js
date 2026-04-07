@@ -407,7 +407,7 @@ const doc = new Document({
                     margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1417 },
                     pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
                 },
-                type: SectionType.NEXT_PAGE, titlePage: true,
+                type: SectionType.NEXT_PAGE,
                 pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
@@ -482,8 +482,6 @@ const doc = new Document({
                         new TextRun({ text: "NIDN. XXXXXXXXXX", font: "Times New Roman", size: 24, bold: true }),
                     ]
                 }),
-                emptyLine(),
-                emptyLine(),
             ]
         },
         // ==================== DAFTAR ISI ====================
@@ -494,7 +492,7 @@ const doc = new Document({
                     margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1417 },
                     pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
                 },
-                type: SectionType.NEXT_PAGE, titlePage: true,
+                type: SectionType.NEXT_PAGE,
                 pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
@@ -508,15 +506,12 @@ const doc = new Document({
                 })
             },
             children: [
-                emptyLine(),
                 sectionTitle("DAFTAR ISI", 26),
-                emptyLine(),
                 new TableOfContents("Daftar Isi", {
                     hyperlink: true,
                     headingStyleRange: "1-3",
                     caption: { text: "Daftar Isi" },
                 }),
-                emptyLine(),
             ]
         },
         // ==================== BAB I ====================
