@@ -341,10 +341,27 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268 }
-                }
+                    margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1200 },
+                    pageNumbers: { start: 1, formatType: NumberFormat.LOWER_ROMAN }
+                },
+                pageNumbers: { start: 1, formatType: NumberFormat.LOWER_ROMAN }
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
             },
             children: [
+                new Paragraph({
+                    heading: HeadingLevel.HEADING_1,
+                    alignment: AlignmentType.CENTER,
+                    children: [new TextRun({ text: "HALAMAN JUDUL", color: "FFFFFF", size: 2 })]
+                }),
                 emptyLine(),
                 centeredBold("OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ", 28),
                 centeredBold("UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO", 28),
@@ -492,7 +509,7 @@ const doc = new Document({
             },
             children: [
                 emptyLine(),
-                centeredBold("DAFTAR ISI", 26),
+                sectionTitle("DAFTAR ISI", 26),
                 emptyLine(),
                 new TableOfContents("Daftar Isi", {
                     hyperlink: true,
