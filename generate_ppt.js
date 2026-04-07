@@ -135,7 +135,7 @@ async function createPresentation() {
     // --- Slide 4.5: Kerangka Penelitian ---
     let slideFramework = pres.addSlide();
     slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
-    slideFramework.addImage({ path: "e:/ProjectNodeJs/temp_doc_build/framwrok.jpg", x: 1.0, y: 1.1, w: 8.0, h: 4.0 });
+    slideFramework.addImage({ path: "framwrok.jpg", x: 1.0, y: 1.1, w: 8.0, h: 4.0 });
 
     // --- Slide 4.6: Dataset - 10 Aset Kripto Utama ---
     let slideData = pres.addSlide();
