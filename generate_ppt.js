@@ -560,8 +560,65 @@ async function createPresentation() {
         { text: " menggunakan MST (Minimum Spanning Tree).", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 21: Lampiran - Dua Tipe Grid Search ---
+    // --- Slide 20.9: Lampiran - Detail Perhitungan Korelasi (Pearson) ---
+    let slide20b = pres.addSlide();
+    slide20b.addText("Lampiran: Detail Perhitungan Korelasi (Pearson)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slide20b.addText([
+        { text: "Bagaimana angka 0.50 didapatkan? (Dummy 3 Hari)", options: { bold: true, breakLine: true } },
+        { text: "1. Data Return (X=BTC, Y=ETH):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Hari 1: X=2%, Y=2% | Hari 2: X=-2%, Y=0% | Hari 3: X=0%, Y=-2%", options: { breakLine: true } },
+        { text: "   • Rata-rata (Mean): X̄ = 0, Ȳ = 0", options: { breakLine: true } },
+        
+        { text: "2. Tabel Deviasi & Perkalian:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Σ(x-x̄)(y-ȳ) = (2)(2) + (-2)(0) + (0)(-2) = ", options: { } },
+        { text: "4", options: { bold: true, breakLine: true } },
+        { text: "   • Σ(x-x̄)² = (2)² + (-2)² + (0)² = ", options: { } },
+        { text: "8", options: { bold: true, breakLine: true } },
+        { text: "   • Σ(y-ȳ)² = (2)² + (0)² + (-2)² = ", options: { } },
+        { text: "8", options: { bold: true, breakLine: true } },
+
+        { text: "3. Rumus Korelasi (ρ):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   ρ = Σ(dev_x * dev_y) / √(Σdev_x² * Σdev_y²)", options: { fontFace: "Courier New", color: "c0392b", breakLine: true } },
+        { text: "   ρ = 4 / √(8 * 8) = 4 / 8 = ", options: { fontFace: "Courier New" } },
+        { text: "0.50", options: { bold: true, color: "27ae60", fontFace: "Courier New" } },
+        
+        { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "Angka ini menunjukkan arah pergerakan yang searah (positif) namun tidak identik, yang kemudian digunakan sebagai input matriks kovarians.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+    // --- Slide 21: Lampiran - Simulasi Sederhana Classical Markowitz (2 Aset) ---
+
+    let slide21 = pres.addSlide();
+    slide21.addText("Lampiran: Simulasi Sederhana Classical Markowitz (2 Aset)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slide21.addText([
+        { text: "Tujuan: Mencari bobot (w) untuk risiko terendah (Minimum Variance).", options: { bold: true, breakLine: true } },
+        { text: "1. Data Input (Dummy):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Aset A (BTC): Volatilitas (σ₁) = 20% (0.20)", options: { breakLine: true } },
+        { text: "   • Aset B (ETH): Volatilitas (σ₂) = 30% (0.30)", options: { breakLine: true } },
+        { text: "   • Korelasi (ρ₁₂): 0.50 (Didapat dari return harian historis)", options: { breakLine: true } },
+        { text: "   • Kovarians (σ₁₂): ", options: { bold: true } },
+        { text: "ρ₁₂ × σ₁ × σ₂", options: { italic: true } },
+        { text: " = 0.50 × 0.20 × 0.30 = ", options: { } },
+        { text: "0.03", options: { bold: true, breakLine: true } },
+
+        
+        { text: "2. Rumus Bobot Aset A (w₁):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   w₁ = (σ₂² - Cov) / (σ₁² + σ₂² - 2·Cov)", options: { fontFace: "Courier New", color: "c0392b", bold: true, breakLine: true } },
+        { text: "   w₁ = (0.09 - 0.03) / (0.04 + 0.09 - 0.06)", options: { fontFace: "Courier New", breakLine: true } },
+        { text: "   w₁ = 0.06 / 0.07 ≈ ", options: { fontFace: "Courier New" } },
+        { text: "0.85 (85%)", options: { bold: true, color: "27ae60", breakLine: true } },
+        
+        { text: "3. Hasil Alokasi:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Bobot BTC: 85%", options: { bullet: true } },
+        { text: "   • Bobot ETH: 15%", options: { bullet: true } },
+        
+        { text: "Kesimpulan Klasik:", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "Markowitz akan memilih aset dengan volatilitas lebih rendah (BTC) secara dominan. Namun, jika angka σ₁ dan σ₂ ini mengandung \"noise\", maka alokasi ini menjadi tidak optimal (Over-concentration).", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+    // --- Slide 22: Lampiran - Dua Tipe Grid Search ---
     let slide22 = pres.addSlide();
+
     slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide22.addText([
         { text: "Dua Objektif Optimasi (Return vs Risk):", options: { bold: true, breakLine: true } },
@@ -580,7 +637,7 @@ async function createPresentation() {
         { text: "Crypto Winter", options: { bold: true } },
         { text: ".", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
-    // --- Slide 22: Lampiran - Penanganan Missing Value ---
+    // --- Slide 23: Lampiran - Penanganan Missing Value ---
     let slideOut1 = pres.addSlide();
     slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut1.addText([
@@ -602,7 +659,7 @@ async function createPresentation() {
         { text: " dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 23: Lampiran - Peran USDT (Bagian 1) ---
+    // --- Slide 24: Lampiran - Peran USDT (Bagian 1) ---
     let slideOut2 = pres.addSlide();
     slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut2.addText([
@@ -618,7 +675,7 @@ async function createPresentation() {
         { text: " sebagai evakuasi risiko.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 24: Lampiran - Peran USDT (Bagian 2) ---
+    // --- Slide 25: Lampiran - Peran USDT (Bagian 2) ---
     let slideOut3 = pres.addSlide();
     slideOut3.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut3.addText([
@@ -634,7 +691,7 @@ async function createPresentation() {
         { text: " dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 25: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
+    // --- Slide 26: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
     let slideOut4 = pres.addSlide();
     slideOut4.addText("Lampiran: Bukti Empiris Non-Stationarity Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut4.addText([
@@ -652,7 +709,7 @@ async function createPresentation() {
         { text: " secara temporal.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 26: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
+    // --- Slide 27: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
     let slideOut5 = pres.addSlide();
     slideOut5.addText("Lampiran: Jaringan sebagai 'Shock-Absorber'", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut5.addText([
