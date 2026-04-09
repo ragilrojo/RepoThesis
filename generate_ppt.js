@@ -794,6 +794,39 @@ async function createPresentation() {
         { text: "NW tidak membuang korelasi; ia 'mengolah' korelasi menjadi peta jaringan untuk mendeteksi risiko sistemik yang tidak terlihat oleh CM biasa.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 23.9: Lampiran - Contoh Detail Filter RMT (Pembersihan Noise) ---
+    let slideRMTExample = pres.addSlide();
+    slideRMTExample.addText("Lampiran: Contoh Detail Filter RMT (Pembersihan Noise)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideRMTExample.addText([
+        { text: "Analogi: Menghilangkan suara 'kresek' radio agar lagu terdengar jernih.", options: { bold: true, breakLine: true } },
+        
+        { text: "1. Skenario Korelasi Mentah (Dirty Matrix):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • BTC vs ETH   : 0.75 (Ikatan Fundamental)", options: { breakLine: true } },
+        { text: "   • BTC vs DOGE  : 0.12 (Kebetulan Spekulatif/Noise)", options: { breakLine: true } },
+        { text: "   • ETH vs PEPE  : 0.08 (Kebetulan Spekulatif/Noise)", options: { breakLine: true } },
+        
+        { text: "2. Uji Batas RMT (Marchenko-Pastur Distribution):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Rumus RMT menghitung 'Ambang Batas Keacakan' (Threshold).", options: { breakLine: true } },
+        { text: "   Misalkan hasil hitung batas noise (λ_max) = ", options: { } },
+        { text: "0.15", options: { bold: true, color: "c0392b" } },
+        { text: ".", options: { breakLine: true } },
+        
+        { text: "3. Proses Pembersihan (Filtering):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • 0.75 > 0.15  → ", options: { } },
+        { text: "DIJAGA", options: { bold: true, color: "27ae60" } },
+        { text: " (Ini adalah Sinyal Pasar).", options: { breakLine: true } },
+        { text: "   • 0.12 < 0.15  → ", options: { } },
+        { text: "DIBUANG (JADI 0)", options: { bold: true, color: "c0392b" } },
+        { text: " (Ini adalah Noise).", options: { breakLine: true } },
+        { text: "   • 0.08 < 0.15  → ", options: { } },
+        { text: "DIBUANG (JADI 0)", options: { bold: true, color: "c0392b" } },
+        { text: " (Ini adalah Noise).", options: { breakLine: true } },
+
+        { text: "Kesimpulan Akhir:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Dengan RMT, model hanya akan membangun portofolio berdasarkan 'Gema Fundamental' aset, bukan berdasarkan 'Kebetulan Statistik' yang sering menjebak investor di pasar kripto.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
 
 
 
