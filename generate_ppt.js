@@ -767,6 +767,34 @@ async function createPresentation() {
         { text: "Model ini secara adil memberikan porsi lebih besar pada aset yang memiliki skor gabungan 'Risiko + Penalti' yang paling kecil.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.8: Lampiran - NW vs CM: Apakah Tetap Memakai Korelasi? ---
+    let slideNWCorr = pres.addSlide();
+    slideNWCorr.addText("Lampiran: NW vs CM - Hubungan dengan Korelasi", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideNWCorr.addText([
+        { text: "Pertanyaan Penting: Apakah NW mengesampingkan korelasi?", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "Jawaban: TIDAK. NW justru menggunakan korelasi secara lebih cerdas.", options: { bold: true, breakLine: true, color: "27ae60" } },
+        
+        { text: "Perbandingan Alur Kerja:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "❑ Classical Markowitz (CM):", options: { bold: true, breakLine: true } },
+        { text: "   Korelasi Mentah → Matriks Kovarians → Bobot Portofolio.", options: { breakLine: true } },
+        
+        { text: "❑ Network Markowitz (NW):", options: { bold: true, breakLine: true } },
+        { text: "   1. Korelasi Mentah → ", options: { } },
+        { text: "Saring Noise (RMT)", options: { bold: true, color: "8e44ad" } },
+        { text: " (Membersihkan korelasi palsu).", options: { breakLine: true } },
+        { text: "   2. Korelasi Bersih → ", options: { } },
+        { text: "Bangun MST (Network)", options: { bold: true, color: "8e44ad" } },
+        { text: " (Melihat peta hubungan antar koin).", options: { breakLine: true } },
+        { text: "   3. Struktur Network → ", options: { } },
+        { text: "Penalty Centrality", options: { bold: true, color: "8e44ad" } },
+        { text: " (Menimbang risiko penularan).", options: { breakLine: true } },
+        { text: "   4. Gabungan → Optimasi Markowitz Akhir.", options: { breakLine: true } },
+
+        { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "2c3e50" } },
+        { text: "NW tidak membuang korelasi; ia 'mengolah' korelasi menjadi peta jaringan untuk mendeteksi risiko sistemik yang tidak terlihat oleh CM biasa.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+
 
 
     // --- Slide 24: Lampiran - Dua Tipe Grid Search ---
