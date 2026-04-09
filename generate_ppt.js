@@ -65,6 +65,9 @@ async function createPresentation() {
         { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '13' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
+        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '14' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
         { text: "Network Markowitz (Adaptif)", options: { hyperlink: { slide: '15' }, fontSize: 16 } }
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
 
