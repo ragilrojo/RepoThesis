@@ -174,20 +174,26 @@ async function createPresentation() {
     slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "   • EW (Equally Weighted)", options: { breakLine: true } },
-        { text: "   • CM (Classical Markowitz)", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '10' }, color: "0563C1", underline: true } },
+        { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "   • GM (Glasso Markowitz)", options: { breakLine: true } },
-        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '11' }, color: "0563C1", underline: true } },
+        { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "   • NW Statis (γ fixed)", options: { breakLine: true } },
-        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '12' }, color: "0563C1", underline: true } },
+        { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "4. Kelompok Network (Adaptif):", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "   • NW Adaptif (Grid Search)", options: {} }
+        { text: "   • ", options: {} },
+        { text: "NW Adaptif (Grid Search)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
 
     // --- Slide 5.1: Equally Weighted (EW) ---
