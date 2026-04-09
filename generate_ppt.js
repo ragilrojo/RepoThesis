@@ -88,7 +88,9 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '55' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '56' }, fontSize: 16 } },
+        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '56' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '57' }, fontSize: 16 } },
         { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
         { text: "   • ", options: {} },
@@ -1351,7 +1353,28 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slidePnLSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    // --- Slide 31: Lampiran - Simulasi Kalkulasi Sharpe Ratio ---
+    // --- Slide 32: Lampiran - Simulasi Kalkulasi Value at Risk (VaR) ---
+    let slideVaRSim = pres.addSlide();
+    slideVaRSim.addText("Lampiran: Simulasi Kalkulasi Value at Risk (VaR)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideVaRSim.addText([
+        { text: "Berapa potensi kerugian maksimal dalam kondisi pasar normal?", options: { bold: true, breakLine: true } },
+        { text: "1. Konsep Dasar:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Value at Risk (VaR) mengukur ambang batas kerugian maksimal pada tingkat kepercayaan tertentu (Confidence Level 95%) dalam periode harian.", options: { breakLine: true } },
+        
+        { text: "2. Metode Simulasi Historis (Paling Sederhana):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Mengurutkan 100 hari return dari terburuk ke terbaik, lalu mengambil nilai persentil ke-5.", options: { breakLine: true } },
+        
+        { text: "3. Simulasi Angka (Modal: Rp 10.000.000):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Return terburuk urutan ke-5 (P5): -8% (-0.08)", options: { breakLine: true } },
+        { text: "   • Perhitungan VaR (95%): Rp 10.000.000 × 0.08 = ", options: { } },
+        { text: "Rp 800.000", options: { bold: true, color: "c0392b", breakLine: true } },
+        
+        { text: "4. Interpretasi Hasil:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Kita yakin 95% bahwa kerugian harian tidak akan melebihi Rp 800.000. Namun, ada 5% risiko (ekstrem) di masa depan di mana kerugian bisa lebih besar dari angka tersebut.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideVaRSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 33: Lampiran - Simulasi Kalkulasi Sharpe Ratio ---
     let slideSharpeSim = pres.addSlide();
     slideSharpeSim.addText("Lampiran: Simulasi Kalkulasi Sharpe Ratio", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideSharpeSim.addText([
