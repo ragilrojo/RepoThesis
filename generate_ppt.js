@@ -901,6 +901,27 @@ async function createPresentation() {
         { text: "MST hanya mengambil jalur-jalur dengan Jarak (d) paling kecil agar efisien.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 23.13: Lampiran - Apakah Jaringan Selalu Berbentuk Star? ---
+    let slideTopology = pres.addSlide();
+    slideTopology.addText("Lampiran: Apakah Jaringan Selalu Berbentuk Star?", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideTopology.addText([
+        { text: "Jawaban: TIDAK. Topologi jaringan bersifat dinamis mengikuti rezim pasar.", options: { bold: true, breakLine: true, color: "c0392b" } },
+        
+        { text: "1. Tipe Star (Sentralistik):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Muncul saat pasar panik atau crash.", options: { breakLine: true } },
+        { text: "   • Semua aset mengekor pada satu koin dominan (Hub).", options: { breakLine: true } },
+        { text: "   • Penalti NW akan sangat berat pada koin pusat tersebut.", options: { breakLine: true } },
+        
+        { text: "2. Tipe Terdistribusi (Cluster):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Muncul saat pasar tenang atau aset memiliki 'narasi' berbeda.", options: { breakLine: true } },
+        { text: "   • Hubungan terbagi ke beberapa kelompok (misal: DeFi Group, Stablecoin Group).", options: { breakLine: true } },
+        { text: "   • Penalti NW akan lebih menyebar dan diversifikasi lebih alami.", options: { breakLine: true } },
+        
+        { text: "Dinamika dalam NW:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Kekuatan Network Markowitz adalah kemampuannya mendeteksi transisi bentuk ini secara real-time melalui data historis.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+
 
 
 
