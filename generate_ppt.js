@@ -710,6 +710,33 @@ async function createPresentation() {
         { text: "Modal dialihkan ke ETH/ADA yang lebih 'pinggiran' (peripheral). Portofolio tidak hancur total jika 'Hub' (BTC) mengalami crash ekstrem.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.6: Lampiran - Detail Kalkulasi Penentuan Bobot NW ---
+    let slideNWDetail = pres.addSlide();
+    slideNWDetail.addText("Lampiran: Detail Kalkulasi Penentuan Bobot NW", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideNWDetail.addText([
+        { text: "Bagaimana 'Penalti' mengubah angka bobot secara konkret?", options: { bold: true, breakLine: true } },
+        { text: "1. Data Aset (Dummy):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Aset A (Hub): Volatilitas = 20%, Centrality (EC) = 0.8", options: { breakLine: true } },
+        { text: "   • Aset B (Peripheral): Volatilitas = 30%, Centrality (EC) = 0.2", options: { breakLine: true } },
+        { text: "   • Parameter Gamma (γ) = 0.5", options: { breakLine: true } },
+        
+        { text: "2. Perhitungan Risiko Penyesuaian (Adjusted Risk):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Risiko A = 0.20 + (0.5 × 0.8) = ", options: { } },
+        { text: "0.60 (Meningkat)", options: { bold: true, color: "c0392b", breakLine: true } },
+        { text: "   • Risiko B = 0.30 + (0.5 × 0.2) = ", options: { } },
+        { text: "0.40 (Relatif Stabil)", options: { bold: true, color: "27ae60", breakLine: true } },
+        
+        { text: "3. Pergeseran Bobot (Weight Shift):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Bobot A (Kuno): ", options: { } },
+        { text: "60% → 40% (NW)", options: { bold: true, color: "c0392b", breakLine: true } },
+        { text: "   • Bobot B (Kuno): ", options: { } },
+        { text: "40% → 60% (NW)", options: { bold: true, color: "27ae60", breakLine: true } },
+
+        { text: "Inti Logika NW:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Aset A dihukum bukan karena harganya tidak stabil, tapi karena ia adalah 'pusat kemacetan' risiko. Model secara matematis memindahkan modal ke Aset B untuk proteksi sistemik.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
     // --- Slide 24: Lampiran - Dua Tipe Grid Search ---
     let slide24 = pres.addSlide();
     slide24.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
