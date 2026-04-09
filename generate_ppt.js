@@ -88,23 +88,27 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '55' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '56' }, fontSize: 16 } },
-        { text: "   • ", options: {} },
-        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '57' }, fontSize: 16 } },
-        { text: "   • ", options: {} },
-        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '58' }, fontSize: 16 } },
-        { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
         { text: "   • ", options: {} },
         { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '24' }, fontSize: 16 } },
         { text: "   • ", options: {} },
         { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '26' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '36' }, fontSize: 16 } },
+        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '27' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Grid Search", options: { hyperlink: { slide: '47' }, fontSize: 16 } },
+        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '37' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '48' }, fontSize: 16 } },
+        { text: "Simulasi Grid Search", options: { hyperlink: { slide: '48' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
+        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '49' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '56' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '57' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '58' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '59' }, fontSize: 16 } },
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 16, color: "333333", valign: "top" });
     
     slideTOC2.addText("⬅ Kembali ke TOC 1", { x: 8.0, y: 5.3, w: 1.5, fontSize: 10, color: "7f8c8d", hyperlink: { slide: '2' }, align: "right" });
@@ -641,6 +645,28 @@ async function createPresentation() {
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slide18.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 18.1: Justifikasi Parameter Gamma (Giudici, 2020) ---
+    let slideGammaJust = pres.addSlide();
+    slideGammaJust.addText("Lampiran: Justifikasi Parameter Gamma (\u03b3)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideGammaJust.addText([
+        { text: "Berdasarkan Teori Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Parameter \u03b3 berfungsi sebagai pengukur aversi tingkat risiko sistemik investor.", options: { breakLine: true } },
+        
+        { text: "1. Batas Bawah (\u03b3 = 0):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Model kembali ke Markowitz Tradisional. Investor sepenuhnya mengabaikan posisi aset dalam jaringan.", options: { breakLine: true } },
+        
+        { text: "2. Batas Atas (\u03b3 = 1):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Investor memberikan bobot yang SETARA antara risiko individual (volatilitas) dan risiko sistemik (sentralitas).", options: { breakLine: true } },
+        
+        { text: "Signifikansi Nilai 1:", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   \u2713 Batas \"Aversi Risiko Tinggi\" yang masuk akal secara konseptual.", options: { breakLine: true } },
+        { text: "   \u2713 Risiko penularan (contagion) dianggap sama pentingnya dengan fluktuasi harga aset.", options: { breakLine: true } },
+        
+        { text: "Optimalitas:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Menjaga model agar tidak hanya mengejar return, tapi juga memastikan portofolio tidak hancur saat hub utama pasar kolaps.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideGammaJust.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 19: Lampiran - Classical Markowitz (Bagian 1) ---
     let slide19 = pres.addSlide();
