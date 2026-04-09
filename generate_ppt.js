@@ -68,6 +68,9 @@ async function createPresentation() {
 
         { text: "IV. LAMPIRAN TEKNIS (APPENDIX)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
+        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '30' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
