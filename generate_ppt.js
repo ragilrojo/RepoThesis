@@ -1406,23 +1406,25 @@ async function createPresentation() {
     let slideRachevSim = pres.addSlide();
     slideRachevSim.addText("Lampiran: Simulasi Kalkulasi Rachev Ratio", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideRachevSim.addText([
-        { text: "Bagaimana mengukur rasio 'hadiah ekstrem' vs 'risiko ekstrem'?", options: { bold: true, breakLine: true } },
         { text: "1. Konsep Dasar:", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Rachev Ratio mengukur keunggulan potensi keuntungan di ekor kanan (Right Tail) dibandingkan potensi kerugian di ekor kiri (Left Tail). Sangat relevan untuk aset kripto yang tidak berdistribusi normal.", options: { breakLine: true } },
+        { text: "   Rachev Ratio mengukur rasio potensi 'hadiah ekstrem' (Top 5% average) terhadap 'risiko ekstrem' (Bottom 5% average loss).", options: { breakLine: true } },
         
-        { text: "2. Rumus Sederhana:", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   RR = Avg. Profit (Top 5%) / Avg. Loss (Bottom 5%)", options: { fontFace: "Courier New", color: "c0392b", bold: true, breakLine: true } },
+        { text: "2. Skenario A: Normal/Bullish (Menguntungkan):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   • Avg. Profit (Top 5%): +12% | Avg. Loss (Bottom 5%): -8%", options: { breakLine: true } },
+        { text: "   • Kalkulasi: 12% / 8% = ", options: { } },
+        { text: "1.50", options: { bold: true, color: "27ae60", breakLine: true } },
         
-        { text: "3. Simulasi Angka (Dummy):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   • Rata-rata Profit di Skenario Terbaik (Best 5%): +12%", options: { breakLine: true } },
-        { text: "   • Rata-rata Loss di Skenario Terburuk (Worst 5%): -8%", options: { breakLine: true } },
-        
-        { text: "4. Kalkulasi:", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   RR = 12% / 8% = ", options: { fontFace: "Courier New" } },
-        { text: "1.50", options: { bold: true, color: "27ae60", fontFace: "Courier New" } },
+        { text: "3. Skenario B: Extreme Bear Market (Keduanya Rugi):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   • Jika kondisi pasar hancur total, bahkan return terbaik pun bisa negatif.", options: { fontSize: 12, italic: true, breakLine: true } },
+        { text: "   • Avg. Return (Top 5%): ", options: { } },
+        { text: "-2% (Rugi)", options: { bold: true } },
+        { text: " | Avg. Loss (Bottom 5%): ", options: { } },
+        { text: "-12% (Rugi)", options: { bold: true, breakLine: true } },
+        { text: "   • Kalkulasi: -2% / 12% = ", options: { } },
+        { text: "-0.16", options: { bold: true, color: "c0392b", breakLine: true } },
 
         { text: "Interpretasi:", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "Nilai 1.50 berarti potensi imbal hasil ekstrem 1.5x lebih besar daripada risiko kerugian ekstrem. Angka > 1 menunjukkan portofolio memiliki resiliensi tinggi terhadap 'Black Swan events'.", options: { italic: true } }
+        { text: "Nilai negatif (Skenario B) menunjukkan strategi gagal total memberikan profit. Sebaliknya, nilai > 1 (Skenario A) menunjukkan portofolio memiliki potensi pemulihan yang jauh lebih besar daripada risiko kejatuhannya.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideRachevSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
