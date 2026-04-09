@@ -111,6 +111,7 @@ async function createPresentation() {
         { text: "Random Matrix Theory", options: { italic: true, bold: true } },
         { text: " (RMT) untuk rekonstruksi stabilitas." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 3, fontSize: 20, color: "333333", valign: "top" });
+    slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 3: Konsep "Noise" dalam Cryptocurrency ---
     let slide3 = pres.addSlide();
@@ -142,6 +143,7 @@ async function createPresentation() {
         { text: "fluktuasi semu", options: { bold: true } },
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 18, color: "333333", valign: "top" });
+    slide3.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4: Landasan Teori (Dua Kolom) ---
     let slide4 = pres.addSlide();
@@ -174,6 +176,7 @@ async function createPresentation() {
         { text: "Centrality", options: { bold: true, underline: true } },
         { text: ": Metrik risiko penularan sistemik.", options: { breakLine: true } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
+    slide4.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.1: Penelitian Terdahulu ---
     let slidePrev = pres.addSlide();
@@ -202,11 +205,13 @@ async function createPresentation() {
         { text: "prediksi stabil", options: { bold: true } },
         { text: " di fase terbaru.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 16, color: "333333", valign: "top" });
+    slidePrev.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5: Kerangka Penelitian ---
     let slideFramework = pres.addSlide();
     slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideFramework.addImage({ path: "framwrok.jpg", x: 1.0, y: 1.1, w: 8.0, h: 4.0 });
+    slideFramework.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.6: Dataset - 10 Aset Kripto Utama ---
     let slideData = pres.addSlide();
@@ -237,6 +242,7 @@ async function createPresentation() {
         fontSize: 16,
         color: "333333"
     });
+    slideData.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5: Strategi yang Dibandingkan ---
     let slide5 = pres.addSlide();
@@ -264,6 +270,7 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "NW Adaptif (Grid Search)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
+    slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5.1: Equally Weighted (EW) ---
     let slideEW = pres.addSlide();
@@ -285,6 +292,7 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '30' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
+    slideEW.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5.2: Classical Markowitz (CM) ---
     let slideCM = pres.addSlide();
@@ -306,6 +314,7 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '31' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
+    slideCM.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
     let slideGM = pres.addSlide();
@@ -325,6 +334,7 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '32' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
+    slideGM.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5.4: Network Markowitz (NW) Statis ---
     let slideNWStatic = pres.addSlide();
@@ -346,6 +356,7 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
+    slideNWStatic.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptif (Dua Kolom) ---
     let slideNWAdaptive = pres.addSlide();
@@ -369,6 +380,7 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
+    slideNWAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
@@ -387,6 +399,7 @@ async function createPresentation() {
         { text: "Ancaman Loss", options: { bold: true } },
         { text: ". Menilai asimetri ekor.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
+    slide6.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 7: Terima Kasih ---
     let slide7 = pres.addSlide();
@@ -513,6 +526,7 @@ async function createPresentation() {
         { text: "1 (searah)", options: { bold: true } },
         { text: ". Diagonal selalu 1.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide13.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 14: Lampiran - Apakah Nilai Eigen Statis? ---
     let slide14 = pres.addSlide();
@@ -533,6 +547,7 @@ async function createPresentation() {
         { text: "real-time", options: { bold: true, italic: true } },
         { text: " merespons perubahan rezim pasar dengan cepat.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide14.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 15: Lampiran - Batas Noise Marchenko-Pastur ---
     let slide15 = pres.addSlide();
@@ -555,6 +570,7 @@ async function createPresentation() {
         { text: "Dipertahankan (Sinyal)", options: { bold: true } },
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide15.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 16: Lampiran - Analogi Minimum Spanning Tree (Bagian 1) ---
     let slide16 = pres.addSlide();
@@ -571,6 +587,7 @@ async function createPresentation() {
         { text: "jalan memutar", options: { bold: true } },
         { text: " (tanpa loop/redundansi).", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide16.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 17: Lampiran - Analogi Minimum Spanning Tree (Bagian 2) ---
     let slide17 = pres.addSlide();
@@ -588,6 +605,7 @@ async function createPresentation() {
         { text: "hukuman penalti", options: { bold: true } },
         { text: " agar portofolio tetap kokoh saat koin tersebut crash." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide17.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 18: Lampiran - Penalti (Gamma) Optimal ---
     let slide18 = pres.addSlide();
@@ -610,6 +628,7 @@ async function createPresentation() {
         { text: "data terbaru", options: { bold: true } },
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide18.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 19: Lampiran - Classical Markowitz (Bagian 1) ---
     let slide19 = pres.addSlide();
@@ -627,6 +646,7 @@ async function createPresentation() {
         { text: "matriks kovarians historis", options: { bold: true } },
         { text: " sebagai pedoman utama memprediksi masa depan.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide19.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 20: Lampiran - Classical Markowitz (Bagian 2) ---
     let slide20 = pres.addSlide();
@@ -695,6 +715,7 @@ async function createPresentation() {
         { text: " karena tidak menghitung korelasi.", options: { breakLine: true } },
         { text: "   • Benchmark yang sangat tangguh; model kompleks harus bisa mengalahkan EW untuk dianggap valid.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideEWExample.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
     // --- Slide 21: Lampiran - Simulasi Sederhana Classical Markowitz (2 Aset) ---
@@ -794,6 +815,7 @@ async function createPresentation() {
         { text: "Hasil Akhir:", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Modal dialihkan ke ETH/ADA yang lebih 'pinggiran' (peripheral). Portofolio tidak hancur total jika 'Hub' (BTC) mengalami crash ekstrem.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideNWExample.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.6: Lampiran - Detail Kalkulasi Penentuan Bobot NW ---
     let slideNWDetail = pres.addSlide();
