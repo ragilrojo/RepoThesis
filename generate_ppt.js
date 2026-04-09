@@ -261,20 +261,20 @@ async function createPresentation() {
     ];
 
     slideData.addTable(tableRows, {
-        x: 0.5, y: 1.1, w: 9.0,
+        x: 0.5, y: 0.9, w: 9.0,
         colWidths: [1.2, 2.5, 5.3],
         border: { type: "solid", color: "cccccc", pt: 1 },
-        fontSize: 16,
+        fontSize: 14,
         color: "333333"
     });
 
     // Statistik Dataset (Giudici et al. 2020 baseline)
     slideData.addText([
-        { text: "Periode: ", options: { bold: true, color: "003366" } },
+        { text: "Statistik Dataset: ", options: { bold: true, color: "003366" } },
         { text: "14 Sept 2017 - 17 Okt 2019 ", options: {} },
         { text: "| Total: ", options: { bold: true, color: "003366" } },
         { text: "764 observasi harian", options: {} }
-    ], { x: 0.5, y: 5.1, w: "80%", fontSize: 13, color: "333333" });
+    ], { x: 0.5, y: 5.1, w: "80%", fontSize: 12, color: "333333" });
 
     slideData.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
