@@ -93,6 +93,9 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Simulasi Grid Search", options: { hyperlink: { slide: '47' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '48' }, fontSize: 16 } },
         { text: "", options: { breakLine: true, breakLine: true } },
         
         { text: "V. PENUTUP", options: { bold: true, color: "003366", breakLine: true } },
@@ -1170,6 +1173,30 @@ async function createPresentation() {
         { text: "Minggu depan, proses ini diulang kembali. Jika pasar berubah kacau, mungkin γ=1.0 yang akan menang. Inilah cara model menyesuaikan diri tanpa campur tangan manusia.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideGridSearchEx.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 23.19: Lampiran - Justifikasi Pemilihan Rolling Window ---
+    let slideWindowJust = pres.addSlide();
+    slideWindowJust.addText("Lampiran: Justifikasi Pemilihan Rolling Window", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideWindowJust.addText([
+        { text: "Kenapa rentang 30 s/d 60 hari dipilih sebagai 'Sweet Spot'?", options: { bold: true, breakLine: true } },
+        
+        { text: "1. Alasan Teknis (Kenapa Tidak < 30 Hari?):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   • Ill-Conditioned Matrix: Data terlalu sedikit (T ≈ N) membuat kalkulasi bobot tidak stabil dan acak.", options: { breakLine: true } },
+        { text: "   • RMT Failure: Batas noise menjadi sangat lebar, filter RMT akan menghapus hampir semua sinyal pasar.", options: { breakLine: true } },
+        { text: "   • High Turnover: Bobot berubah terlalu liar, keuntungan habis dimakan biaya transaksi (fees).", options: { breakLine: true } },
+        
+        { text: "2. Alasan Strategis (Kenapa Tidak > 120 Hari?):", options: { bold: true, breakLine: true, color: "f39c12" } },
+        { text: "   • Information Lag: Model terlambat mendeteksi crash atau perubahan rezim karena terbebani data setahun lalu.", options: { breakLine: true } },
+        { text: "   • Regime Blurring: Mencampur data Bull & Bear Market dalam satu hitungan mengaburkan risiko asli saat ini.", options: { breakLine: true } },
+        
+        { text: "3. Solusi 30-60 Hari (Optimal):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   • Responsif: Cepat menangkap narasi pasar baru (misal: siklus Altcoin).", options: { breakLine: true } },
+        { text: "   • Stabil: Cukup data untuk menghasilkan peta jaringan MST yang jujur dan korelasi yang valid.", options: { breakLine: true } },
+
+        { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "Window 30-60 hari adalah keseimbangan antara akurasi statistik dan kecepatan respons pasar.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideWindowJust.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     slideCalcCentrality.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
