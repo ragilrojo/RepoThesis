@@ -78,13 +78,13 @@ async function createPresentation() {
     slideTOC2.addText([
         { text: "IV. LAMPIRAN TEKNIS (APPENDIX)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '30' }, fontSize: 16 } },
+        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '31' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '31' }, fontSize: 16 } },
+        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '32' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '32' }, fontSize: 16 } },
+        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '33' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '34' }, fontSize: 16 } },
+        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '35' }, fontSize: 16 } },
         { text: "   • ", options: {} },
         { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '55' }, fontSize: 16 } },
         { text: "   • ", options: {} },
@@ -306,7 +306,7 @@ async function createPresentation() {
         { text: "estimation risk", options: { bold: true } },
         { text: " karena minim statistik.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '30' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '31' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideEW.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -328,7 +328,7 @@ async function createPresentation() {
         { text: "teori tradisional", options: { bold: true } },
         { text: " dalam penelitian ini.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '31' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '32' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideCM.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -348,7 +348,7 @@ async function createPresentation() {
         { text: "palsu", options: { bold: true } },
         { text: " (spurious correlations).", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '32' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '33' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideGM.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -370,7 +370,7 @@ async function createPresentation() {
         { text: "pembanding langsung", options: { bold: true } },
         { text: " untuk menguji efisiensi parameter adaptif.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideNWStatic.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -394,7 +394,7 @@ async function createPresentation() {
         { text: "❑ Kecepatan: Menghemat waktu komputasi hingga >70%.", options: { breakLine: true } },
         { text: "❑ Tujuan: Adaptasi presisi terhadap rezim pasar kripto yang volatil.", options: { breakLine: true, color: "e67e22" } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
+        { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideNWAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
