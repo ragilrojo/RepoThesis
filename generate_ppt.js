@@ -267,6 +267,15 @@ async function createPresentation() {
         fontSize: 16,
         color: "333333"
     });
+
+    // Statistik Dataset (Giudici et al. 2020 baseline)
+    slideData.addText([
+        { text: "Periode: ", options: { bold: true, color: "003366" } },
+        { text: "14 Sept 2017 - 17 Okt 2019 ", options: {} },
+        { text: "| Total: ", options: { bold: true, color: "003366" } },
+        { text: "764 observasi harian", options: {} }
+    ], { x: 0.5, y: 5.1, w: "80%", fontSize: 13, color: "333333" });
+
     slideData.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 5: Strategi yang Dibandingkan ---
