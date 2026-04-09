@@ -90,6 +90,9 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '36' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Grid Search", options: { hyperlink: { slide: '47' }, fontSize: 16 } },
         { text: "", options: { breakLine: true, breakLine: true } },
         
         { text: "V. PENUTUP", options: { bold: true, color: "003366", breakLine: true } },
