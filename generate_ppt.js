@@ -28,6 +28,23 @@ async function createPresentation() {
         x: 0.5, y: 4.5, w: "90%", fontSize: 18, align: "center", color: "7f8c8d" 
     });
 
+    // --- Slide 2: Daftar Isi (Table of Contents) ---
+    let slideTOC = pres.addSlide();
+    slideTOC.addText("Daftar Isi", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideTOC.addText([
+        { text: "1. Pendahuluan & Latar Belakang", options: { hyperlink: { slide: '3' }, color: "0563C1", underline: true, breakLine: true } },
+        { text: "   • Motivasi, Noise, & Landasan Teori", options: { fontSize: 16, color: "7f8c8d", breakLine: true, breakLine: true } },
+        
+        { text: "2. Strategi Portofolio yang Disimulasikan", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true, breakLine: true } },
+        { text: "   • EW, CM, GM, & Network Markowitz", options: { fontSize: 16, color: "7f8c8d", breakLine: true, breakLine: true } },
+        
+        { text: "3. Metodologi & Evaluasi Performa", options: { hyperlink: { slide: '15' }, color: "0563C1", underline: true, breakLine: true } },
+        { text: "   • Sharpe, VaR, & Rachev Ratio", options: { fontSize: 16, color: "7f8c8d", breakLine: true, breakLine: true } },
+        
+        { text: "4. Lampiran Teknis & Simulasi (Appendix)", options: { hyperlink: { slide: '17' }, color: "0563C1", underline: true, breakLine: true } },
+        { text: "   • Detail RMT, MST, & Penalty Centrality", options: { fontSize: 16, color: "7f8c8d" } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
+
     // --- Slide 2: Latar Belakang ---
     let slide2 = pres.addSlide();
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
@@ -61,7 +78,7 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } }, // Spasi antar poin
 
         { text: "Solusi Random Matrix Theory (", options: { bold: true } },
-        { text: "RMT", options: { bold: true, hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
+        { text: "RMT", options: { bold: true, hyperlink: { slide: '17' }, color: "0563C1", underline: true } },
         { text: "):", options: { bold: true, breakLine: true } },
         { text: "Berfungsi sebagai ", options: { } },
         { text: "filter", options: { bold: true } },
@@ -175,25 +192,25 @@ async function createPresentation() {
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
+        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '10' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '10' }, color: "0563C1", underline: true } },
+        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '11' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '11' }, color: "0563C1", underline: true } },
+        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '12' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '12' }, color: "0563C1", underline: true } },
+        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "4. Kelompok Network (Adaptif):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Adaptif (Grid Search)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } }
+        { text: "NW Adaptif (Grid Search)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
 
     // --- Slide 5.1: Equally Weighted (EW) ---
@@ -214,7 +231,7 @@ async function createPresentation() {
         { text: "estimation risk", options: { bold: true } },
         { text: " karena minim statistik.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '29' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '30' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.2: Classical Markowitz (CM) ---
@@ -235,7 +252,7 @@ async function createPresentation() {
         { text: "teori tradisional", options: { bold: true } },
         { text: " dalam penelitian ini.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '30' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '31' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
@@ -254,7 +271,7 @@ async function createPresentation() {
         { text: "palsu", options: { bold: true } },
         { text: " (spurious correlations).", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '31' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '32' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.4: Network Markowitz (NW) Statis ---
@@ -275,7 +292,7 @@ async function createPresentation() {
         { text: "pembanding langsung", options: { bold: true } },
         { text: " untuk menguji efisiensi parameter adaptif.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '33' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptif (Dua Kolom) ---
@@ -298,7 +315,7 @@ async function createPresentation() {
         { text: "❑ Fallback: Menggunakan strategi EW (Equally Weighted).", options: { breakLine: true } },
         { text: "❑ Tujuan: Adaptasi rezim pasar.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '33' } } }
+        { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
@@ -327,7 +344,7 @@ async function createPresentation() {
     let slide9 = pres.addSlide();
     slide9.addText([
         { text: "Lampiran: Analogi " },
-        { text: "RMT (Random Matrix Theory)", options: { hyperlink: { slide: '9' } } },
+        { text: "RMT (Random Matrix Theory)", options: { hyperlink: { slide: '17' } } },
         { text: " sebagai \"Noise-Canceling\"" }
     ], { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide9.addText([
