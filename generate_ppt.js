@@ -379,20 +379,20 @@ async function createPresentation() {
     slideNWAdaptive.addText("4. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     // Kolom Kiri: Mekanisme
     slideNWAdaptive.addText([
-        { text: "Mekanisme Optimasi Dinamis:", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "❑ Rolling Window: 30, 60, 90, 120 hari.", options: { breakLine: true } },
-        { text: "❑ Rebalancing: Setiap 7 hari.", options: { breakLine: true } },
-        { text: "❑ Transaction Cost: 0.1% (10 basis points).", options: { breakLine: true } },
-        { text: "❑ Grid Search γ: Rentang [0.0 - 2.0].", options: { breakLine: true } }
+        { text: "Optimasi Bayesian Simultan:", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "❑ Tuning cerdas pasangan (W, γ) secara bersamaan (bukan brute-force).", options: { breakLine: true } },
+        { text: "❑ Parameter 1: Window (W) [20 - 120 hari].", options: { breakLine: true } },
+        { text: "❑ Parameter 2: Gamma (γ) [0.0 - 2.0].", options: { breakLine: true } },
+        { text: "❑ Jauh lebih cepat & efisien dibanding Grid Search tradisional.", options: { breakLine: true, fontSize: 18 } }
     ], { x: 0.5, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // Kolom Kanan: Validasi
     slideNWAdaptive.addText([
-        { text: "Split Validasi Internal (80/20):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "❑ Training: Estimasi bobot gamma.", options: { breakLine: true } },
-        { text: "❑ Validation: Seleksi performa optimal.", options: { breakLine: true } },
-        { text: "❑ Fallback: Menggunakan strategi EW (Equally Weighted).", options: { breakLine: true } },
-        { text: "❑ Tujuan: Adaptasi rezim pasar.", options: { breakLine: true } },
+        { text: "Efisiensi & Interaksi Parameter:", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "❑ Akurasi: Menemukan 'sweet spot' hubungan antara panjang window vs tingkat penalti.", options: { breakLine: true } },
+        { text: "❑ Fleksibilitas: Menangani data campuran (Integer Window & Float Gamma).", options: { breakLine: true } },
+        { text: "❑ Kecepatan: Menghemat waktu komputasi hingga >70%.", options: { breakLine: true } },
+        { text: "❑ Tujuan: Adaptasi presisi terhadap rezim pasar kripto yang volatil.", options: { breakLine: true, color: "e67e22" } },
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
