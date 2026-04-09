@@ -944,6 +944,26 @@ async function createPresentation() {
         { text: "Meskipun ada 100 kotak di matriks, komputer hanya perlu menghitung 45 angka unik karena korelasi bersifat cermin (A-B sama dengan B-A) dan tengahnya selalu 1 (A-A).", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.15: Lampiran - Alur Transformasi Matriks ---
+    let slidePipeline = pres.addSlide();
+    slidePipeline.addText("Lampiran: Alur Transformasi Matriks", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slidePipeline.addText([
+        { text: "Proses ini memastikan data statistik mentah bisa divisualisasikan menjadi peta risiko.", options: { bold: true, breakLine: true } },
+        
+        { text: "Langkah 1: Matriks Korelasi (Pearson)", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Berisi angka -1 s/d 1. Menunjukkan 'Kemiripan' gerak aset.", options: { breakLine: true } },
+        
+        { text: "Langkah 2: Matriks Jarak (Metric Distance)", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Angka korelasi diubah menjadi angka 0 s/d 2 (Jarak). Semakin mirip aset, semakin 'nempel' (jarak mendekati 0).", options: { breakLine: true } },
+        
+        { text: "Langkah 3: Bangun Jaringan (MST Algorithm)", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Komputer membaca Matriks Jarak sebagai peta jalan tol, lalu memilih rute terpendek untuk menghubungkan seluruh aset.", options: { breakLine: true } },
+        
+        { text: "Hasil Akhir:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Jaringan (Network) yang siap digunakan untuk menghitung skor penalti penularan risiko sistemik.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+
 
 
 
