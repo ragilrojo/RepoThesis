@@ -433,6 +433,7 @@ async function createPresentation() {
         { text: "bersih dan terpercaya", options: { bold: true } },
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
+    slide9.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 10: Lampiran - Signal vs Noise ---
     let slide10 = pres.addSlide();
@@ -459,6 +460,7 @@ async function createPresentation() {
         { text: "matriks korelasi bersih", options: { bold: true } },
         { text: "." }
     ], { x: 0.5, y: 1.1, w: "90%", h: 4.5, fontSize: 18, color: "333333", valign: "top" });
+    slide10.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 11: Lampiran - Menghitung Nilai Eigen ---
     let slide11 = pres.addSlide();
@@ -481,6 +483,7 @@ async function createPresentation() {
         { text: "penggerak pasar", options: { bold: true } },
         { text: " utama (Market Factor).", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide11.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 12: Lampiran - Contoh Praktek (Dummy Data) ---
     let slide12 = pres.addSlide();
@@ -506,6 +509,7 @@ async function createPresentation() {
         { text: "Noise", options: { bold: true } },
         { text: " lalu dinolkan, sementara λ₁ dijaga sebagai sinyal sejati.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide12.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 13: Lampiran - Bagaimana Menghitung Korelasi? ---
     let slide13 = pres.addSlide();
@@ -664,6 +668,7 @@ async function createPresentation() {
         { text: "efek contagion", options: { bold: true } },
         { text: " menggunakan MST (Minimum Spanning Tree).", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide20.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 20.9: Lampiran - Detail Perhitungan Korelasi (Pearson) ---
     let slide20b = pres.addSlide();
@@ -690,6 +695,7 @@ async function createPresentation() {
         { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "c0392b" } },
         { text: "Angka ini menunjukkan arah pergerakan yang searah (positif) namun tidak identik, yang kemudian digunakan sebagai input matriks kovarians.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide20b.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 20.8: Lampiran - Contoh Sederhana Equally Weighted (EW) ---
     let slideEWExample = pres.addSlide();
@@ -747,6 +753,7 @@ async function createPresentation() {
         { text: "Kesimpulan Klasik:", options: { bold: true, breakLine: true, color: "c0392b" } },
         { text: "Markowitz akan memilih aset dengan volatilitas lebih rendah (BTC) secara dominan. Namun, jika angka σ₁ dan σ₂ ini mengandung \"noise\", maka alokasi ini menjadi tidak optimal (Over-concentration).", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide21.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 22: Lampiran - Contoh GLasso (1/2: Pembersihan Korelasi) ---
     let slide22 = pres.addSlide();
@@ -768,6 +775,7 @@ async function createPresentation() {
         { text: "   ETH  [ 0.65   1.00   0.00 ]", options: { fontFace: "Courier New", color: "27ae60", breakLine: true } },
         { text: "   DOGE [ 0.00   0.00   1.00 ]", options: { fontFace: "Courier New", color: "27ae60", breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slide22.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23: Lampiran - Contoh GLasso (2/2: Dampak Bobot) ---
     let slide23 = pres.addSlide();
@@ -788,6 +796,7 @@ async function createPresentation() {
         { text: "Kesimpulan & Manfaat:", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Pembersihan noise melalui GLasso memastikan modal tidak dialokasikan ke aset yang hanya terlihat menguntungkan secara statistik sesaat (spurious divergence), melainkan tetap pada struktur pasar yang kokoh.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide23.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.5: Lampiran - Contoh Sederhana Network Markowitz (NW) ---
     let slideNWExample = pres.addSlide();
@@ -842,6 +851,7 @@ async function createPresentation() {
         { text: "Inti Logika NW:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Aset A dihukum bukan karena harganya tidak stabil, tapi karena ia adalah 'pusat kemacetan' risiko. Model secara matematis memindahkan modal ke Aset B untuk proteksi sistemik.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideNWDetail.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.7: Lampiran - Rumus & Penjabaran Bobot (60% vs 40%) ---
     let slideNWMath = pres.addSlide();
@@ -873,6 +883,7 @@ async function createPresentation() {
         { text: "Kesimpulan Matematis:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Model ini secara adil memberikan porsi lebih besar pada aset yang memiliki skor gabungan 'Risiko + Penalti' yang paling kecil.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideNWMath.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.8: Lampiran - NW vs CM: Apakah Tetap Memakai Korelasi? ---
     let slideNWCorr = pres.addSlide();
@@ -900,6 +911,7 @@ async function createPresentation() {
         { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "2c3e50" } },
         { text: "NW tidak membuang korelasi; ia 'mengolah' korelasi menjadi peta jaringan untuk mendeteksi risiko sistemik yang tidak terlihat oleh CM biasa.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideNWCorr.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.9: Lampiran - Contoh Detail Filter RMT (Pembersihan Noise) ---
     let slideRMTExample = pres.addSlide();
@@ -932,6 +944,7 @@ async function createPresentation() {
         { text: "Kesimpulan Akhir:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Dengan RMT, model hanya akan membangun portofolio berdasarkan 'Gema Fundamental' aset, bukan berdasarkan 'Kebetulan Statistik' yang sering menjebak investor di pasar kripto.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideRMTExample.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.10: Lampiran - Cara Menghitung Batas Noise (λ_max) ---
     let slideLambdaMax = pres.addSlide();
@@ -957,6 +970,7 @@ async function createPresentation() {
         { text: "Penerapan:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Setiap Nilai Eigen dari matriks korelasi yang nilainya di bawah 1.21 akan dianggap sebagai noise dan dibersihkan dari model.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideLambdaMax.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.11: Lampiran - Contoh Membangun MST (Network Mapping) ---
     let slideMSTBuild = pres.addSlide();
@@ -981,6 +995,7 @@ async function createPresentation() {
         { text: "Ciri Khas MST:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Hanya menyisakan (N-1) koneksi terkuat dan dilarang membentuk loop. Di sini terlihat BTC menjadi 'Hub' karena ia yang menghubungkan banyak koin.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideMSTBuild.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.12: Lampiran - Rumus Konversi Korelasi ke Jarak ---
     let slideDistFormula = pres.addSlide();
@@ -1007,6 +1022,7 @@ async function createPresentation() {
         { text: "2. Hubungan berlawanan → Jarak Jauh (Aset saling menjauh).", options: { bullet: true } },
         { text: "MST hanya mengambil jalur-jalur dengan Jarak (d) paling kecil agar efisien.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideDistFormula.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.13: Lampiran - Apakah Jaringan Selalu Berbentuk Star? ---
     let slideTopology = pres.addSlide();
@@ -1027,6 +1043,7 @@ async function createPresentation() {
         { text: "Dinamika dalam NW:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Kekuatan Network Markowitz adalah kemampuannya mendeteksi transisi bentuk ini secara real-time melalui data historis.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideTopology.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.14: Lampiran - Berapa Banyak Perhitungan Korelasi? ---
     let slideCorrCount = pres.addSlide();
@@ -1050,6 +1067,7 @@ async function createPresentation() {
         { text: "Fakta Matriks 10x10:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Meskipun ada 100 kotak di matriks, komputer hanya perlu menghitung 45 angka unik karena korelasi bersifat cermin (A-B sama dengan B-A) dan tengahnya selalu 1 (A-A).", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideCorrCount.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.15: Lampiran - Alur Transformasi Matriks ---
     let slidePipeline = pres.addSlide();
@@ -1069,6 +1087,7 @@ async function createPresentation() {
         { text: "Hasil Akhir:", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Jaringan (Network) yang siap digunakan untuk menghitung skor penalti penularan risiko sistemik.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slidePipeline.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.16: Lampiran - Mekanisme Penalty Centrality ---
     let slidePenalty = pres.addSlide();
@@ -1093,6 +1112,7 @@ async function createPresentation() {
         { text: "Tujuan Penalti:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Agar portofolio tidak menaruh terlalu banyak modal pada koin yang bisa memicu 'Efek Domino'. Jika BTC rontok, penalti memastikan kita sudah punya cadangan di koin-koin 'pinggiran' (peripheral) yang lebih mandiri.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slidePenalty.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.17: Lampiran - Cara Menghitung Centrality (Degree Centrality) ---
     let slideCalcCentrality = pres.addSlide();
@@ -1120,6 +1140,7 @@ async function createPresentation() {
         { text: "Dampak Penalti NW:", options: { bold: true, breakLine: true, color: "8e44ad" } },
         { text: "Karena BTC memiliki skor 0.75, ia akan menerima penalti 3x lebih besar daripada ETH (0.25). Ini menjaga portofolio tetap terdiversifikasi dari pusat jaringan.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideCalcCentrality.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
 
@@ -1154,6 +1175,7 @@ async function createPresentation() {
         { text: "Crypto Winter", options: { bold: true } },
         { text: ".", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slide24.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     // --- Slide 25: Lampiran - Penanganan Missing Value ---
     let slideOut1 = pres.addSlide();
     slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
@@ -1175,6 +1197,7 @@ async function createPresentation() {
         { text: "terselamatkan", options: { bold: true } },
         { text: " dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideOut1.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 26: Lampiran - Peran USDT (Bagian 1) ---
     let slideOut2 = pres.addSlide();
@@ -1191,6 +1214,7 @@ async function createPresentation() {
         { text: "tunai (USDT)", options: { bold: true } },
         { text: " sebagai evakuasi risiko.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideOut2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 27: Lampiran - Peran USDT (Bagian 2) ---
     let slideOut3 = pres.addSlide();
@@ -1207,6 +1231,7 @@ async function createPresentation() {
         { text: "tangguh", options: { bold: true } },
         { text: " dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideOut3.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 28: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
     let slideOut4 = pres.addSlide();
@@ -1225,6 +1250,7 @@ async function createPresentation() {
         { text: "kalibrasi otomatis", options: { bold: true } },
         { text: " secara temporal.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideOut4.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 29: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
     let slideOut5 = pres.addSlide();
@@ -1244,6 +1270,7 @@ async function createPresentation() {
         { text: "diversifikasi akurat", options: { bold: true } },
         { text: " daripada sekadar variansi harga.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+    slideOut5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
     // --- Simpan File ---
