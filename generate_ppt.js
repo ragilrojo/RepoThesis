@@ -92,6 +92,8 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '57' }, fontSize: 16 } },
         { text: "   • ", options: {} },
+        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '58' }, fontSize: 16 } },
+        { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
         { text: "   • ", options: {} },
         { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '24' }, fontSize: 16 } },
@@ -1399,6 +1401,30 @@ async function createPresentation() {
         { text: "Nilai 1.30 berarti untuk setiap 1% risiko yang diambil, portofolio memberikan imbal hasil tambahan sebesar 1.30%. Semakin tinggi nilai SR, semakin efisien portofolio tersebut.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideSharpeSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 34: Lampiran - Simulasi Kalkulasi Rachev Ratio ---
+    let slideRachevSim = pres.addSlide();
+    slideRachevSim.addText("Lampiran: Simulasi Kalkulasi Rachev Ratio", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideRachevSim.addText([
+        { text: "Bagaimana mengukur rasio 'hadiah ekstrem' vs 'risiko ekstrem'?", options: { bold: true, breakLine: true } },
+        { text: "1. Konsep Dasar:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Rachev Ratio mengukur keunggulan potensi keuntungan di ekor kanan (Right Tail) dibandingkan potensi kerugian di ekor kiri (Left Tail). Sangat relevan untuk aset kripto yang tidak berdistribusi normal.", options: { breakLine: true } },
+        
+        { text: "2. Rumus Sederhana:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   RR = Avg. Profit (Top 5%) / Avg. Loss (Bottom 5%)", options: { fontFace: "Courier New", color: "c0392b", bold: true, breakLine: true } },
+        
+        { text: "3. Simulasi Angka (Dummy):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Rata-rata Profit di Skenario Terbaik (Best 5%): +12%", options: { breakLine: true } },
+        { text: "   • Rata-rata Loss di Skenario Terburuk (Worst 5%): -8%", options: { breakLine: true } },
+        
+        { text: "4. Kalkulasi:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   RR = 12% / 8% = ", options: { fontFace: "Courier New" } },
+        { text: "1.50", options: { bold: true, color: "27ae60", fontFace: "Courier New" } },
+
+        { text: "Interpretasi:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Nilai 1.50 berarti potensi imbal hasil ekstrem 1.5x lebih besar daripada risiko kerugian ekstrem. Angka > 1 menunjukkan portofolio memiliki resiliensi tinggi terhadap 'Black Swan events'.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideRachevSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Akhir Presentasi: Terima Kasih ---
     let slide7 = pres.addSlide();
