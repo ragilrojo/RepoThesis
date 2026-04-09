@@ -98,9 +98,6 @@ async function createPresentation() {
         { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '48' }, fontSize: 16 } },
         { text: "", options: { breakLine: true, breakLine: true } },
         
-        { text: "V. PENUTUP", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "   • ", options: {} },
-        { text: "Sesi Tanya Jawab (Q&A)", options: { hyperlink: { slide: '16' }, fontSize: 16 } }
     ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 2: Latar Belakang ---
