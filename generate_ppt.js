@@ -963,6 +963,31 @@ async function createPresentation() {
         { text: "Jaringan (Network) yang siap digunakan untuk menghitung skor penalti penularan risiko sistemik.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 23.16: Lampiran - Mekanisme Penalty Centrality ---
+    let slidePenalty = pres.addSlide();
+    slidePenalty.addText("Lampiran: Mekanisme Penalty Centrality (Risiko Penularan)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slidePenalty.addText([
+        { text: "Kenapa koin yang 'populer' di jaringan justru diberi hukuman (penalti)?", options: { bold: true, breakLine: true } },
+        
+        { text: "Analogi Bandara Transit (Hub):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Jika Bandara transit utama (misal: Singapura) terkena badai, maka seluruh penerbangan di Asia Tenggara akan ikut kacau. Singapura adalah 'Hub' dengan Centrality tinggi.", options: { breakLine: true } },
+        
+        { text: "Skenario di Kripto (Dominasi BTC):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • BTC terhubung ke semua koin lain dalam MST.", options: { breakLine: true } },
+        { text: "   • Skor Centrality BTC = ", options: { } },
+        { text: "1.00", options: { bold: true, color: "c0392b" } },
+        { text: " (Maksimal).", options: { breakLine: true } },
+        
+        { text: "Cara Model NW Menghitung Risiko:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Risiko Baru = Risiko Harga + (γ × ", options: { } },
+        { text: "1.00", options: { bold: true, color: "c0392b" } },
+        { text: ")", options: { breakLine: true } },
+        
+        { text: "Tujuan Penalti:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Agar portofolio tidak menaruh terlalu banyak modal pada koin yang bisa memicu 'Efek Domino'. Jika BTC rontok, penalti memastikan kita sudah punya cadangan di koin-koin 'pinggiran' (peripheral) yang lebih mandiri.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+
 
 
 
