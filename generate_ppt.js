@@ -389,19 +389,18 @@ async function createPresentation() {
     let slide6 = pres.addSlide();
     slide6.addText("Matriks Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
-        { text: "1. Sharpe Ratio:", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Imbal hasil per unit risiko. Semakin besar menunjukkan kualitas ", options: { } },
-        { text: "efisiensi portofolio", options: { bold: true } },
-        { text: ".", options: { breakLine: true } },
+        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Mengukur total keuntungan/kerugian akumulatif. Digunakan untuk membandingkan pertumbuhan modal strategi vs benchmark CRIX.", options: { breakLine: true } },
+        
         { text: "2. Value at Risk (VaR):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   Batas ", options: { } },
-        { text: "kerugian maksimal", options: { bold: true } },
-        { text: " kondiri crash. Semakin kecil tandanya perisai sukses.", options: { breakLine: true } },
-        { text: "3. Rachev Ratio:", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "   Membandingkan potensi 'Profit Ekstrem' vs ", options: { } },
-        { text: "Ancaman Loss", options: { bold: true } },
-        { text: ". Menilai asimetri ekor.", options: { breakLine: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 18, color: "333333", valign: "top" });
+        { text: "   Potensi kerugian maksimal (batas bawah) pada tingkat kepercayaan 95%. Membuktikan resiliensi model saat kondisi pasar crash.", options: { breakLine: true } },
+        
+        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Imbal hasil per unit risiko (volatilitas). Semakin tinggi, semakin baik kualitas efisiensi portofolio dalam menghasilkan profit.", options: { breakLine: true } },
+        
+        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "   Rasio potensi keuntungan ekstrem vs kerugian ekstrem. Sangat krusial karena data kripto memiliki 'Fat Tails' (distribusi tidak normal).", options: { breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 17, color: "333333", valign: "top" });
     slide6.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 7: Terima Kasih ---
