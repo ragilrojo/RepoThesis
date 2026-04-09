@@ -83,6 +83,9 @@ async function createPresentation() {
         { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '54' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '55' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '16' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
@@ -1348,6 +1351,32 @@ async function createPresentation() {
         { text: "Memberikan gambaran riil 'kekuatan bertahan' sebuah strategi. Meskipun ada hari-hari rugi (drawdown), akumulasi positif menunjukkan resiliensi portofolio.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slidePnLSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 31: Lampiran - Simulasi Kalkulasi Sharpe Ratio ---
+    let slideSharpeSim = pres.addSlide();
+    slideSharpeSim.addText("Lampiran: Simulasi Kalkulasi Sharpe Ratio", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideSharpeSim.addText([
+        { text: "Bagaimana mengukur kualitas imbal hasil per unit risiko?", options: { bold: true, breakLine: true } },
+        { text: "1. Konsep Dasar:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Sharpe Ratio mengukur kelebihan imbal hasil (Excess Return) dibandingkan aset aman (Risk-Free) per satu satuan risiko (Volatilitas).", options: { breakLine: true } },
+        
+        { text: "2. Rumus Sederhana:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   SR = (Return Portofolio - Risk-Free Rate) / Standar Deviasi", options: { fontFace: "Courier New", color: "c0392b", bold: true, breakLine: true } },
+        
+        { text: "3. Simulasi Angka (Dummy):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Return Portofolio (Rp): 15% (0.15)", options: { breakLine: true } },
+        { text: "   • Suku Bunga Bebas Risiko (Rf): 2% (0.02) ", options: { italic: true } },
+        { text: " (Basis: USDT Lending Rate)", options: { fontSize: 12, breakLine: true } },
+        { text: "   • Volatilitas Portofolio (σ): 10% (0.10)", options: { breakLine: true } },
+        
+        { text: "4. Kalkulasi:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   SR = (0.15 - 0.02) / 0.10 = 0.13 / 0.10 = ", options: { fontFace: "Courier New" } },
+        { text: "1.30", options: { bold: true, color: "27ae60", fontFace: "Courier New" } },
+
+        { text: "Interpretasi:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Nilai 1.30 berarti untuk setiap 1% risiko yang diambil, portofolio memberikan imbal hasil tambahan sebesar 1.30%. Semakin tinggi nilai SR, semakin efisien portofolio tersebut.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideSharpeSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Akhir Presentasi: Terima Kasih ---
     let slide7 = pres.addSlide();
