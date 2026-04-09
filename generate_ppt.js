@@ -30,20 +30,60 @@ async function createPresentation() {
 
     // --- Slide 2: Daftar Isi (Table of Contents) ---
     let slideTOC = pres.addSlide();
-    slideTOC.addText("Daftar Isi", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideTOC.addText("Daftar Isi (Detailed Outline)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    
+    // Kolom Kiri: Pendahuluan & Strategi
     slideTOC.addText([
-        { text: "1. Pendahuluan & Latar Belakang", options: { hyperlink: { slide: '3' }, color: "0563C1", underline: true, breakLine: true } },
-        { text: "   • Motivasi, Noise, & Landasan Teori", options: { fontSize: 16, color: "7f8c8d", breakLine: true, breakLine: true } },
+        { text: "I. PENDAHULUAN", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Latar Belakang & Motivasi", options: { hyperlink: { slide: '3' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Masalah \"Noise\" di Kripto", options: { hyperlink: { slide: '4' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Landasan Teori & Literatur", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true, breakLine: true } },
+
+        { text: "II. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '10' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '11' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '12' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Network Markowitz (Adaptif)", options: { hyperlink: { slide: '14' }, fontSize: 16 } }
+    ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
+
+    // Kolom Kanan: Evaluasi & Lampiran
+    slideTOC.addText([
+        { text: "III. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Matriks Sharpe, VaR, Rachev", options: { hyperlink: { slide: '15' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true, breakLine: true } },
+
+        { text: "IV. LAMPIRAN TEKNIS (APPENDIX)", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '40' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '45' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '36' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true, breakLine: true } },
         
-        { text: "2. Strategi Portofolio yang Disimulasikan", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true, breakLine: true } },
-        { text: "   • EW, CM, GM, & Network Markowitz", options: { fontSize: 16, color: "7f8c8d", breakLine: true, breakLine: true } },
-        
-        { text: "3. Metodologi & Evaluasi Performa", options: { hyperlink: { slide: '15' }, color: "0563C1", underline: true, breakLine: true } },
-        { text: "   • Sharpe, VaR, & Rachev Ratio", options: { fontSize: 16, color: "7f8c8d", breakLine: true, breakLine: true } },
-        
-        { text: "4. Lampiran Teknis & Simulasi (Appendix)", options: { hyperlink: { slide: '17' }, color: "0563C1", underline: true, breakLine: true } },
-        { text: "   • Detail RMT, MST, & Penalty Centrality", options: { fontSize: 16, color: "7f8c8d" } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
+        { text: "V. PENUTUP", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Sesi Tanya Jawab (Q&A)", options: { hyperlink: { slide: '16' }, fontSize: 16 } }
+    ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 2: Latar Belakang ---
     let slide2 = pres.addSlide();
