@@ -1142,6 +1142,33 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideCalcCentrality.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
+    // --- Slide 23.18: Lampiran - Contoh Sederhana Rolling Window Grid Search ---
+    let slideGridSearchEx = pres.addSlide();
+    slideGridSearchEx.addText("Lampiran: Contoh Sederhana Rolling Window Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideGridSearchEx.addText([
+        { text: "Tujuan: Memilih 'Hukuman' (Gamma) terbaik secara otomatis untuk kondisi pasar saat ini.", options: { bold: true, breakLine: true } },
+        
+        { text: "1. Siapkan Kandidat (The Grid):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Komputer mencoba 3 nilai: γ=0.0 (Tanpa Penalti), γ=0.5 (Sedang), γ=1.0 (Keras).", options: { breakLine: true } },
+        
+        { text: "2. Simulasi Masa Lalu (Lookback Window):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Maju ke belakang 30 hari, lalu hitung performa jika kita memakai nilai tersebut:", options: { breakLine: true } },
+        { text: "   • Jika pakai γ=0.0 → Sharpe Ratio: 0.85", options: { breakLine: true } },
+        { text: "   • Jika pakai γ=0.5 → Sharpe Ratio: 1.10 (TERBAIK)", options: { bold: true, color: "27ae60", breakLine: true } },
+        { text: "   • Jika pakai γ=1.0 → Sharpe Ratio: 0.95", options: { breakLine: true } },
+        
+        { text: "3. Penentuan Pemenang (The Best Gamma):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Karena γ=0.5 menghasilkan efisiensi terbaik di 30 hari terakhir, ia terpilih sebagai pemenang.", options: { breakLine: true } },
+        
+        { text: "4. Penerapan (Actual Trade):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Gunakan γ=0.5 untuk menghitung bobot portofolio asli di minggu depan.", options: { breakLine: true } },
+
+        { text: "Kesimpulan Adaptif:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Minggu depan, proses ini diulang kembali. Jika pasar berubah kacau, mungkin γ=1.0 yang akan menang. Inilah cara model menyesuaikan diri tanpa campur tangan manusia.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    slideGridSearchEx.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    slideCalcCentrality.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
 
 
 
