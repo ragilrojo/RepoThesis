@@ -206,7 +206,9 @@ async function createPresentation() {
         { text: " yang tangguh.", options: { breakLine: true } },
         { text: "Tidak memiliki ", options: { bullet: true } },
         { text: "estimation risk", options: { bold: true } },
-        { text: " karena minim statistik.", options: { } }
+        { text: " karena minim statistik.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '29' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.2: Classical Markowitz (CM) ---
@@ -225,7 +227,9 @@ async function createPresentation() {
         { text: " (noisy).", options: { breakLine: true } },
         { text: "Pondasi dasar sebagai ", options: { bullet: true } },
         { text: "teori tradisional", options: { bold: true } },
-        { text: " dalam penelitian ini.", options: { } }
+        { text: " dalam penelitian ini.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '30' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
@@ -242,7 +246,9 @@ async function createPresentation() {
         { text: " (kerekatan) pada jaringan.", options: { breakLine: true } },
         { text: "Menangani tantangan data kripto yang sering terkorelasi secara ", options: { bullet: true } },
         { text: "palsu", options: { bold: true } },
-        { text: " (spurious correlations).", options: { } }
+        { text: " (spurious correlations).", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '31' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.4: Network Markowitz (NW) Statis ---
@@ -261,7 +267,9 @@ async function createPresentation() {
         { text: " (hard-coded).", options: { breakLine: true } },
         { text: "Digunakan sebagai ", options: { bullet: true } },
         { text: "pembanding langsung", options: { bold: true } },
-        { text: " untuk menguji efisiensi parameter adaptif.", options: { } }
+        { text: " untuk menguji efisiensi parameter adaptif.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '33' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptif (Dua Kolom) ---
@@ -282,7 +290,9 @@ async function createPresentation() {
         { text: "❑ Training: Estimasi bobot gamma.", options: { breakLine: true } },
         { text: "❑ Validation: Seleksi performa optimal.", options: { breakLine: true } },
         { text: "❑ Fallback: Menggunakan strategi EW (Equally Weighted).", options: { breakLine: true } },
-        { text: "❑ Tujuan: Adaptasi rezim pasar.", options: { breakLine: true } }
+        { text: "❑ Tujuan: Adaptasi rezim pasar.", options: { breakLine: true } },
+        { text: "", options: { breakLine: true } },
+        { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '33' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
