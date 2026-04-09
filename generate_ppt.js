@@ -875,6 +875,33 @@ async function createPresentation() {
         { text: "Hanya menyisakan (N-1) koneksi terkuat dan dilarang membentuk loop. Di sini terlihat BTC menjadi 'Hub' karena ia yang menghubungkan banyak koin.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.12: Lampiran - Rumus Konversi Korelasi ke Jarak ---
+    let slideDistFormula = pres.addSlide();
+    slideDistFormula.addText("Lampiran: Rumus Konversi Korelasi ke Jarak", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideDistFormula.addText([
+        { text: "Untuk membangun jaringan, korelasi harus diubah menjadi skor jarak (Metric Space).", options: { bold: true, breakLine: true } },
+        { text: "Rumus (Mantegna, 1999): d_ij = √(2(1 - ρ_ij))", options: { bold: true, color: "c0392b", breakLine: true, fontFace: "Courier New" } },
+        
+        { text: "Simulasi Tabel Jarak:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Korelasi 1.00 (Identik) → d = √(2(1-1)) = ", options: { } },
+        { text: "0", options: { bold: true, color: "27ae60", breakLine: true } },
+        
+        { text: "   • Korelasi 0.50 (Kuat) → d = √(2(1-0.5)) = √(1) = ", options: { } },
+        { text: "1.00", options: { bold: true, color: "2c3e50", breakLine: true } },
+        
+        { text: "   • Korelasi 0.00 (Acak) → d = √(2(1-0)) = √(2) ≈ ", options: { } },
+        { text: "1.41", options: { bold: true, color: "c0392b", breakLine: true } },
+        
+        { text: "   • Korelasi -1.00 (Berlawanan) → d = √(2(1-(-1))) = √(4) = ", options: { } },
+        { text: "2.00", options: { bold: true, color: "c0392b", breakLine: true } },
+        
+        { text: "Logika Utama:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "1. Hubungan searah → Jarak Pendek (Aset sering bergerak bersama).", options: { bullet: true } },
+        { text: "2. Hubungan berlawanan → Jarak Jauh (Aset saling menjauh).", options: { bullet: true } },
+        { text: "MST hanya mengambil jalur-jalur dengan Jarak (d) paling kecil agar efisien.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+
 
 
 
