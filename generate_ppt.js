@@ -826,6 +826,32 @@ async function createPresentation() {
         { text: "Dengan RMT, model hanya akan membangun portofolio berdasarkan 'Gema Fundamental' aset, bukan berdasarkan 'Kebetulan Statistik' yang sering menjebak investor di pasar kripto.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.10: Lampiran - Cara Menghitung Batas Noise (λ_max) ---
+    let slideLambdaMax = pres.addSlide();
+    slideLambdaMax.addText("Lampiran: Cara Menghitung Batas Noise (λ_max)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideLambdaMax.addText([
+        { text: "Batas ini ditentukan menggunakan Distribusi Marchenko-Pastur:", options: { bold: true, breakLine: true } },
+        { text: "Rumus: λ_max = σ² × (1 + √(1/Q))²", options: { bold: true, color: "c0392b", breakLine: true, fontFace: "Courier New" } },
+        
+        { text: "Komponen Rasio Q:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Q = T / N", options: { fontFace: "Courier New", breakLine: true } },
+        { text: "   • T = Jumlah hari (Observasi)", options: { breakLine: true } },
+        { text: "   • N = Jumlah koin (Aset)", options: { breakLine: true } },
+        
+        { text: "Contoh Simulasi:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Kita punya data 10 koin (N=10) selama 1000 hari (T=1000).", options: { breakLine: true } },
+        { text: "   1. Hitung Q: 1000 / 10 = ", options: { } },
+        { text: "100", options: { bold: true, breakLine: true } },
+        { text: "   2. Hitung Akar: √(1/100) = ", options: { } },
+        { text: "0.1", options: { bold: true, breakLine: true } },
+        { text: "   3. Hitung λ_max: (1 + 0.1)² = 1.1² = ", options: { } },
+        { text: "1.21", options: { bold: true, color: "27ae60", breakLine: true } },
+
+        { text: "Penerapan:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Setiap Nilai Eigen dari matriks korelasi yang nilainya di bawah 1.21 akan dianggap sebagai noise dan dibersihkan dari model.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
 
 
 
