@@ -683,6 +683,33 @@ async function createPresentation() {
         { text: "Pembersihan noise melalui GLasso memastikan modal tidak dialokasikan ke aset yang hanya terlihat menguntungkan secara statistik sesaat (spurious divergence), melainkan tetap pada struktur pasar yang kokoh.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 23.5: Lampiran - Contoh Sederhana Network Markowitz (NW) ---
+    let slideNWExample = pres.addSlide();
+    slideNWExample.addText("Lampiran: Contoh Sederhana Network Markowitz (NW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideNWExample.addText([
+        { text: "Tujuan: Mengurangi risiko sistemik dengan menghukum koin 'pusat' (hub).", options: { bold: true, breakLine: true } },
+        { text: "1. Skenario Jaringan (MST):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Bayangkan 3 Koin: BTC, ETH, dan ADA.", options: { breakLine: true } },
+        { text: "   • BTC terhubung ke ETH dan ADA (BTC adalah ", options: { } },
+        { text: "Hub utama", options: { bold: true } },
+        { text: ").", options: { breakLine: true } },
+        { text: "   • Centrality (EC): BTC=0.8, ETH=0.4, ADA=0.4.", options: { breakLine: true } },
+        
+        { text: "2. Perbandingan Alokasi:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Classical Markowitz: Melirik BTC karena paling stabil, bobot bisa ", options: { } },
+        { text: "70%", options: { bold: true, color: "c0392b" } },
+        { text: ".", options: { breakLine: true } },
+        { text: "   • Network Markowitz (γ=1.0): Mendeteksi BTC sebagai titik bahaya penularan. Bobot BTC dipangkas menjadi ", options: { } },
+        { text: "45%", options: { bold: true, color: "27ae60" } },
+        { text: ".", options: { breakLine: true } },
+        
+        { text: "3. Mekanisme 'Hukuman' (Penalty):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Risiko Baru = Risiko Harga + (γ × Centrality)", options: { fontFace: "Courier New", color: "8e44ad", bold: true, breakLine: true } },
+
+        { text: "Hasil Akhir:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Modal dialihkan ke ETH/ADA yang lebih 'pinggiran' (peripheral). Portofolio tidak hancur total jika 'Hub' (BTC) mengalami crash ekstrem.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
     // --- Slide 24: Lampiran - Dua Tipe Grid Search ---
     let slide24 = pres.addSlide();
     slide24.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
