@@ -851,6 +851,31 @@ async function createPresentation() {
         { text: "Setiap Nilai Eigen dari matriks korelasi yang nilainya di bawah 1.21 akan dianggap sebagai noise dan dibersihkan dari model.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.11: Lampiran - Contoh Membangun MST (Network Mapping) ---
+    let slideMSTBuild = pres.addSlide();
+    slideMSTBuild.addText("Lampiran: Contoh Membangun MST (Network Mapping)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideMSTBuild.addText([
+        { text: "Bagaimana korelasi berubah menjadi peta jaringan?", options: { bold: true, breakLine: true } },
+        
+        { text: "1. Konversi Korelasi ke Jarak (Metric Distance):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Semakin tinggi korelasi → Semakin dekat jaraknya (riferensi: Mantegna, 1999).", options: { breakLine: true } },
+        { text: "   • BTC - ETH (Korelasi 0.90) → Jarak: ", options: { } },
+        { text: "0.45 (Sangat Dekat)", options: { bold: true, color: "27ae60", breakLine: true } },
+        { text: "   • BTC - LTC (Korelasi 0.85) → Jarak: ", options: { } },
+        { text: "0.55 (Dekat)", options: { bold: true, color: "27ae60", breakLine: true } },
+        { text: "   • ETH - XRP (Korelasi 0.40) → Jarak: ", options: { } },
+        { text: "1.10 (Jauh)", options: { bold: true, color: "c0392b", breakLine: true } },
+        
+        { text: "2. Menghubungkan Titik (Kruskal's Algorithm):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Langkah 1: Hubungkan BTC & ETH (Jalur Terkuat).", options: { breakLine: true } },
+        { text: "   • Langkah 2: Hubungkan BTC & LTC (Jalur Kedua).", options: { breakLine: true } },
+        { text: "   • Langkah 3: Hubungkan ETH & XRP (Jalur Ketiga).", options: { breakLine: true } },
+        
+        { text: "Ciri Khas MST:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Hanya menyisakan (N-1) koneksi terkuat dan dilarang membentuk loop. Di sini terlihat BTC menjadi 'Hub' karena ia yang menghubungkan banyak koin.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
 
 
 
