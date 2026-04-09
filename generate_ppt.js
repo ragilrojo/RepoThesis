@@ -987,6 +987,34 @@ async function createPresentation() {
         { text: "Agar portofolio tidak menaruh terlalu banyak modal pada koin yang bisa memicu 'Efek Domino'. Jika BTC rontok, penalti memastikan kita sudah punya cadangan di koin-koin 'pinggiran' (peripheral) yang lebih mandiri.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 23.17: Lampiran - Cara Menghitung Centrality (Degree Centrality) ---
+    let slideCalcCentrality = pres.addSlide();
+    slideCalcCentrality.addText("Lampiran: Cara Menghitung Centrality (Degree Centrality)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideCalcCentrality.addText([
+        { text: "Metode Degree Centrality mengukur seberapa banyak 'tangan' yang dimiliki sebuah aset untuk memegang aset lain.", options: { bold: true, breakLine: true } },
+        
+        { text: "Rumus: Centrality = Jumlah Koneksi / (N - 1)", options: { bold: true, color: "c0392b", breakLine: true, fontFace: "Courier New" } },
+        
+        { text: "Simulasi untuk 5 Aset (BTC, ETH, XRP, LTC, USDT):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Aset Utama (N) = 5. Pembagi (N-1) = 4.", options: { breakLine: true } },
+        
+        { text: "1. Aset BTC (Terkoneksi ke ETH, XRP, LTC):", options: { breakLine: true } },
+        { text: "   3 Koneksi / 4 = ", options: { } },
+        { text: "0.75 (Centrality Tinggi)", options: { bold: true, color: "c0392b", breakLine: true } },
+        
+        { text: "2. Aset LTC (Terkoneksi ke BTC & USDT):", options: { breakLine: true } },
+        { text: "   2 Koneksi / 4 = ", options: { } },
+        { text: "0.50 (Centrality Sedang)", options: { bold: true, color: "f39c12", breakLine: true } },
+        
+        { text: "3. Aset ETH, XRP, USDT (Hanya 1 Koneksi):", options: { breakLine: true } },
+        { text: "   1 Koneksi / 4 = ", options: { } },
+        { text: "0.25 (Centrality Rendah)", options: { bold: true, color: "27ae60", breakLine: true } },
+        
+        { text: "Dampak Penalti NW:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Karena BTC memiliki skor 0.75, ia akan menerima penalti 3x lebih besar daripada ETH (0.25). Ini menjaga portofolio tetap terdiversifikasi dari pusat jaringan.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
 
 
 
