@@ -736,6 +736,38 @@ async function createPresentation() {
         { text: "Aset A dihukum bukan karena harganya tidak stabil, tapi karena ia adalah 'pusat kemacetan' risiko. Model secara matematis memindahkan modal ke Aset B untuk proteksi sistemik.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 23.7: Lampiran - Rumus & Penjabaran Bobot (60% vs 40%) ---
+    let slideNWMath = pres.addSlide();
+    slideNWMath.addText("Lampiran: Rumus & Penjabaran Bobot (60% vs 40%)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideNWMath.addText([
+        { text: "Menggunakan Metode Alokasi Volatilitas Terbalik (Inverse Volatility):", options: { bold: true, breakLine: true } },
+        { text: "Rumus: Bobot (w) = (1 / Risiko) / Total (1 / Risiko)", options: { italic: true, breakLine: true, color: "003366" } },
+        
+        { text: "1. Perhitungan Skenario Klasik (Tanpa Penalti):", options: { bold: true, breakLine: true, color: "2c3e50" } },
+        { text: "   • Aset A (Risiko 0.20) → 1 / 0.20 = ", options: { } },
+        { text: "5.00", options: { bold: true } },
+        { text: " (Daya Tarik)", options: { breakLine: true } },
+        { text: "   • Aset B (Risiko 0.30) → 1 / 0.30 = ", options: { } },
+        { text: "3.33", options: { bold: true } },
+        { text: " (Daya Tarik)", options: { breakLine: true } },
+        { text: "   • Bobot A = 5.00 / (5.00 + 3.33) = 5.00 / 8.33 ≈ ", options: { } },
+        { text: "60%", options: { bold: true, color: "c0392b", breakLine: true } },
+        
+        { text: "2. Perhitungan Skenario Network (Gamma 0.5):", options: { bold: true, breakLine: true, color: "2c3e50" } },
+        { text: "   • Aset A (Risiko 0.60) → 1 / 0.60 = ", options: { } },
+        { text: "1.67", options: { bold: true } },
+        { text: " (Daya Tarik Turun)", options: { breakLine: true } },
+        { text: "   • Aset B (Risiko 0.40) → 1 / 0.40 = ", options: { } },
+        { text: "2.50", options: { bold: true } },
+        { text: " (Daya Tarik Naik)", options: { breakLine: true } },
+        { text: "   • Bobot A = 1.67 / (1.67 + 2.50) = 1.67 / 4.17 ≈ ", options: { } },
+        { text: "40%", options: { bold: true, color: "27ae60", breakLine: true } },
+
+        { text: "Kesimpulan Matematis:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Model ini secara adil memberikan porsi lebih besar pada aset yang memiliki skor gabungan 'Risiko + Penalti' yang paling kecil.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
 
     // --- Slide 24: Lampiran - Dua Tipe Grid Search ---
     let slide24 = pres.addSlide();
