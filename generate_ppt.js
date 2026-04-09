@@ -586,6 +586,32 @@ async function createPresentation() {
         { text: "Angka ini menunjukkan arah pergerakan yang searah (positif) namun tidak identik, yang kemudian digunakan sebagai input matriks kovarians.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
+    // --- Slide 20.8: Lampiran - Contoh Sederhana Equally Weighted (EW) ---
+    let slideEWExample = pres.addSlide();
+    slideEWExample.addText("Lampiran: Contoh Sederhana Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideEWExample.addText([
+        { text: "Strategi 1/N: Alokasi Tanpa Rumit", options: { bold: true, breakLine: true } },
+        { text: "1. Logika Dasar:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Membagi seluruh modal secara merata tanpa melihat performa masa lalu.", options: { breakLine: true } },
+        
+        { text: "2. Simulasi (Dummy):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Total Modal: Rp 100.000.000", options: { breakLine: true } },
+        { text: "   • Jumlah Aset (N): 5 (BTC, ETH, XRP, LTC, USDT)", options: { breakLine: true } },
+        { text: "   • Bobot Tiap Aset: 1/5 = ", options: { } },
+        { text: "20%", options: { bold: true, color: "27ae60" } },
+        { text: " (Tetap)", options: { breakLine: true } },
+        
+        { text: "3. Sebaran Modal:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • BTC: Rp 20jt | ETH: Rp 20jt | XRP: Rp 20jt | dst.", options: { breakLine: true } },
+
+        { text: "4. Mengapa EW Masuk Baseline?", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   • Tidak menderita ", options: { } },
+        { text: "error estimasi", options: { bold: true } },
+        { text: " karena tidak menghitung korelasi.", options: { breakLine: true } },
+        { text: "   • Benchmark yang sangat tangguh; model kompleks harus bisa mengalahkan EW untuk dianggap valid.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+
     // --- Slide 21: Lampiran - Simulasi Sederhana Classical Markowitz (2 Aset) ---
 
     let slide21 = pres.addSlide();
@@ -616,11 +642,52 @@ async function createPresentation() {
         { text: "Markowitz akan memilih aset dengan volatilitas lebih rendah (BTC) secara dominan. Namun, jika angka σ₁ dan σ₂ ini mengandung \"noise\", maka alokasi ini menjadi tidak optimal (Over-concentration).", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
 
-    // --- Slide 22: Lampiran - Dua Tipe Grid Search ---
+    // --- Slide 22: Lampiran - Contoh GLasso (1/2: Pembersihan Korelasi) ---
     let slide22 = pres.addSlide();
-
-    slide22.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slide22.addText("Lampiran: Contoh GLasso (1/2: Korelasi)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slide22.addText([
+        { text: "Tujuan: Membuang korelasi palsu (noise) untuk mendapatkan sinyal pasar murni.", options: { bold: true, breakLine: true } },
+        { text: "1. Matriks Korelasi Sebelum GLasso (Dirty):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "          BTC    ETH    DOGE", options: { fontFace: "Courier New", breakLine: true } },
+        { text: "   BTC  [ 1.00   0.70   0.08 ]  <-- 0.08 (Noise)", options: { fontFace: "Courier New", breakLine: true } },
+        { text: "   ETH  [ 0.70   1.00   0.05 ]  <-- 0.05 (Noise)", options: { fontFace: "Courier New", breakLine: true } },
+        { text: "   DOGE [ 0.08   0.05   1.00 ]", options: { fontFace: "Courier New", breakLine: true } },
+        
+        { text: "2. Proses Penalti (λ):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Algoritma GLasso menekan korelasi lemah menjadi nol.", options: { breakLine: true } },
+        
+        { text: "3. Matriks Hasil GLasso (Clean/Sparse):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "          BTC    ETH    DOGE", options: { fontFace: "Courier New", color: "27ae60", breakLine: true } },
+        { text: "   BTC  [ 1.00   0.65   0.00 ]", options: { fontFace: "Courier New", color: "27ae60", breakLine: true } },
+        { text: "   ETH  [ 0.65   1.00   0.00 ]", options: { fontFace: "Courier New", color: "27ae60", breakLine: true } },
+        { text: "   DOGE [ 0.00   0.00   1.00 ]", options: { fontFace: "Courier New", color: "27ae60", breakLine: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+    // --- Slide 23: Lampiran - Contoh GLasso (2/2: Dampak Bobot) ---
+    let slide23 = pres.addSlide();
+    slide23.addText("Lampiran: Contoh GLasso (2/2: Dampak Bobot)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slide23.addText([
+        { text: "Bagaimana 'Pembersihan' mengubah alokasi modal?", options: { bold: true, breakLine: true } },
+        { text: "4. Simulasi Perubahan Bobot (Weight Shift):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Alokasi Tanpa GLasso:", options: { bold: true, breakLine: true } },
+        { text: "     BTC: 60%, ETH: 30%, ", options: { } },
+        { text: "DOGE: 10%", options: { bold: true, color: "c0392b" } },
+        { text: " (Tertipu korelasi palsu).", options: { breakLine: true } },
+        
+        { text: "   • Alokasi Dengan GLasso:", options: { bold: true, breakLine: true } },
+        { text: "     BTC: 65%, ETH: 35%, ", options: { } },
+        { text: "DOGE: 0%", options: { bold: true, color: "27ae60" } },
+        { text: " (Fokus pada korelasi sejati).", options: { breakLine: true } },
+        
+        { text: "Kesimpulan & Manfaat:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "Pembersihan noise melalui GLasso memastikan modal tidak dialokasikan ke aset yang hanya terlihat menguntungkan secara statistik sesaat (spurious divergence), melainkan tetap pada struktur pasar yang kokoh.", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
+
+    // --- Slide 24: Lampiran - Dua Tipe Grid Search ---
+    let slide24 = pres.addSlide();
+    slide24.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slide24.addText([
+
         { text: "Dua Objektif Optimasi (Return vs Risk):", options: { bold: true, breakLine: true } },
         { text: "1. Network Markowitz dengan Target Return (NW - Return Grid Search):", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Memaksimalkan capaian ", options: { bullet: true } },
@@ -637,7 +704,7 @@ async function createPresentation() {
         { text: "Crypto Winter", options: { bold: true } },
         { text: ".", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
-    // --- Slide 23: Lampiran - Penanganan Missing Value ---
+    // --- Slide 25: Lampiran - Penanganan Missing Value ---
     let slideOut1 = pres.addSlide();
     slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut1.addText([
@@ -659,7 +726,7 @@ async function createPresentation() {
         { text: " dan tidak tercemar oleh cacat kelengkapan data.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 24: Lampiran - Peran USDT (Bagian 1) ---
+    // --- Slide 26: Lampiran - Peran USDT (Bagian 1) ---
     let slideOut2 = pres.addSlide();
     slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut2.addText([
@@ -675,7 +742,7 @@ async function createPresentation() {
         { text: " sebagai evakuasi risiko.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 25: Lampiran - Peran USDT (Bagian 2) ---
+    // --- Slide 27: Lampiran - Peran USDT (Bagian 2) ---
     let slideOut3 = pres.addSlide();
     slideOut3.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut3.addText([
@@ -691,7 +758,7 @@ async function createPresentation() {
         { text: " dari serangan Crypto Winter, suatu kapabilitas pertahanan yang tidak dipahami oleh model ortodoks murni Markowitz.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 26: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
+    // --- Slide 28: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
     let slideOut4 = pres.addSlide();
     slideOut4.addText("Lampiran: Bukti Empiris Non-Stationarity Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut4.addText([
@@ -709,7 +776,7 @@ async function createPresentation() {
         { text: " secara temporal.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
-    // --- Slide 27: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
+    // --- Slide 29: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
     let slideOut5 = pres.addSlide();
     slideOut5.addText("Lampiran: Jaringan sebagai 'Shock-Absorber'", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut5.addText([
