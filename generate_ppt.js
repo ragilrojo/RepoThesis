@@ -921,6 +921,30 @@ async function createPresentation() {
         { text: "Kekuatan Network Markowitz adalah kemampuannya mendeteksi transisi bentuk ini secara real-time melalui data historis.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
 
+    // --- Slide 23.14: Lampiran - Berapa Banyak Perhitungan Korelasi? ---
+    let slideCorrCount = pres.addSlide();
+    slideCorrCount.addText("Lampiran: Berapa Banyak Perhitungan Korelasi?", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideCorrCount.addText([
+        { text: "Untuk membangun satu matriks utuh, setiap aset harus dipasangkan satu sama lain.", options: { bold: true, breakLine: true } },
+        { text: "Rumus Kombinasi: C(N,2) = (N × (N - 1)) / 2", options: { bold: true, color: "c0392b", breakLine: true, fontFace: "Courier New" } },
+        
+        { text: "Simulasi untuk 10 Aset (N=10):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Jumlah Pasangan Unik = (10 × 9) / 2 = ", options: { } },
+        { text: "45 Perhitungan", options: { bold: true, color: "27ae60", breakLine: true } },
+        
+        { text: "Detail Penjabaran:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   • Koin ke-1 (BTC) berpasangan dengan 9 koin lainnya.", options: { breakLine: true } },
+        { text: "   • Koin ke-2 (ETH) berpasangan dengan 8 koin sisa.", options: { breakLine: true } },
+        { text: "   • Koin ke-3 (XRP) berpasangan dengan 7 koin sisa.", options: { breakLine: true } },
+        { text: "   • ... Seterusnya.", options: { breakLine: true } },
+        { text: "   • Total: 9 + 8 + 7 + 6 + 5 + 4 + 3 + 2 + 1 = ", options: { } },
+        { text: "45", options: { bold: true } },
+        
+        { text: "Fakta Matriks 10x10:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Meskipun ada 100 kotak di matriks, komputer hanya perlu menghitung 45 angka unik karena korelasi bersifat cermin (A-B sama dengan B-A) dan tengahnya selalu 1 (A-A).", options: { italic: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+
+
 
 
 
