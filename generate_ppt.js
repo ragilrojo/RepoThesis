@@ -20,7 +20,7 @@ async function createPresentation() {
         { text: "Berbasis Pendekatan\n" },
         { text: "Network Markowitz", options: { italic: true } },
         { text: " dengan " },
-        { text: "Rolling Window Grid Search", options: { italic: true } }
+        { text: "2-Stage Grid Search", options: { italic: true } }
     ], { 
         x: 0.5, y: 2.6, w: "90%", fontSize: 24, align: "center", color: "34495e" 
     });
