@@ -68,7 +68,7 @@ async function createPresentation() {
         { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '14' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (Adaptif)", options: { hyperlink: { slide: '15' }, fontSize: 16 } }
+        { text: "Network Markowitz (2-Stage GS)", options: { hyperlink: { slide: '15' }, fontSize: 16 } }
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
 
     // Kolom Kanan: Evaluasi & Navigasi
@@ -76,6 +76,9 @@ async function createPresentation() {
         { text: "III. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
         { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '16' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "Lanjutan Daftar Isi:", options: { bold: true, color: "e67e22", breakLine: true } },
@@ -303,9 +306,9 @@ async function createPresentation() {
         { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
-        { text: "4. Kelompok Network (Adaptif):", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "4. Kelompok Network (Adaptive Tuned):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Adaptif (Grid Search)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } }
+        { text: "NW 2-Stage GS (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -395,47 +398,69 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideNWStatic.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    // --- Slide 5.5: Network Markowitz (NW) Adaptif (Dua Kolom) ---
+    // --- Slide 5.5: Network Markowitz (NW) Adaptive Tuned (Dua Kolom) ---
     let slideNWAdaptive = pres.addSlide();
-    slideNWAdaptive.addText("4. Network Markowitz (NW) Adaptif", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWAdaptive.addText("4. Network Markowitz (NW) Adaptive Tuned", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     // Kolom Kiri: Mekanisme
     slideNWAdaptive.addText([
-        { text: "Optimasi Bayesian Simultan:", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "❑ Tuning cerdas pasangan (W, γ) secara bersamaan (bukan brute-force).", options: { breakLine: true } },
-        { text: "❑ Parameter 1: Window (W) [20 - 120 hari].", options: { breakLine: true } },
-        { text: "❑ Parameter 2: Gamma (γ) [0.0 - 2.0].", options: { breakLine: true } },
-        { text: "❑ Jauh lebih cepat & efisien dibanding Grid Search tradisional.", options: { breakLine: true, fontSize: 18 } }
+        { text: "2-Stage Grid Search (Coarse-to-Fine):", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "❑ Tahap 1 (Coarse): Mencari range optimal (W, γ) secara makro.", options: { breakLine: true } },
+        { text: "❑ Tahap 2 (Fine): Zoom-in pencarian di sekitar titik terbaik Stage 1.", options: { breakLine: true } },
+        { text: "❑ Tuning spesifik untuk 3 Target: VAR, SHARPE, dan RACHEV.", options: { breakLine: true } },
+        { text: "❑ Menjamin parameter terbaik tanpa beban komputasi brute-force penuh.", options: { breakLine: true, fontSize: 18 } }
     ], { x: 0.5, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
-    // Kolom Kanan: Validasi
+    // Kolom Kanan: Keuntungan
     slideNWAdaptive.addText([
-        { text: "Efisiensi & Interaksi Parameter:", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "❑ Akurasi: Menemukan 'sweet spot' hubungan antara panjang window vs tingkat penalti.", options: { breakLine: true } },
-        { text: "❑ Fleksibilitas: Menangani data campuran (Integer Window & Float Gamma).", options: { breakLine: true } },
-        { text: "❑ Kecepatan: Menghemat waktu komputasi hingga >70%.", options: { breakLine: true } },
-        { text: "❑ Tujuan: Adaptasi presisi terhadap rezim pasar kripto yang volatil.", options: { breakLine: true, color: "e67e22" } },
+        { text: "Objektif & Resiliensi:", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "❑ Multi-Metric: Mencakup aspek risiko (VAR), efisiensi (Sharpe), dan ekor distribusi (Rachev).", options: { breakLine: true } },
+        { text: "❑ Adaptabilitas: Menyesuaikan Window Size (stabilitas) & Gamma (penalti jaringan).", options: { breakLine: true } },
+        { text: "❑ Konsistensi: Validasi melalui Fine-Search memastikan solusi bukan noise lokal.", options: { breakLine: true } },
+        { text: "❑ Hasil: Strategi yang lebih tangguh di berbagai fase pasar (Bearish, Recovery, Stable).", options: { breakLine: true, color: "e67e22" } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi & Kalkulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
+        { text: "[Lihat Hasil Comparison & Grid Search Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideNWAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
-    slide6.addText("Matriks Evaluasi Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slide6.addText("Matriks Evaluasi Performa (Multi-Metric)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
         { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Mengukur total keuntungan/kerugian akumulatif. Digunakan untuk membandingkan pertumbuhan modal strategi vs benchmark CRIX.", options: { breakLine: true } },
+        { text: "   Mengukur total keuntungan/kerugian akumulatif vs benchmark.", options: { breakLine: true } },
         
-        { text: "2. Value at Risk (VaR):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   Potensi kerugian maksimal (batas bawah) pada tingkat kepercayaan 95%. Membuktikan resiliensi model saat kondisi pasar crash.", options: { breakLine: true } },
+        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "   Fokus optimasi pada resiliensi risiko/batas bawah.", options: { breakLine: true } },
         
         { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Imbal hasil per unit risiko (volatilitas). Semakin tinggi, semakin baik kualitas efisiensi portofolio dalam menghasilkan profit.", options: { breakLine: true } },
+        { text: "   Fokus optimasi pada efisiensi imbal hasil per unit risiko.", options: { breakLine: true } },
         
         { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "   Rasio potensi keuntungan ekstrem vs kerugian ekstrem. Sangat krusial karena data kripto memiliki 'Fat Tails' (distribusi tidak normal).", options: { breakLine: true } }
+        { text: "   Fokus optimasi pada perbandingan ekor distribusi (Fat-Tails).", options: { breakLine: true } },
+
+        { text: "Justifikasi Multi-Objective:", options: { bold: true, breakLine: true, color: "d35400", fontSize: 14 } },
+        { text: "Pasar kripto yang dinamis memerlukan tuning parameter yang berbeda tergantung apakah investor memprioritaskan keamanan (VaR), efisiensi (Sharpe), atau pemulihan (Rachev).", options: { italic: true, fontSize: 14 } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 17, color: "333333", valign: "top" });
     slide6.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 17: Analisis per Fase Pasar ---
+    let slidePhase = pres.addSlide();
+    slidePhase.addText("Evaluasi Berdasarkan Fase Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slidePhase.addText([
+        { text: "Pengujian pada 3 Kondisi Berbeda:", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "1. Fase Bearish (Jan 2018 - Mar 2019):", options: { bold: true, color: "c0392b" } },
+        { text: " Menguji ketahanan model saat pasar jatuh tajam.", options: { breakLine: true } },
+        { text: "2. Fase Recovery (Apr 2019 - Jun 2019):", options: { bold: true, color: "27ae60" } },
+        { text: " Menguji kecepatan adaptasi model saat tren berbalik positif.", options: { breakLine: true } },
+        { text: "3. Fase Stable (Jul 2019 - Okt 2019):", options: { bold: true, color: "003366" } },
+        { text: " Menguji konsistensi model dalam kondisi pasar mendatar.", options: { breakLine: true, breakLine: true } },
+        
+        { text: "Metodologi Panel Performance:", options: { bold: true, color: "d35400", breakLine: true } },
+        { text: "✔ Panel A (Sharpe): Membandingkan efisiensi antar fase.", options: { breakLine: true } },
+        { text: "✔ Panel B (Rachev): Membandingkan resiliensi ekor distribusi.", options: { breakLine: true } },
+        { text: "✔ Kesimpulan: NW Tuned menunjukkan stabilitas lebih tinggi dibanding benchmark statis di setiap fase.", options: { italic: true, breakLine: true } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4.5, fontSize: 18, valign: "top" });
+    slidePhase.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
     // --- Slide 9: Lampiran - Analogi RMT ---
