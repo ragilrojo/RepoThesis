@@ -14,7 +14,7 @@ async function createPresentation() {
     // --- Slide 1: Judul ---
     let slide1 = pres.addSlide();
     slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio Adaptif", { 
+    slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio", { 
         x: 0.5, y: 1.2, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" 
     });
     slide1.addText([
@@ -423,7 +423,7 @@ async function createPresentation() {
         { text: " (hard-coded).", options: { breakLine: true } },
         { text: "Digunakan sebagai ", options: { bullet: true } },
         { text: "pembanding langsung", options: { bold: true } },
-        { text: " untuk menguji efisiensi parameter adaptif.", options: { breakLine: true } },
+        { text: " untuk menguji efisiensi parameter hasil tuning.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
         { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
@@ -654,7 +654,7 @@ async function createPresentation() {
         { text: "Batas filter Marchenko-Pastur ikut ", options: { bullet: true } },
         { text: "dihitung ulang", options: { bold: true } },
         { text: " mengikuti rasio data.", options: { breakLine: true } },
-        { text: "Kesimpulan: Sifat adaptif secara ", options: { bullet: true } },
+        { text: "Kesimpulan: Hasil tuning secara ", options: { bullet: true } },
         { text: "real-time", options: { bold: true, italic: true } },
         { text: " merespons perubahan rezim pasar dengan cepat.", options: { } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
@@ -1477,7 +1477,7 @@ async function createPresentation() {
     slideOut4.addText("Lampiran: Bukti Empiris Non-Stationarity Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut4.addText([
         { text: "Masalah: ", options: { bold: true, color: "c0392b" } },
-        { text: "Kenapa harus menggunakan model Adaptif (Dynamic Gamma)?", options: { italic: true, breakLine: true } },
+        { text: "Kenapa harus menggunakan model dengan Tuning Parameter?", options: { italic: true, breakLine: true } },
         { text: "Bukti dari Grid Search:", options: { bold: true, breakLine: true, color: "27ae60" } },
         { text: "Data menunjukkan nilai Gamma (γ) optimal ", options: { bullet: true } },
         { text: "terus bergeser", options: { bold: true } },
