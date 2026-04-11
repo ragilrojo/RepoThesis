@@ -33,6 +33,8 @@ async function createPresentation() {
 
     // --- Slide 2: Daftar Isi (Bagian 1: Utama) ---
     let slideTOC1 = pres.addSlide();
+    slideTOC1.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideTOC1.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     slideTOC1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideTOC1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTOC1.addText("Daftar Isi (Main Sections)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
@@ -93,6 +95,8 @@ async function createPresentation() {
 
     // --- Slide 3: Daftar Isi (Bagian 2: Appendix) ---
     let slideTOC2 = pres.addSlide();
+    slideTOC2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideTOC2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     slideTOC2.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideTOC2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTOC2.addText("Daftar Isi (IV. Lampiran Teknis)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
@@ -1514,6 +1518,8 @@ async function createPresentation() {
 
     // --- Slide 29: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
     let slideOut5 = pres.addSlide();
+    slideOut5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideOut5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     slideOut5.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideOut5.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideOut5.addText("Lampiran: Jaringan sebagai 'Shock-Absorber'", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
