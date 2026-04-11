@@ -41,7 +41,7 @@ async function createPresentation() {
     slideTOC1.addText([
         { text: "I. PENDAHULUAN", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Latar Belakang & Motivasi", options: { hyperlink: { slide: '4' }, fontSize: 16 } },
+        { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Masalah \"Noise\" di Kripto", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
