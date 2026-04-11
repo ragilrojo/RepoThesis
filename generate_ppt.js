@@ -84,6 +84,9 @@ async function createPresentation() {
         { text: "Lanjutan Daftar Isi:", options: { bold: true, color: "e67e22", breakLine: true } },
         { text: "   ➤ ", options: {} },
         { text: "LAMPIRAN TEKNIS (APPENDIX)", options: { hyperlink: { slide: '3' }, fontSize: 16, color: "d35400", bold: true } },
+        { text: "", options: { breakLine: true } },
+        { text: "   ➤ ", options: {} },
+        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '60' }, fontSize: 16, color: "003366", bold: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
 
     // --- Slide 3: Daftar Isi (Bagian 2: Appendix) ---
