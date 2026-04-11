@@ -14,17 +14,18 @@ async function createPresentation() {
     // --- Slide 1: Judul ---
     let slide1 = pres.addSlide();
     slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio", { 
-        x: 0.5, y: 1.2, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" 
+    slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio Cryptocurrency", { 
+        x: 0.5, y: 1.2, w: "90%", fontSize: 36, bold: true, align: "center", color: "003366" 
     });
     slide1.addText([
         { text: "Berbasis Pendekatan\n" },
         { text: "Network Markowitz", options: { italic: true } },
         { text: " dengan " },
-        { text: "2-Stage Grid Search", options: { italic: true } }
+        { text: "2-Stage Tuning Parameter", options: { italic: true } }
     ], { 
         x: 0.5, y: 2.6, w: "90%", fontSize: 24, align: "center", color: "34495e" 
     });
+
     slide1.addText("Oleh: Ragil Yulianto", { 
         x: 0.5, y: 4.5, w: "90%", fontSize: 18, align: "center", color: "7f8c8d" 
     });
