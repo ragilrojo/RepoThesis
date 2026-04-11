@@ -1225,27 +1225,23 @@ async function createPresentation() {
 
     // --- Slide 23.18: Lampiran - Contoh Sederhana Rolling Window Grid Search ---
     let slideGridSearchEx = pres.addSlide();
-    slideGridSearchEx.addText("Lampiran: Contoh Sederhana Rolling Window Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideGridSearchEx.addText("Lampiran: Mekanisme 2-Stage Grid Search (Coarse-to-Fine)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideGridSearchEx.addText([
-        { text: "Tujuan: Memilih 'Hukuman' (Gamma) terbaik secara otomatis untuk kondisi pasar saat ini.", options: { bold: true, breakLine: true } },
+        { text: "Teknik optimasi efisien untuk menemukan parameter (W, \u03b3) terbaik.", options: { bold: true, breakLine: true } },
         
-        { text: "1. Siapkan Kandidat (The Grid):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Komputer mencoba 3 nilai: γ=0.0 (Tanpa Penalti), γ=0.5 (Sedang), γ=1.0 (Keras).", options: { breakLine: true } },
+        { text: "1. Stage 1: Coarse Search (Pencarian Kasar):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Mencoba kombinasi pada rentang luas dengan interval besar (misal step=20 untuk Window, step=0.5 untuk Gamma). Tujuannya memetakan kontur performa secara cepat.", options: { breakLine: true } },
         
-        { text: "2. Simulasi Masa Lalu (Lookback Window):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Maju ke belakang 30 hari, lalu hitung performa jika kita memakai nilai tersebut:", options: { breakLine: true } },
-        { text: "   • Jika pakai γ=0.0 → Sharpe Ratio: 0.85", options: { breakLine: true } },
-        { text: "   • Jika pakai γ=0.5 → Sharpe Ratio: 1.10 (TERBAIK)", options: { bold: true, color: "27ae60", breakLine: true } },
-        { text: "   • Jika pakai γ=1.0 → Sharpe Ratio: 0.95", options: { breakLine: true } },
+        { text: "2. Stage 2: Fine Search (Pencarian Halus):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Zoom-in di sekitar koordinat terbaik dari Stage 1 dengan interval sangat kecil (step=1 hari untuk Window, step=0.1 untuk Gamma).", options: { breakLine: true } },
         
-        { text: "3. Penentuan Pemenang (The Best Gamma):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Karena γ=0.5 menghasilkan efisiensi terbaik di 30 hari terakhir, ia terpilih sebagai pemenang.", options: { breakLine: true } },
+        { text: "3. Contoh Simulasi:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   \u2022 Stage 1 menemukan titik terbaik di W=60, \u03b3=1.0.", options: { breakLine: true } },
+        { text: "   \u2022 Stage 2 hanya mencari di area sempit (W: 50-70, \u03b3: 0.8-1.2).", options: { breakLine: true } },
+        { text: "   \u2022 Hasil Akhir: W=62, \u03b3=1.05 (Presisi Tinggi).", options: { bold: true, color: "27ae60", breakLine: true } },
         
-        { text: "4. Penerapan (Actual Trade):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Gunakan γ=0.5 untuk menghitung bobot portofolio asli di minggu depan.", options: { breakLine: true } },
-
-        { text: "Kesimpulan Adaptif:", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "Minggu depan, proses ini diulang kembali. Jika pasar berubah kacau, mungkin γ=1.0 yang akan menang. Inilah cara model menyesuaikan diri tanpa campur tangan manusia.", options: { italic: true } }
+        { text: "Manfaat Komputasi:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "Menghemat >80% waktu proses dibanding Brute-Force penuh, namun tetap menjamin parameter yang ditemukan adalah yang paling optimal secara lokal.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideGridSearchEx.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
