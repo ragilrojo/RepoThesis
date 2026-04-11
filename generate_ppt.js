@@ -145,21 +145,21 @@ async function createPresentation() {
     slide2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide2.addText([
-        { text: "Dunia Kripto Sangat Liar:", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Harga naik-turun tajam dan penuh 'gangguan' (", options: { bullet: true } },
+        { text: "Latar Belakang & Urgensi Penelitian", options: { bold: true, breakLine: true, color: "003366", fontSize: 22 } },
+        { text: "1. Karakteristik Pasar Kripto:", options: { bold: true, breakLine: true, color: "34495e" } },
+        { text: "   Volatilitas ekstrem menyebabkan matriks kovarians konvensional didominasi oleh ", options: { bullet: true } },
         { text: "noise", options: { italic: true, bold: true } },
-        { text: ") yang sering menyesatkan investor.", options: { breakLine: true } },
+        { text: " tinggi yang mengaburkan sinyal pasar asli.", options: { breakLine: true } },
         
-        { text: "Metode Lama Sering 'Salah Tebak':", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Cara konvensional (Markowitz) mudah terkecoh oleh data yang tidak stabil (", options: { bullet: true } },
-        { text: "estimation error", options: { italic: true, bold: true } },
-        { text: ").", options: { breakLine: true } },
+        { text: "2. Masalah Optimalitas Rolling Window:", options: { bold: true, breakLine: true, color: "34495e" } },
+        { text: "   Belum terdapat konsensus akademis mengenai panjang jendela observasi yang ideal; pemilihan yang sembarang menyebabkan model kehilangan daya adaptasi.", options: { bullet: true, breakLine: true } },
         
-        { text: "Solusi - Network Markowitz:", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Menggunakan 'saringan khusus' (", options: { bullet: true } },
-        { text: "Random Matrix Theory", options: { italic: true, bold: true } },
-        { text: ") untuk memisahkan gangguan dan mengambil sinyal harga yang asli agar investasi lebih aman." }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
+        { text: "3. Ketidakpastian Parameter Penalti (γ):", options: { bold: true, breakLine: true, color: "34495e" } },
+        { text: "   Bobot penalti yang ideal untuk menyeimbangkan stabilitas jaringan dan efisiensi portofolio belum ditemukan secara universal.", options: { bullet: true, breakLine: true } },
+        
+        { text: "Solusi Strategis:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Menggunakan Network Markowitz dengan mekanisme sistematis untuk mengkalibrasi parameter paling optimal secara dinamis.", options: { italic: true, bullet: true } }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
