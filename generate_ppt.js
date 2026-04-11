@@ -113,7 +113,7 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '37' }, fontSize: 16 } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Grid Search", options: { hyperlink: { slide: '48' }, fontSize: 16 } },
+        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '48' }, fontSize: 16 } },
         { text: "   • ", options: {} },
         { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '49' }, fontSize: 16 } },
         { text: "   • ", options: {} },
