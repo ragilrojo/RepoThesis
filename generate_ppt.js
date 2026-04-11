@@ -206,30 +206,25 @@ async function createPresentation() {
     slidePrev.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slidePrev.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slidePrev.addText("Penelitian Terdahulu (State of the Art)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
-    slidePrev.addText([
-        { text: "1. Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "Pelopor model Network Markowitz yang memadukan ", options: { } },
-        { text: "RMT (Random Matrix Theory)", options: { bold: true } },
-        { text: " dan ", options: { } },
-        { text: "MST (Minimum Spanning Tree)", options: { bold: true } },
-        { text: " di kripto.", options: { breakLine: true } },
-        { text: "2. Kitanovski et al. (2022):", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "Mendemonstrasikan diversifikasi berbasis ", options: { } },
-        { text: "deteksi komunitas", options: { bold: true } },
-        { text: " jaringan.", options: { breakLine: true } },
-        { text: "3. Jing & Rocha (2023):", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "Pemilihan koin topologi MST (Minimum Spanning Tree) mengalahkan ", options: { } },
-        { text: "semua benchmark", options: { bold: true } },
-        { text: ".", options: { breakLine: true } },
-        { text: "4. Kitanovski et al. (2024):", options: { bold: true, breakLine: true, color: "16a085" } },
-        { text: "Penalti graf sangat resilien meredam ", options: { } },
-        { text: "eksposur ekstrem", options: { bold: true } },
-        { text: ".", options: { breakLine: true } },
-        { text: "5. Jing et al. (2025):", options: { bold: true, breakLine: true, color: "f39c12" } },
-        { text: "Penggabungan Network-MPT (Modern Portfolio Theory) memberikan ", options: { } },
-        { text: "prediksi stabil", options: { bold: true } },
-        { text: " di fase terbaru.", options: { breakLine: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 16, color: "333333", valign: "top" });
+    slidePrev.addTable(
+        [
+            [
+                { text: "Peneliti", options: { bold: true, fill: "003366", color: "ffffff" } },
+                { text: "Tahun", options: { bold: true, fill: "003366", color: "ffffff" } },
+                { text: "Kontribusi Utama", options: { bold: true, fill: "003366", color: "ffffff" } }
+            ],
+            ["Giudici et al.", "2020", "Pelopor Network Markowitz (RMT & MST) di Kripto"],
+            ["Kitanovski et al.", "2022", "Diversifikasi berbasis Deteksi Komunitas Jaringan"],
+            ["Jing & Rocha", "2023", "Topologi MST mengalahkan semua benchmark"],
+            ["Kitanovski et al.", "2024", "Stabilitas Penalti Graf pada Eksposur Ekstrem"],
+            ["Jing et al.", "2025", "Prediksi Stabil fase terbaru (Network-MPT)"]
+        ],
+        { x: 0.5, y: 1.2, w: 9.0, rowH: 0.6, fontSize: 13, border: { pt: 1, color: "dddddd" }, align: "center", valign: "middle" }
+    );
+
+    slidePrev.addText("Fokus Penelitian Kami: Optimalisasi Parameter secara Sistematis", { 
+        x: 0.5, y: 5.0, w: "90%", fontSize: 14, bold: true, italic: true, color: "27ae60", align: "center" 
+    });
     slidePrev.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slidePrev.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
