@@ -427,16 +427,16 @@ async function createPresentation() {
     let slide6 = pres.addSlide();
     slide6.addText("Matriks Evaluasi Performa (Multi-Metric)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
-        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '57' } } },
         { text: "   Mengukur total keuntungan/kerugian akumulatif vs benchmark.", options: { breakLine: true } },
         
-        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b" } },
+        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '58' } } },
         { text: "   Fokus optimasi pada resiliensi risiko/batas bawah.", options: { breakLine: true } },
         
-        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '59' } } },
         { text: "   Fokus optimasi pada efisiensi imbal hasil per unit risiko.", options: { breakLine: true } },
         
-        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad", hyperlink: { slide: '60' } } },
         { text: "   Fokus optimasi pada perbandingan ekor distribusi (Fat-Tails).", options: { breakLine: true } },
 
         { text: "Justifikasi Multi-Objective:", options: { bold: true, breakLine: true, color: "d35400", fontSize: 14 } },
