@@ -140,24 +140,26 @@ async function createPresentation() {
         { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '60' }, fontSize: 16, breakLine: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
     
-    slideTOC2.addText("⬅ Kembali ke TOC 1", { x: 8.0, y: 5.3, w: 1.5, fontSize: 10, color: "7f8c8d", hyperlink: { slide: '2' }, align: "right" });
-
-    // --- Slide 2: Latar Belakang ---
     let slide2 = pres.addSlide();
     slide2.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slide2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide2.addText([
-        { text: "Tingginya volatilitas ekstrem dan ", options: { bullet: true } },
+        { text: "Dunia Kripto Sangat Liar:", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Harga naik-turun tajam dan penuh 'gangguan' (", options: { bullet: true } },
         { text: "noise", options: { italic: true, bold: true } },
-        { text: " memerlukan manajemen risiko yang presisi.", options: { breakLine: true } },
-        { text: "Kelemahan Markowitz: Rawan terhadap ", options: { bullet: true } },
+        { text: ") yang sering menyesatkan investor.", options: { breakLine: true } },
+        
+        { text: "Metode Lama Sering 'Salah Tebak':", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   Cara konvensional (Markowitz) mudah terkecoh oleh data yang tidak stabil (", options: { bullet: true } },
         { text: "estimation error", options: { italic: true, bold: true } },
-        { text: " pada matriks kovarians.", options: { breakLine: true } },
-        { text: "Network Markowitz: Menyaring noise menggunakan ", options: { bullet: true } },
+        { text: ").", options: { breakLine: true } },
+        
+        { text: "Solusi - Network Markowitz:", options: { bold: true, breakLine: true, color: "27ae60" } },
+        { text: "   Menggunakan 'saringan khusus' (", options: { bullet: true } },
         { text: "Random Matrix Theory", options: { italic: true, bold: true } },
-        { text: " (RMT) untuk rekonstruksi stabilitas." }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 3, fontSize: 20, color: "333333", valign: "top" });
+        { text: ") untuk memisahkan gangguan dan mengambil sinyal harga yang asli agar investasi lebih aman." }
+    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 18, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
