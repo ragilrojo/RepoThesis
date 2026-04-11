@@ -44,7 +44,7 @@ async function createPresentation() {
         { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Landasan Teori & Literatur", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
+        { text: "Landasan Teori", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '6' }, fontSize: 16 } },
