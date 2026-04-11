@@ -140,6 +140,7 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '59' }, fontSize: 16, breakLine: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
+    slideTOC2.addText("🏠 Kembali ke Daftar Isi Utama", { x: 7.0, y: 5.3, w: 2.7, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     
     let slide2 = pres.addSlide();
     slide2.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
