@@ -1227,21 +1227,19 @@ async function createPresentation() {
     let slideGridSearchEx = pres.addSlide();
     slideGridSearchEx.addText("Lampiran: Mekanisme 2-Stage Grid Search (Coarse-to-Fine)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideGridSearchEx.addText([
-        { text: "Teknik optimasi efisien untuk menemukan parameter (W, \u03b3) terbaik.", options: { bold: true, breakLine: true } },
-        
-        { text: "1. Stage 1: Coarse Search (Pencarian Kasar):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Mencoba kombinasi pada rentang luas dengan interval besar (misal step=20 untuk Window, step=0.5 untuk Gamma). Tujuannya memetakan kontur performa secara cepat.", options: { breakLine: true } },
-        
-        { text: "2. Stage 2: Fine Search (Pencarian Halus):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Zoom-in di sekitar koordinat terbaik dari Stage 1 dengan interval sangat kecil (step=1 hari untuk Window, step=0.1 untuk Gamma).", options: { breakLine: true } },
-        
-        { text: "3. Contoh Simulasi:", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   \u2022 Stage 1 menemukan titik terbaik di W=60, \u03b3=1.0.", options: { breakLine: true } },
-        { text: "   \u2022 Stage 2 hanya mencari di area sempit (W: 50-70, \u03b3: 0.8-1.2).", options: { breakLine: true } },
-        { text: "   \u2022 Hasil Akhir: W=62, \u03b3=1.05 (Presisi Tinggi).", options: { bold: true, color: "27ae60", breakLine: true } },
-        
-        { text: "Manfaat Komputasi:", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "Menghemat >80% waktu proses dibanding Brute-Force penuh, namun tetap menjamin parameter yang ditemukan adalah yang paling optimal secara lokal.", options: { italic: true } }
+        { text: "Tujuan: Menemukan kombinasi (Window, γ) paling presisi dengan efisiensi tinggi.", options: { bold: true, breakLine: true } },
+        { text: "1. Stage 1: Coarse Search (Pemindaian Makro)", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   ❑ Mencari kandidat di seluruh ruang parameter dengan langkah (step) lebar.", options: { breakLine: true } },
+        { text: "   ❑ Contoh: Window dipantau setiap kelipatan 5 hari, dan Gamma setiap 0.2 unit.", options: { breakLine: true } },
+        { text: "   ❑ Output: Menentukan 'zona potensial' terbaik secara cepat.", options: { breakLine: true } },
+        { text: "2. Stage 2: Fine Search (Zoom-in Mikro)", options: { bold: true, breakLine: true, color: "003366" } },
+        { text: "   ❑ Melakukan pencarian mendalam hanya di sekitar koordinat terbaik Stage 1.", options: { breakLine: true } },
+        { text: "   ❑ Contoh: Jika koordinat terbaik Stage 1 adalah (W:40, γ:0.6), Stage 2 mencari di rentang presisi (W: 36-44) dan (γ: 0.55-0.65).", options: { breakLine: true } },
+        { text: "   ❑ Output: Mendapatkan titik absolut paling optimal.", options: { breakLine: true } },
+        { text: "Keunggulan Eksperimen:", options: { bold: true, breakLine: true, color: "8e44ad" } },
+        { text: "✔ Akurasi: Jauh lebih detail dibanding grid search tunggal konvensional.", options: { breakLine: true } },
+        { text: "✔ Efisiensi: Mengurangi total percobaan komputasi hingga >60% dibanding brute-force.", options: { breakLine: true } },
+        { text: "✔ Multi-Target: Parameter disesuaikan spesifik untuk target VAR, Sharpe, atau Rachev.", options: { italic: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideGridSearchEx.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
