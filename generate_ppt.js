@@ -144,22 +144,25 @@ async function createPresentation() {
     slide2.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slide2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    // Area Masalah (Kiri)
+    slide2.addShape(pres.ShapeType.rect, { x: 0.3, y: 1.1, w: 4.5, h: 4.2, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1 } });
     slide2.addText([
-        { text: "Latar Belakang & Urgensi Penelitian", options: { bold: true, breakLine: true, color: "003366", fontSize: 22 } },
-        { text: "1. Karakteristik Pasar Kripto:", options: { bold: true, breakLine: true, color: "34495e" } },
-        { text: "   Volatilitas ekstrem menyebabkan matriks kovarians konvensional didominasi oleh ", options: { bullet: true } },
-        { text: "noise", options: { italic: true, bold: true } },
-        { text: " tinggi yang mengaburkan sinyal pasar asli.", options: { breakLine: true } },
-        
-        { text: "2. Masalah Optimalitas Rolling Window:", options: { bold: true, breakLine: true, color: "34495e" } },
-        { text: "   Belum terdapat konsensus akademis mengenai panjang jendela observasi yang ideal; pemilihan yang sembarang menyebabkan model kehilangan daya adaptasi.", options: { bullet: true, breakLine: true } },
-        
-        { text: "3. Ketidakpastian Parameter Penalti (γ):", options: { bold: true, breakLine: true, color: "34495e" } },
-        { text: "   Bobot penalti yang ideal untuk menyeimbangkan stabilitas jaringan dan efisiensi portofolio belum ditemukan secara universal.", options: { bullet: true, breakLine: true } },
-        
-        { text: "Solusi Strategis:", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "   Menggunakan Network Markowitz dengan mekanisme sistematis untuk mengkalibrasi parameter paling optimal secara dinamis.", options: { italic: true, bullet: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
+        { text: "I. IDENTIFIKASI MASALAH", options: { bold: true, color: "003366", breakLine: true, fontSize: 16 } },
+        { text: "• Volatilitas Kripto & Noise:", options: { bold: true, fontSize: 13, breakLine: true } },
+        { text: "  Matriks kovarians didominasi gangguan yang mengaburkan sinyal pasar.", options: { fontSize: 12, breakLine: true } },
+        { text: "• Optimalitas Window:", options: { bold: true, fontSize: 13, breakLine: true } },
+        { text: "  Belum ada konsensus panjang jendela observasi yang ideal bagi investor.", options: { fontSize: 12 } }
+    ], { x: 0.5, y: 1.3, w: 4.1, h: 3.5, color: "333333", valign: "top" });
+
+    // Area Solusi (Kanan)
+    slide2.addShape(pres.ShapeType.rect, { x: 5.1, y: 1.1, w: 4.5, h: 4.2, fill: { color: "f8f9fa" }, line: { color: "27ae60", width: 1 } });
+    slide2.addText([
+        { text: "II. RESEARCH GAP & SOLUSI", options: { bold: true, color: "27ae60", breakLine: true, fontSize: 16 } },
+        { text: "• Ketidakpastian Penalti (γ):", options: { bold: true, fontSize: 13, breakLine: true } },
+        { text: "  Standar universal bobot penalti untuk stabilitas jaringan belum ditemukan.", options: { fontSize: 12, breakLine: true } },
+        { text: "• Urgensi Tuning Parameter:", options: { bold: true, fontSize: 13, color: "27ae60", breakLine: true } },
+        { text: "  Penelitian ini menawarkan kalibrasi sistematis untuk hasil yang lebih presisi.", options: { italic: true, fontSize: 12 } }
+    ], { x: 5.3, y: 1.3, w: 4.1, h: 3.5, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
