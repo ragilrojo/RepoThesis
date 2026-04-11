@@ -146,25 +146,25 @@ async function createPresentation() {
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     // Judul tetap di atas
     
-    // Area Kiri: Masalah (Dibuat lebih lebar dan terpusat)
-    slide2.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.5, w: 4.2, h: 2.8, fill: { color: "ffffff" }, line: { color: "003366", width: 2 } });
-    slide2.addText("🔍 IDENTIFIKASI MASALAH", { x: 0.5, y: 1.6, w: 4.2, fontSize: 18, bold: true, color: "003366", align: "center" });
+    // Area Kiri: Masalah (Padding diperbaiki)
+    slide2.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.5, w: 4.2, h: 3.2, fill: { color: "ffffff" }, line: { color: "003366", width: 2 } });
+    slide2.addText("🔍 IDENTIFIKASI MASALAH", { x: 0.5, y: 1.8, w: 4.2, fontSize: 18, bold: true, color: "003366", align: "center" });
     slide2.addText([
         { text: "• Volatilitas Kripto & Noise:", options: { bold: true, fontSize: 14, breakLine: true } },
         { text: "   Gangguan data yang mengaburkan sinyal asli.", options: { fontSize: 13, breakLine: true } },
         { text: "• Optimalitas Window:", options: { bold: true, fontSize: 14, breakLine: true } },
         { text: "   Belum ada standar panjang jendela observasi.", options: { fontSize: 13 } }
-    ], { x: 0.7, y: 2.3, w: 3.8, color: "333333", valign: "top" });
+    ], { x: 0.7, y: 2.6, w: 3.8, color: "333333", valign: "top" });
 
-    // Area Kanan: Gap & Solusi (Dibuat lebih lebar dan terpusat)
-    slide2.addShape(pres.ShapeType.rect, { x: 5.3, y: 1.5, w: 4.2, h: 2.8, fill: { color: "ffffff" }, line: { color: "27ae60", width: 2 } });
-    slide2.addText("💡 RESEARCH GAP & SOLUSI", { x: 5.3, y: 1.6, w: 4.2, fontSize: 18, bold: true, color: "27ae60", align: "center" });
+    // Area Kanan: Gap & Solusi (Padding diperbaiki)
+    slide2.addShape(pres.ShapeType.rect, { x: 5.3, y: 1.5, w: 4.2, h: 3.2, fill: { color: "ffffff" }, line: { color: "27ae60", width: 2 } });
+    slide2.addText("💡 RESEARCH GAP & SOLUSI", { x: 5.3, y: 1.8, w: 4.2, fontSize: 18, bold: true, color: "27ae60", align: "center" });
     slide2.addText([
         { text: "• Ketidakpastian Penalti (γ):", options: { bold: true, fontSize: 14, breakLine: true } },
         { text: "   Belum ditemukan bobot ideal secara universal.", options: { fontSize: 13, breakLine: true } },
         { text: "• Urgensi Tuning Parameter:", options: { bold: true, fontSize: 14, color: "27ae60", breakLine: true } },
         { text: "   Mekanisme kalibrasi sistematis diperlukan.", options: { italic: true, fontSize: 13 } }
-    ], { x: 5.5, y: 2.3, w: 3.8, color: "333333", valign: "top" });
+    ], { x: 5.5, y: 2.6, w: 3.8, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
