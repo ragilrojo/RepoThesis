@@ -13,7 +13,7 @@ async function createPresentation() {
 
     // --- Slide 1: Judul ---
     let slide1 = pres.addSlide();
-    slide1.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio Adaptif", { 
         x: 0.5, y: 1.2, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" 
     });
@@ -31,7 +31,7 @@ async function createPresentation() {
 
     // --- Slide 2: Daftar Isi (Bagian 1: Utama) ---
     let slideTOC1 = pres.addSlide();
-    slideTOC1.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideTOC1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTOC1.addText("Daftar Isi (Main Sections)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     
     // Kolom Kiri: Pendahuluan & Strategi
@@ -93,7 +93,7 @@ async function createPresentation() {
 
     // --- Slide 3: Daftar Isi (Bagian 2: Appendix) ---
     let slideTOC2 = pres.addSlide();
-    slideTOC2.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideTOC2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTOC2.addText("Daftar Isi (IV. Lampiran Teknis)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     
     // Kolom Kiri
@@ -140,7 +140,7 @@ async function createPresentation() {
 
     // --- Slide 2: Latar Belakang ---
     let slide2 = pres.addSlide();
-    slide2.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide2.addText("Latar Belakang", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide2.addText([
         { text: "Tingginya volatilitas ekstrem dan ", options: { bullet: true } },
@@ -158,7 +158,7 @@ async function createPresentation() {
 
     // --- Slide 3: Konsep "Noise" dalam Cryptocurrency ---
     let slide3 = pres.addSlide();
-    slide3.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide3.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide3.addText("Apa itu \"Noise\" di Pasar Kripto?", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide3.addText([
         { text: "Noise (Kebisingan) Pasar:", options: { bold: true, breakLine: true } },
@@ -192,7 +192,7 @@ async function createPresentation() {
 
     // --- Slide 4: Landasan Teori (Dua Kolom) ---
     let slide4 = pres.addSlide();
-    slide4.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide4.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide4.addText("Landasan Teori Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     
     // Kolom Kiri: Portofolio & Risiko
@@ -227,7 +227,7 @@ async function createPresentation() {
 
     // --- Slide 4.1: Penelitian Terdahulu ---
     let slidePrev = pres.addSlide();
-    slidePrev.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slidePrev.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slidePrev.addText("Penelitian Terdahulu (State of the Art)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slidePrev.addText([
         { text: "1. Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
@@ -258,7 +258,7 @@ async function createPresentation() {
 
     // --- Slide 4.5: Kerangka Penelitian ---
     let slideFramework = pres.addSlide();
-    slideFramework.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideFramework.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideFramework.addImage({ path: "framwrok.jpg", x: 1.0, y: 1.1, w: 8.0, h: 4.0 });
     slideFramework.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
@@ -266,7 +266,7 @@ async function createPresentation() {
 
     // --- Slide 4.6: Dataset - 10 Aset Kripto Utama ---
     let slideData = pres.addSlide();
-    slideData.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideData.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideData.addText("Dataset: 10 Aset Kripto Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     let tableRows = [
@@ -308,7 +308,7 @@ async function createPresentation() {
 
     // --- Slide 5: Strategi yang Dibandingkan ---
     let slide5 = pres.addSlide();
-    slide5.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide5.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide5.addText("Strategi Portofolio yang Disimulasikan", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
@@ -338,7 +338,7 @@ async function createPresentation() {
 
     // --- Slide 5.1: Equally Weighted (EW) ---
     let slideEW = pres.addSlide();
-    slideEW.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideEW.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideEW.addText("1.1. Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideEW.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
@@ -362,7 +362,7 @@ async function createPresentation() {
 
     // --- Slide 5.2: Classical Markowitz (CM) ---
     let slideCM = pres.addSlide();
-    slideCM.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideCM.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideCM.addText("1.2. Classical Markowitz (CM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideCM.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
@@ -386,7 +386,7 @@ async function createPresentation() {
 
     // --- Slide 5.3: Graphical Lasso Markowitz (GM) ---
     let slideGM = pres.addSlide();
-    slideGM.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideGM.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideGM.addText("2. Graphical Lasso Markowitz (GM)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideGM.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
@@ -408,7 +408,7 @@ async function createPresentation() {
 
     // --- Slide 5.4: Network Markowitz (NW) Statis ---
     let slideNWStatic = pres.addSlide();
-    slideNWStatic.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideNWStatic.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideNWStatic.addText("3. Network Markowitz (NW) Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideNWStatic.addText([
         { text: "Konsep Dasar:", options: { bold: true, breakLine: true } },
@@ -432,7 +432,7 @@ async function createPresentation() {
 
     // --- Slide 5.5: Network Markowitz (NW) Adaptive Tuned (Dua Kolom) ---
     let slideNWAdaptive = pres.addSlide();
-    slideNWAdaptive.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideNWAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideNWAdaptive.addText("4. Network Markowitz (NW) Adaptive Tuned", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     // Kolom Kiri: Mekanisme
     slideNWAdaptive.addText([
@@ -458,7 +458,7 @@ async function createPresentation() {
 
     // --- Slide 6: Matriks Evaluasi Performa ---
     let slide6 = pres.addSlide();
-    slide6.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide6.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide6.addText("Matriks Evaluasi Performa (Multi-Metric)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
         { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '57' } } },
@@ -481,7 +481,7 @@ async function createPresentation() {
 
     // --- Slide 17: Analisis per Fase Pasar ---
     let slidePhase = pres.addSlide();
-    slidePhase.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slidePhase.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slidePhase.addText("Evaluasi Berdasarkan Fase Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slidePhase.addText([
         { text: "Pengujian pada 3 Kondisi Berbeda:", options: { bold: true, color: "003366", breakLine: true } },
@@ -503,7 +503,7 @@ async function createPresentation() {
 
     // --- Slide 9: Lampiran - Analogi RMT ---
     let slide9 = pres.addSlide();
-    slide9.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide9.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide9.addText([
         { text: "Lampiran: Analogi " },
         { text: "RMT (Random Matrix Theory)", options: { hyperlink: { slide: '17' } } },
@@ -535,7 +535,7 @@ async function createPresentation() {
 
     // --- Slide 10: Lampiran - Signal vs Noise ---
     let slide10 = pres.addSlide();
-    slide10.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide10.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide10.addText("Lampiran: Membedakan Hubungan Sejati (Signal) vs Noise", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide10.addText([
         { text: "1. Mencari Nilai Eigen (Eigenvalues):", options: { bold: true, breakLine: true } },
@@ -564,7 +564,7 @@ async function createPresentation() {
 
     // --- Slide 11: Lampiran - Menghitung Nilai Eigen ---
     let slide11 = pres.addSlide();
-    slide11.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide11.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide11.addText("Lampiran: Bagaimana Menghitung Nilai Eigen?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide11.addText([
         { text: "1. Matriks Korelasi (C):", options: { bold: true, breakLine: true } },
@@ -589,7 +589,7 @@ async function createPresentation() {
 
     // --- Slide 12: Lampiran - Contoh Praktek (Dummy Data) ---
     let slide12 = pres.addSlide();
-    slide12.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide12.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide12.addText("Lampiran: Praktek Sederhana Menghitung Eigenvalue", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide12.addText([
         { text: "Konteks Dummy: 2 Koin, BTC (Bitcoin) & ETH (Ethereum), korelasi = 0.5", options: { bold: true, breakLine: true } },
@@ -617,7 +617,7 @@ async function createPresentation() {
 
     // --- Slide 13: Lampiran - Bagaimana Menghitung Korelasi? ---
     let slide13 = pres.addSlide();
-    slide13.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide13.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide13.addText("Lampiran: Bagaimana Menghitung Korelasi?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide13.addText([
         { text: "1. Data Historis (Returns):", options: { bold: true, breakLine: true } },
@@ -640,7 +640,7 @@ async function createPresentation() {
 
     // --- Slide 14: Lampiran - Apakah Nilai Eigen Statis? ---
     let slide14 = pres.addSlide();
-    slide14.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide14.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide14.addText("Lampiran: Apakah Nilai Eigen Statis?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide14.addText([
         { text: "Apakah Nilai Eigen Sudah Ditentukan (Statis)?", options: { bold: true, breakLine: true, color: "c0392b" } },
@@ -663,7 +663,7 @@ async function createPresentation() {
 
     // --- Slide 15: Lampiran - Batas Noise Marchenko-Pastur ---
     let slide15 = pres.addSlide();
-    slide15.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide15.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide15.addText("Lampiran: Menentukan Batas Noise (Marchenko-Pastur)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide15.addText([
         { text: "Apa itu Batas Marchenko-Pastur (MP)?", options: { bold: true, breakLine: true } },
@@ -688,7 +688,7 @@ async function createPresentation() {
 
     // --- Slide 16: Lampiran - Analogi Minimum Spanning Tree (Bagian 1) ---
     let slide16 = pres.addSlide();
-    slide16.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide16.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide16.addText("Lampiran: Analogi Minimum Spanning Tree (MST)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide16.addText([
         { text: "Membangun Jaringan Jalan Tol Antar Kota:", options: { bold: true, breakLine: true } },
@@ -707,7 +707,7 @@ async function createPresentation() {
 
     // --- Slide 17: Lampiran - Analogi Minimum Spanning Tree (Bagian 2) ---
     let slide17 = pres.addSlide();
-    slide17.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide17.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide17.addText("Lampiran: Mengapa Kita Membutuhkan MST?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide17.addText([
         { text: "Menemukan Titik Kemacetan (Hub Centrality):", options: { bold: true, color: "8e44ad", breakLine: true } },
@@ -727,7 +727,7 @@ async function createPresentation() {
 
     // --- Slide 18: Lampiran - Penalti (Gamma) Optimal ---
     let slide18 = pres.addSlide();
-    slide18.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide18.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide18.addText("Lampiran: Berapa Nilai \"Penalti\" (Gamma) yang Optimal?", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide18.addText([
         { text: "Apakah Ada Satu Angka Penalti yang Sempurna?", options: { bold: true, breakLine: true, color: "c0392b" } },
@@ -752,7 +752,7 @@ async function createPresentation() {
 
     // --- Slide 18.1: Justifikasi Parameter Gamma (Giudici, 2020) ---
     let slideGammaJust = pres.addSlide();
-    slideGammaJust.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideGammaJust.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideGammaJust.addText("Lampiran: Justifikasi Parameter Gamma (\u03b3)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideGammaJust.addText([
         { text: "Berdasarkan Teori Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
@@ -776,7 +776,7 @@ async function createPresentation() {
 
     // --- Slide 19: Lampiran - Classical Markowitz (Bagian 1) ---
     let slide19 = pres.addSlide();
-    slide19.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide19.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide19.addText("Lampiran: Apa itu Classical Markowitz (CM)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide19.addText([
         { text: "Modern Portfolio Theory (MPT) / Mean-Variance Optimization:", options: { bold: true, breakLine: true } },
@@ -796,7 +796,7 @@ async function createPresentation() {
 
     // --- Slide 20: Lampiran - Classical Markowitz (Bagian 2) ---
     let slide20 = pres.addSlide();
-    slide20.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide20.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide20.addText("Lampiran: Mengapa Classical Markowitz Kesulitan? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide20.addText([
         { text: "Kelemahan Klasik di Pasar Kripto:", options: { bold: true, breakLine: true, color: "c0392b" } },
@@ -816,7 +816,7 @@ async function createPresentation() {
 
     // --- Slide 20.9: Lampiran - Detail Perhitungan Korelasi (Pearson) ---
     let slide20b = pres.addSlide();
-    slide20b.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide20b.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide20b.addText("Lampiran: Detail Perhitungan Korelasi (Pearson)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slide20b.addText([
         { text: "Bagaimana angka 0.50 didapatkan? (Dummy 3 Hari)", options: { bold: true, breakLine: true } },
@@ -845,7 +845,7 @@ async function createPresentation() {
 
     // --- Slide 20.8: Lampiran - Contoh Sederhana Equally Weighted (EW) ---
     let slideEWExample = pres.addSlide();
-    slideEWExample.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideEWExample.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideEWExample.addText("Lampiran: Contoh Sederhana Equally Weighted (EW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideEWExample.addText([
         { text: "Strategi 1/N: Alokasi Tanpa Rumit", options: { bold: true, breakLine: true } },
@@ -875,7 +875,7 @@ async function createPresentation() {
     // --- Slide 21: Lampiran - Simulasi Sederhana Classical Markowitz (2 Aset) ---
 
     let slide21 = pres.addSlide();
-    slide21.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide21.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide21.addText("Lampiran: Simulasi Sederhana Classical Markowitz (2 Aset)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slide21.addText([
         { text: "Tujuan: Mencari bobot (w) untuk risiko terendah (Minimum Variance).", options: { bold: true, breakLine: true } },
@@ -907,7 +907,7 @@ async function createPresentation() {
 
     // --- Slide 22: Lampiran - Contoh GLasso (1/2: Pembersihan Korelasi) ---
     let slide22 = pres.addSlide();
-    slide22.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide22.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide22.addText("Lampiran: Contoh GLasso (1/2: Korelasi)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slide22.addText([
         { text: "Tujuan: Membuang korelasi palsu (noise) untuk mendapatkan sinyal pasar murni.", options: { bold: true, breakLine: true } },
@@ -931,7 +931,7 @@ async function createPresentation() {
 
     // --- Slide 23: Lampiran - Contoh GLasso (2/2: Dampak Bobot) ---
     let slide23 = pres.addSlide();
-    slide23.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide23.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide23.addText("Lampiran: Contoh GLasso (2/2: Dampak Bobot)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slide23.addText([
         { text: "Bagaimana 'Pembersihan' mengubah alokasi modal?", options: { bold: true, breakLine: true } },
@@ -954,7 +954,7 @@ async function createPresentation() {
 
     // --- Slide 23.5: Lampiran - Contoh Sederhana Network Markowitz (NW) ---
     let slideNWExample = pres.addSlide();
-    slideNWExample.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideNWExample.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideNWExample.addText("Lampiran: Contoh Sederhana Network Markowitz (NW)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideNWExample.addText([
         { text: "Tujuan: Mengurangi risiko sistemik dengan menghukum koin 'pusat' (hub).", options: { bold: true, breakLine: true } },
@@ -984,7 +984,7 @@ async function createPresentation() {
 
     // --- Slide 23.6: Lampiran - Detail Kalkulasi Penentuan Bobot NW ---
     let slideNWDetail = pres.addSlide();
-    slideNWDetail.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideNWDetail.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideNWDetail.addText("Lampiran: Detail Kalkulasi Penentuan Bobot NW", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideNWDetail.addText([
         { text: "Bagaimana 'Penalti' mengubah angka bobot secara konkret?", options: { bold: true, breakLine: true } },
@@ -1013,7 +1013,7 @@ async function createPresentation() {
 
     // --- Slide 23.7: Lampiran - Rumus & Penjabaran Bobot (60% vs 40%) ---
     let slideNWMath = pres.addSlide();
-    slideNWMath.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideNWMath.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideNWMath.addText("Lampiran: Rumus & Penjabaran Bobot (60% vs 40%)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideNWMath.addText([
         { text: "Menggunakan Metode Alokasi Volatilitas Terbalik (Inverse Volatility):", options: { bold: true, breakLine: true } },
@@ -1047,7 +1047,7 @@ async function createPresentation() {
 
     // --- Slide 23.8: Lampiran - NW vs CM: Apakah Tetap Memakai Korelasi? ---
     let slideNWCorr = pres.addSlide();
-    slideNWCorr.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideNWCorr.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideNWCorr.addText("Lampiran: NW vs CM - Hubungan dengan Korelasi", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideNWCorr.addText([
         { text: "Pertanyaan Penting: Apakah NW mengesampingkan korelasi?", options: { bold: true, breakLine: true, color: "c0392b" } },
@@ -1077,7 +1077,7 @@ async function createPresentation() {
 
     // --- Slide 23.9: Lampiran - Contoh Detail Filter RMT (Pembersihan Noise) ---
     let slideRMTExample = pres.addSlide();
-    slideRMTExample.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideRMTExample.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideRMTExample.addText("Lampiran: Contoh Detail Filter RMT (Pembersihan Noise)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideRMTExample.addText([
         { text: "Analogi: Menghilangkan suara 'kresek' radio agar lagu terdengar jernih.", options: { bold: true, breakLine: true } },
@@ -1112,7 +1112,7 @@ async function createPresentation() {
 
     // --- Slide 23.10: Lampiran - Cara Menghitung Batas Noise (λ_max) ---
     let slideLambdaMax = pres.addSlide();
-    slideLambdaMax.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideLambdaMax.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideLambdaMax.addText("Lampiran: Cara Menghitung Batas Noise (λ_max)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideLambdaMax.addText([
         { text: "Batas ini ditentukan menggunakan Distribusi Marchenko-Pastur:", options: { bold: true, breakLine: true } },
@@ -1140,7 +1140,7 @@ async function createPresentation() {
 
     // --- Slide 23.11: Lampiran - Contoh Membangun MST (Network Mapping) ---
     let slideMSTBuild = pres.addSlide();
-    slideMSTBuild.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideMSTBuild.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideMSTBuild.addText("Lampiran: Contoh Membangun MST (Network Mapping)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideMSTBuild.addText([
         { text: "Bagaimana korelasi berubah menjadi peta jaringan?", options: { bold: true, breakLine: true } },
@@ -1167,7 +1167,7 @@ async function createPresentation() {
 
     // --- Slide 23.12: Lampiran - Rumus Konversi Korelasi ke Jarak ---
     let slideDistFormula = pres.addSlide();
-    slideDistFormula.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideDistFormula.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideDistFormula.addText("Lampiran: Rumus Konversi Korelasi ke Jarak", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideDistFormula.addText([
         { text: "Untuk membangun jaringan, korelasi harus diubah menjadi skor jarak (Metric Space).", options: { bold: true, breakLine: true } },
@@ -1196,7 +1196,7 @@ async function createPresentation() {
 
     // --- Slide 23.13: Lampiran - Apakah Jaringan Selalu Berbentuk Star? ---
     let slideTopology = pres.addSlide();
-    slideTopology.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideTopology.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTopology.addText("Lampiran: Apakah Jaringan Selalu Berbentuk Star?", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideTopology.addText([
         { text: "Jawaban: TIDAK. Topologi jaringan bersifat dinamis mengikuti rezim pasar.", options: { bold: true, breakLine: true, color: "c0392b" } },
@@ -1219,7 +1219,7 @@ async function createPresentation() {
 
     // --- Slide 23.14: Lampiran - Berapa Banyak Perhitungan Korelasi? ---
     let slideCorrCount = pres.addSlide();
-    slideCorrCount.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideCorrCount.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideCorrCount.addText("Lampiran: Berapa Banyak Perhitungan Korelasi?", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideCorrCount.addText([
         { text: "Untuk membangun satu matriks utuh, setiap aset harus dipasangkan satu sama lain.", options: { bold: true, breakLine: true } },
@@ -1245,7 +1245,7 @@ async function createPresentation() {
 
     // --- Slide 23.15: Lampiran - Alur Transformasi Matriks ---
     let slidePipeline = pres.addSlide();
-    slidePipeline.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slidePipeline.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slidePipeline.addText("Lampiran: Alur Transformasi Matriks", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slidePipeline.addText([
         { text: "Proses ini memastikan data statistik mentah bisa divisualisasikan menjadi peta risiko.", options: { bold: true, breakLine: true } },
@@ -1267,7 +1267,7 @@ async function createPresentation() {
 
     // --- Slide 23.16: Lampiran - Mekanisme Penalty Centrality ---
     let slidePenalty = pres.addSlide();
-    slidePenalty.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slidePenalty.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slidePenalty.addText("Lampiran: Mekanisme Penalty Centrality (Risiko Penularan)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slidePenalty.addText([
         { text: "Kenapa koin yang 'populer' di jaringan justru diberi hukuman (penalti)?", options: { bold: true, breakLine: true } },
@@ -1294,7 +1294,7 @@ async function createPresentation() {
 
     // --- Slide 23.17: Lampiran - Cara Menghitung Centrality (Degree Centrality) ---
     let slideCalcCentrality = pres.addSlide();
-    slideCalcCentrality.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideCalcCentrality.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideCalcCentrality.addText("Lampiran: Cara Menghitung Centrality (Degree Centrality)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideCalcCentrality.addText([
         { text: "Metode Degree Centrality mengukur seberapa banyak 'tangan' yang dimiliki sebuah aset untuk memegang aset lain.", options: { bold: true, breakLine: true } },
@@ -1324,7 +1324,7 @@ async function createPresentation() {
 
     // --- Slide 23.18: Lampiran - Contoh Sederhana Rolling Window Grid Search ---
     let slideGridSearchEx = pres.addSlide();
-    slideGridSearchEx.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideGridSearchEx.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideGridSearchEx.addText("Lampiran: Mekanisme 2-Stage Grid Search (Coarse-to-Fine)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideGridSearchEx.addText([
         { text: "Tujuan: Menemukan kombinasi (Window, γ) paling presisi dengan efisiensi tinggi.", options: { bold: true, breakLine: true } },
@@ -1346,7 +1346,7 @@ async function createPresentation() {
 
     // --- Slide 23.19: Lampiran - Justifikasi Pemilihan Rolling Window ---
     let slideWindowJust = pres.addSlide();
-    slideWindowJust.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideWindowJust.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideWindowJust.addText("Lampiran: Justifikasi Pemilihan Rolling Window", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideWindowJust.addText([
         { text: "Kenapa rentang 30 s/d 60 hari dipilih sebagai 'Sweet Spot'?", options: { bold: true, breakLine: true } },
@@ -1386,7 +1386,7 @@ async function createPresentation() {
 
     // --- Slide 24: Lampiran - Dua Tipe Grid Search ---
     let slide24 = pres.addSlide();
-    slide24.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide24.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide24.addText("Lampiran: Dua Tipe Pendekatan Grid Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slide24.addText([
 
@@ -1410,7 +1410,7 @@ async function createPresentation() {
     slide24.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     // --- Slide 25: Lampiran - Penanganan Missing Value ---
     let slideOut1 = pres.addSlide();
-    slideOut1.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideOut1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideOut1.addText("Lampiran: Penanganan Data Kosong (Missing Values)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut1.addText([
         { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
@@ -1435,7 +1435,7 @@ async function createPresentation() {
 
     // --- Slide 26: Lampiran - Peran USDT (Bagian 1) ---
     let slideOut2 = pres.addSlide();
-    slideOut2.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideOut2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideOut2.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (1/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut2.addText([
         { text: "Pertanyaan: ", options: { bold: true, color: "c0392b" } },
@@ -1454,7 +1454,7 @@ async function createPresentation() {
 
     // --- Slide 27: Lampiran - Peran USDT (Bagian 2) ---
     let slideOut3 = pres.addSlide();
-    slideOut3.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideOut3.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideOut3.addText("Lampiran: Mengapa Menyertakan Tether (USDT)? (2/2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut3.addText([
         { text: "3. Algoritma jaringan ", options: { } },
@@ -1473,7 +1473,7 @@ async function createPresentation() {
 
     // --- Slide 28: Lampiran - Justifikasi Akademik 1: Non-Stationarity ---
     let slideOut4 = pres.addSlide();
-    slideOut4.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideOut4.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideOut4.addText("Lampiran: Bukti Empiris Non-Stationarity Pasar", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut4.addText([
         { text: "Masalah: ", options: { bold: true, color: "c0392b" } },
@@ -1494,7 +1494,7 @@ async function createPresentation() {
 
     // --- Slide 29: Lampiran - Justifikasi Akademik 2: Strategi Shock-Absorber ---
     let slideOut5 = pres.addSlide();
-    slideOut5.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideOut5.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideOut5.addText("Lampiran: Jaringan sebagai 'Shock-Absorber'", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
     slideOut5.addText([
         { text: "Konsep Teoritis:", options: { bold: true, breakLine: true, color: "27ae60" } },
@@ -1513,7 +1513,7 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
     // --- Slide 30: Lampiran - Simulasi Kalkulasi Cumulative P&L ---
     let slidePnLSim = pres.addSlide();
-    slidePnLSim.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slidePnLSim.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slidePnLSim.addText("Lampiran: Simulasi Kalkulasi Cumulative P&L", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slidePnLSim.addText([
         { text: "Bagaimana modal berkembang melalui bunga majemuk (compounding)?", options: { bold: true, breakLine: true } },
@@ -1541,7 +1541,7 @@ async function createPresentation() {
 
     // --- Slide 32: Lampiran - Simulasi Kalkulasi Value at Risk (VaR) ---
     let slideVaRSim = pres.addSlide();
-    slideVaRSim.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideVaRSim.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideVaRSim.addText("Lampiran: Simulasi Kalkulasi Value at Risk (VaR)", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideVaRSim.addText([
         { text: "Berapa potensi kerugian maksimal dalam kondisi pasar normal?", options: { bold: true, breakLine: true } },
@@ -1564,7 +1564,7 @@ async function createPresentation() {
 
     // --- Slide 33: Lampiran - Simulasi Kalkulasi Sharpe Ratio ---
     let slideSharpeSim = pres.addSlide();
-    slideSharpeSim.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideSharpeSim.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideSharpeSim.addText("Lampiran: Simulasi Kalkulasi Sharpe Ratio", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideSharpeSim.addText([
         { text: "Bagaimana mengukur kualitas imbal hasil per unit risiko?", options: { bold: true, breakLine: true } },
@@ -1592,7 +1592,7 @@ async function createPresentation() {
 
     // --- Slide 34: Lampiran - Simulasi Kalkulasi Rachev Ratio ---
     let slideRachevSim = pres.addSlide();
-    slideRachevSim.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slideRachevSim.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideRachevSim.addText("Lampiran: Simulasi Kalkulasi Rachev Ratio", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
     slideRachevSim.addText([
         { text: "1. Konsep Dasar:", options: { bold: true, breakLine: true, color: "003366" } },
@@ -1620,7 +1620,7 @@ async function createPresentation() {
 
     // --- Akhir Presentasi: Terima Kasih ---
     let slide7 = pres.addSlide();
-    slide7.addImage({ path: "logo_unm.png", x: 0.1, y: 0.1, w: 0.6, h: 0.6 });
+    slide7.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide7.addText("Terima Kasih", { x: 0.5, y: 2.7, w: "90%", fontSize: 40, bold: true, align: "center", color: "003366" });
     slide7.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide7.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
