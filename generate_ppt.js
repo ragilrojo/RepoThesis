@@ -93,39 +93,45 @@ async function createPresentation() {
     let slideTOC2 = pres.addSlide();
     slideTOC2.addText("Daftar Isi (IV. Lampiran Teknis)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     
+    // Kolom Kiri
     slideTOC2.addText([
-        { text: "IV. LAMPIRAN TEKNIS (APPENDIX)", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "IV. LAMPIRAN (BAGIAN 1)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '32' }, fontSize: 16 } },
+        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '32' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '33' }, fontSize: 16 } },
+        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '33' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '34' }, fontSize: 16 } },
+        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '34' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '36' }, fontSize: 16 } },
+        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '36' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '18' }, fontSize: 16 } },
+        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '18' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '25' }, fontSize: 16 } },
+        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '25' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '27' }, fontSize: 16 } },
+        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '27' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '28' }, fontSize: 16 } },
+        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '28' }, fontSize: 16, breakLine: true } },
+    ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
+
+    // Kolom Kanan
+    slideTOC2.addText([
+        { text: "IV. LAMPIRAN (BAGIAN 2)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '37' }, fontSize: 16 } },
+        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '37' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '49' }, fontSize: 16 } },
+        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '49' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '50' }, fontSize: 16 } },
+        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '50' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '57' }, fontSize: 16 } },
+        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '57' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '58' }, fontSize: 16 } },
+        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '58' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '59' }, fontSize: 16 } },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '59' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '60' }, fontSize: 16 } },
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 16, color: "333333", valign: "top" });
+        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '60' }, fontSize: 16, breakLine: true } },
+    ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
     
     slideTOC2.addText("⬅ Kembali ke TOC 1", { x: 8.0, y: 5.3, w: 1.5, fontSize: 10, color: "7f8c8d", hyperlink: { slide: '2' }, align: "right" });
 
