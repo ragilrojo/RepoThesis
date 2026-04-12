@@ -1515,11 +1515,9 @@ async function createPresentation() {
 
         { text: "Kesimpulan:", options: { bold: true, breakLine: true, color: "003366" } },
         { text: "Window 30-60 hari adalah keseimbangan antara akurasi statistik dan kecepatan respons pasar.", options: { italic: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
+    ], { x: 0.5, y: 1.0, w: "90%", h: 4.5, fontSize: 14, color: "333333", valign: "top" });
     slideWindowJust.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideWindowJust.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
-    slideCalcCentrality.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
-    slideCalcCentrality.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
 
