@@ -286,8 +286,8 @@ async function createPresentation() {
         { text: "Penelitian pertama yang secara simultan menguji NW-Markowitz terhadap 3 target sekaligus: VAR (Risiko), SHARPE (Efisiensi), dan RACHEV (Ujung Ekor).", options: {} }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
 
-    slideNovelty.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.8, w: 9.0, h: 0.5, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
-    slideNovelty.addText("🌟 Mengisi celah penelitian sebelumnya yang cenderung menggunakan parameter statis pada pasar yang sangat dinamis.", { x: 0.5, y: 4.8, w: 9.0, h: 0.5, fontSize: 12, italic: true, align: "center", valign: "middle" });
+    slideNovelty.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
+    slideNovelty.addText("🌟 Mengisi celah penelitian sebelumnya yang cenderung menggunakan parameter statis pada pasar yang sangat dinamis.", { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fontSize: 12, italic: true, align: "center", valign: "middle" });
 
     slideNovelty.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideNovelty.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
