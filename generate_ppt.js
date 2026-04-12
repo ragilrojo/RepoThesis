@@ -82,7 +82,7 @@ async function createPresentation() {
         { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '16' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (2-Stage GS)", options: { hyperlink: { slide: '17' }, fontSize: 14 } }
+        { text: "Network Markowitz (Tuned Statis)", options: { hyperlink: { slide: '17' }, fontSize: 14 } }
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan: Evaluasi & Navigasi
@@ -206,14 +206,14 @@ async function createPresentation() {
 
     slideRumusan.addText([
         { text: "Rumusan Masalah:", options: { bold: true, color: "c0392b", breakLine: true, fontSize: 18 } },
-        { text: "1. Bagaimana merancang arsitektur Network Markowitz yang adaptif terhadap dinamisnya korelasi aset kripto pada fase pasar yang berbeda?\n", options: { fontSize: 16 } },
+        { text: "1. Bagaimana mengidentifikasi arsitektur Network Markowitz Statis yang optimal (Tuned Window & Gamma) pada fase pasar yang berbeda?\n", options: { fontSize: 16 } },
         { text: "2. Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) mampu meregulasi *estimation risk* dibandingkan Model Tradisional?\n", options: { fontSize: 16 } },
-        { text: "3. Sejauh mana optimasi 2-Stage Grid Search mampu meningkatkan kinerja multi-metric (P&L, VaR, Sharpe, Rachev)?", options: { breakLine: true, fontSize: 16 } },
+        { text: "3. Sejauh mana optimasi 2-Stage Grid Search mampu mendefinisikan parameter terbaik untuk kinerja multi-metric (P&L, VaR, Sharpe, Rachev)?", options: { breakLine: true, fontSize: 16 } },
         
         { text: "", options: { breakLine: true } },
         
         { text: "Tujuan Penelitian:", options: { bold: true, color: "27ae60", breakLine: true, fontSize: 18 } },
-        { text: "Mengembangkan kerangka alokasi portofolio mata uang kripto yang tangguh melalui pendekatan Network Markowitz adaptif. Solusi ini secara dinamis menyeimbangkan tingkat efisiensi (*Return/Risk*) dan meredam ketidakstabilan penularan jaringan (*Contagion Risk*).", options: { fontSize: 16, italic: true } }
+        { text: "Mengembangkan kerangka alokasi portofolio kripto yang tangguh melalui pendekatan Network Markowitz yang ditune statis secara presisi. Solusi ini ditujukan untuk memaksimalkan rasio efisiensi (*Return/Risk*) sekaligus meredam risiko penularan jaringan (*Contagion Risk*).", options: { fontSize: 16, italic: true } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, color: "333333", valign: "top" });
     slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -297,10 +297,10 @@ async function createPresentation() {
     slideNovelty.addText("Kebaruan & Kontribusi Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     slideNovelty.addText([
-        { text: "1. Metodologi Adaptif (2-Stage Grid Search):\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Mampu menangkap sifat ", options: {} },
-        { text: "non-stationary", options: { bold: true, italic: true } },
-        { text: " pasar kripto secara otomatis melalui optimasi parameter dinamis (Window & Gamma).\n", options: {} },
+        { text: "1. Parameter Tuning Presisi (2-Stage Grid Search):\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "Mampu mengatasi masalah ", options: {} },
+        { text: "non-stationarity", options: { bold: true, italic: true } },
+        { text: " pasar kripto dengan menemukan konfigurasi Network Markowitz statis (Window & Gamma) yang paling holistik dan resisten menghadapi berbagai fase pasar.\n", options: {} },
         
         { text: "2. Reduksi Estimation Risk melalui Topologi Network:\n", options: { bold: true, color: "003366", fontSize: 18 } },
         { text: "Mengintegrasikan analisis jaringan (MST) dan penalti untuk menstabilkan bobot portofolio pada kondisi market crash.\n", options: {} },
@@ -384,7 +384,7 @@ async function createPresentation() {
 
         { text: "4. Kelompok Network (Tuned / 2-Stage GS):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW 2-Stage GS (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '17' }, color: "0563C1", underline: true } }
+        { text: "NW Tuned Statis (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '17' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -491,7 +491,7 @@ async function createPresentation() {
     let slideNWAdaptive = pres.addSlide();
     slideNWAdaptive.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideNWAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideNWAdaptive.addText("4. Network Markowitz (NW) 2-Stage GS", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideNWAdaptive.addText("4. Network Markowitz (NW) Tuned Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     // Kolom Kiri: Mekanisme
     slideNWAdaptive.addText([
         { text: "2-Stage Grid Search (Coarse-to-Fine):", options: { bold: true, color: "003366", breakLine: true } },
