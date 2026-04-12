@@ -296,25 +296,25 @@ async function createPresentation() {
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '9' }, color: "0563C1", underline: true } },
+        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '11' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '10' }, color: "0563C1", underline: true } },
+        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '12' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '11' }, color: "0563C1", underline: true } },
+        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '12' }, color: "0563C1", underline: true } },
+        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "4. Kelompok Network (Tuned / 2-Stage GS):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW 2-Stage GS (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } }
+        { text: "NW 2-Stage GS (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '15' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
