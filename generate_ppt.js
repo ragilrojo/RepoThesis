@@ -209,9 +209,9 @@ async function createPresentation() {
 
     slideRumusan.addText([
         { text: "Berdasarkan identifikasi masalah yang dialami oleh model portofolio klasik di pasar kripto, maka dirumuskan serangkaian pertanyaan penelitian berikut:\n", options: { color: "333333", breakLine: true, fontSize: 16 } },
-        { text: "1. Bagaimana mengidentifikasi arsitektur Network Markowitz Statis yang optimal (Tuned Window & Gamma) pada fase pasar yang berbeda?\n", options: { fontSize: 18, breakLine: true, color: "c0392b", bold: true } },
-        { text: "2. Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) secara signifikan mampu meregulasi *estimation risk* dibandingkan Model Tradisional?\n", options: { fontSize: 18, breakLine: true, color: "c0392b", bold: true } },
-        { text: "3. Sejauh mana optimasi parameter Tuning statis ini mendefinisikan batas terbaik untuk kinerja multi-metric (P&L, VaR, Sharpe, Rachev)?", options: { breakLine: true, fontSize: 18, color: "c0392b", bold: true } }
+        { text: "1. Bagaimana mengidentifikasi arsitektur Network Markowitz Statis yang optimal (Tuned Window & Gamma) pada fase pasar yang berbeda?\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
+        { text: "2. Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) secara signifikan mampu meregulasi *estimation risk* dibandingkan Model Tradisional?\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
+        { text: "3. Sejauh mana optimasi parameter Tuning statis ini mendefinisikan batas terbaik untuk kinerja multi-metric (P&L, VaR, Sharpe, Rachev)?", options: { breakLine: true, fontSize: 18, color: "003366", bold: true } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, color: "333333", valign: "top" });
     slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -224,9 +224,9 @@ async function createPresentation() {
 
     slideTujuan.addText([
         { text: "Berkaitan dengan permasalahan di atas, penelitian ini memaparkan target operasional sebagai berikut:\n", options: { color: "333333", breakLine: true, fontSize: 16 } },
-        { text: "1. Merancang dan menguji kerangka alokasi Network Markowitz yang tangguh dan terkalibrasi optimum secara statis untuk ekosistem portofolio mata uang kripto.\n", options: { fontSize: 18, breakLine: true, color: "27ae60", bold: true } },
-        { text: "2. Menganalisis daya redam model dalam mempersempit kesalahan estimasi matriks (*estimation risk*) dengan memanfaatkan jaringan hirarki Minimum Spanning Tree (MST).\n", options: { fontSize: 18, breakLine: true, color: "27ae60", bold: true } },
-        { text: "3. Mengevaluasi dampak dari kerangka parameter optimasi (*Window & Gamma*) ini dalam menyukseskan target peningkatkan efisiensi komparatif portofolio (Sharpe & Rachev) dan penahanan batas kerugian (VaR).", options: { fontSize: 18, color: "27ae60", bold: true } }
+        { text: "1. Merancang dan menguji kerangka alokasi Network Markowitz yang tangguh dan terkalibrasi optimum secara statis untuk ekosistem portofolio mata uang kripto.\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
+        { text: "2. Menganalisis daya redam model dalam mempersempit kesalahan estimasi matriks (*estimation risk*) dengan memanfaatkan jaringan hirarki Minimum Spanning Tree (MST).\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
+        { text: "3. Mengevaluasi dampak dari kerangka parameter optimasi (*Window & Gamma*) ini dalam menyukseskan target peningkatkan efisiensi komparatif portofolio (Sharpe & Rachev) dan penahanan batas kerugian (VaR).", options: { fontSize: 18, color: "003366", bold: true } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, color: "333333", valign: "top" });
     slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
