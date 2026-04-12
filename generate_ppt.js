@@ -48,48 +48,51 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Identifikasi Masalah", options: { hyperlink: { slide: '5' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Rumusan Masalah", options: { hyperlink: { slide: '6' }, fontSize: 14 } },
+        { text: "", options: { breakLine: true } },
         { text: "II. LANDASAN & KERANGKA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Landasan Teori", options: { hyperlink: { slide: '6' }, fontSize: 14 } },
+        { text: "Landasan Teori", options: { hyperlink: { slide: '7' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '7' }, fontSize: 14 } },
+        { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '8' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '8' }, fontSize: 14 } },
+        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '9' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kebaruan & Kontribusi", options: { hyperlink: { slide: '9' }, fontSize: 14 } },
+        { text: "Kebaruan & Kontribusi", options: { hyperlink: { slide: '10' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian", options: { hyperlink: { slide: '10' }, fontSize: 14 } },
+        { text: "Dataset Penelitian", options: { hyperlink: { slide: '11' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
 
         { text: "III. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '12' }, fontSize: 14 } },
+        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
+        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
+        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '15' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '15' }, fontSize: 14 } },
+        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '16' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (2-Stage GS)", options: { hyperlink: { slide: '16' }, fontSize: 14 } }
+        { text: "Network Markowitz (2-Stage GS)", options: { hyperlink: { slide: '17' }, fontSize: 14 } }
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan: Evaluasi & Navigasi
     slideTOC1.addText([
         { text: "III. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '17' }, fontSize: 14 } },
+        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '18' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '18' }, fontSize: 14 } },
+        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '19' }, fontSize: 14 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "Lanjutan Daftar Isi:", options: { bold: true, color: "e67e22", breakLine: true } },
@@ -97,7 +100,7 @@ async function createPresentation() {
         { text: "LAMPIRAN TEKNIS (APPENDIX)", options: { hyperlink: { slide: '3' }, fontSize: 14, color: "d35400", bold: true } },
         { text: "", options: { breakLine: true } },
         { text: "   ➤ ", options: {} },
-        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '63' }, fontSize: 14, color: "003366", bold: true } },
+        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '64' }, fontSize: 14, color: "003366", bold: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 3: Daftar Isi (Bagian 2: Appendix) ---
@@ -112,40 +115,40 @@ async function createPresentation() {
     slideTOC2.addText([
         { text: "IV. LAMPIRAN (BAGIAN 1)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '34' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '35' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '35' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '36' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '36' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '37' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '38' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '39' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '19' }, fontSize: 14, breakLine: true } },
+        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '20' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '26' }, fontSize: 14, breakLine: true } },
+        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '27' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '28' }, fontSize: 14, breakLine: true } },
+        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '29' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '29' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '30' }, fontSize: 14, breakLine: true } },
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan
     slideTOC2.addText([
         { text: "IV. LAMPIRAN (BAGIAN 2)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '39' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '40' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '51' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '52' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '52' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '53' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '59' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '60' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '60' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '61' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '61' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '62' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '62' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '63' }, fontSize: 14, breakLine: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
     slideTOC2.addText("🏠 Kembali ke Daftar Isi Utama", { x: 7.0, y: 5.3, w: 2.7, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -194,6 +197,26 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
     slideProblem.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideProblem.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.6: Rumusan & Tujuan Penelitian ---
+    let slideRumusan = pres.addSlide();
+    slideRumusan.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideRumusan.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideRumusan.addText("Rumusan & Tujuan Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+
+    slideRumusan.addText([
+        { text: "Rumusan Masalah:", options: { bold: true, color: "c0392b", breakLine: true, fontSize: 18 } },
+        { text: "1. Bagaimana merancang arsitektur Network Markowitz yang adaptif terhadap dinamisnya korelasi aset kripto pada fase pasar yang berbeda?\n", options: { fontSize: 16 } },
+        { text: "2. Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) mampu meregulasi *estimation risk* dibandingkan Model Tradisional?\n", options: { fontSize: 16 } },
+        { text: "3. Sejauh mana optimasi 2-Stage Grid Search mampu meningkatkan kinerja multi-metric (P&L, VaR, Sharpe, Rachev)?", options: { breakLine: true, fontSize: 16 } },
+        
+        { text: "", options: { breakLine: true } },
+        
+        { text: "Tujuan Penelitian:", options: { bold: true, color: "27ae60", breakLine: true, fontSize: 18 } },
+        { text: "Mengembangkan kerangka alokasi portofolio mata uang kripto yang tangguh melalui pendekatan Network Markowitz adaptif. Solusi ini secara dinamis menyeimbangkan tingkat efisiensi (*Return/Risk*) dan meredam ketidakstabilan penularan jaringan (*Contagion Risk*).", options: { fontSize: 16, italic: true } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4, color: "333333", valign: "top" });
+    slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4: Landasan Teori (Dua Kolom) ---
     let slide4 = pres.addSlide();
@@ -343,25 +366,25 @@ async function createPresentation() {
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '12' }, color: "0563C1", underline: true } },
+        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '13' }, color: "0563C1", underline: true } },
+        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } },
+        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '15' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '15' }, color: "0563C1", underline: true } },
+        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '16' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "4. Kelompok Network (Tuned / 2-Stage GS):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW 2-Stage GS (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '16' }, color: "0563C1", underline: true } }
+        { text: "NW 2-Stage GS (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '17' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -386,7 +409,7 @@ async function createPresentation() {
         { text: "estimation risk", options: { bold: true } },
         { text: " karena minim statistik.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '34' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideEW.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideEW.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -411,7 +434,7 @@ async function createPresentation() {
         { text: "teori tradisional", options: { bold: true } },
         { text: " dalam penelitian ini.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '35' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '36' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideCM.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideCM.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -434,7 +457,7 @@ async function createPresentation() {
         { text: "palsu", options: { bold: true } },
         { text: " (spurious correlations).", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '36' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '37' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideGM.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideGM.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -459,7 +482,7 @@ async function createPresentation() {
         { text: "pembanding langsung", options: { bold: true } },
         { text: " untuk menguji efisiensi parameter hasil tuning.", options: { breakLine: true } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '38' } } }
+        { text: "[Lihat Detail Simulasi Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '39' } } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideNWStatic.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideNWStatic.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -486,7 +509,7 @@ async function createPresentation() {
         { text: "❑ Konsistensi: Validasi melalui Fine-Search memastikan solusi bukan noise lokal.", options: { breakLine: true } },
         { text: "❑ Hasil: Strategi yang lebih tangguh di berbagai fase pasar (Bearish, Recovery, Stable).", options: { breakLine: true, color: "e67e22" } },
         { text: "", options: { breakLine: true } },
-        { text: "[Lihat Hasil Comparison & Grid Search Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '51' } } }
+        { text: "[Lihat Hasil Comparison & Grid Search Lampiran]", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '52' } } }
     ], { x: 5.2, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
     slideNWAdaptive.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideNWAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -497,16 +520,16 @@ async function createPresentation() {
     slide6.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide6.addText("Matriks Evaluasi Performa (Multi-Metric)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
-        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '59' } } },
+        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '60' } } },
         { text: "   Mengukur total keuntungan/kerugian akumulatif vs benchmark.", options: { breakLine: true } },
 
-        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '60' } } },
+        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '61' } } },
         { text: "   Fokus optimasi pada resiliensi risiko/batas bawah.", options: { breakLine: true } },
 
-        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '61' } } },
+        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '62' } } },
         { text: "   Fokus optimasi pada efisiensi imbal hasil per unit risiko.", options: { breakLine: true } },
 
-        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad", hyperlink: { slide: '62' } } },
+        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad", hyperlink: { slide: '63' } } },
         { text: "   Fokus optimasi pada perbandingan ekor distribusi (Fat-Tails).", options: { breakLine: true } },
 
         { text: "Justifikasi Multi-Objective:", options: { bold: true, breakLine: true, color: "d35400", fontSize: 14 } },
