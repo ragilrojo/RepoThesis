@@ -46,8 +46,9 @@ async function createPresentation() {
         { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Identifikasi Masalah (Risk)", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
+        { text: "Identifikasi Masalah", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
+        { text: "II. LANDASAN & KERANGKA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Landasan Teori", options: { hyperlink: { slide: '6' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
@@ -55,13 +56,13 @@ async function createPresentation() {
         { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '7' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '8' }, fontSize: 16 } },
+        { text: "Kerangka & Kontribusi", options: { hyperlink: { slide: '8' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset & Kontribusi", options: { hyperlink: { slide: '9' }, fontSize: 16 } },
+        { text: "Dataset Penelitian", options: { hyperlink: { slide: '10' }, fontSize: 16 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
-        { text: "II. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "III. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '12' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
@@ -118,11 +119,11 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '19' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '26' }, fontSize: 16, breakLine: true } },
+        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '25' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '28' }, fontSize: 16, breakLine: true } },
+        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '27' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '29' }, fontSize: 16, breakLine: true } },
+        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '28' }, fontSize: 16, breakLine: true } },
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan
@@ -475,16 +476,16 @@ async function createPresentation() {
     slide6.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide6.addText("Matriks Evaluasi Performa (Multi-Metric)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slide6.addText([
-        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '56' } } },
+        { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '58' } } },
         { text: "   Mengukur total keuntungan/kerugian akumulatif vs benchmark.", options: { breakLine: true } },
 
-        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '57' } } },
+        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '59' } } },
         { text: "   Fokus optimasi pada resiliensi risiko/batas bawah.", options: { breakLine: true } },
 
-        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '58' } } },
+        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '60' } } },
         { text: "   Fokus optimasi pada efisiensi imbal hasil per unit risiko.", options: { breakLine: true } },
 
-        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad", hyperlink: { slide: '59' } } },
+        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad", hyperlink: { slide: '61' } } },
         { text: "   Fokus optimasi pada perbandingan ekor distribusi (Fat-Tails).", options: { breakLine: true } },
 
         { text: "Justifikasi Multi-Objective:", options: { bold: true, breakLine: true, color: "d35400", fontSize: 14 } },
