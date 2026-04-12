@@ -43,62 +43,62 @@ async function createPresentation() {
     slideTOC1.addText([
         { text: "I. PENDAHULUAN & MASALAH", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 16 } },
+        { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Identifikasi Masalah", options: { hyperlink: { slide: '5' }, fontSize: 16 } },
+        { text: "Identifikasi Masalah", options: { hyperlink: { slide: '5' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "II. LANDASAN & KERANGKA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Landasan Teori", options: { hyperlink: { slide: '6' }, fontSize: 16 } },
+        { text: "Landasan Teori", options: { hyperlink: { slide: '6' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '7' }, fontSize: 16 } },
+        { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '7' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '8' }, fontSize: 16 } },
+        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '8' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kebaruan & Kontribusi", options: { hyperlink: { slide: '9' }, fontSize: 16 } },
+        { text: "Kebaruan & Kontribusi", options: { hyperlink: { slide: '9' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian", options: { hyperlink: { slide: '10' }, fontSize: 16 } },
-        { text: "", options: { breakLine: true, breakLine: true } },
+        { text: "Dataset Penelitian", options: { hyperlink: { slide: '10' }, fontSize: 14 } },
+        { text: "", options: { breakLine: true } },
 
         { text: "III. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '12' }, fontSize: 16 } },
+        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '12' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '13' }, fontSize: 16 } },
+        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '14' }, fontSize: 16 } },
+        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '15' }, fontSize: 16 } },
+        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '15' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (2-Stage GS)", options: { hyperlink: { slide: '16' }, fontSize: 16 } }
-    ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
+        { text: "Network Markowitz (2-Stage GS)", options: { hyperlink: { slide: '16' }, fontSize: 14 } }
+    ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan: Evaluasi & Navigasi
     slideTOC1.addText([
         { text: "III. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '17' }, fontSize: 16 } },
+        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '17' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '18' }, fontSize: 16 } },
+        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '18' }, fontSize: 14 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "Lanjutan Daftar Isi:", options: { bold: true, color: "e67e22", breakLine: true } },
         { text: "   ➤ ", options: {} },
-        { text: "LAMPIRAN TEKNIS (APPENDIX)", options: { hyperlink: { slide: '3' }, fontSize: 16, color: "d35400", bold: true } },
+        { text: "LAMPIRAN TEKNIS (APPENDIX)", options: { hyperlink: { slide: '3' }, fontSize: 14, color: "d35400", bold: true } },
         { text: "", options: { breakLine: true } },
         { text: "   ➤ ", options: {} },
-        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '62' }, fontSize: 16, color: "003366", bold: true } },
-    ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 18, color: "333333", valign: "top" });
+        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '62' }, fontSize: 14, color: "003366", bold: true } },
+    ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // --- Slide 3: Daftar Isi (Bagian 2: Appendix) ---
     let slideTOC2 = pres.addSlide();
