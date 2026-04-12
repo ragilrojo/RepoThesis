@@ -56,7 +56,10 @@ async function createPresentation() {
         { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '7' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kerangka & Kontribusi", options: { hyperlink: { slide: '8' }, fontSize: 16 } },
+        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '8' }, fontSize: 16 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Kebaruan & Kontribusi", options: { hyperlink: { slide: '9' }, fontSize: 16 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Dataset Penelitian", options: { hyperlink: { slide: '10' }, fontSize: 16 } },
@@ -119,11 +122,11 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '19' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '25' }, fontSize: 16, breakLine: true } },
+        { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '26' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '27' }, fontSize: 16, breakLine: true } },
+        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '28' }, fontSize: 16, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '28' }, fontSize: 16, breakLine: true } },
+        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '29' }, fontSize: 16, breakLine: true } },
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan
@@ -173,6 +176,24 @@ async function createPresentation() {
     ], { x: 5.5, y: 2.6, w: 3.8, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5: Identifikasi Masalah ---
+    let slideProblem = pres.addSlide();
+    slideProblem.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideProblem.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideProblem.addText("Identifikasi Masalah Eksekusi Model Tradisional", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+
+    slideProblem.addText([
+        { text: "Mengapa Classical Markowitz (CM) Gagal di Pasar Kripto?\n", options: { bold: true, color: "c0392b", fontSize: 20 } },
+        { text: "1. Estimation Risk & Noise:\n", options: { bold: true, color: "003366" } },
+        { text: "Sensitivitas ekstrem terhadap input rata-rata dan kovariansi. Kesalahan kecil pada estimasi berakibat error alokasi eksponensial.\n", options: {} },
+        { text: "2. Correlation Spikes:\n", options: { bold: true, color: "003366" } },
+        { text: "Saat market crash (Fase Bearish), korelasi antar koin memuncak secara buatan, membuat diversifikasi CM gagal mendadak.\n", options: {} },
+        { text: "3. Corner Solutions:\n", options: { bold: true, color: "003366" } },
+        { text: "Model cenderung memberikan bobot berlebihan hanya pada sebagian kecil pecahan aset, dan 0 untuk yang lain (konsenstrasi risiko ekstrem).", options: {} }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
+    slideProblem.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideProblem.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4: Landasan Teori (Dua Kolom) ---
     let slide4 = pres.addSlide();
