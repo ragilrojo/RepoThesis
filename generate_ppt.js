@@ -39,7 +39,7 @@ async function createPresentation() {
     slideTOC1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTOC1.addText("Daftar Isi (Main Sections)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
-    // Kolom Kiri: Pendahuluan & Strategi
+    // Kolom Kiri: Pendahuluan & Landasan
     slideTOC1.addText([
         { text: "I. PENDAHULUAN & MASALAH", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
@@ -69,8 +69,10 @@ async function createPresentation() {
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Dataset Penelitian", options: { hyperlink: { slide: '12' }, fontSize: 14 } },
-        { text: "", options: { breakLine: true } },
+    ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
+    // Kolom Kanan: Strategi, Evaluasi & Navigasi
+    slideTOC1.addText([
         { text: "III. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
@@ -85,12 +87,10 @@ async function createPresentation() {
         { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '17' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (Tuned Statis)", options: { hyperlink: { slide: '18' }, fontSize: 14 } }
-    ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
+        { text: "Network Markowitz (Tuned Statis)", options: { hyperlink: { slide: '18' }, fontSize: 14 } },
+        { text: "", options: { breakLine: true, breakLine: true } },
 
-    // Kolom Kanan: Evaluasi & Navigasi
-    slideTOC1.addText([
-        { text: "III. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "IV. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
         { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '19' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
