@@ -337,28 +337,30 @@ async function createPresentation() {
     slideSens.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideSens.addText("Analisis Sensitivitas: Urgensi Tuning W & γ", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
-    // Grid Visualisasi Konseptual
+    // Box 1: Window Size
     slideSens.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 2.2, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
-    slideSens.addText("🖼️ Efek Window Size (W)", { x: 0.5, y: 1.3, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
+    slideSens.addText("🖼️ Efek Window Size (W)", { x: 0.5, y: 1.35, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
     slideSens.addText([
         { text: "• Kecil (30-40 hari):", options: { bold: true, fontSize: 13 } },
         { text: " Responsif namun rentan Noise & biaya transaksi tinggi.\n", options: { fontSize: 12 } },
         { text: "• Besar (100+ hari):", options: { bold: true, fontSize: 13 } },
         { text: " Stabil namun Laggard (terlambat) merespons perubahan tren.", options: { fontSize: 12 } }
-    ], { x: 0.6, y: 1.8, w: 4.1, color: "333333" });
+    ], { x: 0.75, y: 1.9, w: 3.8, color: "333333", valign: "top" });
 
+    // Box 2: Gamma
     slideSens.addShape(pres.ShapeType.rect, { x: 5.2, y: 1.2, w: 4.3, h: 2.2, fill: { color: "fef9e7" }, line: { color: "f1c40f", width: 1 } });
-    slideSens.addText("🖼️ Efek Penalti Gamma (γ)", { x: 5.2, y: 1.3, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
+    slideSens.addText("🖼️ Efek Penalti Gamma (γ)", { x: 5.2, y: 1.35, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
     slideSens.addText([
         { text: "• γ rendah (≈ 0):", options: { bold: true, fontSize: 13 } },
         { text: " Mengabaikan risiko jaringan; portofolio menderita saat Crash.\n", options: { fontSize: 12 } },
         { text: "• γ tinggi (> 1):", options: { bold: true, fontSize: 13 } },
         { text: " Proteksi sistemik kuat; membuang aset sentral demi keamanan.", options: { fontSize: 12 } }
-    ], { x: 5.3, y: 1.8, w: 4.1, color: "333333" });
+    ], { x: 5.45, y: 1.9, w: 3.8, color: "333333", valign: "top" });
 
-    slideSens.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.6, w: 9.0, h: 1.2, fill: { color: "f2f4f4" }, line: { color: "7f8c8d", width: 1 } });
-    slideSens.addText("🎯 TUJUAN: Menemukan Konfigurasi Statis yang Tangguh", { x: 0.5, y: 3.7, w: 9.0, fontSize: 15, bold: true, color: "003366", align: "center" });
-    slideSens.addText("Tuning dilakukan untuk mengidentifikasi 'Sweet Spot' parameter yang mampu menyeimbangkan stabilitas estimasi (W) dan ketahanan terhadap risiko jaringan (γ) guna mendapatkan performa terbaik di sepanjang rentang waktu penelitian.", { x: 0.7, y: 4.1, w: 8.6, fontSize: 13, italic: true, align: "center" });
+    // Box 3: Tujuan
+    slideSens.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.5, w: 9.0, h: 1.5, fill: { color: "f2f4f4" }, line: { color: "7f8c8d", width: 1 } });
+    slideSens.addText("🎯 TUJUAN: Menemukan Konfigurasi Statis yang Tangguh", { x: 0.5, y: 3.65, w: 9.0, fontSize: 15, bold: true, color: "003366", align: "center" });
+    slideSens.addText("Tuning dilakukan untuk mengidentifikasi 'Sweet Spot' parameter yang mampu menyeimbangkan stabilitas estimasi (W) dan ketahanan terhadap risiko jaringan (γ) guna mendapatkan performa terbaik di sepanjang rentang waktu penelitian.", { x: 0.9, y: 4.1, w: 8.2, fontSize: 13, italic: true, align: "center", valign: "middle" });
 
     slideSens.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideSens.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
