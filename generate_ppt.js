@@ -65,7 +65,7 @@ async function createPresentation() {
         { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '10' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kebaruan & Analisis Sensitivitas", options: { hyperlink: { slide: '11' }, fontSize: 14 } },
+        { text: "Kebaruan & Urgensi Tuning", options: { hyperlink: { slide: '11' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
@@ -335,7 +335,7 @@ async function createPresentation() {
     let slideSens = pres.addSlide();
     slideSens.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideSens.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideSens.addText("Analisis Sensitivitas: Urgensi Tuning W & γ", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideSens.addText("Urgensi Tuning Parameter W & γ", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
     // Box 1: Window Size
     slideSens.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 2.2, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
