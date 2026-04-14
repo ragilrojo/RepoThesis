@@ -1,0 +1,122 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.0.0 Safari/537.36" version="29.6.1">
+  <diagram id="OuWDWZeEx7vUVC7li4Jy" name="Network Markowitz Flowchart">
+    <mxGraphModel dx="1310" dy="752" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="570" pageHeight="85" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-97" parent="1" style="swimlane;whiteSpace=wrap;html=1;startSize=23;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" value="Data Layer &amp; Preprocessing" vertex="1">
+          <mxGeometry height="110" width="1020" x="60" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-98" parent="A_7n2ype67pLqtPM3DyQ-97" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#dae8fe;strokeColor=#6c8ebf;" value="10 Crypto Assets&#xa;(Daily Returns)" vertex="1">
+          <mxGeometry height="70" width="100" x="30" y="32" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-99" parent="A_7n2ype67pLqtPM3DyQ-97" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fe;strokeColor=#6c8ebf;" value="Data Cleaning &amp; &#xa;Normalization" vertex="1">
+          <mxGeometry height="55" width="140" x="190" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-100" parent="A_7n2ype67pLqtPM3DyQ-97" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fe;strokeColor=#6c8ebf;" value="Rolling Window Split&#xa;(In-Sample &amp; Out-of-Sample)" vertex="1">
+          <mxGeometry height="55" width="180" x="390" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-101" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;align=left;" value="Network Markowitz Operasional (Iteratif Per Window)" vertex="1">
+          <mxGeometry height="420" width="1020" x="60" y="190" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-102" parent="A_7n2ype67pLqtPM3DyQ-101" style="swimlane;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" value="A. Network Modeling&#xa;(In-Sample Analysis)" vertex="1">
+          <mxGeometry height="360" width="310" x="20" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-103" parent="A_7n2ype67pLqtPM3DyQ-102" style="rounded=1;whiteSpace=wrap;html=1;" value="Empirical Correlation Matrix" vertex="1">
+          <mxGeometry height="50" width="190" x="60" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-104" parent="A_7n2ype67pLqtPM3DyQ-102" style="rounded=1;whiteSpace=wrap;html=1;" value="RMT Noise Filtering" vertex="1">
+          <mxGeometry height="50" width="190" x="60" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-105" parent="A_7n2ype67pLqtPM3DyQ-102" style="rounded=1;whiteSpace=wrap;html=1;fontStyle=1" value="MST Topology Map&#xa;(Minimum Spanning Tree)" vertex="1">
+          <mxGeometry height="60" width="190" x="60" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-106" parent="A_7n2ype67pLqtPM3DyQ-101" style="swimlane;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" value="B. Hyperparameter Tuning (Grid Search)&#xa;(Parameter γ Optimization)" vertex="1">
+          <mxGeometry height="360" width="310" x="350" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-107" parent="A_7n2ype67pLqtPM3DyQ-106" style="ellipse;whiteSpace=wrap;html=1;" value="Define Penalty Range&#xa;[γmin ... γmax]" vertex="1">
+          <mxGeometry height="60" width="150" x="80" y="55" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-108" parent="A_7n2ype67pLqtPM3DyQ-106" style="rhombus;whiteSpace=wrap;html=1;" value="Iterative Calibration&#xa;on Train Set" vertex="1">
+          <mxGeometry height="110" width="175" x="67.5" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-109" parent="A_7n2ype67pLqtPM3DyQ-106" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d80073;fontColor=#ffffff;strokeColor=#A50040;fontStyle=1" value="Select Optimal γ*&#xa;(Best Risk-Adj Return)" vertex="1">
+          <mxGeometry height="50" width="170" x="70" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-110" parent="A_7n2ype67pLqtPM3DyQ-101" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fe;strokeColor=#6c8ebf;" value="C. Portfolio Execution&#xa;(Out-of-Sample Performance)" vertex="1">
+          <mxGeometry height="360" width="320" x="680" y="40" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-111" parent="A_7n2ype67pLqtPM3DyQ-110" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fontStyle=1;" value="Network-Constrained&#xa;Quadratic Programming" vertex="1">
+          <mxGeometry height="60" width="220" x="50" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-112" parent="A_7n2ype67pLqtPM3DyQ-110" style="rounded=0;whiteSpace=wrap;html=1;" value="Constraints:&#xa;Σw = 1 , w &gt; 0" vertex="1">
+          <mxGeometry height="50" width="150" x="85" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-113" parent="A_7n2ype67pLqtPM3DyQ-110" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fe;strokeColor=#6c8ebf;fontStyle=1" value="Optimal Weights Injection" vertex="1">
+          <mxGeometry height="50" width="170" x="75" y="270" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-127" edge="1" parent="A_7n2ype67pLqtPM3DyQ-101" source="A_7n2ype67pLqtPM3DyQ-109" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;strokeWidth=2.5;strokeColor=#FF3333;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" target="A_7n2ype67pLqtPM3DyQ-111">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="700" y="355" />
+              <mxPoint x="700" y="130" />
+            </Array>
+            <mxPoint x="700" y="130" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-114" parent="1" style="swimlane;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;align=left;" value="Performance &amp;amp; Statistics Evaluation" vertex="1">
+          <mxGeometry height="100" width="1020" x="60" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-115" parent="A_7n2ype67pLqtPM3DyQ-114" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1" value="Sharpe Ratio | Max Drawdown | Cumulative Return | Portfolio Turnover | Information Ratio" vertex="1">
+          <mxGeometry height="40" width="800" x="110" y="45" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-116" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-98" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;" target="A_7n2ype67pLqtPM3DyQ-99">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-117" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-99" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeWidth=1.5;" target="A_7n2ype67pLqtPM3DyQ-100">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-118" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-100" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;" target="A_7n2ype67pLqtPM3DyQ-102">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="540" y="160" />
+              <mxPoint x="235" y="160" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-119" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-100" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;" target="A_7n2ype67pLqtPM3DyQ-106">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-120" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-103" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="A_7n2ype67pLqtPM3DyQ-104">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-121" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-104" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="A_7n2ype67pLqtPM3DyQ-105">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-122" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-107" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="A_7n2ype67pLqtPM3DyQ-108">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-123" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-108" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="A_7n2ype67pLqtPM3DyQ-109">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-124" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-111" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="A_7n2ype67pLqtPM3DyQ-112">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-125" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-112" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;" target="A_7n2ype67pLqtPM3DyQ-113">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-126" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-105" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;dashed=1;strokeWidth=1;" target="A_7n2ype67pLqtPM3DyQ-111">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="760" y="500" />
+              <mxPoint x="760" y="320" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="A_7n2ype67pLqtPM3DyQ-128" edge="1" parent="1" source="A_7n2ype67pLqtPM3DyQ-113" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;strokeWidth=1.5;" target="A_7n2ype67pLqtPM3DyQ-115">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
