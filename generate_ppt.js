@@ -218,14 +218,28 @@ async function createPresentation() {
     let slideRumusan = pres.addSlide();
     slideRumusan.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideRumusan.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideRumusan.addText("Rumusan Masalah Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideRumusan.addText("Rumusan Masalah Penelitian", { x: 0.5, y: 0.4, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
-    slideRumusan.addText([
-        { text: "Berdasarkan identifikasi masalah yang dialami oleh model portofolio klasik di pasar kripto, maka dirumuskan serangkaian pertanyaan penelitian berikut:\n", options: { color: "333333", breakLine: true, fontSize: 16 } },
-        { text: "1. Bagaimana mengidentifikasi arsitektur Network Markowitz Statis yang optimal (Tuned Window & Gamma) pada fase pasar yang berbeda?\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
-        { text: "2. Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) secara signifikan mampu meregulasi *estimation risk* dibandingkan Model Tradisional?\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
-        { text: "3. Sejauh mana optimasi parameter Tuning statis ini mendefinisikan batas terbaik untuk kinerja multi-metric (P&L, VaR, Sharpe, Rachev)?", options: { breakLine: true, fontSize: 18, color: "003366", bold: true } }
-    ], { x: 0.5, y: 1.2, w: "90%", h: 4, color: "333333", valign: "top" });
+    slideRumusan.addText("Berdasarkan identifikasi masalah pada model klasik, dirumuskan pertanyaan penelitian berikut:", { x: 0.5, y: 0.9, w: "90%", fontSize: 14, italic: true, color: "555555" });
+
+    // Question 1 Box
+    slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "3498db", width: 1.5 } });
+    slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 0.6, h: 1.0, fill: { color: "3498db" } });
+    slideRumusan.addText("Q1", { x: 0.5, y: 1.3, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    slideRumusan.addText("Bagaimana mengidentifikasi arsitektur Network Markowitz Statis yang optimal (Tuned Window & Gamma) pada fase pasar yang berbeda?", { x: 1.2, y: 1.3, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+
+    // Question 2 Box
+    slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "2c3e50", width: 1.5 } });
+    slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 0.6, h: 1.0, fill: { color: "2c3e50" } });
+    slideRumusan.addText("Q2", { x: 0.5, y: 2.5, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    slideRumusan.addText("Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) secara signifikan mampu meregulasi Estimation Risk dibandingkan Model Tradisional?", { x: 1.2, y: 2.5, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+
+    // Question 3 Box
+    slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.7, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "e67e22", width: 1.5 } });
+    slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.7, w: 0.6, h: 1.0, fill: { color: "e67e22" } });
+    slideRumusan.addText("Q3", { x: 0.5, y: 3.7, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    slideRumusan.addText("Sejauh mana optimasi Parameter Tuning Statis mendefinisikan batas terbaik untuk kinerja Multi-Metric (P&L, VaR, Sharpe, Rachev)?", { x: 1.2, y: 3.7, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+
     slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
