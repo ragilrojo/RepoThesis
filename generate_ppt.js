@@ -147,7 +147,7 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '44' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '56' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
@@ -1552,6 +1552,52 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideGridSearchEx.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideGridSearchEx.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 23.19: Lampiran - Visualisasi Coarse to Fine Search ---
+    let slideGridSearchSim = pres.addSlide();
+    slideGridSearchSim.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideGridSearchSim.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideGridSearchSim.addText("Visualisasi Logika: Coarse-to-Fine Search", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
+
+    // Elemen Visual: Tahap 1 (Coarse)
+    slideGridSearchSim.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 3.5, fill: { color: "f8f9f9" }, line: { color: "7f8c8d", width: 1 } });
+    slideGridSearchSim.addText("TAHAP 1: COARSE SEARCH", { x: 0.5, y: 1.3, w: 4.3, fontSize: 14, bold: true, align: "center", color: "2c3e50" });
+    
+    // Menggambar Grid Jarang (Coarse)
+    for (let i = 0; i < 4; i++) {
+        for (let j = 0; j < 4; j++) {
+            let isBest = (i === 2 && j === 1);
+            slideGridSearchSim.addShape(pres.ShapeType.rect, { 
+                x: 1.2 + (j * 0.8), y: 1.8 + (i * 0.6), w: 0.6, h: 0.4, 
+                fill: { color: isBest ? "e74c3c" : "bdc3c7" },
+                line: { color: "ffffff", width: 1 }
+            });
+        }
+    }
+    slideGridSearchSim.addText("Langkah lebar (W: 20, 60, 100, ...)\nMenemukan kandidat terbaik awal.", { x: 0.5, y: 4.1, w: 4.3, fontSize: 12, align: "center" });
+
+    // Panah Penghubung
+    slideGridSearchSim.addShape(pres.ShapeType.rightArrow, { x: 4.9, y: 2.5, w: 0.5, h: 0.4, fill: { color: "2c3e50" } });
+
+    // Elemen Visual: Tahap 2 (Fine)
+    slideGridSearchSim.addShape(pres.ShapeType.rect, { x: 5.5, y: 1.2, w: 4.3, h: 3.5, fill: { color: "ebf5fb" }, line: { color: "3498db", width: 1 } });
+    slideGridSearchSim.addText("TAHAP 2: FINE SEARCH", { x: 5.5, y: 1.3, w: 4.3, fontSize: 14, bold: true, align: "center", color: "2980b9" });
+
+    // Menggambar Grid Rapat (Fine) - Perbesaran dari yang merah tadi
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6; j++) {
+            let isBestFinal = (i === 3 && j === 4);
+            slideGridSearchSim.addShape(pres.ShapeType.rect, { 
+                x: 6.2 + (j * 0.5), y: 1.8 + (i * 0.4), w: 0.4, h: 0.3, 
+                fill: { color: isBestFinal ? "27ae60" : "aed6f1" },
+                line: { color: "ffffff", width: 1 }
+            });
+        }
+    }
+    slideGridSearchSim.addText("Langkah detail (W: 55, 56, 57...)\nPresisi koordinat optimal absolut.", { x: 5.5, y: 4.1, w: 4.3, fontSize: 12, align: "center" });
+
+    slideGridSearchSim.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideGridSearchSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 23.19: Lampiran - Justifikasi Pemilihan Rolling Window ---
     let slideWindowJust = pres.addSlide();
