@@ -376,7 +376,7 @@ async function createPresentation() {
         ["Konfigurasi", "Parameter (W, γ) ditentukan secara konvensional (estimasi standar).", "Identifikasi parameter optimal secara sistematis."],
         ["Evaluasi", "Mengabaikan efek sensitivitas parameter.", "Menguji ketahanan parameter pada berbagai fase pasar."],
         ["Precision", "Risiko 'Over-filtering' atau 'Under-penalizing'.", "Pencarian titik terbaik (Fine-Search) untuk metrik target."],
-        ["Benchmark", "Single target return.", "Multi-target: VaR, Sharpe, & Rachev."]
+        ["Benchmark", "Fokus pada metrik performa standar.", "Uji resiliensi pada metrik Tail-Risk (VaR & Rachev)."]
     ], { x: 0.5, y: 1.2, w: 9.0, fontSize: 14, border: { pt: 1, color: "dddddd" } });
 
     slideContrib.addText("🚀 Value Proposition: Memberikan bukti empiris bahwa identifikasi parameter jaringan yang dilakukan secara sistematis mampu menghasilkan performa portofolio yang lebih tangguh dan teruji di berbagai kondisi pasar.", { 
