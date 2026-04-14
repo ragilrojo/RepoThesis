@@ -11,6 +11,9 @@ async function createPresentation() {
     // Set layout (opsional, defaulnya 16x9)
     pres.layout = "LAYOUT_16x9";
 
+    // Tambahkan nomor halaman di setiap slide (posisi kiri bawah)
+    pres.slideNumber = { x: 0.4, y: 5.3, fontSize: 10, color: "003366" };
+
     // --- Slide 1: Judul ---
     let slide1 = pres.addSlide();
     slide1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
