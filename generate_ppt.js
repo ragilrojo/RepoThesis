@@ -71,10 +71,13 @@ async function createPresentation() {
         { text: "Urgensi Tuning Parameter", options: { hyperlink: { slide: '12' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
+        { text: "Visualisasi Sensitivitas", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
+        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Dataset Penelitian", options: { hyperlink: { slide: '15' }, fontSize: 14 } },
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan: Strategi, Evaluasi & Navigasi
@@ -371,6 +374,52 @@ async function createPresentation() {
 
     slideSens.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideSens.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
+    let slideSensViz = pres.addSlide();
+    slideSensViz.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideSensViz.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideSensViz.addText("Deep Dive: Pemetaan Sensitivitas Parameter", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+
+    // Grafik Heatmap Stylized (Kiri)
+    slideSensViz.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 5.0, h: 3.5, fill: { color: "ffffff" }, line: { color: "dddddd", width: 1 } });
+    slideSensViz.addText("W (Window Size)", { x: 0.2, y: 3.0, w: 1.0, fontSize: 12, bold: true, rotate: 270, align: "center" });
+    slideSensViz.addText("Gamma (\u03b3)", { x: 2.5, y: 4.8, w: 1.0, fontSize: 12, bold: true, align: "center" });
+
+    // Menggambar Grid Heatmap
+    let heatColors = ["#1a5276", "#2471a3", "#2e86c1", "#5499c7", "#f1c40f", "#f39c12", "#e67e22"];
+    for (let i = 0; i < 6; i++) {
+        for (let j = 0; j < 6; j++) {
+            let colorIdx = Math.min(6, Math.floor((i + j) / 2));
+            if (i === 4 && j === 4) colorIdx = 6; // Sweet Spot
+            slideSensViz.addShape(pres.ShapeType.rect, { 
+                x: 1.1 + (j * 0.65), y: 1.5 + (i * 0.5), w: 0.6, h: 0.45, 
+                fill: { color: heatColors[colorIdx] },
+                line: { color: "ffffff", width: 1 }
+            });
+        }
+    }
+    // Target Crosshair pada Sweet Spot
+    slideSensViz.addShape(pres.ShapeType.ellipse, { x: 3.65, y: 3.5, w: 0.7, h: 0.5, line: { color: "ff0000", width: 2 } });
+    slideSensViz.addText("Optimal Point\n(Sweet Spot)", { x: 4.2, y: 3.3, w: 1.0, fontSize: 10, bold: true, color: "c0392b" });
+
+    // Penjelasan (Kanan)
+    slideSensViz.addText([
+        { text: "\ud83d\udcc8 Intuisi Visual:\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "\u272a Warna Emas: ", options: { bold: true, color: "f39c12" } },
+        { text: "Kombinasi parameter yang menghasilkan resiliensi tertinggi terhadap risiko ekstrem (Tail-Risk).\n", options: {} },
+        { text: "\u272a Warna Biru: ", options: { bold: true, color: "2e86c1" } },
+        { text: "Area inefisiensi (Noise terlalu tinggi atau proteksi terlalu berlebih).\n", options: {} },
+        { text: "\u272a Urgensi 2-Stage GS: ", options: { bold: true, color: "8e44ad" } },
+        { text: "Memungkinkan kita melakukan 'Zoom-in' pada koordinat emas ini untuk mendapatkan presisi yang tidak bisa dicapai estimasi standar.", options: {} }
+    ], { x: 5.7, y: 1.2, w: 3.8, fontSize: 14, color: "333333", valign: "top" });
+
+    slideSensViz.addText("\ud83d\udca1 Kesimpulan: Penentuan W dan \u03b3 bukan lagi tentang 'perkiraan', melainkan hasil pemetaan matematis yang terukur.", { 
+        x: 0.5, y: 4.6, w: 9.0, fontSize: 12, italic: true, align: "center", color: "27ae60", bold: true 
+    });
+
+    slideSensViz.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideSensViz.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5d: Kontribusi Utama Tesis ---
     let slideContrib = pres.addSlide();
