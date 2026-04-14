@@ -247,14 +247,28 @@ async function createPresentation() {
     let slideTujuan = pres.addSlide();
     slideTujuan.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideTujuan.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideTujuan.addText("Tujuan Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideTujuan.addText("Tujuan Penelitian", { x: 0.5, y: 0.4, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
-    slideTujuan.addText([
-        { text: "Berkaitan dengan permasalahan di atas, penelitian ini memaparkan target operasional sebagai berikut:\n", options: { color: "333333", breakLine: true, fontSize: 16 } },
-        { text: "1. Merancang dan menguji kerangka alokasi Network Markowitz yang tangguh dan terkalibrasi optimum secara statis untuk ekosistem portofolio mata uang kripto.\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
-        { text: "2. Menganalisis daya redam model dalam mempersempit kesalahan estimasi matriks (*estimation risk*) dengan memanfaatkan jaringan hirarki Minimum Spanning Tree (MST).\n", options: { fontSize: 18, breakLine: true, color: "003366", bold: true } },
-        { text: "3. Mengevaluasi dampak dari kerangka parameter optimasi (*Window & Gamma*) ini dalam menyukseskan target peningkatkan efisiensi komparatif portofolio (Sharpe & Rachev) dan penahanan batas kerugian (VaR).", options: { fontSize: 18, color: "003366", bold: true } }
-    ], { x: 0.5, y: 1.2, w: "90%", h: 4, color: "333333", valign: "top" });
+    slideTujuan.addText("Target operasional yang ingin dicapai melalui penelitian ini adalah:", { x: 0.5, y: 0.9, w: "90%", fontSize: 14, italic: true, color: "555555" });
+
+    // Objective 1 Box
+    slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 9.0, h: 1.0, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 } });
+    slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 0.8, h: 1.0, fill: { color: "27ae60" } });
+    slideTujuan.addText("Obj 1", { x: 0.5, y: 1.3, w: 0.8, h: 1.0, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    slideTujuan.addText("Merancang kerangka alokasi Network Markowitz yang tangguh dan terkalibrasi optimum secara statis untuk portofolio mata uang kripto.", { x: 1.4, y: 1.3, w: 7.8, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+
+    // Objective 2 Box
+    slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 9.0, h: 1.1, fill: { color: "f4f6f7" }, line: { color: "2c3e50", width: 1.5 } });
+    slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 0.8, h: 1.1, fill: { color: "2c3e50" } });
+    slideTujuan.addText("Obj 2", { x: 0.5, y: 2.5, w: 0.8, h: 1.1, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    slideTujuan.addText("Menganalisis daya redam model dalam mempersempit Estimation Risk dengan memanfaatkan teknik penyaringan Minimum Spanning Tree (MST).", { x: 1.4, y: 2.5, w: 7.8, h: 1.1, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+
+    // Objective 3 Box
+    slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.8, w: 9.0, h: 1.1, fill: { color: "fdfef9" }, line: { color: "f39c12", width: 1.5 } });
+    slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.8, w: 0.8, h: 1.1, fill: { color: "f39c12" } });
+    slideTujuan.addText("Obj 3", { x: 0.5, y: 3.8, w: 0.8, h: 1.1, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    slideTujuan.addText("Mengevaluasi imbas model Tuning Statis terhadap performa Multi-Metric (Sharpe, Rachev) dan mitigasi batas kerugian ekstrem (VaR).", { x: 1.4, y: 3.8, w: 7.8, h: 1.1, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+
     slideTujuan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideTujuan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
