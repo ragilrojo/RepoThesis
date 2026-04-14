@@ -1837,8 +1837,11 @@ async function createPresentation() {
 
     // --- Tambahkan Nomor Halaman Secara Eksplisit (Layer Paling Atas) ---
     pres.slides.forEach((slide, idx) => {
-        // Jangan tambahkan di slide judul (optional, tapi di sini kita tambahkan ke semua saja)
-        slide.addText(`Slide ${idx + 1}`, { 
+        // Slide 1 (Judul) tidak diberi nomor
+        // Slide 2 (Daftar Isi) mulai sebagai "Slide 1"
+        if (idx === 0) return; 
+
+        slide.addText(`Slide ${idx}`, { 
             x: 0.4, y: 5.3, w: 1.0, fontSize: 10, color: "003366", bold: true 
         });
     });
