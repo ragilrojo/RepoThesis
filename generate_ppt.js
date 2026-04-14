@@ -147,18 +147,22 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '44' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 2-Stage Grid Search", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
+        { text: "2-Stage GS: Mekanisme", options: { hyperlink: { slide: '56' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
+        { text: "2-Stage GS: Visualisasi", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '64' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '65' }, fontSize: 14, breakLine: true } },
+        { text: "Dua Tipe Grid Search", options: { hyperlink: { slide: '59' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '66' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '65' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '67' }, fontSize: 14, breakLine: true } },
-    ], { x: 5.2, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
+        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '66' }, fontSize: 14, breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '67' }, fontSize: 14, breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '68' }, fontSize: 14, breakLine: true } },
+    ], { x: 5.2, y: 1.1, w: "45%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideTOC2.addText("🏠 Kembali ke Daftar Isi Utama", { x: 7.0, y: 5.3, w: 2.7, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     let slide2 = pres.addSlide();
