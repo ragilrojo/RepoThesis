@@ -313,10 +313,10 @@ async function createPresentation() {
     slideNovelty.addText("Kebaruan Penelitian (Novelty)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     slideNovelty.addText([
-        { text: "1. Parameter Tuning Presisi (2-Stage Grid Search):\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Mampu mengatasi masalah ", options: {} },
-        { text: "non-stationarity", options: { bold: true, italic: true } },
-        { text: " pasar kripto dengan menemukan konfigurasi Network Markowitz statis (Window & Gamma) yang paling holistik dan resisten menghadapi berbagai fase pasar.\n", options: {} },
+        { text: "1. Systematic Parameter Tuning (Addressing Giudici, 2020):\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "Mengatasi keterbatasan pemilihan parameter manual pada penelitian Giudici et al. (2020) dengan mengimplementasikan ", options: {} },
+        { text: "2-Stage Grid Search", options: { bold: true, italic: true } },
+        { text: " untuk menemukan kombinasi Window & Gamma yang paling optimal secara sistematis.\n", options: {} },
         
         { text: "2. Reduksi Estimation Risk melalui Topologi Network:\n", options: { bold: true, color: "003366", fontSize: 18 } },
         { text: "Mengintegrasikan analisis jaringan (MST) dan penalti untuk menstabilkan bobot portofolio pada kondisi market crash.\n", options: {} },
@@ -326,7 +326,7 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
 
     slideNovelty.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
-    slideNovelty.addText("🌟 Mengisi celah penelitian sebelumnya yang sering menggunakan parameter statis tanpa proses identifikasi sensitivitas yang mendalam.", { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fontSize: 12, italic: true, align: "center", valign: "middle" });
+    slideNovelty.addText("🌟 Mengisi celah penelitian Giudici (2020) yang menggunakan parameter statis (W=120, γ=Manual) tanpa proses identifikasi sensitivitas yang sistematis.", { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fontSize: 12, italic: true, align: "center", valign: "middle" });
 
     slideNovelty.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideNovelty.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -373,7 +373,7 @@ async function createPresentation() {
 
     slideContrib.addTable([
         [{ text: "Aspek", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Praktik Umum (Statis-Tradisional)", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Kontribusi Tesis (Fixed-Optimal)", options: { bold: true, fill: "27ae60", color: "ffffff" } }],
-        ["Konfigurasi", "Parameter (W, γ) ditentukan secara konvensional (estimasi standar).", "Identifikasi parameter optimal secara sistematis."],
+        ["Konfigurasi", "Parameter ditentukan secara manual/fixed (Contoh: Giudici 2020).", "Identifikasi parameter optimal secara sistematis (2-Stage GS)."],
         ["Evaluasi", "Mengabaikan efek sensitivitas parameter.", "Menguji ketahanan parameter pada berbagai fase pasar."],
         ["Precision", "Risiko 'Over-filtering' atau 'Under-penalizing'.", "Pencarian titik terbaik (Fine-Search) untuk metrik target."],
         ["Benchmark", "Fokus pada metrik performa standar.", "Uji resiliensi pada metrik Tail-Risk (VaR & Rachev)."]
