@@ -214,16 +214,20 @@ async function createPresentation() {
 
     slideProblem.addText([
         { text: "1. Keterbatasan CM: Estimation Risk & Corner Solutions\n", options: { bold: true, color: "c0392b", fontSize: 15 } },
-        { text: "Sensitivitas ekstrem terhadap input dan konsentrasi bobot berlebih pada satu aset.\n", options: { fontSize: 13 } },
+        { text: "Sensitivitas ekstrem terhadap input dan konsentrasi bobot berlebih pada satu aset. ", options: { fontSize: 13 } },
+        { text: "Contoh: Sedikit pergeseran data historis membuat model CM mengalokasikan 100% bobot hanya pada Bitcoin, menghancurkan prinsip diversifikasi.\n\n", options: { fontSize: 12, italic: true, color: "555555" } },
 
         { text: "2. Limitasi NW Giudici (2020): Parameter Statis & Kaku\n", options: { bold: true, color: "003366", fontSize: 15 } },
         { text: "• Window Bias:", options: { bold: true } },
-        { text: " Penggunaan window tetap (ex: 120 hari) gagal menangkap perubahan momentum pasar kripto yang cepat.\n", options: {} },
+        { text: " Penggunaan window tetap (ex: 120 hari) gagal menangkap perubahan momentum pasar kripto yang cepat. ", options: {} },
+        { text: "Contoh: Window 120 hari akan selalu 'terlambat' merespons saat pasar tiba-tiba berbalik arah dari Crash ke Pemulihan kuat.\n", options: { fontSize: 12, italic: true, color: "555555" } },
         { text: "• Gamma Rigidity:", options: { bold: true } },
-        { text: " Penalti sentralitas statis menyebabkan 'Profit Leakage' karena memangkas bobot aset utama saat sedang tren positif.\n", options: {} },
+        { text: " Penalti sentralitas statis menyebabkan 'Profit Leakage' karena memangkas bobot aset utama saat sedang tren positif. ", options: {} },
+        { text: "Contoh: Di masa Bull Run, BTC menjadi pusat jaringan. γ yang kaku akan membuang bobot BTC sehingga portofolio kehilangan profit besar.\n\n", options: { fontSize: 12, italic: true, color: "555555" } },
 
         { text: "3. Kegagalan Deteksi Kadar Tren:\n", options: { bold: true, color: "003366", fontSize: 15 } },
-        { text: "Model NW konvensional tidak memiliki mekanisme untuk 'melepas rem' (γ \u2192 0) saat trend positif kuat terdeteksi secara linier.", options: {} }
+        { text: "Model NW konvensional tidak memiliki mekanisme untuk 'melepas rem' (γ \u2192 0) saat trend positif kuat terdeteksi secara linier. ", options: {} },
+        { text: "Contoh: Ketika indikator tren jelas menunjukkan pertumbuhan masif, model statis gagal beradaptasi dan tetap membatasi investasi.", options: { fontSize: 12, italic: true, color: "555555" } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4.5, color: "333333", valign: "top" });
     slideProblem.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideProblem.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
