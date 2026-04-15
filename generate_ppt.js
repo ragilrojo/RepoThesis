@@ -20,8 +20,8 @@ async function createPresentation() {
     });
     slide1.addText([
         { text: "Berbasis Pendekatan\n" },
-        { text: "Network Markowitz", options: { italic: true } },
-        { text: " dengan " },
+        { text: "Adaptive Network Markowitz", options: { italic: true } },
+        { text: " melalui " },
         { text: "2-Stage Tuning Parameter", options: { italic: true } }
     ], {
         x: 0.5, y: 2.6, w: "90%", fontSize: 24, align: "center", color: "34495e"
@@ -98,20 +98,20 @@ async function createPresentation() {
         { text: "Strategi EW, CM, GM", options: { hyperlink: { slide: '18' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network (Statis vs Adaptif)", options: { hyperlink: { slide: '22' }, fontSize: 12 } },
+        { text: "Network (Statis vs Adaptif)", options: { hyperlink: { slide: '71' }, fontSize: 12 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "IV. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '24' }, fontSize: 12 } },
+        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '19' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '25' }, fontSize: 12 } },
+        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '20' }, fontSize: 12 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "NAVIGASI CEPAT:", options: { bold: true, color: "e67e22", breakLine: true } },
         { text: " ➤ ", options: {} },
-        { text: "SELESAI (THANKS)", options: { hyperlink: { slide: '26' }, fontSize: 13, color: "003366", bold: true } },
+        { text: "SELESAI (THANKS)", options: { hyperlink: { slide: '21' }, fontSize: 13, color: "003366", bold: true } },
         { text: "", options: { breakLine: true } },
         { text: " ➤ ", options: {} },
         { text: "APPENDIX (LAMPIRAN)", options: { hyperlink: { slide: '3' }, fontSize: 13, color: "d35400", bold: true } },
@@ -129,44 +129,44 @@ async function createPresentation() {
     slideTOC2.addText([
         { text: "IV. LAMPIRAN (BAGIAN 1)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '37' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi EW", options: { hyperlink: { slide: '38' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '41' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '39' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '42' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '40' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '44' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '42' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '25' }, fontSize: 14, breakLine: true } },
+        { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '22' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Minimum Spanning Tree (MST)", options: { hyperlink: { slide: '30' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '33' }, fontSize: 14, breakLine: true } },
+        { text: "Penalty & Centrality Logic", options: { hyperlink: { slide: '53' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '35' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Parameter Gamma", options: { hyperlink: { slide: '33' }, fontSize: 14, breakLine: true } },
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan
     slideTOC2.addText([
         { text: "IV. LAMPIRAN (BAGIAN 2)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '40' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '44' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "2-Stage GS: Mekanisme", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
+        { text: "2-Stage GS: Mekanisme", options: { hyperlink: { slide: '55' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "2-Stage GS: Visualisasi", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
+        { text: "2-Stage GS: Visualisasi", options: { hyperlink: { slide: '56' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '59' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dua Tipe Grid Search", options: { hyperlink: { slide: '60' }, fontSize: 14, breakLine: true } },
+        { text: "Dua Tipe Grid Search", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '66' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '64' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '67' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '65' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '68' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '66' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '69' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '67' }, fontSize: 14, breakLine: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideTOC2.addText("🏠 Kembali ke Daftar Isi Utama", { x: 7.0, y: 5.3, w: 2.7, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -420,6 +420,48 @@ async function createPresentation() {
     slideSens.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideSens.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
+    // --- Slide 4.5e: Mekanisme Adaptive Gamma & Trend Threshold ---
+    let slideAdaptive = pres.addSlide();
+    slideAdaptive.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideAdaptive.addText("Mekanisme Adaptive Gamma & Optimasi Threshold", { x: 0.5, y: 0.3, w: "90%", fontSize: 24, bold: true, color: "003366" });
+
+    // Header Logic Box
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 0.7, w: 9.0, h: 1.25, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1.5 } });
+    slideAdaptive.addText("Logika Adaptive: Jika Linear Regression Slope > Optimized Threshold \u2794 \u03b3 ➔ 0", { 
+        x: 0.5, y: 0.85, w: 9.0, fontSize: 16, bold: true, color: "d35400", align: "center" 
+    });
+    slideAdaptive.addText("Linear Regression Slope digunakan sebagai estimator 'kadar trend' paling objektif karena memitigasi noise\nvolatilitas harian pada window 30 hari.", { 
+        x: 0.8, y: 1.35, w: 8.4, fontSize: 12, align: "center", italic: true, color: "555555"
+    });
+
+    // Judul Bagian Grid Search
+    slideAdaptive.addText("Strategi Grid Search Bertingkat (2-Stage Optimization):", { x: 0.5, y: 2.2, w: "9.0", fontSize: 16, bold: true, color: "003366" });
+
+    // Kolom Kiri: Stage 1
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "3498db", width: 1 } });
+    slideAdaptive.addText("1. Stage 1 (Coarse Search)", { x: 0.6, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
+    slideAdaptive.addText("Mensimulasikan berbagai level Slope Threshold secara makro untuk mengidentifikasi area sensitivitas return dan risiko sistemik.", { 
+        x: 0.6, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
+    });
+
+    // Kolom Kanan: Stage 2
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 5.1, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1 } });
+    slideAdaptive.addText("2. Stage 2 (Fine Search)", { x: 5.2, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
+    slideAdaptive.addText("Mengoptimasi nilai Slope Threshold secara presisi guna mendapatkan titik switch (\u03b3) paling menguntungkan secara statistik.", { 
+        x: 5.2, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
+    });
+
+    // Bottom Box: Justifikasi
+    slideAdaptive.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.65, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
+    slideAdaptive.addText([
+        { text: "3. Justifikasi Kualitas: ", options: { bold: true, color: "27ae60", fontSize: 13 } },
+        { text: "Threshold optimal menjamin 'rem' penalti jaringan hanya dilepas ketika trend positif benar-benar solid dan teruji secara linier.", options: { fontSize: 12, italic: true } }
+    ], { x: 0.7, y: 4.45, w: 8.6, h: 0.55, valign: "middle" });
+
+    slideAdaptive.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideAdaptive.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
     // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
     let slideSensViz = pres.addSlide();
     slideSensViz.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
@@ -568,25 +610,25 @@ async function createPresentation() {
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '19' }, color: "0563C1", underline: true } },
+        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '68' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '20' }, color: "0563C1", underline: true } },
+        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '69' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '21' }, color: "0563C1", underline: true } },
+        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '70' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '22' }, color: "0563C1", underline: true } },
+        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '71' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "4. Kelompok Network (Adaptive / 2-Stage GS):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Adaptive Gamma (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '23' }, color: "0563C1", underline: true } }
+        { text: "NW Adaptive Gamma (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '72' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -2044,49 +2086,6 @@ async function createPresentation() {
     slideNWAdaptive.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideNWAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    // --- Slide Pindahan: Mekanisme Adaptive Gamma & Trend Threshold ---
-    let slideAdaptive = pres.addSlide();
-    slideAdaptive.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
-    slideAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideAdaptive.addText("Mekanisme Adaptive Gamma & Optimasi Threshold", { x: 0.5, y: 0.3, w: "90%", fontSize: 24, bold: true, color: "003366" });
-
-    // Header Logic Box
-    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 0.7, w: 9.0, h: 1.25, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1.5 } });
-    slideAdaptive.addText("Logika Adaptive: Jika Linear Regression Slope > Optimized Threshold \u2794 \u03b3 ➔ 0", { 
-        x: 0.5, y: 0.85, w: 9.0, fontSize: 16, bold: true, color: "d35400", align: "center" 
-    });
-    slideAdaptive.addText("Linear Regression Slope digunakan as estimator 'kadar trend' paling objektif karena memitigasi noise\nvolatilitas harian pada window 30 hari.", { 
-        x: 0.8, y: 1.35, w: 8.4, fontSize: 12, align: "center", italic: true, color: "555555"
-    });
-
-    // Judul Bagian Grid Search
-    slideAdaptive.addText("Strategi Grid Search Bertingkat (2-Stage Optimization):", { x: 0.5, y: 2.2, w: "9.0", fontSize: 16, bold: true, color: "003366" });
-
-    // Kolom Kiri: Stage 1
-    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "3498db", width: 1 } });
-    slideAdaptive.addText("1. Stage 1 (Coarse Search)", { x: 0.6, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
-    slideAdaptive.addText("Mensimulasikan berbagai level Slope Threshold secara makro untuk mengidentifikasi area sensitivitas return dan risiko sistemik.", { 
-        x: 0.6, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
-    });
-
-    // Kolom Kanan: Stage 2
-    slideAdaptive.addShape(pres.ShapeType.rect, { x: 5.1, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1 } });
-    slideAdaptive.addText("2. Stage 2 (Fine Search)", { x: 5.2, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
-    slideAdaptive.addText("Mengoptimasi nilai Slope Threshold secara presisi guna mendapatkan titik switch (\u03b3) paling menguntungkan secara statistik.", { 
-        x: 5.2, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
-    });
-
-    // Bottom Box: Justifikasi
-    slideAdaptive.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.65, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
-    slideAdaptive.addText([
-        { text: "3. Justifikasi Kualitas: ", options: { bold: true, color: "27ae60", fontSize: 13 } },
-        { text: "Threshold optimal menjamin 'rem' penalti jaringan hanya dilepas ketika trend positif benar-benar solid dan teruji secara linier.", options: { fontSize: 12, italic: true } }
-    ], { x: 0.7, y: 4.45, w: 8.6, h: 0.55, valign: "middle" });
-
-    slideAdaptive.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
-    slideAdaptive.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
-
-
 
 
 
@@ -2098,7 +2097,7 @@ async function createPresentation() {
         // Slide 2 (Daftar Isi) mulai sebagai "Slide 1"
         if (idx === 0) return; 
 
-        slide.addText(`Slide ${idx}`, { 
+        slide.addText(`${idx}`, { 
             x: 0.4, y: 5.3, w: 1.0, fontSize: 10, color: "003366", bold: true 
         });
     });
