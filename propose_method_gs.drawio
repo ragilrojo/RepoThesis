@@ -14,7 +14,7 @@
         <mxCell id="stage1" value="TAHAP 1: COARSE SEARCH&lt;br&gt;(Macro Range)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" vertex="1" parent="1">
           <mxGeometry x="250" y="140" width="300" height="150" as="geometry" />
         </mxCell>
-        <mxCell id="s1_detail" value="- Pemindaian Rentang Luas (Langkah Lebar)&lt;br&gt;- Variasi Window (W) &amp;amp; Gamma (γ)&lt;br&gt;- Penentuan Zona Potensial Terbaik" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="stage1">
+        <mxCell id="s1_detail" value="- Pemindaian Rentang Luas (Langkah Lebar)&lt;br&gt;- Variasi Window (W) &amp;amp; Gamma (γ)&lt;br&gt;- Optimasi Threshold Tren (LR Slope)&lt;br&gt;- Penentuan Zona Potensial Terbaik" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="stage1">
           <mxGeometry x="10" y="40" width="280" height="90" as="geometry" />
         </mxCell>
 
@@ -36,15 +36,15 @@
         <mxCell id="stage2" value="TAHAP 2: FINE SEARCH&lt;br&gt;(Zoom-in / Micro Range)" style="swimlane;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;" vertex="1" parent="1">
           <mxGeometry x="250" y="580" width="300" height="140" as="geometry" />
         </mxCell>
-        <mxCell id="s2_detail" value="- Zoom-in di sekitar koordinat Stage 1&lt;br&gt;- Langkah pencarian lebih presisi&lt;br&gt;- Validasi Konsistensi Parameter" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="stage2">
+        <mxCell id="s2_detail" value="- Zoom-in di sekitar koordinat Stage 1&lt;br&gt;- Fine-tuning Slope Threshold&lt;br&gt;- Validasi Konsistensi Parameter Adaptive" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;" vertex="1" parent="stage2">
           <mxGeometry x="30" y="40" width="240" height="80" as="geometry" />
         </mxCell>
 
         <!-- Final Layer -->
-        <mxCell id="output" value="OPTIMAL PARAMETER SET&lt;br&gt;(W*, γ*)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
+        <mxCell id="output" value="OPTIMAL PARAMETER SET&lt;br&gt;(W*, γ*, Slope*)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="300" y="770" width="200" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="portfolio" value="CONSTRUCT NETWORK MARKOWITZ&lt;br&gt;PORTFOLIO" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
+        <mxCell id="portfolio" value="ADAPTIVE NETWORK MARKOWITZ&lt;br&gt;(γ → 0 if Slope &gt; Slope*)" style="shape=parallelogram;perimeter=parallelogramPerimeter;whiteSpace=wrap;html=1;fixedSize=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;" vertex="1" parent="1">
           <mxGeometry x="270" y="870" width="260" height="60" as="geometry" />
         </mxCell>
 
