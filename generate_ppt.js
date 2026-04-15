@@ -43,73 +43,82 @@ async function createPresentation() {
     slideTOC1.addText([
         { text: "I. PENDAHULUAN & MASALAH", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 14 } },
+        { text: "Latar Belakang", options: { hyperlink: { slide: '4' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Identifikasi Masalah", options: { hyperlink: { slide: '5' }, fontSize: 14 } },
+        { text: "Identifikasi Masalah", options: { hyperlink: { slide: '5' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Rumusan Masalah", options: { hyperlink: { slide: '6' }, fontSize: 14 } },
+        { text: "Rumusan Masalah", options: { hyperlink: { slide: '6' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Tujuan Penelitian", options: { hyperlink: { slide: '7' }, fontSize: 14 } },
+        { text: "Tujuan Penelitian", options: { hyperlink: { slide: '7' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "II. LANDASAN & KERANGKA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Landasan Teori", options: { hyperlink: { slide: '8' }, fontSize: 14 } },
+        { text: "Landasan Teori", options: { hyperlink: { slide: '8' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '9' }, fontSize: 14 } },
+        { text: "Penelitian Terdahulu", options: { hyperlink: { slide: '9' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '10' }, fontSize: 14 } },
+        { text: "Kerangka Pemikiran", options: { hyperlink: { slide: '10' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kebaruan Penelitian", options: { hyperlink: { slide: '11' }, fontSize: 14 } },
+        { text: "Kebaruan Penelitian", options: { hyperlink: { slide: '11' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Urgensi Tuning Parameter", options: { hyperlink: { slide: '12' }, fontSize: 14 } },
+        { text: "Urgensi Tuning Parameter", options: { hyperlink: { slide: '12' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Visualisasi Sensitivitas", options: { hyperlink: { slide: '13' }, fontSize: 14 } },
+        { text: "Mekanisme Adaptive Gamma", options: { hyperlink: { slide: '13' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '14' }, fontSize: 14 } },
+        { text: "Visualisasi Deep-Dive Heatmap", options: { hyperlink: { slide: '14' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian", options: { hyperlink: { slide: '15' }, fontSize: 14 } },
+        { text: "Studi Kasus Performa (W & \u03b3)", options: { hyperlink: { slide: '15' }, fontSize: 13 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '16' }, fontSize: 13 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Dataset Penelitian", options: { hyperlink: { slide: '17' }, fontSize: 13 } },
     ], { x: 0.5, y: 1.1, w: "45%", h: 5, fontSize: 16, color: "333333", valign: "top" });
 
     // Kolom Kanan: Strategi, Evaluasi & Navigasi
     slideTOC1.addText([
         { text: "III. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '17' }, fontSize: 14 } },
+        { text: "Daftar Strategi Disimulasikan", options: { hyperlink: { slide: '18' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '18' }, fontSize: 14 } },
+        { text: "Equally Weighted (EW)", options: { hyperlink: { slide: '19' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '19' }, fontSize: 14 } },
+        { text: "Classical Markowitz (CM)", options: { hyperlink: { slide: '20' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '20' }, fontSize: 14 } },
+        { text: "Graphical Lasso (GM)", options: { hyperlink: { slide: '21' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network Markowitz (Tuned Statis)", options: { hyperlink: { slide: '21' }, fontSize: 14 } },
+        { text: "Network Markowitz (Statis)", options: { hyperlink: { slide: '22' }, fontSize: 13 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Network Markowitz (Adaptive)", options: { hyperlink: { slide: '23' }, fontSize: 13 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "IV. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '22' }, fontSize: 14 } },
+        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '24' }, fontSize: 13 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '23' }, fontSize: 14 } },
+        { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '25' }, fontSize: 13 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "Lanjutan Daftar Isi:", options: { bold: true, color: "e67e22", breakLine: true } },
         { text: "   ➤ ", options: {} },
-        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '24' }, fontSize: 14, color: "003366", bold: true } },
+        { text: "END (TERIMA KASIH)", options: { hyperlink: { slide: '26' }, fontSize: 14, color: "003366", bold: true } },
         { text: "", options: { breakLine: true } },
         { text: "   ➤ ", options: {} },
         { text: "LAMPIRAN TEKNIS (APPENDIX)", options: { hyperlink: { slide: '3' }, fontSize: 14, color: "d35400", bold: true } },
@@ -422,25 +431,43 @@ async function createPresentation() {
     let slideAdaptive = pres.addSlide();
     slideAdaptive.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideAdaptive.addText("Mekanisme Adaptive Gamma & Optimasi Threshold", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideAdaptive.addText("Mekanisme Adaptive Gamma & Optimasi Threshold", { x: 0.5, y: 0.3, w: "90%", fontSize: 24, bold: true, color: "003366" });
 
-    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 9.0, h: 1.5, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1 } });
-    slideAdaptive.addText("Logika Adaptive: Jika Linear Regression Slope > Optimized Threshold \u2794 \u03b3 → 0", { x: 0.5, y: 1.3, w: 9.0, fontSize: 16, bold: true, color: "d35400", align: "center" });
-    slideAdaptive.addText("Linear Regression Slope digunakan sebagai estimator 'kadar trend' paling objektif karena memitigasi noise volatilitas harian pada window 30 hari.", { x: 0.8, y: 1.8, w: 8.4, fontSize: 13, align: "center", italic: true });
+    // Header Logic Box
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 0.7, w: 9.0, h: 1.25, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1.5 } });
+    slideAdaptive.addText("Logika Adaptive: Jika Linear Regression Slope > Optimized Threshold \u2794 \u03b3 ➔ 0", { 
+        x: 0.5, y: 0.85, w: 9.0, fontSize: 16, bold: true, color: "d35400", align: "center" 
+    });
+    slideAdaptive.addText("Linear Regression Slope digunakan sebagai estimator 'kadar trend' paling objektif karena memitigasi noise\nvolatilitas harian pada window 30 hari.", { 
+        x: 0.8, y: 1.35, w: 8.4, fontSize: 12, align: "center", italic: true, color: "555555"
+    });
 
-    // Strategi Grid Search Bertingkat
+    // Judul Bagian Grid Search
+    slideAdaptive.addText("Strategi Grid Search Bertingkat (2-Stage Optimization):", { x: 0.5, y: 2.2, w: "9.0", fontSize: 16, bold: true, color: "003366" });
+
+    // Kolom Kiri: Stage 1
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "3498db", width: 1 } });
+    slideAdaptive.addText("1. Stage 1 (Coarse Search)", { x: 0.6, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
+    slideAdaptive.addText("Mensimulasikan berbagai level Slope Threshold secara makro untuk mengidentifikasi area sensitivitas return dan risiko sistemik.", { 
+        x: 0.6, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
+    });
+
+    // Kolom Kanan: Stage 2
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 5.1, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1 } });
+    slideAdaptive.addText("2. Stage 2 (Fine Search)", { x: 5.2, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
+    slideAdaptive.addText("Mengoptimasi nilai Slope Threshold secara presisi guna mendapatkan titik switch (\u03b3) paling menguntungkan secara statistik.", { 
+        x: 5.2, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
+    });
+
+    // Bottom Box: Justifikasi
+    slideAdaptive.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.65, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
     slideAdaptive.addText([
-        { text: "Grid Search pada Parameter Slope Threshold:\n", options: { bold: true, color: "003366", fontSize: 16 } },
-        { text: "1. Stage 1 (Coarse):\n", options: { bold: true } },
-        { text: "   Mensimulasikan berbagai level Slope Threshold untuk mengidentifikasi area sensitivitas return vs risiko sistemik.\n", options: {} },
-        { text: "2. Stage 2 (Fine):\n", options: { bold: true } },
-        { text: "   Mengoptimasi nilai Slope Threshold secara presisi guna mendapatkan titik switch (perubahan \u03b3) yang paling menguntungkan secara statistik.\n", options: {} },
-        { text: "3. Justifikasi Kualitas:\n", options: { bold: true, color: "27ae60" } },
-        { text: "   Threshold optimal menjamin bahwa 'rem' penalti jaringan hanya dilepas ketika trend positif benar-benar solid dan teruji secara linier.", options: {} }
-    ], { x: 0.5, y: 2.9, w: "9.0", h: 2.2, fontSize: 14, color: "333333", valign: "top" });
+        { text: "3. Justifikasi Kualitas: ", options: { bold: true, color: "27ae60", fontSize: 13 } },
+        { text: "Threshold optimal menjamin 'rem' penalti jaringan hanya dilepas ketika trend positif benar-benar solid dan teruji secara linier.", options: { fontSize: 12, italic: true } }
+    ], { x: 0.7, y: 4.45, w: 8.6, h: 0.55, valign: "middle" });
 
-    slideAdaptive.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
-    slideAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    slideAdaptive.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideAdaptive.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
     let slideSensViz = pres.addSlide();
@@ -590,25 +617,25 @@ async function createPresentation() {
     slide5.addText([
         { text: "1. Kelompok Baseline:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '14' }, color: "0563C1", underline: true } },
+        { text: "EW (Equally Weighted)", options: { hyperlink: { slide: '19' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '15' }, color: "0563C1", underline: true } },
+        { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '20' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '16' }, color: "0563C1", underline: true } },
+        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '21' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '17' }, color: "0563C1", underline: true } },
+        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '22' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "4. Kelompok Network (Adaptive / 2-Stage GS):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Adaptive Gamma (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '18' }, color: "0563C1", underline: true } }
+        { text: "NW Adaptive Gamma (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '23' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -2078,7 +2105,7 @@ async function createPresentation() {
     });
 
     // --- Simpan File ---
-    const outputFilename = "Presentasi_Proposal_Update.pptx";
+    const outputFilename = "Presentasi_Proposal_Update_v2.pptx";
 
     try {
         await pres.writeFile({ fileName: outputFilename });
