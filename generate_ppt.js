@@ -178,21 +178,24 @@ async function createPresentation() {
     slide2.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.5, w: 4.2, h: 3.2, fill: { color: "ffffff" }, line: { color: "003366", width: 2 } });
     slide2.addText("🔍 IDENTIFIKASI MASALAH", { x: 0.5, y: 1.8, w: 4.2, fontSize: 18, bold: true, color: "003366", align: "center" });
     slide2.addText([
-        { text: "• Volatilitas Kripto & Noise:", options: { bold: true, fontSize: 14, breakLine: true } },
-        { text: "   Gangguan data yang mengaburkan sinyal asli.", options: { fontSize: 13, breakLine: true } },
-        { text: "• Optimalitas Window:", options: { bold: true, fontSize: 14, breakLine: true } },
-        { text: "   Belum ada standar panjang jendela observasi.", options: { fontSize: 13 } }
-    ], { x: 0.7, y: 2.6, w: 3.8, color: "333333", valign: "top" });
+        { text: "• Volatilitas Kripto & Noise:", options: { bold: true, fontSize: 13, breakLine: true } },
+        { text: "   Gangguan data yang mengaburkan sinyal asli.", options: { fontSize: 12, breakLine: true } },
+        { text: "   Ex: Price spikes akibat sentimen sesaat vs korelasi fundamental.", options: { fontSize: 11, italic: true, color: "666666", breakLine: true } },
+        { text: "• Optimalitas Window:", options: { bold: true, fontSize: 13, breakLine: true } },
+        { text: "   Belum ada standar panjang jendela observasi.", options: { fontSize: 12, breakLine: true } },
+        { text: "   Ex: Window 30 hari (sensitif) vs 90 hari (lambat) memberikan alokasi berlawanan.", options: { fontSize: 11, italic: true, color: "666666" } }
+    ], { x: 0.7, y: 2.5, w: 3.8, color: "333333", valign: "top" });
 
     // Area Kanan: Gap & Solusi (Padding diperbaiki)
     slide2.addShape(pres.ShapeType.rect, { x: 5.3, y: 1.5, w: 4.2, h: 3.2, fill: { color: "ffffff" }, line: { color: "27ae60", width: 2 } });
     slide2.addText("💡 RESEARCH GAP & SOLUSI", { x: 5.3, y: 1.8, w: 4.2, fontSize: 18, bold: true, color: "27ae60", align: "center" });
     slide2.addText([
-        { text: "• Ketidakpastian Penalti (γ):", options: { bold: true, fontSize: 14, breakLine: true } },
-        { text: "   Belum ditemukan bobot ideal secara universal.", options: { fontSize: 13, breakLine: true } },
-        { text: "• Urgensi Tuning Parameter:", options: { bold: true, fontSize: 14, color: "27ae60", breakLine: true } },
-        { text: "   Mekanisme kalibrasi sistematis diperlukan.", options: { italic: true, fontSize: 13 } }
-    ], { x: 5.5, y: 2.6, w: 3.8, color: "333333", valign: "top" });
+        { text: "• Ketidakpastian Penalti (γ):", options: { bold: true, fontSize: 13, breakLine: true } },
+        { text: "   Belum ditemukan bobot ideal secara universal.", options: { fontSize: 12, breakLine: true } },
+        { text: "   Ex: γ rendah gagal cegah risiko; γ tinggi memangkas profit.", options: { fontSize: 11, italic: true, color: "666666", breakLine: true } },
+        { text: "• Urgensi Tuning Parameter:", options: { bold: true, fontSize: 13, color: "27ae60", breakLine: true } },
+        { text: "   Mekanisme kalibrasi sistematis diperlukan melalui 2-Stage Grid Search.", options: { italic: true, fontSize: 11 } }
+    ], { x: 5.5, y: 2.5, w: 3.8, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -203,14 +206,19 @@ async function createPresentation() {
     slideProblem.addText("Identifikasi Masalah Eksekusi Model Tradisional", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     slideProblem.addText([
-        { text: "Mengapa Classical Markowitz (CM) Gagal di Pasar Kripto?\n", options: { bold: true, color: "c0392b", fontSize: 20 } },
-        { text: "1. Estimation Risk & Noise:\n", options: { bold: true, color: "003366" } },
-        { text: "Sensitivitas ekstrem terhadap input rata-rata dan kovariansi. Kesalahan kecil pada estimasi berakibat error alokasi eksponensial.\n", options: {} },
-        { text: "2. Correlation Spikes:\n", options: { bold: true, color: "003366" } },
-        { text: "Saat market crash (Fase Bearish), korelasi antar koin memuncak secara buatan, membuat diversifikasi CM gagal mendadak.\n", options: {} },
-        { text: "3. Corner Solutions:\n", options: { bold: true, color: "003366" } },
-        { text: "Model cenderung memberikan bobot berlebihan hanya pada sebagian kecil pecahan aset, dan 0 untuk yang lain (konsenstrasi risiko ekstrem).", options: {} }
-    ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
+        { text: "Mengapa Classical Markowitz (CM) Gagal di Pasar Kripto?\n", options: { bold: true, color: "c0392b", fontSize: 18 } },
+        { text: "1. Estimation Risk & Noise:\n", options: { bold: true, color: "003366", fontSize: 15 } },
+        { text: "Sensitivitas ekstrem terhadap input. Kesalahan kecil estimasi berakibat error alokasi eksponensial.\n", options: { fontSize: 14 } },
+        { text: "   Ex: Perubahan 0.1% pada mean return koin dapat memicu reposisi bobot drastis (0% ke 40%).\n", options: { fontSize: 13, italic: true, color: "666666" } },
+
+        { text: "2. Correlation Spikes:\n", options: { bold: true, color: "003366", fontSize: 15 } },
+        { text: "Saat market crash, korelasi antar koin memuncak, membuat diversifikasi CM gagal mendadak.\n", options: { fontSize: 14 } },
+        { text: "   Ex: Mei 2021 Crash; korelasi BTC-ALT melonjak >0.9, menghilangkan manfaat diversifikasi.\n", options: { fontSize: 13, italic: true, color: "666666" } },
+
+        { text: "3. Corner Solutions:\n", options: { bold: true, color: "003366", fontSize: 15 } },
+        { text: "Model cenderung memberikan bobot ekstrem (100% atau 0%) pada aset tertentu saja.\n", options: { fontSize: 14 } },
+        { text: "   Ex: Konsentrasi 95% hanya pada Stablecoin (USDT) saat volatilitas tinggi, mengabaikan aset lain.", options: { fontSize: 13, italic: true, color: "666666" } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4.5, color: "333333", valign: "top" });
     slideProblem.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideProblem.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -226,19 +234,19 @@ async function createPresentation() {
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "3498db", width: 1.5 } });
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 0.6, h: 1.0, fill: { color: "3498db" } });
     slideRumusan.addText("Q1", { x: 0.5, y: 1.3, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideRumusan.addText("Bagaimana mengidentifikasi arsitektur Network Markowitz Statis yang optimal (Tuned Window & Gamma) pada fase pasar yang berbeda?", { x: 1.2, y: 1.3, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+    slideRumusan.addText("Bagaimana tuning Window & Gamma mengatasi limitasi parameter statis (Giudici) di berbagai fase pasar kripto?", { x: 1.2, y: 1.3, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
 
     // Question 2 Box
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "2c3e50", width: 1.5 } });
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 0.6, h: 1.0, fill: { color: "2c3e50" } });
     slideRumusan.addText("Q2", { x: 0.5, y: 2.5, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideRumusan.addText("Apakah penerapan parameter penalti (Gamma) berbasis jaringan (MST) secara signifikan mampu meregulasi Estimation Risk dibandingkan Model Tradisional?", { x: 1.2, y: 2.5, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+    slideRumusan.addText("Sejauh mana penalti berbasis MST mampu memitigasi Estimation Risk lebih efektif dibandingkan model alokasi tradisional?", { x: 1.2, y: 2.5, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
 
     // Question 3 Box
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.7, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "e67e22", width: 1.5 } });
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.7, w: 0.6, h: 1.0, fill: { color: "e67e22" } });
     slideRumusan.addText("Q3", { x: 0.5, y: 3.7, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideRumusan.addText("Sejauh mana optimasi Parameter Tuning Statis mendefinisikan batas terbaik untuk kinerja Multi-Metric (P&L, VaR, Sharpe, Rachev)?", { x: 1.2, y: 3.7, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+    slideRumusan.addText("Apakah optimasi sistematis (2-Stage GS) mampu menghasilkan performa Multi-Metric yang mengungguli benchmark klasik?", { x: 1.2, y: 3.7, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
 
     slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -289,7 +297,10 @@ async function createPresentation() {
         { text: ": Ukuran fluktuasi harga pasar.", options: { breakLine: true } },
         { text: "➤ ", options: {} },
         { text: "Kovarians", options: { bold: true, underline: true } },
-        { text: ": Ukuran pergerakan bersama aset.", options: { breakLine: true } }
+        { text: ": Ukuran pergerakan bersama aset.", options: { breakLine: true } },
+        { text: "➤ ", options: {} },
+        { text: "LR Slope", options: { bold: true, underline: true } },
+        { text: ": Estimator kadar tren linier.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // Kolom Kanan: Struktur Jaringan
@@ -360,7 +371,12 @@ async function createPresentation() {
         { text: "Mengintegrasikan analisis jaringan (MST) dan penalti untuk menstabilkan bobot portofolio pada kondisi market crash.\n", options: {} },
 
         { text: "3. Multi-Metric Optimization Benchmark:\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Penelitian pertama yang secara simultan menguji NW-Markowitz terhadap 3 target sekaligus: VAR (Risiko), SHARPE (Efisiensi), dan RACHEV (Ujung Ekor).", options: {} }
+        { text: "Penelitian pertama yang secara simultan menguji NW-Markowitz terhadap 3 target sekaligus: VAR (Risiko), SHARPE (Efisiensi), dan RACHEV (Ujung Ekor).\n", options: {} },
+
+        { text: "4. Adaptive Gamma & Trend Thresholding (NEW):\n", options: { bold: true, color: "c0392b", fontSize: 18 } },
+        { text: "Mengembangkan logika penalti dinamis di mana ", options: {} },
+        { text: "Gamma (\u03b3) mendekati nol ", options: { bold: true, italic: true } },
+        { text: "saat trend positif kuat terdeteksi, guna memaksimalkan capture profit pada pasar bullish.", options: {} }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
 
     slideNovelty.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
@@ -402,6 +418,30 @@ async function createPresentation() {
 
     slideSens.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideSens.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5e: Mekanisme Adaptive Gamma & Trend Threshold ---
+    let slideAdaptive = pres.addSlide();
+    slideAdaptive.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideAdaptive.addText("Mekanisme Adaptive Gamma & Optimasi Threshold", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+
+    slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 9.0, h: 1.5, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1 } });
+    slideAdaptive.addText("Logika Adaptive: Jika Linear Regression Slope > Optimized Threshold \u2794 \u03b3 → 0", { x: 0.5, y: 1.3, w: 9.0, fontSize: 16, bold: true, color: "d35400", align: "center" });
+    slideAdaptive.addText("Linear Regression Slope digunakan sebagai estimator 'kadar trend' paling objektif karena memitigasi noise volatilitas harian pada window 30 hari.", { x: 0.8, y: 1.8, w: 8.4, fontSize: 13, align: "center", italic: true });
+
+    // Strategi Grid Search Bertingkat
+    slideAdaptive.addText([
+        { text: "Grid Search pada Parameter Slope Threshold:\n", options: { bold: true, color: "003366", fontSize: 16 } },
+        { text: "1. Stage 1 (Coarse):\n", options: { bold: true } },
+        { text: "   Mensimulasikan berbagai level Slope Threshold untuk mengidentifikasi area sensitivitas return vs risiko sistemik.\n", options: {} },
+        { text: "2. Stage 2 (Fine):\n", options: { bold: true } },
+        { text: "   Mengoptimasi nilai Slope Threshold secara presisi guna mendapatkan titik switch (perubahan \u03b3) yang paling menguntungkan secara statistik.\n", options: {} },
+        { text: "3. Justifikasi Kualitas:\n", options: { bold: true, color: "27ae60" } },
+        { text: "   Threshold optimal menjamin bahwa 'rem' penalti jaringan hanya dilepas ketika trend positif benar-benar solid dan teruji secara linier.", options: {} }
+    ], { x: 0.5, y: 2.9, w: "9.0", h: 2.2, fontSize: 14, color: "333333", valign: "top" });
+
+    slideAdaptive.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
     let slideSensViz = pres.addSlide();
@@ -787,6 +827,36 @@ async function createPresentation() {
     ], { x: 0.5, y: 1.1, w: "90%", h: 4.5, fontSize: 18, color: "333333", valign: "top" });
     slide10.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide10.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide Appendix: Rumus Linear Regression Slope ---
+    let slideFormula = pres.addSlide();
+    slideFormula.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideFormula.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideFormula.addText("Lampiran: Formulasi Linear Regression Slope (\u03b2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+
+    slideFormula.addText([
+        { text: "Justifikasi Metrik:\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "Digunakan untuk menangkap sinyal 'Kadar Tren' yang lebih bersih dari noise dibanding momentum konvensional.\n\n", options: { fontSize: 14 } },
+        { text: "Persamaan Regresi Linier:\n", options: { bold: true, fontSize: 16 } },
+        { text: "y = \u03b1 + \u03b2x + \u03b5\n\n", options: { fontSize: 20, align: "center", color: "c0392b" } },
+        { text: "Rumus Estimator Slope (\u03b2):\n", options: { bold: true, fontSize: 16 } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 2.5, valign: "top" });
+
+    // Menggunakan gambar atau teks manual untuk rumus yang kompleks
+    slideFormula.addText("\u03b2 = [ n\u03a3(xy) - \u03a3x\u03a3y ] / [ n\u03a3x\u00b2 - (\u03a3x)\u00b2 ]", {
+        x: 1.0, y: 3.5, w: 8.0, h: 1.0, fontSize: 24, bold: true, color: "003366", align: "center", fill: { color: "f4f6f7" }
+    });
+
+    slideFormula.addText([
+        { text: "Keterangan:\n", options: { bold: true, fontSize: 14 } },
+        { text: "\u2022 n = Periode Window (30 hari)\n", options: { fontSize: 13 } },
+        { text: "\u2022 y = Data Harga/Return Aset\n", options: { fontSize: 13 } },
+        { text: "\u2022 x = Deret Waktu (1 s/d 30)\n", options: { fontSize: 13 } },
+        { text: "\u2022 \u03b2 > 0 = Tren Positif | \u03b2 < 0 = Tren Negatif", options: { fontSize: 13, bold: true, color: "27ae60" } }
+    ], { x: 0.5, y: 4.6, w: "90%", h: 1.2, valign: "top" });
+
+    slideFormula.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideFormula.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 11: Lampiran - Menghitung Nilai Eigen ---
     let slide11 = pres.addSlide();
