@@ -27,8 +27,13 @@ async function createPresentation() {
         x: 0.5, y: 2.6, w: "90%", fontSize: 24, align: "center", color: "34495e"
     });
 
-    slide1.addText("Oleh: Ragil Yulianto", {
-        x: 0.5, y: 4.5, w: "90%", fontSize: 18, align: "center", color: "7f8c8d"
+    slide1.addText([
+        { text: "Nama: Ragil Yulianto\n" },
+        { text: "NIM: 14240007\n" },
+        { text: "Program Studi: Informatika (S2)\n" },
+        { text: "Pembimbing: Dr. Muhammad Haris, M. Eng." }
+    ], {
+        x: 0.5, y: 3.8, w: "90%", fontSize: 18, align: "center", color: "7f8c8d"
     });
 
     // --- Slide 2: Daftar Isi (Bagian 1: Utama) ---
