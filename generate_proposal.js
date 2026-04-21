@@ -457,33 +457,26 @@ const doc = new Document({
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "Jakarta, 12 Maret 2026", font: "Times New Roman", size: 24 })]
+                    children: [new TextRun({ text: "Jakarta, 15 April 2026", font: "Times New Roman", size: 24 })]
                 }),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "Dosen Pembimbing", font: "Times New Roman", size: 24, bold: true })]
+                    children: [new TextRun({ text: "PEMBIMBING TESIS", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 emptyLine(),
                 emptyLine(),
                 emptyLine(),
-                emptyLine(),
                 new Paragraph({
-                    alignment: AlignmentType.CENTER,
+                    indent: { left: 0 },
                     children: [
-                        new TextRun({ text: "____________________________________", font: "Times New Roman", size: 24, bold: true }),
-                    ]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    children: [
-                        new TextRun({ text: "Nama Dosen Pembimbing", font: "Times New Roman", size: 24, bold: true }),
-                    ]
-                }),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    children: [
-                        new TextRun({ text: "NIDN. XXXXXXXXXX", font: "Times New Roman", size: 24, bold: true }),
+                        new TextRun({ text: "Pembimbing", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "\t:  Dr. Muhammad Haris, M. Eng", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "\t.............................", font: "Times New Roman", size: 24 }),
+                    ],
+                    tabStops: [
+                        { type: TabStopType.LEFT, position: 2000 },
+                        { type: TabStopType.RIGHT, position: 8000 }
                     ]
                 }),
             ]
