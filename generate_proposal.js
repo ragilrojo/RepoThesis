@@ -367,9 +367,8 @@ const doc = new Document({
                     children: [new TextRun({ text: "HALAMAN JUDUL", color: "FFFFFF", size: 2 })]
                 }),
                 emptyLine(),
-                centeredBold("IMPLEMENTASI DEEP REINFORCEMENT LEARNING UNTUK", 28),
-                centeredBold("OPTIMALISASI DINAMIS PARAMETER GAMMA PADA MODEL", 28),
-                centeredBold("PORTOFOLIO NETWORK MARKOWITZ", 28),
+                centeredBold("OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ", 28),
+                centeredBold("BERBASIS DEEP REINFORCEMENT LEARNING", 28),
                 emptyLine(),
                 emptyLine(),
                 emptyLine(),
@@ -440,7 +439,7 @@ const doc = new Document({
                     ["Program Studi", "Informatika"],
                     ["Fakultas",      "Teknologi Informasi"],
                     ["Jenjang",       "Strata Dua (S2)"],
-                    ["Judul Tesis",   "IMPLEMENTASI DEEP REINFORCEMENT LEARNING UNTUK OPTIMALISASI DINAMIS PARAMETER GAMMA PADA MODEL PORTOFOLIO NETWORK MARKOWITZ"],
+                    ["Judul Tesis",   "OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ BERBASIS DEEP REINFORCEMENT LEARNING"],
                 ].map(([label, value]) => new Paragraph({
                     indent: { left: 720 },
                     spacing: { line: 360 },
