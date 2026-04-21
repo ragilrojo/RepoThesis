@@ -367,9 +367,9 @@ const doc = new Document({
                     children: [new TextRun({ text: "HALAMAN JUDUL", color: "FFFFFF", size: 2 })]
                 }),
                 emptyLine(),
-                centeredBold("OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ", 28),
-                centeredBold("BERBASIS REINFORCEMENT LEARNING", 28),
-                centeredBold("UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO", 28),
+                centeredBold("IMPLEMENTASI DEEP REINFORCEMENT LEARNING BERBASIS", 28),
+                centeredBold("SOFT ACTOR-CRITIC UNTUK OPTIMALISASI DINAMIS PARAMETER GAMMA", 28),
+                centeredBold("PADA MODEL PORTOFOLIO NETWORK MARKOWITZ", 28),
                 emptyLine(),
                 emptyLine(),
                 emptyLine(),
@@ -440,7 +440,7 @@ const doc = new Document({
                     ["Program Studi", "Informatika"],
                     ["Fakultas",      "Teknologi Informasi"],
                     ["Jenjang",       "Strata Dua (S2)"],
-                    ["Judul Tesis",   "OPTIMASI DINAMIS PEMODELAN NETWORK MARKOWITZ BERBASIS REINFORCEMENT LEARNING UNTUK MANAJEMEN PORTOFOLIO MATA UANG KRIPTO"],
+                    ["Judul Tesis",   "IMPLEMENTASI DEEP REINFORCEMENT LEARNING BERBASIS SOFT ACTOR-CRITIC UNTUK OPTIMALISASI DINAMIS PARAMETER GAMMA PADA MODEL PORTOFOLIO NETWORK MARKOWITZ"],
                 ].map(([label, value]) => new Paragraph({
                     indent: { left: 720 },
                     spacing: { line: 360 },
@@ -576,20 +576,14 @@ const doc = new Document({
                     indent: { firstLine: 720 },
                     children: [
                         new TextRun({ text: "Kendati model Network Markowitz statis menunjukkan proteksi yang lebih relevan dibandingkan Classical Markowitz, penentuan faktor penalti sentralitas \u03b3 (\u03b3) yang kaku kerap menimbulkan masalah di fase pasar yang dinamis (misalnya fase ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "recovery", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " atau ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "). Oleh karena itu, diperlukan pendekatan adaptif yang mengintegrasikan teknik pembersihan sinyal berbasis ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "Random Matrix Theory (RMT)", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " [mendeley_cite:marchenko1967distribution], [mendeley_cite:laloux1999noise] disandingkan dengan optimalisasi berbasis ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "Reinforcement Learning (RL)", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " agar portofolio dapat membentengi aset di saat ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "crypto winter", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " tanpa mengorbankan rasio ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "upside gain", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " di saat pembalikan arah (", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") [mendeley_cite:giudici2020network], [mendeley_cite:lopezdeprado2018advances].", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "). Oleh karena itu, diperlukan pendekatan cerdas berbasis ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Deep Reinforcement Learning (DRL)", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ", khususnya algoritma ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Soft Actor-Critic (SAC)", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ", yang mampu bertindak sebagai pengontrol dinamis (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "agent-based controller", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") untuk menyesuaikan nilai \u03b3 secara real-time berdasarkan kondisi jaringan dan momentum pasar kripto [mendeley_cite:giudici2020network], [mendeley_cite:haarnoja2018soft].", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
@@ -620,22 +614,20 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
-                        new TextRun({ text: "Kurangnya model sistematis yang secara metodis menyesuaikan struktur jaringan portofolio dengan rezim sikluk guncangan harga terkini menggunakan teknik optimasi ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "rolling window", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " untuk aset-aset kripto utama.", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Keterbatasan model optimasi konvensional dalam menangkap hubungan non-linier antara struktur jaringan korelasi dan keputusan alokasi bobot yang adaptif.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
                 heading2("1.3 Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
-                letterItem("Menganalisis keandalan metodologi Network Markowitz (dengan integrasi RMT filter dan Eigenvector Centrality) dalam menekan ekstrimitas downside risk dibandingkan pendekatan portofolio naif dan konvensional.", "letters1"),
-                letterItem("Merancang dan menguji model Network Markowitz adaptif berbasis agen Reinforcement Learning yang mampu melakukan re-kalibrasi dinamis terhadap parameter penalti (\u03b3) berdasarkan observasi metrik jaringan dan kondisi pasar terkini.", "letters1"),
-                letterItem("Membandingkan performa perlindungan risiko sistemik (VaR) dan efisiensi imbal hasil (Sharpe Ratio, Calmar Ratio) antara pemodelan berbasis RL dengan metode-metode baseline pada reksadana aset kripto.", "letters1"),
+                letterItem("Merancang dan melatih agen Reinforcement Learning berbasis algoritma Soft Actor-Critic (SAC) yang bertindak sebagai Gamma Controller untuk mengoptimasi parameter penalti sentralitas jaringan secara dinamis.", "letters1"),
+                letterItem("Mengevaluasi efektivitas penggunaan fitur gabungan (network metrics dan market indicators) dalam meningkatkan kemampuan adaptasi portofolio terhadap volatilitas ekstrem pasar kripto.", "letters1"),
+                letterItem("Membandingkan performa model SAC-Net Markowitz terhadap strategi benchmark (Equally Weighted, Classical Markowitz, dan NW Statis) menggunakan metrik Sharpe Ratio dan Calmar Ratio.", "letters1"),
                 emptyLine(),
                 heading2("1.4 Ruang Lingkup Penelitian"),
                 body("Ruang lingkup penelitian ini dibatasi pada:"),
-                letterItem("Objek penelitian terfokus pada data fluktuasi harga harian dari 9 (sembilan) aset kripto utama (BCH, BNB, BTC, EOS, ETH, LTC, TRX, XLM, XRP) dalam kerangka waktu historis termasuk masa resesi crypto winter.", "letters2"),
-                letterItem("Metode yang dibandingkan mencakup Equally Weighted (EW), Classical Markowitz (CM), Network Markowitz statis, serta Optimized Network Markowitz berbasis RL (Soft Actor-Critic).", "letters2"),
+                letterItem("Objek penelitian terfokus pada 9 (sembilan) aset kripto utama (BCH, BNB, BTC, EOS, ETH, LTC, TRX, XLM, XRP) dengan periode data latihan (training) tahun 2017-2019 dan data uji (testing) tahun 2024.", "letters2"),
+                letterItem("Algoritma Reinforcement Learning yang digunakan adalah Soft Actor-Critic (SAC) dengan framework Stable Baselines3, menggunakan 9 state features (5 network metrics dan 4 market metrics).", "letters2"),
                 letterItem("Pengujian (backtesting) dilakukan dalam out-of-sample rolling window (120 observasi ke belakang dengan frekuensi penyesuaian rebalance 7 hari) yang disimulasikan menggunakan transaction cost atau estimasi biaya bursa (0.1%).", "letters2"),
                 emptyLine(),
                 heading2("1.5 Sistematika Penulisan"),
@@ -782,9 +774,13 @@ const doc = new Document({
                 mixedBody([
                     {text: "Kelemahan efisiensi pasar kripto dijelaskan melalui "},
                     {text: "Adaptive Market Hypothesis", italic: true},
-                    {text: " (AMH) oleh Andrew Lo [mendeley_cite:lo2004adaptive]. AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan hasil adaptasi pelaku pasar terhadap perubahan lingkungan. Hal ini memberikan landasan teoritis kuat bagi penggunaan paradigma "},
-                    {text: "Reinforcement Learning", italic: true},
-                    {text: " dalam penelitian ini; karena korelasi dan risiko aset kripto terus berevolusi, maka agen dapat dilatih untuk mengenali pola transisi fasa pasar dan menyesuaikan parameter penalti (\u03b3) secara cerdas untuk mempertahankan profil risiko yang optimal."}
+                    {text: " (AMH) oleh Andrew Lo [mendeley_cite:lo2004adaptive]. AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan hasil adaptasi pelaku pasar terhadap perubahan lingkungan. Hal ini memberikan landasan teoritis kuat bagi penggunaan paradigma ", font: "Times New Roman", size: 24 },
+                    {text: "Deep Reinforcement Learning (DRL)", italic: true},
+                    {text: " dalam penelitian ini; karena korelasi dan risiko aset kripto terus berevolusi melalui berbagai fase pasar, maka agen cerdas berbasis algoritma ", font: "Times New Roman", size: 24 },
+                    {text: "Soft Actor-Critic (SAC)", italic: true},
+                    {text: " dilatih untuk mempelajari kebijakan (", font: "Times New Roman", size: 24 },
+                    {text: "policy", italic: true},
+                    {text: ") yang optimal dalam melakukan kalibrasi parameter penalti (\u03b3) secara dinamis."}
                 ]),
                 emptyLine(),
                 heading2("2.7 Walk-forward Analysis dan Filosofi Rolling Window"),
@@ -803,14 +799,12 @@ const doc = new Document({
                 heading2("2.8 Analisis Kebaruan (Gap Analysis)"),
                 mixedBody([
                     {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. [mendeley_cite:giudici2020network]. Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
-                    {text: "Optimized Dynamic Network Markowitz", italic: true},
+                    {text: "RL-Net Markowitz", italic: true},
                     {text: ". Kebaruan utama terletak pada penggunaan algoritma "},
-                    {text: "Grid Search", italic: true},
-                    {text: " yang dikombinasikan dengan jendela uji bergulir ("},
-                    {text: "rolling window", italic: true},
-                    {text: ") untuk menentukan nilai \u03b3 yang termutakhir berdasarkan kondisi pasar terkini. Dengan demikian, model tidak hanya menyaring "},
-                    {text: "noise", italic: true},
-                    {text: " melalui RMT, tetapi juga secara aktif menyesuaikan intensitas kontrol sentralitas terhadap perubahan struktur jaringan aset secara "},
+                    {text: "Soft Actor-Critic (SAC)", italic: true},
+                    {text: " yang bertindak sebagai "},
+                    {text: "intelligent controller", italic: true},
+                    {text: " untuk menentukan nilai \u03b3 secara adaptif berdasarkan kondisi pasar dan topologi jaringan terkini, serta secara aktif menyesuaikan intensitas kontrol sentralitas terhadap perubahan struktur jaringan aset secara "},
                     {text: "real-time", italic: true},
                     {text: "."}
                 ]),
@@ -1104,21 +1098,21 @@ const doc = new Document({
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "Gambar III.1. Kerangka Kerja Penelitian Network Markowitz dengan Grid Search", font: "Times New Roman", size: 22, bold: true })]
+                    children: [new TextRun({ text: "Gambar III.1. Kerangka Kerja Penelitian SAC-Net Markowitz", font: "Times New Roman", size: 22, bold: true })]
                 }),
                 emptyLine(),
                 mixedBody([
                     {text: "Secara visual, alur penelitian pada Gambar III.1 dibagi menjadi lima tahapan utama: (1) "},
                     {text: "Data Acquisition", italic: true},
                     {text: " yaitu pengumpulan data historis kripto; (2) "},
-                    {text: "RMT Filtering", italic: true},
-                    {text: " untuk pembersihan sinyal korelasi; (3) "},
-                    {text: "MST & Eigenvector Centrality Calculation", italic: true},
-                    {text: " untuk ekstraksi struktur jaringan; (4) "},
-                    {text: "Dynamic Grid Search", italic: true},
-                    {text: " (\u03b3-tuning) untuk optimasi parameter adaptif; dan (5) "},
-                    {text: "Portfolio Output & Evaluation", italic: true},
-                    {text: " untuk pengujian performa akhir."}
+                    {text: "Feature Engineering", italic: true},
+                    {text: " mencakup filtrasi RMT, pembangunan MST, dan ekstraksi 9 fitur indikator; (3) "},
+                    {text: "SAC Agent Training", italic: true},
+                    {text: " melatih pengontrol \u03b3 berbasis Deep Reinforcement Learning; (4) "},
+                    {text: "Backtesting & Rebalancing", italic: true},
+                    {text: " simulasi perdagangan mingguan; dan (5) "},
+                    {text: "Performance Evaluation", italic: true},
+                    {text: " menggunakan metrik Sharpe dan Calmar."}
                 ]),
                 emptyLine(),
                 emptyLine(),
@@ -1134,9 +1128,9 @@ const doc = new Document({
                     {text: "Network Markowitz", italic: true},
                     {text: ". Tahapan ini bertujuan untuk mengidentifikasi "},
                     {text: "research gap", italic: true},
-                    {text: ", menentukan parameter dasar optimasi, serta memahami landasan matematis dari pendekatan "},
-                    {text: "adaptive grid search", italic: true},
-                    {text: " dalam konteks volatilitas pasar kripto."}
+                    {text: ", menentukan parameter dasar optimasi, serta memahami algoritma "},
+                    {text: "Soft Actor-Critic (SAC)", italic: true},
+                    {text: " dalam konteks manajemen portofolio dinamis."}
                 ]),
                 numItem("Data Acquisition"),
                 mixedBody([
@@ -1148,17 +1142,11 @@ const doc = new Document({
                     {text: "log returns", italic: true},
                     {text: " harian untuk menormalisasi distribusi imbal hasil."}
                 ]),
-                numItem("RMT Filtering"),
+                numItem("Feature Engineering"),
                 mixedBody([
-                    {text: "Mentransformasi "},
-                    {text: "returns", italic: true},
-                    {text: " menjadi Matriks Korelasi Pearson, kemudian menerapkan filtrasi "},
-                    {text: "Random Matrix Theory (RMT)", italic: true},
-                    {text: " melalui mekanisme "},
-                    {text: "eigenvalue clipping", italic: true},
-                    {text: " untuk memisahkan sinyal korelasi pasar dari "},
-                    {text: "noise", italic: true},
-                    {text: " statistik."}
+                    {text: "Proses ekstraksi 9 fitur utama sebagai input (", italic: true},
+                    {text: "state", italic: true},
+                    {text: ") bagi agen RL. Fitur ini mencakup 5 indikator jaringan (varian sentralitas, densitas, dan MST distance) serta 4 indikator pasar (momentum, volatilitas jangka pendek, dan return rata-rata)."}
                 ]),
                 numItem("MST & Eigenvector Centrality Calculation"),
                 mixedBody([
@@ -1172,13 +1160,13 @@ const doc = new Document({
                     {text: "Eigenvector Centrality", italic: true},
                     {text: " sebagai ukuran risiko sistemik tiap aset."}
                 ]),
-                numItem("Dynamic Grid Search (\u03b3-tuning)"),
+                numItem("SAC Agent Training"),
                 mixedBody([
-                    {text: "Melakukan proses kalibrasi parameter penalti jaringan (\u03b3) secara dinamis menggunakan algoritma "},
-                    {text: "Grid Search", italic: true},
-                    {text: ". Parameter ini dioptimalkan pada setiap jendela waktu bergulir ("},
-                    {text: "rolling window", italic: true},
-                    {text: ") untuk memastikan model tetap adaptif terhadap perubahan rezim pasar."}
+                    {text: "Melatih pengontrol \u03b3 dinamis menggunakan algoritma "},
+                    {text: "Soft Actor-Critic (SAC)", italic: true},
+                    {text: " dengan fungsi reward berbasis "},
+                    {text: "Incremental Sharpe", italic: true},
+                    {text: ". Agen dilatih untuk meminimalkan risiko penularan sistemik sekaligus memaksimalkan efisiensi imbal hasil portofolio."}
                 ]),
                 numItem("Portfolio Output & Evaluation"),
                 mixedBody([
@@ -1197,7 +1185,7 @@ const doc = new Document({
                 heading3("3.2.1 Perangkat Lunak"),
                 bulletItem("Sistem Operasi: Windows 10/11"),
                 bulletItem("Bahasa Pemrograman: Python 3.x (dengan ekosistem Anaconda)"),
-                bulletItem("Framework/Library: Pandas, Numpy, Scipy (Optimization), Scikit-Learn, NetworkX (Graph Analytics)"),
+                bulletItem("Framework/Library: Pandas, Numpy, Scipy (Optimization), NetworkX (Graph Analytics), Stable Baselines3 (Deep Reinforcement Learning)"),
                 emptyLine(),
                 heading2("3.3 Dataset"),
                 mixedBody([
@@ -1230,7 +1218,6 @@ const doc = new Document({
                             ["BTC", "Bitcoin", "Layer 1 / Store of Value", "Yahoo Finance"],
                             ["ETH", "Ethereum", "Layer 1 / Smart Contract", "Yahoo Finance"],
                             ["XRP", "Ripple", "Payment / Bridge Currency", "Yahoo Finance"],
-                            ["USDT", "Tether", "Stablecoin / USD Pegged", "Yahoo Finance"],
                             ["BCH", "Bitcoin Cash", "Payment / Peer-to-Peer Cash", "Yahoo Finance"],
                             ["LTC", "Litecoin", "Payment / Digital Silver", "Yahoo Finance"],
                             ["BNB", "Binance Coin", "Layer 1 / Exchange Token", "Yahoo Finance"],
@@ -1402,15 +1389,11 @@ const doc = new Document({
                 emptyLine(),
 
                 mixedBody([
-                    {text: "Pada penelitian ini, bobot \u03b3 tidak akan dilakukan "},
+                    {text: "Pada penelitian ini, intensitas penalti \u03b3 tidak akan dilakukan "},
                     {text: "hard-coded", italic: true},
-                    {text: " statis, melainkan secara luwes dan "},
-                    {text: "rolling", italic: true},
-                    {text: " akan difungsikan optimasi "},
-                    {text: "grid validation", italic: true},
-                    {text: " berbasis metrik obyektif "},
-                    {text: "Sharpe Ratio", italic: true},
-                    {text: " periode belakang."}
+                    {text: " statis, melainkan agen cerdas berbasis "},
+                    {text: "Soft Actor-Critic (SAC)", italic: true},
+                    {text: " akan mempelajari relasi antara 9 fitur input terhadap keputusan pergeseran parameter \u03b3 untuk memaksimalkan profil risiko-imbal hasil di masa depan."}
                 ]),
                 emptyLine(),
                 heading2("3.5 Matriks Evaluasi Performa"),
@@ -1537,64 +1520,24 @@ const doc = new Document({
                 ]),
                 emptyLine(),
                 
-                heading3("3.5.3 Tail Risk & Reward (Rachev Ratio)"),
+                heading3("3.5.4 Calmar Ratio"),
                 mixedBody([
-                    {text: "Rachev Ratio", italic: true},
-                    {text: " merupakan ukuran performa yang secara eksplisit memperhitungkan distribusi ekor ("},
-                    {text: "tail distribution", italic: true},
-                    {text: ") dari "},
-                    {text: "return", italic: true},
-                    {text: " portofolio. Berbeda dengan Sharpe Ratio yang mengasumsikan distribusi normal, Rachev Ratio didefinisikan sebagai rasio antara "},
-                    {text: "Expected Tail Return", italic: true},
-                    {text: " (ETR) pada kuantil atas terhadap "},
-                    {text: "Expected Shortfall", italic: true},
-                    {text: " (ES) pada kuantil bawah:"}
+                    {text: "Calmar Ratio digunakan untuk mengevaluasi imbal hasil tahunan relatif terhadap penarikan maksimum (", font: "Times New Roman", size: 24 },
+                    {text: "Maximum Drawdown", italic: true},
+                    {text: "). Metrik ini krusial dalam dunia kripto untuk menguji ketahanan portofolio terhadap kejatuhan harga parah. Formula Calmar Ratio adalah:", font: "Times New Roman", size: 24 }
                 ]),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 120, after: 120, line: 360 },
-                    children: [
-                        new Math({
-                            children: rumus("RR = \\frac{ETR_\\alpha(R)}{ES_\\beta(R)}")
+                new Table({
+                    width: { size: 8200, type: WidthType.DXA },
+                    columnWidths: [4000, 4200],
+                    borders: noBorders,
+                    rows: [
+                        new TableRow({
+                            children: [
+                                new TableCell({ children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Calmar Ratio = Ann. Return / |Max Drawdown|", font: "Times New Roman", size: 24, bold: true })] })] }),
+                            ]
                         }),
-                        new TextRun({ text: "             (3.4)", font: "Times New Roman", size: 24, bold: true }),
                     ]
                 }),
-                body("Keterangan:"),
-                new Paragraph({
-                    indent: { left: 720 },
-                    spacing: { line: 360 },
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }],
-                    children: [
-                        new Math({ children: [new MathRun("RR")] }),
-                        new TextRun({ text: "\t= Rachev Ratio.", font: "Times New Roman", size: 24 }),
-                    ]
-                }),
-                new Paragraph({
-                    indent: { left: 720 },
-                    spacing: { line: 360 },
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }],
-                    children: [
-                        new Math({ children: [new MathSubScript({ children: [new MathRun("ETR")], subScript: [new MathRun("\u03B1")] })] }),
-                        new TextRun({ text: "\t= Expected Tail Return pada tingkat kepercayaan \u03B1.", font: "Times New Roman", size: 24 }),
-                    ]
-                }),
-                new Paragraph({
-                    indent: { left: 720 },
-                    spacing: { line: 360 },
-                    tabStops: [{ type: TabStopType.LEFT, position: 2000 }],
-                    children: [
-                        new Math({ children: [new MathSubScript({ children: [new MathRun("ES")], subScript: [new MathRun("\u03B2")] })] }),
-                        new TextRun({ text: "\t= Expected Shortfall pada tingkat kepercayaan \u03B2.", font: "Times New Roman", size: 24 }),
-                    ]
-                }),
-                mixedBody([
-                    {text: "Nilai Rachev Ratio > 1 mengindikasikan bahwa potensi keuntungan ekstrem melebihi potensi kerugian ekstrem. Semakin besar nilai "},
-                    {text: "Rachev Ratio", italic: true},
-                    {text: ", semakin baik profil risiko-imbalan suatu portofolio karena menunjukkan kemampuan portofolio untuk menangkap keuntungan di 'ekor kanan' distribusi melampaui risiko di 'ekor kiri'. Metrik ini sangat krusial untuk pasar kripto yang dikenal memiliki karakteristik "},
-                    {text: "leptokurtic", italic: true},
-                    {text: " [mendeley_cite:rachev2008advanced], [mendeley_cite:artzner1999coherent]."}
-                ]),
 
                 emptyLine(),
                 heading2("3.6 Rencana Jadwal Penelitian"),
