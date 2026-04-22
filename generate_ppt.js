@@ -20,9 +20,9 @@ async function createPresentation() {
     });
     slide1.addText([
         { text: "Berbasis Pendekatan\n" },
-        { text: "Adaptive Network Markowitz", options: { italic: true } },
+        { text: "SAC-Net Markowitz", options: { italic: true } },
         { text: " melalui " },
-        { text: "2-Stage Tuning Parameter", options: { italic: true } }
+        { text: "Soft Actor-Critic (SAC) Gamma Control", options: { italic: true } }
     ], {
         x: 0.5, y: 2.6, w: "90%", fontSize: 24, align: "center", color: "34495e"
     });
@@ -73,42 +73,42 @@ async function createPresentation() {
 
     // --- Kolom 2 (Lanjutan Landasan & Adaptive) ---
     slideTOC1.addText([
-        { text: "II. KONTRIBUSI ADAPTIVE", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "II. KONTRIBUSI SAC-NET", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kebaruan Penelitian", options: { hyperlink: { slide: '11' }, fontSize: 12 } },
+        { text: "Kebaruan Penelitian (SAC)", options: { hyperlink: { slide: '11' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Urgensi Tuning Parameter", options: { hyperlink: { slide: '12' }, fontSize: 12 } },
+        { text: "Urgensi Dynamic Control", options: { hyperlink: { slide: '12' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Mekanisme Adaptive Gamma", options: { hyperlink: { slide: '13' }, fontSize: 12 } },
+        { text: "Mekanisme SAC Agent", options: { hyperlink: { slide: '13' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Deep-Dive Heatmap", options: { hyperlink: { slide: '14' }, fontSize: 12 } },
+        { text: "Deep-Dive Reward Scaling", options: { hyperlink: { slide: '14' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Studi Kasus Performa (W & \u03b3)", options: { hyperlink: { slide: '15' }, fontSize: 12 } },
+        { text: "Studi Kasus Performa (Seeds)", options: { hyperlink: { slide: '15' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '16' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian", options: { hyperlink: { slide: '17' }, fontSize: 12 } },
+        { text: "Dataset Penelitian (9 Assets)", options: { hyperlink: { slide: '17' }, fontSize: 12 } },
     ], { x: 3.4, y: 1.1, w: 2.8, h: 4.5, fontSize: 14, color: "333333", valign: "top" });
 
     // --- Kolom 3 (Strategi, Evaluasi & Navigasi) ---
     slideTOC1.addText([
         { text: "III. STRATEGI PORTOFOLIO", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Strategi EW, CM, GM", options: { hyperlink: { slide: '18' }, fontSize: 12 } },
+        { text: "Strategi EW, CM", options: { hyperlink: { slide: '18' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Network (Statis vs Adaptif)", options: { hyperlink: { slide: '71' }, fontSize: 12 } },
+        { text: "Network (Statis vs SAC)", options: { hyperlink: { slide: '71' }, fontSize: 12 } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
         { text: "IV. EVALUASI PERFORMA", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "P&L, Sharpe, VaR, Rachev", options: { hyperlink: { slide: '19' }, fontSize: 12 } },
+        { text: "P&L, Sharpe, Calmar", options: { hyperlink: { slide: '19' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Analisis per Fase Pasar", options: { hyperlink: { slide: '20' }, fontSize: 12 } },
@@ -138,8 +138,6 @@ async function createPresentation() {
         { text: "   • ", options: {} },
         { text: "Simulasi Strategi CM", options: { hyperlink: { slide: '39' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Strategi GLasso", options: { hyperlink: { slide: '40' }, fontSize: 14, breakLine: true } },
-        { text: "   • ", options: {} },
         { text: "Simulasi Strategi NW", options: { hyperlink: { slide: '42' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Random Matrix Theory (RMT)", options: { hyperlink: { slide: '22' }, fontSize: 14, breakLine: true } },
@@ -155,23 +153,19 @@ async function createPresentation() {
     slideTOC2.addText([
         { text: "IV. LAMPIRAN (BAGIAN 2)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi 60/40 Weight Shift", options: { hyperlink: { slide: '44' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi SAC Agent", options: { hyperlink: { slide: '55' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "2-Stage GS: Mekanisme", options: { hyperlink: { slide: '55' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Reward Function", options: { hyperlink: { slide: '56' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "2-Stage GS: Visualisasi", options: { hyperlink: { slide: '56' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Multi-Seed", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Rolling Window", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
-        { text: "   • ", options: {} },
-        { text: "Dua Tipe Grid Search", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
+        { text: "Reward Normalization", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Simulasi Cumulative P&L", options: { hyperlink: { slide: '64' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Value at Risk (VaR)", options: { hyperlink: { slide: '65' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi Calmar Ratio", options: { hyperlink: { slide: '65' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Simulasi Sharpe Ratio", options: { hyperlink: { slide: '66' }, fontSize: 14, breakLine: true } },
-        { text: "   • ", options: {} },
-        { text: "Simulasi Rachev Ratio", options: { hyperlink: { slide: '67' }, fontSize: 14, breakLine: true } },
     ], { x: 5.2, y: 1.1, w: "45%", h: 5.5, fontSize: 16, color: "333333", valign: "top" });
     slideTOC2.addText("🏠 Kembali ke Daftar Isi Utama", { x: 7.0, y: 5.3, w: 2.7, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -199,9 +193,9 @@ async function createPresentation() {
     slide2.addText([
         { text: "• Keterbatasan Penalti (γ) Statis:", options: { bold: true, fontSize: 13, breakLine: true } },
         { text: "   Model kaku (Giudici, 2020) menghambat profit saat tren kuat.", options: { fontSize: 12, breakLine: true } },
-        { text: "   Ex: γ tinggi terus-menerus memangkas alfa di pasar bullish.", options: { fontSize: 11, italic: true, color: "666666", breakLine: true } },
-        { text: "• Solusi: Adaptive Gamma Scheme:", options: { bold: true, fontSize: 13, color: "27ae60", breakLine: true } },
-        { text: "   Optimasi 2-Stage GS pada LR Slope untuk penyesuaian γ dinamis.", options: { italic: true, fontSize: 11 } }
+        { text: "   Ex: γ tinggi terus-menerus memangkas alfa di pasar bullish.\n", options: { fontSize: 11, italic: true, color: "666666", breakLine: true } },
+        { text: "• Solusi: SAC-Based Gamma Controller:", options: { bold: true, fontSize: 13, color: "27ae60", breakLine: true } },
+        { text: "   Deep RL Agent untuk penyesuaian γ dinamis secara real-time.", options: { italic: true, fontSize: 11 } }
     ], { x: 5.5, y: 2.5, w: 3.8, color: "333333", valign: "top" });
     slide2.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -210,24 +204,20 @@ async function createPresentation() {
     let slideProblem = pres.addSlide();
     slideProblem.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideProblem.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideProblem.addText("Identifikasi Masalah Eksekusi Model Tradisional", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideProblem.addText("Identifikasi Masalah", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     slideProblem.addText([
         { text: "1. Keterbatasan CM: Estimation Risk & Corner Solutions\n", options: { bold: true, color: "c0392b", fontSize: 15 } },
-        { text: "Sensitivitas ekstrem terhadap input dan konsentrasi bobot berlebih pada satu aset. ", options: { fontSize: 13 } },
-        { text: "Contoh: Sedikit pergeseran data historis membuat model CM mengalokasikan 100% bobot hanya pada Bitcoin, menghancurkan prinsip diversifikasi.\n\n", options: { fontSize: 12, italic: true, color: "555555" } },
+        { text: "Sensitivitas ekstrem terhadap input dan konsentrasi bobot berlebih pada satu aset.\n\n", options: { fontSize: 13 } },
 
         { text: "2. Limitasi NW Giudici (2020): Parameter Statis & Kaku\n", options: { bold: true, color: "003366", fontSize: 15 } },
         { text: "• Window Bias:", options: { bold: true } },
-        { text: " Penggunaan window tetap (ex: 120 hari) gagal menangkap perubahan momentum pasar kripto yang cepat. ", options: {} },
-        { text: "Contoh: Window 120 hari akan selalu 'terlambat' merespons saat pasar tiba-tiba berbalik arah dari Crash ke Pemulihan kuat.\n", options: { fontSize: 12, italic: true, color: "555555" } },
+        { text: " Penggunaan window tetap gagal menangkap perubahan momentum pasar kripto yang cepat.\n", options: {} },
         { text: "• Gamma Rigidity:", options: { bold: true } },
-        { text: " Penalti sentralitas statis menyebabkan 'Profit Leakage' karena memangkas bobot aset utama saat sedang tren positif. ", options: {} },
-        { text: "Contoh: Di masa Bull Run, BTC menjadi pusat jaringan. γ yang kaku akan membuang bobot BTC sehingga portofolio kehilangan profit besar.\n\n", options: { fontSize: 12, italic: true, color: "555555" } },
+        { text: " Penalti sentralitas statis menyebabkan 'Profit Leakage' karena memangkas bobot aset utama saat sedang tren positif.\n\n", options: { fontSize: 12, italic: true, color: "555555" } },
 
-        { text: "3. Kegagalan Deteksi Kadar Tren:\n", options: { bold: true, color: "003366", fontSize: 15 } },
-        { text: "Model NW konvensional tidak memiliki mekanisme untuk 'melepas rem' (γ \u2192 0) saat trend positif kuat terdeteksi secara linier. ", options: {} },
-        { text: "Contoh: Ketika indikator tren jelas menunjukkan pertumbuhan masif, model statis gagal beradaptasi dan tetap membatasi investasi.", options: { fontSize: 12, italic: true, color: "555555" } }
+        { text: "3. Kegagalan Deteksi Non-Linier:\n", options: { bold: true, color: "003366", fontSize: 15 } },
+        { text: "Model NW konvensional tidak mampu mempelajari pola non-linier antara struktur jaringan dan keputusan alokasi bobot yang adaptif.", options: {} }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4.5, color: "333333", valign: "top" });
     slideProblem.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideProblem.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -238,25 +228,23 @@ async function createPresentation() {
     slideRumusan.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideRumusan.addText("Rumusan Masalah Penelitian", { x: 0.5, y: 0.4, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
-    slideRumusan.addText("Berdasarkan identifikasi masalah pada model klasik, dirumuskan pertanyaan penelitian berikut:", { x: 0.5, y: 0.9, w: "90%", fontSize: 14, italic: true, color: "555555" });
-
     // Question 1 Box
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "3498db", width: 1.5 } });
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 0.6, h: 1.0, fill: { color: "3498db" } });
     slideRumusan.addText("Q1", { x: 0.5, y: 1.3, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideRumusan.addText("Bagaimana mekanisme Adaptive Gamma berbasis LR Slope meningkatkan imbal hasil portofolio pada berbagai fase pasar kripto?", { x: 1.2, y: 1.3, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
-
+    slideRumusan.addText("Bagaimana agen SAC mampu mengoptimasi parameter penalti sentralitas secara dinamis berdasarkan kondisi jaringan dan momentum pasar?", { x: 1.2, y: 1.3, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+ 
     // Question 2 Box
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "2c3e50", width: 1.5 } });
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 0.6, h: 1.0, fill: { color: "2c3e50" } });
     slideRumusan.addText("Q2", { x: 0.5, y: 2.5, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideRumusan.addText("Sejauh mana integrasi penalti MST dan deteksi kadar tren mampu memitigasi Estimation Risk lebih efektif dibandingkan model konvensional?", { x: 1.2, y: 2.5, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
-
+    slideRumusan.addText("Sejauh mana penggunaan fitur gabungan (network & market metrics) meningkatkan ketahanan portofolio terhadap volatilitas ekstrem?", { x: 1.2, y: 2.5, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+ 
     // Question 3 Box
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.7, w: 9.0, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "e67e22", width: 1.5 } });
     slideRumusan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.7, w: 0.6, h: 1.0, fill: { color: "e67e22" } });
     slideRumusan.addText("Q3", { x: 0.5, y: 3.7, w: 0.6, h: 1.0, fontSize: 18, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideRumusan.addText("Apakah optimasi Threshold Tren melalui 2-Stage GS mampu menghasilkan performa Multi-Metric yang konsisten melampaui model NW statis?", { x: 1.2, y: 3.7, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+    slideRumusan.addText("Apakah model SAC-Net Markowitz mampu melampaui performa benchmark pada metrik Sharpe dan Calmar Ratio?", { x: 1.2, y: 3.7, w: 8.0, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
 
     slideRumusan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideRumusan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -267,25 +255,23 @@ async function createPresentation() {
     slideTujuan.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTujuan.addText("Tujuan Penelitian", { x: 0.5, y: 0.4, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
-    slideTujuan.addText("Target operasional yang ingin dicapai melalui penelitian ini adalah:", { x: 0.5, y: 0.9, w: "90%", fontSize: 14, italic: true, color: "555555" });
-
     // Objective 1 Box
     slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 9.0, h: 1.0, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 } });
     slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 0.8, h: 1.0, fill: { color: "27ae60" } });
     slideTujuan.addText("Obj 1", { x: 0.5, y: 1.3, w: 0.8, h: 1.0, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideTujuan.addText("Merancang kerangka alokasi Adaptive Network Markowitz yang tangguh dan terkalibrasi melalui 2-Stage Grid Search untuk portofolio kripto.", { x: 1.4, y: 1.3, w: 7.8, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
-
+    slideTujuan.addText("Merancang dan melatih agen SAC yang bertindak sebagai Gamma Controller untuk mengoptimasi parameter penalti sentralitas secara dinamis.", { x: 1.4, y: 1.3, w: 7.8, h: 1.0, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+ 
     // Objective 2 Box
     slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 9.0, h: 1.1, fill: { color: "f4f6f7" }, line: { color: "2c3e50", width: 1.5 } });
     slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.5, w: 0.8, h: 1.1, fill: { color: "2c3e50" } });
     slideTujuan.addText("Obj 2", { x: 0.5, y: 2.5, w: 0.8, h: 1.1, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideTujuan.addText("Menganalisis efektivitas integrasi teknik penyaringan MST dan deteksi kadar tren (LR Slope) dalam mempersempit Estimation Risk.", { x: 1.4, y: 2.5, w: 7.8, h: 1.1, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
-
+    slideTujuan.addText("Mengevaluasi efektivitas penggunaan fitur gabungan (network metrics dan market indicators) dalam adaptasi portofolio.", { x: 1.4, y: 2.5, w: 7.8, h: 1.1, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+ 
     // Objective 3 Box
     slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.8, w: 9.0, h: 1.1, fill: { color: "fdfef9" }, line: { color: "f39c12", width: 1.5 } });
     slideTujuan.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.8, w: 0.8, h: 1.1, fill: { color: "f39c12" } });
     slideTujuan.addText("Obj 3", { x: 0.5, y: 3.8, w: 0.8, h: 1.1, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideTujuan.addText("Mengevaluasi imbas mekanisme Adaptive Gamma terhadap performa Multi-Metric (Sharpe, Rachev) dan mitigasi batas kerugian ekstrem (VaR).", { x: 1.4, y: 3.8, w: 7.8, h: 1.1, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
+    slideTujuan.addText("Membandingkan performa model SAC-Net Markowitz terhadap strategi benchmark menggunakan metrik Sharpe dan Calmar Ratio.", { x: 1.4, y: 3.8, w: 7.8, h: 1.1, fontSize: 16, bold: true, color: "2c3e50", valign: "middle" });
 
     slideTujuan.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideTujuan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -309,8 +295,8 @@ async function createPresentation() {
         { text: "Kovarians", options: { bold: true, underline: true } },
         { text: ": Ukuran pergerakan bersama aset.", options: { breakLine: true } },
         { text: "➤ ", options: {} },
-        { text: "LR Slope", options: { bold: true, underline: true } },
-        { text: ": Estimator kadar tren linier.", options: { breakLine: true } }
+        { text: "SAC (Soft Actor-Critic)", options: { bold: true, underline: true } },
+        { text: ": Algoritma DRL untuk kontrol kontinu.", options: { breakLine: true } }
     ], { x: 0.5, y: 1.2, w: "45%", h: 4, fontSize: 20, color: "333333", valign: "top" });
 
     // Kolom Kanan: Struktur Jaringan
@@ -360,7 +346,7 @@ async function createPresentation() {
     let slideFramework = pres.addSlide();
     slideFramework.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideFramework.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideFramework.addText("Kerangka Pemikiran / Penelitian", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideFramework.addText("Kerangka Pemikiran / Penelitian SAC-Net", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
     slideFramework.addImage({ path: "propose_method_gs.drawio.png", x: 2.25, y: 0.85, w: 5.5, h: 4.4 });
     slideFramework.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideFramework.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -372,25 +358,23 @@ async function createPresentation() {
     slideNovelty.addText("Kebaruan Penelitian (Novelty)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     slideNovelty.addText([
-        { text: "1. Systematic Parameter Tuning (Addressing Giudici, 2020):\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Mengatasi keterbatasan pemilihan parameter manual pada penelitian Giudici et al. (2020) dengan mengimplementasikan ", options: {} },
-        { text: "2-Stage Grid Search", options: { bold: true, italic: true } },
-        { text: " untuk menemukan kombinasi Window & Gamma yang paling optimal secara sistematis.\n", options: {} },
+        { text: "1. RL-Based Dynamic Gamma Control (Addressing Static Penalty):\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "Mengganti parameter kaku (Giudici, 2020) dengan agen ", options: {} },
+        { text: "Soft Actor-Critic (SAC)", options: { bold: true, italic: true } },
+        { text: " yang mempelajari kebijakan optimal secara adaptif.\n", options: {} },
         
-        { text: "2. Reduksi Estimation Risk melalui Topologi Network:\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Mengintegrasikan analisis jaringan (MST) dan penalti untuk menstabilkan bobot portofolio pada kondisi market crash.\n", options: {} },
+        { text: "2. Multi-Feature State Space (Network & Market):\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "Mengintegrasikan 9 fitur (5 network metrics + 4 market metrics) untuk menangkap kondisi pasar secara holistik.\n", options: {} },
 
-        { text: "3. Multi-Metric Optimization Benchmark:\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Penelitian pertama yang secara simultan menguji NW-Markowitz terhadap 3 target sekaligus: VAR (Risiko), SHARPE (Efisiensi), dan RACHEV (Ujung Ekor).\n", options: {} },
+        { text: "3. Statistical Rigidity through Multi-Seed Evaluation:\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "Menggunakan 3 seeds (42, 123, 77) dan 50,000 steps untuk menjamin kredibilitas statistik hasil training.\n", options: {} },
 
-        { text: "4. Adaptive Gamma & Trend Thresholding (NEW):\n", options: { bold: true, color: "c0392b", fontSize: 18 } },
-        { text: "Mengembangkan logika penalti dinamis di mana ", options: {} },
-        { text: "Gamma (\u03b3) mendekati nol ", options: { bold: true, italic: true } },
-        { text: "saat trend positif kuat terdeteksi, guna memaksimalkan capture profit pada pasar bullish.", options: {} }
+        { text: "4. Focus on Calmar & Sharpe Efficiency:\n", options: { bold: true, color: "c0392b", fontSize: 18 } },
+        { text: "Optimasi yang secara aktif menyeimbangkan return tahunan terhadap penarikan maksimum (Maximum Drawdown).", options: {} }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4, fontSize: 16, color: "333333", valign: "top" });
 
     slideNovelty.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
-    slideNovelty.addText("🌟 Mengisi celah penelitian Giudici (2020) yang menggunakan parameter statis (W=120, γ=Manual) tanpa proses identifikasi sensitivitas yang sistematis.", { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fontSize: 12, italic: true, align: "center", valign: "middle" });
+    slideNovelty.addText("🌟 Mengisi celah penelitian Giudici (2020) dengan kontrol cerdas yang mampu beradaptasi terhadap perubahan struktur jaringan secara real-time.", { x: 0.5, y: 4.6, w: 9.0, h: 0.5, fontSize: 12, italic: true, align: "center", valign: "middle" });
 
     slideNovelty.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideNovelty.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -399,32 +383,32 @@ async function createPresentation() {
     let slideSens = pres.addSlide();
     slideSens.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideSens.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideSens.addText("Urgensi Tuning Parameter W & γ", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideSens.addText("Urgensi Dynamic Control melalui SAC", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
-    // Box 1: Window Size
+    // Box 1: Exploration vs Exploitation
     slideSens.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 2.2, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
-    slideSens.addText("🖼️ Efek Window Size (W)", { x: 0.5, y: 1.35, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
+    slideSens.addText("🔍 Exploration vs Exploitation", { x: 0.5, y: 1.35, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
     slideSens.addText([
-        { text: "• Kecil (30-40 hari):", options: { bold: true, fontSize: 13 } },
-        { text: " Responsif namun rentan Noise & biaya transaksi tinggi.\n", options: { fontSize: 12 } },
-        { text: "• Besar (100+ hari):", options: { bold: true, fontSize: 13 } },
-        { text: " Stabil namun Laggard (terlambat) merespons perubahan tren.", options: { fontSize: 12 } }
+        { text: "• SAC Actor Network:", options: { bold: true, fontSize: 13 } },
+        { text: " Mencari kebijakan (π) untuk alokasi Gamma yang menyeimbangkan risiko.\n", options: { fontSize: 12 } },
+        { text: "• Maximum Entropy:", options: { bold: true, fontSize: 13 } },
+        { text: " Mendorong eksplorasi luas untuk mencegah terjebak di lokal optima.", options: { fontSize: 12 } }
     ], { x: 0.75, y: 1.9, w: 3.8, color: "333333", valign: "top" });
 
-    // Box 2: Gamma
+    // Box 2: Reward Signal
     slideSens.addShape(pres.ShapeType.rect, { x: 5.2, y: 1.2, w: 4.3, h: 2.2, fill: { color: "fef9e7" }, line: { color: "f1c40f", width: 1 } });
-    slideSens.addText("🖼️ Efek Penalti Gamma (γ)", { x: 5.2, y: 1.35, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
+    slideSens.addText("🎯 Reward Signal Optimization", { x: 5.2, y: 1.35, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
     slideSens.addText([
-        { text: "• γ rendah (≈ 0):", options: { bold: true, fontSize: 13 } },
-        { text: " Mengabaikan risiko jaringan; portofolio menderita saat Crash.\n", options: { fontSize: 12 } },
-        { text: "• γ tinggi (> 1):", options: { bold: true, fontSize: 13 } },
-        { text: " Proteksi sistemik kuat; membuang aset sentral demi keamanan.", options: { fontSize: 12 } }
+        { text: "• Incremental Sharpe:", options: { bold: true, fontSize: 13 } },
+        { text: " Memberikan umpan balik positif pada perbaikan efisiensi portofolio.\n", options: { fontSize: 12 } },
+        { text: "• Reward Normalization:", options: { bold: true, fontSize: 13 } },
+        { text: " Menggunakan Welford running stats untuk stabilitas training.", options: { fontSize: 12 } }
     ], { x: 5.45, y: 1.9, w: 3.8, color: "333333", valign: "top" });
 
     // Box 3: Tujuan
     slideSens.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.5, w: 9.0, h: 1.5, fill: { color: "f2f4f4" }, line: { color: "7f8c8d", width: 1 } });
-    slideSens.addText("🎯 TUJUAN: Menemukan Konfigurasi Statis yang Tangguh", { x: 0.5, y: 3.65, w: 9.0, fontSize: 15, bold: true, color: "003366", align: "center" });
-    slideSens.addText("Tuning dilakukan untuk mengidentifikasi 'Sweet Spot' parameter yang mampu menyeimbangkan stabilitas estimasi (W) dan ketahanan terhadap risiko jaringan (γ) guna mendapatkan performa terbaik di sepanjang rentang waktu penelitian.", { x: 0.9, y: 4.1, w: 8.2, fontSize: 13, italic: true, align: "center", valign: "middle" });
+    slideSens.addText("🎯 TUJUAN: Menghasilkan Kebijakan Kontrol yang Adaptif", { x: 0.5, y: 3.65, w: 9.0, fontSize: 15, bold: true, color: "003366", align: "center" });
+    slideSens.addText("SAC dilatih untuk memahami kapan harus meningkatkan penalti sentralitas (saat krisis) dan kapan harus melonggarkannya (saat reli) tanpa perlu campur tangan manual.", { x: 0.9, y: 4.1, w: 8.2, fontSize: 13, italic: true, align: "center", valign: "middle" });
 
     slideSens.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideSens.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -433,95 +417,82 @@ async function createPresentation() {
     let slideAdaptive = pres.addSlide();
     slideAdaptive.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideAdaptive.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideAdaptive.addText("Mekanisme Adaptive Gamma & Optimasi Threshold", { x: 0.5, y: 0.3, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideAdaptive.addText("Mekanisme SAC Agent: State, Action, & Reward", { x: 0.5, y: 0.3, w: "90%", fontSize: 24, bold: true, color: "003366" });
 
     // Header Logic Box
     slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 0.7, w: 9.0, h: 1.25, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1.5 } });
-    slideAdaptive.addText("Logika Adaptive: Jika Linear Regression Slope > Optimized Threshold \u2794 \u03b3 ➔ 0", { 
+    slideAdaptive.addText("SAC Agent: Box(-5, 5) Action Space dengan Tanh Squashing", { 
         x: 0.5, y: 0.85, w: 9.0, fontSize: 16, bold: true, color: "d35400", align: "center" 
     });
-    slideAdaptive.addText("Linear Regression Slope digunakan sebagai estimator 'kadar trend' paling objektif karena memitigasi noise\nvolatilitas harian pada window 30 hari.", { 
+    slideAdaptive.addText("Agen memproses 9 fitur (5 Network + 4 Market) untuk memprediksi Gamma optimal\nyang harus diterapkan pada fungsi objektif Markowitz.", { 
         x: 0.8, y: 1.35, w: 8.4, fontSize: 12, align: "center", italic: true, color: "555555"
     });
 
-    // Judul Bagian Grid Search
-    slideAdaptive.addText("Strategi Grid Search Bertingkat (2-Stage Optimization):", { x: 0.5, y: 2.2, w: "9.0", fontSize: 16, bold: true, color: "003366" });
+    // Judul Bagian
+    slideAdaptive.addText("Arsitektur Training SAC-Net:", { x: 0.5, y: 2.2, w: "9.0", fontSize: 16, bold: true, color: "003366" });
 
-    // Kolom Kiri: Stage 1
+    // Kolom Kiri: State Space
     slideAdaptive.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "3498db", width: 1 } });
-    slideAdaptive.addText("1. Stage 1 (Coarse Search)", { x: 0.6, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
-    slideAdaptive.addText("Mensimulasikan berbagai level Slope Threshold secara makro untuk mengidentifikasi area sensitivitas return dan risiko sistemik.", { 
+    slideAdaptive.addText("1. State Space (9 Features)", { x: 0.6, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
+    slideAdaptive.addText("Varian sentralitas, densitas korelasi, momentum harga, volatilitas jangka pendek, dan status return portofolio saat ini.", { 
         x: 0.6, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
     });
 
-    // Kolom Kanan: Stage 2
+    // Kolom Kanan: Reward Logic
     slideAdaptive.addShape(pres.ShapeType.rect, { x: 5.1, y: 2.6, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1 } });
-    slideAdaptive.addText("2. Stage 2 (Fine Search)", { x: 5.2, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
-    slideAdaptive.addText("Mengoptimasi nilai Slope Threshold secara presisi guna mendapatkan titik switch (\u03b3) paling menguntungkan secara statistik.", { 
+    slideAdaptive.addText("2. Reward: Incremental Sharpe", { x: 5.2, y: 2.75, w: 4.2, fontSize: 14, bold: true, color: "2980b9" });
+    slideAdaptive.addText("Reward dihitung berdasarkan perubahan Sharpe Ratio 20-hari untuk mendorong perbaikan kualitas alokasi secara bertahap.", { 
         x: 5.2, y: 3.1, w: 4.0, fontSize: 12, color: "333333" 
     });
 
     // Bottom Box: Justifikasi
     slideAdaptive.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.65, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
     slideAdaptive.addText([
-        { text: "3. Justifikasi Kualitas: ", options: { bold: true, color: "27ae60", fontSize: 13 } },
-        { text: "Threshold optimal menjamin 'rem' penalti jaringan hanya dilepas ketika trend positif benar-benar solid dan teruji secara linier.", options: { fontSize: 12, italic: true } }
+        { text: "3. Robustness: ", options: { bold: true, color: "27ae60", fontSize: 13 } },
+        { text: "Welford reward normalization memastikan gradient update tetap stabil meskipun volatilitas kripto sangat tinggi.", options: { fontSize: 12, italic: true } }
     ], { x: 0.7, y: 4.45, w: 8.6, h: 0.55, valign: "middle" });
 
-    slideAdaptive.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
-    slideAdaptive.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    slideAdaptive.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
     let slideSensViz = pres.addSlide();
     slideSensViz.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideSensViz.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideSensViz.addText("Deep Dive: Pemetaan Sensitivitas Parameter", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideSensViz.addText("Visualisasi Pelatihan: Konvergensi Reward", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
-    // Grafik Heatmap Stylized (Kiri)
+    // Grafik Reward stylized
     slideSensViz.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 5.0, h: 3.5, fill: { color: "ffffff" }, line: { color: "dddddd", width: 1 } });
-    slideSensViz.addText("W (Window Size)", { x: 0.2, y: 3.0, w: 1.0, fontSize: 12, bold: true, rotate: 270, align: "center" });
-    slideSensViz.addText("Gamma (\u03b3)", { x: 2.5, y: 4.8, w: 1.0, fontSize: 12, bold: true, align: "center" });
+    slideSensViz.addText("Mean Reward", { x: 0.2, y: 3.0, w: 1.0, fontSize: 12, bold: true, rotate: 270, align: "center" });
+    slideSensViz.addText("Training Steps (50,000)", { x: 2.5, y: 4.8, w: 2.0, fontSize: 12, bold: true, align: "center" });
 
-    // Menggambar Grid Heatmap
-    let heatColors = ["#1a5276", "#2471a3", "#2e86c1", "#5499c7", "#f1c40f", "#f39c12", "#e67e22"];
-    for (let i = 0; i < 6; i++) {
-        for (let j = 0; j < 6; j++) {
-            let colorIdx = Math.min(6, Math.floor((i + j) / 2));
-            if (i === 4 && j === 4) colorIdx = 6; // Sweet Spot
-            slideSensViz.addShape(pres.ShapeType.rect, { 
-                x: 1.1 + (j * 0.65), y: 1.5 + (i * 0.5), w: 0.6, h: 0.45, 
-                fill: { color: heatColors[colorIdx] },
-                line: { color: "ffffff", width: 1 }
-            });
-        }
-    }
-    // Target Crosshair pada Sweet Spot
-    slideSensViz.addShape(pres.ShapeType.ellipse, { x: 3.65, y: 3.5, w: 0.7, h: 0.5, line: { color: "ff0000", width: 2 } });
-    slideSensViz.addText("Optimal Point\n(Sweet Spot)", { x: 4.2, y: 3.3, w: 1.0, fontSize: 10, bold: true, color: "c0392b" });
+    // (Kurva training divisualisasikan melalui grafik eksternal atau deskripsi teks)
+    slideSensViz.addText("Exploration Phase", { x: 1.2, y: 4.0, w: 1.5, fontSize: 10, italic: true });
+    slideSensViz.addText("Convergence Phase", { x: 4.0, y: 1.8, w: 1.5, fontSize: 10, italic: true, bold: true, color: "27ae60" });
 
     // Penjelasan (Kanan)
     slideSensViz.addText([
-        { text: "\ud83d\udcc8 Intuisi Visual:\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "\u272a Warna Emas: ", options: { bold: true, color: "f39c12" } },
-        { text: "Kombinasi parameter yang menghasilkan resiliensi tertinggi terhadap risiko ekstrem (Tail-Risk).\n", options: {} },
-        { text: "\u272a Warna Biru: ", options: { bold: true, color: "2e86c1" } },
-        { text: "Area inefisiensi (Noise terlalu tinggi atau proteksi terlalu berlebih).\n", options: {} },
-        { text: "\u272a Urgensi 2-Stage GS: ", options: { bold: true, color: "8e44ad" } },
-        { text: "Memungkinkan kita melakukan 'Zoom-in' pada koordinat emas ini untuk mendapatkan presisi yang tidak bisa dicapai estimasi standar.", options: {} }
+        { text: "📊 Karakteristik Training:\n", options: { bold: true, color: "003366", fontSize: 18 } },
+        { text: "• Steps: ", options: { bold: true } },
+        { text: "50,000 iterasi untuk memastikan Actor & Critic konvergen.\n", options: {} },
+        { text: "• Multi-Seed: ", options: { bold: true } },
+        { text: "Melatih 3 agen (Seed 42, 123, 77) untuk validasi stabilitas.\n", options: {} },
+        { text: "• Reward Scaling: ", options: { bold: true, color: "8e44ad" } },
+        { text: "Welford normalization mencegah lonjakan gradien akibat volatilitas aset kripto.", options: {} }
     ], { x: 5.7, y: 1.2, w: 3.8, fontSize: 14, color: "333333", valign: "top" });
 
-    slideSensViz.addText("\ud83d\udca1 Kesimpulan: Penentuan W dan \u03b3 bukan lagi tentang 'perkiraan', melainkan hasil pemetaan matematis yang terukur.", { 
+    slideSensViz.addText("💡 Kesimpulan: Penentuan kebijakan dilakukan secara terukur melalui interaksi agen dengan lingkungan market.", { 
         x: 0.5, y: 4.6, w: 9.0, fontSize: 12, italic: true, align: "center", color: "27ae60", bold: true 
     });
 
-    slideSensViz.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
-    slideSensViz.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    slideSensViz.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideSensViz.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5f: Visualisasi Perbandingan Performa (Explanation) ---
     let slidePerformanceComp = pres.addSlide();
     slidePerformanceComp.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slidePerformanceComp.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slidePerformanceComp.addText("Studi Kasus: Dampak Variasi W & \u03b3 terhadap Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slidePerformanceComp.addText("Studi Kasus: Dampak Variasi W & γ terhadap Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
     // Penjelasan Singkat (Atas)
     slidePerformanceComp.addText("Visualisasi di bawah membandingkan BTC dengan berbagai varian Network Markowitz (NW) untuk menunjukkan urgensi pemilihan parameter yang tepat.", { 
@@ -534,18 +505,18 @@ async function createPresentation() {
     // Poin Penjelasan (Kanan)
     slidePerformanceComp.addText([
         { text: "Analisis Hasil:\n", options: { bold: true, color: "003366", fontSize: 16 } },
-        { text: "\u2022 Responsivitas Window:\n", options: { bold: true } },
-        { text: "  W=30 (Ungu) menangkap momentum lebih cepat namun lebih volatil.\n", options: { fontSize: 12 } },
-        { text: "\u2022 Stabilitas Gamma (\u03b3):\n", options: { bold: true } },
-        { text: "  Peningkatan \u03b3 membantu menstabilkan alokasi saat terjadi koreksi pasar tajam.\n", options: { fontSize: 12 } },
-        { text: "\u2022 Kesenjangan Baseline:\n", options: { bold: true, color: "c0392b" } },
-        { text: "  Model statis (W=120) seringkali terlambat (lagging) dalam merespons pembalikan tren kripto.\n", options: { fontSize: 12 } },
-        { text: "\u2022 Kesimpulan:\n", options: { bold: true, color: "27ae60" } },
-        { text: "  Hal ini mendasari perlunya mekanisme Adaptive Gamma yang kami usulkan.", options: { fontSize: 12, bold: true } }
+        { text: "• Dynamic Gamma Control:\n", options: { bold: true } },
+        { text: "  SAC secara aktif menurunkan Gamma saat pasar bullish untuk menangkap alfa.\n", options: { fontSize: 12 } },
+        { text: "• Statistical Validity:\n", options: { bold: true } },
+        { text: "  Evaluasi 3-seed memberikan confidence band (p5-p95) yang solid secara statistik.\n", options: { fontSize: 12 } },
+        { text: "• Calmar Efficiency:\n", options: { bold: true, color: "c0392b" } },
+        { text: "  Model SAC-Net terbukti menyeimbangkan return tahunan vs drawdown lebih baik dari benchmark statis.\n", options: { fontSize: 12 } },
+        { text: "• Kesimpulan:\n", options: { bold: true, color: "27ae60" } },
+        { text: "  SAC Agent berhasil mempelajari struktur risiko jaringan untuk perlindungan dinamis.", options: { fontSize: 12, bold: true } }
     ], { x: 6.8, y: 1.4, w: 2.7, h: 3.5, color: "333333", valign: "top" });
 
-    slidePerformanceComp.addText("\ud83d\udcc2 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
-    slidePerformanceComp.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    slidePerformanceComp.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slidePerformanceComp.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5d: Kontribusi Utama Tesis ---
     let slideContrib = pres.addSlide();
@@ -554,11 +525,11 @@ async function createPresentation() {
     slideContrib.addText("Kontribusi Utama: Framework Optimasi 2-Stage", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
     slideContrib.addTable([
-        [{ text: "Aspek", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Praktik Umum (Statis-Giudici)", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Kontribusi Tesis (Adaptive-Optimal)", options: { bold: true, fill: "27ae60", color: "ffffff" } }],
-        ["Konfigurasi", "Parameter statis ditentukan secara manual (Giudici 2020).", "Mekanisme Adaptive Gamma berbasis deteksi tren linier."],
-        ["Evaluasi", "Mengabaikan dinamika sensitivitas kadar tren.", "Menguji resiliensi adaptive pada berbagai fase pasar."],
-        ["Precision", "Risiko 'Over-filtering' atau 'Under-penalizing'.", "Pencarian threshold optimal (Fine-Search) untuk switch \u03b3."],
-        ["Benchmark", "Fokus pada metrik performa standar.", "Uji resiliensi pada metrik Tail-Risk (VaR & Rachev)."]
+        [{ text: "Aspek", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Praktik Umum (Statis-Giudici)", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Kontribusi Tesis (SAC-Net)", options: { bold: true, fill: "27ae60", color: "ffffff" } }],
+        ["Konfigurasi", "Parameter statis ditentukan secara manual.", "Kontrol cerdas berbasis Deep Reinforcement Learning (SAC)."],
+        ["Adaptabilitas", "Model kaku, lambat merespons perubahan fasa.", "Adaptasi real-time melalui 9 fitur (Network + Market)."],
+        ["Kredibilitas", "Eksperimen berbasis single-run.", "Validasi statistik melalui 3 seeds & 50,000 steps."],
+        ["Efisiensi", "Fokus pada return atau variansi standar.", "Optimasi simultan untuk Sharpe dan Calmar Ratio."]
     ], { x: 0.5, y: 1.2, w: 9.0, fontSize: 14, border: { pt: 1, color: "dddddd" } });
 
     slideContrib.addText("🚀 Value Proposition: Memberikan bukti empiris bahwa identifikasi parameter jaringan yang dilakukan secara sistematis mampu menghasilkan performa portofolio yang lebih tangguh dan teruji di berbagai kondisi pasar.", { 
@@ -568,11 +539,11 @@ async function createPresentation() {
     slideContrib.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideContrib.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    // --- Slide 4.6: Dataset - 10 Aset Kripto Utama ---
+    // --- Slide 4.6: Dataset - 9 Aset Kripto Utama ---
     let slideData = pres.addSlide();
     slideData.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideData.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideData.addText("Dataset: 10 Aset Kripto Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideData.addText("Dataset: 9 Aset Kripto Utama", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
 
     let tableRows = [
         [
@@ -583,7 +554,6 @@ async function createPresentation() {
         ["BTC", "Bitcoin", "Layer 1 / Store of Value"],
         ["ETH", "Ethereum", "Layer 1 / Smart Contract"],
         ["XRP", "Ripple", "Payment / Bridge Currency"],
-        ["USDT", "Tether", "Stablecoin / USD Pegged"],
         ["BCH", "Bitcoin Cash", "Payment / Peer-to-Peer Cash"],
         ["LTC", "Litecoin", "Payment / Digital Silver"],
         ["BNB", "Binance Coin", "Layer 1 / Exchange Token"],
@@ -625,19 +595,14 @@ async function createPresentation() {
         { text: "CM (Classical Markowitz)", options: { hyperlink: { slide: '69' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
-        { text: "2. Kelompok Regularisasi:", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "2. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "GM (Glasso Markowitz)", options: { hyperlink: { slide: '70' }, color: "0563C1", underline: true } },
+        { text: "NW Statis (γ = 1.0)", options: { hyperlink: { slide: '71' }, color: "0563C1", underline: true } },
         { text: "", options: { breakLine: true, breakLine: true } },
 
-        { text: "3. Kelompok Network (Statis):", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "3. Kelompok Network (SAC-Net):", options: { bold: true, color: "27ae60", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "NW Statis (γ fixed)", options: { hyperlink: { slide: '71' }, color: "0563C1", underline: true } },
-        { text: "", options: { breakLine: true, breakLine: true } },
-
-        { text: "4. Kelompok Network (Adaptive / 2-Stage GS):", options: { bold: true, color: "003366", breakLine: true } },
-        { text: "   • ", options: {} },
-        { text: "NW Adaptive Gamma (VAR, Sharpe, Rachev)", options: { hyperlink: { slide: '72' }, color: "0563C1", underline: true } }
+        { text: "SAC Agent Controller (Multi-Seed)", options: { hyperlink: { slide: '72' }, color: "0563C1", underline: true } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5, fontSize: 22, color: "333333", valign: "top" });
     slide5.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide5.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -651,17 +616,17 @@ async function createPresentation() {
         { text: "1. Cumulative Profits & Losses (P&L):", options: { bold: true, breakLine: true, color: "003366", hyperlink: { slide: '64' } } },
         { text: "   Mengukur total keuntungan/kerugian akumulatif vs benchmark.", options: { breakLine: true } },
 
-        { text: "2. Value at Risk (VaR 95%):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '65' } } },
-        { text: "   Fokus optimasi pada resiliensi risiko/batas bawah.", options: { breakLine: true } },
+        { text: "2. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '66' } } },
+        { text: "   Fokus optimasi pada efisiensi imbal hasil per unit risiko total.", options: { breakLine: true } },
 
-        { text: "3. Sharpe Ratio (SR):", options: { bold: true, breakLine: true, color: "27ae60", hyperlink: { slide: '66' } } },
-        { text: "   Fokus optimasi pada efisiensi imbal hasil per unit risiko.", options: { breakLine: true } },
+        { text: "3. Calmar Ratio (CR):", options: { bold: true, breakLine: true, color: "c0392b", hyperlink: { slide: '65' } } },
+        { text: "   Fokus optimasi pada return tahunan terhadap Maximum Drawdown.", options: { breakLine: true } },
 
-        { text: "4. Rachev Ratio (RR):", options: { bold: true, breakLine: true, color: "8e44ad", hyperlink: { slide: '67' } } },
-        { text: "   Fokus optimasi pada perbandingan ekor distribusi (Fat-Tails).", options: { breakLine: true } },
+        { text: "4. Maximum Drawdown (MDD):", options: { bold: true, breakLine: true, color: "d35400" } },
+        { text: "   Mengukur potensi penurunan terbesar dari puncak ke lembah.", options: { breakLine: true, breakLine: true } },
 
-        { text: "Justifikasi Multi-Objective:", options: { bold: true, breakLine: true, color: "d35400", fontSize: 14 } },
-        { text: "Pasar kripto yang dinamis memerlukan penyesuaian parameter (Adaptive Gamma) yang berbeda tergantung apakah investor memprioritaskan keamanan (VaR), efisiensi (Sharpe), atau pemulihan (Rachev).", options: { italic: true, fontSize: 14 } }
+        { text: "Justifikasi SAC-Net:", options: { bold: true, breakLine: true, color: "d35400", fontSize: 14 } },
+        { text: "Agen SAC dilatih untuk secara eksplisit menyeimbangkan perbaikan Sharpe Ratio (sebagai reward) sekaligus menjaga kestabilan portofolio dari kejatuhan ekstrem.", options: { italic: true, fontSize: 14 } }
     ], { x: 0.5, y: 1.1, w: "90%", h: 5.0, fontSize: 17, color: "333333", valign: "top" });
     slide6.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slide6.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -679,11 +644,11 @@ async function createPresentation() {
         { text: " Menguji kecepatan adaptasi model saat tren berbalik positif.", options: { breakLine: true } },
         { text: "3. Fase Stable (Jul 2019 - Okt 2019):", options: { bold: true, color: "003366" } },
         { text: " Menguji konsistensi model dalam kondisi pasar mendatar.", options: { breakLine: true, breakLine: true } },
-
+ 
         { text: "Metodologi Panel Performance:", options: { bold: true, color: "d35400", breakLine: true } },
         { text: "✔ Panel A (Sharpe): Membandingkan efisiensi antar fase.", options: { breakLine: true } },
-        { text: "✔ Panel B (Rachev): Membandingkan resiliensi ekor distribusi.", options: { breakLine: true } },
-        { text: "✔ Kesimpulan: NW (2-Stage GS) menunjukkan stabilitas lebih tinggi dibanding benchmark statis di setiap fase.", options: { italic: true, breakLine: true } }
+        { text: "✔ Panel B (Calmar): Membandingkan resiliensi terhadap drawdown.", options: { breakLine: true } },
+        { text: "✔ Kesimpulan: SAC-Net menunjukkan stabilitas lebih tinggi dibanding benchmark statis di setiap fase.", options: { italic: true, breakLine: true } }
     ], { x: 0.5, y: 1.2, w: "90%", h: 4.5, fontSize: 18, valign: "top" });
     slidePhase.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slidePhase.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
