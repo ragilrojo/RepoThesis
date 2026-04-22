@@ -523,29 +523,29 @@ async function createPresentation() {
     slideSACAnalogy.addText("Analogi SAC: Koki Ahli, Kritikus, & Eksplorasi", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
     // Analogi Actor
-    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 1.8, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
-    slideSACAnalogy.addText("👨‍🍳 THE ACTOR (KOKI)", { x: 0.5, y: 1.3, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
-    slideSACAnalogy.addText("Bertugas meramu 'Resep Alokasi' (Gamma). Koki mencoba berbagai kombinasi bumbu berdasarkan bahan yang tersedia (State Pasar) untuk menghasilkan masakan terbaik.", { 
-        x: 0.7, y: 1.8, w: 3.9, fontSize: 12, color: "333333", align: "center" 
+    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 2.0, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1.5 } });
+    slideSACAnalogy.addText("👨‍🍳 THE ACTOR (KOKI)", { x: 0.5, y: 1.4, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
+    slideSACAnalogy.addText("Bertugas meramu 'Resep Alokasi' (Gamma). Koki mencoba berbagai kombinasi bumbu berdasarkan kondisi bahan yang tersedia (State Pasar) untuk menghasilkan masakan terbaik.", { 
+        x: 0.7, y: 1.9, w: 3.9, fontSize: 12, color: "333333", align: "center" 
     });
 
     // Analogi Critic
-    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 5.2, y: 1.2, w: 4.3, h: 1.8, fill: { color: "fef9e7" }, line: { color: "f1c40f", width: 1 } });
-    slideSACAnalogy.addText("📝 THE CRITIC (KRITIKUS)", { x: 5.2, y: 1.3, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
-    slideSACAnalogy.addText("Bertugas mencicipi masakan dan memberikan skor (Reward). Kritikus menilai apakah masakan tersebut efisien (Sharpe Ratio) dan memberikan feedback untuk perbaikan resep.", { 
-        x: 5.4, y: 1.8, w: 3.9, fontSize: 12, color: "333333", align: "center" 
+    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 5.2, y: 1.2, w: 4.3, h: 2.0, fill: { color: "fef9e7" }, line: { color: "f1c40f", width: 1.5 } });
+    slideSACAnalogy.addText("📝 THE CRITIC (KRITIKUS)", { x: 5.2, y: 1.4, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
+    slideSACAnalogy.addText("Bertugas mencicipi masakan dan memberikan skor (Reward). Kritikus menilai apakah masakan tersebut efisien (Sharpe Ratio) dan memberikan feedback untuk perbaikan resep di tahap berikutnya.", { 
+        x: 5.4, y: 1.9, w: 3.9, fontSize: 12, color: "333333", align: "center" 
     });
 
     // Analogi Entropy (The "Soft" part)
-    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.2, w: 9.0, h: 1.6, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
-    slideSACAnalogy.addText("🌟 MAXIMUM ENTROPY (KREATIVITAS & EKSPLORASI)", { x: 0.5, y: 3.3, w: 9.0, fontSize: 16, bold: true, color: "27ae60", align: "center" });
+    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.4, w: 9.0, h: 1.4, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 } });
+    slideSACAnalogy.addText("🌟 MAXIMUM ENTROPY (KREATIVITAS & EKSPLORASI)", { x: 0.5, y: 3.5, w: 9.0, fontSize: 16, bold: true, color: "27ae60", align: "center" });
     slideSACAnalogy.addText([
         { text: "Rahasia SAC: ", options: { bold: true } },
-        { text: "Koki dilarang hanya memasak satu menu yang sama selamanya. Ia didorong untuk tetap bereksperimen dengan jalur alternatif agar tetap adaptif saat selera pasar (volatilitas) berubah mendadak. Ini mencegah model terjebak dalam pola yang sudah usang." }
-    ], { x: 0.8, y: 3.7, w: 8.4, fontSize: 13, color: "333333", align: "center" });
+        { text: "Koki dilarang hanya memasak satu menu yang sama selamanya. Ia didorong untuk tetap bereksperimen agar tetap adaptif saat selera pasar (volatilitas) berubah. Ini mencegah model terjebak dalam pola lama yang tidak lagi relevan." }
+    ], { x: 0.8, y: 3.9, w: 8.4, fontSize: 12, color: "333333", align: "center" });
 
     slideSACAnalogy.addText("💡 Kesimpulan: SAC menghasilkan strategi yang tidak hanya 'pintar', tapi juga 'luwes' menghadapi ketidakpastian pasar kripto.", { 
-        x: 0.5, y: 4.9, w: 9.0, fontSize: 12, italic: true, align: "center", color: "003366", bold: true 
+        x: 0.5, y: 5.1, w: 9.0, fontSize: 12, italic: true, align: "center", color: "003366", bold: true 
     });
 
     slideSACAnalogy.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
