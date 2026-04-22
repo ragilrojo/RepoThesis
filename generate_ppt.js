@@ -572,7 +572,8 @@ async function createPresentation() {
     // 2. Memory (Replay Buffer) - Analogi Memori
     slideSACNumerical.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.2, w: 3.5, h: 0.8, fill: { color: "f4f6f7" }, line: { color: "7f8c8d", width: 1 } });
     slideSACNumerical.addText("💾 REPLAY BUFFER (Memori Pengalaman)", { x: 0.5, y: 3.3, w: 3.5, fontSize: 11, bold: true, color: "34495e", align: "center" });
-    slideSACNumerical.addText("Menyimpan >10.000 riwayat (S, A, R) untuk mempelajari korelasi Gamma masa lalu.", { x: 0.6, y: 3.6, w: 3.3, fontSize: 9, color: "333333", align: "center" });
+    slideSACNumerical.addText("Menyimpan >10.000 riwayat (State, Action, Reward)\nuntuk mempelajari pola strategi masa lalu.", { x: 0.6, y: 3.6, w: 3.3, fontSize: 8.5, color: "333333", align: "center" });
+    slideSACNumerical.addText("Ket: S=State, A=Action, R=Reward", { x: 0.5, y: 3.9, w: 3.5, fontSize: 7, italic: true, color: "7f8c8d", align: "right" });
 
     // 3. Agent Action
     slideSACNumerical.addShape(pres.ShapeType.rect, { x: 4.4, y: 1.3, w: 2.5, h: 2.7, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 2 } });
