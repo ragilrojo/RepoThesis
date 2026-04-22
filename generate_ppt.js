@@ -560,42 +560,38 @@ async function createPresentation() {
     slideSACNumerical.addText("Studi Kasus: Simulasi Numerik Pengambilan Keputusan SAC", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
 
     // Table of Features (State)
-    slideSACNumerical.addText("1. INPUT (State Space - Timestep t):", { x: 0.5, y: 1.0, w: 4.0, fontSize: 14, bold: true, color: "2e86c1" });
+    slideSACNumerical.addText("1. INPUT (State Space - t)", { x: 0.5, y: 1.0, w: 4.0, fontSize: 14, bold: true, color: "2e86c1" });
     slideSACNumerical.addTable([
         [{ text: "Fitur Indikator", options: { bold: true, fill: "2e86c1", color: "ffffff" } }, { text: "Nilai Riil", options: { bold: true, fill: "2e86c1", color: "ffffff" } }],
         ["Correlation Density", "0.78 (High Risk)"],
         ["Centrality Variance", "0.15 (Systemic)"],
         ["Portfolio Return (20d)", "-4.2% (Bearish)"],
         ["Market Volatility", "0.65 (High)"]
-    ], { x: 0.5, y: 1.4, w: 4.0, fontSize: 11, border: { pt: 1, color: "cccccc" } });
+    ], { x: 0.5, y: 1.4, w: 4.0, fontSize: 10, border: { pt: 1, color: "cccccc" } });
 
     // Agent Action Box
-    slideSACNumerical.addShape(pres.ShapeType.rect, { x: 4.8, y: 1.4, w: 2.2, h: 2.2, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 2 } });
-    slideSACNumerical.addText("2. AGENT ACTION", { x: 4.8, y: 1.5, w: 2.2, fontSize: 14, bold: true, color: "d35400", align: "center" });
-    slideSACNumerical.addText([
-        { text: "Output Raw:\n", options: { fontSize: 10 } },
-        { text: "+0.85\n\n", options: { bold: true, fontSize: 18, color: "c0392b" } },
-        { text: "Scaled Gamma (\u03b3):\n", options: { fontSize: 10 } },
-        { text: "1.70", options: { bold: true, fontSize: 18, color: "27ae60" } }
-    ], { x: 4.8, y: 1.9, w: 2.2, align: "center" });
+    slideSACNumerical.addShape(pres.ShapeType.rect, { x: 4.7, y: 1.4, w: 2.4, h: 2.4, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 2 } });
+    slideSACNumerical.addText("2. AGENT ACTION", { x: 4.7, y: 1.5, w: 2.4, fontSize: 13, bold: true, color: "d35400", align: "center" });
+    slideSACNumerical.addText("Output Raw (NN):", { x: 4.7, y: 1.9, w: 2.4, fontSize: 9, align: "center" });
+    slideSACNumerical.addText("+0.85", { x: 4.7, y: 2.1, w: 2.4, fontSize: 20, bold: true, color: "c0392b", align: "center" });
+    slideSACNumerical.addText("Scaled Gamma (\u03b3):", { x: 4.7, y: 2.7, w: 2.4, fontSize: 9, align: "center" });
+    slideSACNumerical.addText("1.70", { x: 4.7, y: 3.0, w: 2.4, fontSize: 20, bold: true, color: "27ae60", align: "center" });
 
     // Arrow to Result
-    slideSACNumerical.addShape(pres.ShapeType.rightArrow, { x: 7.1, y: 2.3, w: 0.4, h: 0.4, fill: { color: "34495e" } });
+    slideSACNumerical.addShape(pres.ShapeType.rightArrow, { x: 7.2, y: 2.4, w: 0.3, h: 0.3, fill: { color: "34495e" } });
 
     // Evaluation Result (Reward)
-    slideSACNumerical.addText("3. OUTCOME (Reward - t+1):", { x: 7.6, y: 1.0, w: 2.0, fontSize: 14, bold: true, color: "27ae60" });
-    slideSACNumerical.addShape(pres.ShapeType.roundRect, { x: 7.6, y: 1.4, w: 2.0, h: 2.2, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
-    slideSACNumerical.addText([
-        { text: "Sharpe (t): 1.12\n", options: { fontSize: 11 } },
-        { text: "Sharpe (t+1): 1.25\n\n", options: { fontSize: 11, bold: true } },
-        { text: "Net Reward:\n", options: { fontSize: 10 } },
-        { text: "+0.13", options: { bold: true, fontSize: 18, color: "27ae60" } }
-    ], { x: 7.6, y: 1.6, w: 2.0, align: "center" });
+    slideSACNumerical.addShape(pres.ShapeType.roundRect, { x: 7.6, y: 1.4, w: 2.1, h: 2.4, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 2 } });
+    slideSACNumerical.addText("3. OUTCOME (Reward)", { x: 7.6, y: 1.5, w: 2.1, fontSize: 13, bold: true, color: "27ae60", align: "center" });
+    slideSACNumerical.addText("Sharpe Ratio Improvement:", { x: 7.6, y: 1.9, w: 2.1, fontSize: 9, align: "center" });
+    slideSACNumerical.addText("1.12 \u2192 1.25", { x: 7.6, y: 2.3, w: 2.1, fontSize: 14, bold: true, color: "333333", align: "center" });
+    slideSACNumerical.addText("Net Reward:", { x: 7.6, y: 2.7, w: 2.1, fontSize: 9, align: "center" });
+    slideSACNumerical.addText("+0.13", { x: 7.6, y: 3.0, w: 2.1, fontSize: 20, bold: true, color: "27ae60", align: "center" });
 
     // Conclusion Logic
-    slideSACNumerical.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.0, w: 9.1, h: 0.8, fill: { color: "f4f6f7" }, line: { color: "7f8c8d", width: 1 } });
+    slideSACNumerical.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.1, w: 9.1, h: 1.0, fill: { color: "f4f6f7" }, line: { color: "7f8c8d", width: 1 } });
     slideSACNumerical.addText("LOGIKA KEPUTUSAN: Karena Densitas Korelasi tinggi (0.78), Agen SAC memprediksi risiko penularan besar. Agen menaikkan Gamma ke 1.70 untuk 'menghukum' aset sentral, sehingga portofolio bergeser ke aset aman. Hasilnya, efisiensi (Sharpe) meningkat sebesar 0.13.", { 
-        x: 0.7, y: 4.1, w: 8.7, fontSize: 11, italic: true, color: "333333" 
+        x: 0.7, y: 4.2, w: 8.7, fontSize: 11, italic: true, color: "333333", align: "center"
     });
 
     slideSACNumerical.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
