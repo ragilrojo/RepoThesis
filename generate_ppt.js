@@ -595,9 +595,9 @@ async function createPresentation() {
     slideSACNumerical.addText("+0.13", { x: 7.4, y: 2.9, w: 2.2, fontSize: 18, bold: true, color: "27ae60", align: "center" });
 
     // Conclusion Logic
-    slideSACNumerical.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.2, w: 9.1, h: 0.9, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
+    slideSACNumerical.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.1, w: 9.1, h: 1.1, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
     slideSACNumerical.addText("MEKANISME MEMORI: Agen SAC tidak hanya memproses data saat ini, tetapi 'belajar' dari Replay Buffer yang menyimpan ribuan pengalaman masa lalu. Dengan mengenali pola Densitas tinggi (0.78), agen secara otomatis memilih Gamma defensif (1.70) berdasarkan riwayat strategi yang terbukti efektif menaikkan Sharpe Ratio di kondisi serupa.", { 
-        x: 0.7, y: 4.3, w: 8.7, fontSize: 10, italic: true, color: "333333", align: "center"
+        x: 0.7, y: 4.2, w: 8.7, h: 0.9, fontSize: 10, italic: true, color: "333333", align: "center", valign: "middle"
     });
 
     slideSACNumerical.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
