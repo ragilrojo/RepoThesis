@@ -1261,7 +1261,7 @@ const doc = new Document({
                     {text: "Returns", italic: true},
                     {text: " — matriks "},
                     {text: "log returns", italic: true},
-                    {text: " harian 10 aset; (2) "},
+                    {text: " harian 9 aset; (2) "},
                     {text: "Prices", italic: true},
                     {text: " — harga ternormalisasi ke nilai awal 100; (3) "},
                     {text: "Statistics", italic: true},
@@ -1302,7 +1302,7 @@ const doc = new Document({
                 mixedBody([
                     {text: "Ketiga, Tether (USDT) sebagai "},
                     {text: "stablecoin", italic: true},
-                    {text: " memiliki karakteristik distribusi yang berbeda dari aset lainnya — dengan volatilitas mendekati nol dan korelasi yang sangat rendah terhadap semua aset. Keberadaannya dalam pool tetap dipertahankan karena merupakan bagian dari 10 aset teratas berdasarkan kapitalisasi pasar pada periode tersebut, dan memberikan kontribusi diversifikasi yang unik dalam konstruksi jaringan portofolio."}
+                    {text: " dikeluarkan dari dataset penelitian ini. Meskipun USDT merupakan aset teratas berdasarkan kapitalisasi pasar, sifatnya yang dipatok ke USD (dengan volatilitas mendekati nol) dapat menyebabkan bias dalam perhitungan matriks korelasi dan penalti sentralitas, sehingga penghapusannya memungkinkan model untuk berfokus sepenuhnya pada interaksi risiko antar aset volatil."}
                 ]),
                 emptyLine(),
                 heading2("3.4 Metode/Algoritma yang Digunakan"),
@@ -1374,8 +1374,6 @@ const doc = new Document({
                 bulletItem("Equally Weighted (EW): Strategi alokasi 1/N yang memberikan bobot yang sama ke setiap aset tanpa mempertimbangkan parameter risiko atau imbal hasil. EW berfungsi sebagai 'benchmark naif' yang sangat tangguh karena tidak memiliki risiko estimasi (estimation risk)."),
                 
                 bulletItem("Classical Markowitz (CM): Model optimasi Mean-Variance standar yang berupaya meminimalkan variansi portofolio untuk tingkat imbal hasil tertentu. CM bertindak sebagai representasi teori portofolio tradisional yang sering kali menderita masalah ketidakstabilan numerik pada data historis yang berisik."),
-                
-                bulletItem("Graphical Lasso Markowitz (GM): Model yang menggunakan algoritma Lasso pada matriks presisi (invers kovarians) untuk memaksa elemen-elemen korelasi yang tidak signifikan menjadi nol (sparsity). GM dipilih sebagai benchmark karena kemampuannya menangani masalah sparsitas pada data berdimensi tinggi, yang merupakan tantangan utama dalam data kripto yang sangat terkorelasi secara palsu."),
                 
                 bulletItem("Network Markowitz (NW): Model jaringan original (Giudici et al., 2020) yang menggunakan parameter penalti sentralitas (\u03b3) statis. NW digunakan sebagai pembanding langsung untuk menunjukkan sejauh mana penambahan fitur 'Dynamic Grid Search' pada model yang diusulkan dapat meningkatkan performa portofolio dibandingkan model jaringan dasar."),
                 emptyLine(),
@@ -1452,65 +1450,6 @@ const doc = new Document({
                 ]),
                 emptyLine(),
                 
-                heading3("3.5.2 Downside Risk (Value at Risk - VaR)"),
-                mixedBody([
-                    {text: "Value at Risk", italic: true},
-                    {text: " (VaR) mengkuantifikasi potensi kerugian maksimal yang mungkin dialami portofolio dalam satu periode perdagangan pada tingkat kepercayaan tertentu. Pada penelitian ini digunakan VaR "},
-                    {text: "historical simulation", italic: true},
-                    {text: " pada tingkat kepercayaan 95%, yang berarti terdapat probabilitas 5% bahwa kerugian aktual akan melebihi nilai VaR yang dihitung. Secara formal:"}
-                ]),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 120, after: 120 },
-                    children: [
-                        new Math({
-                            children: rumus("VaR_\\alpha = -inf { x \u2208 \u211D : P(L > x) \u2264 1 - \u03B1 }")
-                        }),
-                        new TextRun({ text: "             (3.3)", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                }),
-                body("Keterangan:"),
-                new Table({
-                    width: { size: 8200, type: WidthType.DXA },
-                    columnWidths: [800, 400, 7000],
-                    borders: {
-                        top: { style: BorderStyle.NONE, size: 0 },
-                        bottom: { style: BorderStyle.NONE, size: 0 },
-                        left: { style: BorderStyle.NONE, size: 0 },
-                        right: { style: BorderStyle.NONE, size: 0 },
-                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
-                        insideVertical: { style: BorderStyle.NONE, size: 0 },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Value at Risk pada tingkat kepercayaan \u03B1.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("\u03B1")] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Tingkat kepercayaan (confidence level), misal 95%.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("L")] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Variabel acak kerugian portofolio (Loss).", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                    ],
-                }),
-                mixedBody([
-                    {text: "VaR dipilih karena relevansinya yang tinggi terhadap pasar kripto yang memiliki volatilitas ekstrem. Semakin kecil nilai "},
-                    {text: "Value at Risk", italic: true},
-                    {text: " (mendekati nol), semakin aman suatu portofolio dari potensi kerugian ekstrem. Sebaliknya, semakin besar nilai VaR, semakin tinggi risiko kerugian yang mungkin dihadapi investor dalam kondisi pasar yang buruk [mendeley_cite:corbet2019cryptocurrencies], [mendeley_cite:jorion2000value]."}
-                ]),
-                emptyLine(),
                 
                 heading3("3.5.4 Calmar Ratio"),
                 mixedBody([
