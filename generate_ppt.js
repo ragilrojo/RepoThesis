@@ -84,16 +84,22 @@ async function createPresentation() {
         { text: "Mekanisme SAC Agent", options: { hyperlink: { slide: '13' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Deep-Dive Reward Scaling", options: { hyperlink: { slide: '14' }, fontSize: 12 } },
+        { text: "Simulasi Kerja SAC", options: { hyperlink: { slide: '14' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Studi Kasus Performa (Seeds)", options: { hyperlink: { slide: '15' }, fontSize: 12 } },
+        { text: "Analogi Kerja SAC", options: { hyperlink: { slide: '15' }, fontSize: 12, color: "27ae60", bold: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '16' }, fontSize: 12 } },
+        { text: "Visualisasi Konvergensi", options: { hyperlink: { slide: '16' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian (9 Assets)", options: { hyperlink: { slide: '17' }, fontSize: 12 } },
+        { text: "Studi Kasus Performa", options: { hyperlink: { slide: '17' }, fontSize: 12 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '18' }, fontSize: 12 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Dataset Penelitian (9 Assets)", options: { hyperlink: { slide: '19' }, fontSize: 12 } },
     ], { x: 3.4, y: 1.1, w: 2.8, h: 4.5, fontSize: 14, color: "333333", valign: "top" });
 
     // --- Kolom 3 (Strategi, Evaluasi & Navigasi) ---
@@ -153,11 +159,11 @@ async function createPresentation() {
     slideTOC2.addText([
         { text: "IV. LAMPIRAN (BAGIAN 2)", options: { bold: true, color: "003366", breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi SAC Agent", options: { hyperlink: { slide: '55' }, fontSize: 14, breakLine: true } },
+        { text: "Simulasi SAC Agent", options: { hyperlink: { slide: '14' }, fontSize: 14, breakLine: true, bold: true, color: "27ae60" } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Reward Function", options: { hyperlink: { slide: '56' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Reward Function", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Justifikasi Multi-Seed", options: { hyperlink: { slide: '57' }, fontSize: 14, breakLine: true } },
+        { text: "Justifikasi Multi-Seed", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
         { text: "Reward Normalization", options: { hyperlink: { slide: '58' }, fontSize: 14, breakLine: true } },
         { text: "   • ", options: {} },
@@ -454,6 +460,96 @@ async function createPresentation() {
 
     slideAdaptive.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideAdaptive.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5g: Simulasi Sederhana SAC (Step-by-Step) ---
+    let slideSACSim = pres.addSlide();
+    slideSACSim.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideSACSim.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideSACSim.addText("Simulasi Langkah Kerja Agen SAC (Real-time)", { x: 0.5, y: 0.4, w: "90%", fontSize: 26, bold: true, color: "003366" });
+
+    // Step 1: Observation
+    slideSACSim.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 2.4, h: 3.2, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1.5 } });
+    slideSACSim.addText("STEP 1", { x: 0.5, y: 1.4, w: 2.4, fontSize: 14, bold: true, color: "2e86c1", align: "center" });
+    slideSACSim.addText("Observation (State)", { x: 0.5, y: 1.7, w: 2.4, fontSize: 12, bold: true, color: "34495e", align: "center" });
+    slideSACSim.addText([
+        { text: "• 5 Network Metrics\n", options: { bold: true } },
+        { text: "  (Density, Centrality, etc.)\n", options: { fontSize: 10 } },
+        { text: "• 4 Market Metrics\n", options: { bold: true } },
+        { text: "  (Returns, Volatility, etc.)\n", options: { fontSize: 10 } },
+        { text: "• Rolling Window Data", options: { bold: true } }
+    ], { x: 0.6, y: 2.2, w: 2.2, fontSize: 11, color: "333333", valign: "top" });
+
+    // Arrow 1
+    slideSACSim.addShape(pres.ShapeType.rightArrow, { x: 3.0, y: 2.7, w: 0.4, h: 0.4, fill: { color: "34495e" } });
+
+    // Step 2: Agent Brain
+    slideSACSim.addShape(pres.ShapeType.rect, { x: 3.5, y: 1.3, w: 2.8, h: 3.2, fill: { color: "fef9e7" }, line: { color: "f1c40f", width: 1.5 } });
+    slideSACSim.addText("STEP 2", { x: 3.5, y: 1.4, w: 2.8, fontSize: 14, bold: true, color: "d4ac0d", align: "center" });
+    slideSACSim.addText("Agent Brain (SAC)", { x: 3.5, y: 1.7, w: 2.8, fontSize: 12, bold: true, color: "34495e", align: "center" });
+    slideSACSim.addText([
+        { text: "Actor Network (\u03c0):\n", options: { bold: true, color: "003366" } },
+        { text: "Menentukan Kebijakan Alokasi.\n\n", options: {} },
+        { text: "Critic Network (Q):\n", options: { bold: true, color: "003366" } },
+        { text: "Menilai Kualitas Aksi.\n\n", options: {} },
+        { text: "Entropy Maximization:\n", options: { bold: true, color: "c0392b" } },
+        { text: "Mendorong Eksplorasi Pasar.", options: {} }
+    ], { x: 3.6, y: 2.2, w: 2.6, fontSize: 11, color: "333333", align: "center", valign: "top" });
+
+    // Arrow 2
+    slideSACSim.addShape(pres.ShapeType.rightArrow, { x: 6.4, y: 2.7, w: 0.4, h: 0.4, fill: { color: "34495e" } });
+
+    // Step 3: Action (Gamma)
+    slideSACSim.addShape(pres.ShapeType.rect, { x: 6.9, y: 1.3, w: 2.6, h: 1.5, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 } });
+    slideSACSim.addText("STEP 3: Action", { x: 6.9, y: 1.4, w: 2.6, fontSize: 14, bold: true, color: "27ae60", align: "center" });
+    slideSACSim.addText("Output: \u03b3 Optimal", { x: 6.9, y: 1.8, w: 2.6, fontSize: 12, bold: true, color: "34495e", align: "center" });
+    slideSACSim.addText("Penyesuaian Penalti Sentralitas\nsecara dinamis (Adaptive).", { x: 7.0, y: 2.1, w: 2.4, fontSize: 10, color: "333333", align: "center" });
+
+    // Step 4: Outcome/Reward
+    slideSACSim.addShape(pres.ShapeType.rect, { x: 6.9, y: 3.0, w: 2.6, h: 1.5, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1.5 } });
+    slideSACSim.addText("STEP 4: Reward", { x: 6.9, y: 3.1, w: 2.6, fontSize: 14, bold: true, color: "d35400", align: "center" });
+    slideSACSim.addText("Sharpe Ratio Improvement", { x: 6.9, y: 3.5, w: 2.6, fontSize: 12, bold: true, color: "34495e", align: "center" });
+    slideSACSim.addText("Feedback positif jika efisiensi\nportofolio meningkat.", { x: 7.0, y: 3.8, w: 2.4, fontSize: 10, color: "333333", align: "center" });
+
+    // Loop Line back to start
+    slideSACSim.addShape(pres.ShapeType.line, { x: 1.7, y: 4.7, w: 6.6, h: 0.0, line: { color: "7f8c8d", width: 1, dashType: "dash" } });
+    slideSACSim.addText("Proses Iteratif: Belajar dari Riwayat untuk Keputusan Masa Depan", { x: 1.7, y: 4.8, w: 6.6, fontSize: 10, italic: true, align: "center", color: "7f8c8d" });
+
+    slideSACSim.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5h: Analogi SAC (Koki & Kritikus) ---
+    let slideSACAnalogy = pres.addSlide();
+    slideSACAnalogy.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideSACAnalogy.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideSACAnalogy.addText("Analogi SAC: Koki Ahli, Kritikus, & Eksplorasi", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+
+    // Analogi Actor
+    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 4.3, h: 1.8, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
+    slideSACAnalogy.addText("👨‍🍳 THE ACTOR (KOKI)", { x: 0.5, y: 1.3, w: 4.3, fontSize: 16, bold: true, color: "2e86c1", align: "center" });
+    slideSACAnalogy.addText("Bertugas meramu 'Resep Alokasi' (Gamma). Koki mencoba berbagai kombinasi bumbu berdasarkan bahan yang tersedia (State Pasar) untuk menghasilkan masakan terbaik.", { 
+        x: 0.7, y: 1.8, w: 3.9, fontSize: 12, color: "333333", align: "center" 
+    });
+
+    // Analogi Critic
+    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 5.2, y: 1.2, w: 4.3, h: 1.8, fill: { color: "fef9e7" }, line: { color: "f1c40f", width: 1 } });
+    slideSACAnalogy.addText("📝 THE CRITIC (KRITIKUS)", { x: 5.2, y: 1.3, w: 4.3, fontSize: 16, bold: true, color: "d4ac0d", align: "center" });
+    slideSACAnalogy.addText("Bertugas mencicipi masakan dan memberikan skor (Reward). Kritikus menilai apakah masakan tersebut efisien (Sharpe Ratio) dan memberikan feedback untuk perbaikan resep.", { 
+        x: 5.4, y: 1.8, w: 3.9, fontSize: 12, color: "333333", align: "center" 
+    });
+
+    // Analogi Entropy (The "Soft" part)
+    slideSACAnalogy.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.2, w: 9.0, h: 1.6, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
+    slideSACAnalogy.addText("🌟 MAXIMUM ENTROPY (KREATIVITAS & EKSPLORASI)", { x: 0.5, y: 3.3, w: 9.0, fontSize: 16, bold: true, color: "27ae60", align: "center" });
+    slideSACAnalogy.addText([
+        { text: "Rahasia SAC: ", options: { bold: true } },
+        { text: "Koki dilarang hanya memasak satu menu yang sama selamanya. Ia didorong untuk tetap bereksperimen dengan jalur alternatif agar tetap adaptif saat selera pasar (volatilitas) berubah mendadak. Ini mencegah model terjebak dalam pola yang sudah usang." }
+    ], { x: 0.8, y: 3.7, w: 8.4, fontSize: 13, color: "333333", align: "center" });
+
+    slideSACAnalogy.addText("💡 Kesimpulan: SAC menghasilkan strategi yang tidak hanya 'pintar', tapi juga 'luwes' menghadapi ketidakpastian pasar kripto.", { 
+        x: 0.5, y: 4.9, w: 9.0, fontSize: 12, italic: true, align: "center", color: "003366", bold: true 
+    });
+
+    slideSACAnalogy.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
+    slideSACAnalogy.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
     let slideSensViz = pres.addSlide();
