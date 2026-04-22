@@ -81,28 +81,31 @@ async function createPresentation() {
         { text: "Urgensi Dynamic Control", options: { hyperlink: { slide: '12' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Mekanisme SAC Agent", options: { hyperlink: { slide: '13' }, fontSize: 12 } },
+        { text: "Parameter Eksperimen", options: { hyperlink: { slide: '13' }, fontSize: 12, color: "27ae60", bold: true } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Kerja SAC", options: { hyperlink: { slide: '14' }, fontSize: 12 } },
+        { text: "Mekanisme SAC Agent", options: { hyperlink: { slide: '14' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Analogi Kerja SAC", options: { hyperlink: { slide: '15' }, fontSize: 12 } },
+        { text: "Simulasi Kerja SAC", options: { hyperlink: { slide: '15' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Simulasi Numerik SAC", options: { hyperlink: { slide: '16' }, fontSize: 12, color: "27ae60", bold: true } },
+        { text: "Analogi Kerja SAC", options: { hyperlink: { slide: '16' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Visualisasi Konvergensi", options: { hyperlink: { slide: '17' }, fontSize: 12 } },
+        { text: "Simulasi Numerik SAC", options: { hyperlink: { slide: '17' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Studi Kasus Performa", options: { hyperlink: { slide: '18' }, fontSize: 12 } },
+        { text: "Visualisasi Konvergensi", options: { hyperlink: { slide: '18' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '19' }, fontSize: 12 } },
+        { text: "Studi Kasus Performa", options: { hyperlink: { slide: '19' }, fontSize: 12 } },
         { text: "", options: { breakLine: true } },
         { text: "   • ", options: {} },
-        { text: "Dataset Penelitian (9 Assets)", options: { hyperlink: { slide: '20' }, fontSize: 12 } },
+        { text: "Kontribusi Utama Tesis", options: { hyperlink: { slide: '20' }, fontSize: 12 } },
+        { text: "", options: { breakLine: true } },
+        { text: "   • ", options: {} },
+        { text: "Dataset Penelitian (9 Assets)", options: { hyperlink: { slide: '21' }, fontSize: 12 } },
     ], { x: 3.4, y: 1.1, w: 2.8, h: 4.5, fontSize: 14, color: "333333", valign: "top" });
 
     // --- Kolom 3 (Strategi, Evaluasi & Navigasi) ---
@@ -421,6 +424,40 @@ async function createPresentation() {
 
     slideSens.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '3' }, align: "right" });
     slideSens.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5f: Parameter & Konfigurasi Eksperimen ---
+    let slideParams = pres.addSlide();
+    slideParams.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideParams.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideParams.addText("Parameter Global & Konfigurasi Eksperimen", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+
+    // Left Column: Global Settings
+    slideParams.addText("⚙️ Pengaturan Global", { x: 0.5, y: 1.2, w: 4.5, fontSize: 16, bold: true, color: "2e86c1" });
+    slideParams.addTable([
+        [{ text: "Parameter", options: { bold: true, fill: "2e86c1", color: "ffffff" } }, { text: "Nilai/Setting", options: { bold: true, fill: "2e86c1", color: "ffffff" } }],
+        ["Training Seeds", "3 Seeds (42, 123, 77)"],
+        ["Training Steps", "50.000 Iterations"],
+        ["Gamma Basis (\u03b3)", "1.0 (Centered)"],
+        ["Rebalancing", "7-Day (Weekly)"],
+        ["Look-back Window", "30-Day History"]
+    ], { x: 0.5, y: 1.6, w: 4.5, fontSize: 11, border: { pt: 1, color: "cccccc" } });
+
+    // Right Column: Environment & Constraints
+    slideParams.addText("🛡️ RL Environment & Constraints", { x: 5.5, y: 1.2, w: 4.0, fontSize: 16, bold: true, color: "27ae60" });
+    slideParams.addTable([
+        [{ text: "Aspek", options: { bold: true, fill: "27ae60", color: "ffffff" } }, { text: "Spesifikasi", options: { bold: true, fill: "27ae60", color: "ffffff" } }],
+        ["Algoritma", "Soft Actor-Critic (SAC)"],
+        ["Action Space", "Box(-5.0, 5.0)"],
+        ["Asset Weights", "0% - 40% (No Short)"],
+        ["Reward Mode", "Sharpe Incremental"],
+        ["Normalisasi", "Welford Online Stats"]
+    ], { x: 5.5, y: 1.6, w: 4.0, fontSize: 11, border: { pt: 1, color: "cccccc" } });
+
+    slideParams.addText("💡 Catatan: Penentuan 3 seeds dan 50.000 steps dilakukan untuk menjamin validitas statistik dan konvergensi model SAC.", { 
+        x: 0.5, y: 4.8, w: 9.0, fontSize: 11, italic: true, color: "666666", align: "center" 
+    });
+
+    slideParams.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5e: Mekanisme Adaptive Gamma & Trend Threshold ---
     let slideAdaptive = pres.addSlide();
