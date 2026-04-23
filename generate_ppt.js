@@ -15,16 +15,9 @@ async function createPresentation() {
     let slide1 = pres.addSlide();
     slide1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slide1.addText("Proposal Tesis:\nOptimalisasi Portofolio Cryptocurrency", {
-        x: 0.5, y: 1.2, w: "90%", fontSize: 36, bold: true, align: "center", color: "003366"
-    });
-    slide1.addText([
-        { text: "Berbasis Pendekatan\n" },
-        { text: "SAC-Net Markowitz", options: { italic: true } },
-        { text: " melalui " },
-        { text: "Soft Actor-Critic (SAC) Gamma Control", options: { italic: true } }
-    ], {
-        x: 0.5, y: 2.6, w: "90%", fontSize: 24, align: "center", color: "34495e"
+    slide1.addText("Proposal Tesis", { x: 0.5, y: 1.0, w: "90%", fontSize: 20, color: "34495e", align: "center" });
+    slide1.addText("Model Adaptive Network Markowitz pada Aset Kripto Menggunakan Algoritma Soft Actor-Critic", {
+        x: 0.5, y: 1.6, w: "90%", h: 1.5, fontSize: 32, bold: true, color: "003366", align: "center"
     });
 
     slide1.addText([
