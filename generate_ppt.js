@@ -16,8 +16,8 @@ async function createPresentation() {
     slide1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slide1.addText("Proposal Tesis", { x: 0.5, y: 1.0, w: "90%", fontSize: 20, color: "34495e", align: "center" });
-    slide1.addText("Model Adaptive Network Markowitz pada Aset Kripto Menggunakan Algoritma Soft Actor-Critic", {
-        x: 0.5, y: 1.6, w: "90%", h: 1.5, fontSize: 32, bold: true, color: "003366", align: "center"
+    slide1.addText("Optimasi Portofolio Aset Cryptocurrency Menggunakan Network Markowitz Berbasis SAC (Soft Actor-Critic)", {
+        x: 0.5, y: 1.6, w: "90%", h: 1.8, fontSize: 30, bold: true, color: "003366", align: "center"
     });
 
     slide1.addText([
