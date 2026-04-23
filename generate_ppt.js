@@ -15,7 +15,7 @@ async function createPresentation() {
     let slide1 = pres.addSlide();
     slide1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slide1.addText("Proposal Tesis", { x: 0.5, y: 0.8, w: "90%", fontSize: 18, color: "34495e", align: "center" });
+    slide1.addText("PROPOSAL TESIS", { x: 0.5, y: 0.7, w: "90%", fontSize: 26, bold: true, color: "003366", align: "center" });
     slide1.addText([
         { text: "Optimasi Portofolio Aset " },
         { text: "Cryptocurrency", options: { italic: true } },
