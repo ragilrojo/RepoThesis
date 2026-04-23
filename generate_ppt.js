@@ -15,9 +15,17 @@ async function createPresentation() {
     let slide1 = pres.addSlide();
     slide1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slide1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slide1.addText("Proposal Tesis", { x: 0.5, y: 1.0, w: "90%", fontSize: 20, color: "34495e", align: "center" });
-    slide1.addText("Optimasi Portofolio Aset Cryptocurrency Menggunakan Network Markowitz Berbasis SAC (Soft Actor-Critic)", {
-        x: 0.5, y: 1.6, w: "90%", h: 1.8, fontSize: 30, bold: true, color: "003366", align: "center"
+    slide1.addText("Proposal Tesis", { x: 0.5, y: 0.8, w: "90%", fontSize: 18, color: "34495e", align: "center" });
+    slide1.addText([
+        { text: "Optimasi Portofolio Aset " },
+        { text: "Cryptocurrency", options: { italic: true } },
+        { text: " Menggunakan " },
+        { text: "Network Markowitz", options: { italic: true } },
+        { text: " Berbasis SAC (" },
+        { text: "Soft Actor-Critic", options: { italic: true } },
+        { text: ")" }
+    ], {
+        x: 0.5, y: 1.5, w: "90%", h: 2.0, fontSize: 30, bold: true, color: "003366", align: "center"
     });
 
     slide1.addText([
@@ -26,7 +34,7 @@ async function createPresentation() {
         { text: "Program Studi: Informatika (S2)\n" },
         { text: "Pembimbing: Dr. Muhammad Haris, M. Eng." }
     ], {
-        x: 0.5, y: 3.8, w: "90%", fontSize: 18, align: "center", color: "7f8c8d"
+        x: 0.5, y: 4.2, w: "90%", fontSize: 18, align: "center", color: "7f8c8d"
     });
 
     // --- Slide 2: Daftar Isi (Bagian 1: Utama) ---
