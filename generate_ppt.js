@@ -725,11 +725,11 @@ async function createPresentation() {
     slideSACNumerical.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
     slideSACNumerical.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    // --- Slide 4.5i-0: Definisi Elemen Reinforcement Learning (Transition Tuple) ---
+    // --- Slide 4.5i-0: Definisi Elemen Reinforcement Learning ---
     let slideRLDef = pres.addSlide();
     slideRLDef.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideRLDef.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideRLDef.addText("Definisi & Peran Elemen Reinforcement Learning", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
+    slideRLDef.addText("Definisi & Peran Elemen Reinforcement Learning", { x: 0.5, y: 0.4, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
     let rlDefTable = [
         [{ text: "Elemen", options: { bold: true, fill: "003366", color: "ffffff" } }, { text: "Definisi & Fungsi dalam Tesis", options: { bold: true, fill: "003366", color: "ffffff" } }],
@@ -751,50 +751,65 @@ async function createPresentation() {
         ]
     ];
 
-    // Tabel dirapihkan: RowH lebih kecil, ColW proporsional
-    slideRLDef.addTable(rlDefTable, { x: 0.5, y: 0.9, w: 9.0, colW: [1.5, 7.5], rowH: 0.65, fontSize: 10.5, border: { pt: 1, color: "dddddd" }, valign: "middle" });
+    // Tabel dibuat lebih besar dan proporsional
+    slideRLDef.addTable(rlDefTable, { x: 0.5, y: 1.2, w: 9.0, colW: [1.8, 7.2], rowH: 0.8, fontSize: 13, border: { pt: 1, color: "dddddd" }, valign: "middle" });
     
-    // Analogi Box: Menghilangkan Overlap
-    slideRLDef.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.8, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1 } });
-    slideRLDef.addText([
-        { text: "✈️ Analogi Pilot: ", options: { bold: true, color: "003366" } },
+    slideRLDef.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
+    slideRLDef.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 4.5i-0.1: Analogi & Mekanisme Pengambilan Keputusan ---
+    let slideRLFlow = pres.addSlide();
+    slideRLFlow.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideRLFlow.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideRLFlow.addText("Analogi & Mekanisme Pengambilan Keputusan Agen", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
+
+    // Analogi Pilot Box
+    slideRLFlow.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 1.1, w: 9.0, h: 1.2, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1.5 } });
+    slideRLFlow.addText([
+        { text: "✈️ Analogi Pilot: ", options: { bold: true, color: "003366", fontSize: 16 } },
         { text: "Agen bertindak seperti ", options: {} },
         { text: "Pilot", options: { bold: true } },
         { text: " yang memantau ", options: {} },
         { text: "Radar (State)", options: { color: "003366", bold: true } },
         { text: ", mengatur ", options: {} },
         { text: "Tuas Gas (Action)", options: { color: "c0392b", bold: true } },
-        { text: ", agar pesawat ", options: {} },
-        { text: "Stabil/Efisien (Reward)", options: { color: "27ae60", bold: true } },
+        { text: ", agar pesawat tetap ", options: {} },
+        { text: "Efisien (Reward)", options: { color: "27ae60", bold: true } },
         { text: ", menuju ", options: {} },
         { text: "Koordinat Baru (Next State)", options: { color: "2980b9", bold: true } },
         { text: ".", options: {} }
-    ], { x: 0.7, y: 4.4, w: 8.6, h: 0.8, fontSize: 11, align: "center", valign: "middle" });
+    ], { x: 0.8, y: 1.1, w: 8.4, h: 1.2, fontSize: 14, align: "center", valign: "middle" });
 
-    slideRLDef.addText("💡 Keempat elemen ini membentuk satu 'pengalaman' (Transition Tuple) yang disimpan dalam Replay Buffer.", { 
-        x: 0.5, y: 5.2, w: 9.0, fontSize: 10, italic: true, color: "666666", align: "center"
+    // Alur Keputusan (Visual Steps)
+    slideRLFlow.addText("🔄 ALUR KERJA SISTEM (Transition Tuple):", { x: 0.5, y: 2.6, w: 9.0, fontSize: 16, bold: true, color: "003366" });
+    
+    const steps = [
+        { num: "1", title: "Observasi (St)", desc: "Membaca indikator pasar & jaringan.", color: "3498db" },
+        { num: "2", title: "Aksi Gamma (At)", desc: "Menentukan penalti sentralitas.", color: "e74c3c" },
+        { num: "3", title: "Transisi (Rt, St+1)", desc: "Mendapat profit & kondisi baru.", color: "2ecc71" },
+        { num: "4", title: "Memori (Buffer)", desc: "Menyimpan data untuk belajar.", color: "9b59b6" }
+    ];
+
+    steps.forEach((step, i) => {
+        let startX = 0.5 + (i * 2.3);
+        slideRLFlow.addShape(pres.ShapeType.rect, { x: startX, y: 3.1, w: 2.1, h: 1.5, fill: { color: "ffffff" }, line: { color: step.color, width: 2 } });
+        slideRLFlow.addShape(pres.ShapeType.ellipse, { x: startX + 0.75, y: 2.9, w: 0.6, h: 0.6, fill: { color: step.color } });
+        slideRLFlow.addText(step.num, { x: startX + 0.75, y: 2.9, w: 0.6, h: 0.6, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
+        slideRLFlow.addText(step.title, { x: startX, y: 3.5, w: 2.1, fontSize: 12, bold: true, color: step.color, align: "center" });
+        slideRLFlow.addText(step.desc, { x: startX + 0.1, y: 3.8, w: 1.9, fontSize: 10, color: "333333", align: "center" });
+        
+        if (i < 3) {
+            slideRLFlow.addShape(pres.ShapeType.rightArrow, { x: startX + 2.15, y: 3.7, w: 0.25, h: 0.3, fill: { color: "cccccc" } });
+        }
     });
 
-    // Menambahkan Alur Kerja Keputusan Agen (Menjawab logika User)
-    slideRLDef.addShape(pres.ShapeType.rightArrow, { x: 0.5, y: 5.5, w: 1.8, h: 0.4, fill: { color: "003366" } });
-    slideRLDef.addText("ALUR KEPUTUSAN:", { x: 0.5, y: 5.5, w: 1.8, fontSize: 9, color: "ffffff", bold: true, align: "center", valign: "middle" });
+    slideRLFlow.addText("💡 Keempat elemen ini membentuk 'pengalaman' yang disimpan dalam Replay Buffer.", { 
+        x: 0.5, y: 4.8, w: 9.0, fontSize: 11, italic: true, color: "666666", align: "center"
+    });
 
-    slideRLDef.addText([
-        { text: "1. Observasi (St): ", options: { color: "003366", bold: true } },
-        { text: "Agen memantau radar/kondisi pasar. ", options: { fontSize: 9 } },
-        { text: "➔ ", options: { color: "999999" } },
-        { text: "2. Penentuan Gamma (At): ", options: { color: "c0392b", bold: true } },
-        { text: "Agen mengambil tindakan eksekusi. ", options: { fontSize: 9 } },
-        { text: "➔ ", options: { color: "999999" } },
-        { text: "3. Hasil & Transisi (Rt, St+1): ", options: { color: "27ae60", bold: true } },
-        { text: "Mendapat reward & kondisi pasar baru. ", options: { fontSize: 9 } },
-        { text: "➔ ", options: { color: "999999" } },
-        { text: "4. Simpan ke Buffer: ", options: { italic: true, color: "666666" } },
-        { text: "Data disimpan sebagai memori.", options: { fontSize: 9, italic: true } }
-    ], { x: 2.4, y: 5.4, w: 7.2, h: 0.6, fontSize: 10, align: "left", valign: "middle" });
+    slideRLFlow.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
+    slideRLFlow.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    slideRLDef.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
-    slideRLDef.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 4.5i-1: Struktur Data Replay Buffer (Contoh Row) ---
     let slideBuffer = pres.addSlide();
