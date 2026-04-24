@@ -1319,28 +1319,35 @@ async function createPresentation() {
     let slideFormula = pres.addSlide();
     slideFormula.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideFormula.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideFormula.addText("Lampiran: Formulasi Linear Regression Slope (\u03b2)", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideFormula.addText("Lampiran: Formulasi Linear Regression Slope (\u03b2)", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
 
-    slideFormula.addText([
-        { text: "Justifikasi Metrik:\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "Digunakan untuk menangkap sinyal 'Kadar Tren' yang lebih bersih dari noise dibanding momentum konvensional.\n\n", options: { fontSize: 14 } },
-        { text: "Persamaan Regresi Linier:\n", options: { bold: true, fontSize: 16 } },
-        { text: "y = \u03b1 + \u03b2x + \u03b5\n\n", options: { fontSize: 20, align: "center", color: "c0392b" } },
-        { text: "Rumus Estimator Slope (\u03b2):\n", options: { bold: true, fontSize: 16 } }
-    ], { x: 0.5, y: 1.2, w: "90%", h: 2.5, valign: "top" });
-
-    // Menggunakan gambar atau teks manual untuk rumus yang kompleks
-    slideFormula.addText("\u03b2 = [ n\u03a3(xy) - \u03a3x\u03a3y ] / [ n\u03a3x\u00b2 - (\u03a3x)\u00b2 ]", {
-        x: 1.0, y: 3.5, w: 8.0, h: 1.0, fontSize: 24, bold: true, color: "003366", align: "center", fill: { color: "f4f6f7" }
+    slideFormula.addText("Justifikasi Metrik: Digunakan untuk menangkap sinyal 'Kadar Tren' yang lebih bersih dari noise dibanding momentum konvensional.", { 
+        x: 0.5, y: 0.9, w: "90%", fontSize: 13, italic: true, color: "555555" 
     });
 
-    slideFormula.addText([
-        { text: "Keterangan:\n", options: { bold: true, fontSize: 14 } },
-        { text: "\u2022 n = Periode Window (30 hari)\n", options: { fontSize: 13 } },
-        { text: "\u2022 y = Data Harga/Return Aset\n", options: { fontSize: 13 } },
-        { text: "\u2022 x = Deret Waktu (1 s/d 30)\n", options: { fontSize: 13 } },
-        { text: "\u2022 \u03b2 > 0 = Tren Positif | \u03b2 < 0 = Tren Negatif", options: { fontSize: 13, bold: true, color: "27ae60" } }
-    ], { x: 0.5, y: 4.6, w: "90%", h: 1.2, valign: "top" });
+    slideFormula.addText("Persamaan Regresi Linier: y = \u03b1 + \u03b2x + \u03b5", { x: 0.5, y: 1.4, w: "90%", fontSize: 16, bold: true, color: "c0392b", align: "center" });
+
+    // Box Rumus Slope (Beta)
+    slideFormula.addShape(pres.ShapeType.rect, { x: 1.0, y: 1.9, w: 8.0, h: 0.9, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1.5 } });
+    slideFormula.addText("\u03b2 = [ n\u03a3(xy) - \u03a3x\u03a3y ] / [ n\u03a3x\u00b2 - (\u03a3x)\u00b2 ]", { 
+        x: 1.0, y: 1.9, w: 8.0, h: 0.9, fontSize: 22, bold: true, color: "003366", align: "center", valign: "middle" 
+    });
+
+    // Keterangan dalam Kolom (Menghemat Ruang Vertikal)
+    slideFormula.addText("Keterangan:", { x: 0.5, y: 3.1, w: 2.0, fontSize: 12, bold: true });
+    slideFormula.addTable([
+        ["n = Periode Window (30 hari)", "y = Data Harga/Return Aset"],
+        ["x = Deret Waktu (1 s/d 30)", "\u03b2 > 0 = Tren Positif | \u03b2 < 0 = Tren Negatif"]
+    ], { x: 0.5, y: 3.4, w: 9.0, fontSize: 11, color: "333333", colW: [4.5, 4.5], rowH: 0.4 });
+
+    // Kesimpulan Box
+    slideFormula.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.6, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1 } });
+    slideFormula.addText("\u2705 Nilai \u03b2 ini menjadi fitur input bagi Agent SAC untuk menentukan apakah pasar sedang Bullish atau Bearish secara objektif.", { 
+        x: 0.5, y: 4.4, w: 9.0, h: 0.6, fontSize: 11, bold: true, color: "27ae60", align: "center", valign: "middle" 
+    });
+
+    slideFormula.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '33' }, align: "right" });
+    slideFormula.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     slideFormula.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '33' }, align: "right" });
     slideFormula.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
@@ -1545,24 +1552,33 @@ async function createPresentation() {
     let slideGammaJust = pres.addSlide();
     slideGammaJust.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideGammaJust.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slideGammaJust.addText("Lampiran: Justifikasi Parameter Gamma (\u03b3)", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slideGammaJust.addText("Lampiran: Justifikasi Parameter Gamma (\u03b3)", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
+
+    slideGammaJust.addText("Berdasarkan Teori Giudici et al. (2020): \u03b3 berfungsi sebagai pengukur aversi tingkat risiko sistemik investor.", { 
+        x: 0.5, y: 0.9, w: "90%", fontSize: 12, bold: true, color: "27ae60" 
+    });
+
+    // Dua Kolom: Batas Bawah vs Batas Atas
+    slideGammaJust.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.3, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "003366", width: 1 } });
+    slideGammaJust.addText("1. Batas Bawah (\u03b3 = 0)", { x: 0.6, y: 1.4, w: 4.2, fontSize: 13, bold: true, color: "003366" });
+    slideGammaJust.addText("Model kembali ke Markowitz Tradisional. Investor sepenuhnya mengabaikan posisi aset dalam jaringan korelasi.", { x: 0.6, y: 1.8, w: 4.2, fontSize: 11, color: "333333" });
+
+    slideGammaJust.addShape(pres.ShapeType.rect, { x: 5.1, y: 1.3, w: 4.4, h: 1.6, fill: { color: "ffffff" }, line: { color: "003366", width: 1 } });
+    slideGammaJust.addText("2. Batas Atas (\u03b3 = 1)", { x: 5.2, y: 1.4, w: 4.2, fontSize: 13, bold: true, color: "003366" });
+    slideGammaJust.addText("Investor memberikan bobot SETARA antara risiko individual (volatilitas) dan risiko sistemik (sentralitas).", { x: 5.2, y: 1.8, w: 4.2, fontSize: 11, color: "333333" });
+
+    // Signifikansi & Optimalitas
+    slideGammaJust.addText("Signifikansi Nilai 1:", { x: 0.5, y: 3.1, w: 4.0, fontSize: 13, bold: true, color: "c0392b" });
     slideGammaJust.addText([
-        { text: "Berdasarkan Teori Giudici et al. (2020):", options: { bold: true, breakLine: true, color: "27ae60" } },
-        { text: "Parameter \u03b3 berfungsi sebagai pengukur aversi tingkat risiko sistemik investor.", options: { breakLine: true } },
+        { text: "\u2713 Batas 'Aversi Risiko Tinggi' yang masuk akal secara konseptual.\n", options: { fontSize: 11 } },
+        { text: "\u2713 Risiko penularan (contagion) dianggap sama pentingnya dengan fluktuasi harga aset.", options: { fontSize: 11 } }
+    ], { x: 0.5, y: 3.4, w: 9.0, color: "333333" });
 
-        { text: "1. Batas Bawah (\u03b3 = 0):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Model kembali ke Markowitz Tradisional. Investor sepenuhnya mengabaikan posisi aset dalam jaringan.", options: { breakLine: true } },
+    slideGammaJust.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.2, w: 9.0, h: 0.8, fill: { color: "ebf5fb" }, line: { color: "2980b9", width: 1 } });
+    slideGammaJust.addText("Optimalitas: Menjaga model agar tidak hanya mengejar return, tapi juga memastikan portofolio tidak hancur saat hub utama pasar kolaps.", { 
+        x: 0.7, y: 4.2, w: 8.6, h: 0.8, fontSize: 12, bold: true, italic: true, color: "003366", align: "center", valign: "middle" 
+    });
 
-        { text: "2. Batas Atas (\u03b3 = 1):", options: { bold: true, breakLine: true, color: "003366" } },
-        { text: "   Investor memberikan bobot yang SETARA antara risiko individual (volatilitas) dan risiko sistemik (sentralitas).", options: { breakLine: true } },
-
-        { text: "Signifikansi Nilai 1:", options: { bold: true, breakLine: true, color: "c0392b" } },
-        { text: "   \u2713 Batas \"Aversi Risiko Tinggi\" yang masuk akal secara konseptual.", options: { breakLine: true } },
-        { text: "   \u2713 Risiko penularan (contagion) dianggap sama pentingnya dengan fluktuasi harga aset.", options: { breakLine: true } },
-
-        { text: "Optimalitas:", options: { bold: true, breakLine: true, color: "8e44ad" } },
-        { text: "Menjaga model agar tidak hanya mengejar return, tapi juga memastikan portofolio tidak hancur saat hub utama pasar kolaps.", options: { italic: true } }
-    ], { x: 0.5, y: 1.1, w: "90%", h: 5.5, fontSize: 18, color: "333333", valign: "top" });
     slideGammaJust.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '33' }, align: "right" });
     slideGammaJust.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
