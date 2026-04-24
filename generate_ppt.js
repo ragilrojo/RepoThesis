@@ -819,6 +819,50 @@ async function createPresentation() {
     slideBuffer.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
     slideBuffer.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
+    // --- Slide 4.5i-2: Diferensiasi Alur Training vs Testing ---
+    let slideDiff = pres.addSlide();
+    slideDiff.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    slideDiff.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    slideDiff.addText("Diferensiasi Alur: Training vs. Testing (Backtesting)", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
+
+    slideDiff.addTable([
+        [
+            { text: "Aspek Perbedaan", options: { bold: true, fill: "003366", color: "ffffff" } },
+            { text: "Fase Training (Belajar)", options: { bold: true, fill: "003366", color: "ffffff" } },
+            { text: "Fase Testing (Ujian)", options: { bold: true, fill: "27ae60", color: "ffffff" } }
+        ],
+        [
+            { text: "Tujuan Utama", options: { bold: true } },
+            "Membentuk kebijakan (Policy) melalui trial-and-error.",
+            "Evaluasi performa pada data yang belum pernah dilihat (Out-of-Sample)."
+        ],
+        [
+            { text: "Aksi (Gamma)", options: { bold: true } },
+            "Stokastik: Ada unsur acak (Entropy) untuk eksplorasi pasar.",
+            "Deterministik: Memilih nilai Gamma paling optimal (Mean Action)."
+        ],
+        [
+            { text: "Kondisi Agent", options: { bold: true } },
+            "Learning Mode: Bobot Neural Network terus diperbarui.",
+            "Frozen Mode: Menggunakan bobot terbaik (Best Weights) secara statis."
+        ],
+        [
+            { text: "Memori (Buffer)", options: { bold: true } },
+            "Mengisi & mengambil data dari Replay Buffer.",
+            "Tidak melakukan update Buffer (Efisiensi eksekusi)."
+        ]
+    ], { x: 0.5, y: 1.0, w: 9.0, rowH: 0.7, fontSize: 11, border: { pt: 1, color: "dddddd" }, valign: "middle" });
+
+    // Kesimpulan Box
+    slideDiff.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.6, w: 9.0, h: 0.6, fill: { color: "ebf5fb" }, line: { color: "2e86c1", width: 1 } });
+    slideDiff.addText("🌟 Kesimpulan: Diferensiasi ini menjamin bahwa hasil yang dilaporkan dalam tesis adalah murni kemampuan generalisasi Agent, bukan sekadar 'hafalan' terhadap data historis (Overfitting).", { 
+        x: 0.7, y: 4.6, w: 8.6, h: 0.6, fontSize: 11, italic: true, color: "003366", align: "center", valign: "middle" 
+    });
+
+    slideDiff.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
+    slideDiff.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+
     // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
     let slideSensViz = pres.addSlide();
     slideSensViz.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
