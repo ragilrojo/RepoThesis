@@ -898,31 +898,30 @@ async function createPresentation() {
     slideDiff.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
-    // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Heatmap) ---
+    // --- Slide 4.5d: Visualisasi Pemetaan Sensitivitas (Menggunakan SVG) ---
     let slideSensViz = pres.addSlide();
     slideSensViz.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slideSensViz.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideSensViz.addText("Visualisasi Pelatihan: Konvergensi Reward", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
-    // Grafik Reward stylized
-    slideSensViz.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.2, w: 5.0, h: 3.5, fill: { color: "ffffff" }, line: { color: "dddddd", width: 1 } });
-    slideSensViz.addText("Mean Reward", { x: 0.2, y: 3.0, w: 1.0, fontSize: 12, bold: true, rotate: 270, align: "center" });
-    slideSensViz.addText("Training Steps (50,000)", { x: 2.5, y: 4.8, w: 2.0, fontSize: 12, bold: true, align: "center" });
-
-    // (Kurva training divisualisasikan melalui grafik eksternal atau deskripsi teks)
-    slideSensViz.addText("Exploration Phase", { x: 1.2, y: 4.0, w: 1.5, fontSize: 10, italic: true });
-    slideSensViz.addText("Convergence Phase", { x: 4.0, y: 1.8, w: 1.5, fontSize: 10, italic: true, bold: true, color: "27ae60" });
+    // Menyisipkan file SVG hasil generate
+    slideSensViz.addImage({ 
+        path: "reward_convergence.svg", 
+        x: 0.5, y: 1.1, 
+        w: 5.5, h: 3.2 
+    });
 
     // Penjelasan (Kanan)
+    slideSensViz.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.1, w: 3.3, h: 3.2, fill: { color: "f8f9fa" }, line: { color: "cccccc", width: 1 } });
     slideSensViz.addText([
-        { text: "📊 Karakteristik Training:\n", options: { bold: true, color: "003366", fontSize: 18 } },
-        { text: "• Steps: ", options: { bold: true } },
-        { text: "50,000 iterasi untuk memastikan Actor & Critic konvergen.\n", options: {} },
-        { text: "• Multi-Seed: ", options: { bold: true } },
-        { text: "Melatih 3 agen (Seed 42, 123, 77) untuk validasi stabilitas.\n", options: {} },
-        { text: "• Reward Scaling: ", options: { bold: true, color: "8e44ad" } },
-        { text: "Welford normalization mencegah lonjakan gradien akibat volatilitas aset kripto.", options: {} }
-    ], { x: 5.7, y: 1.2, w: 3.8, fontSize: 14, color: "333333", valign: "top" });
+        { text: "📊 Analisis Konvergensi:\n", options: { bold: true, color: "003366", fontSize: 17 } },
+        { text: "\u2714 Eksplorasi: ", options: { bold: true, color: "2980b9" } },
+        { text: "Agent mencoba berbagai Gamma secara acak untuk memetakan risiko.\n\n", options: { fontSize: 11 } },
+        { text: "\u2714 Konvergensi: ", options: { bold: true, color: "27ae60" } },
+        { text: "Setelah 25k steps, strategi mulai stabil dan reward mencapai titik optimal.\n\n", options: { fontSize: 11 } },
+        { text: "\u2714 Stabilitas: ", options: { bold: true, color: "8e44ad" } },
+        { text: "Kurva yang mulus di akhir menunjukkan kebijakan yang konsisten.", options: { fontSize: 11 } }
+    ], { x: 6.35, y: 1.25, w: 3.0, color: "333333", valign: "top" });
 
     slideSensViz.addText("💡 Kesimpulan: Penentuan kebijakan dilakukan secara terukur melalui interaksi agen dengan lingkungan market.", { 
         x: 0.5, y: 4.6, w: 9.0, fontSize: 12, italic: true, align: "center", color: "27ae60", bold: true 
@@ -930,6 +929,7 @@ async function createPresentation() {
 
     slideSensViz.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '33' }, align: "right" });
     slideSensViz.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
 
     // --- Slide 4.5f: Visualisasi Perbandingan Performa (Explanation) ---
     let slidePerformanceComp = pres.addSlide();
