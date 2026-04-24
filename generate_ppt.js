@@ -841,13 +841,15 @@ async function createPresentation() {
             ["[0.90, 0.22, -0.12, ...]", "2.10 (Gamma)", "-0.02", "[0.88, 0.20, -0.08, ...]"],
             ["[0.30, 0.05, 0.08, ...]", "0.50 (Gamma)", "+0.18", "[0.32, 0.06, 0.10, ...]"]
         ],
-        { x: 0.5, y: 1.5, w: 9.0, rowH: 0.6, fontSize: 11, border: { pt: 1, color: "dddddd" }, align: "center", valign: "middle" }
+        { x: 0.5, y: 1.3, w: 9.0, rowH: 0.55, fontSize: 11, border: { pt: 1, color: "dddddd" }, align: "center", valign: "middle" }
     );
 
-    slideBuffer.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.2, w: 9.0, h: 1.0, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
+    // Box Analogi (Dipindah ke atas sedikit dan tingginya disesuaikan)
+    slideBuffer.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.15, w: 9.0, h: 0.85, fill: { color: "fff2cc" }, line: { color: "d6b656", width: 1 } });
     slideBuffer.addText("💡 Analogi: Replay Buffer adalah 'Buku Catatan' bagi agen. Saat training, agen mengambil sampel acak (mini-batch) dari tabel ini untuk dipelajari kembali (Experience Replay). Hal ini memastikan agen tidak hanya belajar dari kejadian terbaru, tapi juga mengingat pelajaran dari masa lalu.", { 
-        x: 0.7, y: 4.2, w: 8.6, h: 1.0, fontSize: 10, italic: true, color: "333333", align: "center", valign: "middle"
+        x: 0.7, y: 4.15, w: 8.6, h: 0.85, fontSize: 10, italic: true, color: "333333", align: "center", valign: "middle"
     });
+
 
     slideBuffer.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
     slideBuffer.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
