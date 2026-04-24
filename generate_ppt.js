@@ -764,9 +764,9 @@ async function createPresentation() {
     slideRLFlow.addText("Analogi & Mekanisme Pengambilan Keputusan Agen", { x: 0.5, y: 0.4, w: "90%", fontSize: 24, bold: true, color: "003366" });
 
     // Analogi Pilot Box
-    slideRLFlow.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 1.1, w: 9.0, h: 1.2, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1.5 } });
+    slideRLFlow.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 1.0, w: 9.0, h: 1.2, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1.5 } });
     slideRLFlow.addText([
-        { text: "✈️ Analogi Pilot: ", options: { bold: true, color: "003366", fontSize: 16 } },
+        { text: "✈\ufe0f Analogi Pilot: ", options: { bold: true, color: "003366", fontSize: 16 } },
         { text: "Agen bertindak seperti ", options: {} },
         { text: "Pilot", options: { bold: true } },
         { text: " yang memantau ", options: {} },
@@ -778,10 +778,10 @@ async function createPresentation() {
         { text: ", menuju ", options: {} },
         { text: "Koordinat Baru (Next State)", options: { color: "2980b9", bold: true } },
         { text: ".", options: {} }
-    ], { x: 0.8, y: 1.1, w: 8.4, h: 1.2, fontSize: 14, align: "center", valign: "middle" });
+    ], { x: 0.8, y: 1.0, w: 8.4, h: 1.2, fontSize: 14, align: "center", valign: "middle" });
 
     // Alur Keputusan (Visual Steps)
-    slideRLFlow.addText("🔄 ALUR KERJA SISTEM (Transition Tuple):", { x: 0.5, y: 2.6, w: 9.0, fontSize: 16, bold: true, color: "003366" });
+    slideRLFlow.addText("🔄 ALUR KERJA SISTEM (Transition Tuple):", { x: 0.5, y: 2.5, w: 9.0, fontSize: 16, bold: true, color: "003366" });
     
     const steps = [
         { num: "1", title: "Observasi (St)", desc: "Membaca indikator pasar & jaringan.", color: "3498db" },
@@ -792,20 +792,29 @@ async function createPresentation() {
 
     steps.forEach((step, i) => {
         let startX = 0.5 + (i * 2.3);
-        slideRLFlow.addShape(pres.ShapeType.rect, { x: startX, y: 3.1, w: 2.1, h: 1.5, fill: { color: "ffffff" }, line: { color: step.color, width: 2 } });
-        slideRLFlow.addShape(pres.ShapeType.ellipse, { x: startX + 0.75, y: 2.9, w: 0.6, h: 0.6, fill: { color: step.color } });
-        slideRLFlow.addText(step.num, { x: startX + 0.75, y: 2.9, w: 0.6, h: 0.6, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
-        slideRLFlow.addText(step.title, { x: startX, y: 3.5, w: 2.1, fontSize: 12, bold: true, color: step.color, align: "center" });
-        slideRLFlow.addText(step.desc, { x: startX + 0.1, y: 3.8, w: 1.9, fontSize: 10, color: "333333", align: "center" });
+        // Box utama (Turun sedikit)
+        slideRLFlow.addShape(pres.ShapeType.rect, { x: startX, y: 3.2, w: 2.1, h: 1.4, fill: { color: "ffffff" }, line: { color: step.color, width: 2 } });
         
+        // Lingkaran angka (Naik sedikit agar tidak menabrak teks)
+        slideRLFlow.addShape(pres.ShapeType.ellipse, { x: startX + 0.75, y: 2.8, w: 0.6, h: 0.6, fill: { color: step.color } });
+        slideRLFlow.addText(step.num, { x: startX + 0.75, y: 2.8, w: 0.6, h: 0.6, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
+        
+        // Judul (Diberi h agar posisi teks lebih terkontrol)
+        slideRLFlow.addText(step.title, { x: startX, y: 3.4, w: 2.1, h: 0.4, fontSize: 12, bold: true, color: step.color, align: "center", valign: "middle" });
+        
+        // Deskripsi (Turun sedikit)
+        slideRLFlow.addText(step.desc, { x: startX + 0.1, y: 3.8, w: 1.9, h: 0.6, fontSize: 10, color: "333333", align: "center", valign: "top" });
+        
+        // Panah Penghubung (Dibuat lebih terlihat)
         if (i < 3) {
-            slideRLFlow.addShape(pres.ShapeType.rightArrow, { x: startX + 2.15, y: 3.7, w: 0.25, h: 0.3, fill: { color: "cccccc" } });
+            slideRLFlow.addShape(pres.ShapeType.rightArrow, { x: startX + 2.15, y: 3.75, w: 0.25, h: 0.3, fill: { color: "cbd5e0" } });
         }
     });
 
     slideRLFlow.addText("💡 Keempat elemen ini membentuk 'pengalaman' yang disimpan dalam Replay Buffer.", { 
-        x: 0.5, y: 4.8, w: 9.0, fontSize: 11, italic: true, color: "666666", align: "center"
+        x: 0.5, y: 4.7, w: 9.0, fontSize: 11, italic: true, color: "666666", align: "center"
     });
+
 
     slideRLFlow.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
     slideRLFlow.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
