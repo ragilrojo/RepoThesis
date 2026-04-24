@@ -931,15 +931,15 @@ async function createPresentation() {
     slideSensViz.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
-    // --- Slide 4.5f: Visualisasi Perbandingan Performa (Explanation) ---
+    // --- Slide 4.5f: Visualisasi Perbandingan Performa (Justifikasi SAC) ---
     let slidePerformanceComp = pres.addSlide();
     slidePerformanceComp.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
     slidePerformanceComp.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    slidePerformanceComp.addText("Studi Kasus: Dampak Variasi W & γ terhadap Performa", { x: 0.5, y: 0.5, w: "90%", fontSize: 26, bold: true, color: "003366" });
+    slidePerformanceComp.addText("Urgensi Kontrol Dinamis: Sensitivitas Parameter Statis", { x: 0.5, y: 0.5, w: "90%", fontSize: 24, bold: true, color: "003366" });
 
     // Penjelasan Singkat (Atas)
-    slidePerformanceComp.addText("Visualisasi di bawah membandingkan BTC dengan berbagai varian Network Markowitz (NW) untuk menunjukkan urgensi pemilihan parameter yang tepat.", { 
-        x: 0.5, y: 0.9, w: "90%", fontSize: 14, italic: true, color: "555555" 
+    slidePerformanceComp.addText("Grafik di bawah menunjukkan bahwa performa portofolio sangat bergantung pada pemilihan parameter W dan \u03b3 yang tepat secara manual.", { 
+        x: 0.5, y: 0.9, w: "90%", fontSize: 13, italic: true, color: "555555" 
     });
 
     // Gambar Utama
@@ -947,16 +947,17 @@ async function createPresentation() {
 
     // Poin Penjelasan (Kanan)
     slidePerformanceComp.addText([
-        { text: "Analisis Hasil:\n", options: { bold: true, color: "003366", fontSize: 16 } },
-        { text: "• Dynamic Gamma Control:\n", options: { bold: true } },
-        { text: "  SAC secara aktif menurunkan Gamma saat pasar bullish untuk menangkap alfa.\n", options: { fontSize: 12 } },
-        { text: "• Statistical Validity:\n", options: { bold: true } },
-        { text: "  Evaluasi 3-seed memberikan confidence band (p5-p95) yang solid secara statistik.\n", options: { fontSize: 12 } },
-        { text: "• Calmar Efficiency:\n", options: { bold: true, color: "c0392b" } },
-        { text: "  Model SAC-Net terbukti menyeimbangkan return tahunan vs drawdown lebih baik dari benchmark statis.\n", options: { fontSize: 12 } },
-        { text: "• Kesimpulan:\n", options: { bold: true, color: "27ae60" } },
-        { text: "  SAC Agent berhasil mempelajari struktur risiko jaringan untuk perlindungan dinamis.", options: { fontSize: 12, bold: true } }
+        { text: "Justifikasi Kebutuhan SAC:\n", options: { bold: true, color: "003366", fontSize: 16 } },
+        { text: "• Sensitivitas Tinggi:\n", options: { bold: true, color: "c0392b" } },
+        { text: "  Perubahan kecil pada Gamma (0.5 ke 1.0) mengubah profil risiko-return secara drastis.\n", options: { fontSize: 11 } },
+        { text: "• Risiko Parameter Statis:\n", options: { bold: true } },
+        { text: "  Parameter yang optimal di masa lalu belum tentu cocok untuk fase pasar berikutnya (Bearish/Bullish).\n", options: { fontSize: 11 } },
+        { text: "• Batasan Manual:\n", options: { bold: true } },
+        { text: "  Mustahil bagi manusia untuk mencari kombinasi W & \u03b3 yang tepat setiap minggunya.\n", options: { fontSize: 11 } },
+        { text: "🚀 Solusi Tesis:\n", options: { bold: true, color: "27ae60" } },
+        { text: "  SAC-Net hadir untuk mengotomatisasi penentuan parameter ini secara dinamis berdasarkan kondisi pasar real-time.", options: { fontSize: 11, bold: true } }
     ], { x: 6.8, y: 1.4, w: 2.7, h: 3.5, color: "333333", valign: "top" });
+
 
     slidePerformanceComp.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '33' }, align: "right" });
     slidePerformanceComp.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
