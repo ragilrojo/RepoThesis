@@ -771,14 +771,18 @@ async function createPresentation() {
     slideRLDef.addText("ALUR KEPUTUSAN:", { x: 0.5, y: 5.5, w: 1.8, fontSize: 9, color: "ffffff", bold: true, align: "center", valign: "middle" });
 
     slideRLDef.addText([
-        { text: "1. Observasi (St)", options: { color: "003366", bold: true } },
-        { text: " ➔ ", options: { color: "999999" } },
-        { text: "2. Penentuan Gamma (At)", options: { color: "c0392b", bold: true } },
-        { text: " ➔ ", options: { color: "999999" } },
-        { text: "3. Hasil & Transisi (Rt, St+1)", options: { color: "27ae60", bold: true } },
-        { text: " ➔ ", options: { color: "999999" } },
-        { text: "4. Simpan ke Buffer", options: { italic: true, color: "666666" } }
-    ], { x: 2.4, y: 5.5, w: 7.0, fontSize: 10, align: "left", valign: "middle" });
+        { text: "1. Observasi (St): ", options: { color: "003366", bold: true } },
+        { text: "Agen memantau radar/kondisi pasar. ", options: { fontSize: 9 } },
+        { text: "➔ ", options: { color: "999999" } },
+        { text: "2. Penentuan Gamma (At): ", options: { color: "c0392b", bold: true } },
+        { text: "Agen mengambil tindakan eksekusi. ", options: { fontSize: 9 } },
+        { text: "➔ ", options: { color: "999999" } },
+        { text: "3. Hasil & Transisi (Rt, St+1): ", options: { color: "27ae60", bold: true } },
+        { text: "Mendapat reward & kondisi pasar baru. ", options: { fontSize: 9 } },
+        { text: "➔ ", options: { color: "999999" } },
+        { text: "4. Simpan ke Buffer: ", options: { italic: true, color: "666666" } },
+        { text: "Data disimpan sebagai memori.", options: { fontSize: 9, italic: true } }
+    ], { x: 2.4, y: 5.4, w: 7.2, h: 0.6, fontSize: 10, align: "left", valign: "middle" });
 
     slideRLDef.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
     slideRLDef.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
