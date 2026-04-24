@@ -742,11 +742,43 @@ async function createPresentation() {
         ]
     ];
 
-    slideRLDef.addTable(rlDefTable, { x: 0.5, y: 1.1, w: 9.0, rowH: 0.8, fontSize: 11, border: { pt: 1, color: "dddddd" }, valign: "middle" });
+    // Tabel dirapihkan: RowH lebih kecil, ColW proporsional
+    slideRLDef.addTable(rlDefTable, { x: 0.5, y: 0.9, w: 9.0, colW: [1.5, 7.5], rowH: 0.65, fontSize: 10.5, border: { pt: 1, color: "dddddd" }, valign: "middle" });
     
-    slideRLDef.addText("💡 Keempat elemen ini membentuk satu 'pengalaman' (Transition Tuple) yang disimpan dalam Replay Buffer untuk dipelajari kembali oleh SAC Agent.", { 
-        x: 0.5, y: 4.8, w: 9.0, fontSize: 12, italic: true, color: "333333", align: "center"
+    // Analogi Box: Menghilangkan Overlap
+    slideRLDef.addShape(pres.ShapeType.roundRect, { x: 0.5, y: 4.4, w: 9.0, h: 0.8, fill: { color: "f8f9fa" }, line: { color: "003366", width: 1 } });
+    slideRLDef.addText([
+        { text: "✈️ Analogi Pilot: ", options: { bold: true, color: "003366" } },
+        { text: "Agen bertindak seperti ", options: {} },
+        { text: "Pilot", options: { bold: true } },
+        { text: " yang memantau ", options: {} },
+        { text: "Radar (State)", options: { color: "003366", bold: true } },
+        { text: ", mengatur ", options: {} },
+        { text: "Tuas Gas (Action)", options: { color: "c0392b", bold: true } },
+        { text: ", agar pesawat ", options: {} },
+        { text: "Stabil/Efisien (Reward)", options: { color: "27ae60", bold: true } },
+        { text: ", menuju ", options: {} },
+        { text: "Koordinat Baru (Next State)", options: { color: "2980b9", bold: true } },
+        { text: ".", options: {} }
+    ], { x: 0.7, y: 4.4, w: 8.6, h: 0.8, fontSize: 11, align: "center", valign: "middle" });
+
+    slideRLDef.addText("💡 Keempat elemen ini membentuk satu 'pengalaman' (Transition Tuple) yang disimpan dalam Replay Buffer.", { 
+        x: 0.5, y: 5.2, w: 9.0, fontSize: 10, italic: true, color: "666666", align: "center"
     });
+
+    // Menambahkan Alur Kerja Keputusan Agen (Menjawab logika User)
+    slideRLDef.addShape(pres.ShapeType.rightArrow, { x: 0.5, y: 5.5, w: 1.8, h: 0.4, fill: { color: "003366" } });
+    slideRLDef.addText("ALUR KEPUTUSAN:", { x: 0.5, y: 5.5, w: 1.8, fontSize: 9, color: "ffffff", bold: true, align: "center", valign: "middle" });
+
+    slideRLDef.addText([
+        { text: "1. Observasi (St)", options: { color: "003366", bold: true } },
+        { text: " ➔ ", options: { color: "999999" } },
+        { text: "2. Penentuan Gamma (At)", options: { color: "c0392b", bold: true } },
+        { text: " ➔ ", options: { color: "999999" } },
+        { text: "3. Hasil & Transisi (Rt, St+1)", options: { color: "27ae60", bold: true } },
+        { text: " ➔ ", options: { color: "999999" } },
+        { text: "4. Simpan ke Buffer", options: { italic: true, color: "666666" } }
+    ], { x: 2.4, y: 5.5, w: 7.0, fontSize: 10, align: "left", valign: "middle" });
 
     slideRLDef.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '34' }, align: "right" });
     slideRLDef.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
