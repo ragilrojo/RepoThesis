@@ -434,31 +434,40 @@ async function createPresentation() {
     slideTrainSteps.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
     slideTrainSteps.addText("Memahami 'Training Steps' pada SAC Agent", { x: 0.5, y: 0.4, w: "90%", fontSize: 26, bold: true, color: "003366" });
 
-    // Apa itu Training Step?
-    slideTrainSteps.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.1, w: 9.0, h: 1.6, fill: { color: "ebf5fb" }, line: { color: "2980b9", width: 1.5 } });
-    slideTrainSteps.addText("🔄 1 Training Step = 1 Siklus Pembelajaran Agen", { x: 0.5, y: 1.2, w: 9.0, fontSize: 16, bold: true, color: "2980b9", align: "center" });
+    // --- Bagian 1: Apa itu Training Step? ---
+    // Header Bar Biru
+    slideTrainSteps.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.0, w: 9.0, h: 0.4, fill: { color: "2980b9" } });
+    slideTrainSteps.addText("🔄 1 Training Step = 1 Siklus Pembelajaran Agen", { x: 0.5, y: 1.0, w: 9.0, h: 0.4, fontSize: 15, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    
+    // Body Box Biru
+    slideTrainSteps.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.4, w: 9.0, h: 1.4, fill: { color: "ebf5fb" }, line: { color: "2980b9", width: 1.5 } });
     slideTrainSteps.addText([
         { text: "Dalam satu langkah (step), agen melakukan 4 tahapan kritis:\n", options: { bold: true, color: "333333", fontSize: 13 } },
         { text: "1. Mengamati kondisi pasar & jaringan saat ini (State).\n", options: { fontSize: 12 } },
         { text: "2. Menentukan seberapa besar penalti sentralitas (Action / Gamma).\n", options: { fontSize: 12 } },
         { text: "3. Mengevaluasi apakah keputusan tersebut meningkatkan efisiensi portofolio (Reward).\n", options: { fontSize: 12 } },
         { text: "4. Menyimpan pengalaman ke dalam memori (Replay Buffer) untuk dievaluasi ulang.", options: { fontSize: 12 } }
-    ], { x: 0.8, y: 1.6, w: 8.4, color: "333333", valign: "top" });
+    ], { x: 0.8, y: 1.5, w: 8.4, h: 1.2, color: "333333", valign: "middle" });
 
-    // Mengapa 50,000 Steps?
-    slideTrainSteps.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.9, w: 9.0, h: 2.2, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 } });
-    slideTrainSteps.addText("📈 Mengapa Eksperimen Membutuhkan 50.000 Steps?", { x: 0.5, y: 3.0, w: 9.0, fontSize: 16, bold: true, color: "27ae60", align: "center" });
+    // --- Bagian 2: Mengapa 50,000 Steps? ---
+    // Header Bar Hijau
+    slideTrainSteps.addShape(pres.ShapeType.rect, { x: 0.5, y: 2.9, w: 9.0, h: 0.4, fill: { color: "27ae60" } });
+    slideTrainSteps.addText("📈 Mengapa Eksperimen Membutuhkan 50.000 Steps?", { x: 0.5, y: 2.9, w: 9.0, h: 0.4, fontSize: 15, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    
+    // Body Box Hijau
+    slideTrainSteps.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.3, w: 9.0, h: 1.8, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 } });
     slideTrainSteps.addText([
-        { text: "• Fase Eksplorasi Awal (Mencoba): ", options: { bold: true, fontSize: 13 } },
-        { text: "Agen mencoba berbagai tindakan ekstrem secara acak untuk memetakan ruang risiko.\n\n", options: { fontSize: 12 } },
-        { text: "• Fase Konvergensi (Memahami): ", options: { bold: true, fontSize: 13 } },
-        { text: "Seiring bertambahnya iterasi, agen mulai memahami pola dan menghasilkan strategi yang stabil.\n\n", options: { fontSize: 12 } },
-        { text: "• Mencegah Underfitting & Overfitting: ", options: { bold: true, fontSize: 13 } },
-        { text: "Angka 50.000 (divalidasi 3 seeds) terbukti empiris memberikan waktu cukup bagi agen untuk konvergen, tanpa sekadar 'menghafal' data masa lalu.", options: { fontSize: 12 } }
-    ], { x: 0.8, y: 3.4, w: 8.4, color: "333333", valign: "top" });
+        { text: "• Fase Eksplorasi Awal: ", options: { bold: true, fontSize: 13 } },
+        { text: "Agen mencoba berbagai tindakan ekstrem untuk memetakan risiko.\n", options: { fontSize: 12 } },
+        { text: "• Fase Konvergensi: ", options: { bold: true, fontSize: 13 } },
+        { text: "Iterasi tinggi membantu agen memahami pola dan menghasilkan strategi stabil.\n", options: { fontSize: 12 } },
+        { text: "• Kredibilitas Statistik: ", options: { bold: true, fontSize: 13 } },
+        { text: "Angka 50.000 (3 seeds) menjamin hasil bukan sekadar kebetulan (noise).", options: { fontSize: 12 } }
+    ], { x: 0.8, y: 3.4, w: 8.4, h: 1.6, color: "333333", valign: "middle" });
 
     slideTrainSteps.addText("📂 Lampiran", { x: 7.3, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '33' }, align: "right" });
     slideTrainSteps.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
 
     // --- Slide 4.5e: Mekanisme Adaptive Gamma & Trend Threshold ---
     let slideAdaptive = pres.addSlide();
