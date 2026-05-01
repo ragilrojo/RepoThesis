@@ -1010,7 +1010,8 @@ const doc = new Document({
                 heading2("1.4 Ruang Lingkup Penelitian"),
                 body("Ruang lingkup penelitian ini dibatasi pada:"),
                 letterItem("Objek penelitian terfokus pada 9 (sembilan) aset kripto utama (BCH, BNB, BTC, EOS, ETH, LTC, TRX, XLM, XRP) dengan periode data latihan (training) tahun 2017-2019 dan data uji (testing) tahun 2024.", "letters2"),
-                letterItem("Algoritma Reinforcement Learning yang digunakan adalah Soft Actor-Critic (SAC) dengan framework Stable Baselines3, menggunakan 9 state features (5 network metrics dan 4 market metrics).", "letters2"),
+                letterItem("Algoritma Reinforcement Learning yang digunakan adalah Soft Actor-Critic (SAC) dengan framework Stable Baselines3, menggunakan 5 state features yang seluruhnya merupakan indikator jaringan (Network Metrics).", "letters2"),
+
                 letterItem("Pengujian (backtesting) dilakukan dalam out-of-sample rolling window (120 observasi ke belakang dengan frekuensi penyesuaian rebalance 7 hari) yang disimulasikan menggunakan transaction cost atau estimasi biaya bursa (0.1%).", "letters2"),
                 emptyLine(),
                 heading2("1.5 Sistematika Penulisan"),
@@ -1392,7 +1393,8 @@ const doc = new Document({
                     {text: "Data Acquisition", italic: true},
                     {text: " yaitu pengumpulan data historis kripto; (2) "},
                     {text: "Feature Engineering", italic: true},
-                    {text: " mencakup filtrasi RMT, pembangunan MST, dan ekstraksi 9 fitur indikator; (3) "},
+                    {text: " mencakup filtrasi RMT, pembangunan MST, dan ekstraksi 5 fitur indikator jaringan; (3) "},
+
                     {text: "SAC Agent Training", italic: true},
                     {text: " melatih pengontrol \u03b3 berbasis Deep Reinforcement Learning; (4) "},
                     {text: "Backtesting & Rebalancing", italic: true},
@@ -1430,10 +1432,11 @@ const doc = new Document({
                 ]),
                 numItem("Feature Engineering"),
                 mixedBody([
-                    {text: "Proses ekstraksi 9 fitur utama sebagai input (", italic: true},
+                    {text: "Proses ekstraksi 5 fitur utama sebagai input (", italic: true},
                     {text: "state", italic: true},
-                    {text: ") bagi agen RL. Fitur ini mencakup 5 indikator jaringan (varian sentralitas, densitas, dan MST distance) serta 4 indikator pasar (momentum, volatilitas jangka pendek, dan return rata-rata)."}
+                    {text: ") bagi agen RL. Penelitian ini berfokus sepenuhnya pada indikator jaringan kompleks (Complex Network Indicators), mencakup varian sentralitas (Eigenvector dan Betweenness), densitas jaringan, MST distance, dan korelasi rata-rata terfilter RMT."}
                 ]),
+
                 numItem("MST & Eigenvector Centrality Calculation"),
                 mixedBody([
                     {text: "Membangun "},
