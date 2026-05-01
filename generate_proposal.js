@@ -890,6 +890,13 @@ const doc = new Document({
                     {text: " yang lebih unggul dan defensif selama krisis pasar dibandingkan model Markowitz tradisional."}
                 ]),
                 mixedBody([
+                    {text: "Katsouris [mendeley_cite:katsouris2021optimal] meneliti hubungan antara sentralitas stok dan pemilihan portofolio optimal dalam menghadapi "},
+                    {text: "tail risk events", italic: true},
+                    {text: ". Dengan membangun jaringan risiko berbasis Delta-CoVaR, penelitian ini membuktikan secara analitis bahwa "},
+                    {text: "eigenvector centrality", italic: true},
+                    {text: " memiliki korelasi langsung dengan alokasi bobot aset yang optimal. Temuan ini memberikan dasar bagi penggunaan properti topologi jaringan untuk memitigasi risiko ekstrem yang sering terjadi pada aset dengan volatilitas tinggi."}
+                ]),
+                mixedBody([
                     {text: "Ricca dan Scozzari [mendeley_cite:ricca2024portfolio] memperkenalkan penggunaan metrik "},
                     {text: "assortative mixing", italic: true},
                     {text: " dalam jaringan pasar untuk meningkatkan diversifikasi portofolio. Mereka memperluas konsep "},
@@ -982,6 +989,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Analysis", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Katsouris (2021)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Quadratic Opt.", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Delta-CoVaR Network", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tail-Risk Sensitive", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Eigenvector Link", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, VaR, CoVaR", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
