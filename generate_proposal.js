@@ -609,11 +609,7 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
-                        new TextRun({ text: "Implementasi Network Markowitz yang telah ada sering kali menggunakan hiperparameter penalti sentralitas (\u03b3) bernilai konstan (statis), yang berpotensi menjadi bumerang saat pasar memasuki rezim ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "recovery", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " atau ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ".", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Penggunaan penalti sentralitas (\u03b3) yang bersifat statis pada model Network Markowitz saat ini tidak mampu beradaptasi terhadap perubahan kondisi pasar, serta menyulitkan penentuan besaran optimal untuk berbagai tujuan investasi (defensif vs. agresif) secara dinamis.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -632,14 +628,6 @@ const doc = new Document({
                         new TextRun({ text: "Kurangnya transparansi pada algoritma optimasi portofolio berbasis kecerdasan buatan (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "black-box nature", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: "), yang menyulitkan interpretasi logika di balik keputusan alokasi aset bagi investor profesional.", font: "Times New Roman", size: 24 }),
-                    ]
-                }),
-                new Paragraph({
-                    numbering: { reference: "letters", level: 0 },
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
-                    children: [
-                        new TextRun({ text: "Kesulitan dalam menentukan besaran penalti sentralitas (\u03b3) yang optimal untuk menyesuaikan berbagai tujuan investasi (seperti strategi defensif vs. agresif) di tengah perubahan kondisi pasar yang cepat.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
