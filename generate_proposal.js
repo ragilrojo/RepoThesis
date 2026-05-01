@@ -385,7 +385,8 @@ const doc = new Document({
                     children: [new TextRun({ text: "HALAMAN JUDUL", color: "FFFFFF", size: 2 })]
                 }),
                 emptyLine(),
-                centeredBold("OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ", 28),
+                centeredBold("OPTIMALISASI DINAMIS PORTOFOLIO", 28),
+                centeredBold("NETWORK MARKOWITZ", 28),
                 centeredBold("BERBASIS DEEP REINFORCEMENT LEARNING", 28),
                 centeredBold("YANG TERINTERPRETASI (EXPLAINABLE AI)", 28),
                 emptyLine(),
