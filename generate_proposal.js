@@ -883,7 +883,7 @@ const doc = new Document({
                 new Table({
                     alignment: AlignmentType.CENTER,
                     width: { size: 9500, type: WidthType.DXA },
-                    columnWidths: [1800, 1600, 1600, 1600, 1300, 1600],
+                    columnWidths: [1700, 1300, 1300, 1300, 1100, 1200, 1600],
                     rows: [
                         new TableRow({
                             tableHeader: true,
@@ -894,6 +894,7 @@ const doc = new Document({
                                 new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Adaptivitas", font: "Times New Roman", size: 20, bold: true })] })] }),
                                 new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Aset", font: "Times New Roman", size: 20, bold: true })] })] }),
                                 new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "XAI", font: "Times New Roman", size: 20, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Metrik Evaluasi", font: "Times New Roman", size: 20, bold: true })] })] }),
                             ]
                         }),
                         new TableRow({
@@ -904,6 +905,7 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Statis", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Kripto", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Sortino, Max Drawdown", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
@@ -914,6 +916,7 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Rolling window", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham US", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Cumulative Return", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
@@ -924,6 +927,7 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-horizon", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality XAI", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Treynor, Cum. Return", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
@@ -934,6 +938,7 @@ const doc = new Document({
                                 new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Adaptive Gamma", font: "Times New Roman", size: 18, bold: true })] })] }),
                                 new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Kripto (9 aset)", font: "Times New Roman", size: 18, bold: true })] })] }),
                                 new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Post-hoc (SHAP)", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Sortino, MDD, Win-Rate", font: "Times New Roman", size: 18, bold: true })] })] }),
                             ]
                         }),
                     ]
