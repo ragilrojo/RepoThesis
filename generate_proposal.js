@@ -1040,15 +1040,21 @@ const doc = new Document({
                     {text: ")."}
                 ]),
                 emptyLine(),
-                heading3("2.1.4 Topologi Jaringan Keuangan"),
+                heading3("2.1.4 Topologi Jaringan Keuangan dan Risiko Sistemik"),
                 mixedBody([
-                    {text: "Dalam perspektif teori jaringan, struktur "},
+                    {text: "Teori jaringan kompleks memungkinkan pemodelan interaksi antar aset keuangan sebagai sistem yang dinamis dan saling terhubung. Dalam perspektif ini, pasar direpresentasikan sebagai graf dimana aset adalah simpul ("},
+                    {text: "nodes", italic: true},
+                    {text: ") dan korelasi harga adalah sisi ("},
+                    {text: "edges", italic: true},
+                    {text: "). Struktur "},
                     {text: "Star-like", italic: true},
-                    {text: " yang didominasi oleh aset sentral menunjukkan ketergantungan sistemik tinggi yang memicu "},
+                    {text: " yang didominasi oleh aset dengan sentralitas tinggi menunjukkan kerentanan sistemik yang besar, dimana kegagalan pada satu aset pusat dapat memicu penularan finansial ("},
                     {text: "financial contagion", italic: true},
-                    {text: ". Sebaliknya, struktur "},
+                    {text: ") ke seluruh jaringan [mendeley_cite:giudici2020network]. Sebaliknya, topologi yang bersifat "},
                     {text: "Distributed", italic: true},
-                    {text: " menawarkan manfaat diversifikasi yang lebih baik [mendeley_cite:mantegna1999hierarchical]. Model Network Markowitz menggeser alokasi dari pusat penularan ke periferi jaringan guna memitigasi risiko sistemik."}
+                    {text: " menawarkan ketahanan dan manfaat diversifikasi yang lebih stabil. Penggunaan algoritma "},
+                    {text: "Minimum Spanning Tree (MST)", italic: true},
+                    {text: " menjadi krusial untuk menyaring informasi korelasi yang paling signifikan dan mengidentifikasi 'tulang punggung' jaringan pasar, sehingga model Network Markowitz dapat secara efektif memberikan penalti terhadap aset-aset yang berada pada posisi kritis guna memitigasi risiko sistemik [mendeley_cite:mantegna1999hierarchical]."}
                 ]),
                 emptyLine(),
                 new Paragraph({
