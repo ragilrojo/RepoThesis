@@ -1241,25 +1241,39 @@ const doc = new Document({
                 emptyLine(),
                 heading3("2.1.5 Network Markowitz"),
                 mixedBody([
-                    {text: "Integrasi variabel jaringan ke dalam fungsi objektif Markowitz memungkinkan model untuk menghukum aset dengan keterhubungan sistemik tinggi menggunakan faktor penalti \u03b3 [mendeley_cite:giudici2020network]. Hal ini memastikan portofolio tangguh terhadap dinamika struktur jaringan pasar kripto."}
+                    {text: "Model "},
+                    {text: "Network Markowitz", italic: true},
+                    {text: " mengintegrasikan variabel topologi jaringan langsung ke dalam fungsi objektif optimasi variansi. Melalui penambahan "},
+                    {text: "regularization term", italic: true},
+                    {text: " berupa skor sentralitas (seperti "},
+                    {text: "Eigenvector Centrality", italic: true},
+                    {text: "), model dapat memberikan hukuman ("},
+                    {text: "penalty", italic: true},
+                    {text: ") proporsional kepada aset yang memiliki keterhubungan tinggi dalam sistem [mendeley_cite:giudici2020network]. Hal ini bertujuan untuk memitigasi risiko sistemik, di mana aset yang menjadi pusat jaringan cenderung menjadi saluran penularan guncangan harga ("},
+                    {text: "contagion risk", italic: true},
+                    {text: "). Dengan faktor penalti \u03b3, investor dapat menyeimbangkan antara efisiensi imbal hasil tradisional dengan ketahanan portofolio terhadap keruntuhan struktural jaringan pasar kripto."}
                 ]),
                 emptyLine(),
                 heading3("2.1.6 Adaptive Market Hypothesis (AMH)"),
                 mixedBody([
-                    {text: "AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis [mendeley_cite:lo2004adaptive]. Kondisi pasar kripto yang bervariasi memberikan landasan bagi penggunaan "},
+                    {text: "Dipelopori oleh Andrew Lo (2004), AMH menyatakan bahwa efisiensi pasar bukanlah kondisi statis, melainkan kualitas yang berevolusi seiring perubahan lingkungan dan adaptasi pelaku pasar [mendeley_cite:lo2004adaptive]. Dalam pasar kripto yang sangat volatil, derajat efisiensi sering berubah antara fase stabil dan fase krisis. Prinsip AMH memberikan landasan teoritis bagi penggunaan "},
                     {text: "Deep Reinforcement Learning (DRL)", italic: true},
-                    {text: " khususnya algoritma "},
+                    {text: ". Algoritma "},
                     {text: "Soft Actor-Critic (SAC)", italic: true},
-                    {text: " untuk melakukan kalibrasi parameter \u03b3 secara dinamis."}
+                    {text: " digunakan untuk mempelajari perubahan 'rezim pasar' ini, sehingga parameter \u03b3 tidak lagi bersifat statis, melainkan adaptif (dinamis) guna memaksimalkan entropi dan eksplorasi kebijakan investasi yang optimal di berbagai kondisi pasar."}
                 ]),
                 emptyLine(),
                 heading3("2.1.7 Walk-forward Analysis"),
                 mixedBody([
                     {text: "Metode "},
+                    {text: "Walk-forward Analysis", italic: true},
+                    {text: " merupakan teknik validasi silang ("},
+                    {text: "cross-validation", italic: true},
+                    {text: ") yang dinamis untuk mengevaluasi strategi perdagangan secara empiris. Dalam penelitian ini, skema "},
                     {text: "rolling window", italic: true},
-                    {text: " dengan skema rebalancing mingguan (7 hari) dan jendela observasi 30 hari digunakan untuk menghindari "},
+                    {text: " diterapkan dengan melatih model pada jendela data historis tertentu (30 hari) dan langsung mengujinya pada periode berikutnya (7 hari). Proses ini diulang secara berurutan dengan menggeser jendela waktu ke depan. Skema ini sangat krusial untuk menghindari "},
                     {text: "look-ahead bias", italic: true},
-                    {text: " dan memastikan hasil backtesting mencerminkan realitas pasar."}
+                    {text: " (penggunaan data masa depan untuk keputusan masa lalu) dan memastikan bahwa performa portofolio yang dilaporkan mencerminkan realitas eksekusi perdagangan yang akan dihadapi oleh investor di pasar nyata."}
                 ]),
                 emptyLine(),
                 heading2("2.2 Tinjauan Penelitian Sebelumnya"),
