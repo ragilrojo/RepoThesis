@@ -603,31 +603,24 @@ const doc = new Document({
                         new TextRun({ text: "Berdasarkan latar belakang di atas, dapat diidentifikasi masalah sebagai berikut:", font: "Times New Roman", size: 24 }),
                     ]
                 }),
-                letterItem("Metode alokasi aset konvensional rentan terhadap spurious correlations pada aset kripto yang bervolatilitas sangat tinggi, terutama pada kondisi krisis ekstrem.", "letters"),
+                new Paragraph({
+                    numbering: { reference: "letters", level: 0 },
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
+                    children: [
+                        new TextRun({ text: "Keterbatasan metode alokasi aset konvensional dalam menangkap hubungan non-linier dan kerentanan terhadap ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "spurious correlations", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " pada pasar kripto, serta kurangnya transparansi (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "black-box nature", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") pada algoritma cerdas yang menyulitkan interpretasi keputusan investasi.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
                 new Paragraph({
                     numbering: { reference: "letters", level: 0 },
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
                         new TextRun({ text: "Penggunaan penalti sentralitas (\u03b3) yang bersifat statis pada model Network Markowitz saat ini tidak mampu beradaptasi terhadap perubahan kondisi pasar, serta menyulitkan penentuan besaran optimal untuk berbagai tujuan investasi (defensif vs. agresif) secara dinamis.", font: "Times New Roman", size: 24 }),
-                    ]
-                }),
-                new Paragraph({
-                    numbering: { reference: "letters", level: 0 },
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
-                    children: [
-                        new TextRun({ text: "Keterbatasan model optimasi konvensional dalam menangkap hubungan non-linier antara struktur jaringan korelasi dan keputusan alokasi bobot yang adaptif.", font: "Times New Roman", size: 24 }),
-                    ]
-                }),
-                new Paragraph({
-                    numbering: { reference: "letters", level: 0 },
-                    alignment: AlignmentType.JUSTIFIED,
-                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
-                    children: [
-                        new TextRun({ text: "Kurangnya transparansi pada algoritma optimasi portofolio berbasis kecerdasan buatan (", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "black-box nature", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: "), yang menyulitkan interpretasi logika di balik keputusan alokasi aset bagi investor profesional.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
