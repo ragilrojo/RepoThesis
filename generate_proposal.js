@@ -889,6 +889,15 @@ const doc = new Document({
                     {text: "out-of-sample", italic: true},
                     {text: " yang lebih unggul dan defensif selama krisis pasar dibandingkan model Markowitz tradisional."}
                 ]),
+                mixedBody([
+                    {text: "Ricca dan Scozzari [mendeley_cite:ricca2024portfolio] memperkenalkan penggunaan metrik "},
+                    {text: "assortative mixing", italic: true},
+                    {text: " dalam jaringan pasar untuk meningkatkan diversifikasi portofolio. Mereka memperluas konsep "},
+                    {text: "local assortativity", italic: true},
+                    {text: " ke dalam jaringan berbobot dan menunjukkan bahwa pemilihan aset yang bersifat "},
+                    {text: "disassortative", italic: true},
+                    {text: " (terhubung dengan aset yang memiliki karakteristik berbeda) secara signifikan mampu mengurangi risiko sistemik dan meningkatkan performa investasi secara keseluruhan. Penelitian ini memberikan dasar matematis yang kuat bagi penggunaan properti struktural jaringan yang lebih kompleks untuk alokasi aset."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -963,6 +972,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Trend-dependent", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Analysis", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ricca & Scozzari (2024)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "MILP", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Assortative Mixing", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Statis (MILP)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Assortativity XAI", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
