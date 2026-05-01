@@ -914,6 +914,15 @@ const doc = new Document({
                     {text: "Minimum Spanning Tree", italic: true},
                     {text: " (MST) untuk merepresentasikan risiko sistemik, mereka menunjukkan bahwa pendekatan berbasis teori graf mampu menangkap hubungan 'satu-ke-banyak' antar aset secara lebih fleksibel dibandingkan metode clustering hierarkis. NRP terbukti menghasilkan portofolio yang lebih terdiversifikasi dan memiliki performa yang lebih stabil, terutama pada saat jumlah aset dalam portofolio meningkat."}
                 ]),
+                mixedBody([
+                    {text: "Takahashi et al. [mendeley_cite:takahashi2025effectiveness] memperkenalkan pendekatan "},
+                    {text: "Cardinality-Return Weighted Maximum Independent Set", italic: true},
+                    {text: " (CR-WMIS) yang mentransformasikan optimasi portofolio menjadi masalah optimasi kombinatorial skala besar. Dengan memanfaatkan konsep "},
+                    {text: "Maximum Independent Set", italic: true},
+                    {text: " (MIS), mereka memilih aset-aset yang memiliki korelasi minimal untuk memaksimalkan diversifikasi, sementara pembobotan dilakukan berdasarkan ekspektasi imbal hasil. Penggunaan solver berbasis "},
+                    {text: "simulated bifurcation", italic: true},
+                    {text: " memungkinkan model ini menemukan solusi berkualitas tinggi secara efisien, yang terbukti mengungguli indeks S&P 500 dalam simulasi jangka panjang."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -1022,6 +1031,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (Indeks)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Concentration, Perf.", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Takahashi et al. (2025)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "WMIS Optimization", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Max Independent Set", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Simulated Bifurcation", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (S&P 500)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Independent Set Structure", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Return, Risk, Backtest", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
