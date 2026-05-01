@@ -856,181 +856,101 @@ const doc = new Document({
                     {text: "consensus clustering", italic: true},
                     {text: ". Pendekatan ini bertujuan untuk mendeteksi klaster mata uang kripto yang memiliki korelasi tinggi namun secara temporal stabil, dari mana pemilihan aset dilakukan. Penelitian ini juga mengintegrasikan model ARIMA untuk prediksi harga guna menjamin performa portofolio dalam cakrawala investasi jangka pendek (sampai 14 hari). Hasil analisis empiris selama periode 5 tahun menunjukkan bahwa pola harga tersembunyi dapat dimanfaatkan secara efektif melalui struktur jaringan untuk menghasilkan portofolio kripto yang menguntungkan secara konsisten meskipun di tengah volatilitas pasar yang ekstrem."}
                 ]),
+                mixedBody([
+                    {text: "Terakhir, penelitian oleh Korangi et al. [mendeley_cite:korangi2024large] memberikan perspektif baru dengan menerapkan "},
+                    {text: "Graph Attention Networks", italic: true},
+                    {text: " (GAT) pada optimasi portofolio. Dengan menggunakan "},
+                    {text: "distance correlation", italic: true},
+                    {text: " dan "},
+                    {text: "Triangulated Maximally Filtered Graph", italic: true},
+                    {text: " (TMFG), mereka membangun graf yang merepresentasikan hubungan non-linier antar aset. Model ini dilatih secara "},
+                    {text: "end-to-end", italic: true},
+                    {text: " untuk memaksimalkan Sharpe Ratio. Meskipun sangat kuat dalam menangkap dinamika pasar saham, pendekatan ini belum menyentuh aspek "},
+                    {text: "explainability", italic: true},
+                    {text: " secara eksplisit serta adaptivitas parameter kontrol jaringan secara dinamis seperti yang diusulkan dalam penelitian ini."}
+                ]),                mixedBody([
+                    {text: "Dalam tinjauan kritis terhadap 70 tahun teori Markowitz, Boyd et al. [mendeley_cite:boyd2024markowitz] mengusulkan perluasan model "},
+                    {text: "mean-variance", italic: true},
+                    {text: " yang lebih tangguh terhadap kesalahan estimasi statistik. Mereka menekankan penggunaan optimasi konveks dengan batasan ("},
+                    {text: "constraints", italic: true},
+                    {text: ") yang realistis seperti biaya transaksi dan batas leverage, serta menunjukkan bahwa dengan parameterisasi yang tepat, model Markowitz tetap menjadi alat yang sangat efisien secara komputasi dan reliabel untuk manajemen portofolio skala besar di era modern."}
+                ]),
+                mixedBody([
+                    {text: "Penelitian oleh Cao dan Li [mendeley_cite:cao2021artificial] memperkenalkan dinamika saraf tiruan ("},
+                    {text: "Artificial Neural Dynamics", italic: true},
+                    {text: " - AND) untuk alokasi portofolio secara real-time. Mereka menggunakan model saraf dinamis untuk menyelesaikan optimasi konveks yang didasarkan pada "},
+                    {text: "Arbitrage Pricing Theory", italic: true},
+                    {text: " (APT). Pendekatan ini sangat efisien untuk perdagangan frekuensi tinggi dan memberikan jaminan konvergensi teoritis yang kuat, namun fokus utamanya tetap pada efisiensi komputasional tanpa mengintegrasikan topologi jaringan kompleks antar aset."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu", font: "Times New Roman", size: 24, bold: true })]
+                    children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu (Transposed)", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
                     alignment: AlignmentType.CENTER,
-                    width: { size: 8200, type: WidthType.DXA },
-                    columnWidths: [400, 1600, 2000, 4200],
+                    width: { size: 9500, type: WidthType.DXA },
+                    columnWidths: [1800, 1600, 1600, 1600, 1300, 1600],
                     rows: [
                         new TableRow({
                             tableHeader: true,
                             children: [
-                                new TableCell({
-                                    borders,
-                                    shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    verticalAlign: VerticalAlign.CENTER,
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "No", font: "Times New Roman", size: 22, bold: true })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Penulis / Tahun", font: "Times New Roman", size: 22, bold: true })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Judul", font: "Times New Roman", size: 22, bold: true })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    shading: { fill: "D5E8F0", type: ShadingType.CLEAR },
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Hasil", font: "Times New Roman", size: 22, bold: true })] })]
-                                }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Peneliti", font: "Times New Roman", size: 20, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Model learning", font: "Times New Roman", size: 20, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Graph method", font: "Times New Roman", size: 20, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Adaptivitas", font: "Times New Roman", size: 20, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "Aset", font: "Times New Roman", size: 20, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "D5E8F0" }, borders, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "XAI", font: "Times New Roman", size: 20, bold: true })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "1", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Giudici, et al. [mendeley_cite:giudici2020network]", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [
-                                        new Paragraph({ children: [new TextRun({ text: "Network Models to Enhance Automated Cryptocurrency Portfolio Management", font: "Times New Roman", size: 22 })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.3389/frai.2020.00022", font: "Times New Roman", size: 20, italics: true })] })
-                                    ]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Mengusulkan Network Markowitz dan sukses mendemonstrasikan perbaikan struktur dibandingkan Markowitz biasa di era crypto winter.", font: "Times New Roman", size: 22 })] })]
-                                }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Giudici et al. (2020)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Mean-Variance", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "MST + Centrality", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Statis", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Kripto", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "2", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [mendeley_cite:kitanovski2022cryptocurrency]", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [
-                                        new Paragraph({ children: [new TextRun({ text: "Cryptocurrency Portfolio Diversification Using Network Community Detection", font: "Times New Roman", size: 22 })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.1109/TELFOR56187.2022.9983742", font: "Times New Roman", size: 20, italics: true })] })
-                                    ]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Memanfaatkan deteksi komunitas (Louvain & Affinity Propagation) pada jaringan korelasi kripto untuk diversifikasi; membantu mengurangi volatilitas dan mengoptimalkan return.", font: "Times New Roman", size: 22 })] })]
-                                }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Korangi et al. (2024)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "GAT (Supervised)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "TMFG + DistCorr", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Rolling window", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham US", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "3", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha [mendeley_cite:jing2023network]", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [
-                                        new Paragraph({ children: [new TextRun({ text: "A network-based strategy of price correlations for optimal cryptocurrency portfolios", font: "Times New Roman", size: 22 })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "arXiv: 2304.02362", font: "Times New Roman", size: 20, italics: true })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.1007/s40745-023-00473-7", font: "Times New Roman", size: 20, italics: true })] })
-                                    ]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Menggabungkan MST dan MPT untuk memilih kripto berdasarkan dekorelasi jaringan; portofolio MST mengungguli seluruh benchmark (BTC, TOP5, RAND).", font: "Times New Roman", size: 22 })] })]
-                                }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Boyd et al. (2024)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Convex Opt.", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Robust Opt.", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Berbagai", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Optimality", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "4", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Kitanovski, et al. [mendeley_cite:kitanovski2024network]", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [
-                                        new Paragraph({ children: [new TextRun({ text: "Network-based diversification of stock and cryptocurrency portfolios", font: "Times New Roman", size: 22 })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "arXiv: 2408.11739", font: "Times New Roman", size: 20, italics: true })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "DOI: 10.1007/s41109-025-00708-9", font: "Times New Roman", size: 20, italics: true })] })
-                                    ]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Menunjukkan keunggulan strategi jaringan yang lebih resilient selama periode guncangan pasar (Pandemi & Perang) pada aset saham dan kripto.", font: "Times New Roman", size: 22 })] })]
-                                }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Cao & Li (2021)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Neural Dynamics", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A (APT)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Real-time", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "5", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ children: [new TextRun({ text: "Jing, et al. [mendeley_cite:jing2025optimising]", font: "Times New Roman", size: 22 })] })]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [
-                                        new Paragraph({ children: [new TextRun({ text: "Optimising cryptocurrency portfolios through stable clustering of price correlation networks", font: "Times New Roman", size: 22 })] }),
-                                        new Paragraph({ children: [new TextRun({ text: "arXiv: 2505.24831", font: "Times New Roman", size: 20, italics: true })] })
-                                    ]
-                                }),
-                                new TableCell({
-                                    borders,
-                                    margins: { top: 80, bottom: 80, left: 120, right: 120 },
-                                    children: [new Paragraph({ alignment: AlignmentType.LEFT, children: [new TextRun({ text: "Mengintegrasikan stable clustering dengan MPT untuk optimasi portofolio di bawah ketidakpastian; memperkuat validitas integrasi Network-MPT hingga fase pasar terbaru.", font: "Times New Roman", size: 22 })] })]
-                                }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Penelitian Ini (SAC-Net)", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "DRL (SAC)", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "RMT + MST + Eigen", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Adaptive Gamma", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Kripto (9 aset)", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Post-hoc (SHAP)", font: "Times New Roman", size: 18, bold: true })] })] }),
                             ]
                         }),
                     ]
