@@ -635,11 +635,11 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
-                        new TextRun({ text: "Belum adanya algoritma optimasi portofolio yang mampu melakukan penambahan pengetahuan (", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "knowledge", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") secara terus-menerus dan adaptif (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Perlunya pengembangan alternatif algoritma yang lebih robust dalam melakukan pembelajaran berkelanjutan (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "incremental learning", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") terhadap data pasar baru tanpa kehilangan pola penting yang telah dipelajari sebelumnya.", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") untuk terus menambah pengetahuan (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "knowledge", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") agen terhadap dinamika jaringan pasar baru tanpa mengabaikan stabilitas performa jangka panjang.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
