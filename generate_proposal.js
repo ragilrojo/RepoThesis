@@ -624,12 +624,23 @@ const doc = new Document({
                         new TextRun({ text: "Keterbatasan model optimasi konvensional dalam menangkap hubungan non-linier antara struktur jaringan korelasi dan keputusan alokasi bobot yang adaptif.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
+                new Paragraph({
+                    numbering: { reference: "letters", level: 0 },
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
+                    children: [
+                        new TextRun({ text: "Kurangnya transparansi pada algoritma optimasi portofolio berbasis kecerdasan buatan (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "black-box nature", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: "), yang menyulitkan interpretasi logika di balik keputusan alokasi aset bagi investor profesional.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
                 emptyLine(),
                 heading2("1.3 Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
                 letterItem("Merancang dan melatih agen Reinforcement Learning berbasis algoritma Soft Actor-Critic (SAC) yang bertindak sebagai Gamma Controller untuk mengoptimasi parameter penalti sentralitas jaringan secara dinamis.", "letters1"),
                 letterItem("Mengevaluasi efektivitas penggunaan fitur gabungan (network metrics dan market indicators) dalam meningkatkan kemampuan adaptasi portofolio terhadap volatilitas ekstrem pasar kripto.", "letters1"),
                 letterItem("Membandingkan performa model SAC-Net Markowitz terhadap strategi benchmark (Equally Weighted, Classical Markowitz, dan NW Statis) menggunakan metrik Sharpe Ratio dan Calmar Ratio.", "letters1"),
+                letterItem("Menganalisis tingkat transparansi dan interpretabilitas keputusan investasi agen menggunakan metode Explainable AI (SHAP) untuk memahami kontribusi fitur jaringan terhadap alokasi bobot portofolio.", "letters1"),
                 emptyLine(),
                 heading2("1.4 Ruang Lingkup Penelitian"),
                 body("Ruang lingkup penelitian ini dibatasi pada:"),
