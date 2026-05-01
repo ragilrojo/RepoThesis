@@ -534,9 +534,11 @@ const doc = new Document({
                     spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
                     indent: { firstLine: 720 },
                     children: [
-                        new TextRun({ text: "Mata uang kripto (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Industri keuangan global dalam beberapa tahun terakhir menyaksikan adanya lonjakan penggunaan konsultasi keuangan otomatis (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "robo-advisors", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") yang dirancang untuk membantu investor mengelola portofolio secara sistematis dan efisien [mendeley_cite:giudici2020network]. Fenomena ini beriringan dengan perkembangan mata uang kripto (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "cryptocurrency", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") telah berkembang menjadi salah satu aset investasi digital yang sangat diminati namun memiliki tingkat volatilitas ekstrem. Dalam manajemen portofolio tradisional, model Mean-Variance dari Markowitz kerap digunakan untuk mengalokasikan aset demi mencapai kombinasi return dan risiko yang optimal. Sayangnya, model klasik ini sangat rentan terhadap ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") yang telah menjadi salah satu aset investasi digital yang sangat diminati namun memiliki tingkat volatilitas ekstrem. Dalam manajemen portofolio tradisional, model Mean-Variance dari Markowitz kerap digunakan untuk mengalokasikan aset demi mencapai kombinasi return dan risiko yang optimal. Sayangnya, model klasik ini sangat rentan terhadap ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "noise", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: " dan estimasi matriks korelasi yang tidak stabil, terutama pada saat gejolak pasar (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "market crash", font: "Times New Roman", size: 24, italics: true }),
