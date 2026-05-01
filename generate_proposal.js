@@ -926,6 +926,17 @@ const doc = new Document({
                         }),
                         new TableRow({
                             children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Jing & Rocha (2023)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "MPT", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "MST", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Statis", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Kripto", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Benchmarking (BTC, TOP5)", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ioannidis et al. (2023)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Weights", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Transfer Entropy", font: "Times New Roman", size: 18 })] })] }),
