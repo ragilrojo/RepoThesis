@@ -923,6 +923,15 @@ const doc = new Document({
                     {text: "simulated bifurcation", italic: true},
                     {text: " memungkinkan model ini menemukan solusi berkualitas tinggi secara efisien, yang terbukti mengungguli indeks S&P 500 dalam simulasi jangka panjang."}
                 ]),
+                mixedBody([
+                    {text: "Konstantinov dan Fabozzi [mendeley_cite:konstantinov2025revolutionizing] memberikan kerangka kerja komprehensif mengenai revolusi manajemen portofolio melalui teori jaringan. Mereka menekankan bahwa penggunaan metrik "},
+                    {text: "centrality, clustering,", italic: true},
+                    {text: " dan "},
+                    {text: "modularity", italic: true},
+                    {text: " memberikan pemahaman yang lebih mendalam mengenai risiko sistemik dan keterhubungan pasar dibandingkan model korelasi linear tradisional. Penelitian ini menegaskan pentingnya integrasi analisis topologi dengan teknik "},
+                    {text: "machine learning", italic: true},
+                    {text: " untuk membangun strategi investasi yang lebih resilien di pasar modern yang kompleks."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -991,17 +1000,6 @@ const doc = new Document({
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Yan et al. (2021)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Fundamental Networks", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Similarity linkage", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Trend-dependent", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Analysis", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Katsouris (2021)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Quadratic Opt.", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Delta-CoVaR Network", font: "Times New Roman", size: 18 })] })] }),
@@ -1009,6 +1007,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Eigenvector Link", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, VaR, CoVaR", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Yan et al. (2021)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Fundamental Networks", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Similarity linkage", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Trend-dependent", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Analysis", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
@@ -1042,6 +1051,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (S&P 500)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Independent Set Structure", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Return, Risk, Backtest", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Konstantinov & Fabozzi (2025)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Network-based Framework", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality, Modularity", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Dynamic Analysis", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-asset", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Topology Visual.", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Systemic Risk, Modularity", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
