@@ -898,6 +898,15 @@ const doc = new Document({
                     {text: "disassortative", italic: true},
                     {text: " (terhubung dengan aset yang memiliki karakteristik berbeda) secara signifikan mampu mengurangi risiko sistemik dan meningkatkan performa investasi secara keseluruhan. Penelitian ini memberikan dasar matematis yang kuat bagi penggunaan properti struktural jaringan yang lebih kompleks untuk alokasi aset."}
                 ]),
+                mixedBody([
+                    {text: "Ciciretti dan Pallotta [mendeley_cite:ciciretti2024network] mengusulkan metode "},
+                    {text: "Network Risk Parity", italic: true},
+                    {text: " (NRP) sebagai penyempurnaan atas kelemahan model "},
+                    {text: "Hierarchical Risk Parity", italic: true},
+                    {text: " (HRP). Dengan memanfaatkan "},
+                    {text: "Minimum Spanning Tree", italic: true},
+                    {text: " (MST) untuk merepresentasikan risiko sistemik, mereka menunjukkan bahwa pendekatan berbasis teori graf mampu menangkap hubungan 'satu-ke-banyak' antar aset secara lebih fleksibel dibandingkan metode clustering hierarkis. NRP terbukti menghasilkan portofolio yang lebih terdiversifikasi dan memiliki performa yang lebih stabil, terutama pada saat jumlah aset dalam portofolio meningkat."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -984,6 +993,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Assortativity XAI", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ciciretti & Pallotta (2024)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Network Risk Parity", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "MST (Systemic Risk)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Risk-Parity based", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (Indeks)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Concentration, Perf.", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
