@@ -1144,22 +1144,17 @@ const doc = new Document({
                 ]),
                 emptyLine(),
                 mixedBody([
-                    {text: "Dimana "},
-                    {text: "\u03BB\u00B1", italic: true},
-                    {text: " adalah batas atas dan bawah nilai eigen yang diperbolehkan oleh "},
-                    {text: "noise", italic: true},
-                    {text: ", yang ditentukan oleh rasio "},
-                    {text: "Q = T/N", italic: true},
-                    {text: " (jumlah observasi terhadap jumlah aset). Nilai eigen yang berada di atas batas "},
+                    {text: "Nilai eigen yang berada di atas batas "},
                     {text: "\u03BB+", italic: true},
                     {text: " dianggap sebagai "},
                     {text: "market mode", italic: true},
-                    {text: " atau sinyal ekonomi sejati, sedangkan nilai eigen di bawah batas tersebut dianggap sebagai "},
+                    {text: " atau sinyal ekonomi sejati yang mengandung informasi struktural pasar. Sebaliknya, nilai eigen di bawah batas tersebut dikategorikan sebagai "},
                     {text: "noise", italic: true},
-                    {text: ". Dengan menerapkan filtrasi ini melalui metode "},
+                    {text: " yang tidak memiliki signifikansi finansial. Dengan menerapkan filtrasi ini melalui metode "},
                     {text: "Eigenvalue Clipping", italic: true},
-                    {text: ", topologi jaringan (MST) yang dihasilkan menjadi lebih stabil dan representatif terhadap struktur pasar sesungguhnya [mendeley_cite:marchenko1967distribution], [mendeley_cite:eom2009topological]."}
+                    {text: ", topologi jaringan (MST) yang dihasilkan menjadi lebih stabil dan representatif terhadap struktur pasar sesungguhnya [mendeley_cite:marchenko1967distribution]."}
                 ]),
+
                 emptyLine(),
                 heading3("2.1.3 Teori Risiko Koheren (Coherent Risk Measures)"),
                 mixedBody([
