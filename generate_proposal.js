@@ -932,6 +932,15 @@ const doc = new Document({
                     {text: "machine learning", italic: true},
                     {text: " untuk membangun strategi investasi yang lebih resilien di pasar modern yang kompleks."}
                 ]),
+                mixedBody([
+                    {text: "Choudhary et al. [mendeley_cite:choudhary2025risk] mengusulkan pendekatan "},
+                    {text: "Risk-Adjusted Deep Reinforcement Learning", italic: true},
+                    {text: " (RA-DRL) dengan kerangka kerja "},
+                    {text: "multi-reward", italic: true},
+                    {text: ". Mereka melatih tiga agen DRL terpisah dengan fungsi imbalan yang berbeda (Log Return, Sharpe Ratio, dan Maximum Drawdown) yang kemudian digabungkan melalui "},
+                    {text: "Convolutional Neural Network", italic: true},
+                    {text: " (CNN) untuk menghasilkan kebijakan investasi yang optimal. Penelitian ini menunjukkan bahwa rekayasa fungsi imbalan yang kompleks dapat secara signifikan meningkatkan ketahanan portofolio terhadap risiko di berbagai indeks pasar global."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -1062,6 +1071,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-asset", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Topology Visual.", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Systemic Risk, Modularity", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Choudhary et al. (2025)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-Reward DRL", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A (Feature-based)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Dynamic Reward", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (Global)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Return, MDD", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
