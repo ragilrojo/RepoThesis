@@ -593,14 +593,13 @@ const doc = new Document({
                         new TextRun({ text: " (XAI) untuk memberikan interpretasi yang jelas terhadap logika agen SAC-Net dalam mengalokasikan bobot portofolio berdasarkan fitur-fitur jaringan pasar.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
-                emptyLine(),
-                heading2("1.2 Identifikasi Masalah"),
+                emptyLine(),                heading2("1.2 Identifikasi Masalah"),
                 new Paragraph({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
                     indent: { firstLine: 720 },
                     children: [
-                        new TextRun({ text: "Berdasarkan latar belakang di atas, dapat diidentifikasi masalah sebagai berikut:", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Berdasarkan latar belakang di atas, maka masalah dalam penelitian ini dapat diidentifikasi sebagai berikut:", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -608,11 +607,7 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
-                        new TextRun({ text: "Keterbatasan metode alokasi aset konvensional dalam menangkap hubungan non-linier dan kerentanan terhadap ", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "spurious correlations", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " pada pasar kripto, serta kurangnya transparansi (", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "black-box nature", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") pada algoritma cerdas yang menyulitkan interpretasi keputusan investasi.", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Model Network Markowitz konvensional dengan parameter penalti sentralitas (\u03b3) yang statis tidak mampu beradaptasi secara optimal terhadap perubahan fase pasar kripto yang sangat dinamis.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -620,7 +615,11 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
-                        new TextRun({ text: "Penggunaan penalti sentralitas (\u03b3) yang bersifat statis pada model Network Markowitz saat ini tidak mampu beradaptasi terhadap perubahan kondisi pasar, serta menyulitkan penentuan besaran optimal untuk berbagai tujuan investasi (defensif vs. agresif) secara dinamis.", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Sifat ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "black-box", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " pada algoritma ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Deep Reinforcement Learning", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " (DRL) menimbulkan kendala transparansi bagi investor profesional dalam memahami logika pengambilan keputusan alokasi bobot portofolio.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 new Paragraph({
@@ -628,20 +627,20 @@ const doc = new Document({
                     alignment: AlignmentType.JUSTIFIED,
                     spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
                     children: [
-                        new TextRun({ text: "Perlunya pengembangan alternatif algoritma yang lebih robust dalam melakukan pembelajaran berkelanjutan (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Kebutuhan akan mekanisme ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "incremental learning", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") untuk terus menambah pengetahuan (", font: "Times New Roman", size: 24 }),
-                        new TextRun({ text: "knowledge", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") agen terhadap dinamika jaringan pasar baru tanpa mengabaikan stabilitas performa jangka panjang.", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: " untuk menjaga relevansi dan ketangguhan (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "robustness", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") model terhadap evolusi struktur jaringan pasar tanpa mengabaikan performa stabilitas jangka panjang.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
                 heading2("1.3 Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
-                letterItem("Merancang dan melatih agen Reinforcement Learning berbasis algoritma Soft Actor-Critic (SAC) yang bertindak sebagai Gamma Controller untuk mengoptimasi parameter penalti sentralitas jaringan secara dinamis.", "letters1"),
-                letterItem("Mengevaluasi efektivitas penggunaan fitur gabungan (network metrics dan market indicators) dalam meningkatkan kemampuan adaptasi portofolio terhadap volatilitas ekstrem pasar kripto.", "letters1"),
-                letterItem("Membandingkan performa model SAC-Net Markowitz terhadap strategi benchmark (Equally Weighted, Classical Markowitz, dan NW Statis) menggunakan metrik Sharpe Ratio dan Calmar Ratio.", "letters1"),
-                letterItem("Menganalisis tingkat transparansi dan interpretabilitas keputusan investasi agen menggunakan metode Explainable AI (SHAP) untuk memahami kontribusi fitur jaringan terhadap alokasi bobot portofolio.", "letters1"),
+                letterItem("Merancang agen Soft Actor-Critic (SAC) sebagai Gamma Controller dinamis untuk mengoptimasi parameter penalti sentralitas pada model Network Markowitz sesuai kondisi pasar.", "letters1"),
+                letterItem("Mengintegrasikan teknik Explainable AI (XAI) melalui metode SHAP untuk memberikan interpretasi transparan terhadap logika pengambilan keputusan investasi agen.", "letters1"),
+                letterItem("Mengembangkan skema incremental learning untuk memastikan ketangguhan dan adaptabilitas model terhadap evolusi data jaringan pasar kripto secara berkelanjutan.", "letters1"),
+                letterItem("Mengevaluasi dan membandingkan performa model yang diusulkan terhadap strategi benchmark konvensional menggunakan metrik risiko dan imbal hasil yang komprehensif.", "letters1"),
                 emptyLine(),
                 heading2("1.4 Ruang Lingkup Penelitian"),
                 body("Ruang lingkup penelitian ini dibatasi pada:"),
@@ -741,12 +740,16 @@ const doc = new Document({
                     {text: ". Berbeda dengan variansi pada model Markowitz klasik yang gagal memenuhi aksioma "},
                     {text: "sub-additivity", italic: true},
                     {text: " pada distribusi tidak normal, penggunaan metrik seperti "},
+                    {text: "Conditional Value at Risk", italic: true},
+                    {text: " (CVaR) atau ", font: "Times New Roman", size: 24 },
                     {text: "Expected Shortfall", italic: true},
-                    {text: " atau proksi risiko ekor seperti "},
-                    {text: "Rachev Ratio", italic: true},
                     {text: " dalam model ini memberikan perlindungan yang lebih kuat terhadap kejadian ekstrem ("},
                     {text: "fat-tail events", italic: true},
-                    {text: ") di pasar kripto."}
+                    {text: ") di pasar kripto. Selain itu, penggunaan metrik efisiensi risiko seperti "},
+                    {text: "Sortino Ratio", italic: true},
+                    {text: " menjadi krusial karena hanya menghitung volatilitas negatif ("},
+                    {text: "downside risk", italic: true},
+                    {text: "), yang lebih relevan bagi investor dibandingkan standar deviasi total."}
                 ]),
                 bulletItem("Monotonicity: Jika portofolio X selalu tidak lebih buruk dari Y, maka risiko X harus lebih kecil atau sama dari Y (\u03c1(X) \u2264 \u03c1(Y) untuk X \u2265 Y)."),
                 bulletItem("Sub-additivity: Risiko gabungan tidak boleh lebih dari jumlah risiko masing-masing (\u03c1(X + Y) \u2264 \u03c1(X) + \u03c1(Y)). Ini adalah kaidah efek diversifikasi."),
@@ -810,7 +813,7 @@ const doc = new Document({
                     {text: "cross-validation", italic: true},
                     {text: " tradisional yang mengabaikan urutan waktu, metode "},
                     {text: "rolling window", italic: true},
-                    {text: " memastikan bahwa pengujian model dilakukan menggunakan data yang secara kronologis berada setelah data pelatihan. Pendekatan ini memberikan kepastian bahwa optimalisasi parameter \u03b3 pada setiap jendela waktu dilakukan dengan integritas data yang tinggi, sehingga hasil "},
+                    {text: " memastikan bahwa pengujian model dilakukan menggunakan data yang secara kronologis berada setelah data pelatihan. Dalam penelitian ini, skema rebalancing mingguan (7 hari) dengan jendela observasi (lookback) selama 30 hari digunakan untuk menangkap dinamika korelasi jangka pendek. Pendekatan ini memberikan kepastian bahwa optimalisasi parameter \u03b3 pada setiap jendela waktu dilakukan dengan integritas data yang tinggi, sehingga hasil "},
                     {text: "backtesting", italic: true},
                     {text: " mencerminkan realitas perdagangan sesungguhnya di pasar yang sangat dinamis."}
                 ]),
@@ -819,13 +822,19 @@ const doc = new Document({
                 mixedBody([
                     {text: "Penelitian ini memiliki kebaruan signifikan dibandingkan model yang diusulkan oleh Giudici et al. [mendeley_cite:giudici2020network]. Jika penelitian tersebut menggunakan parameter penghukuman jaringan (\u03b3) yang bernilai statis (konstan), penelitian ini mengusulkan "},
                     {text: "RL-Net Markowitz", italic: true},
-                    {text: ". Kebaruan utama terletak pada penggunaan algoritma "},
+                    {text: ". Kebaruan utama terletak pada: (1) penggunaan algoritma "},
                     {text: "Soft Actor-Critic (SAC)", italic: true},
                     {text: " yang bertindak sebagai "},
                     {text: "intelligent controller", italic: true},
-                    {text: " untuk menentukan nilai \u03b3 secara adaptif berdasarkan kondisi pasar dan topologi jaringan terkini, serta secara aktif menyesuaikan intensitas kontrol sentralitas terhadap perubahan struktur jaringan aset secara "},
-                    {text: "real-time", italic: true},
-                    {text: "."}
+                    {text: " untuk menentukan nilai \u03b3 secara adaptif; (2) penerapan metodologi "},
+                    {text: "multi-seed validation", italic: true},
+                    {text: " (menggunakan variasi seed 42, 123, dan 77) untuk memastikan reliabilitas statistik hasil pelatihan; (3) perbandingan dengan baseline yang lebih luas mencakup "},
+                    {text: "Equal Risk Contribution", italic: true},
+                    {text: " (ERC) dan ", font: "Times New Roman", size: 24 },
+                    {text: "Classic Mean-Variance", italic: true},
+                    {text: " tanpa filter; serta (4) integrasi teknik "},
+                    {text: "Explainable AI (SHAP)", italic: true},
+                    {text: " untuk membedah rasionalitas di balik penyesuaian gamma oleh agen RL."}
                 ]),
                 emptyLine(),
                 heading2("2.9 Penelitian Terdahulu"),
@@ -1130,7 +1139,7 @@ const doc = new Document({
                                 new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Adaptive Gamma", font: "Times New Roman", size: 18, bold: true })] })] }),
                                 new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Kripto (9 aset)", font: "Times New Roman", size: 18, bold: true })] })] }),
                                 new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Post-hoc (SHAP)", font: "Times New Roman", size: 18, bold: true })] })] }),
-                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Sortino, MDD, Win-Rate", font: "Times New Roman", size: 18, bold: true })] })] }),
+                                new TableCell({ shading: { fill: "F0F0F0" }, borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Sortino, Calmar, CVaR", font: "Times New Roman", size: 18, bold: true })] })] }),
                             ]
                         }),
                     ]
