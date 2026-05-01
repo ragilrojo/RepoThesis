@@ -363,19 +363,14 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1200 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1200 },
                     pageNumbers: { start: 1, formatType: NumberFormat.LOWER_ROMAN }
                 },
                 pageNumbers: { start: 1, formatType: NumberFormat.LOWER_ROMAN }
             },
             footers: {
                 default: new Footer({
-                    children: [
-                        new Paragraph({
-                            alignment: AlignmentType.CENTER,
-                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
-                        })
-                    ]
+                    children: []
                 })
             },
             children: [
@@ -403,13 +398,13 @@ const doc = new Document({
                     ]
                 }),
                 emptyLine(),
-                centeredBold("PROPOSAL TESIS", 26),
+                centeredBold("PROPOSAL TESIS", 36),
                 emptyLine(),
                 centered("Diajukan sebagai salah satu syarat untuk memperoleh gelar"),
                 centered("Magister Komputer (M.Kom)"),
                 emptyLine(),
                 emptyLine(),
-                centeredBold("Ragil Yulianto", 24),
+                centeredBold("Ragil Yulianto", 28),
                 centered("14240007"),
                 emptyLine(),
                 emptyLine(),
@@ -428,7 +423,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1417 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
                     pageNumbers: { start: 2, formatType: NumberFormat.LOWER_ROMAN }
                 },
                 type: SectionType.NEXT_PAGE,
@@ -501,12 +496,245 @@ const doc = new Document({
                 }),
             ]
         },
+        // ==================== PERNYATAAN ORISINALITAS ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
+                },
+                type: SectionType.NEXT_PAGE,
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
+            children: [
+                sectionTitle("SURAT PERNYATAAN ORISINALITAS DAN BEBAS PLAGIARISME"),
+                emptyLine(),
+                bodyNoIndent("Yang bertanda tangan di bawah ini:"),
+                emptyLine(),
+                ...[
+                    ["Nama",          "Ragil Yulianto"],
+                    ["NIM",           "14240007"],
+                    ["Program Studi", "Informatika"],
+                    ["Fakultas",      "Teknologi Informasi"],
+                    ["Jenjang",       "Strata Dua (S2)"],
+                    ["Peminatan",     "Data Science / Artificial Intelligence"],
+                ].map(([label, value]) => new Paragraph({
+                    indent: { left: 720 },
+                    spacing: { line: 360 },
+                    tabStops: [{ type: TabStopType.LEFT, position: 2500 }],
+                    children: [
+                        new TextRun({ text: label, font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "\t: " + value, font: "Times New Roman", size: 24, bold: true }),
+                    ]
+                })),
+                emptyLine(),
+                body("Dengan ini menyatakan bahwa tesis yang telah saya buat dengan judul:"),
+                centeredBold("OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ BERBASIS DEEP REINFORCEMENT LEARNING YANG TERINTERPRETASI (EXPLAINABLE AI)", 24),
+                body("adalah hasil karya sendiri, dan semua sumber baik yang dikutip maupun yang dirujuk telah saya nyatakan dengan benar, serta belum pernah diterbitkan atau dipublikasikan dimanapun dan dalam bentuk apapun."),
+                body("Demikianlah surat pernyataan ini saya buat dengan sebenar-benarnya. Apabila dikemudian hari ternyata saya memberikan keterangan palsu dan atau ada pihak lain yang mengklaim bahwa tesis yang telah saya buat adalah hasil karya milik seseorang atau badan tertentu, saya bersedia diproses baik secara pidana maupun perdata dan kelulusan saya dari Program Studi Informatika (S2) Fakultas Teknologi Informasi Universitas Nusa Mandiri dicabut/dibatalkan."),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [new TextRun({ text: "Jakarta, 15 April 2026", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [new TextRun({ text: "Yang menyatakan,", font: "Times New Roman", size: 24 })]
+                }),
+                emptyLine(),
+                emptyLine(),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [
+                        new TextRun({ text: "Materai Rp 10.000", font: "Times New Roman", size: 18 }),
+                    ]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [
+                        new TextRun({ text: "Ragil Yulianto", font: "Times New Roman", size: 24, bold: true }),
+                    ]
+                }),
+            ]
+        },
+        // ==================== PERSETUJUAN PUBLIKASI ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
+                },
+                type: SectionType.NEXT_PAGE,
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
+            children: [
+                sectionTitle("SURAT PERNYATAAN PERSETUJUAN PUBLIKASI KARYA ILMIAH UNTUK KEPENTINGAN AKADEMIS"),
+                emptyLine(),
+                bodyNoIndent("Yang bertanda tangan di bawah ini:"),
+                emptyLine(),
+                ...[
+                    ["Nama",          "Ragil Yulianto"],
+                    ["NIM",           "14240007"],
+                    ["Program Studi", "Informatika"],
+                    ["Fakultas",      "Teknologi Informasi"],
+                    ["Jenjang",       "Strata Dua (S2)"],
+                    ["Jenis Karya",   "Tesis"],
+                ].map(([label, value]) => new Paragraph({
+                    indent: { left: 720 },
+                    spacing: { line: 360 },
+                    tabStops: [{ type: TabStopType.LEFT, position: 2500 }],
+                    children: [
+                        new TextRun({ text: label, font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "\t: " + value, font: "Times New Roman", size: 24, bold: true }),
+                    ]
+                })),
+                emptyLine(),
+                body("Demi pengembangan ilmu pengetahuan, dengan ini menyetujui untuk memberikan izin kepada pihak Program Studi Informatika (S2) Fakultas Teknologi Informasi Universitas Nusa Mandiri, Hak Bebas Royalti Non-Eksklusif (Non-exclusive Royalti-Free Right) atas karya ilmiah saya yang berjudul:"),
+                centeredBold("OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ BERBASIS DEEP REINFORCEMENT LEARNING YANG TERINTERPRETASI (EXPLAINABLE AI)", 24),
+                body("Dengan Hak Bebas Royalti Non-Eksklusif ini, pihak Universitas Nusa Mandiri berhak menyimpan, mengalih-media atau bentuk-kan, mengelolanya dalam pangkalan data (database), mendistribusikannya dan menampilkan atau mempublikasikannya di internet atau media lain untuk kepentingan akademis tanpa perlu meminta izin dari saya selama tetap mencantumkan nama saya sebagai penulis/pencipta karya ilmiah tersebut."),
+                body("Saya bersedia untuk menanggung secara pribadi, tanpa melibatkan pihak Universitas Nusa Mandiri, segala bentuk tuntutan hukum yang timbul atas pelanggaran Hak Cipta dalam karya ilmiah saya ini."),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [new TextRun({ text: "Jakarta, 15 April 2026", font: "Times New Roman", size: 24 })]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [new TextRun({ text: "Yang menyatakan,", font: "Times New Roman", size: 24 })]
+                }),
+                emptyLine(),
+                emptyLine(),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [
+                        new TextRun({ text: "Materai Rp 10.000", font: "Times New Roman", size: 18 }),
+                    ]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [
+                        new TextRun({ text: "Ragil Yulianto", font: "Times New Roman", size: 24, bold: true }),
+                    ]
+                }),
+            ]
+        },
+        // ==================== KATA PENGANTAR ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
+                },
+                type: SectionType.NEXT_PAGE,
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
+            children: [
+                sectionTitle("KATA PENGANTAR"),
+                emptyLine(),
+                body("Puji syukur penulis panjatkan ke hadirat Allah SWT atas segala rahmat dan hidayah-Nya, sehingga penulis dapat menyelesaikan proposal tesis ini dengan judul \"OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ BERBASIS DEEP REINFORCEMENT LEARNING YANG TERINTERPRETASI (EXPLAINABLE AI)\"."),
+                body("Penulis menyadari bahwa keberhasilan penyusunan proposal ini tidak lepas dari bantuan, bimbingan, dan dukungan dari berbagai pihak. Oleh karena itu, penulis menyampaikan ucapan terima kasih kepada Bapak Dr. Muhammad Haris, M. Eng selaku dosen pembimbing yang telah memberikan arahan berharga dalam penelitian ini."),
+                body("Penulis menyadari masih banyak kekurangan dalam proposal ini. Oleh karena itu, penulis mengharapkan kritik dan saran yang membangun demi penyempurnaan di masa yang akan datang."),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [new TextRun({ text: "Jakarta, 15 April 2026", font: "Times New Roman", size: 24 })]
+                }),
+                emptyLine(),
+                new Paragraph({
+                    alignment: AlignmentType.RIGHT,
+                    children: [new TextRun({ text: "Penulis", font: "Times New Roman", size: 24, bold: true })]
+                }),
+            ]
+        },
+        // ==================== ABSTRAK ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
+                },
+                type: SectionType.NEXT_PAGE,
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
+            children: [
+                sectionTitle("ABSTRAK"),
+                emptyLine(),
+                bodyNoIndent("Tesis ini mengusulkan sebuah metodologi dinamis untuk optimasi portofolio mata uang kripto dengan mengintegrasikan Teori Jaringan Kompleks dan Deep Reinforcement Learning (DRL). Model yang diusulkan, disebut SAC-Net Markowitz, menggunakan agen Soft Actor-Critic (SAC) untuk secara adaptif menyesuaikan intensitas penalti sentralitas (gamma) berdasarkan kondisi jaringan pasar yang berubah. Selain itu, teknik Explainable AI (XAI) melalui metode SHAP diintegrasikan untuk memberikan interpretasi yang transparan terhadap logika pengambilan keputusan agen. Hasil eksperimen menunjukkan bahwa pendekatan ini mampu memberikan profil risiko-imbal hasil yang lebih unggul dibandingkan strategi benchmark konvensional."),
+                emptyLine(),
+                bodyNoIndent("Kata Kunci: Deep Reinforcement Learning, Soft Actor-Critic, Markowitz, Complex Network, Explainable AI, Cryptocurrency.", { bold: true }),
+            ]
+        },
+        // ==================== ABSTRACT ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
+                },
+                type: SectionType.NEXT_PAGE,
+            },
+            footers: {
+                default: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                })
+            },
+            children: [
+                sectionTitle("ABSTRACT"),
+                emptyLine(),
+                bodyNoIndent("This thesis proposes a dynamic methodology for cryptocurrency portfolio optimization by integrating Complex Network Theory and Deep Reinforcement Learning (DRL). The proposed model, named SAC-Net Markowitz, utilizes a Soft Actor-Critic (SAC) agent to adaptively adjust the centrality penalty intensity (gamma) in response to changing market network conditions. Furthermore, Explainable AI (XAI) techniques using the SHAP method are integrated to provide transparent interpretation of the agent's decision-making logic. Experimental results demonstrate that this approach delivers a superior risk-adjusted return profile compared to conventional benchmark strategies.", { italics: true }),
+                emptyLine(),
+                bodyNoIndent("Keywords: Deep Reinforcement Learning, Soft Actor-Critic, Markowitz, Complex Network, Explainable AI, Cryptocurrency.", { bold: true, italics: true }),
+            ]
+        },
         // ==================== DAFTAR ISI ====================
         {
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1417, bottom: 1701, left: 2268, footer: 1417 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, footer: 1417 },
                     pageNumbers: { formatType: NumberFormat.LOWER_ROMAN }
                 },
                 type: SectionType.NEXT_PAGE,
@@ -536,7 +764,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, header: 850, footer: 1417 },
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true,
                 pageNumbers: { start: 1, formatType: NumberFormat.DECIMAL }
@@ -701,7 +929,7 @@ const doc = new Document({
                 body("Bab ini membahas latar belakang penelitian, identifikasi masalah, tujuan penelitian, ruang lingkup penelitian, dan sistematika penulisan."),
                 new Paragraph({
                     spacing: { before: 80, after: 80 },
-                    children: [new TextRun({ text: "BAB II LANDASAN/KERANGKA PEMIKIRAN", font: "Times New Roman", size: 24, bold: true })]
+                    children: [new TextRun({ text: "BAB II TINJAUAN PUSTAKA", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 body("Bab ini membahas kerangka teori yang relevan mencakup Teori Portofolio Modern, Complex Network Theory, dan Manajemen Risiko, serta tinjauan pustaka terhadap penelitian terdahulu di bidang Robo-Advisory kripto."),
                 new Paragraph({
@@ -738,7 +966,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, header: 850, footer: 1417 },
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true,
             },
@@ -937,7 +1165,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 }
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, header: 850, footer: 1417 }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true
             },
@@ -1428,7 +1656,7 @@ const doc = new Document({
             properties: {
                 page: {
                     size: { width: 11906, height: 16838 },
-                    margin: { top: 1701, right: 1701, bottom: 1417, left: 2268, header: 850, footer: 1417 }
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, header: 850, footer: 1417 }
                 },
                 type: SectionType.NEXT_PAGE, titlePage: true
             },
