@@ -634,6 +634,14 @@ const doc = new Document({
                         new TextRun({ text: "), yang menyulitkan interpretasi logika di balik keputusan alokasi aset bagi investor profesional.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
+                new Paragraph({
+                    numbering: { reference: "letters", level: 0 },
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
+                    children: [
+                        new TextRun({ text: "Kesulitan dalam menentukan besaran penalti sentralitas (\u03b3) yang optimal untuk menyesuaikan berbagai tujuan investasi (seperti strategi defensif vs. agresif) di tengah perubahan kondisi pasar yang cepat.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
                 emptyLine(),
                 heading2("1.3 Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
