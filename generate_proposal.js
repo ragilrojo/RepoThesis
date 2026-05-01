@@ -874,13 +874,19 @@ const doc = new Document({
                     {text: " yang lebih tangguh terhadap kesalahan estimasi statistik. Mereka menekankan penggunaan optimasi konveks dengan batasan ("},
                     {text: "constraints", italic: true},
                     {text: ") yang realistis seperti biaya transaksi dan batas leverage, serta menunjukkan bahwa dengan parameterisasi yang tepat, model Markowitz tetap menjadi alat yang sangat efisien secara komputasi dan reliabel untuk manajemen portofolio skala besar di era modern."}
-                ]),
-                mixedBody([
+                ]),                mixedBody([
                     {text: "Penelitian oleh Cao dan Li [mendeley_cite:cao2021artificial] memperkenalkan dinamika saraf tiruan ("},
                     {text: "Artificial Neural Dynamics", italic: true},
                     {text: " - AND) untuk alokasi portofolio secara real-time. Mereka menggunakan model saraf dinamis untuk menyelesaikan optimasi konveks yang didasarkan pada "},
                     {text: "Arbitrage Pricing Theory", italic: true},
                     {text: " (APT). Pendekatan ini sangat efisien untuk perdagangan frekuensi tinggi dan memberikan jaminan konvergensi teoritis yang kuat, namun fokus utamanya tetap pada efisiensi komputasional tanpa mengintegrasikan topologi jaringan kompleks antar aset."}
+                ]),
+                mixedBody([
+                    {text: "Ioannidis et al. [mendeley_cite:ioannidis2023portfolio] mengeksplorasi penggunaan "},
+                    {text: "Transfer Entropy", italic: true},
+                    {text: " dan korelasi Pearson dalam membangun jaringan saham untuk optimasi portofolio dengan berbagai cakrawala waktu. Temuan mereka menunjukkan bahwa portofolio yang terdiri dari aset-aset 'perifer' (konektivitas rendah) cenderung memberikan imbal hasil jangka panjang yang lebih tinggi, sementara jaringan berbasis "},
+                    {text: "Transfer Entropy", italic: true},
+                    {text: " terbukti lebih resilien dalam menghadapi krisis pasar dibandingkan model Markowitz tradisional."}
                 ]),
                 emptyLine(),
                 new Paragraph({
@@ -941,6 +947,16 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Real-time", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ioannidis et al. (2023)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Weights", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Transfer Entropy", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-horizon", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality XAI", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
