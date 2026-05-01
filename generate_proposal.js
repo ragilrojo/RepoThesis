@@ -538,9 +538,9 @@ const doc = new Document({
                         new TextRun({ text: "robo-advisors", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: ") yang dirancang untuk membantu investor mengelola portofolio secara sistematis dan efisien [mendeley_cite:giudici2020network]. Fenomena ini beriringan dengan perkembangan mata uang kripto (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "cryptocurrency", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: ") yang telah menjadi salah satu aset investasi digital yang sangat diminati namun memiliki tingkat volatilitas ekstrem. Dalam manajemen portofolio tradisional, model Mean-Variance dari Markowitz kerap digunakan untuk mengalokasikan aset demi mencapai kombinasi return dan risiko yang optimal. Sayangnya, model klasik ini sangat rentan terhadap ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: ") yang telah menjadi salah satu aset investasi digital yang sangat diminati namun memiliki tingkat volatilitas ekstrem. Metode alokasi aset konvensional yang mengandalkan estimasi matriks korelasi historis sering kali gagal memberikan proteksi yang memadai karena kerentanannya terhadap ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "noise", font: "Times New Roman", size: 24, italics: true }),
-                        new TextRun({ text: " dan estimasi matriks korelasi yang tidak stabil, terutama pada saat gejolak pasar (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: " dan ketidakstabilan data, terutama pada saat gejolak pasar (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "market crash", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: ") seperti fenomena ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "crypto winter", font: "Times New Roman", size: 24, italics: true }),
@@ -570,7 +570,7 @@ const doc = new Document({
                     spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
                     indent: { firstLine: 720 },
                     children: [
-                        new TextRun({ text: "Kendati model Network Markowitz statis menunjukkan proteksi yang lebih relevan dibandingkan Classical Markowitz, penentuan faktor penalti sentralitas \u03b3 (\u03b3) yang kaku kerap menimbulkan masalah di fase pasar yang dinamis (misalnya fase ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Kendati model Network Markowitz statis menunjukkan proteksi yang lebih relevan dibandingkan pendekatan tradisional, penentuan faktor penalti sentralitas \u03b3 (\u03b3) yang kaku kerap menimbulkan masalah di fase pasar yang dinamis (misalnya fase ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "bullish", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: "). Oleh karena itu, diperlukan pendekatan cerdas berbasis ", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "Deep Reinforcement Learning (DRL)", font: "Times New Roman", size: 24, italics: true }),
@@ -579,6 +579,18 @@ const doc = new Document({
                         new TextRun({ text: ", yang mampu bertindak sebagai pengontrol dinamis (", font: "Times New Roman", size: 24 }),
                         new TextRun({ text: "agent-based controller", font: "Times New Roman", size: 24, italics: true }),
                         new TextRun({ text: ") untuk menyesuaikan nilai \u03b3 secara real-time berdasarkan kondisi jaringan dan momentum pasar kripto [mendeley_cite:giudici2020network], [mendeley_cite:haarnoja2018soft].", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
+                new Paragraph({
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 120, line: 360, lineRule: "auto" },
+                    indent: { firstLine: 720 },
+                    children: [
+                        new TextRun({ text: "Kendati demikian, integrasi model DRL yang kompleks sering kali memunculkan tantangan baru terkait transparansi keputusan aset. Tanpa adanya penjelasan yang memadai, strategi investasi yang dihasilkan oleh agen cerdas dapat dianggap sebagai 'kotak hitam' (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "black-box", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") yang sulit dipercaya oleh investor profesional. Oleh karena itu, penelitian ini mengusulkan penggunaan ", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "Explainable AI", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: " (XAI) untuk memberikan interpretasi yang jelas terhadap logika agen SAC-Net dalam mengalokasikan bobot portofolio berdasarkan fitur-fitur jaringan pasar.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
                 emptyLine(),
@@ -591,7 +603,7 @@ const doc = new Document({
                         new TextRun({ text: "Berdasarkan latar belakang di atas, dapat diidentifikasi masalah sebagai berikut:", font: "Times New Roman", size: 24 }),
                     ]
                 }),
-                letterItem("Model Classical Markowitz rentan terhadap spurious correlations pada aset kripto yang bervolatilitas sangat tinggi, terutama pada kondisi krisis ekstrem.", "letters"),
+                letterItem("Metode alokasi aset konvensional rentan terhadap spurious correlations pada aset kripto yang bervolatilitas sangat tinggi, terutama pada kondisi krisis ekstrem.", "letters"),
                 new Paragraph({
                     numbering: { reference: "letters", level: 0 },
                     alignment: AlignmentType.JUSTIFIED,
