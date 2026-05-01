@@ -884,6 +884,8 @@ const doc = new Document({
                             ["Jing (2023)", "MPT", "MST", "Statis", "Kripto", "N/A", "Sharpe"],
                             ["Ioannidis (2023)", "Centrality Weights", "Transfer Entropy", "Multi-horizon", "Saham", "Centrality XAI", "Sharpe, Return"],
                             ["Wang (2023)", "Inverse Centrality", "SR-IFN Filter", "Bootstrap", "Saham", "Interpret.", "Sharpe"],
+                            ["Takahashi (2025)", "WMIS Opt.", "Max Indep. Set", "Sim. Bifurc.", "Saham", "Set Structure", "Return, Risk"],
+                            ["Choudhary (2025)", "Multi-Reward DRL", "N/A (Feature)", "Dyn. Reward", "Saham", "N/A", "Sharpe, MDD"],
                         ].map(([p, m, g, a, as, x, mt]) => new TableRow({
                             children: [
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: p, font: "Times New Roman", size: 18 })] })] }),
