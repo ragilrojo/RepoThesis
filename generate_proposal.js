@@ -880,6 +880,15 @@ const doc = new Document({
                     {text: "Statistically Robust Information Filtering Network", italic: true},
                     {text: " (SR-IFN) untuk meminimalkan noise pada matriks korelasi dalam konstruksi portofolio. Dengan menggunakan teknik bootstrapping, mereka menunjukkan bahwa pemilihan aset yang berada pada bagian perifer jaringan (node dengan sentralitas rendah) secara signifikan meningkatkan diversifikasi dan performa portofolio dibandingkan metode tradisional. Pendekatan topologi ini memberikan pembenaran teoritis yang kuat bagi penggunaan filter jaringan untuk alokasi aset yang lebih tangguh terhadap volatilitas pasar."}
                 ]),
+                mixedBody([
+                    {text: "Yan et al. [mendeley_cite:yan2021network] memperkenalkan konsep "},
+                    {text: "Fundamental Networks", italic: true},
+                    {text: " (FN) yang mengintegrasikan analisis fundamental dengan teori jaringan. Berbeda dengan pendekatan berbasis harga, model ini membangun keterhubungan aset berdasarkan kesamaan profil fundamental perusahaan. Alokasi modal ditentukan melalui metrik "},
+                    {text: "weighted degree", italic: true},
+                    {text: ", di mana strategi ini terbukti memberikan performa "},
+                    {text: "out-of-sample", italic: true},
+                    {text: " yang lebih unggul dan defensif selama krisis pasar dibandingkan model Markowitz tradisional."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -944,6 +953,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality XAI", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Treynor, Cum. Return", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Yan et al. (2021)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Fundamental Networks", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Similarity linkage", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Trend-dependent", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Analysis", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Out-of-sample perf.", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
