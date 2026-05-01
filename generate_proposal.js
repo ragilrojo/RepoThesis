@@ -369,6 +369,7 @@ const doc = new Document({
                 emptyLine(),
                 centeredBold("OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ", 28),
                 centeredBold("BERBASIS DEEP REINFORCEMENT LEARNING", 28),
+                centeredBold("YANG TERINTERPRETASI (EXPLAINABLE AI)", 28),
                 emptyLine(),
                 emptyLine(),
                 emptyLine(),
@@ -439,7 +440,7 @@ const doc = new Document({
                     ["Program Studi", "Informatika"],
                     ["Fakultas",      "Teknologi Informasi"],
                     ["Jenjang",       "Strata Dua (S2)"],
-                    ["Judul Tesis",   "OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ BERBASIS DEEP REINFORCEMENT LEARNING"],
+                    ["Judul Tesis",   "OPTIMALISASI DINAMIS PORTOFOLIO NETWORK MARKOWITZ BERBASIS DEEP REINFORCEMENT LEARNING YANG TERINTERPRETASI (EXPLAINABLE AI)"],
                 ].map(([label, value]) => new Paragraph({
                     indent: { left: 720 },
                     spacing: { line: 360 },
