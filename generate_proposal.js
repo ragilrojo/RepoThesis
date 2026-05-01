@@ -211,6 +211,24 @@ const guidlineFooter = new Paragraph({
     ]
 });
 
+function formulaParagraph(mathChildren, label) {
+    return new Paragraph({
+        alignment: AlignmentType.LEFT,
+        indent: { left: 850 }, // 1.5 cm dari kiri
+        tabStops: [
+            {
+                type: TabStopType.RIGHT,
+                position: 8221, // Batas kanan pengetikan (8221 DXA)
+            },
+        ],
+        spacing: { before: 240, after: 240 },
+        children: [
+            new Math({ children: mathChildren }),
+            new TextRun({ text: "\t(" + label + ")", font: "Times New Roman", size: 24, bold: true }),
+        ],
+    });
+}
+
 function body(text, opts = {}) {
     return new Paragraph({
         alignment: AlignmentType.JUSTIFIED,
@@ -1084,15 +1102,7 @@ const doc = new Document({
                     {text: "Markowitz Curse", italic: true},
                     {text: ". Distribusi Marchenko-Pastur mendefinisikan batas teoretis bagi nilai eigen (\u03BB) dari matriks korelasi acak murni sebagai berikut:"}
                 ]),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 240, after: 240 },
-                    children: [
-                        new Math({
-                            children: rumus("\\lambda_{\\pm}")
-                        })
-                    ],
-                }),
+                formulaParagraph(rumus("\\lambda_{\\pm}"), "2.1"),
                 mixedBody([
                     {text: "Dimana "},
                     {text: "\u03BB\u00B1", italic: true},
@@ -1132,15 +1142,7 @@ const doc = new Document({
                     {text: "Value at Risk", italic: true},
                     {text: " (VaR). Rumus CVaR didefinisikan sebagai:"}
                 ]),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 200, after: 200 },
-                    children: [
-                        new Math({
-                            children: rumus("CVaR")
-                        })
-                    ],
-                }),
+                formulaParagraph(rumus("CVaR"), "2.2"),
                 emptyLine(),
                 mixedBody([
                     {text: "Selain itu, untuk mengukur efisiensi imbal hasil terhadap risiko kerugian yang sesungguhnya (bukan sekadar volatilitas total), digunakan "},
@@ -1149,15 +1151,7 @@ const doc = new Document({
                     {text: "downside deviation", italic: true},
                     {text: ") sebagai penyebut, sehingga memberikan gambaran yang lebih akurat mengenai performa portofolio dalam menghadapi risiko penurunan harga:"}
                 ]),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 200, after: 200 },
-                    children: [
-                        new Math({
-                            children: rumus("Sortino")
-                        })
-                    ],
-                }),
+                formulaParagraph(rumus("Sortino"), "2.3"),
                 emptyLine(),
                 heading3("2.1.4 Topologi Jaringan Keuangan dan Risiko Sistemik"),
                 mixedBody([
@@ -1540,16 +1534,7 @@ const doc = new Document({
                     {text: ":"}
                 ]),
 
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 240, after: 240 },
-                    children: [
-                        new Math({
-                            children: rumus("\\min_w w^T \\Sigma^* w + \\gamma \\sum_{i=1}^n x_i w_i")
-                        }),
-                        new TextRun({ text: "             (3.1)", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                }),
+                formulaParagraph(rumus("\\min_w w^T \\Sigma^* w + \\gamma \\sum_{i=1}^n x_i w_i"), "3.1"),
                 body("Keterangan:"),
                 new Table({
                     width: { size: 8200, type: WidthType.DXA },
@@ -1622,16 +1607,7 @@ const doc = new Document({
                     {text: "excess return", italic: true},
                     {text: ") per unit risiko total. Formula yang digunakan adalah:"}
                 ]),
-                new Paragraph({
-                    alignment: AlignmentType.CENTER,
-                    spacing: { before: 120, after: 120 },
-                    children: [
-                        new Math({
-                            children: rumus("Sharpe\\ Ratio = \\frac{R_p - R_f}{\\sigma_p}")
-                        }),
-                        new TextRun({ text: "             (3.2)", font: "Times New Roman", size: 24, bold: true }),
-                    ],
-                }),
+                formulaParagraph(rumus("Sharpe\\ Ratio = \\frac{R_p - R_f}{\\sigma_p}"), "3.2"),
                 body("Keterangan:"),
                 new Table({
                     width: { size: 8200, type: WidthType.DXA },
