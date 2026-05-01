@@ -630,6 +630,18 @@ const doc = new Document({
                         new TextRun({ text: "), yang menyulitkan interpretasi logika di balik keputusan alokasi aset bagi investor profesional.", font: "Times New Roman", size: 24 }),
                     ]
                 }),
+                new Paragraph({
+                    numbering: { reference: "letters", level: 0 },
+                    alignment: AlignmentType.JUSTIFIED,
+                    spacing: { before: 0, after: 80, line: 360, lineRule: "auto" },
+                    children: [
+                        new TextRun({ text: "Belum adanya algoritma optimasi portofolio yang mampu melakukan penambahan pengetahuan (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "knowledge", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") secara terus-menerus dan adaptif (", font: "Times New Roman", size: 24 }),
+                        new TextRun({ text: "incremental learning", font: "Times New Roman", size: 24, italics: true }),
+                        new TextRun({ text: ") terhadap data pasar baru tanpa kehilangan pola penting yang telah dipelajari sebelumnya.", font: "Times New Roman", size: 24 }),
+                    ]
+                }),
                 emptyLine(),
                 heading2("1.3 Tujuan Penelitian"),
                 body("Tujuan dari penelitian ini adalah:"),
