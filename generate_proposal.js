@@ -869,34 +869,16 @@ const doc = new Document({
                     {text: "explainability", italic: true},
                     {text: " secara eksplisit serta adaptivitas parameter kontrol jaringan secara dinamis seperti yang diusulkan dalam penelitian ini."}
                 ]),                mixedBody([
-                    {text: "Dalam tinjauan kritis terhadap 70 tahun teori Markowitz, Boyd et al. [mendeley_cite:boyd2024markowitz] mengusulkan perluasan model "},
-                    {text: "mean-variance", italic: true},
-                    {text: " yang lebih tangguh terhadap kesalahan estimasi statistik. Mereka menekankan penggunaan optimasi konveks dengan batasan ("},
-                    {text: "constraints", italic: true},
-                    {text: ") yang realistis seperti biaya transaksi dan batas leverage, serta menunjukkan bahwa dengan parameterisasi yang tepat, model Markowitz tetap menjadi alat yang sangat efisien secara komputasi dan reliabel untuk manajemen portofolio skala besar di era modern."}
-                ]),                mixedBody([
-                    {text: "Penelitian oleh Cao dan Li [mendeley_cite:cao2021artificial] memperkenalkan dinamika saraf tiruan ("},
-                    {text: "Artificial Neural Dynamics", italic: true},
-                    {text: " - AND) untuk alokasi portofolio secara real-time. Mereka menggunakan model saraf dinamis untuk menyelesaikan optimasi konveks yang didasarkan pada "},
-                    {text: "Arbitrage Pricing Theory", italic: true},
-                    {text: " (APT). Pendekatan ini sangat efisien untuk perdagangan frekuensi tinggi dan memberikan jaminan konvergensi teoritis yang kuat, namun fokus utamanya tetap pada efisiensi komputasional tanpa mengintegrasikan topologi jaringan kompleks antar aset."}
-                ]),
-                mixedBody([
                     {text: "Ioannidis et al. [mendeley_cite:ioannidis2023portfolio] mengeksplorasi penggunaan "},
                     {text: "Transfer Entropy", italic: true},
                     {text: " dan korelasi Pearson dalam membangun jaringan saham untuk optimasi portofolio dengan berbagai cakrawala waktu. Temuan mereka menunjukkan bahwa portofolio yang terdiri dari aset-aset 'perifer' (konektivitas rendah) cenderung memberikan imbal hasil jangka panjang yang lebih tinggi, sementara jaringan berbasis "},
                     {text: "Transfer Entropy", italic: true},
                     {text: " terbukti lebih resilien dalam menghadapi krisis pasar dibandingkan model Markowitz tradisional."}
                 ]),
-                mixedBody([
-                    {text: "Santos dan Torrent [mendeley_cite:santos2022markowitz] menjembatani celah antara analisis teknikal dan teori Markowitz dengan mengusulkan model di mana bobot portofolio diparameterisasi langsung sebagai fungsi dari sinyal pengikut tren ("},
-                    {text: "trend-following signals", italic: true},
-                    {text: "). Dengan menguji model pada konstituen S&P 500, mereka menunjukkan bahwa integrasi indikator teknikal ke dalam kerangka kerja optimasi formal dapat meningkatkan efisiensi alokasi aset secara dinamis, sebuah konsep yang mendasari penggunaan agen cerdas dalam memproses sinyal pasar kompleks pada penelitian ini."}
-                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
-                    children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu (Transposed)", font: "Times New Roman", size: 24, bold: true })]
+                    children: [new TextRun({ text: "Tabel II.1. Perbandingan Penelitian Terdahulu (Graph-Based)", font: "Times New Roman", size: 24, bold: true })]
                 }),
                 new Table({
                     alignment: AlignmentType.CENTER,
@@ -936,42 +918,12 @@ const doc = new Document({
                         }),
                         new TableRow({
                             children: [
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Boyd et al. (2024)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Convex Opt.", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Robust Opt.", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Berbagai", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Optimality", font: "Times New Roman", size: 18 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Cao & Li (2021)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Neural Dynamics", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A (APT)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Real-time", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Tidak ada", font: "Times New Roman", size: 18 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Ioannidis et al. (2023)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality Weights", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Transfer Entropy", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-horizon", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality XAI", font: "Times New Roman", size: 18 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Santos & Torrent (2022)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Parameterized Weights", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A (Signals)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Trend-following", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (S&P 500)", font: "Times New Roman", size: 18 })] })] }),
-                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Signal XAI", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
