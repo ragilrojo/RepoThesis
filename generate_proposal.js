@@ -888,6 +888,11 @@ const doc = new Document({
                     {text: "Transfer Entropy", italic: true},
                     {text: " terbukti lebih resilien dalam menghadapi krisis pasar dibandingkan model Markowitz tradisional."}
                 ]),
+                mixedBody([
+                    {text: "Santos dan Torrent [mendeley_cite:santos2022markowitz] menjembatani celah antara analisis teknikal dan teori Markowitz dengan mengusulkan model di mana bobot portofolio diparameterisasi langsung sebagai fungsi dari sinyal pengikut tren ("},
+                    {text: "trend-following signals", italic: true},
+                    {text: "). Dengan menguji model pada konstituen S&P 500, mereka menunjukkan bahwa integrasi indikator teknikal ke dalam kerangka kerja optimasi formal dapat meningkatkan efisiensi alokasi aset secara dinamis, sebuah konsep yang mendasari penggunaan agen cerdas dalam memproses sinyal pasar kompleks pada penelitian ini."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -957,6 +962,16 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Multi-horizon", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality XAI", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Santos & Torrent (2022)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Parameterized Weights", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "N/A (Signals)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Trend-following", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (S&P 500)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Signal XAI", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
