@@ -875,6 +875,11 @@ const doc = new Document({
                     {text: "Transfer Entropy", italic: true},
                     {text: " terbukti lebih resilien dalam menghadapi krisis pasar dibandingkan model Markowitz tradisional."}
                 ]),
+                mixedBody([
+                    {text: "Wang et al. [mendeley_cite:wang2023topological] mengusulkan kerangka kerja "},
+                    {text: "Statistically Robust Information Filtering Network", italic: true},
+                    {text: " (SR-IFN) untuk meminimalkan noise pada matriks korelasi dalam konstruksi portofolio. Dengan menggunakan teknik bootstrapping, mereka menunjukkan bahwa pemilihan aset yang berada pada bagian perifer jaringan (node dengan sentralitas rendah) secara signifikan meningkatkan diversifikasi dan performa portofolio dibandingkan metode tradisional. Pendekatan topologi ini memberikan pembenaran teoritis yang kuat bagi penggunaan filter jaringan untuk alokasi aset yang lebih tangguh terhadap volatilitas pasar."}
+                ]),
                 emptyLine(),
                 new Paragraph({
                     alignment: AlignmentType.CENTER,
@@ -928,6 +933,17 @@ const doc = new Document({
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (DJIA)", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Centrality XAI", font: "Times New Roman", size: 18 })] })] }),
                                 new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Treynor, Cum. Return", font: "Times New Roman", size: 18 })] })] }),
+                            ]
+                        }),
+                        new TableRow({
+                            children: [
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Wang et al. (2023)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Inverse Centrality", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "SR-IFN Filter", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Bootstrap Robust", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Saham (US/UK/CN)", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Topol. Interpret.", font: "Times New Roman", size: 18 })] })] }),
+                                new TableCell({ borders, children: [new Paragraph({ children: [new TextRun({ text: "Sharpe, Diversification", font: "Times New Roman", size: 18 })] })] }),
                             ]
                         }),
                         new TableRow({
