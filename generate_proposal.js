@@ -229,6 +229,28 @@ function formulaParagraph(mathChildren, label) {
     });
 }
 
+function formulaKeterangan(rowsData) {
+    return new Table({
+        width: { size: 8221, type: WidthType.DXA },
+        columnWidths: [1000, 400, 6821],
+        borders: {
+            top: { style: BorderStyle.NONE, size: 0 },
+            bottom: { style: BorderStyle.NONE, size: 0 },
+            left: { style: BorderStyle.NONE, size: 0 },
+            right: { style: BorderStyle.NONE, size: 0 },
+            insideHorizontal: { style: BorderStyle.NONE, size: 0 },
+            insideVertical: { style: BorderStyle.NONE, size: 0 },
+        },
+        rows: rowsData.map(([symbol, desc]) => new TableRow({
+            children: [
+                new TableCell({ children: [new Paragraph({ children: [Array.isArray(symbol) ? new Math({ children: symbol }) : new TextRun({ text: symbol, font: "Times New Roman", size: 24, italic: true })] })] }),
+                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
+                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: desc, font: "Times New Roman", size: 24 })] })] }),
+            ]
+        })),
+    });
+}
+
 function body(text, opts = {}) {
     return new Paragraph({
         alignment: AlignmentType.JUSTIFIED,
@@ -1008,7 +1030,18 @@ const doc = new Document({
                     spacing: { before: 80, after: 80 },
                     children: [new TextRun({ text: "BAB III METODOLOGI PENELITIAN", font: "Times New Roman", size: 24, bold: true })]
                 }),
-                body("Bab ini menjelaskan alur sistematis eksperimen yang digunakan untuk memproses data instrumen kripto, penyaringan RMT pada matriks korelasi historis, pembangunan MST, fungsi objektif Markowitz modifikasi, dan komputasi skema backtesting."),
+                                body("Bab ini menjelaskan alur sistematis eksperimen yang digunakan untuk memproses data instrumen kripto, penyaringan RMT pada matriks korelasi historis, pembangunan MST, fungsi objektif Markowitz modifikasi, dan komputasi skema backtesting."),
+                new Paragraph({
+                    spacing: { before: 80, after: 80 },
+                    children: [new TextRun({ text: "BAB IV HASIL PENELITIAN DAN PEMBAHASAN", font: "Times New Roman", size: 24, bold: true })]
+                }),
+                body("Bab ini menyajikan hasil-hasil yang diperoleh dari eksperimen dan pembahasan mendalam mengenai temuan penelitian."),
+                new Paragraph({
+                    spacing: { before: 80, after: 80 },
+                    children: [new TextRun({ text: "BAB V PENUTUP", font: "Times New Roman", size: 24, bold: true })]
+                }),
+                body("Bab ini berisi kesimpulan dari seluruh rangkaian penelitian serta saran untuk pengembangan penelitian selanjutnya."),
+
             ],
             headers: {
                 default: new Header({
@@ -1103,6 +1136,13 @@ const doc = new Document({
                     {text: ". Distribusi Marchenko-Pastur mendefinisikan batas teoretis bagi nilai eigen (\u03BB) dari matriks korelasi acak murni sebagai berikut:"}
                 ]),
                 formulaParagraph(rumus("\\lambda_{\\pm}"), "2.1"),
+                bodyNoIndent("Keterangan:"),
+                formulaKeterangan([
+                    [[new MathSubScript({ children: [new MathRun("\u03BB")], subScript: [new MathRun("\u00B1")] })], "Batas atas (+) dan bawah (-) nilai eigen dari noise."],
+                    ["\u03C3\u00B2", "Variansi dari elemen matriks korelasi acak."],
+                    ["Q", "Rasio antara jumlah observasi (T) terhadap jumlah aset (N)."]
+                ]),
+                emptyLine(),
                 mixedBody([
                     {text: "Dimana "},
                     {text: "\u03BB\u00B1", italic: true},
@@ -1143,6 +1183,14 @@ const doc = new Document({
                     {text: " (VaR). Rumus CVaR didefinisikan sebagai:"}
                 ]),
                 formulaParagraph(rumus("CVaR"), "2.2"),
+                bodyNoIndent("Keterangan:"),
+                formulaKeterangan([
+                    [[new MathSubScript({ children: [new MathRun("CVaR")], subScript: [new MathRun("\u03B1")] })], "Conditional Value at Risk pada tingkat kepercayaan \u03B1."],
+                    ["E", "Operator ekspektasi atau nilai rata-rata."],
+                    ["L", "Besaran kerugian portofolio."],
+                    [[new MathSubScript({ children: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] })], "Value at Risk pada tingkat kepercayaan \u03B1."]
+                ]),
+                emptyLine(),
                 emptyLine(),
                 mixedBody([
                     {text: "Selain itu, untuk mengukur efisiensi imbal hasil terhadap risiko kerugian yang sesungguhnya (bukan sekadar volatilitas total), digunakan "},
@@ -1152,6 +1200,13 @@ const doc = new Document({
                     {text: ") sebagai penyebut, sehingga memberikan gambaran yang lebih akurat mengenai performa portofolio dalam menghadapi risiko penurunan harga:"}
                 ]),
                 formulaParagraph(rumus("Sortino"), "2.3"),
+                bodyNoIndent("Keterangan:"),
+                formulaKeterangan([
+                    ["Rp", "Imbal hasil (return) rata-rata portofolio."],
+                    ["Rf", "Tingkat imbal hasil bebas risiko (risk-free rate)."],
+                    ["\u03C3d", "Downside deviation (volatilitas pada imbal hasil negatif)."]
+                ]),
+                emptyLine(),
                 emptyLine(),
                 heading3("2.1.4 Topologi Jaringan Keuangan dan Risiko Sistemik"),
                 mixedBody([
@@ -1535,49 +1590,13 @@ const doc = new Document({
                 ]),
 
                 formulaParagraph(rumus("\\min_w w^T \\Sigma^* w + \\gamma \\sum_{i=1}^n x_i w_i"), "3.1"),
-                body("Keterangan:"),
-                new Table({
-                    width: { size: 8200, type: WidthType.DXA },
-                    columnWidths: [800, 400, 7000],
-                    borders: {
-                        top: { style: BorderStyle.NONE, size: 0 },
-                        bottom: { style: BorderStyle.NONE, size: 0 },
-                        left: { style: BorderStyle.NONE, size: 0 },
-                        right: { style: BorderStyle.NONE, size: 0 },
-                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
-                        insideVertical: { style: BorderStyle.NONE, size: 0 },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("w")] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor alokasi bobot untuk setiap aset kripto (total = 1).", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSuperScript({ children: [new MathRun("\u03A3")], superScript: [new MathRun("*")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Matriks Kovarians terfilter RMT.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathRun("\u03B3")] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Parameter skalar penghukuman sentralitas graf.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("x")], subScript: [new MathRun("i")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Vektor skor Eigenvector Centrality tiap node aset.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                    ],
-                }),
+                bodyNoIndent("Keterangan:"),
+                formulaKeterangan([
+                    ["w", "Vektor alokasi bobot untuk setiap aset kripto."],
+                    [[new MathSuperScript({ children: [new MathRun("\u03A3")], superScript: [new MathRun("*")] })], "Matriks Kovarians terfilter RMT."],
+                    ["\u03B3", "Parameter skalar penghukuman sentralitas graf."],
+                    [[new MathSubScript({ children: [new MathRun("x")], subScript: [new MathRun("i")] })], "Vektor skor Eigenvector Centrality tiap node aset."]
+                ]),
                 emptyLine(),
                 heading3("3.4.1 Strategi Portofolio dan Benchmark"),
                 body("Penelitian ini membandingkan empat strategi utama untuk mengevaluasi performa model yang diusulkan terhadap standar industri dan metodologi mutakhir:"),
@@ -1608,42 +1627,12 @@ const doc = new Document({
                     {text: ") per unit risiko total. Formula yang digunakan adalah:"}
                 ]),
                 formulaParagraph(rumus("Sharpe\\ Ratio = \\frac{R_p - R_f}{\\sigma_p}"), "3.2"),
-                body("Keterangan:"),
-                new Table({
-                    width: { size: 8200, type: WidthType.DXA },
-                    columnWidths: [800, 400, 7000],
-                    borders: {
-                        top: { style: BorderStyle.NONE, size: 0 },
-                        bottom: { style: BorderStyle.NONE, size: 0 },
-                        left: { style: BorderStyle.NONE, size: 0 },
-                        right: { style: BorderStyle.NONE, size: 0 },
-                        insideHorizontal: { style: BorderStyle.NONE, size: 0 },
-                        insideVertical: { style: BorderStyle.NONE, size: 0 },
-                    },
-                    rows: [
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("p")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Imbal hasil (return) portofolio.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("f")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Tingkat imbal hasil bebas risiko (risk-free rate).", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                        new TableRow({
-                            children: [
-                                new TableCell({ children: [new Paragraph({ children: [new Math({ children: [new MathSubScript({ children: [new MathRun("\u03C3")], subScript: [new MathRun("p")] })] })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "=", font: "Times New Roman", size: 24 })] })] }),
-                                new TableCell({ children: [new Paragraph({ children: [new TextRun({ text: "Standar deviasi dari imbal hasil berlebih portofolio.", font: "Times New Roman", size: 24 })] })] }),
-                            ]
-                        }),
-                    ],
-                }),
+                bodyNoIndent("Keterangan:"),
+                formulaKeterangan([
+                    [[new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("p")] })], "Imbal hasil (return) portofolio."],
+                    [[new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("f")] })], "Tingkat imbal hasil bebas risiko (risk-free rate)."],
+                    [[new MathSubScript({ children: [new MathRun("\u03C3")], subScript: [new MathRun("p")] })], "Standar deviasi dari imbal hasil berlebih portofolio."]
+                ]),
                 emptyLine(),
                 mixedBody([
                     {text: "Nilai Sharpe Ratio > 1 dianggap baik, > 2 sangat baik, dan > 3 luar biasa. Semakin besar nilai "},
@@ -1752,7 +1741,103 @@ const doc = new Document({
                 })
             }
         },
+        // ==================== BAB IV ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, header: 850, footer: 1417 }
+                },
+                type: SectionType.NEXT_PAGE, titlePage: true
+            },
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                }),
+                first: new Header({ children: [new Paragraph({})] })
+            },
+            footers: {
+                first: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        }),
+                        guidlineFooter
+                    ]
+                }),
+                default: new Footer({
+                    children: [guidlineFooter]
+                })
+            },
+            children: [
+                chapterHeading("BAB IV", "HASIL PENELITIAN DAN PEMBAHASAN"),
+                emptyLine(),
+                body("Bab ini menyajikan hasil-hasil yang diperoleh dari eksperimen dan pembahasan mendalam mengenai temuan penelitian."),
+                emptyLine(),
+                heading2("4.1 Deskripsi Objek Penelitian"),
+                body("[Outline: Penjelasan mengenai data yang digunakan dalam pengujian/backtesting]"),
+                emptyLine(),
+                heading2("4.2 Hasil Penelitian"),
+                body("[Outline: Presentasi hasil metrik performa portofolio (Sharpe, CVaR, Sortino)]"),
+                emptyLine(),
+                heading2("4.3 Pembahasan"),
+                body("[Outline: Analisis kelebihan dan kekurangan model dibandingkan benchmark]"),
+            ]
+        },
+        // ==================== BAB V ====================
+        {
+            properties: {
+                page: {
+                    size: { width: 11906, height: 16838 },
+                    margin: { top: 1701, right: 1417, bottom: 1417, left: 2268, header: 850, footer: 1417 }
+                },
+                type: SectionType.NEXT_PAGE, titlePage: true
+            },
+            headers: {
+                default: new Header({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.RIGHT,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        })
+                    ]
+                }),
+                first: new Header({ children: [new Paragraph({})] })
+            },
+            footers: {
+                first: new Footer({
+                    children: [
+                        new Paragraph({
+                            alignment: AlignmentType.CENTER,
+                            children: [new TextRun({ children: [PageNumber.CURRENT], font: "Times New Roman", size: 24 })]
+                        }),
+                        guidlineFooter
+                    ]
+                }),
+                default: new Footer({
+                    children: [guidlineFooter]
+                })
+            },
+            children: [
+                chapterHeading("BAB V", "PENUTUP"),
+                emptyLine(),
+                body("Bab ini berisi kesimpulan dari seluruh rangkaian penelitian serta saran untuk pengembangan penelitian selanjutnya."),
+                emptyLine(),
+                heading2("5.1 Kesimpulan"),
+                body("[Outline: Rangkuman jawaban atas rumusan masalah]"),
+                emptyLine(),
+                heading2("5.2 Saran"),
+                body("[Outline: Rekomendasi untuk penelitian di masa mendatang]"),
+            ]
+        },
         // ==================== DAFTAR REFERENSI ====================
+
         {
             properties: {
                 page: {
