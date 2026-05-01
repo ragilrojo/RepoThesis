@@ -22,8 +22,9 @@ async function processDocument() {
             return fs.readFileSync(tagValue);
         },
         getSize: function(img, tagValue, tagName) {
-            if (tagName.includes("LOGO")) return [200, 200];
-            if (tagName.includes("FRAMEWORK")) return [550, 350];
+            if (tagName.includes("LOGO")) return [150, 150];
+            if (tagName.includes("FRAMEWORK")) return [620, 380];
+            if (tagName.includes("TOPOLOGY")) return [620, 320];
             return [300, 300];
         }
     };

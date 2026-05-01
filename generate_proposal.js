@@ -5,7 +5,7 @@ const {
     LevelFormat, PageNumber, PageBreak, TabStopType, TabStopPosition,
     VerticalAlign, ImageRun, Header, Footer, NumberFormat, SectionType,
     TableOfContents,
-    Math, MathRun, MathSubScript, MathSuperScript, MathFraction, MathSum, MathRoundBrackets, MathLimitLower
+    Math, MathRun, MathSubScript, MathSuperScript, MathFraction, MathSum, MathRoundBrackets, MathLimitLower, MathRadical
 } = docx;
 
 /**
@@ -94,6 +94,29 @@ function rumus(latexStr) {
                     new MathRoundBrackets({ children: [new MathRun("R")] })
                 ]
             })
+        ];
+    }
+
+    // Penanganan untuk Marchenko-Pastur
+    if (latexStr.includes("\\lambda_{\\pm}")) {
+        return [
+            new MathSubScript({ children: [new MathRun("\u03BB")], subScript: [new MathRun("\u00B1")] }),
+            new MathRun(" = \u03C3"),
+            new MathSuperScript({ children: [new MathRun(" ")], superScript: [new MathRun("2")] }),
+            new MathRoundBrackets({
+                children: [
+                    new MathRun("1 \u00B1 "),
+                    new MathRadical({
+                        children: [
+                            new MathFraction({
+                                numerator: [new MathRun("1")],
+                                denominator: [new MathRun("Q")]
+                            })
+                        ]
+                    })
+                ]
+            }),
+            new MathSuperScript({ children: [new MathRun(" ")], superScript: [new MathRun("2")] })
         ];
     }
 
@@ -1022,9 +1045,39 @@ const doc = new Document({
                 mixedBody([
                     {text: "Teori "},
                     {text: "Random Matrix", italic: true},
-                    {text: " (RMT) digunakan untuk memisahkan korelasi yang mengandung informasi ekonomi sejati dari "},
+                    {text: " (RMT) menyediakan kerangka matematis untuk membedakan antara korelasi yang signifikan secara ekonomi dengan korelasi yang muncul murni karena kebetulan ("},
                     {text: "noise", italic: true},
-                    {text: " statistik pada matriks korelasi berdimensi tinggi. Filtrasi RMT melalui distribusi Marchenko-Pastur [mendeley_cite:marchenko1967distribution] mendefinisikan batas teoritis nilai eigen untuk membersihkan residu agar stabilisasi topologi jaringan (MST) dapat tercapai secara konsisten [mendeley_cite:eom2009topological]."}
+                    {text: ") pada matriks korelasi berdimensi tinggi. Dalam konteks portofolio kripto, pembersihan "},
+                    {text: "noise", italic: true},
+                    {text: " sangat krusial karena estimasi korelasi sering kali tidak stabil akibat fenomena "},
+                    {text: "Markowitz Curse", italic: true},
+                    {text: ". Distribusi Marchenko-Pastur mendefinisikan batas teoretis bagi nilai eigen (\u03BB) dari matriks korelasi acak murni sebagai berikut:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 240, after: 240 },
+                    children: [
+                        new Math({
+                            children: rumus("\\lambda_{\\pm}")
+                        })
+                    ],
+                }),
+                mixedBody([
+                    {text: "Dimana "},
+                    {text: "\u03BB\u00B1", italic: true},
+                    {text: " adalah batas atas dan bawah nilai eigen yang diperbolehkan oleh "},
+                    {text: "noise", italic: true},
+                    {text: ", yang ditentukan oleh rasio "},
+                    {text: "Q = T/N", italic: true},
+                    {text: " (jumlah observasi terhadap jumlah aset). Nilai eigen yang berada di atas batas "},
+                    {text: "\u03BB+", italic: true},
+                    {text: " dianggap sebagai "},
+                    {text: "market mode", italic: true},
+                    {text: " atau sinyal ekonomi sejati, sedangkan nilai eigen di bawah batas tersebut dianggap sebagai "},
+                    {text: "noise", italic: true},
+                    {text: ". Dengan menerapkan filtrasi ini melalui metode "},
+                    {text: "Eigenvalue Clipping", italic: true},
+                    {text: ", topologi jaringan (MST) yang dihasilkan menjadi lebih stabil dan representatif terhadap struktur pasar sesungguhnya [mendeley_cite:marchenko1967distribution], [mendeley_cite:eom2009topological]."}
                 ]),
                 emptyLine(),
                 heading3("2.1.3 Teori Risiko Koheren (Coherent Risk Measures)"),
