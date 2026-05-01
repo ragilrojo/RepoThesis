@@ -25,6 +25,7 @@ async function processDocument() {
             if (tagName.includes("LOGO")) return [150, 150];
             if (tagName.includes("FRAMEWORK")) return [620, 380];
             if (tagName.includes("TOPOLOGY")) return [620, 320];
+            if (tagName.includes("VAR_CVAR")) return [580, 350];
             return [300, 300];
         }
     };
@@ -41,6 +42,7 @@ async function processDocument() {
         const logoPath = path.resolve(__dirname, 'logo_unm.png');
         const frameworkPath = path.resolve(__dirname, 'framwrok.jpg');
         const topologyPath = path.resolve(__dirname, 'financial_network_comparison.png');
+        const varCvarPath = path.resolve(__dirname, 'var_cvar_chart.png');
 
         if (fs.existsSync(logoPath)) {
             renderData["LOGO_UNM"] = logoPath;
@@ -53,6 +55,10 @@ async function processDocument() {
         if (fs.existsSync(topologyPath)) {
             renderData["IMAGE_TOPOLOGY"] = topologyPath;
             console.log("✓ Gambar Topologi siap.");
+        }
+        if (fs.existsSync(varCvarPath)) {
+            renderData["IMAGE_VAR_CVAR"] = varCvarPath;
+            console.log("✓ Gambar VaR vs CVaR siap.");
         }
 
         console.log("Menyuntikkan gambar ke dokumen...");

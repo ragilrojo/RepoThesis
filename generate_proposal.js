@@ -120,6 +120,37 @@ function rumus(latexStr) {
         ];
     }
 
+    // Penanganan untuk CVaR
+    if (latexStr.includes("CVaR")) {
+        return [
+            new MathSubScript({ children: [new MathRun("CVaR")], subScript: [new MathRun("\u03B1")] }),
+            new MathRun(" = E "),
+            new MathRoundBrackets({
+                children: [
+                    new MathRun("L | L \u2265 "),
+                    new MathSubScript({ children: [new MathRun("VaR")], subScript: [new MathRun("\u03B1")] })
+                ]
+            })
+        ];
+    }
+
+    // Penanganan untuk Sortino
+    if (latexStr.includes("Sortino")) {
+        return [
+            new MathRun("Sortino Ratio = "),
+            new MathFraction({
+                numerator: [
+                    new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("p")] }),
+                    new MathRun(" - "),
+                    new MathSubScript({ children: [new MathRun("R")], subScript: [new MathRun("f")] })
+                ],
+                denominator: [
+                    new MathSubScript({ children: [new MathRun("\u03C3")], subScript: [new MathRun("d")] })
+                ]
+            })
+        ];
+    }
+
     return [new MathRun(latexStr)];
 }
 
@@ -1082,16 +1113,51 @@ const doc = new Document({
                 emptyLine(),
                 heading3("2.1.3 Teori Risiko Koheren (Coherent Risk Measures)"),
                 mixedBody([
-                    {text: "Penggunaan metrik risiko dalam optimasi portofolio harus memenuhi kriteria risiko koheren (Artzner et al., 1999). Metrik seperti "},
-                    {text: "Conditional Value at Risk", italic: true},
-                    {text: " (CVaR) memberikan perlindungan yang lebih kuat terhadap kejadian ekstrem ("},
-                    {text: "fat-tail events", italic: true},
-                    {text: ") di pasar kripto dibandingkan variansi klasik. Selain itu, "},
-                    {text: "Sortino Ratio", italic: true},
-                    {text: " digunakan untuk menghitung imbal hasil terhadap volatilitas negatif ("},
-                    {text: "downside risk", italic: true},
-                    {text: ")."}
+                    {text: "Metrik risiko tradisional seperti variansi sering kali meremehkan risiko pada pasar kripto yang memiliki distribusi "},
+                    {text: "fat-tail", italic: true},
+                    {text: ". Oleh karena itu, penelitian ini mengacu pada "},
+                    {text: "Teori Risiko Koheren", bold: true},
+                    {text: " yang diperkenalkan oleh Artzner et al. (1999), yang menyatakan bahwa metrik risiko yang baik harus memenuhi empat aksioma: "},
+                    {text: "sub-additivity, homogeneity, monotonicity,", italic: true},
+                    {text: " dan "},
+                    {text: "translation invariance", italic: true},
+                    {text: "."}
                 ]),
+                emptyLine(),
+                mixedBody([
+                    {text: "Conditional Value at Risk (CVaR)", bold: true},
+                    {text: ", atau "},
+                    {text: "Expected Shortfall", italic: true},
+                    {text: ", adalah metrik risiko koheren yang mengukur rata-rata kerugian pada ekor distribusi (kejadian ekstrem) yang melampaui ambang batas "},
+                    {text: "Value at Risk", italic: true},
+                    {text: " (VaR). Rumus CVaR didefinisikan sebagai:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 200, after: 200 },
+                    children: [
+                        new Math({
+                            children: rumus("CVaR")
+                        })
+                    ],
+                }),
+                emptyLine(),
+                mixedBody([
+                    {text: "Selain itu, untuk mengukur efisiensi imbal hasil terhadap risiko kerugian yang sesungguhnya (bukan sekadar volatilitas total), digunakan "},
+                    {text: "Sortino Ratio", bold: true},
+                    {text: ". Berbeda dengan Sharpe Ratio, Sortino Ratio hanya mempertimbangkan deviasi negatif ("},
+                    {text: "downside deviation", italic: true},
+                    {text: ") sebagai penyebut, sehingga memberikan gambaran yang lebih akurat mengenai performa portofolio dalam menghadapi risiko penurunan harga:"}
+                ]),
+                new Paragraph({
+                    alignment: AlignmentType.CENTER,
+                    spacing: { before: 200, after: 200 },
+                    children: [
+                        new Math({
+                            children: rumus("Sortino")
+                        })
+                    ],
+                }),
                 emptyLine(),
                 heading3("2.1.4 Topologi Jaringan Keuangan dan Risiko Sistemik"),
                 mixedBody([
