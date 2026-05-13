@@ -244,25 +244,40 @@ async function createPresentation() {
         ["Day 4", "0.0%", "2.0%", "0.0%", "0.6%"]
     ], { x: 0.5, y: 1.5, w: 5.5, fontSize: 11, border: { pt: 1, color: "dddddd" }, align: "center", valign: "middle" });
 
-    // Box Penjabaran Kalkulasi
-    slideSharpe.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.5, w: 3.5, h: 3.7, fill: { color: "fff8ef" }, line: { color: "e67e22", width: 1.5 } });
+    // Box Penjabaran Kalkulasi (Detail Risk)
+    slideSharpe.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.0, w: 3.5, h: 4.4, fill: { color: "fff8ef" }, line: { color: "e67e22", width: 1.5 } });
     slideSharpe.addText([
         { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "d35400", fontSize: 13, breakLine: true } },
-        { text: "1. Mean Return (Rp):\n", options: { bold: true, fontSize: 10 } },
-        { text: "(0.7+1.1+0.2+0.6)/4 = ", options: { fontSize: 10 } }, { text: "0.65%\n\n", options: { bold: true } },
+        { text: "1. Mean Return (Rp): ", options: { bold: true, fontSize: 10 } }, { text: "0.65%\n", options: { fontSize: 10 } },
+        
+        { text: "2. Kalkulasi Risk (\u03c3p):\n", options: { bold: true, fontSize: 10 } },
+        { text: "   \u2022 Dev\u00b2 Day 1: (0.7-0.65)\u00b2 = 0.0025\n", options: { fontSize: 9 } },
+        { text: "   \u2022 Dev\u00b2 Day 2: (1.1-0.65)\u00b2 = 0.2025\n", options: { fontSize: 9 } },
+        { text: "   \u2022 Dev\u00b2 Day 3: (0.2-0.65)\u00b2 = 0.2025\n", options: { fontSize: 9 } },
+        { text: "   \u2022 Dev\u00b2 Day 4: (0.6-0.65)\u00b2 = 0.0025\n", options: { fontSize: 9 } },
+        { text: "   \u2022 Sum Dev\u00b2 = 0.41\n", options: { fontSize: 9 } },
+        { text: "   \u2022 Var = 0.41 / (4-1) = 0.137\n", options: { fontSize: 9 } },
+        { text: "   \u2022 \u03c3p = \u221a0.137 = ", options: { fontSize: 9 } }, { text: "0.37%\n\n", options: { bold: true } },
+        
+        { text: "3. Sharpe Ratio (Rf = 5% Ann):\n", options: { bold: true, fontSize: 10 } },
+        { text: "   (0.65 - 0.014) / 0.37 = ", options: { fontSize: 10 } }, { text: "1.72\n", options: { bold: true, color: "27ae60" } },
+        
+        { text: "------------------------------------------\n", options: {} },
+        { text: "Apa yang digambarkan Sharpe?\n", options: { bold: true, fontSize: 10, color: "c0392b" } },
+        { text: "Sharpe mengukur efisiensi: Seberapa banyak 'keuntungan ekstra' yang didapat untuk setiap 1 unit risiko yang diambil. Semakin tinggi nilainya, semakin baik kualitas portofolio Anda.", options: { fontSize: 8.5 } }
+    ], { x: 6.4, y: 1.0, w: 3.2, color: "333333", valign: "top" });
 
-        { text: "2. Std Dev / Risk (\u03c3p):\n", options: { bold: true, fontSize: 10 } },
-        { text: "Mengukur fluktuasi harian.\n", options: { fontSize: 10 } },
-        { text: "Misal \u03c3p = ", options: { fontSize: 10 } }, { text: "0.33%\n\n", options: { bold: true } },
-
-        { text: "3. Sharpe Ratio (Rf = 0%):\n", options: { bold: true, fontSize: 10 } },
-        { text: "Sharpe = (0.65 - 0) / 0.33\n", options: { fontSize: 10 } },
-        { text: "Sharpe = ", options: { fontSize: 11 } }, { text: "1.97", options: { bold: true, color: "27ae60", fontSize: 13 } },
-
-        { text: "\n------------------------------------------\n", options: {} },
-        { text: "Kesimpulan:\n", options: { bold: true, fontSize: 10 } },
-        { text: "Aset ini sangat efisien karena return rata-ratanya hampir 2x lipat dari fluktuasi risikonya.", options: { fontSize: 9 } }
-    ], { x: 6.4, y: 1.7, w: 3.2, color: "333333", valign: "top" });
+    // Box Simulasi Rebalancing (Visual Alur)
+    slideSharpe.addShape(pres.ShapeType.rect, { x: 0.5, y: 3.5, w: 5.5, h: 1.5, fill: { color: "f4f6f7" }, line: { color: "003366", width: 1.0 } });
+    slideSharpe.addText([
+        { text: "Simulasi Mekanisme Rebalancing (Day 1 \u2192 Day 2):\n", options: { bold: true, color: "003366", fontSize: 11, breakLine: true } },
+        { text: "\u2022 Akhir Day 1 (Drift): ", options: { bold: true, fontSize: 10 } },
+        { text: "Harga BTC & ETH naik, BNB turun. Bobot bergeser menjadi BTC 40.1%, ETH 30.4%, BNB 29.5%.\n", options: { fontSize: 9 } },
+        { text: "\u2022 Aksi Rebalancing: ", options: { bold: true, fontSize: 10, color: "c0392b" } },
+        { text: "Jual BTC & ETH, Beli BNB (Kembali ke 40/30/30).\n", options: { fontSize: 9 } },
+        { text: "\u2022 Awal Day 2: ", options: { bold: true, fontSize: 10, color: "27ae60" } },
+        { text: "Bobot sudah konsisten (40/30/30) sebelum menghitung return 1.1% di hari kedua.", options: { fontSize: 9 } }
+    ], { x: 0.7, y: 3.6, w: 5.2, color: "333333", valign: "top" });
 
     slideSharpe.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
