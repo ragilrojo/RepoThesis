@@ -43,8 +43,39 @@ async function createPresentation() {
         x: 0.5, y: 4.2, w: "90%", fontSize: 18, align: "center", color: "7f8c8d"
     });
 
-    // --- Slide 2: Latar Belakang (Remake) ---
-    // Diambil dari logika Slide 2 (Latar Belakang) di generate_ppt.js
+    slide1.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 2: Daftar Isi ---
+    let slideTOC = pres.addSlide();
+    if (fs.existsSync("bg_watermark.png")) {
+        slideTOC.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    }
+    if (fs.existsSync("logo_unm.png")) {
+        slideTOC.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    }
+    slideTOC.addText("Daftar Isi", { x: 0.5, y: 0.5, w: "90%", fontSize: 28, bold: true, color: "003366" });
+
+    slideTOC.addText([
+        { text: "I. PENDAHULUAN & MASALAH", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • ", options: { fontSize: 14 } },
+        { text: "Latar Belakang", options: { fontSize: 14, color: "0563C1", underline: true, hyperlink: { slide: '3' } } },
+        { text: "\n", options: { breakLine: true } },
+        { text: "   • Rumusan Masalah\n", options: { fontSize: 14 } },
+        { text: "   • Tujuan Penelitian\n\n", options: { fontSize: 14 } },
+
+        { text: "II. LANDASAN TEORI & PENELITIAN TERDAHULU", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • Landasan Teori\n", options: { fontSize: 14 } },
+        { text: "   • Kerangka Pemikiran\n\n", options: { fontSize: 14 } },
+
+        { text: "III. METODOLOGI & SAC-NET", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • Mekanisme SAC Agent\n", options: { fontSize: 14 } },
+        { text: "   • Parameter Eksperimen\n\n", options: { fontSize: 14 } },
+
+        { text: "IV. EVALUASI & HASIL", options: { bold: true, color: "003366", breakLine: true } },
+        { text: "   • Analisis Performa\n", options: { fontSize: 14 } }
+    ], { x: 0.5, y: 1.2, w: "90%", h: 4.0, color: "333333", valign: "top" });
+
+    // --- Slide 3: Latar Belakang (Remake) ---
     let slide2 = pres.addSlide();
     if (fs.existsSync("bg_watermark.png")) {
         slide2.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
@@ -79,7 +110,7 @@ async function createPresentation() {
     ], { x: 5.5, y: 2.5, w: 3.8, color: "333333", valign: "top" });
 
     // Footer Navigasi Sederhana
-    slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, align: "right" });
+    slide2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Simpan File ---
     const fileName = "Remake_Proposal_Tesis.pptx";
