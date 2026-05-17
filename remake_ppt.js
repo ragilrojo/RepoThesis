@@ -92,7 +92,7 @@ async function createPresentation() {
     slideTOC.addText([
         { text: "Network Markowitz", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '7' } } },
         { text: "Fitur Observasi SAC", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '8' } } },
-        { text: "Ilustrasi Feature Scaling", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '10' } } }
+        { text: "Ilustrasi Feature Scaling", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '17' } } }
     ], { x: col2X + 0.3, y: row1Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
 
     // --- CARD IV: EVALUASI ---
@@ -100,7 +100,7 @@ async function createPresentation() {
     slideTOC.addShape(pres.ShapeType.rect, { x: col2X, y: row2Y, w: cardW, h: headerH, fill: { color: "8e44ad" } });
     slideTOC.addText("IV. EVALUASI & HASIL", { x: col2X, y: row2Y, w: cardW, h: headerH, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
     slideTOC.addText([
-        { text: "Evaluasi Portofolio (Ratio)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '11' } } },
+        { text: "Evaluasi Portofolio (Ratio)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '18' } } },
         { text: "Analisis Performa & Visualisasi", options: { bullet: { code: '25CF' }, color: "333333" } },
         { text: "Kesimpulan & Saran", options: { bullet: { code: '25CF' }, color: "333333" } }
     ], { x: col2X + 0.3, y: row2Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
@@ -315,100 +315,277 @@ async function createPresentation() {
         { text: "Bobot BNB: ", options: { fontSize: 11 } }, { text: "0.45/1.60 \u2248 28.1%", options: { bold: true, color: "27ae60" } }
     ], { x: 6.35, y: 1.7, w: 3.2, color: "333333", valign: "top" });
 
-    // --- Slide 7: Fitur Observasi SAC (Part 1/2) ---
-    let slideFeat1 = pres.addSlide();
-    if (fs.existsSync("bg_watermark.png")) {
-        slideFeat1.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
-    }
-    if (fs.existsSync("logo_unm.png")) {
-        slideFeat1.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    }
+    // --- Slide 8 sampai 16: Detail 9 Fitur Observasi SAC ---
+    const features = [
+        {
+            num: 1,
+            name: "MST.Dist",
+            fullName: "Minimum Spanning Tree Distance",
+            theme: "27ae60",
+            lightTheme: "f4fcf4",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Jarak Minimum Spanning Tree (MST)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Mengukur total panjang (sum of edge weights) dari pohon rentang minimum yang dibentuk dari matriks jarak korelasi aset.\n\n", options: { fontSize: 10 } },
+                { text: "Rumus Jarak Korelasi:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "d_ij = sqrt(2 * (1 - ρ_ij)), di mana ρ_ij adalah koefisien korelasi Pearson antar log-return aset.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Fitur dikalikan dengan 0.1 (MST × 0.1) untuk menyeimbangkan rentang nilai agar Neural Network belajar secara stabil.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Deteksi Kerapatan & Risiko Sistemik:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Mengidentifikasi tingkat integrasi pasar kripto. Jarak MST yang semakin pendek menunjukkan korelasi antar aset sedang menguat secara masif (pasar menyatu).\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "27ae60" } },
+                { text: "Agen SAC belajar menaikkan parameter penalti sentralitas (γ) saat MST menyusut, guna melindungi portofolio dari penularan kegagalan sistemik.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Mantegna (1999) - Hierarchical structure in financial markets.\n• Giudici (2020) - Network-based risk in crypto.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Jarak MST yang mengecil menandakan pasar berada dalam kondisi rentan sistemik tinggi, memicu agen SAC untuk bertindak defensif dengan menaikkan parameter penalti sentralitas (γ)."
+        },
+        {
+            num: 2,
+            name: "Spectral.Gap",
+            fullName: "Spectral Gap (Laplacian Eigenvalue)",
+            theme: "1abc9c",
+            lightTheme: "f0fbf9",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Spectral Gap (Algebraic Connectivity)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Selisih antara dua eigenvalue terkecil dari matriks Laplacian Laplacian ternormalisasi (L_norm) graf MST: λ_2 - λ_1. Karena λ_1 selalu bernilai 0, maka Spectral Gap sama dengan λ_2.\n\n", options: { fontSize: 10 } },
+                { text: "Konektivitas Aljabar:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mengukur tingkat kemudahan graf untuk terbagi menjadi subnet independen.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "27ae60" } },
+                { text: "Menggunakan skala asli (x1) karena nilainya sudah berada dalam rentang terikat 0 s/d 1.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Ketahanan Topologi Jaringan:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Spectral Gap yang sangat kecil menunjukkan struktur jaringan yang sangat kompak dan homogen. Guncangan pada satu aset kripto akan merambat sangat cepat ke aset lainnya.\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "1abc9c" } },
+                { text: "Agen SAC mendeteksi kerentanan struktural ini. Ketika Spectral Gap mengecil, agen secara preventif meningkatkan penalti sentralitas untuk menyebar bobot keluar dari pusat jaringan.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Giudici & Spelta (2016) - Graphical network models for systemic risk.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Spectral Gap yang rendah memperingatkan agen tentang struktur korelasi jaringan yang sangat ringkih, memicu tindakan diversifikasi defensif dari SAC Controller."
+        },
+        {
+            num: 3,
+            name: "VolShort",
+            fullName: "Short-Term Volatility (V5)",
+            theme: "2980b9",
+            lightTheme: "f4f9fc",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Volatility Jendela 5 Hari (VolShort)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Standar deviasi harian dari rata-rata tertimbang log-return koin dalam portfolio selama 5 hari bursa terakhir.\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Menangkap lonjakan fluktuasi jangka pendek, mendeteksi ketidakpastian mendadak akibat rumor, berita, atau sentimen pasar sesaat.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Dikalikan 100 (VolShort × 100) karena standar deviasi harian sangat kecil (sekitar 0.01 - 0.03), diubah menjadi rentang 1.0 - 3.0 agar sensitif bagi model.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Deteksi Guncangan & Noise Pasar:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Volatilitas jangka pendek yang melonjak memberi tahu agen adanya kepanikan atau spekulasi yang sedang terjadi di pasar.\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "2980b9" } },
+                { text: "SAC belajar menurunkan eksposur risiko dengan menggeser portofolio ke aset dengan volatilitas rendah atau menyesuaikan γ secara ketat agar portofolio tidak over-exposed terhadap noise trading.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jiang et al. (2017) - A Deep Reinforcement Learning Framework for Portfolio Management.\n• Markowitz (1952) - Portfolio Selection.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Volatilitas 5 hari menangkap guncangan harga tak terduga secara real-time, memberi sinyal kepada SAC untuk langsung membatasi alokasi pada aset berisiko tinggi."
+        },
+        {
+            num: 4,
+            name: "VolLong",
+            fullName: "Long-Term Volatility (V20)",
+            theme: "34495e",
+            lightTheme: "f6f8fa",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Volatility Jendela 20 Hari (VolLong)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Standar deviasi harian dari rata-rata log-return koin dalam portfolio selama jendela observasi yang lebih panjang (20 hari bursa).\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mengukur risiko historis jangka menengah, memberikan baseline risiko yang lebih stabil dibanding fluktuasi harian.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Dikalikan 100 (VolLong × 100) demi menyamakan skala fitur volatilitas jangka pendek.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Identifikasi Rezim Risiko Pasar:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Berperan sebagai jangkar stabil bagi agen. Membantu membedakan apakah lonjakan volatilitas di VolShort adalah anomali singkat atau pergeseran ke rezim pasar berisiko tinggi (bearish market).\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "34495e" } },
+                { text: "Menggunakan VolLong untuk merumuskan kebijakan alokasi jangka panjang yang konsisten dan stabil (tidak terlalu reaktif terhadap kejutan harian).\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jiang et al. (2017) - A Deep Reinforcement Learning Framework for Portfolio Management.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Volatilitas 20 hari bertindak sebagai jangkar risiko jangka panjang, membantu agen SAC membedakan antara guncangan harga sesaat dengan tren risiko makro."
+        },
+        {
+            num: 5,
+            name: "Vol.Ratio",
+            fullName: "Volatility Ratio (V5 / V20)",
+            theme: "f39c12",
+            lightTheme: "fefbf4",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Volatility Ratio (Rasio Volatilitas)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Rasio matematis antara volatilitas jangka pendek (5 hari) terhadap volatilitas jangka panjang (20 hari): Vol.Ratio = V5 / V20.\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mengukur rasio perubahan volatilitas. Jika rasio > 1, pasar sedang mengalami eskalasi risiko baru. Jika < 1, pasar sedang mendingin.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "27ae60" } },
+                { text: "Skala asli (x1) karena merupakan pembagian tanpa dimensi yang secara alami bernilai di sekitar 0.5 s/d 2.5.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Deteksi Transisi Rezim Pasar:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Rasio > 1 mengisyaratkan ketidakstabilan mendadak (gejolak baru). Rasio < 1 menunjukkan pasar mulai mendingin dan kembali tenang.\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "f39c12" } },
+                { text: "Ketika rasio menunjukkan pasar mendingin (<1), agen SAC akan memicu pelonggaran penalti sentralitas (γ) untuk memberi ruang bagi alokasi agresif demi menangkap alpha (return maksimal).\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jiang et al. (2017) - DRL in Portfolio Management.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Volatility Ratio secara presisi mendeteksi momen transisi kecepatan pasar, memandu transisi agen SAC dari gaya investasi defensif ke agresif."
+        },
+        {
+            num: 6,
+            name: "Mom5d",
+            fullName: "Short-Term Momentum (M5)",
+            theme: "8e44ad",
+            lightTheme: "faf5fc",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Momentum Jendela 5 Hari (Mom5d)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Akumulasi total log-return dari indeks rata-rata aset portofolio selama 5 hari bursa terakhir.\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mengukur tren harga jangka pendek guna mendeteksi kecenderungan kelanjutan tren (momentum) akibat perilaku pelaku pasar.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Dikalikan 100 (Mom5d × 100) karena log-return harian bernilai sangat kecil (misal 0.003), diubah menjadi skala 0.3 agar gradien neural network sensitif.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Eksploitasi Tren Jangka Pendek:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Menangkap arah sentimen jangka pendek. Tren positif kuat menandakan pasar sedang dalam fase bullish jangka pendek.\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "8e44ad" } },
+                { text: "Jika momentum jangka pendek sangat positif, agen SAC mengadopsi taktik agresif (trend-following) untuk memperbesar return. Sebaliknya, momentum negatif memicu agen membatasi alokasi pada koin rentan.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jegadeesh & Titman (1993) - Returns to Buying Winners and Selling Losers.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Momentum 5 hari membantu agen SAC mendeteksi dorongan tren harga jangka pendek guna menangkap profit maksimal di pasar yang sedang menguat."
+        },
+        {
+            num: 7,
+            name: "Mom20d",
+            fullName: "Long-Term Momentum (M20)",
+            theme: "9b59b6",
+            lightTheme: "faf6fd",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Momentum Jendela 20 Hari (Mom20d)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Akumulasi total log-return dari indeks rata-rata aset portofolio selama 20 hari bursa terakhir.\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mengukur kekuatan tren harga jangka menengah/panjang, menyaring gangguan noise harga dari pergerakan harian.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Dikalikan 100 (Mom20d × 100) agar setara dengan skala fitur momentum jangka pendek.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Konfirmasi Tren Makro:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Menjadi indikator utama apakah pasar kripto sedang berada di fase bullish atau bearish jangka panjang secara struktural.\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "9b59b6" } },
+                { text: "Agen SAC menyandingkan fitur network dengan Mom20d untuk memastikan keputusan alokasi didasari oleh tren pasar yang solid dan matang, bukan manipulasi tren sesaat.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jegadeesh & Titman (1993) - Returns to Buying Winners and Selling Losers.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Momentum 20 hari memberikan indikasi arah tren utama pasar, memastikan bahwa keputusan alokasi agen SAC selaras dengan rezim makro pasar."
+        },
+        {
+            num: 8,
+            name: "MomCross",
+            fullName: "Momentum Crossover (M5 - M20)",
+            theme: "d35400",
+            lightTheme: "fdf7f4",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Momentum Crossover (MomCross)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Selisih matematis antara momentum jangka pendek (5 hari) dan momentum jangka panjang (20 hari): MomCross = M5 - M20.\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mendeteksi akselerasi atau deselerasi tren harga. Berguna untuk memprediksi perubahan arah tren.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Dikalikan 100 (MomCross × 100) agar skalanya selaras dengan fitur momentum pembentuknya.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Deteksi Titik Reversal Arah Pasar:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "MomCross > 0 mengindikasikan Golden Cross (akselerasi naik). MomCross < 0 mengindikasikan Death Cross (perlambatan/tren turun).\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "d35400" } },
+                { text: "Saat terjadi Death Cross (< 0), agen SAC secara dinamis meningkatkan parameter penalti sentralitas (γ) untuk memicu diversifikasi defensif sebelum pasar jatuh lebih dalam.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jegadeesh & Titman (1993) - Returns to Buying Winners and Selling Losers.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Momentum Crossover secara dinamis menangkap titik jenuh tren harga, memicu rebalancing defensif yang cepat sebelum terjadi kejatuhan pasar."
+        },
+        {
+            num: 9,
+            name: "Pct.Uptrend",
+            fullName: "Percentage of Uptrend Coins (PU)",
+            theme: "c0392b",
+            lightTheme: "fdf5f5",
+            leftTitle: "🌐 Formulasi & Definisi",
+            leftTexts: [
+                { text: "Persentase Aset Menguat (Pct.Uptrend)\n", options: { bold: true, fontSize: 13, color: "003366" } },
+                { text: "Persentase jumlah koin dalam universe investasi yang mencatatkan return harian positif pada hari observasi.\n\n", options: { fontSize: 10 } },
+                { text: "Fungsi Pengukuran:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+                { text: "Mengukur tingkat kerataan kenaikan di pasar (Market Breadth Indicator) untuk mengetahui seberapa meluas penguatan pasar.\n\n", options: { fontSize: 10 } },
+                { text: "⚠️ Penskalaan (Feature Scaling):\n", options: { bold: true, fontSize: 11, color: "27ae60" } },
+                { text: "Skala asli (x1) karena nilainya sudah pasti berada dalam rentang terikat 0 s/d 1.", options: { fontSize: 10, italic: true } }
+            ],
+            rightTitle: "💡 Peran & Intuisi Agen SAC",
+            rightTexts: [
+                { text: "Deteksi Kesehatan Pasar Menyeluruh:\n", options: { bold: true, fontSize: 12, color: "003366" } },
+                { text: "Nilai tinggi (>80%) menunjukkan kenaikan pasar yang sehat dan didorong merata. Nilai rendah (<20%) menunjukkan kepanikan pasar di mana hampir seluruh koin rontok.\n\n", options: { fontSize: 10 } },
+                { text: "Respons Kontroler SAC:\n", options: { bold: true, fontSize: 11, color: "c0392b" } },
+                { text: "Pada pasar bullish merata, agen melonggarkan γ demi alokasi terpusat pada koin alpha. Pada kejatuhan massal (<20%), agen memperketat γ secara maksimal untuk memaksa diversifikasi ekstrim.\n\n", options: { fontSize: 10, italic: true } },
+                { text: "📚 Referensi Akademis:\n", options: { bold: true, fontSize: 9, color: "7f8c8d" } },
+                { text: "• Jiang et al. (2017) - DRL in Portfolio Management.", options: { fontSize: 8.5, italic: true } }
+            ],
+            summary: "Kesimpulan: Percentage Uptrend mendeteksi tingkat optimisme kolektif pasar kripto, memandu SAC Controller menentukan derajat diversifikasi optimal portofolio."
+        }
+    ];
 
-    slideFeat1.addText("Fitur Observasi SAC (1/2)", { x: 0.5, y: 0.4, w: "90%", fontSize: 30, bold: true, color: "003366" });
-    slideFeat1.addShape(pres.ShapeType.line, { x: 0.5, y: 0.9, w: 1.5, h: 0, line: { color: "e67e22", width: 3 } });
-    slideFeat1.addText("Network Features dan Market Volatility sebagai input kondisi sistemik:", { x: 0.5, y: 1.05, w: "90%", fontSize: 14, color: "333333" });
+    features.forEach(feat => {
+        let slideFeat = pres.addSlide();
+        if (fs.existsSync("bg_watermark.png")) {
+            slideFeat.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+        }
+        if (fs.existsSync("logo_unm.png")) {
+            slideFeat.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+        }
 
-    const fCardY1 = 1.4;
-    const fCardH1 = 3.5;
-    const fHalfW1 = 4.35;
-    const fColGap1 = 0.3;
+        // Title
+        slideFeat.addText(`Fitur Observasi SAC (${feat.num}/9): ${feat.name}`, { x: 0.5, y: 0.4, w: "90%", fontSize: 26, bold: true, color: "003366" });
+        slideFeat.addShape(pres.ShapeType.line, { x: 0.5, y: 0.9, w: 1.5, h: 0, line: { color: "e67e22", width: 3 } });
+        slideFeat.addText(`Analisis mendalam fitur ${feat.fullName} sebagai input state SAC Agent:`, { x: 0.5, y: 1.05, w: "90%", fontSize: 13, color: "333333" });
 
-    // --- CARD 1: NETWORK ---
-    slideFeat1.addShape(pres.ShapeType.rect, { x: 0.5, y: fCardY1, w: fHalfW1, h: fCardH1, fill: { color: "ffffff" }, line: { color: "27ae60", width: 1.5 }, rectRadius: 0.05 });
-    slideFeat1.addShape(pres.ShapeType.rect, { x: 0.5, y: fCardY1, w: fHalfW1, h: 0.45, fill: { color: "27ae60" } });
-    slideFeat1.addText("🌐 Network Features", { x: 0.5, y: fCardY1, w: fHalfW1, h: 0.45, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideFeat1.addText([
-        { text: "1. MST.Dist (x0.1):", options: { bold: true, fontSize: 13, color: "003366", breakLine: true } },
-        { text: "Total jarak Minimum Spanning Tree. Mengukur tingkat integrasi atau kerapatan korelasi antar aset kripto.\n", options: { fontSize: 11, breakLine: true } },
-        { text: "2. Spectral.Gap:", options: { bold: true, fontSize: 13, color: "003366", breakLine: true } },
-        { text: "Algebraic connectivity dari graf MST. Nilai kecil menandakan korelasi yang sangat kuat (fragile) dan rentan guncangan sistemik.\n", options: { fontSize: 11, breakLine: true } },
-        { text: "📚 Referensi Dasar:", options: { bold: true, fontSize: 10, color: "27ae60", breakLine: true } },
-        { text: "Mantegna (1999) - Hierarchical structure in financial markets.\nGiudici (2020) - Network-based risk in crypto.", options: { fontSize: 9, italic: true } }
-    ], { x: 0.7, y: fCardY1 + 0.6, w: fHalfW1 - 0.4, h: 2.8, color: "333333", valign: "top", lineSpacing: 14 });
+        // Left Card
+        slideFeat.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.4, w: 4.35, h: 3.2, fill: { color: "ffffff" }, line: { color: "003366", width: 1.5 }, rectRadius: 0.05 });
+        slideFeat.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.4, w: 4.35, h: 0.45, fill: { color: "003366" } });
+        slideFeat.addText(feat.leftTitle, { x: 0.5, y: 1.4, w: 4.35, h: 0.45, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
+        slideFeat.addText(feat.leftTexts, { x: 0.7, y: 2.0, w: 3.95, h: 2.5, color: "333333", valign: "top", lineSpacing: 10 });
 
-    // --- CARD 2: VOLATILITY ---
-    slideFeat1.addShape(pres.ShapeType.rect, { x: 0.5 + fHalfW1 + fColGap1, y: fCardY1, w: fHalfW1, h: fCardH1, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1.5 }, rectRadius: 0.05 });
-    slideFeat1.addShape(pres.ShapeType.rect, { x: 0.5 + fHalfW1 + fColGap1, y: fCardY1, w: fHalfW1, h: 0.45, fill: { color: "2980b9" } });
-    slideFeat1.addText("📈 Market Volatility", { x: 0.5 + fHalfW1 + fColGap1, y: fCardY1, w: fHalfW1, h: 0.45, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideFeat1.addText([
-        { text: "1. VolShort (x100):", options: { bold: true, fontSize: 13, color: "003366", breakLine: true } },
-        { text: "Rata-rata deviasi standar harga jendela 5 hari terakhir.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "2. VolLong (x100):", options: { bold: true, fontSize: 13, color: "003366", breakLine: true } },
-        { text: "Rata-rata deviasi standar harga jendela 20 hari terakhir.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "3. Vol.Ratio:", options: { bold: true, fontSize: 13, color: "003366", breakLine: true } },
-        { text: "Rasio volatilitas pendek terhadap panjang. Digunakan untuk membedakan tren stabil vs lonjakan noise.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "📚 Referensi Dasar:", options: { bold: true, fontSize: 10, color: "2980b9", breakLine: true } },
-        { text: "Jiang et al. (2017) - Deep RL Framework for Portfolio Management.", options: { fontSize: 9, italic: true } }
-    ], { x: 0.5 + fHalfW1 + fColGap1 + 0.2, y: fCardY1 + 0.6, w: fHalfW1 - 0.4, h: 2.8, color: "333333", valign: "top", lineSpacing: 11 });
+        // Right Card
+        slideFeat.addShape(pres.ShapeType.rect, { x: 5.15, y: 1.4, w: 4.35, h: 3.2, fill: { color: "ffffff" }, line: { color: feat.theme, width: 1.5 }, rectRadius: 0.05 });
+        slideFeat.addShape(pres.ShapeType.rect, { x: 5.15, y: 1.4, w: 4.35, h: 0.45, fill: { color: feat.theme } });
+        slideFeat.addText(feat.rightTitle, { x: 5.15, y: 1.4, w: 4.35, h: 0.45, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
+        slideFeat.addText(feat.rightTexts, { x: 5.35, y: 2.0, w: 3.95, h: 2.5, color: "333333", valign: "top", lineSpacing: 10 });
 
-    slideFeat1.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+        // Summary Box
+        slideFeat.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.75, w: 9.0, h: 0.45, fill: { color: feat.lightTheme }, line: { color: feat.theme, width: 1.0 }, rectRadius: 0.05 });
+        slideFeat.addText(feat.summary, { x: 0.5, y: 4.75, w: 9.0, h: 0.45, fontSize: 10, bold: true, color: "003366", align: "center", valign: "middle" });
 
-
-    // --- Slide 8: Fitur Observasi SAC (Part 2/2) ---
-    let slideFeat2 = pres.addSlide();
-    if (fs.existsSync("bg_watermark.png")) {
-        slideFeat2.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
-    }
-    if (fs.existsSync("logo_unm.png")) {
-        slideFeat2.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
-    }
-
-    slideFeat2.addText("Fitur Observasi SAC (2/2)", { x: 0.5, y: 0.4, w: "90%", fontSize: 30, bold: true, color: "003366" });
-    slideFeat2.addShape(pres.ShapeType.line, { x: 0.5, y: 0.9, w: 1.5, h: 0, line: { color: "e67e22", width: 3 } });
-    slideFeat2.addText("Market Momentum dan Ringkasan Dimensi State SAC Agent:", { x: 0.5, y: 1.05, w: "90%", fontSize: 14, color: "333333" });
-
-    // --- CARD 3: MOMENTUM ---
-    slideFeat2.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.4, w: 9.0, h: 2.7, fill: { color: "ffffff" }, line: { color: "8e44ad", width: 1.5 }, rectRadius: 0.05 });
-    slideFeat2.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.4, w: 9.0, h: 0.45, fill: { color: "8e44ad" } });
-    slideFeat2.addText("🚀 Market Momentum", { x: 0.5, y: 1.4, w: 9.0, h: 0.45, fontSize: 16, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    
-    slideFeat2.addText([
-        { text: "• Mom5d (x100):", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
-        { text: "Log-return aset jendela 5 hari.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "• Mom20d (x100):", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
-        { text: "Log-return aset jendela 20 hari.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "• MomCross (x100):", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
-        { text: "Selisih momentum pendek vs panjang.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "📚 Referensi Dasar:", options: { bold: true, fontSize: 10, color: "8e44ad", breakLine: true } },
-        { text: "Jegadeesh & Titman (1993) - Returns to Buying Winners & Selling Losers.\nJiang et al. (2017) - DRL in Portfolio.", options: { fontSize: 9, italic: true } }
-    ], { x: 0.8, y: 1.9, w: 4.0, h: 2.1, color: "333333", valign: "top", lineSpacing: 10 });
-
-    slideFeat2.addText([
-        { text: "• Pct.Uptrend:", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
-        { text: "Persentase koin dengan return positif.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "• State Array: ", options: { bold: true, fontSize: 12, color: "003366" } },
-        { text: "[MST, Spec, V5, V20, VR, M5, M20, MC, PU]\n", options: { fontSize: 9, italic: true, breakLine: true } },
-        { text: "💡 Intuisi Agen SAC:", options: { bold: true, fontSize: 10, color: "8e44ad", breakLine: true } },
-        { text: "Memetakan observasi state ke aksi penyesuaian \u03b3 dinamis.\n", options: { fontSize: 9, italic: true, breakLine: true } },
-        { text: "⚠️ Tujuan Penskalaan (x100) & (x0.1):", options: { bold: true, fontSize: 10, color: "c0392b", breakLine: true } },
-        { text: "Feature Scaling. Nilai asli log-return/volatilitas sangat kecil. Penskalaan menyamakan rentang nilai semua fitur (sekitar -1 s/d 1) agar Neural Network belajar lebih stabil dan mencegah vanishing gradient.", options: { fontSize: 9, italic: true } }
-    ], { x: 5.2, y: 1.9, w: 4.0, h: 2.2, color: "333333", valign: "top", lineSpacing: 8 });
-
-    // Summary Box Bottom
-    slideFeat2.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.2, w: 9.0, h: 0.7, fill: { color: "f4f6f7" }, line: { color: "003366", width: 1.0 }, rectRadius: 0.05 });
-    slideFeat2.addText("Total State Space: \u211d\u2079 (9-dimensional continuous observation vector)", { x: 0.5, y: 4.2, w: 9.0, h: 0.7, fontSize: 14, bold: true, color: "003366", align: "center", valign: "middle" });
-
-    slideFeat2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+        // Footer Navigasi
+        slideFeat.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    });
 
     // --- Slide 10: Ilustrasi Feature Scaling ---
     let slideScale = pres.addSlide();
