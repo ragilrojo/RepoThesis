@@ -92,7 +92,7 @@ async function createPresentation() {
     slideTOC.addText([
         { text: "Network Markowitz", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '7' } } },
         { text: "Fitur Observasi SAC", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '8' } } },
-        { text: "Parameter Eksperimen", options: { bullet: { code: '25CF' }, color: "333333" } }
+        { text: "Ilustrasi Feature Scaling", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '10' } } }
     ], { x: col2X + 0.3, y: row1Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
 
     // --- CARD IV: EVALUASI ---
@@ -100,7 +100,7 @@ async function createPresentation() {
     slideTOC.addShape(pres.ShapeType.rect, { x: col2X, y: row2Y, w: cardW, h: headerH, fill: { color: "8e44ad" } });
     slideTOC.addText("IV. EVALUASI & HASIL", { x: col2X, y: row2Y, w: cardW, h: headerH, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
     slideTOC.addText([
-        { text: "Evaluasi Portofolio (Ratio)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '10' } } },
+        { text: "Evaluasi Portofolio (Ratio)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '11' } } },
         { text: "Analisis Performa & Visualisasi", options: { bullet: { code: '25CF' }, color: "333333" } },
         { text: "Kesimpulan & Saran", options: { bullet: { code: '25CF' }, color: "333333" } }
     ], { x: col2X + 0.3, y: row2Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
@@ -168,19 +168,19 @@ async function createPresentation() {
     slideProb.addShape(pres.ShapeType.rect, { x: cardStartX, y: cardStartY, w: sideW + bodyW, h: cardH, fill: { color: "ffffff" }, line: { color: "3498db", width: 1.5 } });
     slideProb.addShape(pres.ShapeType.rect, { x: cardStartX, y: cardStartY, w: sideW, h: cardH, fill: { color: "3498db" } });
     slideProb.addText("Q1", { x: cardStartX, y: cardStartY, w: sideW, h: cardH, fontSize: 22, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideProb.addText("Bagaimana agen SAC mampu mengoptimasi parameter penalti sentralitas secara dinamis berdasarkan kondisi jaringan dan momentum pasar?", { x: cardStartX + sideW + 0.2, y: cardStartY, w: bodyW - 0.4, h: cardH, fontSize: 14, bold: true, color: "2c3e50", valign: "middle" });
+    slideProb.addText("Bagaimana efektivitas algoritma Soft Actor-Critic (SAC) dalam mengendalikan parameter penalti sentralitas secara dinamis pada model Network-Markowitz?", { x: cardStartX + sideW + 0.2, y: cardStartY, w: bodyW - 0.4, h: cardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     // Q2
     slideProb.addShape(pres.ShapeType.rect, { x: cardStartX, y: cardStartY + cardGap, w: sideW + bodyW, h: cardH, fill: { color: "ffffff" }, line: { color: "2c3e50", width: 1.5 } });
     slideProb.addShape(pres.ShapeType.rect, { x: cardStartX, y: cardStartY + cardGap, w: sideW, h: cardH, fill: { color: "2c3e50" } });
     slideProb.addText("Q2", { x: cardStartX, y: cardStartY + cardGap, w: sideW, h: cardH, fontSize: 22, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideProb.addText("Sejauh mana penggunaan fitur gabungan (network & market metrics) meningkatkan ketahanan portofolio terhadap volatilitas ekstrem?", { x: cardStartX + sideW + 0.2, y: cardStartY + cardGap, w: bodyW - 0.4, h: cardH, fontSize: 14, bold: true, color: "2c3e50", valign: "middle" });
+    slideProb.addText("Bagaimana metode Explainable AI (SHAP) dapat menjelaskan pengaruh fitur Network dan Market terhadap keputusan agen dalam alokasi aset portofolio?", { x: cardStartX + sideW + 0.2, y: cardStartY + cardGap, w: bodyW - 0.4, h: cardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     // Q3
     slideProb.addShape(pres.ShapeType.rect, { x: cardStartX, y: cardStartY + (cardGap * 2), w: sideW + bodyW, h: cardH, fill: { color: "ffffff" }, line: { color: "e67e22", width: 1.5 } });
     slideProb.addShape(pres.ShapeType.rect, { x: cardStartX, y: cardStartY + (cardGap * 2), w: sideW, h: cardH, fill: { color: "e67e22" } });
     slideProb.addText("Q3", { x: cardStartX, y: cardStartY + (cardGap * 2), w: sideW, h: cardH, fontSize: 22, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideProb.addText("Apakah model SAC-Net Markowitz mampu melampaui performa benchmark pada metrik Sharpe dan Calmar Ratio?", { x: cardStartX + sideW + 0.2, y: cardStartY + (cardGap * 2), w: bodyW - 0.4, h: cardH, fontSize: 14, bold: true, color: "2c3e50", valign: "middle" });
+    slideProb.addText("Apakah model SAC-Net Markowitz menunjukkan performa yang unggul secara signifikan dibandingkan benchmark berdasarkan metrik Sharpe, Sortino, Calmar, dan Ulcer Index?", { x: cardStartX + sideW + 0.2, y: cardStartY + (cardGap * 2), w: bodyW - 0.4, h: cardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     slideProb.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -208,19 +208,19 @@ async function createPresentation() {
     slideTujuan.addShape(pres.ShapeType.rect, { x: tCardStartX, y: tCardStartY, w: tSideW + tBodyW, h: tCardH, fill: { color: "ffffff" }, line: { color: "27ae60", width: 1.5 } });
     slideTujuan.addShape(pres.ShapeType.rect, { x: tCardStartX, y: tCardStartY, w: tSideW, h: tCardH, fill: { color: "27ae60" } });
     slideTujuan.addText("Obj 1", { x: tCardStartX, y: tCardStartY, w: tSideW, h: tCardH, fontSize: 22, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideTujuan.addText("Merancang dan melatih agen SAC yang bertindak sebagai Gamma Controller untuk mengoptimasi parameter penalti sentralitas secara dinamis.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY, w: tBodyW - 0.4, h: tCardH, fontSize: 14, bold: true, color: "2c3e50", valign: "middle" });
+    slideTujuan.addText("Merancang dan melatih agen Soft Actor-Critic (SAC) sebagai Gamma Controller dinamis untuk mengoptimasi parameter penalti sentralitas dalam kerangka Network-Markowitz.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY, w: tBodyW - 0.4, h: tCardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     // Obj 2
     slideTujuan.addShape(pres.ShapeType.rect, { x: tCardStartX, y: tCardStartY + tCardGap, w: tSideW + tBodyW, h: tCardH, fill: { color: "ffffff" }, line: { color: "2c3e50", width: 1.5 } });
     slideTujuan.addShape(pres.ShapeType.rect, { x: tCardStartX, y: tCardStartY + tCardGap, w: tSideW, h: tCardH, fill: { color: "2c3e50" } });
     slideTujuan.addText("Obj 2", { x: tCardStartX, y: tCardStartY + tCardGap, w: tSideW, h: tCardH, fontSize: 22, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideTujuan.addText("Mengevaluasi efektivitas penggunaan fitur gabungan (network metrics dan market indicators) dalam adaptasi portofolio.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY + tCardGap, w: tBodyW - 0.4, h: tCardH, fontSize: 14, bold: true, color: "2c3e50", valign: "middle" });
+    slideTujuan.addText("Menganalisis kontribusi fitur gabungan (Network & Market Indicators) menggunakan metode Explainable AI (SHAP) untuk transparansi keputusan model.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY + tCardGap, w: tBodyW - 0.4, h: tCardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     // Obj 3
     slideTujuan.addShape(pres.ShapeType.rect, { x: tCardStartX, y: tCardStartY + (tCardGap * 2), w: tSideW + tBodyW, h: tCardH, fill: { color: "ffffff" }, line: { color: "f39c12", width: 1.5 } });
     slideTujuan.addShape(pres.ShapeType.rect, { x: tCardStartX, y: tCardStartY + (tCardGap * 2), w: tSideW, h: tCardH, fill: { color: "f39c12" } });
     slideTujuan.addText("Obj 3", { x: tCardStartX, y: tCardStartY + (tCardGap * 2), w: tSideW, h: tCardH, fontSize: 22, bold: true, color: "ffffff", align: "center", valign: "middle" });
-    slideTujuan.addText("Membandingkan performa model SAC-Net Markowitz terhadap strategi benchmark menggunakan metrik Sharpe dan Calmar Ratio.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY + (tCardGap * 2), w: tBodyW - 0.4, h: tCardH, fontSize: 14, bold: true, color: "2c3e50", valign: "middle" });
+    slideTujuan.addText("Menguji performa model secara statistik (Wilcoxon Test) dibandingkan benchmark melalui metrik evaluasi Sharpe, Sortino, Calmar, dan Ulcer Index.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY + (tCardGap * 2), w: tBodyW - 0.4, h: tCardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     slideTujuan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -396,13 +396,13 @@ async function createPresentation() {
     slideFeat2.addText([
         { text: "• Pct.Uptrend:", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
         { text: "Persentase koin dengan return positif.\n", options: { fontSize: 10, breakLine: true } },
-        { text: "• State Dimension:", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
-        { text: "Total 9 fitur numerik vektor observasi.\n", options: { fontSize: 10, breakLine: true } },
         { text: "• State Array: ", options: { bold: true, fontSize: 12, color: "003366" } },
         { text: "[MST, Spec, V5, V20, VR, M5, M20, MC, PU]\n", options: { fontSize: 9, italic: true, breakLine: true } },
         { text: "💡 Intuisi Agen SAC:", options: { bold: true, fontSize: 10, color: "8e44ad", breakLine: true } },
-        { text: "Agen belajar memetakan ke-9 dimensi state ini ke aksi penyesuaian gamma (\u03b3) dinamis.", options: { fontSize: 9, italic: true } }
-    ], { x: 5.2, y: 1.9, w: 4.0, h: 2.1, color: "333333", valign: "top", lineSpacing: 10 });
+        { text: "Memetakan observasi state ke aksi penyesuaian \u03b3 dinamis.\n", options: { fontSize: 9, italic: true, breakLine: true } },
+        { text: "⚠️ Tujuan Penskalaan (x100) & (x0.1):", options: { bold: true, fontSize: 10, color: "c0392b", breakLine: true } },
+        { text: "Feature Scaling. Nilai asli log-return/volatilitas sangat kecil. Penskalaan menyamakan rentang nilai semua fitur (sekitar -1 s/d 1) agar Neural Network belajar lebih stabil dan mencegah vanishing gradient.", options: { fontSize: 9, italic: true } }
+    ], { x: 5.2, y: 1.9, w: 4.0, h: 2.2, color: "333333", valign: "top", lineSpacing: 8 });
 
     // Summary Box Bottom
     slideFeat2.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.2, w: 9.0, h: 0.7, fill: { color: "f4f6f7" }, line: { color: "003366", width: 1.0 }, rectRadius: 0.05 });
@@ -410,7 +410,54 @@ async function createPresentation() {
 
     slideFeat2.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
-    // --- Slide 9: Simulasi Perhitungan Sharpe Ratio ---
+    // --- Slide 10: Ilustrasi Feature Scaling ---
+    let slideScale = pres.addSlide();
+    if (fs.existsSync("bg_watermark.png")) {
+        slideScale.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    }
+    if (fs.existsSync("logo_unm.png")) {
+        slideScale.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    }
+
+    slideScale.addText("Ilustrasi Pentingnya Feature Scaling (x100)", { x: 0.5, y: 0.4, w: "90%", fontSize: 28, bold: true, color: "003366" });
+    slideScale.addShape(pres.ShapeType.line, { x: 0.5, y: 0.9, w: 1.5, h: 0, line: { color: "e67e22", width: 3 } });
+    slideScale.addText("Simulasi membandingkan rambatan sinyal (forward pass) pada layer Neural Network:", { x: 0.5, y: 1.05, w: "90%", fontSize: 13, color: "333333" });
+
+    // --- CARD KIRI: TANPA SCALING ---
+    slideScale.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.5, w: 4.3, h: 2.8, fill: { color: "fffafa" }, line: { color: "c0392b", width: 1.5 }, rectRadius: 0.05 });
+    slideScale.addShape(pres.ShapeType.rect, { x: 0.5, y: 1.5, w: 4.3, h: 0.45, fill: { color: "c0392b" } });
+    slideScale.addText("❌ Tanpa Scaling (Raw Data)", { x: 0.5, y: 1.5, w: 4.3, h: 0.45, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    
+    slideScale.addText([
+        { text: "1. Input Asli (Contoh Return 0.5%): ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "X = 0.005\n", options: { fontSize: 11 } },
+        { text: "2. Bobot Awal Neural Network: ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "W = 0.1\n", options: { fontSize: 11 } },
+        { text: "3. Aktivasi Layer 1 (X \u00d7 W): ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "0.0005\n", options: { fontSize: 11 } },
+        { text: "4. Aktivasi Layer 2 (L1 \u00d7 W): ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "0.00005\n\n", options: { fontSize: 11 } },
+        { text: "💥 Dampak (Vanishing Gradient):\n", options: { bold: true, fontSize: 12, color: "c0392b", breakLine: true } },
+        { text: "Angka menjadi sangat kecil (mendekati nol). Saat proses penyesuaian (Backpropagation), nilai gradien error nyaris hilang (\u22480). Agen SAC kesulitan membedakan sinyal penting, sehingga proses belajar melambat atau berhenti total.", options: { fontSize: 10, italic: true } }
+    ], { x: 0.7, y: 2.05, w: 3.9, h: 2.1, color: "333333", valign: "top", lineSpacing: 10 });
+
+    // --- CARD KANAN: DENGAN SCALING ---
+    slideScale.addShape(pres.ShapeType.rect, { x: 5.0, y: 1.5, w: 4.3, h: 2.8, fill: { color: "f4fcf4" }, line: { color: "27ae60", width: 1.5 }, rectRadius: 0.05 });
+    slideScale.addShape(pres.ShapeType.rect, { x: 5.0, y: 1.5, w: 4.3, h: 0.45, fill: { color: "27ae60" } });
+    slideScale.addText("✅ Dengan Scaling (x100)", { x: 5.0, y: 1.5, w: 4.3, h: 0.45, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
+    
+    slideScale.addText([
+        { text: "1. Input Skala (Return 0.5% \u00d7 100): ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "X = 0.5\n", options: { fontSize: 11 } },
+        { text: "2. Bobot Awal Neural Network: ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "W = 0.1\n", options: { fontSize: 11 } },
+        { text: "3. Aktivasi Layer 1 (X \u00d7 W): ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "0.05\n", options: { fontSize: 11 } },
+        { text: "4. Aktivasi Layer 2 (L1 \u00d7 W): ", options: { bold: true, fontSize: 11, color: "003366" } }, { text: "0.005\n\n", options: { fontSize: 11 } },
+        { text: "🚀 Dampak (Pembelajaran Stabil):\n", options: { bold: true, fontSize: 12, color: "27ae60", breakLine: true } },
+        { text: "Sinyal bertahan pada rentang skala yang proporsional. Fungsi aktivasi (ReLU/Tanh) merespons dengan baik, dan gradien tetap terjaga signifikansinya. Agen SAC dapat dengan cepat mengidentifikasi pola pasar untuk aksi optimal.", options: { fontSize: 10, italic: true } }
+    ], { x: 5.2, y: 2.05, w: 3.9, h: 2.1, color: "333333", valign: "top", lineSpacing: 10 });
+
+    // Summary Box Bottom
+    slideScale.addShape(pres.ShapeType.rect, { x: 0.5, y: 4.5, w: 8.8, h: 0.6, fill: { color: "ebf5fb" }, line: { color: "2980b9", width: 1.0 }, rectRadius: 0.05 });
+    slideScale.addText("Kesimpulan: Scaling x100 menerjemahkan fraksi desimal super kecil menjadi nilai persentase yang terbaca jelas, mencegah fenomena gradien hilang (Vanishing Gradient) pada arsitektur Deep RL.", { x: 0.5, y: 4.5, w: 8.8, h: 0.6, fontSize: 11, bold: true, color: "003366", align: "center", valign: "middle" });
+
+    slideScale.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+
+    // --- Slide 11: Simulasi Perhitungan Sharpe Ratio ---
     let slideSharpe = pres.addSlide();
     if (fs.existsSync("bg_watermark.png")) {
         slideSharpe.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
