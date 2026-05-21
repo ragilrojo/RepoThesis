@@ -664,26 +664,33 @@ async function createPresentation() {
     // Box Penjabaran Kalkulasi (Detail Risk)
     slideSharpe.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.0, w: 3.5, h: 4.4, fill: { color: "fff8ef" }, line: { color: "e67e22", width: 1.5 } });
     slideSharpe.addText([
-        { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "d35400", fontSize: 13, breakLine: true } },
-        { text: "1. Mean Return (Rp): ", options: { bold: true, fontSize: 10 } }, { text: "0.65%\n", options: { fontSize: 10 } },
+        { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "d35400", fontSize: 12, breakLine: true } },
+        { text: "1. Mean Return (Rp): ", options: { bold: true, fontSize: 9 } }, { text: "0.65%\n", options: { fontSize: 9 } },
         
-        { text: "2. Kalkulasi Risk (\u03c3p):\n", options: { bold: true, fontSize: 10 } },
-        { text: "   \u2022 Dev\u00b2 Day 1: (0.7-0.65)\u00b2 = 0.0025\n", options: { fontSize: 9 } },
-        { text: "   \u2022 Dev\u00b2 Day 2: (1.1-0.65)\u00b2 = 0.2025\n", options: { fontSize: 9 } },
-        { text: "   \u2022 Dev\u00b2 Day 3: (0.2-0.65)\u00b2 = 0.2025\n", options: { fontSize: 9 } },
-        { text: "   \u2022 Dev\u00b2 Day 4: (0.6-0.65)\u00b2 = 0.0025\n", options: { fontSize: 9 } },
-        { text: "   \u2022 Sum Dev\u00b2 = 0.41\n", options: { fontSize: 9 } },
-        { text: "   \u2022 Var = 0.41 / (4-1) = 0.137\n", options: { fontSize: 9 } },
-        { text: "   \u2022 \u03c3p = \u221a0.137 = ", options: { fontSize: 9 } }, { text: "0.37%\n\n", options: { bold: true } },
+        { text: "2. Kalkulasi Risk (\u03c3p):\n", options: { bold: true, fontSize: 9 } },
+        { text: "   \u2022 Dev\u00b2 Day 1: (0.7-0.65)\u00b2 = 0.0025\n", options: { fontSize: 8 } },
+        { text: "   \u2022 Dev\u00b2 Day 2: (1.1-0.65)\u00b2 = 0.2025\n", options: { fontSize: 8 } },
+        { text: "   \u2022 Dev\u00b2 Day 3: (0.2-0.65)\u00b2 = 0.2025\n", options: { fontSize: 8 } },
+        { text: "   \u2022 Dev\u00b2 Day 4: (0.6-0.65)\u00b2 = 0.0025\n", options: { fontSize: 8 } },
+        { text: "   \u2022 Sum Dev\u00b2 = 0.41 | Var = 0.41 / (4-1) = 0.137\n", options: { fontSize: 8 } },
+        { text: "   \u2022 \u03c3p = \u221a0.137 = ", options: { fontSize: 8 } }, { text: "0.37%\n\n", options: { bold: true, fontSize: 8 } },
         
-        { text: "3. Sharpe Ratio (Rf = 5% Ann):\n", options: { bold: true, fontSize: 10 } },
-        { text: "   (0.65 - 0.014) / 0.37 = ", options: { fontSize: 10 } }, { text: "1.72\n", options: { bold: true, color: "27ae60" } },
+        { text: "3. Sharpe Ratio (Rf = 5% Ann):\n", options: { bold: true, fontSize: 9 } },
+        { text: "   (0.65 - 0.014) / 0.37 = ", options: { fontSize: 9 } }, { text: "1.72\n", options: { bold: true, color: "27ae60", fontSize: 9 } },
         
         { text: "------------------------------------------\n", options: {} },
-        { text: "Apa yang digambarkan Sharpe?\n", options: { bold: true, fontSize: 10, color: "c0392b" } },
-        { text: "Sharpe mengukur efisiensi: Seberapa banyak 'keuntungan ekstra' untuk setiap 1 unit risiko. ", options: { fontSize: 8.5 } },
-        { text: "Semakin besar nilainya semakin bagus ", options: { fontSize: 8.5, bold: true, color: "27ae60" } },
-        { text: "(karena return lebih besar dari risikonya).", options: { fontSize: 8.5 } }
+        { text: "Keterangan Istilah & Singkatan:\n", options: { bold: true, fontSize: 8.5, color: "d35400" } },
+        { text: "\u2022 Rp: ", options: { bold: true, fontSize: 7.5 } }, { text: "Return Portofolio | ", options: { fontSize: 7.5 } },
+        { text: "\u03c3p: ", options: { bold: true, fontSize: 7.5 } }, { text: "Risiko Portofolio\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 Rf: ", options: { bold: true, fontSize: 7.5 } }, { text: "Risk-Free Rate (Suku Bunga Bebas Risiko)\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 Ann: ", options: { bold: true, fontSize: 7.5 } }, { text: "Annualized (Tahunan). Rf harian = 5%/365 \u2248 0.014%\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 Dev & Var: ", options: { bold: true, fontSize: 7.5 } }, { text: "Deviasi (Selisih) & Varians (Rata-rata Dev\u00b2)\n", options: { fontSize: 7.5 } },
+        
+        { text: "------------------------------------------\n", options: {} },
+        { text: "Apa yang digambarkan Sharpe?\n", options: { bold: true, fontSize: 9, color: "c0392b" } },
+        { text: "Mengukur efisiensi: Keuntungan ekstra per unit risiko. ", options: { fontSize: 7.5 } },
+        { text: "Semakin besar semakin bagus ", options: { fontSize: 7.5, bold: true, color: "27ae60" } },
+        { text: "(return > risiko).", options: { fontSize: 7.5 } }
     ], { x: 6.4, y: 1.0, w: 3.2, color: "333333", valign: "top" });
 
     // Box Simulasi Rebalancing (Visual Alur)
@@ -728,24 +735,29 @@ async function createPresentation() {
     // Box Penjelasan Sortino
     slideSortino.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.0, w: 3.5, h: 4.4, fill: { color: "f4f0f7" }, line: { color: "8e44ad", width: 1.5 } });
     slideSortino.addText([
-        { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "8e44ad", fontSize: 13, breakLine: true } },
-        { text: "1. Mean Return (Rp): ", options: { bold: true, fontSize: 10 } }, { text: "0.125%\n", options: { fontSize: 10 } },
+        { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "8e44ad", fontSize: 12, breakLine: true } },
+        { text: "1. Mean Return (Rp): ", options: { bold: true, fontSize: 9.5 } }, { text: "0.125%\n", options: { fontSize: 9.5 } },
         
-        { text: "2. Downside Deviation (\u03c3d):\n", options: { bold: true, fontSize: 10 } },
-        { text: "   Hanya hitung hari negatif terhadap Rf (0%):\n", options: { fontSize: 8, italic: true } },
-        { text: "   \u2022 Loss 1: (-1.5-0)\u00b2 = 2.25\n", options: { fontSize: 9 } },
-        { text: "   \u2022 Loss 2: (-0.5-0)\u00b2 = 0.25\n", options: { fontSize: 9 } },
-        { text: "   \u2022 \u03c3d = \u221a[(2.25+0.25)/4] = ", options: { fontSize: 9 } }, { text: "0.79%\n\n", options: { bold: true } },
+        { text: "2. Downside Deviation (\u03c3d):\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "   Hanya hitung hari negatif terhadap Rf (0%):\n", options: { fontSize: 7.5, italic: true } },
+        { text: "   \u2022 Loss 1: (-1.5-0)\u00b2 = 2.25 | Loss 2: (-0.5-0)\u00b2 = 0.25\n", options: { fontSize: 8 } },
+        { text: "   \u2022 \u03c3d = \u221a[(2.25+0.25)/4] = ", options: { fontSize: 8 } }, { text: "0.79%\n\n", options: { bold: true, fontSize: 8 } },
         
-        { text: "3. Sortino Ratio:\n", options: { bold: true, fontSize: 10 } },
-        { text: "   (0.125 - 0) / 0.79 = ", options: { fontSize: 10 } }, { text: "0.16\n", options: { bold: true, color: "8e44ad" } },
+        { text: "3. Sortino Ratio:\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "   (0.125 - 0) / 0.79 = ", options: { fontSize: 9.5 } }, { text: "0.16\n", options: { bold: true, color: "8e44ad", fontSize: 9.5 } },
         
         { text: "------------------------------------------\n", options: {} },
-        { text: "Apa yang digambarkan Sortino?\n", options: { bold: true, fontSize: 10, color: "8e44ad" } },
-        { text: "Sortino mengukur efisiensi terhadap KERUGIAN. Ini menggambarkan kemampuan portofolio memberikan imbal hasil dengan mengabaikan volatilitas positif. ", options: { fontSize: 8.5 } },
-        { text: "Semakin besar semakin bagus ", options: { fontSize: 8.5, bold: true, color: "27ae60" } },
-        { text: "karena artinya profit yang didapat jauh lebih besar dibanding risiko jatuhnya harga.", options: { fontSize: 8.5 } }
-    ], { x: 6.4, y: 1.2, w: 3.2, color: "333333", valign: "top" });
+        { text: "Keterangan Istilah & Singkatan:\n", options: { bold: true, fontSize: 8.5, color: "8e44ad" } },
+        { text: "\u2022 Rp: ", options: { bold: true, fontSize: 7.5 } }, { text: "Return Portofolio (Mean Return)\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 \u03c3d: ", options: { bold: true, fontSize: 7.5 } }, { text: "Downside Deviation (Hanya mengukur risiko kerugian, mengabaikan volatilitas positif)\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 Rf: ", options: { bold: true, fontSize: 7.5 } }, { text: "Risk-Free Rate (Suku Bunga Bebas Risiko)\n", options: { fontSize: 7.5 } },
+        
+        { text: "------------------------------------------\n", options: {} },
+        { text: "Apa yang digambarkan Sortino?\n", options: { bold: true, fontSize: 9, color: "8e44ad" } },
+        { text: "Mengukur efisiensi terhadap KERUGIAN. ", options: { fontSize: 7.5 } },
+        { text: "Semakin besar semakin bagus ", options: { fontSize: 7.5, bold: true, color: "27ae60" } },
+        { text: "(profit lebih besar dibanding risiko drawdown).", options: { fontSize: 7.5 } }
+    ], { x: 6.4, y: 1.1, w: 3.2, color: "333333", valign: "top" });
 
     slideSortino.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -777,24 +789,28 @@ async function createPresentation() {
     // Box Penjelasan Calmar
     slideCalmar.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.0, w: 3.5, h: 4.4, fill: { color: "ebf5fb" }, line: { color: "2980b9", width: 1.5 } });
     slideCalmar.addText([
-        { text: "Kalkulasi (Data 12 Bulan):\n", options: { bold: true, color: "2980b9", fontSize: 13, breakLine: true } },
-        { text: "1. Annual Return (Rp):\n", options: { bold: true, fontSize: 10 } },
-        { text: "(135 - 100) / 100 = ", options: { fontSize: 10 } }, { text: "35%\n\n", options: { bold: true } },
+        { text: "Kalkulasi (Data 12 Bulan):\n", options: { bold: true, color: "2980b9", fontSize: 12, breakLine: true } },
+        { text: "1. Annual Return (Rp):\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "(135 - 100) / 100 = ", options: { fontSize: 9 } }, { text: "35%\n\n", options: { bold: true, fontSize: 9 } },
         
-        { text: "2. Maximum Drawdown (MDD):\n", options: { bold: true, fontSize: 10 } },
-        { text: "Penurunan terburuk dalam 12 bln:\n", options: { fontSize: 8, italic: true } },
-        { text: "(120 - 90) / 120 = ", options: { fontSize: 10 } }, { text: "25%\n\n", options: { bold: true, color: "c0392b" } },
+        { text: "2. Maximum Drawdown (MDD):\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "Penurunan terburuk dalam 12 bln:\n", options: { fontSize: 7.5, italic: true } },
+        { text: "(120 - 90) / 120 = ", options: { fontSize: 9 } }, { text: "25%\n\n", options: { bold: true, color: "c0392b", fontSize: 9 } },
         
-        { text: "3. Calmar Ratio:\n", options: { bold: true, fontSize: 10 } },
-        { text: "Annual Return / MDD\n", options: { fontSize: 9 } },
-        { text: "35% / 25% = ", options: { fontSize: 10 } }, { text: "1.40\n", options: { bold: true, color: "27ae60" } },
+        { text: "3. Calmar Ratio:\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "Annual Return / MDD = 35% / 25% = ", options: { fontSize: 9 } }, { text: "1.40\n", options: { bold: true, color: "27ae60", fontSize: 9 } },
         
         { text: "------------------------------------------\n", options: {} },
-        { text: "Apa yang digambarkan Calmar?\n", options: { bold: true, fontSize: 10, color: "003366" } },
-        { text: "Mengukur perbandingan antara profit tahunan dengan risiko 'jatuh' terdalam. ", options: { fontSize: 8.5 } },
-        { text: "Semakin besar semakin bagus ", options: { fontSize: 8.5, bold: true, color: "27ae60" } },
-        { text: "karena imbal hasil jauh melampaui riwayat kerugian terparahnya.", options: { fontSize: 8.5 } }
-    ], { x: 6.4, y: 1.2, w: 3.2, color: "333333", valign: "top" });
+        { text: "Keterangan Istilah & Singkatan:\n", options: { bold: true, fontSize: 8.5, color: "2980b9" } },
+        { text: "\u2022 Rp: ", options: { bold: true, fontSize: 7.5 } }, { text: "Return Portofolio (Annual Return / Imbal Hasil Tahunan)\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 MDD: ", options: { bold: true, fontSize: 7.5 } }, { text: "Maximum Drawdown (Penurunan terbesar dari titik puncak ke titik terendah sebelum puncak baru)\n", options: { fontSize: 7.5 } },
+        
+        { text: "------------------------------------------\n", options: {} },
+        { text: "Apa yang digambarkan Calmar?\n", options: { bold: true, fontSize: 9, color: "003366" } },
+        { text: "Mengukur profit tahunan dibanding risiko jatuh terdalam. ", options: { fontSize: 7.5 } },
+        { text: "Semakin besar semakin bagus ", options: { fontSize: 7.5, bold: true, color: "27ae60" } },
+        { text: "(imbal hasil melampaui kerugian historis terparah).", options: { fontSize: 7.5 } }
+    ], { x: 6.4, y: 1.1, w: 3.2, color: "333333", valign: "top" });
 
     slideCalmar.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
@@ -828,22 +844,28 @@ async function createPresentation() {
     // Box Penjelasan Ulcer
     slideUlcer.addShape(pres.ShapeType.rect, { x: 6.2, y: 1.0, w: 3.5, h: 4.4, fill: { color: "fdf2e9" }, line: { color: "e67e22", width: 1.5 } });
     slideUlcer.addText([
-        { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "e67e22", fontSize: 13, breakLine: true } },
-        { text: "1. Kumpulkan Data Drawdown:\n", options: { bold: true, fontSize: 10 } },
-        { text: "Persentase penurunan dari puncak terakhir di setiap titik waktu.\n\n", options: { fontSize: 8, italic: true } },
+        { text: "Langkah Kalkulasi:\n", options: { bold: true, color: "e67e22", fontSize: 12, breakLine: true } },
+        { text: "1. Kumpulkan Data Drawdown:\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "Persentase penurunan dari puncak terakhir di setiap titik waktu.\n\n", options: { fontSize: 7.5, italic: true } },
         
-        { text: "2. Rata-rata Kuadrat (Mean Sq):\n", options: { bold: true, fontSize: 10 } },
-        { text: "(0 + 25 + 64 + 4 + 0) / 5 = ", options: { fontSize: 10 } }, { text: "18.6\n\n", options: { bold: true } },
+        { text: "2. Rata-rata Kuadrat (Mean Sq):\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "(0 + 25 + 64 + 4 + 0) / 5 = ", options: { fontSize: 9 } }, { text: "18.6\n\n", options: { bold: true, fontSize: 9 } },
         
-        { text: "3. Ulcer Index (UI):\n", options: { bold: true, fontSize: 10 } },
-        { text: "\u221a18.6 = ", options: { fontSize: 10 } }, { text: "4.31%\n\n", options: { bold: true, color: "c0392b" } },
+        { text: "3. Ulcer Index (UI):\n", options: { bold: true, fontSize: 9.5 } },
+        { text: "\u221a18.6 = ", options: { fontSize: 9 } }, { text: "4.31%\n\n", options: { bold: true, color: "c0392b", fontSize: 9 } },
         
         { text: "------------------------------------------\n", options: {} },
-        { text: "Interpretasi Khusus:\n", options: { bold: true, fontSize: 10, color: "003366" } },
-        { text: "Berbeda dengan metrik lain, untuk Ulcer Index: ", options: { fontSize: 8.5 } },
-        { text: "Semakin KECIL semakin bagus. ", options: { fontSize: 8.5, bold: true, color: "27ae60" } },
-        { text: "UI rendah berarti portofolio jarang mengalami penurunan yang dalam atau lama (minim 'stres').", options: { fontSize: 8.5 } }
-    ], { x: 6.4, y: 1.2, w: 3.2, color: "333333", valign: "top" });
+        { text: "Keterangan Istilah & Singkatan:\n", options: { bold: true, fontSize: 8.5, color: "e67e22" } },
+        { text: "\u2022 Drawdown (DD): ", options: { bold: true, fontSize: 7.5 } }, { text: "Penurunan dari puncak sebelumnya\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 Mean Sq: ", options: { bold: true, fontSize: 7.5 } }, { text: "Rata-rata kuadrat dari seluruh nilai Drawdown\n", options: { fontSize: 7.5 } },
+        { text: "\u2022 UI: ", options: { bold: true, fontSize: 7.5 } }, { text: "Ulcer Index (Mengukur kedalaman & durasi stres/penurunan)\n", options: { fontSize: 7.5 } },
+        
+        { text: "------------------------------------------\n", options: {} },
+        { text: "Interpretasi Khusus:\n", options: { bold: true, fontSize: 9, color: "003366" } },
+        { text: "Untuk Ulcer Index: ", options: { fontSize: 7.5 } },
+        { text: "Semakin KECIL semakin bagus. ", options: { fontSize: 7.5, bold: true, color: "27ae60" } },
+        { text: "UI rendah berarti portofolio jarang mengalami penurunan dalam/lama (minim stres).", options: { fontSize: 7.5 } }
+    ], { x: 6.4, y: 1.1, w: 3.2, color: "333333", valign: "top" });
 
     slideUlcer.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
