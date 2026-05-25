@@ -81,26 +81,28 @@ async function createPresentation() {
     slideTOC.addShape(pres.ShapeType.rect, { x: col1X, y: row2Y, w: cardW, h: headerH, fill: { color: "27ae60" } });
     slideTOC.addText("II. LANDASAN & SIMULASI", { x: col1X, y: row2Y, w: cardW, h: headerH, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
     slideTOC.addText([
-        { text: "Landasan Teori (Markowitz)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '6' } } },
+        { text: "Z-Score Normalisasi", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '6' } } },
+        { text: "Landasan Teori (Markowitz)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '7' } } },
         { text: "Kerangka Pemikiran", options: { bullet: { code: '25CF' }, color: "333333" } }
-    ], { x: col1X + 0.3, y: row2Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
+    ], { x: col1X + 0.3, y: row2Y + 0.45, w: cardW - 0.6, h: 1.3, fontSize: 10.5, lineSpacing: 18, valign: "top" });
 
     // --- CARD III: METODOLOGI ---
     slideTOC.addShape(pres.ShapeType.rect, { x: col2X, y: row1Y, w: cardW, h: 1.8, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1.5 }, rectRadius: 0.05 });
     slideTOC.addShape(pres.ShapeType.rect, { x: col2X, y: row1Y, w: cardW, h: headerH, fill: { color: "2980b9" } });
     slideTOC.addText("III. METODOLOGI & SAC-NET", { x: col2X, y: row1Y, w: cardW, h: headerH, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
     slideTOC.addText([
-        { text: "Network Markowitz", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '7' } } },
-        { text: "Fitur Observasi SAC", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '8' } } },
-        { text: "Ilustrasi Feature Scaling", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '17' } } }
-    ], { x: col2X + 0.3, y: row1Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
+        { text: "Network Markowitz", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '8' } } },
+        { text: "Fitur Observasi SAC", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '9' } } },
+        { text: "Simulasi Hitung Fitur", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '18' } } },
+        { text: "Ilustrasi Feature Scaling", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '19' } } }
+    ], { x: col2X + 0.3, y: row1Y + 0.45, w: cardW - 0.6, h: 1.3, fontSize: 10.5, lineSpacing: 18, valign: "top" });
 
     // --- CARD IV: EVALUASI ---
     slideTOC.addShape(pres.ShapeType.rect, { x: col2X, y: row2Y, w: cardW, h: 1.8, fill: { color: "ffffff" }, line: { color: "8e44ad", width: 1.5 }, rectRadius: 0.05 });
     slideTOC.addShape(pres.ShapeType.rect, { x: col2X, y: row2Y, w: cardW, h: headerH, fill: { color: "8e44ad" } });
     slideTOC.addText("IV. EVALUASI & HASIL", { x: col2X, y: row2Y, w: cardW, h: headerH, fontSize: 14, bold: true, color: "ffffff", align: "center", valign: "middle" });
     slideTOC.addText([
-        { text: "Evaluasi Portofolio (Ratio)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '18' } } },
+        { text: "Evaluasi Portofolio (Ratio)", options: { bullet: { code: '25CF' }, color: "0563C1", underline: true, hyperlink: { slide: '20' } } },
         { text: "Analisis Performa & Visualisasi", options: { bullet: { code: '25CF' }, color: "333333" } },
         { text: "Kesimpulan & Saran", options: { bullet: { code: '25CF' }, color: "333333" } }
     ], { x: col2X + 0.3, y: row2Y + 0.5, w: cardW - 0.6, h: 1.2, fontSize: 11, lineSpacing: 22, valign: "top" });
@@ -223,6 +225,98 @@ async function createPresentation() {
     slideTujuan.addText("Menguji performa model secara statistik (Wilcoxon Test) dibandingkan benchmark melalui metrik evaluasi Sharpe, Sortino, Calmar, dan Ulcer Index.", { x: tCardStartX + tSideW + 0.2, y: tCardStartY + (tCardGap * 2), w: tBodyW - 0.4, h: tCardH, fontSize: 13, bold: true, color: "2c3e50", valign: "middle" });
 
     slideTujuan.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
+    // --- Slide X: Z-Score Normalisasi (Redesigned with Example) ---
+    let slideZ = pres.addSlide();
+    if (fs.existsSync("bg_watermark.png")) {
+        slideZ.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    }
+    if (fs.existsSync("logo_unm.png")) {
+        slideZ.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    }
+
+    // Header
+    slideZ.addText("Z-Score Normalisasi", { x: 0.5, y: 0.3, w: "85%", fontSize: 26, bold: true, color: "003366" });
+    slideZ.addShape(pres.ShapeType.line, { x: 0.5, y: 0.72, w: 1.5, h: 0, line: { color: "e67e22", width: 3 } });
+    slideZ.addText("Teknik standarisasi fitur agar neural network belajar secara stabil:", { x: 0.5, y: 0.82, w: "85%", fontSize: 12, color: "555555" });
+
+    // === CARD KIRI: Rumus & Konsep ===
+    slideZ.addShape(pres.ShapeType.rect, { x: 0.4, y: 1.15, w: 4.5, h: 3.55, fill: { color: "ffffff" }, line: { color: "003366", width: 1.5 }, rectRadius: 0.05 });
+    slideZ.addShape(pres.ShapeType.rect, { x: 0.4, y: 1.15, w: 4.5, h: 0.42, fill: { color: "003366" } });
+    slideZ.addText("\ud83d\udcd0 Rumus & Konsep", { x: 0.4, y: 1.15, w: 4.5, h: 0.42, fontSize: 13, bold: true, color: "ffffff", align: "center", valign: "middle" });
+
+    slideZ.addText([
+        { text: "Rumus Z-Score:\n", options: { bold: true, fontSize: 12, color: "003366", breakLine: true } },
+        { text: "   Z = (x - \u03bc) / \u03c3\n\n", options: { bold: true, fontSize: 16, color: "c0392b", italic: true } },
+        { text: "Keterangan:\n", options: { bold: true, fontSize: 11, color: "003366" } },
+        { text: "  \u2022 x  = nilai fitur asli (setelah feature scaling)\n", options: { fontSize: 10 } },
+        { text: "  \u2022 \u03bc  = rata-rata (mean) seluruh data dalam window\n", options: { fontSize: 10 } },
+        { text: "  \u2022 \u03c3  = standar deviasi seluruh data dalam window\n\n", options: { fontSize: 10 } },
+        { text: "Tujuan Normalisasi:\n", options: { bold: true, fontSize: 11, color: "27ae60" } },
+        { text: "  \u2022 Mengubah fitur ke mean = 0, std = 1\n", options: { fontSize: 10 } },
+        { text: "  \u2022 Mencegah fitur bernilai besar mendominasi\n", options: { fontSize: 10 } },
+        { text: "  \u2022 Mempercepat konvergensi neural network\n", options: { fontSize: 10 } },
+        { text: "  \u2022 Menstabilkan proses backpropagation\n", options: { fontSize: 10 } },
+    ], { x: 0.6, y: 1.65, w: 4.1, h: 2.95, color: "333333", valign: "top", lineSpacing: 8 });
+
+    // === CARD KANAN: Contoh Numerik ===
+    slideZ.addShape(pres.ShapeType.rect, { x: 5.1, y: 1.15, w: 4.5, h: 3.55, fill: { color: "ffffff" }, line: { color: "2980b9", width: 1.5 }, rectRadius: 0.05 });
+    slideZ.addShape(pres.ShapeType.rect, { x: 5.1, y: 1.15, w: 4.5, h: 0.42, fill: { color: "2980b9" } });
+    slideZ.addText("\ud83d\udd22 Contoh Numerik (VolShort \u00d7 100)", { x: 5.1, y: 1.15, w: 4.5, h: 0.42, fontSize: 12, bold: true, color: "ffffff", align: "center", valign: "middle" });
+
+    // Tabel data (3 baris data + 2 baris summary = compact)
+    slideZ.addTable([
+        [
+            { text: "Hari", options: { bold: true, fill: "2980b9", color: "ffffff", align: "center", fontSize: 9 } },
+            { text: "VolShort (x)", options: { bold: true, fill: "2980b9", color: "ffffff", align: "center", fontSize: 9 } },
+            { text: "Z-Score", options: { bold: true, fill: "27ae60", color: "ffffff", align: "center", fontSize: 9 } }
+        ],
+        [
+            { text: "Day 1", options: { align: "center", fontSize: 9 } },
+            { text: "1.20", options: { align: "center", fontSize: 9 } },
+            { text: "-1.07", options: { align: "center", fontSize: 9, bold: true, color: "c0392b" } }
+        ],
+        [
+            { text: "Day 2", options: { align: "center", fontSize: 9 } },
+            { text: "1.80", options: { align: "center", fontSize: 9 } },
+            { text: "0.00", options: { align: "center", fontSize: 9 } }
+        ],
+        [
+            { text: "Day 3", options: { align: "center", fontSize: 9 } },
+            { text: "2.40", options: { align: "center", fontSize: 9 } },
+            { text: "+1.07", options: { align: "center", fontSize: 9, bold: true, color: "27ae60" } }
+        ],
+        [
+            { text: "Mean (\u03bc)", options: { bold: true, fill: "ebf5fb", align: "center", fontSize: 9 } },
+            { text: "1.80", options: { bold: true, fill: "ebf5fb", align: "center", fontSize: 9 } },
+            { text: "\u2013", options: { fill: "ebf5fb", align: "center", fontSize: 9 } }
+        ],
+        [
+            { text: "Std Dev (\u03c3)", options: { bold: true, fill: "ebf5fb", align: "center", fontSize: 9 } },
+            { text: "0.56", options: { bold: true, fill: "ebf5fb", align: "center", fontSize: 9 } },
+            { text: "\u2013", options: { fill: "ebf5fb", align: "center", fontSize: 9 } }
+        ],
+    ], { x: 5.25, y: 1.7, w: 4.2, fontSize: 9, border: { pt: 1, color: "cccccc" }, align: "center", valign: "middle", rowH: 0.27 });
+
+    // Penjabaran contoh — positioned below table (6 rows × 0.27 = 1.62, start 1.7 → ends ~3.32)
+    slideZ.addText([
+        { text: "Langkah Perhitungan:\n", options: { bold: true, fontSize: 10, color: "003366", breakLine: true } },
+        { text: "\u2022 Day 3 (x = 2.40):\n", options: { bold: true, fontSize: 9.5, color: "2c3e50" } },
+        { text: "  Z = (2.40 \u2212 1.80) / 0.56 = ", options: { fontSize: 9.5 } },
+        { text: "+1.07", options: { bold: true, fontSize: 10, color: "27ae60" } },
+        { text: " \u2192 di atas rata-rata\n", options: { fontSize: 8.5, italic: true, color: "666666" } },
+        { text: "\u2022 Day 1 (x = 1.20):\n", options: { bold: true, fontSize: 9.5, color: "2c3e50" } },
+        { text: "  Z = (1.20 \u2212 1.80) / 0.56 = ", options: { fontSize: 9.5 } },
+        { text: "\u22121.07", options: { bold: true, fontSize: 10, color: "c0392b" } },
+        { text: " \u2192 di bawah rata-rata", options: { fontSize: 8.5, italic: true, color: "666666" } },
+    ], { x: 5.25, y: 3.42, w: 4.2, h: 1.2, color: "333333", valign: "top", lineSpacing: 8 });
+
+    // Summary Box
+    slideZ.addShape(pres.ShapeType.rect, { x: 0.4, y: 4.82, w: 9.2, h: 0.42, fill: { color: "eaf4fb" }, line: { color: "2980b9", width: 1.0 }, rectRadius: 0.05 });
+    slideZ.addText("Kesimpulan: Z-Score mengubah semua fitur (VolShort, Mom5d, dll.) ke skala seragam (mean=0, \u03c3=1), mencegah dominasi fitur berskala besar dan mempercepat konvergensi SAC Agent.", {
+        x: 0.4, y: 4.82, w: 9.2, h: 0.42, fontSize: 10, bold: true, color: "003366", align: "center", valign: "middle"
+    });
+
+    slideZ.addText("\ud83c\udfe0 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
 
     // --- Slide 4: Simulasi Markowitz Classic ---
@@ -586,6 +680,112 @@ async function createPresentation() {
         // Footer Navigasi
         slideFeat.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
     });
+
+    // --- Slide 18: Simulasi Penghitungan Fitur Observasi SAC (Toy Dataset) ---
+    let slideSimFitur = pres.addSlide();
+    if (fs.existsSync("bg_watermark.png")) {
+        slideSimFitur.addImage({ path: "bg_watermark.png", x: 0, y: 0, w: "100%", h: "100%" });
+    }
+    if (fs.existsSync("logo_unm.png")) {
+        slideSimFitur.addImage({ path: "logo_unm.png", x: 9.1, y: 0.1, w: 0.7, h: 0.7 });
+    }
+
+    // Header
+    slideSimFitur.addText("Simulasi Penghitungan Fitur Observasi SAC", { x: 0.5, y: 0.3, w: "85%", fontSize: 26, bold: true, color: "003366" });
+    slideSimFitur.addShape(pres.ShapeType.line, { x: 0.5, y: 0.72, w: 1.5, h: 0, line: { color: "e67e22", width: 3 } });
+    slideSimFitur.addText("Contoh konkret perhitungan matematis beberapa fitur state SAC dengan Toy Dataset (3 koin, 3 hari):", { x: 0.5, y: 0.82, w: "85%", fontSize: 12, color: "555555" });
+
+    // === CARD KIRI: Toy Dataset & Vol/Mom Fitur ===
+    slideSimFitur.addShape(pres.ShapeType.rect, { x: 0.4, y: 1.15, w: 4.5, h: 3.55, fill: { color: "ffffff" }, line: { color: "003366", width: 1.5 }, rectRadius: 0.05 });
+    slideSimFitur.addShape(pres.ShapeType.rect, { x: 0.4, y: 1.15, w: 4.5, h: 0.42, fill: { color: "003366" } });
+    slideSimFitur.addText("📊 Toy Dataset & Vol/Mom Fitur", { x: 0.4, y: 1.15, w: 4.5, h: 0.42, fontSize: 13, bold: true, color: "ffffff", align: "center", valign: "middle" });
+
+    // Tabel Toy Return
+    slideSimFitur.addTable([
+        [
+            { text: "Hari", options: { bold: true, fill: "003366", color: "ffffff", align: "center", fontSize: 8.5 } },
+            { text: "BTC Return", options: { bold: true, fill: "003366", color: "ffffff", align: "center", fontSize: 8.5 } },
+            { text: "ETH Return", options: { bold: true, fill: "003366", color: "ffffff", align: "center", fontSize: 8.5 } },
+            { text: "BNB Return", options: { bold: true, fill: "003366", color: "ffffff", align: "center", fontSize: 8.5 } },
+            { text: "Portofolio", options: { bold: true, fill: "e67e22", color: "ffffff", align: "center", fontSize: 8.5 } }
+        ],
+        [
+            { text: "Day 1", options: { align: "center", fontSize: 8 } },
+            { text: "+1.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+2.0%", options: { align: "center", fontSize: 8 } },
+            { text: "-1.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+0.7%", options: { align: "center", fontSize: 8, bold: true } }
+        ],
+        [
+            { text: "Day 2", options: { align: "center", fontSize: 8 } },
+            { text: "+2.0%", options: { align: "center", fontSize: 8 } },
+            { text: "-1.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+2.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+1.1%", options: { align: "center", fontSize: 8, bold: true } }
+        ],
+        [
+            { text: "Day 3", options: { align: "center", fontSize: 8 } },
+            { text: "-1.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+1.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+1.0%", options: { align: "center", fontSize: 8 } },
+            { text: "+0.2%", options: { align: "center", fontSize: 8, bold: true } }
+        ],
+    ], { x: 0.5, y: 1.62, w: 4.3, fontSize: 8.5, border: { pt: 1, color: "cccccc" }, align: "center", valign: "middle", rowH: 0.27 });
+
+    // Penjelasan Vol/Mom calculations
+    slideSimFitur.addText([
+        { text: "Kalkulasi Fitur Momentum & Volatilitas:", options: { bold: true, fontSize: 10, color: "003366", breakLine: true } },
+        { text: "\u2022 Mom5d (M3 - Toy): \u03a3 Ret(D1:D3) = 0.7%+1.1%+0.2% = ", options: { bold: true, fontSize: 8.5, color: "2c3e50" } },
+        { text: "+2.0%", options: { bold: true, fontSize: 8.5, color: "27ae60" } },
+        { text: " | Scaled (x100): ", options: { fontSize: 8.5 } },
+        { text: "2.0", options: { bold: true, fontSize: 8.5, color: "27ae60", breakLine: true } },
+        { text: "", options: { breakLine: true, fontSize: 4 } },
+
+        { text: "\u2022 MomCross: Ret(D3) - Mom(M3) = 0.2% - 2.0% = ", options: { bold: true, fontSize: 8.5, color: "2c3e50" } },
+        { text: "-1.8%", options: { bold: true, fontSize: 8.5, color: "c0392b" } },
+        { text: " | Scaled (x100): ", options: { fontSize: 8.5 } },
+        { text: "-1.8", options: { bold: true, fontSize: 8.5, color: "c0392b", breakLine: true } },
+        { text: "", options: { breakLine: true, fontSize: 4 } },
+
+        { text: "\u2022 Vol.Ratio: Vol_Short / Vol_Long = 0.25% / 0.57% = ", options: { bold: true, fontSize: 8.5, color: "2c3e50" } },
+        { text: "0.44", options: { bold: true, fontSize: 8.5, color: "f39c12" } },
+        { text: " | Scaled (x1): ", options: { fontSize: 8.5 } },
+        { text: "0.44", options: { bold: true, fontSize: 8.5, color: "f39c12", breakLine: true } }
+    ], { x: 0.5, y: 2.85, w: 4.3, h: 1.8, color: "333333", valign: "top", lineSpacing: 16 });
+
+    // === CARD KANAN: Pct.Uptrend & MST Jarak ===
+    slideSimFitur.addShape(pres.ShapeType.rect, { x: 5.1, y: 1.15, w: 4.5, h: 3.55, fill: { color: "ffffff" }, line: { color: "27ae60", width: 1.5 }, rectRadius: 0.05 });
+    slideSimFitur.addShape(pres.ShapeType.rect, { x: 5.1, y: 1.15, w: 4.5, h: 0.42, fill: { color: "27ae60" } });
+    slideSimFitur.addText("🌐 Pct.Uptrend & MST Jarak", { x: 5.1, y: 1.15, w: 4.5, h: 0.42, fontSize: 13, bold: true, color: "ffffff", align: "center", valign: "middle" });
+
+    slideSimFitur.addText([
+        { text: "1. Persentase Koin Menguat (Pct.Uptrend / PU):", options: { bold: true, fontSize: 10, color: "003366", breakLine: true } },
+        { text: "\u2022 Day 3 Return: ", options: { fontSize: 8.5 } },
+        { text: "BTC (-1.0% ❌), ETH (+1.0% ✅), BNB (+1.0% ✅)", options: { fontSize: 8.5, italic: true, breakLine: true } },
+        { text: "\u2022 PU = 2 koin naik / 3 koin = ", options: { fontSize: 8.5 } },
+        { text: "66.67% (0.67)", options: { bold: true, color: "27ae60", fontSize: 9 } },
+        { text: " | Scaled (x1): ", options: { fontSize: 8.5 } },
+        { text: "0.67", options: { bold: true, color: "27ae60", fontSize: 9, breakLine: true } },
+        { text: "", options: { breakLine: true, fontSize: 6 } }, // Spacing
+
+        { text: "2. Jarak Korelasi & MST (MST.Dist):", options: { bold: true, fontSize: 10, color: "003366", breakLine: true } },
+        { text: "\u2022 Korelasi Pearson: ", options: { fontSize: 8.5 } },
+        { text: "\u03c1_AB = 0.5, \u03c1_BC = -0.2, \u03c1_AC = 0.1", options: { fontSize: 8.5, italic: true, breakLine: true } },
+        { text: "\u2022 Jarak d = \u221a(2\u00d7(1-\u03c1)): ", options: { fontSize: 8.5 } },
+        { text: "d_AB = 1.00, d_BC = 1.55, d_AC = 1.34", options: { fontSize: 8.5, italic: true, breakLine: true } },
+        { text: "\u2022 MST Jarak (\u03a3 edge A-B + A-C) = 1.00+1.34 = ", options: { fontSize: 8.5 } },
+        { text: "2.34", options: { bold: true, color: "c0392b", fontSize: 9 } },
+        { text: " | Scaled (x0.1): ", options: { fontSize: 8.5 } },
+        { text: "0.234", options: { bold: true, color: "c0392b", fontSize: 9, breakLine: true } }
+    ], { x: 5.2, y: 1.65, w: 4.3, h: 3.0, color: "333333", valign: "top", lineSpacing: 16 });
+
+    // Summary Box
+    slideSimFitur.addShape(pres.ShapeType.rect, { x: 0.4, y: 4.82, w: 9.2, h: 0.42, fill: { color: "eaf4fb" }, line: { color: "2980b9", width: 1.0 }, rectRadius: 0.05 });
+    slideSimFitur.addText("Aplikasi State: Fitur-fitur ini (MST.Dist = 0.234, PU = 0.67, MomCross = -1.8, dll.) digabung menjadi Vektor State s_t berdimensi 9. Vektor ini di-umpankan ke Aktor & Kritik SAC untuk memprediksi nilai penalti sentralitas (\u03b3) optimal.", {
+        x: 0.4, y: 4.82, w: 9.2, h: 0.42, fontSize: 9.5, bold: true, color: "003366", align: "center", valign: "middle"
+    });
+
+    slideSimFitur.addText("🏠 Daftar Isi", { x: 8.5, y: 5.3, w: 1.2, fontSize: 10, color: "0563C1", underline: true, hyperlink: { slide: '2' }, align: "right" });
 
     // --- Slide 10: Ilustrasi Feature Scaling ---
     let slideScale = pres.addSlide();

@@ -1277,6 +1277,18 @@ const doc = new Document({
                     {text: " (penggunaan data masa depan untuk keputusan masa lalu) dan memastikan bahwa performa portofolio yang dilaporkan mencerminkan realitas eksekusi perdagangan yang akan dihadapi oleh investor di pasar nyata."}
                 ]),
                 emptyLine(),
+                heading3("2.1.8 Indikator Jaringan Kompleks (Complex Network Indicators) sebagai State RL"),
+                mixedBody([
+                    {text: "Untuk memungkinkan agen cerdas memahami kondisi pasar secara struktural, penelitian ini mengekstraksi lima indikator jaringan dari graf korelasi yang telah dibersihkan (denoised) menggunakan RMT. Indikator-indikator ini bertindak sebagai "},
+                    {text: "state", italic: true},
+                    {text: " atau input bagi algoritma SAC:"}
+                ]),
+                bulletItem("Rata-rata Eigenvector Centrality: Mengukur tingkat kepentingan sistemik rata-rata aset dalam jaringan. Skor yang tinggi menunjukkan pasar sedang didominasi oleh aset-aset yang saling terhubung erat."),
+                bulletItem("Nilai Sentralitas Maksimum: Mengidentifikasi simpul yang paling kritis atau dominan dalam jaringan, yang berpotensi menjadi titik tunggal kegagalan sistemik."),
+                bulletItem("Variansi Sentralitas: Mengukur tingkat ketimpangan (disparitas) risiko antar aset. Variansi yang tinggi menandakan adanya segmentasi risiko yang jelas dalam portofolio."),
+                bulletItem("MST Distance: Total bobot sisi dalam Minimum Spanning Tree. Jarak MST yang pendek (mengkerut) sering kali merupakan sinyal awal akan terjadinya guncangan pasar (market crash) karena aset-aset mulai bergerak serempak."),
+                bulletItem("Network Density: Mengukur tingkat kepadatan koneksi antar simpul. Densitas yang meningkat menunjukkan integrasi pasar yang lebih tinggi, yang berakibat pada penurunan manfaat diversifikasi."),
+                emptyLine(),
                 heading2("2.2 Tinjauan Penelitian Sebelumnya"),
                 body("Beberapa penelitian terdahulu yang menjadi rujukan dalam penelitian ini dirangkum dalam tabel perbandingan berikut:"),
                 emptyLine(),
@@ -1400,7 +1412,7 @@ const doc = new Document({
                     {text: "Backtesting & Rebalancing", italic: true},
                     {text: " simulasi perdagangan mingguan; dan (5) "},
                     {text: "Performance Evaluation", italic: true},
-                    {text: " menggunakan metrik Sharpe dan Calmar."}
+                    {text: " menggunakan metrik Sharpe, Sortino, Calmar, dan CVaR."}
                 ]),
                 emptyLine(),
                 emptyLine(),
@@ -1434,7 +1446,7 @@ const doc = new Document({
                 mixedBody([
                     {text: "Proses ekstraksi 5 fitur utama sebagai input (", italic: true},
                     {text: "state", italic: true},
-                    {text: ") bagi agen RL. Penelitian ini berfokus sepenuhnya pada indikator jaringan kompleks (Complex Network Indicators), mencakup varian sentralitas (Eigenvector dan Betweenness), densitas jaringan, MST distance, dan korelasi rata-rata terfilter RMT."}
+                    {text: ") bagi agen RL. Penelitian ini berfokus sepenuhnya pada indikator jaringan kompleks (Complex Network Indicators), mencakup rata-rata sentralitas, variansi sentralitas, nilai sentralitas maksimum, MST distance, dan densitas jaringan."}
                 ]),
 
                 numItem("MST & Eigenvector Centrality Calculation"),
@@ -1635,7 +1647,7 @@ const doc = new Document({
                     {text: "hard-coded", italic: true},
                     {text: " statis, melainkan agen cerdas berbasis "},
                     {text: "Soft Actor-Critic (SAC)", italic: true},
-                    {text: " akan mempelajari relasi antara 9 fitur input terhadap keputusan pergeseran parameter \u03b3 untuk memaksimalkan profil risiko-imbal hasil di masa depan."}
+                    {text: " akan mempelajari relasi antara 5 fitur input jaringan terhadap keputusan pergeseran parameter \u03b3 untuk memaksimalkan profil risiko-imbal hasil di masa depan."}
                 ]),
                 emptyLine(),
                 heading2("3.5 Matriks Evaluasi Performa"),
